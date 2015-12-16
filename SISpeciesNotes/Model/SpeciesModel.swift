@@ -23,5 +23,5 @@ class SpeciesModel: RLMObject {
     dynamic var latitude: Double = 0       //纬度信息
     dynamic var longitude: Double = 0    //经度
     dynamic var created = NSDate()       //创建的时间
-    dynamic var category = CategoryModel()
+    dynamic var category:CategoryModel? = CategoryModel()
 }
