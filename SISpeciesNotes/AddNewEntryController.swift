@@ -16,6 +16,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    var selectCategory:CategoryModel!
     /// 当前所选中的标记信息
     var selectedAnnotation: SpeciesAnnotation!
     
@@ -36,9 +37,15 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     // MARK: - 按钮动作
+    /**
+    点击某个类别名称单元格，将内容返回并传递给一个试图控制器中
     
+    - parameter segue: nil
+    */
     @IBAction func unwindFromCategories(segue: UIStoryboardSegue) {
         let categoriesController = segue.sourceViewController as! CategoriesTableViewController
+        self.selectCategory = categoriesController.selectedCategories
+        categoryTextField.text = selectCategory.name
     }
     
     // MARK: - 文本栏输入验证

@@ -68,6 +68,8 @@ class CategoriesTableViewController: UITableViewController {
             }
             try! realm.commitWriteTransaction() // 7
             self.results = CategoryModel.allObjects()
+            //打印数据库的物理位置：
+            print(RLMRealm.defaultRealm().path)
         }
     }
 }
