@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Realm
 class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - 属性
@@ -16,12 +16,13 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    var selectCategory:CategoryModel!
+    var selectedCategory:CategoryModel!
+    var species:SpeciesModel!
+    
     /// 当前所选中的标记信息
     var selectedAnnotation: SpeciesAnnotation!
     
     // MARK: - 控制器生命周期
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +32,6 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     // MARK: - UITextFieldDelegate
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         self.performSegueWithIdentifier("Categories", sender: self)
     }
@@ -44,14 +44,40 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     */
     @IBAction func unwindFromCategories(segue: UIStoryboardSegue) {
         let categoriesController = segue.sourceViewController as! CategoriesTableViewController
-        self.selectCategory = categoriesController.selectedCategories
-        categoryTextField.text = selectCategory.name
+        selectedCategory = categoriesController.selectedCategories
+        categoryTextField.text = selectedCategory.name
     }
     
-    // MARK: - 文本栏输入验证
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        //
+        if(identifier == "UnwindToMap")
+        {
+            validateFields()
+            addNewSpecies()
+        }
+        
+        return true
+    }
     
-    private func validateFields() -> Bool {
-        if nameTextField.text!.isEmpty || descriptionTextView.text.isEmpty {
+    func addNewSpecies()
+    {
+        species = SpeciesModel()
+        species.name = nameTextField.text!
+        species.speciesDescription = descriptionTextView.text
+        species.latitude = selectedAnnotation.coordinate.latitude
+        species.longitude = selectedAnnotation.coordinate.longitude
+        species.created = NSDate()
+        species.category = selectedCategory
+        
+        let realm = RLMRealm.defaultRealm()
+        realm.beginWriteTransaction()
+        realm.addObject(species)
+        try! realm.commitWriteTransaction()
+    }
+    // MARK: - 文本栏输入验证
+    private func validateFields() -> Bool
+    {
+        if nameTextField.text!.isEmpty || descriptionTextView.text.isEmpty || selectedCategory == nil {
             let alertController = UIAlertController(title: "验证错误", message: "所有的文本栏都不能为空", preferredStyle: .Alert)
             let alertAction = UIAlertAction(title: "确认", style: .Destructive, handler: {
                 (alert: UIAlertAction) -> Void in

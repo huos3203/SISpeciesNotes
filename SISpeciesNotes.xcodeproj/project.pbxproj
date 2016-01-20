@@ -6,6 +6,31 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		840ED9231C4CEE6300420D8C /* GenerateDoc */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 840ED9261C4CEE6300420D8C /* Build configuration list for PBXAggregateTarget "GenerateDoc" */;
+			buildPhases = (
+				840ED9271C4CEE8E00420D8C /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = GenerateDoc;
+			productName = GenerateDoc;
+		};
+		840ED9281C4CF5EF00420D8C /* generateByJazzy */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 840ED9291C4CF5EF00420D8C /* Build configuration list for PBXAggregateTarget "generateByJazzy" */;
+			buildPhases = (
+				840ED92C1C4CF5F400420D8C /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = generateByJazzy;
+			productName = generateByJazzy;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		848F1E301C2154F400874436 /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E2F1C2154F400874436 /* SpeciesModel.swift */; };
 		848F1E351C21624200874436 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E341C21624200874436 /* CategoryModel.swift */; };
@@ -40,6 +65,7 @@
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		848F1E2F1C2154F400874436 /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeciesModel.swift; path = Model/SpeciesModel.swift; sourceTree = "<group>"; };
 		848F1E341C21624200874436 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryModel.swift; path = Model/CategoryModel.swift; sourceTree = "<group>"; usesTabs = 0; };
+		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +152,7 @@
 		D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */ = {
 			isa = PBXGroup;
 			children = (
+				84FB4C111C4E1E35008D512A /* Literals.playground */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 			);
@@ -255,6 +282,12 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "益行人";
 				TargetAttributes = {
+					840ED9231C4CEE6300420D8C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					840ED9281C4CF5EF00420D8C = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					D849C0971AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = Q7V75R9988;
@@ -280,6 +313,8 @@
 			targets = (
 				D849C0971AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0AC1AF078E4001C01AC /* SISpeciesNotesTests */,
+				840ED9231C4CEE6300420D8C /* GenerateDoc */,
+				840ED9281C4CF5EF00420D8C /* generateByJazzy */,
 			);
 		};
 /* End PBXProject section */
@@ -350,6 +385,33 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		840ED9271C4CEE8E00420D8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"北京研搜科技有限公司\";\ncompanyID=\"pyc.com.cn\";\ncompanyURL=\"http://ACME.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";   #生成的文档地址\n# End constants\n\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+			showEnvVarsInLog = 0;
+		};
+		840ED92C1C4CF5F400420D8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "author=\"huosan\";\nauthor_url=\"http://huos3203.github.io/MyBlog/\";\ngithub_url=\"https://github.com/huos3203\";\nsdk=\"iphone\";\noutput=\"docs/swift_output\";   #生成的文档地址\ndocSetDir=\"/Users/admin/Library/Developer/Shared/Documentation/DocSets/\"\n\njazzy \\\n--objc \\\n--clean \\\n--author \"${author}\" \\\n--author_url \"${author_url}\" \\\n--github_url \"${github_url}\" \\\n--module-version 0.96.2 \\\n--xcodebuild-arguments -scheme,\"${PROJECT_NAME}\" \\\n--module \"${PROJECT_NAME}\" \\\n--sdk  \"${sdk}\" \\\n--output \"${output}\" \\\n#拷贝到xcode文档目录中\necho \"${output}/docsets/${PROJECT_NAME}.docset\"\npwd\ncp -r \"${output}/docsets/${PROJECT_NAME}.docset\" \"${docSetDir}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -408,6 +470,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		840ED9241C4CEE6300420D8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		840ED9251C4CEE6300420D8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		840ED92A1C4CF5EF00420D8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		840ED92B1C4CF5EF00420D8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D849C0B51AF078E4001C01AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -570,6 +660,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		840ED9261C4CEE6300420D8C /* Build configuration list for PBXAggregateTarget "GenerateDoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840ED9241C4CEE6300420D8C /* Debug */,
+				840ED9251C4CEE6300420D8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		840ED9291C4CF5EF00420D8C /* Build configuration list for PBXAggregateTarget "generateByJazzy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840ED92A1C4CF5EF00420D8C /* Debug */,
+				840ED92B1C4CF5EF00420D8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D849C0931AF078E4001C01AC /* Build configuration list for PBXProject "SISpeciesNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Realm
 
 class LogViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -16,9 +17,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     /// 物种
-    var species = []
+    var species:RLMResults?
     /// 搜索结果
-    var searchResults = []
+    var searchResults:RLMResults!
     
     var searchController: UISearchController!
     
@@ -39,6 +40,10 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchString = searchController.searchBar.text
         
+        //过滤species
+//        searchResults = species.
+        filterSpecies(searchString!)
+        
         let searchResultController = searchController.searchResultsController as! UITableViewController
         searchResultController.tableView.reloadData()
     }
@@ -51,15 +56,15 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active {
-            return searchResults.count
+            return Int(searchResults.count)
         }else {
-            return species.count
+            return Int(species!.count)
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
-        
+        cell.textLabel?.text = (species![UInt(indexPath.row)] as! SpeciesModel).name
         return cell
     }
     
@@ -109,5 +114,23 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         searchController.searchBar.delegate = self
         searchController.searchBar.barTintColor = UIColor(red: 0, green: 104.0/255.0, blue: 55.0/255.0, alpha: 1.0)
         tableView.tableHeaderView?.addSubview(searchController.searchBar)
+        fetchSpecies()
     }
+    
+    //MARK: 查询realm数据库已存在的物种
+    func fetchSpecies()
+    {
+        self.species = SpeciesModel.allObjects()
+    }
+    
+    //MARK: 筛选realm中已存在的物种
+    func filterSpecies(searchText:String)
+    {
+//        let realm = RLMRealm.defaultRealm()
+//        realm.beginWriteTransaction()
+//        realm.objcts(SpeciesModel)
+        let predicate = NSPredicate(format: "name BEGINSWITH %@",  searchText)
+        searchResults = SpeciesModel.objectsWithPredicate(predicate)
+    }
+    
 }

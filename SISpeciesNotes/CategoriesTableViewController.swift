@@ -53,7 +53,7 @@ class CategoriesTableViewController: UITableViewController {
         return indexPath
     }
     
-    //
+
     private func populateDefaultCategories() {
         self.results = CategoryModel.allObjects() // 1
         if results!.count == 0 { // 2
