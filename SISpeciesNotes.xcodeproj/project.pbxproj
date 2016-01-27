@@ -32,6 +32,31 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		8475037B1C58B76A00E804EE /* AddNewEntryController.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475035C1C58B76A00E804EE /* AddNewEntryController.html */; };
+		8475037C1C58B76A00E804EE /* AppDelegate.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475035D1C58B76A00E804EE /* AppDelegate.html */; };
+		8475037D1C58B76A00E804EE /* CategoriesTableViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */; };
+		8475037E1C58B76A00E804EE /* CategoryModel.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475035F1C58B76A00E804EE /* CategoryModel.html */; };
+		8475037F1C58B76A00E804EE /* LogCell.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503601C58B76A00E804EE /* LogCell.html */; };
+		847503801C58B76A00E804EE /* LogViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503611C58B76A00E804EE /* LogViewController.html */; };
+		847503811C58B76A00E804EE /* MapViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503621C58B76A00E804EE /* MapViewController.html */; };
+		847503821C58B76A00E804EE /* SpeciesAnnotation.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503631C58B76A00E804EE /* SpeciesAnnotation.html */; };
+		847503831C58B76A00E804EE /* SpeciesModel.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503641C58B76A00E804EE /* SpeciesModel.html */; };
+		847503841C58B76A00E804EE /* Classes.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503651C58B76A00E804EE /* Classes.html */; };
+		847503851C58B76A00E804EE /* highlight.css in Resources */ = {isa = PBXBuildFile; fileRef = 847503671C58B76A00E804EE /* highlight.css */; };
+		847503861C58B76A00E804EE /* jazzy.css in Resources */ = {isa = PBXBuildFile; fileRef = 847503681C58B76A00E804EE /* jazzy.css */; };
+		847503871C58B76A00E804EE /* SISpeciesNotes.docset in Resources */ = {isa = PBXBuildFile; fileRef = 8475036A1C58B76A00E804EE /* SISpeciesNotes.docset */; };
+		847503881C58B76A00E804EE /* SISpeciesNotes.tgz in Resources */ = {isa = PBXBuildFile; fileRef = 8475036B1C58B76A00E804EE /* SISpeciesNotes.tgz */; };
+		847503891C58B76A00E804EE /* Categories.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475036D1C58B76A00E804EE /* Categories.html */; };
+		8475038A1C58B76A00E804EE /* Enums.html in Resources */ = {isa = PBXBuildFile; fileRef = 8475036E1C58B76A00E804EE /* Enums.html */; };
+		8475038B1C58B76A00E804EE /* MKMapView.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503701C58B76A00E804EE /* MKMapView.html */; };
+		8475038C1C58B76A00E804EE /* Extensions.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503711C58B76A00E804EE /* Extensions.html */; };
+		8475038D1C58B76A00E804EE /* carat.png in Resources */ = {isa = PBXBuildFile; fileRef = 847503731C58B76A00E804EE /* carat.png */; };
+		8475038E1C58B76A00E804EE /* dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 847503741C58B76A00E804EE /* dash.png */; };
+		8475038F1C58B76A00E804EE /* gh.png in Resources */ = {isa = PBXBuildFile; fileRef = 847503751C58B76A00E804EE /* gh.png */; };
+		847503901C58B76A00E804EE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 847503761C58B76A00E804EE /* index.html */; };
+		847503911C58B76A00E804EE /* jazzy.js in Resources */ = {isa = PBXBuildFile; fileRef = 847503781C58B76A00E804EE /* jazzy.js */; };
+		847503921C58B76A00E804EE /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 847503791C58B76A00E804EE /* jquery.min.js */; };
+		847503931C58B76A00E804EE /* undocumented.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8475037A1C58B76A00E804EE /* undocumented.txt */; };
 		848F1E301C2154F400874436 /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E2F1C2154F400874436 /* SpeciesModel.swift */; };
 		848F1E351C21624200874436 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E341C21624200874436 /* CategoryModel.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
@@ -62,6 +87,31 @@
 /* Begin PBXFileReference section */
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
+		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
+		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
+		8475035F1C58B76A00E804EE /* CategoryModel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoryModel.html; sourceTree = "<group>"; };
+		847503601C58B76A00E804EE /* LogCell.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LogCell.html; sourceTree = "<group>"; };
+		847503611C58B76A00E804EE /* LogViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LogViewController.html; sourceTree = "<group>"; };
+		847503621C58B76A00E804EE /* MapViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MapViewController.html; sourceTree = "<group>"; };
+		847503631C58B76A00E804EE /* SpeciesAnnotation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SpeciesAnnotation.html; sourceTree = "<group>"; };
+		847503641C58B76A00E804EE /* SpeciesModel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SpeciesModel.html; sourceTree = "<group>"; };
+		847503651C58B76A00E804EE /* Classes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Classes.html; sourceTree = "<group>"; };
+		847503671C58B76A00E804EE /* highlight.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = highlight.css; sourceTree = "<group>"; };
+		847503681C58B76A00E804EE /* jazzy.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jazzy.css; sourceTree = "<group>"; };
+		8475036A1C58B76A00E804EE /* SISpeciesNotes.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SISpeciesNotes.docset; sourceTree = "<group>"; };
+		8475036B1C58B76A00E804EE /* SISpeciesNotes.tgz */ = {isa = PBXFileReference; lastKnownFileType = file; path = SISpeciesNotes.tgz; sourceTree = "<group>"; };
+		8475036D1C58B76A00E804EE /* Categories.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Categories.html; sourceTree = "<group>"; };
+		8475036E1C58B76A00E804EE /* Enums.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Enums.html; sourceTree = "<group>"; };
+		847503701C58B76A00E804EE /* MKMapView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MKMapView.html; sourceTree = "<group>"; };
+		847503711C58B76A00E804EE /* Extensions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Extensions.html; sourceTree = "<group>"; };
+		847503731C58B76A00E804EE /* carat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carat.png; sourceTree = "<group>"; };
+		847503741C58B76A00E804EE /* dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dash.png; sourceTree = "<group>"; };
+		847503751C58B76A00E804EE /* gh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gh.png; sourceTree = "<group>"; };
+		847503761C58B76A00E804EE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		847503781C58B76A00E804EE /* jazzy.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jazzy.js; sourceTree = "<group>"; };
+		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
+		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		848F1E2F1C2154F400874436 /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeciesModel.swift; path = Model/SpeciesModel.swift; sourceTree = "<group>"; };
 		848F1E341C21624200874436 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryModel.swift; path = Model/CategoryModel.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -104,9 +154,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8475035A1C58B76A00E804EE /* swift_output */ = {
+			isa = PBXGroup;
+			children = (
+				8475035B1C58B76A00E804EE /* Classes */,
+				847503651C58B76A00E804EE /* Classes.html */,
+				847503661C58B76A00E804EE /* css */,
+				847503691C58B76A00E804EE /* docsets */,
+				8475036C1C58B76A00E804EE /* Enums */,
+				8475036E1C58B76A00E804EE /* Enums.html */,
+				8475036F1C58B76A00E804EE /* Extensions */,
+				847503711C58B76A00E804EE /* Extensions.html */,
+				847503721C58B76A00E804EE /* img */,
+				847503761C58B76A00E804EE /* index.html */,
+				847503771C58B76A00E804EE /* js */,
+				8475037A1C58B76A00E804EE /* undocumented.txt */,
+			);
+			name = swift_output;
+			path = docs/swift_output;
+			sourceTree = "<group>";
+		};
+		8475035B1C58B76A00E804EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8475035C1C58B76A00E804EE /* AddNewEntryController.html */,
+				8475035D1C58B76A00E804EE /* AppDelegate.html */,
+				8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */,
+				8475035F1C58B76A00E804EE /* CategoryModel.html */,
+				847503601C58B76A00E804EE /* LogCell.html */,
+				847503611C58B76A00E804EE /* LogViewController.html */,
+				847503621C58B76A00E804EE /* MapViewController.html */,
+				847503631C58B76A00E804EE /* SpeciesAnnotation.html */,
+				847503641C58B76A00E804EE /* SpeciesModel.html */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		847503661C58B76A00E804EE /* css */ = {
+			isa = PBXGroup;
+			children = (
+				847503671C58B76A00E804EE /* highlight.css */,
+				847503681C58B76A00E804EE /* jazzy.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		847503691C58B76A00E804EE /* docsets */ = {
+			isa = PBXGroup;
+			children = (
+				8475036A1C58B76A00E804EE /* SISpeciesNotes.docset */,
+				8475036B1C58B76A00E804EE /* SISpeciesNotes.tgz */,
+			);
+			path = docsets;
+			sourceTree = "<group>";
+		};
+		8475036C1C58B76A00E804EE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8475036D1C58B76A00E804EE /* Categories.html */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8475036F1C58B76A00E804EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				847503701C58B76A00E804EE /* MKMapView.html */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		847503721C58B76A00E804EE /* img */ = {
+			isa = PBXGroup;
+			children = (
+				847503731C58B76A00E804EE /* carat.png */,
+				847503741C58B76A00E804EE /* dash.png */,
+				847503751C58B76A00E804EE /* gh.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		847503771C58B76A00E804EE /* js */ = {
+			isa = PBXGroup;
+			children = (
+				847503781C58B76A00E804EE /* jazzy.js */,
+				847503791C58B76A00E804EE /* jquery.min.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
+				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
@@ -324,8 +464,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8475038F1C58B76A00E804EE /* gh.png in Resources */,
+				847503891C58B76A00E804EE /* Categories.html in Resources */,
+				847503851C58B76A00E804EE /* highlight.css in Resources */,
+				8475038A1C58B76A00E804EE /* Enums.html in Resources */,
+				847503811C58B76A00E804EE /* MapViewController.html in Resources */,
+				8475037E1C58B76A00E804EE /* CategoryModel.html in Resources */,
+				847503881C58B76A00E804EE /* SISpeciesNotes.tgz in Resources */,
+				8475038B1C58B76A00E804EE /* MKMapView.html in Resources */,
+				847503801C58B76A00E804EE /* LogViewController.html in Resources */,
+				8475037F1C58B76A00E804EE /* LogCell.html in Resources */,
+				847503901C58B76A00E804EE /* index.html in Resources */,
+				8475038D1C58B76A00E804EE /* carat.png in Resources */,
 				D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */,
+				847503871C58B76A00E804EE /* SISpeciesNotes.docset in Resources */,
+				847503861C58B76A00E804EE /* jazzy.css in Resources */,
+				8475037C1C58B76A00E804EE /* AppDelegate.html in Resources */,
 				D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */,
+				847503931C58B76A00E804EE /* undocumented.txt in Resources */,
+				847503841C58B76A00E804EE /* Classes.html in Resources */,
+				8475037B1C58B76A00E804EE /* AddNewEntryController.html in Resources */,
+				847503921C58B76A00E804EE /* jquery.min.js in Resources */,
+				847503911C58B76A00E804EE /* jazzy.js in Resources */,
+				8475037D1C58B76A00E804EE /* CategoriesTableViewController.html in Resources */,
+				847503831C58B76A00E804EE /* SpeciesModel.html in Resources */,
+				8475038C1C58B76A00E804EE /* Extensions.html in Resources */,
+				8475038E1C58B76A00E804EE /* dash.png in Resources */,
+				847503821C58B76A00E804EE /* SpeciesAnnotation.html in Resources */,
 				D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

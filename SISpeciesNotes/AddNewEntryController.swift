@@ -8,6 +8,8 @@
 
 import UIKit
 import Realm
+
+/// 添加物种页面，编辑界面
 class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - 属性

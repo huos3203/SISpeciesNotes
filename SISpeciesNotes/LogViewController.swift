@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import Realm
 
+/// 记录界面
+
 class LogViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     // MARK: Properties

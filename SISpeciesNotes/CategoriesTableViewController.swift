@@ -8,6 +8,8 @@
 
 import UIKit
 import Realm
+
+/// 物种总览提示页面
 class CategoriesTableViewController: UITableViewController {
 
     // MARK: - 属性
