@@ -41,7 +41,7 @@ addNewSpecies()
 
 
 
-/**
+/*:
 *  @author shuguang, 16-01-20 20:01:19
 *
 *  查询数据
@@ -55,7 +55,7 @@ addNewSpecies()
 
 
 
-/**
+/*:
 *  @author shuguang, 16-01-20 20:01:40
 *
 *  删除数据

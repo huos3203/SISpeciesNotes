@@ -61,6 +61,15 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         return true
     }
     
+    //MARK: - realm 持久化
+    /**
+        ```
+         let realm = RLMRealm.defaultRealm()
+         realm.beginWriteTransaction()
+         realm.addObject(species)
+         try! realm.commitWriteTransaction()
+        ```
+     */
     func addNewSpecies()
     {
         species = SpeciesModel()
