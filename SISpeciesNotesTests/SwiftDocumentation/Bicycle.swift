@@ -140,6 +140,6 @@ class Bicycle {
      .reduce(0, combine: +)
      ```
      */
-    var perimeter: CGFloat { get }
+//    var perimeter: CGFloat { get }
     
 }

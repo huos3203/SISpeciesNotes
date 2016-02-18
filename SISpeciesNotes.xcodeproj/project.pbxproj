@@ -59,8 +59,6 @@
 		847503931C58B76A00E804EE /* undocumented.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8475037A1C58B76A00E804EE /* undocumented.txt */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
-		8475039E1C59D8C700E804EE /* BicycleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475039D1C59D8C700E804EE /* BicycleExtension.swift */; };
-		8475039F1C59D8C700E804EE /* BicycleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475039D1C59D8C700E804EE /* BicycleExtension.swift */; };
 		848F1E301C2154F400874436 /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E2F1C2154F400874436 /* SpeciesModel.swift */; };
 		848F1E351C21624200874436 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1E341C21624200874436 /* CategoryModel.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
@@ -117,7 +115,6 @@
 		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
-		8475039D1C59D8C700E804EE /* BicycleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BicycleExtension.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		848F1E2F1C2154F400874436 /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeciesModel.swift; path = Model/SpeciesModel.swift; sourceTree = "<group>"; };
 		848F1E341C21624200874436 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryModel.swift; path = Model/CategoryModel.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -253,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				847503961C59C4A200E804EE /* Bicycle.swift */,
-				8475039D1C59D8C700E804EE /* BicycleExtension.swift */,
 			);
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
@@ -601,7 +597,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D8C0E61AF130DD00F750AF /* AddNewEntryController.swift in Sources */,
-				8475039E1C59D8C700E804EE /* BicycleExtension.swift in Sources */,
 				848F1E301C2154F400874436 /* SpeciesModel.swift in Sources */,
 				D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */,
 				848F1E351C21624200874436 /* CategoryModel.swift in Sources */,
@@ -620,7 +615,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
-				8475039F1C59D8C700E804EE /* BicycleExtension.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

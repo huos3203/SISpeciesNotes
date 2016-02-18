@@ -48,12 +48,32 @@ addNewSpecies()
 *
 *  @since 1
 */
+/**:
+ 通过物种名，查询realm
+ 
+ - parameter username:物种名
+ */
+func fetch(speciesname:String)
+{
+    let realm = RLMRealm.defaultRealm()
+    
+    //断言
+    let predicate = NSPredicate(format: "name beginswith %@", speciesname)
+    
+    //使用断言,查询物种
+    let species = SpeciesModel.objectsWithPredicate(predicate)
+    //使用RLMResults对象
+    let sum = "检索到的个数：\(species.count)"
+    let name = "物种名称：\((species[0] as! SpeciesModel).name)"
+    print(sum+"\n"+name)
+//    let spe:SpeciesModel? = species[0] as? SpeciesModel
+//    print(spe!)
+    // 如何从RLMResults中检索出SpeciesModel对象
+    
+    
+}
 
-
-
-
-
-
+fetch("nihao")
 
 /*:
 *  @author shuguang, 16-01-20 20:01:40
