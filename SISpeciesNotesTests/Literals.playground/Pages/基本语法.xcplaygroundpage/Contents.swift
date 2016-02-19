@@ -51,4 +51,110 @@ print(b)
 a = a ?? b
 print(a)
 
+//:“函数首先计算出有多少字符需要被添加到string的左边，从而将其在整个字符串中右对齐。这个值存储在一个称为amountToPad的本地常量。如果不需要填充（也就是说，如果amountToPad小于1），该函数简单地返回没有任何填充的输入值string。”
+func addLeft(var sourceStr:String, maxLen:Int)
+{
+    //缺少的字符数
+    var number = maxLen - sourceStr.characters.count
+    
+    if number > 0
+    {
+            //添加占位符
+        for _ in 1...number
+        {
+            sourceStr = "-" + sourceStr
+        }
+        
+    }
+    print(sourceStr)
+}
+
+
+addLeft("rrr", maxLen: 10)
+
+
+//:switch 
+
+let somechar = "e"
+switch somechar
+{
+    case "A","w","e":
+    print("the char "+somechar)
+    
+    case "r","y","m":
+    print("the char is r")
+default:
+    print("exit char "+somechar)
+}
+
+//:switch区间值比较
+
+let 时间 = 6
+switch 时间
+{
+case 1...5:
+    print("1到5区间")
+case 3..<6:
+    print("大于3小于6")
+case 4...6:
+    print("大于等于4且小于等于6")
+default:
+    print("没有匹配的区间")
+}
+
+//:switch元组比较
+
+let somePoint = (1,6)
+
+switch somePoint
+{
+case (1,8):
+    print("x=1,y=8")
+case (1,6):
+    print("x=1,y=6")
+case (_,1):
+    print("x任意,y=1")
+case (1,_):
+    print("x=1,y任意")
+case(0...4,3...7):
+    print("0<=x<=4,3<=y<=7")
+    
+default:
+    print("无匹配元组")
+}
+
+//:where使用
+switch somePoint
+{
+case(let x,let y) where x == y:
+    print("x任意，y任意")
+case (let x, let y) where x < y:
+    print("x=\(x),y=\(y)")
+default:
+    print("无匹配元组")
+}
+
+//:continue
+let 姓名 = "RenCaiLiangKong"
+var 名字 = ""
+for 字母 in 姓名.characters
+{
+    switch 字母
+    {
+    case "r","C","L","K":
+        continue
+    default:
+        名字.append(字母)
+    }
+    print(名字)
+}
+
+
+
+
+
+
+
+
+
 
