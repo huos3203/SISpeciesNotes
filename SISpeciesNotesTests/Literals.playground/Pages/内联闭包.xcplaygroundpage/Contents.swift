@@ -111,6 +111,34 @@ var digitNum = numbers.map{
 print(digitNum)
 
 
+//: 内嵌函数实现闭包捕获值的实现
+
+func makeIncementor(forIncrement count:Int) -> () ->Int{
+
+    //变量
+    var runingCount = 0
+    func Incementor() ->Int
+    {
+        runingCount += count
+        return runingCount
+    }
+    
+    return Incementor
+}
+
+let incementByTen = makeIncementor(forIncrement: 10)
+incementByTen()
+incementByTen()
+incementByTen()
+
+
+
+//: 自动闭包，先在有利的上下文下声明，捕获值，再在需要的时候执行
+
+
+
+
+
 
 
 //: [Next](@next)

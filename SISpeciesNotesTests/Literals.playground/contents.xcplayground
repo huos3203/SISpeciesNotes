@@ -5,8 +5,9 @@
         <page name='可视化QuickLook 预览'/>
         <page name='30s延时运行'/>
         <page name='基本语法'/>
-        <page name='realmSwift使用'/>
-        <page name='class'/>
         <page name='内联闭包'/>
+        <page name='class'/>
+        <page name='realmSwift使用'/>
+        <page name='枚举类型'/>
     </pages>
 </playground>
