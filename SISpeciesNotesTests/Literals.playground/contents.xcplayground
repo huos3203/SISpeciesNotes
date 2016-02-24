@@ -9,5 +9,6 @@
         <page name='class'/>
         <page name='realmSwift使用'/>
         <page name='枚举类型'/>
+        <page name='结构体'/>
     </pages>
 </playground>

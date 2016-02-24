@@ -31,6 +31,7 @@ var wo = Person(name: "霍曙光", address: dizhi)
 var ni = Person(name: "小米", address: dizhi)
 print(wo.address.fulladdress)
 
+//类是引用类型
 ni.address.fulladdress = "二拨子"
 print(ni.address.fulladdress)
 print(wo.address.fulladdress)
