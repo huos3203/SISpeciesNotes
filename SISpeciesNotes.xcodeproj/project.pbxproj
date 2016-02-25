@@ -63,6 +63,12 @@
 		847503931C58B76A00E804EE /* undocumented.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8475037A1C58B76A00E804EE /* undocumented.txt */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
+		848841AC1C7F58E700929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
+		848841AD1C7F58E700929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
+		848841AE1C7F58F500929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
+		848841AF1C7F58F500929B21 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		848841B01C7F58F600929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
+		848841B11C7F58F600929B21 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09F1AF078E4001C01AC /* MapViewController.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
@@ -87,6 +93,21 @@
 			remoteInfo = SISpeciesNotes;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		848841B21C7F58F600929B21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				848841B11C7F58F600929B21 /* RealmSwift.framework in Embed Frameworks */,
+				848841AF1C7F58F500929B21 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1412DA321C7EB6BF0089E00D /* WeiboCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboCollectionViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +142,8 @@
 		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
+		848841AA1C7F58E700929B21 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm0.98.2/Realm.framework; sourceTree = "<group>"; };
+		848841AB1C7F58E700929B21 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm0.98.2/RealmSwift.framework; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +170,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848841AE1C7F58F500929B21 /* Realm.framework in Frameworks */,
+				848841B01C7F58F600929B21 /* RealmSwift.framework in Frameworks */,
+				848841AC1C7F58E700929B21 /* Realm.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
+				848841AD1C7F58E700929B21 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +294,15 @@
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
 		};
+		848841A91C7F58D100929B21 /* Realm0.98.2 */ = {
+			isa = PBXGroup;
+			children = (
+				848841AA1C7F58E700929B21 /* Realm.framework */,
+				848841AB1C7F58E700929B21 /* RealmSwift.framework */,
+			);
+			name = Realm0.98.2;
+			sourceTree = "<group>";
+		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +328,7 @@
 		D849C09A1AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXGroup;
 			children = (
+				848841A91C7F58D100929B21 /* Realm0.98.2 */,
 				D8D76ABE1C0FF1670041D0ED /* Resources */,
 				1412DA421C7F0D9F0089E00D /* Model */,
 				D897B1EE1AF1CFB200DAD3EB /* Cell */,
@@ -409,6 +446,8 @@
 				D849C0961AF078E4001C01AC /* Resources */,
 				55DE63D58253E64BDC06F41B /* Embed Pods Frameworks */,
 				265C1A8B0686754A21F45E1A /* Copy Pods Resources */,
+				848841B21C7F58F600929B21 /* Embed Frameworks */,
+				848841B31C7F593000929B21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -603,6 +642,20 @@
 			shellPath = /bin/sh;
 			shellScript = "author=\"huosan\";\nauthor_url=\"http://huos3203.github.io/MyBlog/\";\ngithub_url=\"https://github.com/huos3203\";\nsdk=\"iphone\";\noutput=\"docs/swift_output\";   #生成的文档地址\ndocSetDir=\"/Users/admin/Library/Developer/Shared/Documentation/DocSets/\"\n\njazzy \\\n--objc \\\n--clean \\\n--author \"${author}\" \\\n--author_url \"${author_url}\" \\\n--github_url \"${github_url}\" \\\n--module-version 0.96.2 \\\n--xcodebuild-arguments -scheme,\"${PROJECT_NAME}\" \\\n--module \"${PROJECT_NAME}\" \\\n--sdk  \"${sdk}\" \\\n--output \"${output}\" \\\n#拷贝到xcode文档目录中\necho \"${output}/docsets/${PROJECT_NAME}.docset\"\npwd\ncp -r \"${output}/docsets/${PROJECT_NAME}.docset\" \"${docSetDir}\"";
 		};
+		848841B31C7F593000929B21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -787,6 +840,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SISpeciesNotes/Realm0.98.2",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -807,6 +861,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SISpeciesNotes/Realm0.98.2",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

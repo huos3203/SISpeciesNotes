@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeiboCollectionViewController: UICollectionViewController,UICollectionViewDataSource
+class WeiboCollectionViewController: UICollectionViewController
 {
     private var timeLine:[String]? = []
    

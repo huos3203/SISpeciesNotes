@@ -6,7 +6,7 @@
 //  Copyright © 2016年 益行人. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class FlowCell: UICollectionViewCell
 {
