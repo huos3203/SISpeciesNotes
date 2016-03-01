@@ -63,12 +63,10 @@
 		847503931C58B76A00E804EE /* undocumented.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8475037A1C58B76A00E804EE /* undocumented.txt */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
-		848841AC1C7F58E700929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
-		848841AD1C7F58E700929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
-		848841AE1C7F58F500929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
 		848841AF1C7F58F500929B21 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		848841B01C7F58F600929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
 		848841B11C7F58F600929B21 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		848841B41C85688300929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
+		848841B51C85688300929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09F1AF078E4001C01AC /* MapViewController.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
@@ -170,11 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848841AE1C7F58F500929B21 /* Realm.framework in Frameworks */,
-				848841B01C7F58F600929B21 /* RealmSwift.framework in Frameworks */,
-				848841AC1C7F58E700929B21 /* Realm.framework in Frameworks */,
+				848841B41C85688300929B21 /* Realm.framework in Frameworks */,
+				848841B51C85688300929B21 /* RealmSwift.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
-				848841AD1C7F58E700929B21 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
