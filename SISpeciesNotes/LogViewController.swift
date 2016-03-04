@@ -77,6 +77,8 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
+            //TODO: 删除动物记录
+            
         }
     }
     
@@ -87,6 +89,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
             let controller = segue.destinationViewController as! AddNewEntryController
             
             let indexPath = tableView.indexPathForSelectedRow
+//            获取分类对象
+            let model:SpeciesModel? = species![UInt((indexPath?.row)!)] as! SpeciesModel
+            controller.specieName = model!.name
             
             if let searchResultsController = searchController.searchResultsController as? UITableViewController where searchController.active {
                 let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow

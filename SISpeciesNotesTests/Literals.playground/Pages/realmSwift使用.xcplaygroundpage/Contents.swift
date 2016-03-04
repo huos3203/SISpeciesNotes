@@ -5,7 +5,6 @@ import Foundation
 import Realm
 
 
-//import 
 //: 添加数据
 
 class SpeciesModel: RLMObject {

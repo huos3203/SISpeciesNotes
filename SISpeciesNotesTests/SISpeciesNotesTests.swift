@@ -9,6 +9,8 @@
 import UIKit
 import XCTest
 
+import Realm
+
 class SISpeciesNotesTests: XCTestCase {
     
     override func setUp() {
@@ -32,5 +34,4 @@ class SISpeciesNotesTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
 }

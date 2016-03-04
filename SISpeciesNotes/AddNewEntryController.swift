@@ -21,6 +21,8 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     var selectedCategory:CategoryModel!
     var species:SpeciesModel!
     
+    var specieName:String?
+    
     /// 当前所选中的标记信息
     var selectedAnnotation: SpeciesAnnotation!
     
@@ -85,6 +87,15 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         realm.addObject(species)
         try! realm.commitWriteTransaction()
     }
+    
+    //MARK: - realm查询
+    func fetchSpecieByName(specieName:String)
+    {
+        
+    
+    }
+    
+    
     // MARK: - 文本栏输入验证
     private func validateFields() -> Bool
     {
