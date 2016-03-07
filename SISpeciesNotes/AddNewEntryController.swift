@@ -91,7 +91,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     //MARK: - realm查询
     func fetchSpecieByName(specieName:String)
     {
-        
+        //        
     
     }
     
