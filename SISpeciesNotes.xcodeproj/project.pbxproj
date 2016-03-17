@@ -36,6 +36,9 @@
 		1412DA351C7EC27D0089E00D /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA341C7EC27D0089E00D /* FlowCell.swift */; };
 		1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA431C7F0D9F0089E00D /* CategoryModel.swift */; };
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
+		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
+		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
+		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
 		14DF8B521C8819640058953E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
 		14DF8B531C8819690058953E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
@@ -90,6 +93,9 @@
 		1412DA341C7EC27D0089E00D /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
+		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +176,25 @@
 			children = (
 				1412DA431C7F0D9F0089E00D /* CategoryModel.swift */,
 				1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */,
+				1479CBB91C965CCF00D26433 /* Album.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1479CBBD1C965FCF00D26433 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1479CBBE1C96600300D26433 /* AlbumView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		1479CBC21C9668DD00D26433 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -307,7 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				D8D76ABE1C0FF1670041D0ED /* Resources */,
+				1479CBC21C9668DD00D26433 /* API */,
 				1412DA421C7F0D9F0089E00D /* Model */,
+				1479CBBD1C965FCF00D26433 /* view */,
 				D897B1EE1AF1CFB200DAD3EB /* Cell */,
 				D897B1ED1AF1CFA300DAD3EB /* Controller */,
 				D849C0C01AF089C7001C01AC /* Annotations */,
@@ -619,9 +644,11 @@
 				D8D8C0E61AF130DD00F750AF /* AddNewEntryController.swift in Sources */,
 				1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */,
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,
+				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */,
 				14A3C68E1C83EB000065D226 /* readme.md in Sources */,
 				1412DA351C7EC27D0089E00D /* FlowCell.swift in Sources */,
+				1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */,
 				D849C0C21AF089F7001C01AC /* SpeciesAnnotation.swift in Sources */,
 				847503981C59C70600E804EE /* Bicycle.swift in Sources */,
 				D897B1FC1AF24E0900DAD3EB /* CategoriesTableViewController.swift in Sources */,
@@ -630,6 +657,7 @@
 				D849C0BF1AF08942001C01AC /* MapViewExtension.swift in Sources */,
 				D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */,
 				1412DA331C7EB6BF0089E00D /* WeiboCollectionViewController.swift in Sources */,
+				1479CBBA1C965CCF00D26433 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

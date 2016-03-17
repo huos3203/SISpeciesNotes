@@ -57,6 +57,30 @@ let thirtiesPredicate = NSPredicate(format: "age >= 30")
 (people as NSArray).filteredArrayUsingPredicate(thirtiesPredicate)
 
 
+//: 替换 %K:替换key path的值  %@:替换字符串    $字段名:
+let lastNamePredicate = NSPredicate(format: "%K = %@", "lastName","Alberts")
+(people as NSArray).filteredArrayUsingPredicate(lastNamePredicate)
+
+
+// 检索firstname以"A"开头，lastName以"A"开始的用户
+let namePredicate = NSPredicate(format:"(firstName beginswith[cd] $letter) or (lastName beginswith[cd] $letter)")
+let name = namePredicate.predicateWithSubstitutionVariables(["letter":"A"])
+(people as NSArray).filteredArrayUsingPredicate(name)
+
+
+
+//: 字符串比较
+//匹配lastname是Alberts的用户
+let albertsPredicate = NSPredicate(format: "lastName contains[cd] %@", "Alberts")
+(people as NSArray).filteredArrayUsingPredicate(albertsPredicate)
+
+//like ?,*通配符
+let tpPredicate = NSPredicate(format: "lastName like *", "")
+
+
+
+//NSCompoundPredicate
+
 
 //输出结果
 
