@@ -48,11 +48,13 @@
 		14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */; };
 		14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */; };
 		14D52E561CAB81D700A0595C /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */; };
-		14D52E5A1CAB821900A0595C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E581CAB821900A0595C /* Realm.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		14D52E5B1CAB821900A0595C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E591CAB821900A0595C /* RealmSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E621CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift */; };
-		14D52E651CABC9DE00A0595C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E581CAB821900A0595C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		14D52E661CABC9DE00A0595C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E591CAB821900A0595C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840FB6261CAC1DF20055925C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6241CAC1DF20055925C /* Realm.framework */; };
+		840FB6271CAC1DF20055925C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6251CAC1DF20055925C /* RealmSwift.framework */; };
+		840FB6281CAC1E010055925C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6241CAC1DF20055925C /* Realm.framework */; };
+		840FB6291CAC1E010055925C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6241CAC1DF20055925C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840FB62A1CAC1E010055925C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6251CAC1DF20055925C /* RealmSwift.framework */; };
+		840FB62B1CAC1E010055925C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840FB6251CAC1DF20055925C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
@@ -80,8 +82,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14D52E651CABC9DE00A0595C /* Realm.framework in Embed Frameworks */,
-				14D52E661CABC9DE00A0595C /* RealmSwift.framework in Embed Frameworks */,
+				840FB62B1CAC1E010055925C /* RealmSwift.framework in Embed Frameworks */,
+				840FB6291CAC1E010055925C /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,11 +107,11 @@
 		14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeiboCollectionViewController.swift; path = Controller/WeiboCollectionViewController.swift; sourceTree = "<group>"; };
 		14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesAnnotation.swift; sourceTree = "<group>"; };
 		14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayAnimationController.swift; sourceTree = "<group>"; };
-		14D52E581CAB821900A0595C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		14D52E591CAB821900A0595C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		14D52E621CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDEModalTransitionDelegate.swift; sourceTree = "<group>"; };
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840FB6241CAC1DF20055925C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		840FB6251CAC1DF20055925C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -155,9 +157,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D52E5A1CAB821900A0595C /* Realm.framework in Frameworks */,
+				840FB6281CAC1E010055925C /* Realm.framework in Frameworks */,
+				840FB62A1CAC1E010055925C /* RealmSwift.framework in Frameworks */,
+				840FB6261CAC1DF20055925C /* Realm.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
-				14D52E5B1CAB821900A0595C /* RealmSwift.framework in Frameworks */,
+				840FB6271CAC1DF20055925C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,14 +214,14 @@
 			path = animatedTransition;
 			sourceTree = "<group>";
 		};
-		14D52E571CAB821900A0595C /* Realm0.98.2 */ = {
+		840FB6231CAC1DF20055925C /* Realm0.98.6 */ = {
 			isa = PBXGroup;
 			children = (
-				14D52E581CAB821900A0595C /* Realm.framework */,
-				14D52E591CAB821900A0595C /* RealmSwift.framework */,
+				840FB6241CAC1DF20055925C /* Realm.framework */,
+				840FB6251CAC1DF20055925C /* RealmSwift.framework */,
 			);
-			name = Realm0.98.2;
-			path = Frameworks/Realm0.98.2;
+			name = Realm0.98.6;
+			path = Frameworks/Realm0.98.6;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -343,10 +347,10 @@
 		D849C09A1AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXGroup;
 			children = (
+				D897B1ED1AF1CFA300DAD3EB /* Controller */,
 				1479CBC21C9668DD00D26433 /* API */,
 				1412DA421C7F0D9F0089E00D /* Model */,
 				1479CBBD1C965FCF00D26433 /* view */,
-				D897B1ED1AF1CFA300DAD3EB /* Controller */,
 				D8D76ABE1C0FF1670041D0ED /* Resources */,
 				D849C09B1AF078E4001C01AC /* Supporting Files */,
 			);
@@ -407,7 +411,7 @@
 		D8D76ABF1C1021AC0041D0ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14D52E571CAB821900A0595C /* Realm0.98.2 */,
+				840FB6231CAC1DF20055925C /* Realm0.98.6 */,
 				20F40A34149E21A67CD352AF /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -812,6 +816,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.2",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.6",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -833,6 +838,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.2",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.6",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -26,6 +26,9 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     /// 当前所选中的标记信息
     var selectedAnnotation: SpeciesAnnotation!
     
+    /// 重点：添加转场动画协议
+    let presentTransitionDelegate = SDEModalTransitionDelegate()
+    
     // MARK: - 控制器生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,14 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
 //        弹出到分类页面
         self.performSegueWithIdentifier("Categories", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toVC = segue.destinationViewController as! CategoriesTableViewController
+        toVC.transitioningDelegate = presentTransitionDelegate
+        toVC.modalPresentationStyle = .Custom
+//        super.prepareForSegue(segue, sender: sender)
+    }
+    
     
     // MARK: - 按钮动作
     /**

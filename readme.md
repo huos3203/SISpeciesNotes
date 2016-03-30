@@ -34,3 +34,7 @@ MVVM  :三大元素，各司其职，减少依赖,视图层不依赖任何模型
 2. Results声明： Results<Modle>
 3. realm.objects(modle)
 4. realm.beginWrite() ,realm.commitWrite()
+
+####更新xcode7.3，swift版本为2.2
+问题1：`Module file was created by an older version of compiler`
+解决办法：下载realm最新版本0.98.6,更新Frameworks引用设置支持swift2.2

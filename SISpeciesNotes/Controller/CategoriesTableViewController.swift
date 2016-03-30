@@ -12,6 +12,7 @@ import RealmSwift
 /// 物种总览提示页面
 class CategoriesTableViewController: UITableViewController{
 
+//    let presentTransitionDelegate = SDEModalTransitionDelegate()
     // MARK: - 属性
     
     var categories = []
@@ -56,14 +57,6 @@ class CategoriesTableViewController: UITableViewController{
         selectedCategories = self.results![indexPath.row]
         return indexPath
     }
-    
-    //MARK: 转场动画
-    
-    
-    
-    
-    
-    
     
     private func populateDefaultCategories() {
         realm = try! Realm()
