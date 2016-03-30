@@ -320,12 +320,12 @@
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
-				14A3C68D1C83EB000065D226 /* readme.md */,
-				8475035A1C58B76A00E804EE /* swift_output */,
-				848F1E2E1C214D5500874436 /* .gitignore */,
-				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */,
+				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
+				8475035A1C58B76A00E804EE /* swift_output */,
+				848F1E2E1C214D5500874436 /* .gitignore */,
+				14A3C68D1C83EB000065D226 /* readme.md */,
 				D849C0991AF078E4001C01AC /* Products */,
 				E0A0A76A9D401F12C19F4D3C /* Pods */,
 			);
@@ -343,11 +343,11 @@
 		D849C09A1AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXGroup;
 			children = (
-				D8D76ABE1C0FF1670041D0ED /* Resources */,
 				1479CBC21C9668DD00D26433 /* API */,
 				1412DA421C7F0D9F0089E00D /* Model */,
 				1479CBBD1C965FCF00D26433 /* view */,
 				D897B1ED1AF1CFA300DAD3EB /* Controller */,
+				D8D76ABE1C0FF1670041D0ED /* Resources */,
 				D849C09B1AF078E4001C01AC /* Supporting Files */,
 			);
 			path = SISpeciesNotes;

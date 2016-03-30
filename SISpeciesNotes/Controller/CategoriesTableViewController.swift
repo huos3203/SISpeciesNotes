@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 /// 物种总览提示页面
-class CategoriesTableViewController: UITableViewController {
+class CategoriesTableViewController: UITableViewController{
 
     // MARK: - 属性
     
@@ -57,7 +57,14 @@ class CategoriesTableViewController: UITableViewController {
         return indexPath
     }
     
-
+    //MARK: 转场动画
+    
+    
+    
+    
+    
+    
+    
     private func populateDefaultCategories() {
         realm = try! Realm()
         self.results =  realm.objects(CategoryModel)
