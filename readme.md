@@ -23,3 +23,14 @@ MVVM  :三大元素，各司其职，减少依赖,视图层不依赖任何模型
 
 第三步：单例模式 singlton
 作用：管理数据层数据，提供后台服务的类
+
+####问题
+1. image not found  
+2. dylib依赖问题
+解决办法：Build Phases -> Copy Files 中点击 + 添加Realm.framework,RealmSwift.framework
+
+更新realmSwift最新用法
+1. realm声明对象：realm()
+2. Results声明： Results<Modle>
+3. realm.objects(modle)
+4. realm.beginWrite() ,realm.commitWrite()

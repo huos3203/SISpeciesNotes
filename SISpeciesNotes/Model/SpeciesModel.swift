@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
 /// 对应realm数据库物种信息表的模型
 /// 对于 Realm 中的一些特定的数据类型，比如说字符串，必须要初始化
-class SpeciesModel: RLMObject {
+class SpeciesModel: Object {
     
 // Specify properties to ignore (Realm won't persist these)
     

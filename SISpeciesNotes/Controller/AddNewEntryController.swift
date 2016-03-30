@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 /// 添加物种页面，编辑界面
 class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -37,6 +37,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // MARK: - UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
+//        弹出到分类页面
         self.performSegueWithIdentifier("Categories", sender: self)
     }
     
@@ -82,10 +83,10 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         species.created = NSDate()
         species.category = selectedCategory
         
-        let realm = RLMRealm.defaultRealm()
-        realm.beginWriteTransaction()
-        realm.addObject(species)
-        try! realm.commitWriteTransaction()
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.add(species)
+        try! realm.commitWrite()
     }
     
     //MARK: - realm查询

@@ -7,9 +7,10 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class CategoryModel: RLMObject {
+class CategoryModel: Object {
     
     dynamic var name = ""
+    
 }

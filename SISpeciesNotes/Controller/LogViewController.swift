@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import Realm
+import RealmSwift
 
 /// 记录界面
 
@@ -19,9 +19,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     /// 物种
-    var species:RLMResults?
+    var species:Results<SpeciesModel>?
     /// 搜索结果
-    var searchResults:RLMResults!
+    var searchResults:Results<SpeciesModel>!
     
     var searchController: UISearchController!
     
@@ -66,7 +66,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
-        cell.textLabel?.text = (species![UInt(indexPath.row)] as! SpeciesModel).name
+        cell.textLabel?.text = (species![indexPath.row]).name
         return cell
     }
     
@@ -90,7 +90,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
             
             let indexPath = tableView.indexPathForSelectedRow
 //            获取分类对象
-            let model:SpeciesModel? = species![UInt((indexPath?.row)!)] as! SpeciesModel
+            let model:SpeciesModel? = species![indexPath!.row]
             controller.specieName = model!.name
             
             if let searchResultsController = searchController.searchResultsController as? UITableViewController where searchController.active {
@@ -127,7 +127,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     //MARK: 查询realm数据库已存在的物种
     func fetchSpecies()
     {
-        self.species = SpeciesModel.allObjects()
+        self.species = try! Realm().objects(SpeciesModel)
     }
     
     //MARK: 筛选realm中已存在的物种
@@ -137,7 +137,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
 //        realm.beginWriteTransaction()
 //        realm.objcts(SpeciesModel)
         let predicate = NSPredicate(format: "name BEGINSWITH %@",  searchText)
-        searchResults = SpeciesModel.objectsWithPredicate(predicate)
+        searchResults = try! Realm().objects(SpeciesModel).filter(predicate)
     }
     
 }

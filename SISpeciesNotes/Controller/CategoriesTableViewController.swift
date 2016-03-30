@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 /// 物种总览提示页面
 class CategoriesTableViewController: UITableViewController {
@@ -17,9 +17,11 @@ class CategoriesTableViewController: UITableViewController {
     var categories = []
     
     //
-    var results: RLMResults?
-    var selectedCategories: CategoryModel!
     
+    var selectedCategories: CategoryModel?
+    var realm: Realm!
+    var results : Results<CategoryModel>?
+//    var results = [Results<CategoryModel>]()
     // MARK: - 控制器生命周期
     
     override func viewDidLoad() {
@@ -46,32 +48,32 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) 
-        cell.textLabel?.text = (results![UInt(indexPath.row)] as! CategoryModel).name
+        cell.textLabel?.text = results![indexPath.row].name
         return cell
     }
     
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        selectedCategories = self.results![UInt(indexPath.row)] as! CategoryModel
+        selectedCategories = self.results![indexPath.row]
         return indexPath
     }
     
 
     private func populateDefaultCategories() {
-        self.results = CategoryModel.allObjects() // 1
+        realm = try! Realm()
+        self.results =  realm.objects(CategoryModel)
         if results!.count == 0 { // 2
-            let realm = RLMRealm.defaultRealm() // 3
-            realm.beginWriteTransaction() // 4
+            realm.beginWrite() // 4
             let defaultCategories = Categories.allValues // 5
             for category in defaultCategories {
                 // 6
                 let newCategory = CategoryModel()
                 newCategory.name = category
-                realm.addObject(newCategory)
+                realm.add(newCategory)
             }
-            try! realm.commitWriteTransaction() // 7
-            self.results = CategoryModel.allObjects()
+            try! realm.commitWrite() // 7
+            self.results = realm.objects(CategoryModel)
             //打印数据库的物理位置：
-            print(RLMRealm.defaultRealm().path)
+            print(realm.path)
         }
     }
 }
