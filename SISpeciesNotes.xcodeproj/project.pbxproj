@@ -32,34 +32,31 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1412DA331C7EB6BF0089E00D /* WeiboCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA321C7EB6BF0089E00D /* WeiboCollectionViewController.swift */; };
-		1412DA351C7EC27D0089E00D /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA341C7EC27D0089E00D /* FlowCell.swift */; };
 		1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA431C7F0D9F0089E00D /* CategoryModel.swift */; };
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
-		14DF8B521C8819640058953E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
-		14DF8B531C8819690058953E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
+		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
+		14D52E461CAB812800A0595C /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E441CAB812800A0595C /* FlowCell.swift */; };
+		14D52E471CAB812800A0595C /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E451CAB812800A0595C /* LogCell.swift */; };
+		14D52E4D1CAB818400A0595C /* AddNewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E481CAB818400A0595C /* AddNewEntryController.swift */; };
+		14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E491CAB818400A0595C /* CategoriesTableViewController.swift */; };
+		14D52E4F1CAB818400A0595C /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E4A1CAB818400A0595C /* LogViewController.swift */; };
+		14D52E501CAB818400A0595C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E4B1CAB818400A0595C /* MapViewController.swift */; };
+		14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */; };
+		14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */; };
+		14D52E561CAB81D700A0595C /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */; };
+		14D52E5A1CAB821900A0595C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E581CAB821900A0595C /* Realm.framework */; };
+		14D52E5B1CAB821900A0595C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D52E591CAB821900A0595C /* RealmSwift.framework */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
-		848841AF1C7F58F500929B21 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		848841B11C7F58F600929B21 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		848841B41C85688300929B21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AA1C7F58E700929B21 /* Realm.framework */; };
-		848841B51C85688300929B21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848841AB1C7F58E700929B21 /* RealmSwift.framework */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
-		D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09F1AF078E4001C01AC /* MapViewController.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
 		D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A41AF078E4001C01AC /* Images.xcassets */; };
 		D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A61AF078E4001C01AC /* LaunchScreen.xib */; };
 		D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */; };
-		D849C0BF1AF08942001C01AC /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C0BE1AF08942001C01AC /* MapViewExtension.swift */; };
-		D849C0C21AF089F7001C01AC /* SpeciesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C0C11AF089F7001C01AC /* SpeciesAnnotation.swift */; };
-		D87AE96E1AF1B98C007CC262 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87AE96D1AF1B98C007CC262 /* LogCell.swift */; };
-		D897B1FC1AF24E0900DAD3EB /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897B1FB1AF24E0900DAD3EB /* CategoriesTableViewController.swift */; };
-		D8D8C0E61AF130DD00F750AF /* AddNewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8C0E51AF130DD00F750AF /* AddNewEntryController.swift */; };
-		D8D8C0E81AF1355F00F750AF /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8C0E71AF1355F00F750AF /* LogViewController.swift */; };
 		E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F40A34149E21A67CD352AF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +77,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				848841B11C7F58F600929B21 /* RealmSwift.framework in Embed Frameworks */,
-				848841AF1C7F58F500929B21 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,14 +84,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1412DA321C7EB6BF0089E00D /* WeiboCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboCollectionViewController.swift; sourceTree = "<group>"; };
-		1412DA341C7EC27D0089E00D /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		14D52E421CAB811F00A0595C /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
+		14D52E441CAB812800A0595C /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
+		14D52E451CAB812800A0595C /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		14D52E481CAB818400A0595C /* AddNewEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewEntryController.swift; path = Controller/AddNewEntryController.swift; sourceTree = "<group>"; };
+		14D52E491CAB818400A0595C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewController.swift; path = Controller/CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		14D52E4A1CAB818400A0595C /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogViewController.swift; path = Controller/LogViewController.swift; sourceTree = "<group>"; };
+		14D52E4B1CAB818400A0595C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controller/MapViewController.swift; sourceTree = "<group>"; };
+		14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeiboCollectionViewController.swift; path = Controller/WeiboCollectionViewController.swift; sourceTree = "<group>"; };
+		14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesAnnotation.swift; sourceTree = "<group>"; };
+		14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayAnimationController.swift; sourceTree = "<group>"; };
+		14D52E581CAB821900A0595C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		14D52E591CAB821900A0595C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
@@ -125,26 +130,17 @@
 		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
-		848841AA1C7F58E700929B21 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm0.98.2/Realm.framework; sourceTree = "<group>"; };
-		848841AB1C7F58E700929B21 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm0.98.2/RealmSwift.framework; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D849C09F1AF078E4001C01AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D849C0A21AF078E4001C01AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D849C0A41AF078E4001C01AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D849C0A71AF078E4001C01AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISpeciesNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C0B21AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISpeciesNotesTests.swift; sourceTree = "<group>"; };
-		D849C0BE1AF08942001C01AC /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
-		D849C0C11AF089F7001C01AC /* SpeciesAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeciesAnnotation.swift; path = Annotations/SpeciesAnnotation.swift; sourceTree = "<group>"; };
-		D87AE96D1AF1B98C007CC262 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
-		D897B1FB1AF24E0900DAD3EB /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
-		D8D8C0E51AF130DD00F750AF /* AddNewEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewEntryController.swift; sourceTree = "<group>"; };
-		D8D8C0E71AF1355F00F750AF /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		F006D2C2F402840E923B5FB8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,9 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848841B41C85688300929B21 /* Realm.framework in Frameworks */,
-				848841B51C85688300929B21 /* RealmSwift.framework in Frameworks */,
+				14D52E5A1CAB821900A0595C /* Realm.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
+				14D52E5B1CAB821900A0595C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DF8B531C8819690058953E /* RealmSwift.framework in Frameworks */,
-				14DF8B521C8819640058953E /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +171,7 @@
 				1412DA431C7F0D9F0089E00D /* CategoryModel.swift */,
 				1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */,
 				1479CBB91C965CCF00D26433 /* Album.swift */,
+				14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				1479CBBE1C96600300D26433 /* AlbumView.swift */,
+				14D52E421CAB811F00A0595C /* MapViewExtension.swift */,
+				14D52E441CAB812800A0595C /* FlowCell.swift */,
+				14D52E451CAB812800A0595C /* LogCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -195,6 +193,24 @@
 				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		14D52E541CAB81D700A0595C /* animatedTransition */ = {
+			isa = PBXGroup;
+			children = (
+				14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */,
+			);
+			path = animatedTransition;
+			sourceTree = "<group>";
+		};
+		14D52E571CAB821900A0595C /* Realm0.98.2 */ = {
+			isa = PBXGroup;
+			children = (
+				14D52E581CAB821900A0595C /* Realm.framework */,
+				14D52E591CAB821900A0595C /* RealmSwift.framework */,
+			);
+			name = Realm0.98.2;
+			path = Frameworks/Realm0.98.2;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -294,15 +310,6 @@
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
 		};
-		848841A91C7F58D100929B21 /* Realm0.98.2 */ = {
-			isa = PBXGroup;
-			children = (
-				848841AA1C7F58E700929B21 /* Realm.framework */,
-				848841AB1C7F58E700929B21 /* RealmSwift.framework */,
-			);
-			name = Realm0.98.2;
-			sourceTree = "<group>";
-		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
@@ -333,10 +340,7 @@
 				1479CBC21C9668DD00D26433 /* API */,
 				1412DA421C7F0D9F0089E00D /* Model */,
 				1479CBBD1C965FCF00D26433 /* view */,
-				D897B1EE1AF1CFB200DAD3EB /* Cell */,
 				D897B1ED1AF1CFA300DAD3EB /* Controller */,
-				D849C0C01AF089C7001C01AC /* Annotations */,
-				D849C0BD1AF08916001C01AC /* Extension */,
 				D849C09B1AF078E4001C01AC /* Supporting Files */,
 			);
 			path = SISpeciesNotes;
@@ -370,41 +374,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D849C0BD1AF08916001C01AC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D849C0BE1AF08942001C01AC /* MapViewExtension.swift */,
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
-		D849C0C01AF089C7001C01AC /* Annotations */ = {
-			isa = PBXGroup;
-			children = (
-				D849C0C11AF089F7001C01AC /* SpeciesAnnotation.swift */,
-			);
-			name = Annotations;
-			sourceTree = "<group>";
-		};
 		D897B1ED1AF1CFA300DAD3EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D8D8C0E71AF1355F00F750AF /* LogViewController.swift */,
-				D849C09F1AF078E4001C01AC /* MapViewController.swift */,
-				D8D8C0E51AF130DD00F750AF /* AddNewEntryController.swift */,
-				D897B1FB1AF24E0900DAD3EB /* CategoriesTableViewController.swift */,
-				1412DA321C7EB6BF0089E00D /* WeiboCollectionViewController.swift */,
+				14D52E481CAB818400A0595C /* AddNewEntryController.swift */,
+				14D52E491CAB818400A0595C /* CategoriesTableViewController.swift */,
+				14D52E4A1CAB818400A0595C /* LogViewController.swift */,
+				14D52E4B1CAB818400A0595C /* MapViewController.swift */,
+				14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */,
+				14D52E541CAB81D700A0595C /* animatedTransition */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		D897B1EE1AF1CFB200DAD3EB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				D87AE96D1AF1B98C007CC262 /* LogCell.swift */,
-				1412DA341C7EC27D0089E00D /* FlowCell.swift */,
-			);
-			name = Cell;
 			sourceTree = "<group>";
 		};
 		D8D76ABE1C0FF1670041D0ED /* Resources */ = {
@@ -420,7 +400,7 @@
 		D8D76ABF1C1021AC0041D0ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				848841A91C7F58D100929B21 /* Realm0.98.2 */,
+				14D52E571CAB821900A0595C /* Realm0.98.2 */,
 				20F40A34149E21A67CD352AF /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -641,22 +621,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D8C0E61AF130DD00F750AF /* AddNewEntryController.swift in Sources */,
 				1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */,
+				14D52E4D1CAB818400A0595C /* AddNewEntryController.swift in Sources */,
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,
+				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
+				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
-				D849C0A01AF078E4001C01AC /* MapViewController.swift in Sources */,
+				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
 				14A3C68E1C83EB000065D226 /* readme.md in Sources */,
-				1412DA351C7EC27D0089E00D /* FlowCell.swift in Sources */,
 				1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */,
-				D849C0C21AF089F7001C01AC /* SpeciesAnnotation.swift in Sources */,
 				847503981C59C70600E804EE /* Bicycle.swift in Sources */,
-				D897B1FC1AF24E0900DAD3EB /* CategoriesTableViewController.swift in Sources */,
-				D8D8C0E81AF1355F00F750AF /* LogViewController.swift in Sources */,
-				D87AE96E1AF1B98C007CC262 /* LogCell.swift in Sources */,
-				D849C0BF1AF08942001C01AC /* MapViewExtension.swift in Sources */,
+				14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */,
+				14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */,
+				14D52E471CAB812800A0595C /* LogCell.swift in Sources */,
+				14D52E4F1CAB818400A0595C /* LogViewController.swift in Sources */,
+				14D52E561CAB81D700A0595C /* OverlayAnimationController.swift in Sources */,
+				14D52E461CAB812800A0595C /* FlowCell.swift in Sources */,
 				D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */,
-				1412DA331C7EB6BF0089E00D /* WeiboCollectionViewController.swift in Sources */,
 				1479CBBA1C965CCF00D26433 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +804,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Realm0.98.2",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.2",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -844,6 +826,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Realm0.98.2",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm0.98.2",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
