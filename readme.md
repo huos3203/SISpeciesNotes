@@ -6,7 +6,7 @@
 [Alcatraz安装](http://alcatraz.io)
 
 
-####[Xcode 7智能测试化工具XCTestCase学习](http://www.jianshu.com/p/f4ba532caed0)
+#### [Xcode 7智能测试化工具XCTestCase学习](http://www.jianshu.com/p/f4ba532caed0)
 
 
 

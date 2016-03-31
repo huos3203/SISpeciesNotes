@@ -32,6 +32,11 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     // MARK: - 控制器生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if specieName != nil
+        {
+            fetchSpecieByName()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,27 +49,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.performSegueWithIdentifier("Categories", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
-        if(segue.identifier == "Coververtical")
-        {
-            //button按钮
-            let tovc = segue.destinationViewController
-            tovc.transitioningDelegate = presentTransitionDelegate
-            tovc.modalPresentationStyle = .Custom
-            super.prepareForSegue(segue, sender: sender)
-        }
-        else
-        {
-            //列别输入框点击事件
-            let toVC = segue.destinationViewController as! CategoriesTableViewController
-            toVC.transitioningDelegate = presentTransitionDelegate
-            toVC.modalPresentationStyle = .Custom
-//            super.prepareForSegue(segue, sender: sender)
-        }
-        
-    }
+ 
     
     
     // MARK: - 按钮动作
@@ -80,7 +65,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        //
+        //保存数据，并返回上一页面
         if(identifier == "UnwindToMap")
         {
             validateFields()
@@ -89,6 +74,21 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         return true
     }
+    
+//    转场动画切入点
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "Categories")
+        {
+            //列别输入框点击事件
+            let toVC = segue.destinationViewController as! CategoriesTableViewController
+            toVC.transitioningDelegate = presentTransitionDelegate
+            toVC.modalPresentationStyle = .Custom
+        }
+        
+    }
+    
+    
     
     //MARK: - realm 持久化
     /**
@@ -116,10 +116,19 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     //MARK: - realm查询
-    func fetchSpecieByName(specieName:String)
+    func fetchSpecieByName()
     {
-        //        
-    
+        //编辑动物信息时，首先显示动物原有信息
+        let str = "SELF MATCHES " + specieName!
+        let predicate = NSPredicate(format: str)
+//        try! Realm().objects(SpeciesModel).filter(predicate)
+//        
+//        let predicate = NSPredicate(format:"name MATCHES %@", specieName!)
+        let results = try! Realm().objects(SpeciesModel).filter(predicate)
+        species  = results[0]
+        nameTextField.text = species.name
+        categoryTextField.text = species.category?.name
+        descriptionTextView.text = species.description
     }
     
     

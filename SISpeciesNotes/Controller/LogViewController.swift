@@ -85,7 +85,11 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     // MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Edit" {
+        
+        
+        if segue.identifier == "Edit"  //前往编辑界面
+        {
+            
             let controller = segue.destinationViewController as! AddNewEntryController
             
             let indexPath = tableView.indexPathForSelectedRow
@@ -133,9 +137,6 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     //MARK: 筛选realm中已存在的物种
     func filterSpecies(searchText:String)
     {
-//        let realm = RLMRealm.defaultRealm()
-//        realm.beginWriteTransaction()
-//        realm.objcts(SpeciesModel)
         let predicate = NSPredicate(format: "name BEGINSWITH %@",  searchText)
         searchResults = try! Realm().objects(SpeciesModel).filter(predicate)
     }
