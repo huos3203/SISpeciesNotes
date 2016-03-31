@@ -38,3 +38,18 @@ MVVM  :三大元素，各司其职，减少依赖,视图层不依赖任何模型
 ####更新xcode7.3，swift版本为2.2
 问题1：`Module file was created by an older version of compiler`
 解决办法：下载realm最新版本0.98.6,更新Frameworks引用设置支持swift2.2
+
+####动画自动消失的问题 
+1. 实现转场协议UIViewControllerTransitioningDelegate 和动画控制器UIViewControllerAnimatedTransitioning
+2. 在PresentingViewController中添加如下代码：
+必须是全局变量：
+let presentTransitionDelegate = SDEModalTransitionDelegate()
+跳转时：toVC.transitioningDelegate = presentTransitionDelegate
+1. 背景色为黑色
+因为非.Custom,Presenting被直接移除，解决办法：toVC.modalPresentationStyle = .Custom
+
+```
+let isCancelled = transitionContext.transitionWasCancelled()
+//取消时出问题
+transitionContext.completeTransition(!isCancelled)
+```

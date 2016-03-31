@@ -41,11 +41,11 @@ class OverlayAnimationController: NSObject,UIViewControllerAnimatedTransitioning
             
             if #available(iOS 8, *){
                 
-                UIView.animateWithDuration(duration, delay: 0, options: .OverrideInheritedDuration, animations: { () -> Void in
+                UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
                     toView.bounds = CGRect(x: 0, y: 0, width: toViewWidth, height: toViewHeight)
                     }, completion: { _ in
                         let isCancelled = transitionContext.transitionWasCancelled()
-                        transitionContext.completeTransition(isCancelled)
+                        transitionContext.completeTransition(!isCancelled)
                 })
                 
             }
@@ -54,11 +54,11 @@ class OverlayAnimationController: NSObject,UIViewControllerAnimatedTransitioning
         if fromVC.isBeingDismissed()
         {
             let fromViewHeight = fromView.frame.height
-            UIView.animateWithDuration(duration, delay: 0, options: .OverrideInheritedDuration, animations: { () -> Void in
+            UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
                 fromView.bounds = CGRect(x: 0, y: 0, width: 1, height: fromViewHeight)
                 }, completion: {_ in
                     let isCancelled = transitionContext.transitionWasCancelled()
-                    transitionContext.completeTransition(isCancelled)
+                    transitionContext.completeTransition(!isCancelled)
             })
             
         }

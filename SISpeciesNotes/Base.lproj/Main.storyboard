@@ -281,10 +281,18 @@
                                     <outlet property="delegate" destination="vq6-CS-hSt" id="Upx-dk-BLu"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-hB-vLh">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="zVl-qO-6q9" kind="presentation" identifier="Coververtical" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="ha3-35-IoQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gwk-tJ-FCz" firstAttribute="top" secondItem="nlC-fT-leY" secondAttribute="bottom" constant="14" id="0O8-Sx-l9M"/>
+                            <constraint firstItem="PrV-hB-vLh" firstAttribute="centerY" secondItem="cgt-OV-Dqc" secondAttribute="centerY" id="10s-LC-p8h"/>
                             <constraint firstItem="nlC-fT-leY" firstAttribute="trailing" secondItem="cgt-OV-Dqc" secondAttribute="trailingMargin" id="4G3-ul-mTr"/>
                             <constraint firstItem="nlC-fT-leY" firstAttribute="top" secondItem="fwh-5m-M99" secondAttribute="bottom" constant="18" id="Ofj-CL-mmL"/>
                             <constraint firstItem="Gwk-tJ-FCz" firstAttribute="leading" secondItem="cgt-OV-Dqc" secondAttribute="leadingMargin" id="PrN-P1-X7i"/>
@@ -293,6 +301,7 @@
                             <constraint firstItem="fwh-5m-M99" firstAttribute="leading" secondItem="cgt-OV-Dqc" secondAttribute="leadingMargin" id="kik-OQ-Wip"/>
                             <constraint firstItem="Gwk-tJ-FCz" firstAttribute="trailing" secondItem="cgt-OV-Dqc" secondAttribute="trailingMargin" id="ooi-xM-ppJ"/>
                             <constraint firstItem="fwh-5m-M99" firstAttribute="trailing" secondItem="cgt-OV-Dqc" secondAttribute="trailingMargin" id="qpt-mF-Eis"/>
+                            <constraint firstItem="PrV-hB-vLh" firstAttribute="centerX" secondItem="cgt-OV-Dqc" secondAttribute="centerX" id="zbr-pF-C4j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LUA-Fc-sz3">
@@ -348,6 +357,24 @@
                 <exit id="tEm-fe-JSY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1733" y="315"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BRT-Gh-TXN">
+            <objects>
+                <viewController id="zVl-qO-6q9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Gi-Dr-2dK"/>
+                        <viewControllerLayoutGuide type="bottom" id="N0m-WO-BEI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="acg-x4-g8f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.76862745099999996" green="0.81176470590000005" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lC8-G7-f96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="1127"/>
         </scene>
     </scenes>
     <resources>
