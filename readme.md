@@ -56,11 +56,13 @@ transitionContext.completeTransition(!isCancelled)
 
 
 ####版本管理：
-从版本库中移除realm包，并加入.gitignore文件中，让git不在跟踪。
+1. 从版本库中移除realm包，并加入.gitignore文件中，让git不在跟踪。
 只在本地工作区中存在。
 ```
 git rm -r --cached Frameworks/
 ```
+2. 切换远程仓库路径
+`git branch -u origin/master`或`git branch -u gitosc/master`
 
 ####swift命令
 swift -v
