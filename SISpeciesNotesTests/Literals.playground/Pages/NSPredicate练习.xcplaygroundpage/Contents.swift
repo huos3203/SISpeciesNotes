@@ -75,7 +75,7 @@ let albertsPredicate = NSPredicate(format: "lastName contains[cd] %@", "Alberts"
 (people as NSArray).filteredArrayUsingPredicate(albertsPredicate)
 
 //like ?,*通配符
-let tpPredicate = NSPredicate(format: "lastName like *", "")
+let tpPredicate = NSPredicate(format: "lastName like '*erts'")
 
 
 
@@ -85,7 +85,9 @@ let tpPredicate = NSPredicate(format: "lastName like *", "")
 //输出结果
 
 
-
+let predicatea = NSPredicate(format:"SELF IN %@", ["Stig", "Shaffiq", "Chris"])
+let result = predicatea.evaluateWithObject("Shaffiq")
+result
 
 
 

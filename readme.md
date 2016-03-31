@@ -62,6 +62,7 @@ transitionContext.completeTransition(!isCancelled)
 git rm -r --cached Frameworks/
 ```
 2. 切换远程仓库路径
+查看远程仓库状态：git remote show origin
 `git branch -u origin/master`或`git branch -u gitosc/master`
 
 ####swift命令
