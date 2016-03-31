@@ -59,5 +59,5 @@ transitionContext.completeTransition(!isCancelled)
 从版本库中移除realm包，并加入.gitignore文件中，让git不在跟踪。
 只在本地工作区中存在。
 ```
-git rm --cached Frameworks/
+git rm -r --cached Frameworks/
 ```
