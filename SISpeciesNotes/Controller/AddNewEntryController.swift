@@ -45,8 +45,11 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
         if(segue.identifier == "Coververtical")
         {
+            //button按钮
             let tovc = segue.destinationViewController
             tovc.transitioningDelegate = presentTransitionDelegate
             tovc.modalPresentationStyle = .Custom
@@ -54,10 +57,11 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
         else
         {
+            //列别输入框点击事件
             let toVC = segue.destinationViewController as! CategoriesTableViewController
             toVC.transitioningDelegate = presentTransitionDelegate
             toVC.modalPresentationStyle = .Custom
-            //        super.prepareForSegue(segue, sender: sender)
+//            super.prepareForSegue(segue, sender: sender)
         }
         
     }

@@ -61,3 +61,10 @@ transitionContext.completeTransition(!isCancelled)
 ```
 git rm -r --cached Frameworks/
 ```
+
+####swift命令
+swift -v
+swift 
+>:quit 退出
+>:help 帮助
+> let v = 3 代码行
