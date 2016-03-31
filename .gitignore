@@ -18,6 +18,7 @@ build/
 DerivedData
 SISpeciesNotes.dot
 *.xcbkptlist
+Frameworks/   
 # NB: NIB/XIB files still exist even on Storyboard projects, so we want this
 *~.nib
 *.swp
