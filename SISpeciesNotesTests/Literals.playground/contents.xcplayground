@@ -11,5 +11,6 @@
         <page name='枚举类型'/>
         <page name='结构体'/>
         <page name='NSPredicate练习'/>
+        <page name='test'/>
     </pages>
 </playground>

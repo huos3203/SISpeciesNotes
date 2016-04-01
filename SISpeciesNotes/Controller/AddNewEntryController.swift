@@ -119,13 +119,10 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     func fetchSpecieByName()
     {
         //编辑动物信息时，首先显示动物原有信息
-//        let str = "SELF MATCHES " + specieName!
-        let regex = "(^[a-zA-Z0-9_]{4,16}$)"
-        let predicate = NSPredicate(format: "SELF MATCHES %@",regex)
-//        try! Realm().objects(SpeciesModel).filter(predicate)
-//        
-//        let predicate = NSPredicate(format:"name MATCHES %@", specieName!)
-        let results = try! Realm().objects(SpeciesModel).filter(predicate)
+        let predicate = NSPredicate(format: "SELF.name = %@",specieName!)
+        let results1 = try! Realm().objects(SpeciesModel)
+        print("条数：\(results1.count)")
+        let results = results1.filter(predicate)
         species  = results[0]
         nameTextField.text = species.name
         categoryTextField.text = species.category?.name

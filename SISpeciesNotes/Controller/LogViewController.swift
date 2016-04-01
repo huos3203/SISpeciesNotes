@@ -78,7 +78,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         if editingStyle == .Delete {
             
             //TODO: 删除动物记录
-            
+            delSpecieByName(species![indexPath.row] as SpeciesModel)
+//            deleteRowsAtIndexPaths
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
         }
     }
     
@@ -141,4 +143,12 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         searchResults = try! Realm().objects(SpeciesModel).filter(predicate)
     }
     
+    func delSpecieByName(specie:SpeciesModel)
+    {
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.delete(specie)
+        try! realm.commitWrite()
+        
+    }
 }

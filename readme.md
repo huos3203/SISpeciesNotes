@@ -71,3 +71,9 @@ swift
 >:quit 退出
 >:help 帮助
 > let v = 3 代码行
+
+
+####问题
+realm().objects(model).filter(NSPredicate(format:""))
+不支持 matches 关键字
+在swift中可以正常使用：self代表数组中存储的对象，用于引出对象的属性名字来做匹配
