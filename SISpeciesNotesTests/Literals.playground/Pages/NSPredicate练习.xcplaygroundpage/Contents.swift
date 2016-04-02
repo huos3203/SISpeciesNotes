@@ -30,7 +30,7 @@ class Person: NSObject {
     }
 }
 
-//对象数组
+//数组对象
 var people = [Person]()
 
 for (index,value) in firstNames.enumerate()
@@ -89,6 +89,16 @@ let predicatea = NSPredicate(format:"SELF IN %@", ["Stig", "Shaffiq", "Chris"])
 let result = predicatea.evaluateWithObject("Shaffiq")
 result
 
+
+let attributeValue = "joys"
+let attributeValue1 = "Toms"
+//如果使用%@，会出现：The predicate format string in this case evaluates to "firstName" like "Adam".
+let predicate = NSPredicate(format: "%K like %@", attributeValue1,attributeValue)
+
+
+//: MATCHES正则使用
+let matchesPredicate = NSPredicate(format: "self.firstname matches %@", "*.mith")
+let matchesResult = (people as NSArray).filteredArrayUsingPredicate(matchesPredicate)
 
 
 

@@ -51,6 +51,7 @@
                                         <segment title="记录时间"/>
                                     </segments>
                                     <connections>
+                                        <action selector="ibaSegmentdControlAction:" destination="UbG-hN-T6D" eventType="valueChanged" id="PkY-hD-9zw"/>
                                         <action selector="scopeChanged:" destination="UbG-hN-T6D" eventType="valueChanged" id="Z9F-LI-sFk"/>
                                     </connections>
                                 </segmentedControl>
@@ -353,6 +354,6 @@
         <image name="LocationIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i9x-87-BKX"/>
+        <segue reference="xcE-oF-fwJ"/>
     </inferredMetricsTieBreakers>
 </document>

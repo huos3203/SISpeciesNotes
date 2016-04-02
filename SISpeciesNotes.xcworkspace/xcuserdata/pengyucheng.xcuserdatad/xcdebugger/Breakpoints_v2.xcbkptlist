@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISpeciesNotes/Controller/LogViewController.swift"
-            timestampString = "481111711.961287"
+            filePath = "SISpeciesNotes/Controller/AddNewEntryController.swift"
+            timestampString = "481199843.123712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "filterSpecies(_:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "fetchSpecieByName()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -72,6 +72,7 @@ swift
 >:help 帮助
 > let v = 3 代码行
 
+
 终端执行swiftc命令http://www.tuicool.com/articles/UFbyaqy
 已过时：swiftc -o hello.out helloworld.swift  
 替换为：swiftc helloworld.swift
@@ -84,3 +85,12 @@ xcodebuild -showsdks
 xcode-select -print-path
 4. 查询可执行的shell命令路径
 xcrun -find xcodebuild -find
+
+####问题
+realm().objects(model).filter(NSPredicate(format:""))
+不支持 matches 关键字
+在swift中可以正常使用：self代表数组中存储的对象，用于引出对象的属性名字来做匹配
+
+####问题：初始化CLLocationCoordinate2D
+[我如何才能转换 JSON 与 CLLocationCoordinate2D 在工作Swift](http://www.itstrike.cn/Question/dda0df15-a30d-4c57-ba28-54cff8f6dd5e.html)
+[[swift]将 CLLocationCoordinate2D 转换为一个字符串，它可以存储](http://www.itstrike.cn/Question/3937d966-19d5-4b00-be5b-b5fe4e422d6c.html)

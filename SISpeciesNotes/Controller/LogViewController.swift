@@ -17,7 +17,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     // MARK: Properties
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+
     /// 物种
     var species:Results<SpeciesModel>?
     /// 搜索结果
@@ -43,9 +43,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         let searchString = searchController.searchBar.text
         
         //过滤species
-//        searchResults = species.
         filterSpecies(searchString!)
-        
         let searchResultController = searchController.searchResultsController as! UITableViewController
         searchResultController.tableView.reloadData()
     }
@@ -66,7 +64,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
-        cell.textLabel?.text = (species![indexPath.row]).name
+        cell.titleLabel?.text = (species![indexPath.row]).name
+        cell.subtitleLabel?.text = (species![indexPath.row].speciesDescription)
+        cell.distanceLabel?.text = "\(species![indexPath.row].latitude)"
         return cell
     }
     
@@ -78,7 +78,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         if editingStyle == .Delete {
             
             //TODO: 删除动物记录
-            
+            delSpecieByName(species![indexPath.row] as SpeciesModel)
+            //添加删除动画
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
         }
     }
     
@@ -93,7 +95,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
             let controller = segue.destinationViewController as! AddNewEntryController
             
             let indexPath = tableView.indexPathForSelectedRow
-//            获取分类对象
+            // 获取分类对象
             let model:SpeciesModel? = species![indexPath!.row]
             controller.specieName = model!.name
             
@@ -105,7 +107,8 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     // MARK: - Actions
     
-    @IBAction func scopeChanged(sender: AnyObject) {
+    @IBAction func scopeChanged(sender: AnyObject)
+    {
         
     }
     
@@ -139,6 +142,38 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     {
         let predicate = NSPredicate(format: "name BEGINSWITH %@",  searchText)
         searchResults = try! Realm().objects(SpeciesModel).filter(predicate)
+    }
+   
+    //侧滑删除动物信息
+    func delSpecieByName(specie:SpeciesModel)
+    {
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.delete(specie)
+        try! realm.commitWrite()
+        
+    }
+    
+   //MARK: 切换便签项改变排列顺序
+    @IBAction func ibaSegmentdControlAction(sender: UISegmentedControl)
+    {
+        switch sender.selectedSegmentIndex
+        {
+            case 0:
+                self.species = self.species!.sorted("name", ascending: true)
+                self.tableView.reloadData()
+            break
+            case 1:
+                self.species = self.species!.sorted("created", ascending: true)
+                self.tableView.reloadData()
+            break
+        case 2:
+            self.species = self.species!.sorted("longitude", ascending: true)
+            self.tableView.reloadData()
+            break
+        default:
+            print("失败")
+        }
     }
     
 }

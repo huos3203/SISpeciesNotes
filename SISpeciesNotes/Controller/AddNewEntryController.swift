@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import RealmSwift
 
 /// 添加物种页面，编辑界面
@@ -91,21 +92,20 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     
     //MARK: - realm 持久化
-    /**
-        ```
-         let realm = RLMRealm.defaultRealm()
-         realm.beginWriteTransaction()
-         realm.addObject(species)
-         try! realm.commitWriteTransaction()
-        ```
-     */
+   
     func addNewSpecies()
     {
         species = SpeciesModel()
-        species.name = nameTextField.text!
-        species.speciesDescription = descriptionTextView.text
-        species.latitude = selectedAnnotation.coordinate.latitude
-        species.longitude = selectedAnnotation.coordinate.longitude
+        guard  let name = nameTextField.text, let speciesDescription = descriptionTextView.text else
+        {
+            return
+        }
+        species.name = name
+        species.speciesDescription = speciesDescription
+        let latitude = selectedAnnotation.coordinate.latitude
+        let longitude = selectedAnnotation.coordinate.longitude
+        species.latitude = latitude
+        species.longitude = longitude
         species.created = NSDate()
         species.category = selectedCategory
         
@@ -118,18 +118,18 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     //MARK: - realm查询
     func fetchSpecieByName()
     {
-        //编辑动物信息时，首先显示动物原有信息
-//        let str = "SELF MATCHES " + specieName!
-        let regex = "(^[a-zA-Z0-9_]{4,16}$)"
-        let predicate = NSPredicate(format: "SELF MATCHES %@",regex)
-//        try! Realm().objects(SpeciesModel).filter(predicate)
-//        
-//        let predicate = NSPredicate(format:"name MATCHES %@", specieName!)
-        let results = try! Realm().objects(SpeciesModel).filter(predicate)
+        //跳转编辑页面,编辑动物信息时，先显示本地已经持久化的动物信息
+        let predicate = NSPredicate(format: "SELF.name = %@",specieName!)
+        let results1 = try! Realm().objects(SpeciesModel)
+        let results = results1.filter(predicate)
         species  = results[0]
         nameTextField.text = species.name
         categoryTextField.text = species.category?.name
         descriptionTextView.text = species.description
+        let lat = species.latitude
+        let lon = species.longitude
+//        selectedAnnotation.coordinate = CLLocationCoordinate2DMake(lat, lon)
+        selectedAnnotation.coordinate = CLLocationCoordinate2D(latitude: Double(lat), longitude: Double(lon))
     }
     
     
