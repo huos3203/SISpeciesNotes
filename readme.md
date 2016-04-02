@@ -71,3 +71,16 @@ swift
 >:quit 退出
 >:help 帮助
 > let v = 3 代码行
+
+终端执行swiftc命令http://www.tuicool.com/articles/UFbyaqy
+已过时：swiftc -o hello.out helloworld.swift  
+替换为：swiftc helloworld.swift
+####其他命令
+1. 显示Xcode的版本
+xcodebuild -version
+2. 显示现有的sdk
+xcodebuild -showsdks
+3. 获取Xcode的内部Developer目录的路径
+xcode-select -print-path
+4. 查询可执行的shell命令路径
+xcrun -find xcodebuild -find
