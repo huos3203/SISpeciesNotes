@@ -94,3 +94,27 @@ realm().objects(model).filter(NSPredicate(format:""))
 ####问题：初始化CLLocationCoordinate2D
 [我如何才能转换 JSON 与 CLLocationCoordinate2D 在工作Swift](http://www.itstrike.cn/Question/dda0df15-a30d-4c57-ba28-54cff8f6dd5e.html)
 [[swift]将 CLLocationCoordinate2D 转换为一个字符串，它可以存储](http://www.itstrike.cn/Question/3937d966-19d5-4b00-be5b-b5fe4e422d6c.html)
+
+
+####更新realm方法的使用
+1. 必要条件：
+创建主键：
+dynamic var id = 0
+override static func primaryKey() -> String? {
+return "id"
+}
+
+更新方法：realm.add(model实例,update:true)
+2. 对象的自更新特性:已验证
+Object 实例是底层数据的动态表现，其会进行自动更新，这意味着对象不需要进行刷新。修改某个对象的属性会立刻影响到其他所有指向同一个对象的实例。
+如果您的 UI 代码是基于某个特定的 Realm 对象来现实的，那么在触发 UI 重绘之前，您不用担心数据的刷新或者重新检索等问题。
+2.1 通知(Notification)自更新
+通过调用 addNotificationBlock 方法进行通知注册后，无论哪个 Realm, Results 或者 List 对象更新，都可以得到通知。
+notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+self.tableView.reloadData()
+}
+2.1 键值编码
+1. persons.first?.setValue(true, forKeyPath: "isFirst")
+    // 将每个人的 planet 属性设置为“地球”
+    persons.setValue("地球", forKeyPath: "planet")
+2. 响应式编程[ReactKit](https://github.com/ReactKit)[Reactive​Cocoa](http://nshipster.cn/reactivecocoa/)

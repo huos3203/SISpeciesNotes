@@ -25,14 +25,27 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     var searchController: UISearchController!
     
+    var realm:Realm!
+    var  notificationToken:NotificationToken?
+    
     // MARK: 控制器生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initSearchController()  // 初始化搜索控制器
         definesPresentationContext = true
+        
+        
+        realm = try! Realm()
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            self.tableView.reloadData()
+        }
     }
     
+//    override func viewDidAppear(animated: Bool) {
+//        self.tableView.reloadData()
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -65,7 +78,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
         cell.titleLabel?.text = (species![indexPath.row]).name
-        cell.subtitleLabel?.text = (species![indexPath.row].speciesDescription)
+        cell.subtitleLabel?.text = (species![indexPath.row].category?.name)
         cell.distanceLabel?.text = "\(species![indexPath.row].latitude)"
         return cell
     }
@@ -128,6 +141,8 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         searchController.searchBar.delegate = self
         searchController.searchBar.barTintColor = UIColor(red: 0, green: 104.0/255.0, blue: 55.0/255.0, alpha: 1.0)
         tableView.tableHeaderView?.addSubview(searchController.searchBar)
+        
+//        update
         fetchSpecies()
     }
     

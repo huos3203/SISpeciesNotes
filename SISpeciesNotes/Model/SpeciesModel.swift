@@ -8,7 +8,7 @@
 
 import Foundation
 import RealmSwift
-
+import Realm
 /// 对应realm数据库物种信息表的模型
 /// 对于 Realm 中的一些特定的数据类型，比如说字符串，必须要初始化
 
@@ -19,6 +19,7 @@ class SpeciesModel: Object {
 //  override static func ignoredProperties() -> [String] {
 //    return []
 //  }
+    
     
     ///物种名称
     dynamic var name = ""
@@ -42,4 +43,18 @@ class SpeciesModel: Object {
         let area = triangle.base * height / 2
     */
     dynamic var category:CategoryModel? = CategoryModel()
+    
+//    索引
+    override static func indexedProperties() -> [String] {
+        return ["name"]
+    }
+    
+//    主键
+    dynamic var specieId = 0
+    override static func primaryKey() -> String?
+    {
+        return "specieId"
+    }
+    
+    
 }

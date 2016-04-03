@@ -38,6 +38,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         {
             fetchSpecieByName()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,7 +56,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // MARK: - 按钮动作
     /**
-    点击某个类别名称单元格，将内容返回并传递给一个试图控制器中
+     点击某个类别名称单元格，将内容返回并传递给一个试图控制器中
     
     - parameter segue: nil
     */
@@ -69,11 +70,13 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         //保存数据，并返回上一页面
         if(identifier == "UnwindToMap")
         {
-            validateFields()
-            addNewSpecies()
+            if validateFields()
+            {
+                addNewSpecies()
+            }
         }
-        
-        return true
+        self.navigationController?.popViewControllerAnimated(true)
+        return false
     }
     
 //    转场动画切入点
@@ -111,7 +114,8 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         let realm = try! Realm()
         realm.beginWrite()
-        realm.add(species)
+//        更新已存在信息
+        realm.add(species ,update: true)
         try! realm.commitWrite()
     }
     
@@ -124,19 +128,31 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         let results = results1.filter(predicate)
         species  = results[0]
         nameTextField.text = species.name
-        categoryTextField.text = species.category?.name
+        if (species.category != nil)
+        {
+            selectedCategory = species.category
+            categoryTextField.text = selectedCategory.name
+        }
+        else
+        {
+            selectedCategory = CategoryModel()
+            selectedCategory.name = "未分类"
+        }
+        
+        
         descriptionTextView.text = species.description
         let lat = species.latitude
         let lon = species.longitude
-//        selectedAnnotation.coordinate = CLLocationCoordinate2DMake(lat, lon)
-        selectedAnnotation.coordinate = CLLocationCoordinate2D(latitude: Double(lat), longitude: Double(lon))
+        let cll2D = CLLocationCoordinate2D(latitude: Double(lat), longitude: Double(lon))
+
+        selectedAnnotation = SpeciesAnnotation(coordinate:cll2D,title: specieName!,sub: Categories(rawValue:selectedCategory!.name)!)
     }
     
     
     // MARK: - 文本栏输入验证
     private func validateFields() -> Bool
     {
-        if nameTextField.text!.isEmpty || descriptionTextView.text.isEmpty || selectedCategory == nil {
+        if nameTextField.text!.isEmpty || descriptionTextView.text.isEmpty || categoryTextField.text!.isEmpty {
             let alertController = UIAlertController(title: "验证错误", message: "所有的文本栏都不能为空", preferredStyle: .Alert)
             let alertAction = UIAlertAction(title: "确认", style: .Destructive, handler: {
                 (alert: UIAlertAction) -> Void in

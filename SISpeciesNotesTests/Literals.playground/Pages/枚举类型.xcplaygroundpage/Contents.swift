@@ -2,7 +2,20 @@
 
 import Foundation
 
-var str = "Hello, playground"
+//: 1. 枚举不能随意地创建实例，只能使用定义枚举时定义好的实例。
+//: 2. 声明枚举变量：var day: weekday    初始化变量：day = weekday.sunday
+//: 3. 原始值类型是Int时：swift可以根据已经指定的原始值的枚举来推断它前，后所有枚举的枚举值。
+//:    原始值类型是String等其他类型：将无法推断，必须为每个枚举都指定原始值。
+//: 枚举提供构造器和属性：
+//    1. init?(rawValue:) 可失败构造器：作用，根据原始值获取枚举值，该构造器返回的是包含枚举值的可选类型。需要使用!进行强制解析
+//        var mySeason = Season.(rawValue:"s")
+//        if mySeason != nil
+//            {
+//                switch( mySeason!) //需要使用!进行强制解析
+//                {
+//                }
+//            }
+//    2. rawValue 属性: 用于枚举实例来调用，获取指定枚举值的原始值。
 
 //: 枚举声明
 enum CompassPoint:String{
