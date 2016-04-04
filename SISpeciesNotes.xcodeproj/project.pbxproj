@@ -140,6 +140,7 @@
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
+		84FF65981CB2689E00902FB5 /* 面向对象.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "面向对象.playground"; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +322,15 @@
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
 		};
+		84FF65961CB2682B00902FB5 /* swift基础语法 */ = {
+			isa = PBXGroup;
+			children = (
+				84FB4C111C4E1E35008D512A /* Literals.playground */,
+				84FF65981CB2689E00902FB5 /* 面向对象.playground */,
+			);
+			name = "swift基础语法";
+			sourceTree = "<group>";
+		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
@@ -370,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				847503951C59C3F300E804EE /* SwiftDocumentation */,
-				84FB4C111C4E1E35008D512A /* Literals.playground */,
+				84FF65961CB2682B00902FB5 /* swift基础语法 */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 			);
