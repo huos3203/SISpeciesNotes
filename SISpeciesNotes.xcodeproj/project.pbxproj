@@ -38,6 +38,8 @@
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
+		14B07EE51CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B07EE41CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m */; };
+		14B07EE71CB3BB7800A9B1F9 /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07EE61CB3BB7800A9B1F9 /* ShadeAnViewController.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
 		14D52E461CAB812800A0595C /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E441CAB812800A0595C /* FlowCell.swift */; };
 		14D52E471CAB812800A0595C /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E451CAB812800A0595C /* LogCell.swift */; };
@@ -93,10 +95,15 @@
 /* Begin PBXFileReference section */
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
+		144A2B4A1CB370A50038435E /* 实战.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "实战.playground"; sourceTree = "<group>"; };
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		14B07EE21CB3BB2A00A9B1F9 /* SISpeciesNotes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotes-Bridging-Header.h"; sourceTree = "<group>"; };
+		14B07EE31CB3BB2B00A9B1F9 /* ShadeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadeAnimationViewController.h; sourceTree = "<group>"; };
+		14B07EE41CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadeAnimationViewController.m; sourceTree = "<group>"; };
+		14B07EE61CB3BB7800A9B1F9 /* ShadeAnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadeAnViewController.swift; sourceTree = "<group>"; };
 		14D52E421CAB811F00A0595C /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		14D52E441CAB812800A0595C /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
 		14D52E451CAB812800A0595C /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
@@ -327,6 +334,7 @@
 			children = (
 				84FB4C111C4E1E35008D512A /* Literals.playground */,
 				84FF65981CB2689E00902FB5 /* 面向对象.playground */,
+				144A2B4A1CB370A50038435E /* 实战.playground */,
 			);
 			name = "swift基础语法";
 			sourceTree = "<group>";
@@ -404,6 +412,10 @@
 				14D52E4B1CAB818400A0595C /* MapViewController.swift */,
 				14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */,
 				14D52E541CAB81D700A0595C /* animatedTransition */,
+				14B07EE31CB3BB2B00A9B1F9 /* ShadeAnimationViewController.h */,
+				14B07EE41CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m */,
+				14B07EE21CB3BB2A00A9B1F9 /* SISpeciesNotes-Bridging-Header.h */,
+				14B07EE61CB3BB7800A9B1F9 /* ShadeAnViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -647,6 +659,7 @@
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,
 				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
+				14B07EE71CB3BB7800A9B1F9 /* ShadeAnViewController.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
@@ -655,6 +668,7 @@
 				847503981C59C70600E804EE /* Bicycle.swift in Sources */,
 				14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */,
 				14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */,
+				14B07EE51CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m in Sources */,
 				14D52E471CAB812800A0595C /* LogCell.swift in Sources */,
 				14D52E4F1CAB818400A0595C /* LogViewController.swift in Sources */,
 				14D52E561CAB81D700A0595C /* OverlayAnimationController.swift in Sources */,
@@ -832,6 +846,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -853,6 +868,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
 			};
 			name = Release;
 		};

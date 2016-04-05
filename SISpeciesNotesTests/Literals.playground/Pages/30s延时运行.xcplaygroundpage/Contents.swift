@@ -11,7 +11,7 @@ import Foundation
 import XCPlayground
 XCPSetExecutionShouldContinueIndefinitely(true)
 
-
+//: 关于 selector 的使用 和 @objc 标记可以分别参见 Selector 以及 @objc 和 dynamic。
 class MyClass {
     @objc func callMe() {
         print("Hi")

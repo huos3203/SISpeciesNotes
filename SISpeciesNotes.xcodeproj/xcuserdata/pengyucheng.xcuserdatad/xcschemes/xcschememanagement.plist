@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SISpeciesNotesTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>generateByJazzy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
