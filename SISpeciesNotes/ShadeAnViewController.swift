@@ -21,7 +21,7 @@ extension UILabel
 {
     func fireTmer()
     {
-        let timer = NSTimer(timeInterval: 4.0, target: self, selector: "shadeAnimation", userInfo: nil, repeats: true)
+        let timer = NSTimer(timeInterval: 4.0, target: self, selector: #selector(UILabel.shadeAnimation), userInfo: nil, repeats: true)
         
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         
@@ -29,7 +29,7 @@ extension UILabel
     func shadeAnimation()
     {
         
-        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "hidden", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(UILabel.hidden as (UILabel) -> () -> ()), userInfo: nil, repeats: false)
     }
     func hidden()
     {
@@ -42,7 +42,7 @@ extension UILabel
                 if completion
                 {
                     //4s之后，显示
-                    NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "show", userInfo: nil, repeats: false)
+                    NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(UILabel.show), userInfo: nil, repeats: false)
                 }
         }
     }

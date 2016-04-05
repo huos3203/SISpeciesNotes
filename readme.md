@@ -72,6 +72,7 @@ git branch -r //查看包括远程的所有分支
 git branch -v //查看当前分支最后一次提交的信息
 
 git remote -v //查看远程分支
+
 ####swift命令
 swift -v
 swift 
@@ -126,9 +127,33 @@ self.tableView.reloadData()
     persons.setValue("地球", forKeyPath: "planet")
 2. 响应式编程[ReactKit](https://github.com/ReactKit)[Reactive​Cocoa](http://nshipster.cn/reactivecocoa/)
 
-####PLAYGROUND 延时运行
- 1. [SELECTOR选择器的用法](http://swifter.tips/selector/)：
+#### [PLAYGROUND 延时运行](http://swifter.tips/playground-delay/) 
+延时执行的黑魔法：
+import XCPlayground
+XCPSetExecutionShouldContinueIndefinitely(true)
+
+ 1. [SELECTOR选择器的用法](http://swifter.tips/selector/)
+    selector 其实是 Objective-C runtime 的概念，如果你的 selector 对应的方法只在 Swift 中可见的话 (也就是说它是一个 Swift 中的 private 方法)，在调用这个 selector 时你会遇到一个 unrecognized selector 错误：
+    1. 在 private 前面加上 @objc 关键字，这样运行时就能找到对应的方法
+    2. 在通过字符串生成 Selector 时，约定：如果方法的第一个参数有外部变量的话，需要在方法名和第一个外部参数之间加上 with例如：let s = Selector("aMethodWithExternal:")
+
  2. [@OBJC 和 DYNAMIC](http://swifter.tips/objc-dynamic/)
+    1. @objc：在可选协议只能在含有@objc前缀的协议中生效，且@bjc的协议只能被类遵循，
+    2. 以及swift和OC混编时用到
+    3. @objc 修饰符的另一个作用是为 Objective-C 使用swift代码，重新声明方法或者变量的名字 
+Objective-C 的话是无法使用中文来进行调用的，因此我们必须使用 @objc 将其转为 ASCII 才能在 Objective-C 里访问：
+@objc(MyClass)
+class 我的类 {
+@objc(greeting:)
+func 打招呼(名字: String) {
+print("哈喽，\(名字)")
+}
+}
+##### 两套完全不同的机制：一个运行时（注重严谨：遵循KVC和动态派发），一个编译时（注重性能：编译时类型成员和方法就已经确定）
+Objective-C 和 Swift 在底层使用的是两套完全不同的机制，Cocoa 中的 Objective-C 对象是基于运行时的，它从骨子里遵循了 KVC (Key-Value Coding，通过类似字典的方式存储对象信息) 以及动态派发 (Dynamic Dispatch，在运行调用时再决定实际调用的具体实现)。而 Swift 为了追求性能，如果没有特殊需要的话，是不会在运行时再来决定这些的。也就是说，Swift 类型的成员或者方法在编译时就已经决定，而运行时便不再需要经过一次查找，而可以直接使用。
+##### @objc 修饰符：两种添加方式，一种是自动添加（继承自NSObjct时），一种需要主动添加（private，重命名等）
+显而易见，这带来的问题是如果我们要使用 Objective-C 的代码或者特性来调用纯 Swift 的类型时候，我们会因为找不到所需要的这些运行时信息，而导致失败。解决起来也很简单，在 Swift 类型文件中，我们可以将需要暴露给 Objective-C 使用的任何地方 (包括类，属性和方法等) 的声明前面加上 @objc 修饰符。注意这个步骤只需要对那些不是继承自 NSObject 的类型进行，如果你用 Swift 写的 class 是继承自 NSObject 的话，Swift 会默认自动为所有的非 private 的类和成员加上 @objc。这就是说，对一个 NSObject 的子类，你只需要导入相应的头文件就可以在 Objective-C 里使用这个类了。
+
  3. 计时器(NSTimer文档)的学习
 
 ####官方文档学习swift 和OC的混编 关键词：Swift and Objective-C in the Same Project
