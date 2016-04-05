@@ -63,6 +63,7 @@ git rm -r --cached Frameworks/
 ```
 2. 切换远程仓库路径
 查看远程仓库状态：git remote show origin
+切换本地跟踪的分支：
 `git branch -u origin/master`或`git branch -u gitosc/master`
 
 ####swift命令
@@ -118,3 +119,10 @@ self.tableView.reloadData()
     // 将每个人的 planet 属性设置为“地球”
     persons.setValue("地球", forKeyPath: "planet")
 2. 响应式编程[ReactKit](https://github.com/ReactKit)[Reactive​Cocoa](http://nshipster.cn/reactivecocoa/)
+
+####PLAYGROUND 延时运行
+ 1. [SELECTOR选择器的用法](http://swifter.tips/selector/)：
+ 2. [@OBJC 和 DYNAMIC](http://swifter.tips/objc-dynamic/)
+ 3. 计时器(NSTimer文档)的学习
+
+####官方文档学习swift 和OC的混编 关键词：Swift and Objective-C in the Same Project
