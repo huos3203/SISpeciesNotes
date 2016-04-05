@@ -65,6 +65,12 @@ git rm -r --cached Frameworks/
 查看远程仓库状态：git remote show origin
 `git branch -u origin/master`或`git branch -u gitosc/master`
 
+<!--查找包含commit 哈希值的分支-->
+git branch --contains <commit>
+git branch -r //查看包括远程的所有分支
+git branch -v //查看当前分支最后一次提交的信息
+
+git remote -v //查看远程分支
 ####swift命令
 swift -v
 swift 
