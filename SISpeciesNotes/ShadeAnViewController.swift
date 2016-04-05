@@ -19,7 +19,7 @@ protocol shadeAnimation
 
 extension UILabel
 {
-    func fireTmer()
+    func fireTimer()
     {
         let timer = NSTimer(timeInterval: 4.0, target: self, selector: #selector(UILabel.shadeAnimation), userInfo: nil, repeats: true)
         
@@ -69,7 +69,8 @@ class ShadeAnViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ibShadeLabel.fireTmer()
+        ibShadeLabel.fireTimer()
+        let shadevc = ShadeAnimationViewController()
     }
 
     
