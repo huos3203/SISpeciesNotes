@@ -157,3 +157,28 @@ Objective-C 和 Swift 在底层使用的是两套完全不同的机制，Cocoa �
  3. 计时器(NSTimer文档)的学习
 
 ####官方文档学习swift 和OC的混编 关键词：Swift and Objective-C in the Same Project
+
+####[Swift如何检测系统版本](http://www.cocoachina.com/swift/20141015/9925.html)
+let os = NSProcessInfo().operatingSystemVersion
+switch (os.majorVersion, os.minorVersion, os.patchVersion) {
+case (8, _, _):
+println("iOS >= 8.0.0")
+case (7, 0, _):
+println("iOS >= 7.0.0, < 7.1.0")
+case (7, _, _):
+println("iOS >= 7.1.0, < 8.0.0")
+default:
+println("iOS < 7.0.0")
+}
+
+####编译错误：
+1.  Declaration of 'RLMNotificationToken' must be imported from module 'Realm.RLMRealm' before it is required
+    诱发原因：在xcode7.2.1下编译swift和OC混编项目时，Realm的通知变量在-swift.h文件中爆出错误。就是说在swift2.2.1版本中，不支持Realm工具的混编。
+    解决办法：删除混编配置文件-swift.h ，在build setting 中移除 $(SWIFT_MODULE_NAME)-Swift
+2. 鹏保宝swift和OC婚变时出现错误：在真机调试时，编译成功后，运行时直接崩溃。
+   1. For the device, you also need to add the dynamic framework to the Embedded binaries section in the General tab of the project.
+   2. Swift的错误
+    dyld: Library not loaded: @rpath/libswiftCore.dylib ，  Reason: image not found
+    原因：因为鹏保宝是一个project对应多个target，容易导致在新建swift文件时，xcode自动生成桥文件和混编配置，默认配置到PBB target中，导致运行PBBReader时，一直出现因配置导致image not found的崩溃错误.
+解决办法：不要右击新建文件：否则会默认创建在PBB target中，尽量使用菜单新建swift文件或者拖拉方式关联已存在的swift关联到PBBReader target中。即：新建文件时，要出现关联到target的提示框，这样就可以避免配上的问题。
+

@@ -40,6 +40,7 @@
 		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
 		14B07EE51CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B07EE41CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m */; };
 		14B07EE71CB3BB7800A9B1F9 /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07EE61CB3BB7800A9B1F9 /* ShadeAnViewController.swift */; };
+		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
 		14D52E461CAB812800A0595C /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E441CAB812800A0595C /* FlowCell.swift */; };
 		14D52E471CAB812800A0595C /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E451CAB812800A0595C /* LogCell.swift */; };
@@ -104,6 +105,7 @@
 		14B07EE31CB3BB2B00A9B1F9 /* ShadeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadeAnimationViewController.h; sourceTree = "<group>"; };
 		14B07EE41CB3BB2B00A9B1F9 /* ShadeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadeAnimationViewController.m; sourceTree = "<group>"; };
 		14B07EE61CB3BB7800A9B1F9 /* ShadeAnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadeAnViewController.swift; sourceTree = "<group>"; };
+		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14D52E421CAB811F00A0595C /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		14D52E441CAB812800A0595C /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
 		14D52E451CAB812800A0595C /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				14D52E421CAB811F00A0595C /* MapViewExtension.swift */,
 				14D52E441CAB812800A0595C /* FlowCell.swift */,
 				14D52E451CAB812800A0595C /* LogCell.swift */,
+				14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,
 				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
+				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
 				14B07EE71CB3BB7800A9B1F9 /* ShadeAnViewController.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
@@ -847,7 +851,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -870,7 +876,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 			};
 			name = Release;
 		};

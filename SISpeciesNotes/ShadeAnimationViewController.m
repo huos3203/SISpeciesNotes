@@ -7,8 +7,8 @@
 //
 
 #import "ShadeAnimationViewController.h"
-#import "SISpeciesNotes-Swift.h"
-
+//#import "SISpeciesNotes-Swift.h"
+//$(SWIFT_MODULE_NAME)-Swift.h
 @interface ShadeAnimationViewController ()
 
 @end
@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *shadeLabel = [UILabel new];
-    [shadeLabel fireTimer];
+//    UILabel *shadeLabel = [UILabel new];
+//    [shadeLabel fireTimer];
 //    shadeLabel.fireTmer
     // Do any additional setup after loading the view.
 }
