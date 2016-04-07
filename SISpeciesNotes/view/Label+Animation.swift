@@ -8,8 +8,11 @@
 
 import Foundation
 
+//: label显示24s之后开始循环随机变动坐标，每间隔20s显示一次，显示时长4s，一次循环。
 extension UILabel
 {
+    
+//    class var labelText = "nihao"
     
     var shadeOrigin:CGPoint{
         
@@ -39,7 +42,6 @@ extension UILabel
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         
     }
-    //    static var shadeTimer:NSTimer?
     
     func hidden()
     {
