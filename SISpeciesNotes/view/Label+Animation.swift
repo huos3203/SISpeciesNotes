@@ -35,12 +35,14 @@ extension UILabel
     
 //    static var shadeTimer:NSTimer?
     
-    func fireTimer()
+    func fireTimer()->()->()
     {
         //默认显示，24s之后隐藏
         let timer = NSTimer(timeInterval: 24.0, target: self, selector: "hidden", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-        
+        return {
+            timer.invalidate()
+        }
     }
     
     func hidden()

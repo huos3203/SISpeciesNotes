@@ -53,6 +53,7 @@ let isCancelled = transitionContext.transitionWasCancelled()
 //取消时出问题
 transitionContext.completeTransition(!isCancelled)
 ```
+`
 
 
 ####版本管理：
@@ -65,7 +66,7 @@ git rm -r --cached Frameworks/
 查看远程仓库状态：git remote show origin
 切换本地跟踪的分支：
 `git branch -u origin/master`或`git branch -u gitosc/master`
-
+`
 <!--查找包含commit 哈希值的分支-->
 git branch --contains <commit>
 git branch -r //查看包括远程的所有分支
@@ -182,3 +183,39 @@ println("iOS < 7.0.0")
     原因：因为鹏保宝是一个project对应多个target，容易导致在新建swift文件时，xcode自动生成桥文件和混编配置，默认配置到PBB target中，导致运行PBBReader时，一直出现因配置导致image not found的崩溃错误.
 解决办法：不要右击新建文件：否则会默认创建在PBB target中，尽量使用菜单新建swift文件或者拖拉方式关联已存在的swift关联到PBBReader target中。即：新建文件时，要出现关联到target的提示框，这样就可以避免配上的问题。
 
+#####扩展UILabel控件，添加实现24s间隔，位置随机移动动画中遇到的问题，及解决办法。
+1. 只能扩展类型存储属性，方法，构造器，计算属性，类型计算属性。
+2. 通过计算属性，获取自定义Label随机位置CGPoint。
+2. 想法1：通过类型存储属性来持有NSTimer对象，这样就可以在视频页面通过UILabel实例对NSTimer进行invalidate关闭操作。
+    -- 经实践无法扩展class var 属性名  ，系统提示static修饰类型存储属性，在混编中PBBReader-Swift.h文件无法映射该类型存储属性，导致在OC代码中无法调用UILabel的扩展功能。
+   想法2： 通过方法的In-out形参方法来传递NSTimer对象，FireTimer(inout timer:NSTimer),调用方法：UILabel().FireTimer(&timer),使用强制指针的形式，将timer指向UILabel中声明的NSTimer对象，这样就可以在视屏控制器中，来引用NSTimer对象，来执行invalid关闭操作。
+    -- 经实验失败，在使用inout修饰FireTimer(inout timer:NSTimer)参数时， 在混编PBBReader-Swift.h文件中，因inout，导致该方法无法正常映射，故失败。
+   想法3：通过使用匿名函数的捕捉上下文的变量和常量的特性，FireTimer()->()->()方法的返回类型的特性来获取NSTimer对象操作权，来执行invalidate关闭操作。
+    -- 在混编中fireTimer()->()-(){return {timer.invalidate()}} 映射成：- (void (^ __nonnull)(void))fireTimer; 
+        可以看出，PBBReader-Swift.h文件中能够正确自动映射，函数类型：()->()隐射成block块：void(^ __nonnull)(void)，所以能在视屏控制器中声明一个block块属性，来接收该方法的返回的block块，在退出时执行该block块 来关闭NSTimer对象。
+4. OC中block的声明格式：
+定义块的语法格式： ^[块返回值类型](形参类型1 形参名,形参类型2 形参名,形参类型3 形参名,形参类型4vv 形参名,...){  //块执行体  }
+    1. 定义块必须以 ^ 开头。
+    2. 定义块返回值类型可以忽略，而且经常都会省略声明块的返回值类型。
+    3. 定义块无须指定名字。
+    4. 如果没有参数，此时参数部分的括号不能省略，但内容可以留空，通常使用void作为占位符。
+定义块变量： 如果程序需要以后多次调用已经定义的块，可以将定义块赋值给块变量。
+    格式：块返回值类型(^块变量名)(形参类型1,形参类型2,形参类型3...);
+
+void (^myblock)(int,int) = ^(int名,init名2){//执行体     NSLog("数字＝%d",int名)}
+
+块与局部变量：块可以访问局部变量的值，不被允许修改局部变量的值。定义块时就会把局部变量的值复制到块中，而不是等到执行时才去访问，获取局部变量的值。
+__block 修饰符: 块可以直接使用__block修饰的局部变量本身，而不是将局部变量的值复制到块范围内。这类似与swift函数中inout参数强引用的作用，这时block可以修改局部变量不会导致错误，而且在任何时候都能获取到在程序其他操作导致更新了局部变量的最新值。
+
+####typedef:定义块变量类型
+1. 复用块变量类型，使用块变量类型可以重复定义多个块变量。
+2. 使用块变量类型定义函数参数，这样即可定义带块参数的函数。
+
+typedef void (^块变量名)(形参类型1,行藏类型2...);
+例如：typedef void(^Myblock)(NSString*);  声明了一个块变量类型 Myblock
+使用：
+声明一个block块： Myblock 块变量名;      初始化： 块变量名 = ^(形参名1,形参名2...){ //块体 }
+
+声明一个带块参数的函数：
+类型：typedef void(^Myblock)(NSString*);
+方法：void myfunc(int len, Myblock block){//函数体}
