@@ -155,6 +155,19 @@ Objective-C 和 Swift 在底层使用的是两套完全不同的机制，Cocoa �
 ##### @objc 修饰符：两种添加方式，一种是自动添加（继承自NSObjct时），一种需要主动添加（private，重命名等）
 显而易见，这带来的问题是如果我们要使用 Objective-C 的代码或者特性来调用纯 Swift 的类型时候，我们会因为找不到所需要的这些运行时信息，而导致失败。解决起来也很简单，在 Swift 类型文件中，我们可以将需要暴露给 Objective-C 使用的任何地方 (包括类，属性和方法等) 的声明前面加上 @objc 修饰符。注意这个步骤只需要对那些不是继承自 NSObject 的类型进行，如果你用 Swift 写的 class 是继承自 NSObject 的话，Swift 会默认自动为所有的非 private 的类和成员加上 @objc。这就是说，对一个 NSObject 的子类，你只需要导入相应的头文件就可以在 Objective-C 里使用这个类了。
 
+在OC项目中，使用swift语言扩展了String,新增了个方法，为什么在自动生成的文件-Swift.h中，没有生成这个扩展方法呢？
+三剑客品JAVA  12:20:24
+大家遇到过这个问题吗，扩展类类型的方法时暴露给OC 使用@objc注释一下就行的，但是在扩展String值类型时，怎么处理呢？
+
+
+Swift兼容大部分ObjC（通过类似上面的对应关系），多数ObjC的功能在Swift中都能使用。当然，还是有个别地方Swift并没有考虑兼容ObjC，例如：Swift中无法使用预处理指令（例如：宏定义，事实上在Swift中推举使用常量定义）；Swift中也无法使用performSelector来执行一个方法，因为Swift认为这么做是不安全的。
+
+相反，如果在ObjC中使用Swift也同样是可行的（除了个别Swift新增的高级功能）。Swift中如果一个类继承于NSObject，那么他会自动和ObjC兼容，这样ObjC就可以按照上面的对应关系调用Swift的方法、属性等。但是如果Swift中的类没有继承于NSObject呢？此时就需要使用一个关键字“@objc”进行标注，ObjC就可以像使用正常的ObjC编码一样调用Swift了（事实上继承于NSObject的类之所以在ObjC中能够直接调用也是因为编译器会自动给类和非private成员添加上@objc，类似的@IBoutlet、@IBAction、@NSManaged修饰的方法属性，Swift编译器也会自动添加@objc标记）。
+
+
+
+
+
  3. 计时器(NSTimer文档)的学习
 
 ####官方文档学习swift 和OC的混编 关键词：Swift and Objective-C in the Same Project

@@ -851,9 +851,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -876,9 +876,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.pyc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift";
 			};
 			name = Release;
 		};
