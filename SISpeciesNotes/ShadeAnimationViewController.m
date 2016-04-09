@@ -8,7 +8,7 @@
 
 #import "ShadeAnimationViewController.h"
 #import "SISpeciesNotes-Swift.h"
-s
+
 @interface ShadeAnimationViewController ()
 
 @end
