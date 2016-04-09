@@ -7,8 +7,8 @@
 //
 
 #import "ShadeAnimationViewController.h"
-//#import "SISpeciesNotes-Swift.h"
-//$(SWIFT_MODULE_NAME)-Swift.h
+#import "SISpeciesNotes-Swift.h"
+s
 @interface ShadeAnimationViewController ()
 
 @end
