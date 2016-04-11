@@ -8,7 +8,7 @@
 
 import Foundation
 import RealmSwift
-import Realm
+
 /// 对应realm数据库物种信息表的模型
 /// 对于 Realm 中的一些特定的数据类型，比如说字符串，必须要初始化
 

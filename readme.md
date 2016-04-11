@@ -234,3 +234,20 @@ typedef void (^块变量名)(形参类型1,行藏类型2...);
 声明一个带块参数的函数：
 类型：typedef void(^Myblock)(NSString*);
 方法：void myfunc(int len, Myblock block){//函数体}
+
+#####初始化存储属性：函数变量
+var invalidTimer:()->() = {}
+//在不需要神
+_ = ibShadeLabel.fireTimer()
+
+#### Realm数据库版本迁移，以及主键设置
+
+在版本升级过程中无法完成的主键迁移操作：
+fatal error: 'try!' expression unexpectedly raised an error: Error Domain=io.realm Code=0 "Primary key property 'specieId' has duplicate values after migration." [更多](http://stackoverflow.com/questions/35646546/primary-key-property-has-duplicate-values-after-migration-realm-migration)
+//    主键
+dynamic var specieId = 0
+override static func primaryKey() -> String?
+{
+return "specieId"
+}
+暂时解决办法：删除APP,重新安装
