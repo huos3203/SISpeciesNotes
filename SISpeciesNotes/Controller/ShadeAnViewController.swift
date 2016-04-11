@@ -27,6 +27,8 @@ class ShadeAnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        invildedTimer = ibShadeLabel.fireTimer()
+//    var invalidTimer:()->() = {}
+        _ = ibShadeLabel.fireTimer()
         let shadevc = ShadeAnimationViewController()
     }
 

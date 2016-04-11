@@ -108,25 +108,68 @@ realm().objects(model).filter(NSPredicate(format:""))
 ####更新realm方法的使用
 1. 必要条件：
 创建主键：
-dynamic var id = 0
+dynamic var specieId = 0
 override static func primaryKey() -> String? {
-return "id"
+return "specieId"
 }
 
 更新方法：realm.add(model实例,update:true)
+
+1.1 Realm数据库版本迁移，以及主键设置
+
+在版本升级过程中无法完成的主键迁移操作：
+fatal error: 'try!' expression unexpectedly raised an error: Error Domain=io.realm Code=0 "Primary key property 'specieId' has duplicate values after migration." [更多](http://stackoverflow.com/questions/35646546/primary-key-property-has-duplicate-values-after-migration-realm-migration)
+暂时解决办法：删除APP,重新安装
+
 2. 对象的自更新特性:已验证
 Object 实例是底层数据的动态表现，其会进行自动更新，这意味着对象不需要进行刷新。修改某个对象的属性会立刻影响到其他所有指向同一个对象的实例。
 如果您的 UI 代码是基于某个特定的 Realm 对象来现实的，那么在触发 UI 重绘之前，您不用担心数据的刷新或者重新检索等问题。
+
 2.1 通知(Notification)自更新
 通过调用 addNotificationBlock 方法进行通知注册后，无论哪个 Realm, Results 或者 List 对象更新，都可以得到通知。
 notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
 self.tableView.reloadData()
 }
+
 2.1 键值编码
 1. persons.first?.setValue(true, forKeyPath: "isFirst")
     // 将每个人的 planet 属性设置为“地球”
     persons.setValue("地球", forKeyPath: "planet")
 2. 响应式编程[ReactKit](https://github.com/ReactKit)[Reactive​Cocoa](http://nshipster.cn/reactivecocoa/)
+
+3. 类的子集(Class Subsets)：指定realm数据库中能够存储的数据模型。
+在某些情况下，您可能想要对哪个类能够存储在指定 Realm 数据库中做出限制。
+let config = Realm.Configuration(objectTypes: [MyClass.self, MyOtherClass.self])
+let realm = try! Realm(configuration: config)
+
+
+
+3. 线程：唯一的修改操作就是包含在写事务中的操作
+Realm 通过确保每个线程始终拥有 Realm 的一个快照，以便让并发运行变得十分轻松。你可以同时有任意数目的线程访问同一个 Realm 文件，并且由于每个线程都有对应的快照，因此线程之间绝不会产生影响。
+您唯一需要注意的一件事情就是不能让多个线程都持有同一个 Realm 对象的 实例 。如果多个线程需要访问同一个对象，那么它们分别会获取自己所需要的实例（否则在一个线程上发生的更改就会造成其他线程得到不完整或者不一致的数据）。
+3.1 检视其他线程上的变化（刷新时机）
+    1. 在主 UI 线程中（或者任何一个位于 runloop 中的线程），对象会在 runloop 的每次循环过程中自行获取其他线程造成的更改。
+    2. 当您第一次打开 Realm 数据库的时候，它会根据最近成功的写事务提交操作来更新当前状态，并且在刷新之前都将一直保持在当前版本。
+    3. Realm 会自每个 runloop 循环的开始自动进行刷新，除非 Realm 的 autorefresh 属性设置为 NO。如果某个线程没有 runloop 的话（通常是因为它们被放到了后台进程当中），那么 Realm.refresh() 方法必须手动调用，以确保让事务维持在最新的状态当中。
+
+    4. Realm 同样也会在写入事务提交(Realm.commitWrite())的时候刷新。
+3.2 跨线程传递实例（通过不同的实例方法，来获取数据库中的对象）
+Object 的单例（未保存的）表现的和正常的 NSObject 子类相同，可以安全地跨线程传递。
+
+Realm、Object、Results 或者 List 已保存的实例只能够在它们被创建的线程上使用，否则就会抛出异常*。这是 Realm 强制事务版本隔离的一种方法。否则，在不同事务版本中的线程间，通过潜在泛关系图(potentially extensive relationship graph)来确定何时传递对象将不可能实现。
+* 这些类型的某些属性和方法可以在任意线程中进行访问：
+
+Realm: 所有的属性、类方法和构造器；all properties, class methods, and initializers.
+Object: invalidated、objectSchema、realm，以及所有的类方法和构造器；
+Results: objectClassName 和 realm；
+List: invalidated、objectClassName 和 realm。
+
+3.3 跨线程使用数据库
+为了在不同的线程中使用同一个 Realm 文件，您需要为您应用的每一个线程初始化一个新的Realm 实例。 只要您指定的配置是相同的，那么所有的 Realm 实例都将会指向硬盘上的同一个文件。
+
+我们还 不支持 跨线程共享Realm 实例。 Realm 实例要访问相同的 Realm 文件还必须使用相同的 Realm.Configuration。
+
+
 
 #### [PLAYGROUND 延时运行](http://swifter.tips/playground-delay/) 
 延时执行的黑魔法：
@@ -188,7 +231,9 @@ println("iOS < 7.0.0")
 ####编译错误：
 1.  Declaration of 'RLMNotificationToken' must be imported from module 'Realm.RLMRealm' before it is required
     诱发原因：在xcode7.2.1下编译swift和OC混编项目时，Realm的通知变量在-swift.h文件中爆出错误。就是说在swift2.2.1版本中，不支持Realm工具的混编。
-    解决办法：删除混编配置文件-swift.h ，在build setting 中移除 $(SWIFT_MODULE_NAME)-Swift
+    解决办法1：删除混编配置文件-swift.h ，在build setting 中移除 $(SWIFT_MODULE_NAME)-Swift.h
+    解决办法2：在swift代码中不使用realm.addNotificationBlock特性。
+
 2. 鹏保宝swift和OC婚变时出现错误：在真机调试时，编译成功后，运行时直接崩溃。
    1. For the device, you also need to add the dynamic framework to the Embedded binaries section in the General tab of the project.
    2. Swift的错误
@@ -238,3 +283,10 @@ typedef void (^块变量名)(形参类型1,行藏类型2...);
 ####Realm再混时遇到的问题：
 在OC代码中引入-Swift.h文件后，原Swift代码中使用了RLMNotificationToken特性后，会出现以下提示：
 Declaration of 'RLMNotificationToken' must be imported from module 'Realm.RLMResults' before it is required
+
+#####初始化存储属性：函数变量
+var invalidTimer:()->() = {}
+//在不需要神
+_ = ibShadeLabel.fireTimer()
+
+

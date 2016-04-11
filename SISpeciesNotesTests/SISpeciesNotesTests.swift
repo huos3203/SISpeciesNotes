@@ -8,20 +8,27 @@
 
 import UIKit
 import XCTest
+import RealmSwift
 
-import Realm
-
+// 一个基本的测试类，每个使用 Realm 进行的测试都应当继承自该类，而不是直接继承自 XCTestCase 类
 class SISpeciesNotesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // 使用当前测试名标识的内存 Realm 数据库。
+        // 这确保了每个测试都不会从别的测试或者应用本身中访问或者修改数据，并且由于它们是内存数据库，因此无需对其进行清理。
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    
     
     func testExample() {
         // This is an example of a functional test case.

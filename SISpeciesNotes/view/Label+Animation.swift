@@ -38,7 +38,7 @@ extension UILabel
     func fireTimer()->()->()
     {
         //默认显示，24s之后隐藏
-        let timer = NSTimer(timeInterval: 24.0, target: self, selector: "hidden", userInfo: nil, repeats: true)
+        let timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(UILabel.hidden), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         return {
             timer.invalidate()
@@ -57,7 +57,7 @@ extension UILabel
                 {
                     print("\(NSDate())水印隐藏....")
                     //隐藏20秒之后，再显示出来
-                    NSTimer.scheduledTimerWithTimeInterval(20.0, target: self, selector: "show", userInfo: nil, repeats: false)
+                    NSTimer.scheduledTimerWithTimeInterval(20.0, target: self, selector: #selector(UILabel.show), userInfo: nil, repeats: false)
                 }
         }
         
