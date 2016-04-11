@@ -26,7 +26,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     var searchController: UISearchController!
     
     var realm:Realm!
-    var  notificationToken:NotificationToken?
+//    var  notificationToken:NotificationToken?
     
     // MARK: 控制器生命周期
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
         
         realm = try! Realm()
         // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            self.tableView.reloadData()
-        }
+//        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+//            self.tableView.reloadData()
+//        }
     }
     
 //    override func viewDidAppear(animated: Bool) {

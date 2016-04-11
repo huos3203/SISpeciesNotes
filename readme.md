@@ -232,3 +232,9 @@ typedef void (^块变量名)(形参类型1,行藏类型2...);
 声明一个带块参数的函数：
 类型：typedef void(^Myblock)(NSString*);
 方法：void myfunc(int len, Myblock block){//函数体}
+
+
+
+####Realm再混时遇到的问题：
+在OC代码中引入-Swift.h文件后，原Swift代码中使用了RLMNotificationToken特性后，会出现以下提示：
+Declaration of 'RLMNotificationToken' must be imported from module 'Realm.RLMResults' before it is required

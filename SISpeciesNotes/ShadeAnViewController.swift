@@ -22,11 +22,11 @@ protocol shadeAnimation
 class ShadeAnViewController: UIViewController {
 
     @IBOutlet weak var ibShadeLabel: UILabel!
-    
+    private var invildedTimer:()->()! = {return nil}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ibShadeLabel.fireTimer()
+       invildedTimer = ibShadeLabel.fireTimer()
         let shadevc = ShadeAnimationViewController()
     }
 
