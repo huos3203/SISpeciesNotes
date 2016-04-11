@@ -60,6 +60,8 @@
 		14DBA0AF1CAE15E100BAB345 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AA1CAE15D400BAB345 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14DBA0B01CAE15E100BAB345 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; };
 		14DBA0B11CAE15E100BAB345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
+		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
@@ -123,6 +125,8 @@
 		14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PercentageCalculatorViewController.swift; path = Controller/PercentageCalculatorViewController.swift; sourceTree = "<group>"; };
+		8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageCalculator.swift; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				84FF65961CB2682B00902FB5 /* swift基础语法 */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
+				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
 			);
 			path = SISpeciesNotesTests;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				146198281CBB3F0100BAA78C /* ShadeAnimationViewController.h */,
 				146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */,
 				14D52E541CAB81D700A0595C /* animatedTransition */,
+				8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				14D52E4D1CAB818400A0595C /* AddNewEntryController.swift in Sources */,
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,
 				1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */,
+				8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */,
 				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
@@ -692,6 +699,7 @@
 			files = (
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
+				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +914,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.1-xing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
 			};
 			name = Debug;
@@ -923,6 +933,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.1-xing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
 			};
 			name = Release;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j5J-K0-irp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OsW-yS-E76">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -247,6 +247,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ip-lg-ypn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="1035"/>
+        </scene>
+        <!--Percentage calculator-->
+        <scene sceneID="xvl-4v-2mX">
+            <objects>
+                <viewController id="OsW-yS-E76" userLabel="Percentage calculator" customClass="PercentageCalculatorViewController" customModule="SISpeciesNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3j5-lr-dMI"/>
+                        <viewControllerLayoutGuide type="bottom" id="du6-9u-oAB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YAX-Ie-I1A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-az-CbG">
+                                <rect key="frame" x="215" y="78" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5SV-7o-Sks">
+                                <rect key="frame" x="18" y="137" width="564" height="31"/>
+                                <connections>
+                                    <action selector="ibaNumberSliderChangeValueAction:" destination="OsW-yS-E76" eventType="valueChanged" id="O3f-jE-iAh"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0be-E8-vDf">
+                                <rect key="frame" x="290" y="175" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-45-jRK">
+                                <rect key="frame" x="18" y="270" width="564" height="31"/>
+                                <connections>
+                                    <action selector="ibaPercentageSliderAction:" destination="OsW-yS-E76" eventType="valueChanged" id="gno-IH-4Tc"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTi-mX-INh">
+                                <rect key="frame" x="290" y="400" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujA-D8-IZQ">
+                                <rect key="frame" x="290" y="308" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="trailing" secondItem="vM6-45-jRK" secondAttribute="trailing" id="1qC-3Q-o0h"/>
+                            <constraint firstItem="ujA-D8-IZQ" firstAttribute="top" secondItem="vM6-45-jRK" secondAttribute="bottom" constant="8" symbolic="YES" id="3ZV-8A-XPb"/>
+                            <constraint firstItem="vM6-45-jRK" firstAttribute="top" secondItem="0be-E8-vDf" secondAttribute="bottom" constant="74" id="66v-ZL-gyK"/>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="centerX" secondItem="0be-E8-vDf" secondAttribute="centerX" id="BsP-0G-zah"/>
+                            <constraint firstItem="qTi-mX-INh" firstAttribute="centerX" secondItem="ujA-D8-IZQ" secondAttribute="centerX" id="LR0-oC-mVf"/>
+                            <constraint firstItem="0be-E8-vDf" firstAttribute="top" secondItem="5SV-7o-Sks" secondAttribute="bottom" constant="8" symbolic="YES" id="Qci-xK-Xja"/>
+                            <constraint firstItem="xG4-az-CbG" firstAttribute="top" secondItem="3j5-lr-dMI" secondAttribute="bottom" constant="58" id="RgK-cB-x2b"/>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="trailing" secondItem="YAX-Ie-I1A" secondAttribute="trailingMargin" id="VEH-hV-w1l"/>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="leading" secondItem="vM6-45-jRK" secondAttribute="leading" id="ZPh-NY-l8t"/>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="leading" secondItem="YAX-Ie-I1A" secondAttribute="leadingMargin" id="hmf-q6-iuz"/>
+                            <constraint firstItem="xG4-az-CbG" firstAttribute="centerX" secondItem="5SV-7o-Sks" secondAttribute="centerX" id="r3C-qb-M9B"/>
+                            <constraint firstItem="qTi-mX-INh" firstAttribute="top" secondItem="ujA-D8-IZQ" secondAttribute="bottom" constant="71" id="sMq-x6-9ol"/>
+                            <constraint firstItem="ujA-D8-IZQ" firstAttribute="centerX" secondItem="0be-E8-vDf" secondAttribute="centerX" id="uZh-PM-wFl"/>
+                            <constraint firstItem="5SV-7o-Sks" firstAttribute="top" secondItem="xG4-az-CbG" secondAttribute="bottom" constant="38" id="vkG-Cb-4tb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ibNumberLabel" destination="0be-E8-vDf" id="a4A-vv-pkO"/>
+                        <outlet property="ibNumberSlider" destination="5SV-7o-Sks" id="yek-9m-1J1"/>
+                        <outlet property="ibPercentageLabel" destination="ujA-D8-IZQ" id="dGi-8R-Hub"/>
+                        <outlet property="ibPercentageSlider" destination="vM6-45-jRK" id="1fV-tY-wP1"/>
+                        <outlet property="ibResultLabel" destination="qTi-mX-INh" id="xwf-rI-G0w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEx-2U-rbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330" y="1909"/>
         </scene>
         <!--添加数据-->
         <scene sceneID="SIn-Yp-Z5e">
