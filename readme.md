@@ -188,7 +188,9 @@ println("iOS < 7.0.0")
 ####编译错误：
 1.  Declaration of 'RLMNotificationToken' must be imported from module 'Realm.RLMRealm' before it is required
     诱发原因：在xcode7.2.1下编译swift和OC混编项目时，Realm的通知变量在-swift.h文件中爆出错误。就是说在swift2.2.1版本中，不支持Realm工具的混编。
-    解决办法：删除混编配置文件-swift.h ，在build setting 中移除 $(SWIFT_MODULE_NAME)-Swift
+    解决办法1：删除混编配置文件-swift.h ，在build setting 中移除 $(SWIFT_MODULE_NAME)-Swift.h
+    解决办法2：在swift代码中不使用realm.addNotificationBlock特性。
+
 2. 鹏保宝swift和OC婚变时出现错误：在真机调试时，编译成功后，运行时直接崩溃。
    1. For the device, you also need to add the dynamic framework to the Embedded binaries section in the General tab of the project.
    2. Swift的错误
