@@ -11,8 +11,11 @@
 import XCTest
 @testable import SISpeciesNotes
 //http://www.cocoachina.com/ios/20151125/14415.html
-//http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests
-//http://www.tuicool.com/articles/rMzMjaa
+//新建test target重置配置：http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests
+//xcode特性：http://www.tuicool.com/articles/rMzMjaa
+
+//“No such module” when using @testable in Xcode Unit tests
+//解决办法：是应为SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
 
 class PercentageCalculator: XCTestCase {
     var vc:PercentageCalculatorViewController!

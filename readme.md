@@ -290,3 +290,12 @@ var invalidTimer:()->() = {}
 _ = ibShadeLabel.fireTimer()
 
 
+##### “No such module” when using @testable in Xcode Unit tests
+[Xcode：为你的项目集成单元测试时记得避开这些坑](http://www.cocoachina.com/ios/20151125/14415.html)
+[“No such module” when using @testable in Xcode Unit tests](http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests)
+[详解Swift 2.0（一）：单元测试与模式匹配](xcode特性：http://www.tuicool.com/articles/rMzMjaa)
+
+最终解决办法：
+1. 主项目和UnitTest项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
+2. 确保SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
+
