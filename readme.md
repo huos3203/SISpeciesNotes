@@ -298,4 +298,16 @@ _ = ibShadeLabel.fireTimer()
 最终解决办法：
 1. 主项目和UnitTest项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
 2. 确保SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
-
+#### [UnitTest特性](http://www.cocoachina.com/industry/20140805/9314.html) 
+1. self.measureBlock:能够检测代码性能：self.measureBlock() {//测试代码块}
+2. XCTestExpectation:异步测试的支持，借助 XCTestExpectation 类来实现。现在，测试能够为了确定的合适的条件等待一个指定时间长度，而不需要求助于GCD.
+做一个异步测试:
+第一步，期望值：let expectation = expectationWithDescription("...") 
+第二步，增加 waitForExpectationsWithTimeout 方法，指定一个超时，如果测试条件不适合时间范围便会结束执行：
+waitForExpectationsWithTimeout(10, handler: { error in 
+// ... 
+})  
+第三步，返回期望值：现在，剩下的步骤是在异步方法被测试的相关的回调中实现那个期望值。
+expectation.fulfill() 
+如果测试有不止一个期望值，它将不会通过，除非每一次期望值在被 inwaitForExpectationsWithTimeout() 指定的超时中执行 fulfill()。
+expectation.fulfill() 

@@ -77,6 +77,17 @@ class PercentageCalculatorViewController: UIViewController {
     }
     
     
+//    问题代码
+    func updateLabels(nV: Float?, _ pV: Float?, _ rV: Float) {
+        if let v = nV {
+            self.ibNumberLabel.text = "\(v)"
+        }
+        if let v = pV {
+            self.ibPercentageLabel.text = "\(v)%"
+        }
+        
+        self.ibResultLabel.text = "\(rV + 10)"
+    }
     
     
     /*

@@ -63,11 +63,11 @@ class PercentageCalculator: XCTestCase {
 //        注意到我们使用下划线_来代表一个常量名。这是因为我们并不真正需要这个常量也永远不会使用这个常量。它只是用来告诉编译器”假装访问并触发视图的所有方法。“
         let _ = vc.view
         
-//        vc.upda (Float(80.0), Float(50.0), Float(40.0))
-//        
-//        // The labels should now display 80, 50 and 40
-//        XCTAssert(vc.numberLabel.text == "80.0", "numberLabel doesn't show the right text")
-//        XCTAssert(vc.percentageLabel.text == "50.0%", "percentageLabel doesn't show the right text")
-//        XCTAssert(vc.resultLabel.text == "40.0", "resultLabel doesn't show the right text")
+        vc.updateLabels(Float(80.0), Float(50.0), Float(40.0))
+        
+        // The labels should now display 80, 50 and 40
+        XCTAssert(vc.ibNumberLabel.text == "80.0", "numberLabel doesn't show the right text")
+        XCTAssert(vc.ibPercentageLabel.text == "50.0%", "percentageLabel doesn't show the right text")
+        XCTAssert(vc.ibResultLabel.text == "40.0", "resultLabel doesn't show the right text")
     }
 }

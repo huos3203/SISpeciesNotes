@@ -510,7 +510,7 @@
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "益行人";
+				ORGANIZATIONNAME = "布衣男儿";
 				TargetAttributes = {
 					840ED9231C4CEE6300420D8C = {
 						CreatedOnToolsVersion = 7.2;
