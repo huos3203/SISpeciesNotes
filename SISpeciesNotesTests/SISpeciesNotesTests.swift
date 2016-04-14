@@ -10,6 +10,8 @@ import UIKit
 import XCTest
 import RealmSwift
 
+//[NSHipster](http://nshipster.com/xctestcase/)
+//[cocoachina](http://www.cocoachina.com/industry/20140805/9314.html)
 // 一个基本的测试类，每个使用 Realm 进行的测试都应当继承自该类，而不是直接继承自 XCTestCase 类
 class SISpeciesNotesTests: XCTestCase {
     

@@ -37,7 +37,6 @@
 		1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */; };
 		1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */; };
 		147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */; };
-		147226BD1CBFB9710009B42D /* stub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 147226BC1CBFB9700009B42D /* stub.jpg */; };
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
@@ -58,6 +57,9 @@
 		14DBA0B11CAE15E100BAB345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
+		84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */; };
+		84192D771CBFF721001866DD /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D761CBFF721001866DD /* LoginClient.swift */; };
+		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
@@ -69,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84192D711CBFE6A8001866DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D849C0971AF078E4001C01AC;
+			remoteInfo = SISpeciesNotes;
+		};
 		D849C0AE1AF078E4001C01AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
@@ -106,7 +115,6 @@
 		147226AF1CBF6E700009B42D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../Library/Developer/Xcode/DerivedData/SISpeciesNotes-axtwkgkpmpacrbdsutotqzseqpsr/Build/Products/Debug-iphonesimulator/ObjectMapper.framework"; sourceTree = "<group>"; };
 		147226B01CBF6E700009B42D /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = "Pods/../build/Debug-iphoneos/OHHTTPStubs.framework"; sourceTree = SOURCE_ROOT; };
 		147226B11CBF6E700009B42D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = SOURCE_ROOT; };
-		147226BC1CBFB9700009B42D /* stub.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stub.jpg; path = "../../Downloads/OHHTTPStubs-master/Examples/Swift/Stubs/stub.jpg"; sourceTree = "<group>"; };
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -129,6 +137,11 @@
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PercentageCalculatorViewController.swift; path = Controller/PercentageCalculatorViewController.swift; sourceTree = "<group>"; };
 		8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageCalculator.swift; sourceTree = "<group>"; };
+		84192D6C1CBFE6A8001866DD /* SISpeciesNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISpeciesNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISpeciesNotesUITests.swift; sourceTree = "<group>"; };
+		84192D701CBFE6A8001866DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84192D761CBFF721001866DD /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		84192D781CBFFFA1001866DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -171,6 +184,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84192D691CBFE6A8001866DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D849C0951AF078E4001C01AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
+				84192D761CBFF721001866DD /* LoginClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -237,6 +258,15 @@
 			);
 			name = Realm;
 			path = Frameworks/Realm;
+			sourceTree = "<group>";
+		};
+		84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */,
+				84192D701CBFE6A8001866DD /* Info.plist */,
+			);
+			path = SISpeciesNotesUITests;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -351,11 +381,11 @@
 			children = (
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */,
+				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
 				14A3C68D1C83EB000065D226 /* readme.md */,
-				147226BC1CBFB9700009B42D /* stub.jpg */,
 				D849C0991AF078E4001C01AC /* Products */,
 				E0A0A76A9D401F12C19F4D3C /* Pods */,
 			);
@@ -366,6 +396,7 @@
 			children = (
 				D849C0981AF078E4001C01AC /* SISpeciesNotes.app */,
 				D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */,
+				84192D6C1CBFE6A8001866DD /* SISpeciesNotesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +458,7 @@
 				146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */,
 				14D52E541CAB81D700A0595C /* animatedTransition */,
 				8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */,
+				84192D781CBFFFA1001866DD /* LoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -467,6 +499,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84192D6B1CBFE6A8001866DD /* SISpeciesNotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84192D731CBFE6A8001866DD /* Build configuration list for PBXNativeTarget "SISpeciesNotesUITests" */;
+			buildPhases = (
+				84192D681CBFE6A8001866DD /* Sources */,
+				84192D691CBFE6A8001866DD /* Frameworks */,
+				84192D6A1CBFE6A8001866DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84192D721CBFE6A8001866DD /* PBXTargetDependency */,
+			);
+			name = SISpeciesNotesUITests;
+			productName = SISpeciesNotesUITests;
+			productReference = 84192D6C1CBFE6A8001866DD /* SISpeciesNotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D849C0971AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D849C0B71AF078E4001C01AC /* Build configuration list for PBXNativeTarget "SISpeciesNotes" */;
@@ -514,7 +564,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0710;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "布衣男儿";
 				TargetAttributes = {
@@ -523,6 +573,10 @@
 					};
 					840ED9281C4CF5EF00420D8C = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					84192D6B1CBFE6A8001866DD = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D849C0971AF078E4001C01AC;
 					};
 					D849C0971AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -551,11 +605,19 @@
 				D849C0AC1AF078E4001C01AC /* SISpeciesNotesTests */,
 				840ED9231C4CEE6300420D8C /* GenerateDoc */,
 				840ED9281C4CF5EF00420D8C /* generateByJazzy */,
+				84192D6B1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84192D6A1CBFE6A8001866DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D849C0961AF078E4001C01AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,7 +632,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147226BD1CBFB9710009B42D /* stub.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +727,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84192D681CBFE6A8001866DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D849C0941AF078E4001C01AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,6 +751,8 @@
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
 				14A3C68E1C83EB000065D226 /* readme.md in Sources */,
+				84192D771CBFF721001866DD /* LoginClient.swift in Sources */,
+				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,
 				1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */,
 				847503981C59C70600E804EE /* Bicycle.swift in Sources */,
 				1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */,
@@ -710,6 +781,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84192D721CBFE6A8001866DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D849C0971AF078E4001C01AC /* SISpeciesNotes */;
+			targetProxy = 84192D711CBFE6A8001866DD /* PBXContainerItemProxy */;
+		};
 		D849C0AF1AF078E4001C01AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D849C0971AF078E4001C01AC /* SISpeciesNotes */;
@@ -762,6 +838,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84192D741CBFE6A8001866DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SISpeciesNotesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISpeciesNotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SISpeciesNotes;
+			};
+			name = Debug;
+		};
+		84192D751CBFE6A8001866DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = SISpeciesNotesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISpeciesNotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SISpeciesNotes;
 			};
 			name = Release;
 		};
@@ -965,6 +1068,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		84192D731CBFE6A8001866DD /* Build configuration list for PBXNativeTarget "SISpeciesNotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84192D741CBFE6A8001866DD /* Debug */,
+				84192D751CBFE6A8001866DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		D849C0931AF078E4001C01AC /* Build configuration list for PBXProject "SISpeciesNotes" */ = {
 			isa = XCConfigurationList;
