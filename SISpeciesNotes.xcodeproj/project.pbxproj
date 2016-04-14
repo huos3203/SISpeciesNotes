@@ -36,6 +36,7 @@
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
 		1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */; };
 		1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */; };
+		147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */; };
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
@@ -52,11 +53,7 @@
 		14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E521CAB81BB00A0595C /* SpeciesAnnotation.swift */; };
 		14D52E561CAB81D700A0595C /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E551CAB81D700A0595C /* OverlayAnimationController.swift */; };
 		14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E621CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift */; };
-		14DBA0AC1CAE15D400BAB345 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AA1CAE15D400BAB345 /* Realm.framework */; };
-		14DBA0AD1CAE15D400BAB345 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; };
-		14DBA0AE1CAE15E000BAB345 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AA1CAE15D400BAB345 /* Realm.framework */; };
 		14DBA0AF1CAE15E100BAB345 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AA1CAE15D400BAB345 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		14DBA0B01CAE15E100BAB345 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; };
 		14DBA0B11CAE15E100BAB345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
@@ -103,6 +100,11 @@
 		146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadeAnimationViewController.m; path = Controller/ShadeAnimationViewController.m; sourceTree = "<group>"; };
 		1461982D1CBB3F2500BAA78C /* SISpeciesNotes-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadeAnViewController.swift; path = Controller/ShadeAnViewController.swift; sourceTree = "<group>"; };
+		147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHHTTPStubsTest.swift; sourceTree = "<group>"; };
+		147226AE1CBF6E700009B42D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/SISpeciesNotes-axtwkgkpmpacrbdsutotqzseqpsr/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		147226AF1CBF6E700009B42D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../Library/Developer/Xcode/DerivedData/SISpeciesNotes-axtwkgkpmpacrbdsutotqzseqpsr/Build/Products/Debug-iphonesimulator/ObjectMapper.framework"; sourceTree = "<group>"; };
+		147226B01CBF6E700009B42D /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = "Pods/../build/Debug-iphoneos/OHHTTPStubs.framework"; sourceTree = SOURCE_ROOT; };
+		147226B11CBF6E700009B42D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = SOURCE_ROOT; };
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -171,11 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DBA0AE1CAE15E000BAB345 /* Realm.framework in Frameworks */,
-				14DBA0B01CAE15E100BAB345 /* RealmSwift.framework in Frameworks */,
-				14DBA0AC1CAE15D400BAB345 /* Realm.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
-				14DBA0AD1CAE15D400BAB345 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +398,7 @@
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
+				147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */,
 			);
 			path = SISpeciesNotesTests;
 			sourceTree = "<group>";
@@ -442,6 +441,10 @@
 		D8D76ABF1C1021AC0041D0ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				147226AE1CBF6E700009B42D /* Alamofire.framework */,
+				147226AF1CBF6E700009B42D /* ObjectMapper.framework */,
+				147226B01CBF6E700009B42D /* OHHTTPStubs.framework */,
+				147226B11CBF6E700009B42D /* SDWebImage.framework */,
 				14DBA0A91CAE15D400BAB345 /* Realm */,
 				20F40A34149E21A67CD352AF /* Pods.framework */,
 			);
@@ -693,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */,
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
 				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
@@ -848,13 +852,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -875,12 +879,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

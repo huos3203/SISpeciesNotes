@@ -301,7 +301,8 @@ _ = ibShadeLabel.fireTimer()
 #### [UnitTest特性](http://www.cocoachina.com/industry/20140805/9314.html) 
 1. self.measureBlock:能够检测代码性能：self.measureBlock() {//测试代码块}
 2. XCTestExpectation:异步测试的支持，借助 XCTestExpectation 类来实现。现在，测试能够为了确定的合适的条件等待一个指定时间长度，而不需要求助于GCD.
-做一个异步测试:
+
+#### 做一个异步测试:
 第一步，期望值：let expectation = expectationWithDescription("...") 
 第二步，增加 waitForExpectationsWithTimeout 方法，指定一个超时，如果测试条件不适合时间范围便会结束执行：
 waitForExpectationsWithTimeout(10, handler: { error in 
@@ -340,3 +341,18 @@ let photo = try! loadImage("./Resources/John Appleseed.jpg")
 
 #### defer关键字 A defer statement defers execution until the current scope is exited
 This statement lets you do any necessary cleanup that should be performed regardless of how execution leaves the current block of code—whether it leaves because an error was thrown or because of a statement such as return or break.
+
+
+##### [How to Use CocoaPods with Swift](https://www.raywenderlich.com/97014/use-cocoapods-with-swift)
+@testable import SISpeciesNotes
+@testable import Alamofire
+@testable import ObjectMapper
+@testable import OHHTTPStubs
+
+第一步：配置Podfile 添加use_frameworks!  ，pod 'Alamofire'  
+第二步：安装 pod install
+第三步：在Swift文件中导入动态库 import Almofire ，此时会有错误，暂时不用处理，等command + b 编译完成就可以正常使用Almofire库提供的API
+###### 怎样能在UnitTest中使用pod安装过的Framework呢
+前提在以上三步的基础上，如果直接使用@testable import Alamofire ,会提示“No such module” when using @testable in Xcode Unit tests
+只需要进入 Pods项目配置文件中，选中Target-> Almofire ,在该target中设置build settings -> enable testability -> debug设置为YES ，再重新编译 command + b 主项目，此时 Unit tests中的引用问题就消失了 
+
