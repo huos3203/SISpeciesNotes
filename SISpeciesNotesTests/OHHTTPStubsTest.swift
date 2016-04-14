@@ -8,14 +8,13 @@
 
 import XCTest
 
+//https://github.com/AliSoftware/OHHTTPStubs/wiki/Usage-Examples
+
 @testable import SISpeciesNotes
 @testable import Alamofire
 @testable import OHHTTPStubs
 
 class OHHTTPStubsTest: XCTestCase {
-    
-//    [Testing Alamofire with OHHTTPStub](http://stackoverflow.com/questions/34763783/testing-alamofire-with-ohhttpstub)
-      weak var textStub: OHHTTPStubsDescriptor?
     
     override func setUp() {
         super.setUp()
@@ -28,6 +27,8 @@ class OHHTTPStubsTest: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        OHHTTPStubs.removeAllStubs()
+        
         super.tearDown()
     }
 
@@ -58,4 +59,36 @@ class OHHTTPStubsTest: XCTestCase {
         })
         imageStub?.name = "Image stub"
     }
+    
+    
+//    测试下载data时，延时加载的
+    func testDownloadText()
+    {
+        //
+        let urlString = ""
+        let req = NSURLRequest(URL: NSURL(string: urlString)!)
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) { (_, data, _) in
+            //
+            if let receiveData = data, receiveText = NSString(data:receiveData,encoding:NSASCIIStringEncoding)
+            {
+                
+                print("文本内容：\(receiveText)")
+            }
+        }
+    }
+    
+//    
+    weak var textStub:OHHTTPStubsDescriptor?
+    func installTextStub(requestDelay:NSTimeInterval,responseDelay:NSTimeInterval)
+    {
+        //
+        textStub = stub(isExtension("txt"), response: { _  in
+            
+            let txtStr = "stub.txt"
+            let txtPath = OHPathForFile(txtStr, self.dynamicType)
+            return fixture(txtPath!, headers: ["Content-Type":"text/plain"]).requestTime(requestDelay, responseTime: responseDelay)
+        })
+        
+    }
+    
 }
