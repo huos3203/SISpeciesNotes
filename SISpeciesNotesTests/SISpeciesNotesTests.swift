@@ -86,6 +86,22 @@ class SISpeciesNotesTests: XCTestCase {
         }) 
     }
     
+//     字符串请求网络路径 http://www.cocoachina.com/ios/20141027/10052.html
+    func testStringLoadByURL()
+    {
+        //URL
+        let url = NSURL(string: "http://www.baidu.com")
+        let str:String // = try? String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
+        do{
+           try str = String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
+        }catch{
+            str = ""
+        }
+        
+        XCTAssert(!str.isEmpty, "正确")
+        
+    }
+    
     
     
 //    // Application Code

@@ -311,3 +311,32 @@ waitForExpectationsWithTimeout(10, handler: { error in
 expectation.fulfill() 
 如果测试有不止一个期望值，它将不会通过，除非每一次期望值在被 inwaitForExpectationsWithTimeout() 指定的超时中执行 fulfill()。
 expectation.fulfill() 
+
+
+##### 异常处理Error handing
+
+##### try? Converting Errors to Optional Values
+You use try? to handle an error by converting it to an optional value. If an error is thrown while evaluating the try? expression, the value of the expression is nil.
+func someThrowingFunction() throws -> Int {
+// ...
+}
+
+let x = try? someThrowingFunction()
+
+let y: Int?
+do {
+y = try someThrowingFunction()
+} catch {
+y = nil
+}
+##### try! 禁止错误传递
+Disabling Error Propagation
+
+Sometimes you know a throwing function or method won’t, in fact, throw an error at runtime. On those occasions, you can write try! before the expression to disable error propagation and wrap the call in a runtime assertion that no error will be thrown. If an error actually is thrown, you’ll get a runtime error.
+
+For example, the following code uses a loadImage(_:) function, which loads the image resource at a given path or throws an error if the image can’t be loaded. In this case, because the image is shipped with the application, no error will be thrown at runtime, so it is appropriate to disable error propagation.
+
+let photo = try! loadImage("./Resources/John Appleseed.jpg")
+
+#### defer关键字 A defer statement defers execution until the current scope is exited
+This statement lets you do any necessary cleanup that should be performed regardless of how execution leaves the current block of code—whether it leaves because an error was thrown or because of a statement such as return or break.
