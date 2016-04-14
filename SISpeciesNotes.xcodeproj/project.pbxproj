@@ -37,6 +37,7 @@
 		1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */; };
 		1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */; };
 		147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */; };
+		147226BD1CBFB9710009B42D /* stub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 147226BC1CBFB9700009B42D /* stub.jpg */; };
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
@@ -105,6 +106,7 @@
 		147226AF1CBF6E700009B42D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../Library/Developer/Xcode/DerivedData/SISpeciesNotes-axtwkgkpmpacrbdsutotqzseqpsr/Build/Products/Debug-iphonesimulator/ObjectMapper.framework"; sourceTree = "<group>"; };
 		147226B01CBF6E700009B42D /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = "Pods/../build/Debug-iphoneos/OHHTTPStubs.framework"; sourceTree = SOURCE_ROOT; };
 		147226B11CBF6E700009B42D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = SOURCE_ROOT; };
+		147226BC1CBFB9700009B42D /* stub.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stub.jpg; path = "../../Downloads/OHHTTPStubs-master/Examples/Swift/Stubs/stub.jpg"; sourceTree = "<group>"; };
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
 				14A3C68D1C83EB000065D226 /* readme.md */,
+				147226BC1CBFB9700009B42D /* stub.jpg */,
 				D849C0991AF078E4001C01AC /* Products */,
 				E0A0A76A9D401F12C19F4D3C /* Pods */,
 			);
@@ -567,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147226BD1CBFB9710009B42D /* stub.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

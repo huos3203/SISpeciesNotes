@@ -10,93 +10,52 @@ import XCTest
 
 @testable import SISpeciesNotes
 @testable import Alamofire
-@testable import ObjectMapper
 @testable import OHHTTPStubs
 
 class OHHTTPStubsTest: XCTestCase {
     
 //    [Testing Alamofire with OHHTTPStub](http://stackoverflow.com/questions/34763783/testing-alamofire-with-ohhttpstub)
-      weak var httpStub : OHHTTPStubsDescriptor?
+      weak var textStub: OHHTTPStubsDescriptor?
     
-    
-//    let realm:Realm
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         Alamofire.request(.GET,"")
         
-        
+        //模拟延迟加载：请求延迟1s , 响应延时:2s
+        installImageStub(1, responseTime: 2)
     }
-    
-    
-    
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
-        if let httpStub = self.httpStub{
-            OHHTTPStubs.removeStub(httpStub)
-        }
         super.tearDown()
     }
+
     
-    
-    func testFetchOverviewItems() {
-        
-        
-        
-    }
-    
-    func installTextStub()
+    func testDownloadImage()
     {
-        let  textHandler:OHHTTPStubsDescriptor? // Note: no need to retain this value, it is retained by the OHHTTPStubs itself already :)
-    
-        if (true)
-        {
-        // Install nit(fileAtPath filePath: String, statusCode: Int32, headers httpHeaders: [NSObject : AnyObject]?)
-            textHandler = OHHTTPStubs.stubRequestsPassingTest({ (request:NSURLRequest) -> Bool in
-                    return true
-                }, withStubResponse: { (request:NSURLRequest) -> OHHTTPStubsResponse in
-                    return OHHTTPStubsResponse(fileAtPath:"",statusCode: 23,headers: nil)
-            })
-            weak var textStub: OHHTTPStubsDescriptor?
-            textStub = stub(isExtension("txt")) { _ in
-                let stubPath = OHPathForFile("stub.txt", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/plain"])
-                    .requestTime(self.delaySwitch.on ? 2.0 : 0.0, responseTime:OHHTTPStubsDownloadSpeedWifi)
+        let urlString = "http://images.apple.com/support/assets/images/products/iphone/hero_iphone4-5_wide.png"
+        let req = NSURLRequest(URL: NSURL(string: urlString)!)
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) { (_, data, _) in
+            //
+            if let receiveData = data
+            {
+                print("图片数据长度:\(receiveData.length)")
             }
-            textStub?.name = "Text stub"
-        } else {
-            // Uninstall
-            OHHTTPStubs.removeStub(textStub!)
-        }
-            
-//        textHandler = [OHHTTPStubs shouldStubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-//        // This handler will only configure stub requests for "*.txt" files
-//        return [request.URL.absoluteString.pathExtension isEqualToString:@"txt"];
-//        } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-//        // Stub txt files with this
-//        return [OHHTTPStubsResponse responseWithFile:@"stub.txt"
-//        contentType:@"text/plain"
-//        responseTime:self.delaySwitch.on ? 2.f: 0.f];
-//        }];
-//        }
-//        else
-//        {
-//        // Uninstall
-//        [OHHTTPStubs removeRequestHandler:textHandler];
-//        }
-    }
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
         }
     }
     
+    
+//    设置模拟图片延迟加载
+    weak var imageStub:OHHTTPStubsDescriptor?
+    
+    func installImageStub(requestdelay:NSTimeInterval,responseTime:NSTimeInterval)
+    {
+        imageStub = stub((isExtension("png")||isExtension("jpg")), response: { _ in
+            //
+            let imagePath = OHPathForFile("stub.jpg", self.dynamicType)
+            return fixture(imagePath!, headers: ["Content-Type":"image/jpeg"]).requestTime(requestdelay, responseTime: responseTime)
+        })
+        imageStub?.name = "Image stub"
+    }
 }
