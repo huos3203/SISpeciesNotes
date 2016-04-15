@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         //
         super.viewDidLoad()
         autoLayoutBySnapkit()
+        createCustomSegue()
     }
     
     func autoLayoutBySnapkit()
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
         ibLoginClientButton.backgroundColor = UIColor.redColor()
         ibLoginClientButton.setTitle("Login=======", forState:.Normal)
         ibLoginClientButton.sizeToFit()
+        ibLoginClientButton.addTarget(self, action: "login:", forControlEvents:.TouchDown)
         
         //在做autoLayout之前 一定要先将view添加到superview上 否则会报错
         view.addSubview(ibUserNameField)
@@ -55,6 +57,7 @@ class LoginViewController: UIViewController {
         ibUserNameField.snp_makeConstraints { (make) in
             //水平居中，居LayoutGuideTop顶部50，边距40
             make.centerX.equalTo(view)
+            make.height.equalTo(40)
             make.top.equalTo(self.snp_topLayoutGuideBottom).offset(50).priorityHigh()
             make.left.equalTo(view).offset(40);make.right.equalTo(view).offset(-40)
             //等价上一句：
@@ -67,6 +70,7 @@ class LoginViewController: UIViewController {
             //相对于父视图水平居中
             make.centerX.equalTo(ibUserNameField)
             make.left.right.equalTo(ibUserNameField)
+            make.height.equalTo(ibUserNameField)
             //顶部距ibUserNameField对齐
             make.top.equalTo(ibUserNameField.snp_bottom).offset(40)
         }
@@ -79,22 +83,9 @@ class LoginViewController: UIViewController {
 //            make.size.equalTo(ibPasswordField).priorityLow()
             
         }
-       
-        
 //        view.setNeedsUpdateConstraints()
     }
-    
-    
-    //创建segue 
-    func createCustomSegue()
-    {
-        let storyBoardSegue = UIStoryboardSegue(identifier: "LoginSuccessIdentifier", source: self, destination: AddNewEntryController()) {
-            //跳转后，执行如下代码
-            
-        }
-//        ibLoginClientButton.
-    
-    }
+
     
     //登录事件:通过LoginClient结构体方法
     @IBAction func login(sender:AnyObject)
@@ -117,6 +108,20 @@ class LoginViewController: UIViewController {
             }
         }
     
+    }
+    
+    
+    //创建segue,可以通过扩展segue类来自定义segue操作，不适合在代码中手动创建
+    func createCustomSegue()
+    {
+        
+        //        let storyBoardSegue = UIStoryboardSegue(identifier: "LoginSuccessIdentifier", source: self, destination: AddNewEntryController()) {
+        //            //跳转后，执行如下代码
+        //
+        //        }
+        //
+        //        
+        
     }
     
 }
