@@ -10,6 +10,7 @@ import UIKit
 
 class PercentageCalculatorViewController: UIViewController {
 
+    
     @IBOutlet weak var ibNumberSlider: UISlider!
     @IBOutlet weak var ibNumberLabel: UILabel!
     

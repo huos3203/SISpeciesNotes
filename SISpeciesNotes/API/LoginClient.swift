@@ -9,11 +9,11 @@
 import Foundation
 
 
-
+let userInfo = ["hsg":"123456"]
 struct LoginClient
 {
-    
-   let userInfo = ["hsg":"123456"]
+   //class/static修饰的成员(类成员)不能访问没有class/static修饰的成员(实例成员)
+   static let userInfo = ["hsg":"123456"]
 //    错误类型
     enum LOGINError:ErrorType {
         case EmptyUserName,EmptyPassword,UserNotFound,WrongPassword
@@ -50,6 +50,4 @@ struct LoginClient
             completionHandler(true,nil)
         }
     }
-    
-    
 }

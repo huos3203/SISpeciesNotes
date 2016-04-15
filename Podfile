@@ -12,6 +12,10 @@ pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 pod 'OHHTTPStubs'
 pod 'OHHTTPStubs/Swift'
 
+#autolayout框架
+pod 'Masonry'
+pod 'SnapKit', '~> 0.20.0'
+
 #target :<#TargetName#>Tests, :exclusive => true do
 # pod 'Kiwi'
 #end

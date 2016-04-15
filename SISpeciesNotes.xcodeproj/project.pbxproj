@@ -40,6 +40,7 @@
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
+		147D367A1CC0D1500024B6C6 /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D36791CC0D1500024B6C6 /* SnapKitTest.swift */; };
 		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
 		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
@@ -118,6 +119,7 @@
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		147D36791CC0D1500024B6C6 /* SnapKitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitTest.swift; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14D52E421CAB811F00A0595C /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */,
 				84192D701CBFE6A8001866DD /* Info.plist */,
+				147D36791CC0D1500024B6C6 /* SnapKitTest.swift */,
 			);
 			path = SISpeciesNotesUITests;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147D367A1CC0D1500024B6C6 /* SnapKitTest.swift in Sources */,
 				84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1076,6 +1080,7 @@
 				84192D751CBFE6A8001866DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D849C0931AF078E4001C01AC /* Build configuration list for PBXProject "SISpeciesNotes" */ = {
 			isa = XCConfigurationList;

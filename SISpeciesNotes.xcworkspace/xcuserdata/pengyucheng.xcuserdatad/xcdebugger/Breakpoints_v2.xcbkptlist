@@ -19,53 +19,5 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SISpeciesNotesTests/OHHTTPStubsTest.swift"
-            timestampString = "482327737.77114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "testDownloadImage()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SISpeciesNotesTests.OHHTTPStubsTest.(testDownloadImage () -&gt; ()).(closure #1)"
-                  moduleName = "SISpeciesNotesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotesTests/OHHTTPStubsTest.swift"
-                  timestampString = "482327857.203437"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SISpeciesNotesTests.OHHTTPStubsTest.(testDownloadImage () -&gt; ()).(closure #1)"
-                  moduleName = "SISpeciesNotesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotesTests/OHHTTPStubsTest.swift"
-                  timestampString = "482327857.203671"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

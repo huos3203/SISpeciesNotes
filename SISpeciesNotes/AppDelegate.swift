@@ -18,30 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //设置realm数据库迁移配置
+        setRealmConfiguration()
         
-        // 在(application:didFinishLaunchingWithOptions:)中进行配置
+        //从代码中启动UI界面
+        launchAPPWithoutStoryBoard()
         
-        let config = Realm.Configuration(
-            // 设置新的架构版本。这个版本号必须高于之前所用的版本号（如果您之前从未设置过架构版本，那么这个版本号设置为 0）
-            schemaVersion: 1,
-            
-            // 设置闭包，这个闭包将会在打开低于上面所设置版本号的 Realm 数据库的时候被自动调用
-            migrationBlock: { migration, oldSchemaVersion in
-                // 目前我们还未进行数据迁移，因此 oldSchemaVersion == 0
-                if (oldSchemaVersion < 1) {
-                    // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
-                }
-        })
-        
-        // 告诉 Realm 为默认的 Realm 数据库使用这个新的配置对象
-        Realm.Configuration.defaultConfiguration = config
-        
-        // 现在我们已经告诉了 Realm 如何处理架构的变化，打开文件之后将会自动执行迁移
-        let realm = try! Realm()
-        
-        
-        return true
+            return true
     }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -63,6 +48,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    
+    //不通过Storyboard作为加载UI视图界面的相关代码
+    func launchAPPWithoutStoryBoard()
+    {
+        //实例化window
+        self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        //组装导航控制器
+        let loginViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController:loginViewController)
+        
+        //安装导航控制器
+        self.window?.rootViewController = navigationController
+        
+        //启动加载
+        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window?.makeKeyAndVisible()
+    }
+    
+    
+    
+    
+    //设置Reaml数据库升级的相关配置
+    func setRealmConfiguration()
+    {
+        // 在(application:didFinishLaunchingWithOptions:)中调用
+        let config = Realm.Configuration(
+            // 设置新的架构版本。这个版本号必须高于之前所用的版本号（如果您之前从未设置过架构版本，那么这个版本号设置为 0）
+            schemaVersion: 1,
+            
+            // 设置闭包，这个闭包将会在打开低于上面所设置版本号的 Realm 数据库的时候被自动调用
+            migrationBlock: { migration, oldSchemaVersion in
+                // 目前我们还未进行数据迁移，因此 oldSchemaVersion == 0
+                if (oldSchemaVersion < 1) {
+                    // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
+                }
+        })
+        
+        // 告诉 Realm 为默认的 Realm 数据库使用这个新的配置对象
+        Realm.Configuration.defaultConfiguration = config
+        
+        // 现在我们已经告诉了 Realm 如何处理架构的变化，打开文件之后将会自动执行迁移
+        let realm = try! Realm()
+
     }
 
 
