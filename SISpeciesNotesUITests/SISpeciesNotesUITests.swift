@@ -55,7 +55,10 @@ class SISpeciesNotesUITests: XCTestCase {
      
      XCUIElementQuery：
      1. 获取：buttions获取一个对 app 的 query 对象，并返回一个XCUIElementQuery对象。
+    对于 XCUIElementQuery，还有一点需要特别说明的。Query 的执行是延迟的，它和最后我们得到的 XCUIElement 并不是一一对应的。和 NSURL 与请求到的内容的关系类似，随着时间的变化，同一个 URL 有可能请求到不同的内容。我们生成 Query，然后在通过下标或者是访问方法获取的时候才真正从 app 中寻找对应的 UI 元素。这就是说，随着我们的 UI 的变化，同样的 query 也是有可能获取到不用的元素的。这在某些元素会消失或者 identifier 变化的时候是需要特别注意的。
+     为了获取UI元素准确：我们可以通过在 Interface Builder 或者代码中，对这两个 textfield 的 identifier属性进行设置，这样就可以使用下标的方式进行访问了。
      
+
      XCUIElement: UI 元素在测试框架中的代理，代表app中具体UI元素。
      1. 获取：当得到一个可用的 XCUIElementQuery 后，我们就可以进一步地获取代表 app 中具体 UI 元素,我们不能直接通过得到的 XCUIElement 来直接访问被测 app 中的元素，而只能通过 Accessibility 中的像是 identifier 或者 frame 这样的属性来获取 UI 的信息。
      2. 使用：通过包括 typeText(text:String),tap(),doubleTap()等触发事件和属性值设置方法
@@ -90,6 +93,22 @@ class SISpeciesNotesUITests: XCTestCase {
         
         let switchui = app.switches.elementBoundByIndex(0)
         switchui.tap()
+        
+        /*/
+         在UI test测试中，无法检测控件的具体属性是否正确。
+         因为：XCUIElement是特有的类，不支持类型转换
+         
+         let button = app.buttons.elementBoundByIndex(0)
+         let predicate = NSPredicate.init { (anyobject, bindings) -> Bool in
+         //
+         let button = anyobject as! UIButton
+         return button.backgroundImageForState(.Normal) != nil
+         }
+         expectationForPredicate(predicate, evaluatedWithObject: button, handler: nil)
+         waitForExpectationsWithTimeout(20, handler: nil)
+         */
+        
+        
         sleep(3)
         
 //        waitForExpectationsWithTimeout(5, handler: nil)

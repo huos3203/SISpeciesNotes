@@ -22,6 +22,7 @@
 //    [shadeLabel fireTimer];
 //    shadeLabel.fireTmer
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,6 +16,9 @@ class OnclickLikeViewController: UIViewController
     //签到计数
     let count = UILabel()
     
+    //测试按钮：expectationForPredicate
+    let button = UIButton()
+    
     override func viewDidLoad() {
         //加载UI
         addViewInSuperView()
@@ -41,6 +44,15 @@ class OnclickLikeViewController: UIViewController
         count.text = ""
         view.addSubview(count)
         
+        //按钮
+        button.setBackgroundImage(UIImage(named: "IconFlora"), forState: .Normal)
+        button.sizeToFit()
+        view.addSubview(button)
+        button.snp_makeConstraints { (make) in
+            //距顶50，水平居中
+            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(50)
+            make.centerX.equalTo(view)
+        }
         //
         qdLabel.snp_makeConstraints { (make) in
             //距顶部50，水平居中

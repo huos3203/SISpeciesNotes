@@ -81,6 +81,9 @@
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
+		84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */; };
+		84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */; };
+		84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
 		D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A41AF078E4001C01AC /* Images.xcassets */; };
@@ -222,6 +225,9 @@
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnclickLikeViewController.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
+		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
+		84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandingTest.swift; sourceTree = "<group>"; };
+		84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftTest.swift; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -525,6 +531,9 @@
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
 				147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */,
+				84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */,
+				84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */,
+				84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */,
 			);
 			path = SISpeciesNotesTests;
 			sourceTree = "<group>";
@@ -972,7 +981,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */,
+				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
 				147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */,
+				84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */,
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
 				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
@@ -1390,6 +1402,7 @@
 				845364441CC1EAEF006CCC58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845364481CC1EAEF006CCC58 /* Build configuration list for PBXNativeTarget "SISNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -1398,6 +1411,7 @@
 				845364461CC1EAEF006CCC58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8453644A1CC20851006CCC58 /* Build configuration list for PBXAggregateTarget "aggregateFrameWork" */ = {
 			isa = XCConfigurationList;
@@ -1406,6 +1420,7 @@
 				8453644C1CC20851006CCC58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D849C0931AF078E4001C01AC /* Build configuration list for PBXProject "SISpeciesNotes" */ = {
 			isa = XCConfigurationList;
