@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SnapKit
+//import SISpeciesNotes
 
 public func saygoodbye(name:String)
 {

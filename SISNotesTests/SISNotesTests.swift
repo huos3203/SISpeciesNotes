@@ -9,6 +9,8 @@
 import XCTest
 @testable import SISNotes
 @testable import SISpeciesNotes
+@testable import OHHTTPStubs
+@testable import SISpeciesNotes
 
 class SISNotesTests: XCTestCase {
     

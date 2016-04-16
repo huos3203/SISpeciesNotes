@@ -52,7 +52,6 @@
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		147D367A1CC0D1500024B6C6 /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D36791CC0D1500024B6C6 /* SnapKitTest.swift */; };
-		14A3C68E1C83EB000065D226 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14A3C68D1C83EB000065D226 /* readme.md */; };
 		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
 		14D52E461CAB812800A0595C /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E441CAB812800A0595C /* FlowCell.swift */; };
@@ -147,7 +146,6 @@
 /* Begin PBXFileReference section */
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
-		144A2B4A1CB370A50038435E /* 实战.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "实战.playground"; sourceTree = "<group>"; };
 		146198281CBB3F0100BAA78C /* ShadeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadeAnimationViewController.h; path = Controller/ShadeAnimationViewController.h; sourceTree = "<group>"; };
 		146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadeAnimationViewController.m; path = Controller/ShadeAnimationViewController.m; sourceTree = "<group>"; };
 		1461982D1CBB3F2500BAA78C /* SISpeciesNotes-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotes-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -192,6 +190,10 @@
 		8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISNotesTests.swift; sourceTree = "<group>"; };
 		8453643E1CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845364A01CC2556F006CCC58 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		845364AB1CC26C1C006CCC58 /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
+		845364AC1CC26C1C006CCC58 /* 实战.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "实战.playground"; sourceTree = "<group>"; };
+		845364AD1CC26C1C006CCC58 /* 面向对象.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "面向对象.playground"; sourceTree = "<group>"; };
+		845364AE1CC26E37006CCC58 /* Learn the Essentials of Swift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Learn the Essentials of Swift.playground"; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -220,8 +222,6 @@
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnclickLikeViewController.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
-		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
-		84FF65981CB2689E00902FB5 /* 面向对象.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "面向对象.playground"; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +356,17 @@
 			path = SISNotesTests;
 			sourceTree = "<group>";
 		};
+		845364AA1CC26C1C006CCC58 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				845364AE1CC26E37006CCC58 /* Learn the Essentials of Swift.playground */,
+				845364AB1CC26C1C006CCC58 /* Literals.playground */,
+				845364AC1CC26C1C006CCC58 /* 实战.playground */,
+				845364AD1CC26C1C006CCC58 /* 面向对象.playground */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,16 +464,6 @@
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
 		};
-		84FF65961CB2682B00902FB5 /* swift基础语法 */ = {
-			isa = PBXGroup;
-			children = (
-				84FB4C111C4E1E35008D512A /* Literals.playground */,
-				84FF65981CB2689E00902FB5 /* 面向对象.playground */,
-				144A2B4A1CB370A50038435E /* 实战.playground */,
-			);
-			name = "swift基础语法";
-			sourceTree = "<group>";
-		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +472,7 @@
 				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				8453642D1CC1EAEE006CCC58 /* SISNotes */,
 				8453643B1CC1EAEE006CCC58 /* SISNotesTests */,
+				845364AA1CC26C1C006CCC58 /* Playground */,
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
@@ -519,7 +521,6 @@
 			isa = PBXGroup;
 			children = (
 				847503951C59C3F300E804EE /* SwiftDocumentation */,
-				84FF65961CB2682B00902FB5 /* swift基础语法 */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
@@ -951,7 +952,6 @@
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
 				848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */,
-				14A3C68E1C83EB000065D226 /* readme.md in Sources */,
 				84192D771CBFF721001866DD /* LoginClient.swift in Sources */,
 				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,
 				1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */,
