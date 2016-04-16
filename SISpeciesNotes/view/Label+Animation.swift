@@ -33,8 +33,7 @@ extension UILabel
         
     }
     
-//    static var shadeTimer:NSTimer?
-    
+    //static var shadeTimer:NSTimer?
     func fireTimer()->()->()
     {
         //默认显示，24s之后隐藏
@@ -76,4 +75,65 @@ extension UILabel
                 print("\(NSDate())水印显示....")
         }
     }
+}
+
+//NSTimer.eve(5.secends){}
+extension NSTimer
+{
+    //定义一个嵌套类型，实现闭包的在NSTimer中接收和执行
+    class NSTimerActor
+    {
+        //存储变量是闭包类型
+        var block:()->()
+        //构造器
+        init(_ block:()->())
+        {
+            self.block = block
+        }
+        
+        /**
+         This is a bridge between the closure-based API and the target/selector reality. We can initialize this object with a closure, and then call fire to run it. (The fire method needs to be @objc to work with NSTimer.)
+         */
+        //执行block闭包程序
+        func fire()
+        {
+            self.block()
+        }
+    }
+    
+    /**
+     Wait, wait, wait… class func new? That’s not an initializer! No, it’s not, but unfortunately, as of Swift 1.2, there’s a bug (18720947) that will crash this code if we define it as a convenience initializer. Calling this new seems like a reasonable compromise.
+     we can define every and after in terms of new
+     */
+    
+    //扩展构造器
+    class func new(after interval:NSTimeInterval,_ block:()->())->NSTimer
+    {
+         //闭包接收器
+        let timerActor = NSTimerActor(block)
+        return self.init(timeInterval: interval, target: timerActor, selector: "fire", userInfo: nil, repeats: false)
+    }
+    
+    class func new(every interval:NSTimeInterval,_ block:()->())->NSTimer
+    {
+        let timerActor = NSTimerActor(block)
+        return self.init(timeInterval: interval, target: timerActor, selector: "fire", userInfo: nil, repeats: true)
+    }
+    
+    //time分钟后执行一次
+    class func after(time:NSTimeInterval,_ block:()->())->NSTimer
+    {
+        let timer = NSTimer.new(after:time,block)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        return timer
+    }
+
+    //每隔time执行一次
+    class func every(time:NSTimeInterval,_ block:()->())->NSTimer
+    {
+        let timer = NSTimer.new(every: time, block)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        return timer
+    }
+    
 }

@@ -296,8 +296,9 @@ _ = ibShadeLabel.fireTimer()
 [详解Swift 2.0（一）：单元测试与模式匹配](xcode特性：http://www.tuicool.com/articles/rMzMjaa)
 
 最终解决办法：
-1. 主项目和UnitTest项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
+1. 主项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
 2. 确保SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
+
 #### [UnitTest特性](http://www.cocoachina.com/industry/20140805/9314.html) 
 1. self.measureBlock:能够检测代码性能：self.measureBlock() {//测试代码块}
 2. XCTestExpectation:异步测试的支持，借助 XCTestExpectation 类来实现。现在，测试能够为了确定的合适的条件等待一个指定时间长度，而不需要求助于GCD.
@@ -355,4 +356,23 @@ This statement lets you do any necessary cleanup that should be performed regard
 ###### 怎样能在UnitTest中使用pod安装过的Framework呢
 前提在以上三步的基础上，如果直接使用@testable import Alamofire ,会提示“No such module” when using @testable in Xcode Unit tests
 只需要进入 Pods项目配置文件中，选中Target-> Almofire ,在该target中设置build settings -> enable testability -> debug设置为YES ，再重新编译 command + b 主项目，此时 Unit tests中的引用问题就消失了 
+
+##### 怎么把项目中的类导入 Playgroud中使用
+[How to I import 3rd party frameworks into Xcode Playground?](http://stackoverflow.com/questions/24046160/how-to-i-import-3rd-party-frameworks-into-xcode-playground)
+[How to import own classes from your own project into a Playground](http://stackoverflow.com/questions/24045245/how-to-import-own-classes-from-your-own-project-into-a-playground)
+
+Your playground must be in the same workspace as the project that produces your framework. Your workspace must contain a target that produces the framework, instead of using a pre-built framework.
+
+You must have already built your framework. If it is an iOS framework, it must be built for a 64-bit run destination (e.g. iPhone 5s), and must be built for the Simulator.
+
+You must have an active scheme which builds at least one target (that target's build location will be used in the framework search path for the playground).
+
+Your "Build Location" preference (in advanced "Locations" settings of Xcode) should not be set to "Legacy".
+
+If your framework is not a Swift framework the "Defines Module" build setting must be set to "Yes".
+
+You must add an import statement to your playground for the framework.
+
+
+
 

@@ -61,6 +61,11 @@
 		84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */; };
 		84192D771CBFF721001866DD /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D761CBFF721001866DD /* LoginClient.swift */; };
 		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
+		8453642F1CC1EAEE006CCC58 /* SISNotes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8453642E1CC1EAEE006CCC58 /* SISNotes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		845364361CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; };
+		8453643D1CC1EAEE006CCC58 /* SISNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */; };
+		845364411CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; };
+		845364421CC1EAEE006CCC58 /* SISNotes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
@@ -80,6 +85,27 @@
 			remoteGlobalIDString = D849C0971AF078E4001C01AC;
 			remoteInfo = SISpeciesNotes;
 		};
+		845364371CC1EAEE006CCC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8453642B1CC1EAEE006CCC58;
+			remoteInfo = SISNotes;
+		};
+		845364391CC1EAEE006CCC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D849C0971AF078E4001C01AC;
+			remoteInfo = SISpeciesNotes;
+		};
+		8453643F1CC1EAEE006CCC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8453642B1CC1EAEE006CCC58;
+			remoteInfo = SISNotes;
+		};
 		D849C0AE1AF078E4001C01AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D849C0901AF078E4001C01AC /* Project object */;
@@ -96,6 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				845364421CC1EAEE006CCC58 /* SISNotes.framework in Embed Frameworks */,
 				14DBA0B11CAE15E100BAB345 /* RealmSwift.framework in Embed Frameworks */,
 				14DBA0AF1CAE15E100BAB345 /* Realm.framework in Embed Frameworks */,
 			);
@@ -145,6 +172,12 @@
 		84192D701CBFE6A8001866DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84192D761CBFF721001866DD /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		84192D781CBFFFA1001866DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
+		8453642C1CC1EAEE006CCC58 /* SISNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SISNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8453642E1CC1EAEE006CCC58 /* SISNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISNotes.h; sourceTree = "<group>"; };
+		845364301CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845364351CC1EAEE006CCC58 /* SISNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISNotesTests.swift; sourceTree = "<group>"; };
+		8453643E1CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -195,10 +228,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		845364281CC1EAEE006CCC58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845364321CC1EAEE006CCC58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				845364361CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D849C0951AF078E4001C01AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845364411CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */,
 				E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +321,24 @@
 				147D36791CC0D1500024B6C6 /* SnapKitTest.swift */,
 			);
 			path = SISpeciesNotesUITests;
+			sourceTree = "<group>";
+		};
+		8453642D1CC1EAEE006CCC58 /* SISNotes */ = {
+			isa = PBXGroup;
+			children = (
+				8453642E1CC1EAEE006CCC58 /* SISNotes.h */,
+				845364301CC1EAEE006CCC58 /* Info.plist */,
+			);
+			path = SISNotes;
+			sourceTree = "<group>";
+		};
+		8453643B1CC1EAEE006CCC58 /* SISNotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */,
+				8453643E1CC1EAEE006CCC58 /* Info.plist */,
+			);
+			path = SISNotesTests;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -387,6 +454,8 @@
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */,
 				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
+				8453642D1CC1EAEE006CCC58 /* SISNotes */,
+				8453643B1CC1EAEE006CCC58 /* SISNotesTests */,
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
@@ -402,6 +471,8 @@
 				D849C0981AF078E4001C01AC /* SISpeciesNotes.app */,
 				D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */,
 				84192D6C1CBFE6A8001866DD /* SISpeciesNotesUITests.xctest */,
+				8453642C1CC1EAEE006CCC58 /* SISNotes.framework */,
+				845364351CC1EAEE006CCC58 /* SISNotesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -504,6 +575,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		845364291CC1EAEE006CCC58 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8453642F1CC1EAEE006CCC58 /* SISNotes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		84192D6B1CBFE6A8001866DD /* SISpeciesNotesUITests */ = {
 			isa = PBXNativeTarget;
@@ -523,6 +605,43 @@
 			productReference = 84192D6C1CBFE6A8001866DD /* SISpeciesNotesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8453642B1CC1EAEE006CCC58 /* SISNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845364471CC1EAEF006CCC58 /* Build configuration list for PBXNativeTarget "SISNotes" */;
+			buildPhases = (
+				845364271CC1EAEE006CCC58 /* Sources */,
+				845364281CC1EAEE006CCC58 /* Frameworks */,
+				845364291CC1EAEE006CCC58 /* Headers */,
+				8453642A1CC1EAEE006CCC58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SISNotes;
+			productName = SISNotes;
+			productReference = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		845364341CC1EAEE006CCC58 /* SISNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845364481CC1EAEF006CCC58 /* Build configuration list for PBXNativeTarget "SISNotesTests" */;
+			buildPhases = (
+				845364311CC1EAEE006CCC58 /* Sources */,
+				845364321CC1EAEE006CCC58 /* Frameworks */,
+				845364331CC1EAEE006CCC58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845364381CC1EAEE006CCC58 /* PBXTargetDependency */,
+				8453643A1CC1EAEE006CCC58 /* PBXTargetDependency */,
+			);
+			name = SISNotesTests;
+			productName = SISNotesTests;
+			productReference = 845364351CC1EAEE006CCC58 /* SISNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D849C0971AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D849C0B71AF078E4001C01AC /* Build configuration list for PBXNativeTarget "SISpeciesNotes" */;
@@ -539,6 +658,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				845364401CC1EAEE006CCC58 /* PBXTargetDependency */,
 			);
 			name = SISpeciesNotes;
 			productName = SISpeciesNotes;
@@ -584,6 +704,14 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = D849C0971AF078E4001C01AC;
 					};
+					8453642B1CC1EAEE006CCC58 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2C4H9T5RF5;
+					};
+					845364341CC1EAEE006CCC58 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D849C0971AF078E4001C01AC;
+					};
 					D849C0971AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 2C4H9T5RF5;
@@ -612,12 +740,28 @@
 				840ED9231C4CEE6300420D8C /* GenerateDoc */,
 				840ED9281C4CF5EF00420D8C /* generateByJazzy */,
 				84192D6B1CBFE6A8001866DD /* SISpeciesNotesUITests */,
+				8453642B1CC1EAEE006CCC58 /* SISNotes */,
+				845364341CC1EAEE006CCC58 /* SISNotesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84192D6A1CBFE6A8001866DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8453642A1CC1EAEE006CCC58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845364331CC1EAEE006CCC58 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -742,6 +886,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		845364271CC1EAEE006CCC58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845364311CC1EAEE006CCC58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8453643D1CC1EAEE006CCC58 /* SISNotesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D849C0941AF078E4001C01AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -793,6 +952,21 @@
 			isa = PBXTargetDependency;
 			target = D849C0971AF078E4001C01AC /* SISpeciesNotes */;
 			targetProxy = 84192D711CBFE6A8001866DD /* PBXContainerItemProxy */;
+		};
+		845364381CC1EAEE006CCC58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8453642B1CC1EAEE006CCC58 /* SISNotes */;
+			targetProxy = 845364371CC1EAEE006CCC58 /* PBXContainerItemProxy */;
+		};
+		8453643A1CC1EAEE006CCC58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D849C0971AF078E4001C01AC /* SISpeciesNotes */;
+			targetProxy = 845364391CC1EAEE006CCC58 /* PBXContainerItemProxy */;
+		};
+		845364401CC1EAEE006CCC58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8453642B1CC1EAEE006CCC58 /* SISNotes */;
+			targetProxy = 8453643F1CC1EAEE006CCC58 /* PBXContainerItemProxy */;
 		};
 		D849C0AF1AF078E4001C01AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -873,6 +1047,79 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISpeciesNotesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = SISpeciesNotes;
+			};
+			name = Release;
+		};
+		845364431CC1EAEF006CCC58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SISNotes/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		845364441CC1EAEF006CCC58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SISNotes/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		845364451CC1EAEF006CCC58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SISNotesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
+			};
+			name = Debug;
+		};
+		845364461CC1EAEF006CCC58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = SISNotesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
 			};
 			name = Release;
 		};
@@ -1085,6 +1332,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		845364471CC1EAEF006CCC58 /* Build configuration list for PBXNativeTarget "SISNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845364431CC1EAEF006CCC58 /* Debug */,
+				845364441CC1EAEF006CCC58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		845364481CC1EAEF006CCC58 /* Build configuration list for PBXNativeTarget "SISNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845364451CC1EAEF006CCC58 /* Debug */,
+				845364461CC1EAEF006CCC58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		D849C0931AF078E4001C01AC /* Build configuration list for PBXProject "SISpeciesNotes" */ = {
 			isa = XCConfigurationList;
