@@ -353,11 +353,27 @@ This statement lets you do any necessary cleanup that should be performed regard
 第一步：配置Podfile 添加use_frameworks!  ，pod 'Alamofire'  
 第二步：安装 pod install
 第三步：在Swift文件中导入动态库 import Almofire ，此时会有错误，暂时不用处理，等command + b 编译完成就可以正常使用Almofire库提供的API
+
 ###### 怎样能在UnitTest中使用pod安装过的Framework呢
 前提在以上三步的基础上，如果直接使用@testable import Alamofire ,会提示“No such module” when using @testable in Xcode Unit tests
 只需要进入 Pods项目配置文件中，选中Target-> Almofire ,在该target中设置build settings -> enable testability -> debug设置为YES ，再重新编译 command + b 主项目，此时 Unit tests中的引用问题就消失了 
 
-##### 怎么把项目中的类导入 Playgroud中使用
+##### 在Playgroud中使用个人项目中的类相关方法，需要借助于Custom Frameworks桥接
+解决方法：查看官方文档：Playground help -> Importing Custom Frameworks into a Playground
+
+1. 导入个人项目文件，需要借助cocoa touch Framework来桥接playground
+2. 需要workspace来管理Framework项目和playground文件，典型例子：pod项目都是用workspace来管理多个项目。
+3. 把个人项目的swift文件关联到Cocoa touch Framework项目的target中：
+    详细设置：选中target -> build phases -> compiles sources ->点击 + 加号，选中原项目中的swift
+    .swift的文件中的方法必须是public修饰。
+4. 在build选项中选中Framework的scheme进行编译 
+5. 打开playground文件 import Framework名称，此时即可使用Framework中的提供的public API方法了。
+
+注意：Workspace相关设置，build生成的目录：xcode偏好设置要和项目中的workspace中设置要保持一致.
+    1. xcode的偏好设置中 ->Locations -> Locations ->点击打开 Advanced...在弹出框中设置Unique选项.
+    2. 在workspace中选中菜单 File -> workspace settings... -> 在弹出框中设置为Unique选项.
+    
+
 [How to I import 3rd party frameworks into Xcode Playground?](http://stackoverflow.com/questions/24046160/how-to-i-import-3rd-party-frameworks-into-xcode-playground)
 [How to import own classes from your own project into a Playground](http://stackoverflow.com/questions/24045245/how-to-import-own-classes-from-your-own-project-into-a-playground)
 

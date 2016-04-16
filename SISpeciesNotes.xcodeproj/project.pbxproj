@@ -29,6 +29,17 @@
 			name = generateByJazzy;
 			productName = generateByJazzy;
 		};
+		845364491CC20851006CCC58 /* aggregateFrameWork */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8453644A1CC20851006CCC58 /* Build configuration list for PBXAggregateTarget "aggregateFrameWork" */;
+			buildPhases = (
+				8453644D1CC2086D006CCC58 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = aggregateFrameWork;
+			productName = aggregateFrameWork;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -66,6 +77,8 @@
 		8453643D1CC1EAEE006CCC58 /* SISNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */; };
 		845364411CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; };
 		845364421CC1EAEE006CCC58 /* SISNotes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		845364A11CC2556F006CCC58 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845364A01CC2556F006CCC58 /* test.swift */; };
+		845364A91CC25819006CCC58 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
@@ -178,6 +191,7 @@
 		845364351CC1EAEE006CCC58 /* SISNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISNotesTests.swift; sourceTree = "<group>"; };
 		8453643E1CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845364A01CC2556F006CCC58 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -328,6 +342,7 @@
 			children = (
 				8453642E1CC1EAEE006CCC58 /* SISNotes.h */,
 				845364301CC1EAEE006CCC58 /* Info.plist */,
+				845364A01CC2556F006CCC58 /* test.swift */,
 			);
 			path = SISNotes;
 			sourceTree = "<group>";
@@ -712,6 +727,9 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = D849C0971AF078E4001C01AC;
 					};
+					845364491CC20851006CCC58 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					D849C0971AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 2C4H9T5RF5;
@@ -742,6 +760,7 @@
 				84192D6B1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				8453642B1CC1EAEE006CCC58 /* SISNotes */,
 				845364341CC1EAEE006CCC58 /* SISNotesTests */,
+				845364491CC20851006CCC58 /* aggregateFrameWork */,
 			);
 		};
 /* End PBXProject section */
@@ -860,6 +879,19 @@
 			shellPath = /bin/sh;
 			shellScript = "author=\"huosan\";\nauthor_url=\"http://huos3203.github.io/MyBlog/\";\ngithub_url=\"https://github.com/huos3203\";\nsdk=\"iphone\";\noutput=\"docs/swift_output\";   #生成的文档地址\ndocSetDir=\"/Users/admin/Library/Developer/Shared/Documentation/DocSets/\"\n\njazzy \\\n--objc \\\n--clean \\\n--author \"${author}\" \\\n--author_url \"${author_url}\" \\\n--github_url \"${github_url}\" \\\n--module-version 0.96.2 \\\n--xcodebuild-arguments -scheme,\"${PROJECT_NAME}\" \\\n--module \"${PROJECT_NAME}\" \\\n--sdk  \"${sdk}\" \\\n--output \"${output}\" \\\n#拷贝到xcode文档目录中\necho \"${output}/docsets/${PROJECT_NAME}.docset\"\npwd\ncp -r \"${output}/docsets/${PROJECT_NAME}.docset\" \"${docSetDir}\"";
 		};
+		8453644D1CC2086D006CCC58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n\nopen \"${INSTALL_DIR}\"";
+		};
 		848841B31C7F593000929B21 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -890,6 +922,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845364A11CC2556F006CCC58 /* test.swift in Sources */,
+				845364A91CC25819006CCC58 /* Label+Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,6 +1157,20 @@
 			};
 			name = Release;
 		};
+		8453644B1CC20851006CCC58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8453644C1CC20851006CCC58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D849C0B51AF078E4001C01AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1215,6 +1263,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1242,6 +1291,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1346,6 +1396,14 @@
 			buildConfigurations = (
 				845364451CC1EAEF006CCC58 /* Debug */,
 				845364461CC1EAEF006CCC58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8453644A1CC20851006CCC58 /* Build configuration list for PBXAggregateTarget "aggregateFrameWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8453644B1CC20851006CCC58 /* Debug */,
+				8453644C1CC20851006CCC58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

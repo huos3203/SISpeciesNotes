@@ -34,7 +34,7 @@ extension UILabel
     }
     
     //static var shadeTimer:NSTimer?
-    func fireTimer()->()->()
+    public func fireTimer()->()->()
     {
         //默认显示，24s之后隐藏
         let timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(UILabel.hidden), userInfo: nil, repeats: true)
@@ -78,6 +78,7 @@ extension UILabel
 }
 
 //NSTimer.eve(5.secends){}
+//http://radex.io/swift/nstimer/
 extension NSTimer
 {
     //定义一个嵌套类型，实现闭包的在NSTimer中接收和执行
@@ -95,7 +96,7 @@ extension NSTimer
          This is a bridge between the closure-based API and the target/selector reality. We can initialize this object with a closure, and then call fire to run it. (The fire method needs to be @objc to work with NSTimer.)
          */
         //执行block闭包程序
-        func fire()
+        @objc func fire()
         {
             self.block()
         }
@@ -111,17 +112,17 @@ extension NSTimer
     {
          //闭包接收器
         let timerActor = NSTimerActor(block)
-        return self.init(timeInterval: interval, target: timerActor, selector: "fire", userInfo: nil, repeats: false)
+        return self.init(timeInterval: interval, target: timerActor, selector: #selector(timerActor.fire), userInfo: nil, repeats: false)
     }
     
     class func new(every interval:NSTimeInterval,_ block:()->())->NSTimer
     {
         let timerActor = NSTimerActor(block)
-        return self.init(timeInterval: interval, target: timerActor, selector: "fire", userInfo: nil, repeats: true)
+        return self.init(timeInterval: interval, target: timerActor, selector: #selector(NSTimerActor.fire), userInfo: nil, repeats: true)
     }
     
     //time分钟后执行一次
-    class func after(time:NSTimeInterval,_ block:()->())->NSTimer
+    public class func after(time:NSTimeInterval,_ block:()->())->NSTimer
     {
         let timer = NSTimer.new(after:time,block)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
@@ -129,7 +130,7 @@ extension NSTimer
     }
 
     //每隔time执行一次
-    class func every(time:NSTimeInterval,_ block:()->())->NSTimer
+    public class func every(time:NSTimeInterval,_ block:()->())->NSTimer
     {
         let timer = NSTimer.new(every: time, block)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)

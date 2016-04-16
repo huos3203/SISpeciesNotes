@@ -19,6 +19,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>aggregateFrameWork.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>ddd.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>generateByJazzy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -48,6 +58,16 @@
 			<true/>
 		</dict>
 		<key>845364341CC1EAEE006CCC58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845364491CC20851006CCC58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8453644E1CC208A3006CCC58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
