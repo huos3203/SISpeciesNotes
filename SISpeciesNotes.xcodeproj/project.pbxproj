@@ -63,6 +63,7 @@
 		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
+		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
 		D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A41AF078E4001C01AC /* Images.xcassets */; };
@@ -170,6 +171,7 @@
 		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
+		848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnclickLikeViewController.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		84FB4C111C4E1E35008D512A /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
 		84FF65981CB2689E00902FB5 /* 面向对象.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "面向对象.playground"; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				14D52E541CAB81D700A0595C /* animatedTransition */,
 				8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */,
 				84192D781CBFFFA1001866DD /* LoginViewController.swift */,
+				848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
+				848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */,
 				14A3C68E1C83EB000065D226 /* readme.md in Sources */,
 				84192D771CBFF721001866DD /* LoginClient.swift in Sources */,
 				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,

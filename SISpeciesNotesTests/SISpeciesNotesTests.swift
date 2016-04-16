@@ -104,7 +104,76 @@ class SISpeciesNotesTests: XCTestCase {
         
     }
     
+    //http://liuyanwei.jumppo.com/2016/03/10/iOS-unit-test.html?utm_source=tuicool&utm_medium=referral
+    /**
+     这个测试肯定是通过的，因为设置延迟为3秒，而异步操作2秒就除了一个正确的结果，并宣布了条件满足 [exp fulfill]，但是当我们把延迟改成1秒，这个测试用例就不会成功，错误原因是 expectationWithDescription:"这里可以是操作出错的原因描述。。。"
+     */
+    func testAsynExample()
+    {
+        let exp = expectationWithDescription("这里可以是操作出错的原因描述。。。")
+        let queue = NSOperationQueue()
+        queue.addOperationWithBlock {
+            //模拟这个异步操作需要2秒后才能获取结果，比如一个异步网络请求
+            sleep(2);
+            //模拟获取的异步操作后，获取结果，判断异步方法的结果是否正确
+            XCTAssertEqual("a", "a")
+            //如果断言没问题，就调用fulfill宣布测试满足
+            exp.fulfill()
+        }
     
+        //设置延迟多少秒后，如果没有满足测试条件就报错
+        waitForExpectationsWithTimeout(3){ error in
+            if ((error == nil))
+            {
+                print("Timeout Error: \(error)")
+            }
+        
+        }
+        
+        
+        /**
+         异步测试除了使用 expectationWithDescription以外，还可以使用 expectationForPredicate和expectationForNotification
+         
+         下面这个例子使用expectationForPredicate 测试方法，代码来自于AFNetworking，用于测试backgroundImageForState方法
+         */
+        func testThatBackgroundImageChanges()
+        {
+//            XCTAssertNil(self.button.backgroundImageForState())
+//            NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(UIButton  * _Nonnull button, NSDictionary<NSString *,id> * _Nullable bindings) {
+//                return [button backgroundImageForState:UIControlStateNormal] != nil;
+//                }];
+//            
+//            [self expectationForPredicate:predicate
+//                evaluatedWithObject:self.button
+//                handler:nil];
+//            [self waitForExpectationsWithTimeout:20 handler:nil];
+        }
+        
+        /**
+         expectationForNotification 方法 ,该方法监听一个通知,如果在规定时间内正确收到通知则测试通过。
+         */
+        func testAsynExample2()
+        {
+            expectationForNotification("监听通知的名称xxx", object: nil, handler: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("监听通知的名称xxx", object: nil)
+            
+            //设置延迟多少秒后，如果没有满足测试条件就报错
+            waitForExpectationsWithTimeout(3, handler: nil)
+        }
+        
+        
+        /**
+         这个例子也可以用expectationWithDescription实现,只是多些很多代码而已，但是这个可以帮助你更好的理解 expectationForNotification 方法和 expectationWithDescription 的区别。同理，expectationForPredicate方法也可以使用expectationWithDescription实现。
+         */
+        func testAsynExample1() {
+            let expectation = expectationWithDescription("监听通知的名称xxx")
+            let sub = NSNotificationCenter.defaultCenter().addObserverForName("监听通知的名称xxx", object: nil, queue: nil) { (not) -> Void in
+                expectation.fulfill()
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("监听通知的名称xxx", object: nil)
+            waitForExpectationsWithTimeout(1, handler: nil)
+            NSNotificationCenter.defaultCenter().removeObserver(sub)
+        }
     
 //    // Application Code
 //    func updateUserFromServer() {

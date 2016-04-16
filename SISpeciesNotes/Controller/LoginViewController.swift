@@ -12,8 +12,8 @@ import SnapKit
 class LoginViewController: UIViewController {
 
     //存储属性： 用户名，密码
-    @IBOutlet weak var ibUserNameField:UITextField!
-    @IBOutlet weak var ibPasswordField:UITextField!
+    @IBOutlet var ibUserNameField:UITextField!
+    @IBOutlet var ibPasswordField:UITextField!
     //button不能weak,会导致实例化失败
     @IBOutlet var ibLoginClientButton: UIButton!
     
@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
         view.addSubview(ibUserNameField)
         view.addSubview(ibPasswordField)
         view.addSubview(ibLoginClientButton)
+        view.backgroundColor = UIColor.blackColor()
         
 //        [初级] 让两个高度为150的view垂直居中且等宽且等间隔排列 间隔为10(自动计算其宽度)
         
@@ -94,20 +95,46 @@ class LoginViewController: UIViewController {
         {
             return
         }
+        
+        let indcator = UIActivityIndicatorView(activityIndicatorStyle:.Gray)
+        indcator.startAnimatingInSuperView(view)
+        print("开始....")
+        
+        var alterview:UIAlertController!
+        var message:String!
         LoginClient.loginClient(username, passWord: passWord) { (isSuccess, loginError) in
             //
+            indcator.stopAnimating()
+            
+            if (loginError == nil)
+            {
+                self.presentViewController(OnclickLikeViewController(), animated: true, completion: nil)
+                return
+            }
+            
             switch loginError!
             {
             case .EmptyUserName,.EmptyPassword:
-                //用户名为空
-                break
+                //提示框提示用户名、用户密码为空
+                message = "用户名、用户密码为空."
             case .UserNotFound:
-                break
+                // 用户名错误
+                message = "用户名错误"
             case .WrongPassword:
-                break
+                message = "用户密码错误"
             }
+            
+            //配置提示内容
+            alterview = UIAlertController(title: "错误提示", message:message,preferredStyle: .Alert)
+            //configuring User Actions
+            let cancelAction = UIAlertAction(title: "确定",style: .Cancel){_ in
+                //执行相关方法
+                print("打印错误信息")
+            }
+            
+            alterview.addAction(cancelAction)
+            self.presentViewController(alterview, animated: true, completion: nil)
         }
-    
     }
     
     
@@ -123,5 +150,23 @@ class LoginViewController: UIViewController {
         //        
         
     }
+    
+}
+
+extension UIActivityIndicatorView
+{
+    
+    func startAnimatingInSuperView(superview:UIView)
+    {
+        superview.addSubview(self)
+        //居中在父视图正中心
+        self.snp_makeConstraints { (make) in
+            make.center.equalTo(superview)
+        }
+        hidesWhenStopped = true
+        startAnimating()
+    }
+    
+    
     
 }
