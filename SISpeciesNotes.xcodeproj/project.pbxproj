@@ -195,10 +195,6 @@
 		8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISNotesTests.swift; sourceTree = "<group>"; };
 		8453643E1CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845364A01CC2556F006CCC58 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		845364AB1CC26C1C006CCC58 /* Literals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Literals.playground; sourceTree = "<group>"; };
-		845364AC1CC26C1C006CCC58 /* 实战.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "实战.playground"; sourceTree = "<group>"; };
-		845364AD1CC26C1C006CCC58 /* 面向对象.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "面向对象.playground"; sourceTree = "<group>"; };
-		845364AE1CC26E37006CCC58 /* Learn the Essentials of Swift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Learn the Essentials of Swift.playground"; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -366,17 +362,6 @@
 			path = SISNotesTests;
 			sourceTree = "<group>";
 		};
-		845364AA1CC26C1C006CCC58 /* Playground */ = {
-			isa = PBXGroup;
-			children = (
-				845364AE1CC26E37006CCC58 /* Learn the Essentials of Swift.playground */,
-				845364AB1CC26C1C006CCC58 /* Literals.playground */,
-				845364AC1CC26C1C006CCC58 /* 实战.playground */,
-				845364AD1CC26C1C006CCC58 /* 面向对象.playground */,
-			);
-			path = Playground;
-			sourceTree = "<group>";
-		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,7 +476,6 @@
 				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				8453642D1CC1EAEE006CCC58 /* SISNotes */,
 				8453643B1CC1EAEE006CCC58 /* SISNotesTests */,
-				845364AA1CC26C1C006CCC58 /* Playground */,
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,

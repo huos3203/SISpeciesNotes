@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Playground"
+      name = "Playground">
+      <FileRef
+         location = "group:Learn the Essentials of Swift.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Literals.playground">
+      </FileRef>
+      <FileRef
+         location = "group:&#x5b9e;&#x6218;.playground">
+      </FileRef>
+      <FileRef
+         location = "group:&#x9762;&#x5411;&#x5bf9;&#x8c61;.playground">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:VacationSpots_Starter/VacationSpots.xcodeproj">
    </FileRef>
 </Workspace>

@@ -184,5 +184,4 @@ class Users: Object {
     override class func primaryKey()->String?{return "index"}
     //设置索引
     override class func indexedProperties()->[String]{return ["index"]}
-    
 }
