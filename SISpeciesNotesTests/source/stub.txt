@@ -1,0 +1,7 @@
+/* 
+  stub.txt
+  SISpeciesNotes
+
+  Created by huoshuguang on 16/4/17.
+  Copyright © 2016年 布衣男儿. All rights reserved.
+*/

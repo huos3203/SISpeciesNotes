@@ -81,6 +81,8 @@
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
+		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
+		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
 		84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */; };
 		84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */; };
 		84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */; };
@@ -225,6 +227,8 @@
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnclickLikeViewController.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
+		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		84DCB7D71CC33B880028EE9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
 		84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandingTest.swift; sourceTree = "<group>"; };
 		84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftTest.swift; sourceTree = "<group>"; };
@@ -470,6 +474,15 @@
 			path = SwiftDocumentation;
 			sourceTree = "<group>";
 		};
+		84DCB7D51CC33B610028EE9A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				84DCB7D61CC33B610028EE9A /* user.json */,
+				84DCB7D71CC33B880028EE9A /* stub.txt */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		D849C08F1AF078E4001C01AC = {
 			isa = PBXGroup;
 			children = (
@@ -526,14 +539,14 @@
 		D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				847503951C59C3F300E804EE /* SwiftDocumentation */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
-				D849C0B11AF078E4001C01AC /* Supporting Files */,
 				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
 				147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */,
 				84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */,
 				84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */,
 				84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */,
+				847503951C59C3F300E804EE /* SwiftDocumentation */,
+				D849C0B11AF078E4001C01AC /* Supporting Files */,
 			);
 			path = SISpeciesNotesTests;
 			sourceTree = "<group>";
@@ -541,6 +554,7 @@
 		D849C0B11AF078E4001C01AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84DCB7D51CC33B610028EE9A /* source */,
 				D849C0B21AF078E4001C01AC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -811,6 +825,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
+				84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

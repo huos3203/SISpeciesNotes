@@ -114,7 +114,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         let realm = try! Realm()
         realm.beginWrite()
-//        更新已存在信息
+        //更新已存在信息
         realm.add(species ,update: true)
         try! realm.commitWrite()
     }
