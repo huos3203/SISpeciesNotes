@@ -395,5 +395,18 @@ You must add an import statement to your playground for the framework.
 1. NSURLConnection 请求网络https://www.baidu.com时，必须设置NSAppTransportSecurity-> NSAllowsArbitraryLoads = true
 2. NSURLSession请求网路时，则没有这个要求
 3. 坑在此：在Unit test中使用NSURLConnection时，在Unit test的info.plist文件中配置无效，必须在祝项目中的plist文件中重复第二步操作。 
- 
+
+#### F.I.R.S.T 原则  由于NSURLProtocol的局限性，OHHTTPStubs没法用来测试background sessions和模拟数据上传。
+优秀测试实践原则，https://pragprog.com/magazines/2012-01/unit-tests-are-first：
+Fast — 测试应该能够被经常执行
+Isolated — 测试本身不能依赖于外部因素或其他测试的结果
+Repeatable — 每次运行测试都应该产生相同的结果
+Self-verifying — 测试应该依赖于断言，不需要人为干预
+Timely — 测试应该和生产代码一同书写
+如何将测试结果收益最大化：不要将测试和实现细节耦合在一起。
+不要测试私有方法
+不要Stub私有方法
+不要Stub外部库
+正确地Stub依赖
+不要测试构造函数
 

@@ -14,6 +14,13 @@ import XCTest
 @testable import Alamofire
 @testable import OHHTTPStubs
 
+/*
+ 这个框架是基于NSURLProtocol实现的，可以在it或者beforeAll或者beforeEach的时候进行stub request，即上面这段代码的行为。但是不要忘记的是，需要在tear down的时候，即specta的afterAll的时候，记得调用 [OHHTTPStubs removeAllStubs] 。
+ 
+ 由于NSURLProtocol的局限性，OHHTTPStubs没法用来测试background sessions和模拟数据上传
+ 
+ 注意，这里只是使用NSURLProtocol来stub request，不会影响被测试的请求接口的测试，请求是异步的话，可以使用Specta的it/waitUntil/done()流程对请求进行测试，如果使用XCTest的话，OHTTPStubs给出了一个wiki解决，使用XCTestExpectation来搞定，我觉得挺有意思
+*/
 class OHHTTPStubsTest: XCTestCase {
     
     override func setUp() {
