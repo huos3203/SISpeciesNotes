@@ -73,6 +73,8 @@
 		84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */; };
 		84192D771CBFF721001866DD /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D761CBFF721001866DD /* LoginClient.swift */; };
 		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
+		843D91E41CC52E7200DEB22D /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E31CC52E7200DEB22D /* PersistencyManager.swift */; };
+		843D91E61CC5393A00DEB22D /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		8453642F1CC1EAEE006CCC58 /* SISNotes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8453642E1CC1EAEE006CCC58 /* SISNotes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		845364361CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; };
 		8453643D1CC1EAEE006CCC58 /* SISNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */; };
@@ -192,6 +194,8 @@
 		84192D701CBFE6A8001866DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84192D761CBFF721001866DD /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		84192D781CBFFFA1001866DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
+		843D91E31CC52E7200DEB22D /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		843D91E51CC5393A00DEB22D /* HttpClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientManager.swift; sourceTree = "<group>"; };
 		8453642C1CC1EAEE006CCC58 /* SISNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SISNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453642E1CC1EAEE006CCC58 /* SISNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISNotes.h; sourceTree = "<group>"; };
 		845364301CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -312,6 +316,10 @@
 		1479CBC21C9668DD00D26433 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				843D91DD1CC5211A00DEB22D /* Database */,
+				843D91DE1CC5211A00DEB22D /* FileSytem */,
+				843D91DF1CC5211A00DEB22D /* Memory */,
+				843D91E01CC5211A00DEB22D /* RemoteServer */,
 				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
 				84192D761CBFF721001866DD /* LoginClient.swift */,
 			);
@@ -345,6 +353,36 @@
 				147D36791CC0D1500024B6C6 /* SnapKitTest.swift */,
 			);
 			path = SISpeciesNotesUITests;
+			sourceTree = "<group>";
+		};
+		843D91DD1CC5211A00DEB22D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		843D91DE1CC5211A00DEB22D /* FileSytem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FileSytem;
+			sourceTree = "<group>";
+		};
+		843D91DF1CC5211A00DEB22D /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				843D91E31CC52E7200DEB22D /* PersistencyManager.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		843D91E01CC5211A00DEB22D /* RemoteServer */ = {
+			isa = PBXGroup;
+			children = (
+				843D91E51CC5393A00DEB22D /* HttpClientManager.swift */,
+			);
+			path = RemoteServer;
 			sourceTree = "<group>";
 		};
 		8453642D1CC1EAEE006CCC58 /* SISNotes */ = {
@@ -963,6 +1001,7 @@
 				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
+				843D91E61CC5393A00DEB22D /* HttpClientManager.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
@@ -980,6 +1019,7 @@
 				14D52E461CAB812800A0595C /* FlowCell.swift in Sources */,
 				D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */,
 				1479CBBA1C965CCF00D26433 /* Album.swift in Sources */,
+				843D91E41CC52E7200DEB22D /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
