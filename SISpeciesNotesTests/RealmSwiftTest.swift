@@ -126,7 +126,7 @@ class RealmSwiftTest: XCTestCase {
         )
         
         // Open the Realm from the bundled  with the configuration
-        let realm:Realm!
+        let _:Realm!
         do {
             realm = try Realm(configuration: config)
         } catch let error as NSError {

@@ -390,5 +390,10 @@ If your framework is not a Swift framework the "Defines Module" build setting mu
 You must add an import statement to your playground for the framework.
 
 
-
+#### NSURLConnection 和 NSURLSession请求网络的一个坑
+在主项目中使用 
+1. NSURLConnection 请求网络https://www.baidu.com时，必须设置NSAppTransportSecurity-> NSAllowsArbitraryLoads = true
+2. NSURLSession请求网路时，则没有这个要求
+3. 坑在此：在Unit test中使用NSURLConnection时，在Unit test的info.plist文件中配置无效，必须在祝项目中的plist文件中重复第二步操作。 
+ 
 

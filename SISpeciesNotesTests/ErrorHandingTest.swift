@@ -27,7 +27,7 @@ class ErrorHandingTest: XCTestCase {
         let url = NSURL(string: "http://www.baidu.com")
         let str:String // = try? String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
         do{
-            try str = String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
+             str = try String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
         }catch{
             str = ""
         }

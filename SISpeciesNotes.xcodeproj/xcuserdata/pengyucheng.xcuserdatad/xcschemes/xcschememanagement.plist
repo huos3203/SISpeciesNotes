@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>SISNotes.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>SISpeciesNotes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -20,6 +25,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>aggregateFrameWork.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>generateByJazzy.xcscheme</key>
 		<dict>
@@ -40,6 +50,21 @@
 			<true/>
 		</dict>
 		<key>84192D6B1CBFE6A8001866DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8453642B1CC1EAEE006CCC58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845364341CC1EAEE006CCC58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845364491CC20851006CCC58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
