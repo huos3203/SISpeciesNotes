@@ -12,7 +12,8 @@ import Alamofire
 
 //延时执行的黑魔法
 import XCPlayground
-XCPSetExecutionShouldContinueIndefinitely(true)
+//XCPSetExecutionShouldContinueIndefinitely(true)
+XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
 
 //扩展NSTimer方法，提高代码更高的可读性

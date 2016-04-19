@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import AlamofireImage
 //专辑视图模型
 class AlbumView: UIView {
 
@@ -38,6 +38,9 @@ class AlbumView: UIView {
         indicator.activityIndicatorViewStyle = .White
         indicator.startAnimating()
         addSubview(indicator)
+        
+        
+        
     }
     
 //    

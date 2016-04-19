@@ -173,8 +173,10 @@ List: invalidated、objectClassName 和 realm。
 
 #### [PLAYGROUND 延时运行](http://swifter.tips/playground-delay/) 
 延时执行的黑魔法：
+playground 中 Add Live View 官方文档
 import XCPlayground
-XCPSetExecutionShouldContinueIndefinitely(true)
+已过时：<!--XCPSetExecutionShouldContinueIndefinitely(true)-->
+XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
  1. [SELECTOR选择器的用法](http://swifter.tips/selector/)
     selector 其实是 Objective-C runtime 的概念，如果你的 selector 对应的方法只在 Swift 中可见的话 (也就是说它是一个 Swift 中的 private 方法)，在调用这个 selector 时你会遇到一个 unrecognized selector 错误：

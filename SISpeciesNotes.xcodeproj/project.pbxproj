@@ -597,12 +597,12 @@
 				14D52E4B1CAB818400A0595C /* MapViewController.swift */,
 				14D52E4C1CAB818400A0595C /* WeiboCollectionViewController.swift */,
 				1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */,
+				84192D781CBFFFA1001866DD /* LoginViewController.swift */,
+				848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */,
+				8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */,
 				146198281CBB3F0100BAA78C /* ShadeAnimationViewController.h */,
 				146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */,
 				14D52E541CAB81D700A0595C /* animatedTransition */,
-				8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */,
-				84192D781CBFFFA1001866DD /* LoginViewController.swift */,
-				848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

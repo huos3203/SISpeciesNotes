@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import Alamofire
+@testable import AlamofireImage
 
 class AlamofireTest: XCTestCase {
     
@@ -20,5 +22,14 @@ class AlamofireTest: XCTestCase {
         super.tearDown()
     }
     
+    func alamofireImage() {
+        //
+        let img = UIImage(named: "alert_error_icon")
+        let URL = NSBundle.mainBundle().URLForResource("unicorn", withExtension: "png")!
+        let data = NSData(contentsOfURL: URL)!
+        let image = UIImage(data: data, scale: UIScreen.mainScreen().scale)!
+        
+        image.af_inflate()
+    }
     
 }
