@@ -75,6 +75,7 @@
 		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
 		843D91E41CC52E7200DEB22D /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E31CC52E7200DEB22D /* PersistencyManager.swift */; };
 		843D91E61CC5393A00DEB22D /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
+		843D91E91CC6780E00DEB22D /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E81CC6780E00DEB22D /* AlbumsListViewController.swift */; };
 		8453642F1CC1EAEE006CCC58 /* SISNotes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8453642E1CC1EAEE006CCC58 /* SISNotes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		845364361CC1EAEE006CCC58 /* SISNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8453642C1CC1EAEE006CCC58 /* SISNotes.framework */; };
 		8453643D1CC1EAEE006CCC58 /* SISNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453643C1CC1EAEE006CCC58 /* SISNotesTests.swift */; };
@@ -196,6 +197,7 @@
 		84192D781CBFFFA1001866DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		843D91E31CC52E7200DEB22D /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		843D91E51CC5393A00DEB22D /* HttpClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientManager.swift; sourceTree = "<group>"; };
+		843D91E81CC6780E00DEB22D /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
 		8453642C1CC1EAEE006CCC58 /* SISNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SISNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453642E1CC1EAEE006CCC58 /* SISNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISNotes.h; sourceTree = "<group>"; };
 		845364301CC1EAEE006CCC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 				843D91E51CC5393A00DEB22D /* HttpClientManager.swift */,
 			);
 			path = RemoteServer;
+			sourceTree = "<group>";
+		};
+		843D91E71CC677B100DEB22D /* albums */ = {
+			isa = PBXGroup;
+			children = (
+				843D91E81CC6780E00DEB22D /* AlbumsListViewController.swift */,
+			);
+			name = albums;
 			sourceTree = "<group>";
 		};
 		8453642D1CC1EAEE006CCC58 /* SISNotes */ = {
@@ -591,6 +601,7 @@
 		D897B1ED1AF1CFA300DAD3EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				843D91E71CC677B100DEB22D /* albums */,
 				14D52E481CAB818400A0595C /* AddNewEntryController.swift */,
 				14D52E491CAB818400A0595C /* CategoriesTableViewController.swift */,
 				14D52E4A1CAB818400A0595C /* LogViewController.swift */,
@@ -993,6 +1004,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843D91E91CC6780E00DEB22D /* AlbumsListViewController.swift in Sources */,
 				1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */,
 				14D52E4D1CAB818400A0595C /* AddNewEntryController.swift in Sources */,
 				1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */,

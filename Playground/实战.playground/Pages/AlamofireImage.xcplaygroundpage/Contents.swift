@@ -24,7 +24,7 @@ XCPlaygroundPage.currentPage.captureValue(circularImage, withIdentifier: "tyyy12
 
 
 
-let image = [#Image(imageLiteral: "Screeny Shot 2014-2-10 下午3.15.49.png")#]
+let image = [#Image(imageLiteral: "london-thumb@3x.jpg")#]
 
 
 
@@ -32,9 +32,11 @@ let size = CGSize(width: 100.0, height: 100.0)
 
 // Scale image to size disregarding aspect ratio
 let scaledImage = image.af_imageScaledToSize(size)
-
+XCPlaygroundPage.currentPage.captureValue(scaledImage, withIdentifier: "scoledimage")
 // Scale image to fit within specified size while maintaining aspect ratio
 let aspectScaledToFitImage = image.af_imageAspectScaledToFitSize(size)
-
+XCPlaygroundPage.currentPage.captureValue(aspectScaledToFitImage, withIdentifier: "aspectScaledToFitImage")
 // Scale image to fill specified size while maintaining aspect ratio
 let aspectScaledToFillImage = image.af_imageAspectScaledToFillSize(size)
+
+XCPlaygroundPage.currentPage.captureValue(aspectScaledToFillImage, withIdentifier: "aspectScaledToFillImage")
