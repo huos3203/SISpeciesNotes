@@ -369,7 +369,7 @@ This statement lets you do any necessary cleanup that should be performed regard
 3. 把个人项目的swift文件关联到Cocoa touch Framework项目的target中：
     详细设置：选中target -> build phases -> compiles sources ->点击 + 加号，选中原项目中的swift
     .swift的文件中的方法必须是public修饰。
-4. 在build选项中选中Framework的scheme进行编译 
+4. 在build选项中选中Framework的scheme进行编译 ,要保证framework的target配置：build setting -> build active architecture Only ->debug选项设置为YES
 5. 打开playground文件 import Framework名称，此时即可使用Framework中的提供的public API方法了。
 
 注意：Workspace相关设置，build生成的目录：xcode偏好设置要和项目中的workspace中设置要保持一致.

@@ -1,4 +1,4 @@
-link_with 'SISNotes','SISpeciesNotes'
+#link_with 'SISFramework','SISpeciesNotes'  #为了把第三方开源库导入到Framwork，使用link_with来支持pod，结果并没有真正被引入，最后通过build active 的配置搞定了
 platform :ios, "8.0"
 use_frameworks!   #http://blog.csdn.net/remote_roamer/article/details/47835347
 #在PodFile中使用 use_frameworks!,让cocoapods来使用framework的方式

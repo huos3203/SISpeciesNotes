@@ -1,8 +1,8 @@
 //
-//  test.swift
+//  File.swift
 //  SISpeciesNotes
 //
-//  Created by huoshuguang on 16/4/16.
+//  Created by huoshuguang on 16/4/21.
 //  Copyright © 2016年 布衣男儿. All rights reserved.
 //
 
@@ -11,15 +11,19 @@ import SnapKit
 import Alamofire
 //import SISpeciesNotes
 
-class test
+public class test1
 {
+    var name = "dddd"
     
-
-    public func saygoodbye(name:String)
+    public init()
+    {
+        self.name = ""
+    }
+    public func saygoodbye1(name:String)
     {
         print("你好...\(name)")
         
         Alamofire.request(NSURLRequest(URL: NSURL(string: "https://www.baidu.com")!))
     }
-
+    
 }

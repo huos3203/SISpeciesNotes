@@ -1,18 +1,15 @@
 //
-//  SISNotesTests.swift
-//  SISNotesTests
+//  SISFrameworkTests.swift
+//  SISFrameworkTests
 //
-//  Created by huoshuguang on 16/4/16.
+//  Created by huoshuguang on 16/4/21.
 //  Copyright © 2016年 布衣男儿. All rights reserved.
 //
 
 import XCTest
-@testable import SISNotes
-@testable import SISpeciesNotes
-@testable import OHHTTPStubs
-@testable import SISpeciesNotes
+@testable import SISFramework
 
-class SISNotesTests: XCTestCase {
+class SISFrameworkTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

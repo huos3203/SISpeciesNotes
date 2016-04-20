@@ -10,7 +10,7 @@ import UIKit
 
 
 /// 显示所有专辑列表
-class AlbumsListViewController: UITableViewController {
+public class AlbumsListViewController: UITableViewController {
     
     //存储变量
     //系列数组
@@ -20,7 +20,7 @@ class AlbumsListViewController: UITableViewController {
     private var albumDetail:(title:String,value:String)?
     
     //周期方法
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         //获取数据
         albums = LibraryAPI().getAlbums()
         
@@ -35,7 +35,7 @@ class AlbumsListViewController: UITableViewController {
     
     
     //协议方法
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //
         var cell = tableView.dequeueReusableCellWithIdentifier("cell")
         if(cell == nil)
