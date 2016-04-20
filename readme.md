@@ -293,6 +293,7 @@ _ = ibShadeLabel.fireTimer()
 
 
 ##### “No such module” when using @testable in Xcode Unit tests
+##### 动态库中引入h第三方框架错误提示：framework Module 'Alamofire' has no member named 'request'
 [Xcode：为你的项目集成单元测试时记得避开这些坑](http://www.cocoachina.com/ios/20151125/14415.html)
 [“No such module” when using @testable in Xcode Unit tests](http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests)
 [详解Swift 2.0（一）：单元测试与模式匹配](xcode特性：http://www.tuicool.com/articles/rMzMjaa)

@@ -1,9 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
-    <pages>
-        <page name='计时器'/>
-        <page name='AlamofireImage'/>
-        <page name='Untitled Page'/>
-        <page name='albumsList'/>
-    </pages>
-</playground>
+<playground version='6.0' target-platform='ios' display-mode='raw' executeOnSourceChanges='false' timelineScrubberEnabled='true'/>
