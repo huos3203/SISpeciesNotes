@@ -28,6 +28,9 @@ class AlbumsListViewController: UITableViewController {
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //注册cell identifier
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     

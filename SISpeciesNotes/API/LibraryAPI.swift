@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 //外观模式（Facade）作为专辑管理类的入口
 //只让 LibraryAPI 持有 PersistencyManager 和 HTTPClient 的实例，
