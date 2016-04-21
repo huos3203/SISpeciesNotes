@@ -292,16 +292,6 @@ var invalidTimer:()->() = {}
 _ = ibShadeLabel.fireTimer()
 
 
-##### “No such module” when using @testable in Xcode Unit tests
-##### 动态库中引入h第三方框架错误提示：framework Module 'Alamofire' has no member named 'request'
-[Xcode：为你的项目集成单元测试时记得避开这些坑](http://www.cocoachina.com/ios/20151125/14415.html)
-[“No such module” when using @testable in Xcode Unit tests](http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests)
-[详解Swift 2.0（一）：单元测试与模式匹配](xcode特性：http://www.tuicool.com/articles/rMzMjaa)
-
-最终解决办法：
-1. 主项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
-2. 确保SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
-
 #### [UnitTest特性](http://www.cocoachina.com/industry/20140805/9314.html) 
 1. self.measureBlock:能够检测代码性能：self.measureBlock() {//测试代码块}
 2. XCTestExpectation:异步测试的支持，借助 XCTestExpectation 类来实现。现在，测试能够为了确定的合适的条件等待一个指定时间长度，而不需要求助于GCD.
@@ -346,8 +336,8 @@ let photo = try! loadImage("./Resources/John Appleseed.jpg")
 #### defer关键字 A defer statement defers execution until the current scope is exited
 This statement lets you do any necessary cleanup that should be performed regardless of how execution leaves the current block of code—whether it leaves because an error was thrown or because of a statement such as return or break.
 
-
-##### [How to Use CocoaPods with Swift](https://www.raywenderlich.com/97014/use-cocoapods-with-swift)
+###### 怎样能在UnitTest中使用pod安装过的Framework呢
+[How to Use CocoaPods with Swift](https://www.raywenderlich.com/97014/use-cocoapods-with-swift)
 @testable import SISpeciesNotes
 @testable import Alamofire
 @testable import ObjectMapper
@@ -355,11 +345,23 @@ This statement lets you do any necessary cleanup that should be performed regard
 
 第一步：配置Podfile 添加use_frameworks!  ，pod 'Alamofire'  
 第二步：安装 pod install
-第三步：在Swift文件中导入动态库 import Almofire ，此时会有错误，暂时不用处理，等command + b 编译完成就可以正常使用Almofire库提供的API
+[工程在模拟器上编译报错，不支持i386，Cocoapods确实还不支持64位模拟器，解决办法：](http://www.jianshu.com/p/53f1679604ad)
+其实就2条：
+1.build active architecture only 在debug的时候设置成YES，不要在release的时候用模拟器
+2.other linker flags 加一个 $(inherited)
 
-###### 怎样能在UnitTest中使用pod安装过的Framework呢
 前提在以上三步的基础上，如果直接使用@testable import Alamofire ,会提示“No such module” when using @testable in Xcode Unit tests
 只需要进入 Pods项目配置文件中，选中Target-> Almofire ,在该target中设置build settings -> enable testability -> debug设置为YES ，再重新编译 command + b 主项目，此时 Unit tests中的引用问题就消失了 
+
+##### “No such module” when using @testable in Xcode Unit tests
+##### 动态库中引入h第三方框架错误提示：framework Module 'Alamofire' has no member named 'request'
+[Xcode：为你的项目集成单元测试时记得避开这些坑](http://www.cocoachina.com/ios/20151125/14415.html)
+[“No such module” when using @testable in Xcode Unit tests](http://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests)
+[详解Swift 2.0（一）：单元测试与模式匹配](xcode特性：http://www.tuicool.com/articles/rMzMjaa)
+
+最终解决办法：相互依赖的target项目的active architecture only debug要保持一致，要么全是YES,要么全是NO
+1. 主项目的target的配置中设置： build settings -> enable testability -> debug设置为YES
+2. 确保SISpeciesnotesTests的 build setting -> build active architecture Only ->debug选项设置为YES
 
 ##### 在Playgroud中使用个人项目中的类相关方法，需要借助于Custom Frameworks桥接
 解决方法：查看官方文档：Playground help -> Importing Custom Frameworks into a Playground

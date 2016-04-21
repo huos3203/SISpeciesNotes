@@ -58,6 +58,16 @@
                ReferencedContainer = "container:SISpeciesNotes.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "843D920F1CC7E0D900DEB22D"
+               BuildableName = "SISFrameworkTests.xctest"
+               BlueprintName = "SISFrameworkTests"
+               ReferencedContainer = "container:SISpeciesNotes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
