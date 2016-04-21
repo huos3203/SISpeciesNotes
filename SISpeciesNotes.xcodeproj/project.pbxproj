@@ -164,7 +164,7 @@
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
 		144377601CC4756F002B2A05 /* URLSessionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTest.swift; sourceTree = "<group>"; };
 		145110BF1CC4F131005269E1 /* AlamofireTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireTest.swift; sourceTree = "<group>"; };
-		145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalScroller.swift; path = view/HorizontalScroller.swift; sourceTree = "<group>"; };
+		145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScroller.swift; sourceTree = "<group>"; };
 		145B72E21CC8B8D800315B72 /* 每日阅读.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "每日阅读.md"; sourceTree = "<group>"; };
 		146198281CBB3F0100BAA78C /* ShadeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadeAnimationViewController.h; path = Controller/ShadeAnimationViewController.h; sourceTree = "<group>"; };
 		146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadeAnimationViewController.m; path = Controller/ShadeAnimationViewController.m; sourceTree = "<group>"; };
@@ -316,6 +316,7 @@
 		1479CBBD1C965FCF00D26433 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */,
 				1479CBBE1C96600300D26433 /* AlbumView.swift */,
 				14D52E421CAB811F00A0595C /* MapViewExtension.swift */,
 				14D52E441CAB812800A0595C /* FlowCell.swift */,
@@ -401,7 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				843D91E81CC6780E00DEB22D /* AlbumsListViewController.swift */,
-				145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */,
 			);
 			name = albums;
 			sourceTree = "<group>";

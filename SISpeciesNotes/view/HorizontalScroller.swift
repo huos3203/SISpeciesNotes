@@ -34,7 +34,7 @@ public class HorizontalScroller: UIView {
 //    var pageNum:Int = 4
 //    var pageWidth:Int = 320
 //    //weak 定义委托
-//    weak var scrollerDelegate:HorizontalScrollerDelegate?
+    weak var scrollerDelegate:HorizontalScrollerDelegate?
     //scrollview对象
     let scrollView = UIScrollView()
     
@@ -50,52 +50,36 @@ public class HorizontalScroller: UIView {
         scrollView.alwaysBounceHorizontal = true
         //拖动时锁定方向
         scrollView.directionalLockEnabled = true
-        addSubPageView()
+        addSubPageView([String]())
     }
     
     //添加五张图片
-    func addSubPageView() {
-        
-        let imageview1 = UIImageView(image: UIImage(named: "barcelona-thumb"))
-        let imageview2 = UIImageView(image: UIImage(named: "beijing-thumb"))
-        let imageview3 = UIImageView(image: UIImage(named: "denali-national-park-and-preserve-thumb"))
-        let imageview4 = UIImageView(image: UIImage(named: "walt-disney-world-thumb"))
-        let imageview5 = UIImageView(image: UIImage(named: "sydney-thumb"))
-//        let pages = [imageview1,imageview2,imageview3,imageview4,imageview5]
+    func addSubPageView(images:[String]) {
         //向scrollview中添加操作
-        scrollView.addSubview(imageview1)
-        scrollView.addSubview(imageview2)
-        scrollView.addSubview(imageview3)
-        scrollView.addSubview(imageview4)
-        scrollView.addSubview(imageview5)
-        imageview1.snp_makeConstraints { (make) in
-            //
-            make.left.top.bottom.equalTo(scrollView)
-        }
-
-        imageview2.snp_makeConstraints { (make) in
-            //
-            make.centerY.equalTo(imageview1)
-            make.left.equalTo(imageview1.snp_right)
+        var preView:UIImageView!
+        for image in images {
+            let imageview = UIImageView(image: UIImage(named: image))
+            scrollView.addSubview(imageview)
+            if (preView != nil) {
+                imageview.snp_makeConstraints(closure: { (make) in
+                    //
+                    make.centerY.equalTo(preView)
+                    make.left.equalTo(preView.snp_right)
+                })
+            }else{
+                //第一个ImageView的约束
+                imageview.snp_makeConstraints(closure: { (make) in
+                    //
+                    make.centerY.equalTo(scrollView)
+                    make.left.top.bottom.equalTo(scrollView)
+                })
+            }
+            preView = imageview
         }
         
-        imageview3.snp_makeConstraints { (make) in
-            //
-            make.centerY.equalTo(imageview2)
-            make.left.equalTo(imageview2.snp_right)
-        }
-        
-        imageview4.snp_makeConstraints { (make) in
-            //
-            make.centerY.equalTo(imageview3)
-            make.left.equalTo(imageview3.snp_right)
-        }
-        imageview5.snp_makeConstraints { (make) in
-            //
-            make.centerY.equalTo(imageview4)
-            make.left.equalTo(imageview4.snp_right)
-            make.right.equalTo(scrollView.snp_left)
-        }
+        //循环结束之后，为最后一个ImageView添加right约束
+        preView.snp_makeConstraints { (make) in
+            make.right.equalTo(scrollView)
     }
 }
 
