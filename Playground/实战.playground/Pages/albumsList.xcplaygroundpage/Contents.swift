@@ -13,9 +13,6 @@ let viewController = AlbumsListViewController()
 XCPlaygroundPage.currentPage.liveView = viewController
 print("刷新完成")
 
-
-let onclickview = OnclickLikeViewController()
-onclickview.view.backgroundColor = UIColor.whiteColor()
-XCPlaygroundPage.currentPage.liveView = onclickview
-
-XCPlaygroundPage.currentPage.captureValue(viewController.view, withIdentifier: "about")
+//let onclickview = OnclickLikeViewController()
+//onclickview.view.backgroundColor = UIColor.whiteColor()
+//XCPlaygroundPage.currentPage.liveView = onclickview
