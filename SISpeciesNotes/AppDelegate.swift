@@ -57,8 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //实例化window
         self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
         //组装导航控制器
-        let loginViewController = LoginViewController()
-        let navigationController = UINavigationController(rootViewController:loginViewController)
+        let loginViewController = LoginViewController() //
+        let albums = AlbumsListViewController()
+        let navigationController = UINavigationController(rootViewController:albums)
         
         //安装导航控制器
         self.window?.rootViewController = navigationController

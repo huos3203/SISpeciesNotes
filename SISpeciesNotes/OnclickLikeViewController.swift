@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class OnclickLikeViewController: UIViewController
+public class OnclickLikeViewController: UIViewController
 {
     //签到按钮switch
     let qdSwitch = UISwitch()
@@ -19,7 +19,7 @@ class OnclickLikeViewController: UIViewController
     //测试按钮：expectationForPredicate
     let button = UIButton()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         //加载UI
         addViewInSuperView()
     }

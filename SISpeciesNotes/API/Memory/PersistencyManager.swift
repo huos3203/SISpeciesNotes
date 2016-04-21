@@ -15,7 +15,7 @@ class PersistencyManager {
     init() {
         //
         //Dummy list of albums
-        let album1 = Album(title: "Best of Bowie",
+        let album1 = Album(title: "Best of Bowie3333",
                            artist: "David Bowie",
                            gener: "Pop",
                            coverUrl: "http://www.coversproject.com/static/thumbs/album/album_david%20bowie_best%20of%20bowie.png",

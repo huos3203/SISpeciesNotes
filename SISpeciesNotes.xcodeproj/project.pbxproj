@@ -47,6 +47,7 @@
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
 		144377611CC4756F002B2A05 /* URLSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144377601CC4756F002B2A05 /* URLSessionTest.swift */; };
 		145110C01CC4F131005269E1 /* AlamofireTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145110BF1CC4F131005269E1 /* AlamofireTest.swift */; };
+		145B72DF1CC8861700315B72 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
 		1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */; };
 		1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461982E1CBB412200BAA78C /* ShadeAnViewController.swift */; };
 		147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147226AC1CBF6B000009B42D /* OHHTTPStubsTest.swift */; };
@@ -54,6 +55,11 @@
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		147D367A1CC0D1500024B6C6 /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D36791CC0D1500024B6C6 /* SnapKitTest.swift */; };
+		148DA35E1CC8741900FF27E4 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E81CC6780E00DEB22D /* AlbumsListViewController.swift */; };
+		148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E31CC52E7200DEB22D /* PersistencyManager.swift */; };
+		148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
+		148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
+		148DA3621CC8741900FF27E4 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14B6A6C91CC7649B00C0896B /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
@@ -990,6 +996,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145B72DF1CC8861700315B72 /* OnclickLikeViewController.swift in Sources */,
+				148DA35E1CC8741900FF27E4 /* AlbumsListViewController.swift in Sources */,
+				148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */,
+				148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */,
+				148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */,
+				148DA3621CC8741900FF27E4 /* Album.swift in Sources */,
 				843D92251CC7E10700DEB22D /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1174,7 +1186,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.novobabel.SISFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1352,7 +1364,7 @@
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
