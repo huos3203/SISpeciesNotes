@@ -80,11 +80,9 @@ public class HorizontalScroller: UIView {
         //循环结束之后，为最后一个ImageView添加right约束
         preView.snp_makeConstraints { (make) in
             make.right.equalTo(scrollView)
+        }
     }
 }
-
-
-
 
 
 

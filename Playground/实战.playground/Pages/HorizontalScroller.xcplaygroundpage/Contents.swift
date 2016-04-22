@@ -15,6 +15,8 @@ class scroller:UIViewController{
     }
     func addSubPageView()->UIScrollView {
         scrollView.pagingEnabled = true
+        scrollView.delegate = self
+        scrollView.bounces = false
         view.addSubview(scrollView)
         scrollView.snp_makeConstraints { (make) in
             make.left.top.bottom.right.equalTo(view)
@@ -73,20 +75,66 @@ class scroller:UIViewController{
             
             if CGRectContainsPoint(imageView.frame, tapPoint) {
                 //
-                var viewcenter = (view.frame.size.width - 200)/2
-                if tapPoint.x < viewcenter {
-                    viewcenter = -viewcenter
-                }
-                let offset = imageView.frame.origin.x + imageView.frame.size.width/2 + viewcenter
-                print("点击.\(tapPoint.x)..tag = \(imageView.tag)..offset = \(offset)")
-                scrollView.contentOffset = CGPointMake(offset, 0)
+                //scrollview偏移量 ＝ 当前位置 + (屏幕width - 图片width)
+                scrollView.setContentOffset(CGPointMake(imageView.frame.origin.x - view.frame.size.width/2 + imageView.frame.size.width/2, 0), animated:true)
             }
         
         }
         
     }
     
+    func centerCurrentViewbyTap(localPoint:CGPoint)->CGFloat  {
+        //
+        //二元方程式：求第N张图片，在ScrollView中心显示
+        //1. 中心坐标xFinal = 偏移量 + 图片宽度/2 + 图片间距
+        //2. 第N张 ＝ 中心坐标xFinal/(图片宽度 + 2 * 图片间距)
+        //3. xFinal = 第N张 *
+        let CenterX = scrollView.contentOffset.x + view.frame.size.width/2
+        
+        print("\(view.frame.size.width/2)|||||\(CenterX)-----\(localPoint.x) ===\(CenterX - localPoint.x)")
+        let offset = scrollView.contentOffset.x - (CenterX - localPoint.x)
+        
+//        if localPoint.x < CenterX {
+//            //向右移动
+//            offset = scrollView.contentOffset.x - CenterX - localPoint.x
+//        }else
+//        {
+//            //向左移动
+//            offset = scrollView.contentOffset.x + localPoint.x - CenterX
+//        }
+       print("偏移量：\(offset)")
+        return   offset
+    }
     
+    
+    
+    
+    
+    //滑动居中
+    func centerCurrentViewByScroll(localPoint:CGPoint)->CGFloat  {
+        //
+        //二元方程式：求第N张图片，在ScrollView中心显示
+        //1. 中心坐标xFinal = 偏移量 + 图片宽度/2 + 图片间距
+        //2. 第N张 ＝ 中心坐标xFinal/(图片宽度 + 2 * 图片间距)
+        //3. xFinal = 第N张 *
+        var xFinal = scrollView.contentOffset.x + 100
+        let viewIndex = xFinal / 200
+        xFinal = viewIndex * 200
+        return xFinal
+    }
+
+}
+
+extension scroller:UIScrollViewDelegate{
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        //
+        print("完成偏移动画:\(scrollView.contentOffset.x)")
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        //
+         print("完成偏移动画1111:\(scrollView.contentOffset.x)")
+    }
 
 }
 
