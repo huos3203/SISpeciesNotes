@@ -15,20 +15,18 @@ import SnapKit
 //定义协议，暴露委托方法
 @objc public protocol HorizontalScrollerDelegate{
     
-    
-    //datasource
+    //actionDelegate
+    func onclickPageImageView(imageView:UIImageView)
+}
+
+@objc public protocol HorizontalScrollerDataSource {
+
     //滚动图片的个数
     func pageNumOfScroller() -> Int
     
-    func horizontalScroller(index:Int)->UIImageView
-    
-    //滚动图片的
-    
-    //actionDelegate
-    func onclickPageImageView(imageView:UIImageView)
-    
-    
+    func horizontalScroller(scroller:UIScrollView ,imageViewIndex:Int)->UIImageView
 }
+
 
 //适配器：通过委托方式来实现适配器模式
 public class HorizontalScroller: UIView {
@@ -37,6 +35,7 @@ public class HorizontalScroller: UIView {
     let imgPadding = 0
     //weak 定义委托
     public weak var scrollerDelegate:HorizontalScrollerDelegate?
+    public weak var scrollerDataSource:HorizontalScrollerDataSource?
     //scrollview对象
     let scrollView = UIScrollView()
     
@@ -58,7 +57,7 @@ public class HorizontalScroller: UIView {
     func addSubPageView(images:[String]) {
         //向scrollview中添加操作
         var preView:UIImageView!
-        guard let pageNum = scrollerDelegate?.pageNumOfScroller() else
+        guard let pageNum = scrollerDataSource?.pageNumOfScroller() else
         {
             print("图片为张")
             return
@@ -66,7 +65,7 @@ public class HorizontalScroller: UIView {
         
         for index in 0...pageNum {
             print("添加第：\(index)个图片")
-            let imageview = scrollerDelegate?.horizontalScroller(index)
+            let imageview = scrollerDataSource?.horizontalScroller(scrollView,imageViewIndex: index)
             scrollView.addSubview(imageview!)
             let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(HorizontalScroller.tapImageAction(_:)))
             imageview?.userInteractionEnabled = true
