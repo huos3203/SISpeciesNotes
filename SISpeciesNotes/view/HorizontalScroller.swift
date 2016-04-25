@@ -13,17 +13,19 @@ import SnapKit
 //委托方式弥补了单继承的缺陷，从而一个类即可拥有多个委托类的功能
 
 //定义协议，暴露委托方法
-@objc protocol HorizontalScrollerDelegate{
+@objc public protocol HorizontalScrollerDelegate{
     
     
     //datasource
     //滚动图片的个数
     func pageNumOfScroller() -> Int
     
+    func horizontalScroller(index:Int)->UIImageView
+    
     //滚动图片的
     
     //actionDelegate
-    func onclickPageImage(image:UIImage)
+    func onclickPageImageView(imageView:UIImageView)
     
     
 }
@@ -31,18 +33,17 @@ import SnapKit
 //适配器：通过委托方式来实现适配器模式
 public class HorizontalScroller: UIView {
     
-//    var pageNum:Int = 4
-//    var pageWidth:Int = 320
-//    //weak 定义委托
-    weak var scrollerDelegate:HorizontalScrollerDelegate?
+    let imgWidth = 200
+    let imgPadding = 0
+    //weak 定义委托
+    public weak var scrollerDelegate:HorizontalScrollerDelegate?
     //scrollview对象
     let scrollView = UIScrollView()
     
-    
     public func initScrollView() {
-        
-//        pageNum = (scrollerDelegate?.pageNumOfScroller())!
+
         addSubview(scrollView)
+        scrollView.delegate = self
         scrollView.snp_makeConstraints { (make) in
             make.left.top.right.bottom.equalTo(self)
         }
@@ -57,21 +58,33 @@ public class HorizontalScroller: UIView {
     func addSubPageView(images:[String]) {
         //向scrollview中添加操作
         var preView:UIImageView!
-        for image in images {
-            let imageview = UIImageView(image: UIImage(named: image))
-            scrollView.addSubview(imageview)
+        guard let pageNum = scrollerDelegate?.pageNumOfScroller() else
+        {
+            print("图片为张")
+            return
+        }
+        
+        for index in 0...pageNum {
+            print("添加第：\(index)个图片")
+            let imageview = scrollerDelegate?.horizontalScroller(index)
+            scrollView.addSubview(imageview!)
+            let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(HorizontalScroller.tapImageAction(_:)))
+            imageview?.userInteractionEnabled = true
+            imageview?.addGestureRecognizer(tapGesture)
             if (preView != nil) {
-                imageview.snp_makeConstraints(closure: { (make) in
+                imageview!.snp_makeConstraints(closure: { (make) in
                     //
                     make.centerY.equalTo(preView)
                     make.left.equalTo(preView.snp_right)
+                    make.size.equalTo(CGSizeMake(200, 200))
                 })
             }else{
                 //第一个ImageView的约束
-                imageview.snp_makeConstraints(closure: { (make) in
+                imageview!.snp_makeConstraints(closure: { (make) in
                     //
                     make.centerY.equalTo(scrollView)
-                    make.left.top.bottom.equalTo(scrollView)
+                    make.left.equalTo(scrollView)
+                    make.size.equalTo(CGSizeMake(200, 200))
                 })
             }
             preView = imageview
@@ -82,8 +95,54 @@ public class HorizontalScroller: UIView {
             make.right.equalTo(scrollView)
         }
     }
+    
+    //点击后，自动居中显示
+    func tapImageAction(tapGesture:UITapGestureRecognizer) {
+        //
+        //获取当前Image
+        print("点击图片....")
+        let imageView = tapGesture.view as! UIImageView
+        scrollerDelegate?.onclickPageImageView(imageView)
+        let offset = imageView.frame.origin.x + (imageView.frame.size.width/2 - self.frame.size.width/2)
+        scrollView.setContentOffset(CGPointMake(offset,0), animated: true)
+    }
 }
 
+extension HorizontalScroller:UIScrollViewDelegate{
+    
+    //实现侧滑停止后，居中显示当前屏幕上的图片
+    func centerCurrentImageView(){
+        
+        //先通过偏移量算出屏幕中心点的 x 坐标
+        let current_x = scrollView.contentOffset.x + scrollView.frame.size.width/2
+        //再通过中心点 X 坐标，算出当前居中位置的图片索引,确定居中图片对象
+        let imageIndex = Int(current_x)/(imgWidth+imgPadding)
+        //根据图片origin.x + width/2 算出即将居中的x坐标
+        let replace_x = Int(scrollView.subviews[imageIndex].frame.origin.x) + imgWidth/2
+        //根据当前屏幕中心的x 坐标，和即将居中的x坐标点,求出坐标差，
+        let space_x = replace_x - Int(current_x)
+        //当前偏移量 + (当前图片中心坐标 - 原中心x)
+        let offset = scrollView.contentOffset.x + CGFloat(space_x)
+        
+        print("当前坐标:\(current_x),图片索引：\(imageIndex)和中心坐标：\(replace_x)\n偏移量：\(space_x)")
+        scrollView.setContentOffset(CGPointMake(CGFloat(offset), 0), animated: true)
+    }
+    
+    //侧滑结束
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        //
+        centerCurrentImageView()
+    }
+    
+    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        //
+        if !decelerate {
+            centerCurrentImageView()
+        }
+    }
+    
+
+}
 
 
 

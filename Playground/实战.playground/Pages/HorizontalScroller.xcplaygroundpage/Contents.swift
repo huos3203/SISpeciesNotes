@@ -4,6 +4,7 @@ import Foundation
 import XCPlayground
 import SnapKit
 
+import SISFramework
 
 class scroller:UIViewController{
     //添加五张图片，点击后方法，并居中
@@ -106,10 +107,6 @@ class scroller:UIViewController{
         return   offset
     }
     
-    
-    
-    
-    
     //滑动居中
     func centerCurrentViewByScroll(localPoint:CGPoint)->CGFloat  {
         //
@@ -138,7 +135,48 @@ extension scroller:UIScrollViewDelegate{
 
 }
 
-XCPlaygroundPage.currentPage.liveView = scroller()
+//XCPlaygroundPage.currentPage.liveView = scroller()
+
+class horizontalScrollViewController:UIViewController{
+
+    let scrollView = HorizontalScroller()
+    var images:[UIImage]?
+    override func viewDidLoad() {
+        //
+        
+        view.backgroundColor = UIColor.whiteColor()
+        images = [[#Image(imageLiteral: "barcelona-thumb@3x.jpg")#],[#Image(imageLiteral: "beijing-thumb@3x.jpg")#],[#Image(imageLiteral: "london-thumb@3x.jpg")#],[#Image(imageLiteral: "walt-disney-world-thumb@3x.jpg")#],[#Image(imageLiteral: "sydney-thumb@3x.jpg")#],[#Image(imageLiteral: "barcelona-thumb@2x.jpg")#]]
+        scrollView.scrollerDelegate = self
+        scrollView.initScrollView()
+        
+        view.addSubview(scrollView)
+        scrollView.snp_makeConstraints { (make) in
+            make.edges.equalTo(view).inset(UIEdgeInsetsMake(20, 20, 20, 20))
+        }
+    }
+}
+
+extension horizontalScrollViewController:HorizontalScrollerDelegate{
+    
+    func pageNumOfScroller() -> Int {
+        print("放回长度 == ")
+        return 5
+    }
+    
+    func horizontalScroller(index: Int) -> UIImageView {
+        //
+        let imageView = UIImageView(image: images![index])
+        return imageView
+    }
+    
+    func onclickPageImageView(imageView: UIImageView) {
+        print("点击图片....")
+    }
+
+}
+
+XCPlaygroundPage.currentPage.liveView = horizontalScrollViewController()
+
 
 
 //: [Next](@next)
