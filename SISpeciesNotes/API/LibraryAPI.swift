@@ -51,6 +51,30 @@ class LibraryAPI: NSObject
     
     //外观方法
     
+    func DowdloadIamge(notification:NSNotification){
+        
+        let imageUrl = notification.userInfo["imageUrl"] as! NSString
+        let coverImage = notification.userInfo["coverImage"] as! UIImage
+        //检测文件缓存，如果存在直接赋值
+        let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
+        filePath?.stringByAppendingString(imageUrl)
+        filePath = filePath?.stringByAppendingString()
+        let isExists = NSFileManager.defaultManager().fileExistsAtPath("")
+        if <#condition#> {
+            <#code#>
+        }
+        
+        
+        
+        
+        //否则，通过网络获取，赋值，然后持久化
+        
+        
+        
+        
+    
+    }
+    
     //获取专辑
     func getAlbums()->[Album]
     {
@@ -68,5 +92,10 @@ class LibraryAPI: NSObject
         {
             httpClient.addAlbum(album, index: index)
         }
+    }
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

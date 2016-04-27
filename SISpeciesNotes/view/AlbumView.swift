@@ -33,7 +33,7 @@ class AlbumView: UIView {
         indicator.startAnimating()
         addSubview(indicator)
         
-        NSNotificationCenter.defaultCenter().postNotificationName("DownloadImage", object: self, userInfo: ["coverImage":coverImage,"iamgeUrl":ablumCover])
+        NSNotificationCenter.defaultCenter().postNotificationName("DownloadImage", object: self, userInfo: ["coverImage":coverImage,"imageUrl":ablumCover])
     }
     
     //当coverImage变化时触发
@@ -43,6 +43,9 @@ class AlbumView: UIView {
         }
     }
     
+    deinit{
+        coverImage.removeObserver(self, forKeyPath: "image")
+    }
 //    
     func highlightAlbum(didHighlightView didHighlightView:Bool)
     {

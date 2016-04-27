@@ -18,18 +18,20 @@ class viewController: UIViewController {
         //
         let viewShade = UIView()
         view.addSubview(viewShade)
+        viewShade.addGuideFullScreen()
         
+        viewShade.backgroundImageView = UIImageView(image: [#Image(imageLiteral: "beijing-thumb@3x.jpg")#])
         let btn1 = UIButton()
         btn1.setImage([#Image(imageLiteral: "barcelona-thumb@2x.jpg")#], forState: .Normal)
+        viewShade.leftItem = btn1
 //        btn1.addTarget(self, action: #selector(viewController.hiddenItem(_:)), forControlEvents: .TouchDown)
 //        btn1.sizeToFit()
         
         let btn2 = UIButton()
         btn2.setImage([#Image(imageLiteral: "barcelona-thumb@3x.jpg")#], forState: .Normal)
+        viewShade.rightItem = btn2
 //        btn2.addTarget(self, action: #selector(viewController.hiddenItem(_:)), forControlEvents: .TouchDown)
 //        btn2.sizeToFit()
-       hideGuideItem = viewShade.addGuideFullScreen(UIImageView(image:[#Image(imageLiteral: "london-thumb@3x.jpg")#]),leftItem:btn1,rightItem:btn2)
-        
         setNavgationItem()
     }
     
