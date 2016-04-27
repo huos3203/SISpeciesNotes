@@ -24,25 +24,23 @@ class AlbumView: UIView {
         super.init(frame: frame)
         backgroundColor = UIColor.blackColor()
         coverImage = UIImageView.init(frame: CGRectMake(5, 5, frame.size.width - 10, frame.size.height - 10))
-        // 处理加载网络图片
-        coverImage.af_setImageWithURL(NSURL.init(string: ablumCover)!,
-                                      placeholderImage: UIImage(named: "barcelona-thumb"),
-                                      filter: DynamicImageFilter("DynamicImage"){$0},
-                                      progress: { (bytesRead, totalBytesRead, totalExpectedBytesToRead) in
-            //
-            },
-                                      progressQueue: dispatch_get_main_queue(),
-                                      imageTransition:UIImageView.ImageTransition.CurlUp(2),
-                                      runImageTransitionIfCached: true) { response in
-                                        //打印
-                                        print(response.debugDescription)
-        }
+        //添加观察者
+        coverImage.addObserver(self, forKeyPath: "image", options: [], context: nil)
         addSubview(coverImage)
         indicator = UIActivityIndicatorView()
         indicator.center = center
         indicator.activityIndicatorViewStyle = .White
         indicator.startAnimating()
         addSubview(indicator)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("DownloadImage", object: self, userInfo: ["coverImage":coverImage,"iamgeUrl":ablumCover])
+    }
+    
+    //当coverImage变化时触发
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "image" {
+            indicator.stopAnimating()
+        }
     }
     
 //    

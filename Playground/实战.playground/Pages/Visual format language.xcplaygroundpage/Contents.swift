@@ -5,37 +5,37 @@ import XCPlayground
 import UIKit
 
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+
 let leftitem = UIBarButtonItem()
 let button2 = UIButton()
 let white = UIView.init(frame: CGRectMake(0, 0, 20, 50))
 white.backgroundColor = UIColor.blackColor()
 class viewController: UIViewController {
     //
+    var hideGuideItem:(UIButton)->() = {_ in }
+    
     override func viewDidLoad() {
         //
-        let button = UIButton()
-        button.backgroundColor = UIColor.yellowColor()
+        let viewShade = UIView()
+        view.addSubview(viewShade)
         
+        let btn1 = UIButton()
+        btn1.setImage([#Image(imageLiteral: "barcelona-thumb@2x.jpg")#], forState: .Normal)
+//        btn1.addTarget(self, action: #selector(viewController.hiddenItem(_:)), forControlEvents: .TouchDown)
+//        btn1.sizeToFit()
         
-        view.addSubview(button)
-        view.backgroundColor = UIColor.whiteColor()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        //垂直布局  NSDictionaryOfVariableBindings
-        let Vconstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|-40-[button(==30)]", options: [], metrics: nil, views: ["button" : button])
-        let Hconstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[button]-|", options: [], metrics: nil, views: ["button" : button])
-        view.addConstraints(Vconstraint)
-        view.addConstraints(Hconstraint)
-        
-        
-        button2.backgroundColor = UIColor.brownColor()
-        view.addSubview(button2)
-        button2.translatesAutoresizingMaskIntoConstraints = false
-        let Hconstraints2 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[button2(==30)]-|", options: [], metrics: nil, views: ["button":button,"button2":button2])
-        let Vconstraints2 = NSLayoutConstraint.constraintsWithVisualFormat("V:[button]-20-[button2(==30)]", options: [], metrics: nil, views: ["button":button,"button2":button2])
-        view.addConstraints(Hconstraints2)
-        view.addConstraints(Vconstraints2)
+        let btn2 = UIButton()
+        btn2.setImage([#Image(imageLiteral: "barcelona-thumb@3x.jpg")#], forState: .Normal)
+//        btn2.addTarget(self, action: #selector(viewController.hiddenItem(_:)), forControlEvents: .TouchDown)
+//        btn2.sizeToFit()
+       hideGuideItem = viewShade.addGuideFullScreen(UIImageView(image:[#Image(imageLiteral: "london-thumb@3x.jpg")#]),leftItem:btn1,rightItem:btn2)
         
         setNavgationItem()
+    }
+    
+    func hiddenItem(item:UIButton) {
+        //
+        hideGuideItem(item)
     }
     //使用VFL语法来布局控件
     
@@ -46,8 +46,6 @@ class viewController: UIViewController {
         leftitem.title = "left"
         leftitem.tintColor = UIColor.blackColor()
 //        leftitem.setBackgroundImage([#Image(imageLiteral: "barcelona-thumb@2x.jpg")#], forState: .Normal, barMetrics: .Compact)
-        
-        
         
         let rightitem = UIBarButtonItem.init(customView: white)
         rightitem.title = "right"
@@ -69,6 +67,6 @@ let nav = UINavigationController.init(rootViewController: viewController())
 XCPlaygroundPage.currentPage.liveView = nav
 
 
-XCPlaygroundPage.currentPage.captureValue(leftitem, withIdentifier: "left")
-XCPlaygroundPage.currentPage.captureValue(white.frame, withIdentifier: "button2")
+//XCPlaygroundPage.currentPage.captureValue(leftitem, withIdentifier: "left")
+//XCPlaygroundPage.currentPage.captureValue(white.frame, withIdentifier: "button2")
 //: [Next](@next)

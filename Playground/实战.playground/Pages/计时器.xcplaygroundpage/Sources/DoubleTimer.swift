@@ -1,7 +1,6 @@
 import Foundation
 
-extension Double
-{
+extension Double{
     //秒
     public var second:Double{ return self}
     //分

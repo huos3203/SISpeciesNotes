@@ -43,8 +43,10 @@ class LibraryAPI: NSObject
         persistency = PersistencyManager()
         httpClient = HttpClientManager()
         isOnline = false
-        
+
         super.init()
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("DowdloadIamge:"), name: "DowdloadIamge", object: nil)
     }
     
     //外观方法
