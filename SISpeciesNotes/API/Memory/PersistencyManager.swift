@@ -18,31 +18,31 @@ class PersistencyManager {
         let album1 = Album(title: "Best of Bowie",
                            artist: "David Bowie",
                            gener: "Pop",
-                           coverUrl: "http://www.coversproject.com/static/thumbs/album/album_david%20bowie_best%20of%20bowie.png",
+                           coverUrl: "http://huos3203.github.io/MyBlog/images/QQ20160114-0.png",
                            year: "1992")
         
         let album2 = Album(title: "It's My Life",
                            artist: "No Doubt",
                            gener: "Pop",
-                           coverUrl: "http://www.coversproject.com/static/thumbs/album/album_no%20doubt_its%20my%20life%20%20bathwater.png",
+                           coverUrl: "http://huos3203.github.io/MyBlog/images/vIfAjiY.png!web.png",
                            year: "2003")
         
         let album3 = Album(title: "Nothing Like The Sun",
                            artist: "Sting",
                            gener: "Pop",
-                           coverUrl: "http://www.coversproject.com/static/thumbs/album/album_sting_nothing%20like%20the%20sun.png",
+                           coverUrl: "http://huos3203.github.io/MyBlog/images/IMG_0028.JPG",
                            year: "1999")
         
         let album4 = Album(title: "Staring at the Sun",
                            artist: "U2",
                            gener: "Pop",
-                           coverUrl: "http://www.coversproject.com/static/thumbs/album/album_u2_staring%20at%20the%20sun.png",
+                           coverUrl: "http://huos3203.github.io/MyBlog/images/QQ20160114-1.png",
                            year: "2000")
         
         let album5 = Album(title: "American Pie",
                            artist: "Madonna",
                            gener: "Pop",
-                           coverUrl: "http://www.coversproject.com/static/thumbs/album/album_madonna_american%20pie.png",
+                           coverUrl: "http://huos3203.github.io/MyBlog/images/QbMJNrM.png!web.png",
                            year: "2000")
         
         albums = [album1, album2, album3, album4, album5]

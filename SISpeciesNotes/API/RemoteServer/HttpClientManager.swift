@@ -29,14 +29,17 @@ class HttpClientManager {
     
     
     //下载专辑封面,并返回文件本地路径
-    func downloadCoverImage(filePath:NSString) -> NSURL{
+    func downloadCoverImage(filePath:NSString ,complection:(String)->()) -> NSURL{
         //
+        print("下载文件：\(filePath)")
         var fileUrl = NSURL(string: filePath as String)
         let coverSession = NSURLSession.sharedSession().downloadTaskWithURL(fileUrl!) { (location, response, error) in
             //
             print("下载文件...error:\(error?.localizedDescription)")
             print("本地文件路径:\(location?.absoluteString)")
             fileUrl = location
+            //完成
+            complection((location?.absoluteString)!)
         }
         coverSession.resume()
         return fileUrl!

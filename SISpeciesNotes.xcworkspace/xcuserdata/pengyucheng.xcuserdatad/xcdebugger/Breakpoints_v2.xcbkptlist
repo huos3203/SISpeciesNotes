@@ -35,5 +35,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotes/API/LibraryAPI.swift"
+            timestampString = "483529199.198939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "DowdloadImage(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISpeciesNotes.LibraryAPI.DowdloadImage (__ObjC.NSNotification) -&gt; ()"
+                  moduleName = "SISpeciesNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
+                  timestampString = "483530638.449095"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISFramework.LibraryAPI.DowdloadImage (__ObjC.NSNotification) -&gt; ()"
+                  moduleName = "SISFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
+                  timestampString = "483530638.449346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

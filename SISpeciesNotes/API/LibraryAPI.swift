@@ -48,20 +48,11 @@ class LibraryAPI: NSObject
 
         super.init()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LibraryAPI.DowdloadIamge(_:)), name: "DowdloadIamge", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "DowdloadImage:", name: "BLDownloadImageNotification", object: nil)
     }
     
-    //外观方法
-    func DowdloadIamge(notification:NSNotification){
-        
-        let ueserInfo = notification.userInfo as! [String:AnyObject]
-        let imagePath = ueserInfo["imageUrl"] as! String
-        var coverImage = ueserInfo["coverImage"] as! UIImage
-        
-        
-        
-    }
-    
+    //MARK: - 外观方法
+   
     //获取专辑
     func getAlbums()->[Album]
     {
@@ -81,6 +72,26 @@ class LibraryAPI: NSObject
         }
     }
     
+    
+    //MARK: - 通知方法 
+    //下载图片
+    func DowdloadImage(notification:NSNotification){
+        
+        let ueserInfo = notification.userInfo as! [String:AnyObject]
+        let imagePath = ueserInfo["imageUrl"] as! String
+        var coverImage = ueserInfo["coverImage"] as! UIImage
+        
+        //缓存文件
+        if !localFile.fileExistsAtPath(imagePath){
+            //网络下载数据
+            let locationUrl = httpClient.downloadCoverImage(imagePath){location in
+                coverImage = UIImage(named: location)!
+            }
+            //持久化
+            try! localFile.copyItemAtPath(locationUrl.absoluteString, toPath: imagePath)
+        }
+        coverImage = UIImage(named: "barcelona-thumb")!
+    }
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)

@@ -25,6 +25,15 @@ public class AlbumsListViewController: UIViewController {
     override public func viewDidLoad() {
         //获取数据
         albums = LibraryAPI().getAlbums()
+        initScroller()
+        initTableView()
+     }
+    
+    
+    //MARK: - 初始化子控件
+    
+    //轮播图
+    func initScroller(){
         
         //轮播图
         scroller.scrollerDataSource = self
@@ -32,9 +41,14 @@ public class AlbumsListViewController: UIViewController {
         view.addSubview(scroller)
         scroller.snp_makeConstraints { (make) in
             //
+            make.height.equalTo(200)
             make.top.left.right.equalTo(view).inset(8)
         }
-        
+        scroller.initScrollView()
+    }
+    
+    //tableView
+    func initTableView(){
         //TableView协议
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,10 +58,13 @@ public class AlbumsListViewController: UIViewController {
         tableView.snp_makeConstraints { (make) in
             //
             make.left.right.bottom.equalTo(view).inset(8)
-            make.top.equalTo(scroller).inset(0)
+            make.top.equalTo(scroller.snp_bottom).inset(0)
         }
+
     }
 }
+
+
 
 // MARK: - 修饰模式，使用扩展来实现表格控制器相关的委托方法
 extension AlbumsListViewController:UITableViewDelegate{
@@ -98,16 +115,17 @@ extension AlbumsListViewController:HorizontalScrollerDataSource{
         return albums.count
     }
     
-    public func horizontalScroller(scroller: UIScrollView, imageViewIndex: Int) -> UIImageView {
-        //自定义ImageView
-        
-        
-        return UIImageView()
+    public func horizontalScroller(scroller: UIScrollView, imageViewIndex: Int) -> UIView {
+        //自定义AlbumView
+        let coverUrl = albums[imageViewIndex].coverUrl
+//        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200), ablumCover: coverUrl)
+        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200),ablumCover:coverUrl)
+        return view
     }
 }
 extension AlbumsListViewController:HorizontalScrollerDelegate{
     
-    public func onclickPageImageView(imageView: UIImageView) {
+    public func onclickPageImageView(imageView: UIView) {
         //点击事件
     }
 }

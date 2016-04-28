@@ -83,6 +83,7 @@
 		14EC64181CD1B5FE00735501 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64171CD1B5FE00735501 /* LocalFileManager.swift */; };
 		14EC641A1CD1F3DE00735501 /* SwiftFilePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */; };
 		14EC641B1CD1FDEB00735501 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64171CD1B5FE00735501 /* LocalFileManager.swift */; };
+		14EC64201CD2116200735501 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
@@ -1036,6 +1037,7 @@
 				148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */,
 				148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */,
 				148DA3621CC8741900FF27E4 /* Album.swift in Sources */,
+				14EC64201CD2116200735501 /* AlbumView.swift in Sources */,
 				843D92251CC7E10700DEB22D /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

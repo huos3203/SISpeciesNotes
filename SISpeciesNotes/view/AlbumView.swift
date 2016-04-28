@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
 //专辑视图模型
 class AlbumView: UIView {
     
@@ -33,7 +32,7 @@ class AlbumView: UIView {
         indicator.startAnimating()
         addSubview(indicator)
         
-        NSNotificationCenter.defaultCenter().postNotificationName("DownloadImage", object: self, userInfo: ["coverImage":coverImage,"imageUrl":ablumCover])
+        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["coverImage":coverImage,"imageUrl":ablumCover])
     }
     
     //当coverImage变化时触发

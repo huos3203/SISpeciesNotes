@@ -16,7 +16,7 @@ import SnapKit
 @objc public protocol HorizontalScrollerDelegate{
     
     //actionDelegate
-    func onclickPageImageView(imageView:UIImageView)
+    func onclickPageImageView(imageView:UIView)
 }
 
 @objc public protocol HorizontalScrollerDataSource {
@@ -24,7 +24,7 @@ import SnapKit
     //滚动图片的个数
     func pageNumOfScroller() -> Int
     
-    func horizontalScroller(scroller:UIScrollView ,imageViewIndex:Int)->UIImageView
+    func horizontalScroller(scroller:UIScrollView ,imageViewIndex:Int)->UIView
 }
 
 
@@ -50,20 +50,20 @@ public class HorizontalScroller: UIView {
         scrollView.alwaysBounceHorizontal = true
         //拖动时锁定方向
         scrollView.directionalLockEnabled = true
-        addSubPageView([String]())
+        addSubPageView()
     }
     
     //添加五张图片
-    func addSubPageView(images:[String]) {
+    private func addSubPageView() {
         //向scrollview中添加操作
-        var preView:UIImageView!
+        var preView:UIView!
         guard let pageNum = scrollerDataSource?.pageNumOfScroller() else
         {
             print("图片为张")
             return
         }
         
-        for index in 0...pageNum {
+        for index in 0..<pageNum {
             print("添加第：\(index)个图片")
             let imageview = scrollerDataSource?.horizontalScroller(scrollView,imageViewIndex: index)
             scrollView.addSubview(imageview!)
@@ -100,7 +100,7 @@ public class HorizontalScroller: UIView {
         //
         //获取当前Image
         print("点击图片....")
-        let imageView = tapGesture.view as! UIImageView
+        let imageView = tapGesture.view!
         scrollerDelegate?.onclickPageImageView(imageView)
         let offset = imageView.frame.origin.x + (imageView.frame.size.width/2 - self.frame.size.width/2)
         scrollView.setContentOffset(CGPointMake(offset,0), animated: true)
