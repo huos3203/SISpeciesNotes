@@ -24,4 +24,22 @@ class HttpClientManager {
     func deleteAlbum(index:Int){
         Alamofire.request(NSURLRequest(URL: NSURL(string: "/api/delAlbum")!))
     }
+    
+    
+    
+    
+    //下载专辑封面,并返回文件本地路径
+    func downloadCoverImage(filePath:NSString) -> NSURL{
+        //
+        var fileUrl = NSURL(string: filePath as String)
+        let coverSession = NSURLSession.sharedSession().downloadTaskWithURL(fileUrl!) { (location, response, error) in
+            //
+            print("下载文件...error:\(error?.localizedDescription)")
+            print("本地文件路径:\(location?.absoluteString)")
+            fileUrl = location
+        }
+        coverSession.resume()
+        return fileUrl!
+    }
+    
 }

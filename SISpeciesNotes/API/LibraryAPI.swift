@@ -35,6 +35,7 @@ class LibraryAPI: NSObject
     //创建实例
     private let persistency:PersistencyManager
     private let httpClient:HttpClientManager
+    private let localFile:LocalFileManager
     private let isOnline: Bool    //标识当前是否为联网状态的，如果是联网状态就会去网络获取数据。
     
     //构造器
@@ -42,37 +43,23 @@ class LibraryAPI: NSObject
         
         persistency = PersistencyManager()
         httpClient = HttpClientManager()
+        localFile = LocalFileManager()
         isOnline = false
 
         super.init()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("DowdloadIamge:"), name: "DowdloadIamge", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LibraryAPI.DowdloadIamge(_:)), name: "DowdloadIamge", object: nil)
     }
     
     //外观方法
-    
     func DowdloadIamge(notification:NSNotification){
         
-        let imageUrl = notification.userInfo["imageUrl"] as! NSString
-        let coverImage = notification.userInfo["coverImage"] as! UIImage
-        //检测文件缓存，如果存在直接赋值
-        let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
-        filePath?.stringByAppendingString(imageUrl)
-        filePath = filePath?.stringByAppendingString()
-        let isExists = NSFileManager.defaultManager().fileExistsAtPath("")
-        if <#condition#> {
-            <#code#>
-        }
+        let ueserInfo = notification.userInfo as! [String:AnyObject]
+        let imagePath = ueserInfo["imageUrl"] as! String
+        var coverImage = ueserInfo["coverImage"] as! UIImage
         
         
         
-        
-        //否则，通过网络获取，赋值，然后持久化
-        
-        
-        
-        
-    
     }
     
     //获取专辑

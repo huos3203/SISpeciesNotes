@@ -27,6 +27,12 @@ pod 'SnapKit', '~> 0.20.0'  #swift
 #TZStackView，基于Swift的StackView库，同样支持iOS7+以上的系统，但是不支持storyboard。
 #pod "TZStackView", "1.1.2"
 
+
+#工具
+pod  'SwiftFilePath'
+
+
+
 #target :<#TargetName#>Tests, :exclusive => true do
 # pod 'Kiwi'
 #end

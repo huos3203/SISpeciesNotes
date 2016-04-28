@@ -102,7 +102,7 @@ extension AlbumsListViewController:HorizontalScrollerDataSource{
         //自定义ImageView
         
         
-        return nil
+        return UIImageView()
     }
 }
 extension AlbumsListViewController:HorizontalScrollerDelegate{

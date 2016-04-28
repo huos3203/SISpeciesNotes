@@ -80,6 +80,9 @@
 		14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E621CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift */; };
 		14DBA0AF1CAE15E100BAB345 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AA1CAE15D400BAB345 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14DBA0B11CAE15E100BAB345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14EC64181CD1B5FE00735501 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64171CD1B5FE00735501 /* LocalFileManager.swift */; };
+		14EC641A1CD1F3DE00735501 /* SwiftFilePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */; };
+		14EC641B1CD1FDEB00735501 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64171CD1B5FE00735501 /* LocalFileManager.swift */; };
 		14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
@@ -203,6 +206,8 @@
 		14D52E621CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDEModalTransitionDelegate.swift; sourceTree = "<group>"; };
 		14DBA0AA1CAE15D400BAB345 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		14DBA0AB1CAE15D400BAB345 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		14EC64171CD1B5FE00735501 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalFileManager.swift; path = SISpeciesNotes/API/FileSystem/LocalFileManager.swift; sourceTree = SOURCE_ROOT; };
+		14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFilePathTests.swift; sourceTree = "<group>"; };
 		14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitTest.swift; sourceTree = "<group>"; };
 		1C6BEC9D9ACCC3F198B92E0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +402,7 @@
 		843D91DE1CC5211A00DEB22D /* FileSytem */ = {
 			isa = PBXGroup;
 			children = (
+				14EC64171CD1B5FE00735501 /* LocalFileManager.swift */,
 			);
 			path = FileSytem;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				144377601CC4756F002B2A05 /* URLSessionTest.swift */,
 				145110BF1CC4F131005269E1 /* AlamofireTest.swift */,
 				14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */,
+				14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */,
 				847503951C59C3F300E804EE /* SwiftDocumentation */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 			);
@@ -1023,6 +1030,7 @@
 			files = (
 				145B72DF1CC8861700315B72 /* OnclickLikeViewController.swift in Sources */,
 				148DA35E1CC8741900FF27E4 /* AlbumsListViewController.swift in Sources */,
+				14EC641B1CD1FDEB00735501 /* LocalFileManager.swift in Sources */,
 				148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */,
 				145B72E11CC8A81C00315B72 /* HorizontalScroller.swift in Sources */,
 				148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */,
@@ -1061,6 +1069,7 @@
 				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,
 				1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */,
 				847503981C59C70600E804EE /* Bicycle.swift in Sources */,
+				14EC64181CD1B5FE00735501 /* LocalFileManager.swift in Sources */,
 				1461982F1CBB412200BAA78C /* ShadeAnViewController.swift in Sources */,
 				14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */,
 				14427F781CCDC4A2007E80CF /* HorizontalScroller.swift in Sources */,
@@ -1093,6 +1102,7 @@
 				14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */,
 				144377611CC4756F002B2A05 /* URLSessionTest.swift in Sources */,
 				145110C01CC4F131005269E1 /* AlamofireTest.swift in Sources */,
+				14EC641A1CD1F3DE00735501 /* SwiftFilePathTests.swift in Sources */,
 				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
