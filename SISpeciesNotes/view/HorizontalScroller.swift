@@ -59,7 +59,7 @@ public class HorizontalScroller: UIView {
         var preView:UIView!
         guard let pageNum = scrollerDataSource?.pageNumOfScroller() else
         {
-            print("图片为张")
+            print("图片为0张")
             return
         }
         

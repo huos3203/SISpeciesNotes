@@ -101,6 +101,7 @@
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		848EE4CE1CC12B57000AC0C1 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
+		849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AFA161CD5D306006FBF61 /* Images.xcassets */; };
 		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
 		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
 		84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */; };
@@ -108,7 +109,6 @@
 		84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
-		D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A41AF078E4001C01AC /* Images.xcassets */; };
 		D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A61AF078E4001C01AC /* LaunchScreen.xib */; };
 		D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */; };
 		E924FE83ECBA9B6E512DF364 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F40A34149E21A67CD352AF /* Pods.framework */; };
@@ -258,6 +258,7 @@
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnclickLikeViewController.swift; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
+		849AFA161CD5D306006FBF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		84DCB7D71CC33B880028EE9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
@@ -267,7 +268,6 @@
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D849C0A21AF078E4001C01AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D849C0A41AF078E4001C01AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D849C0A71AF078E4001C01AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISpeciesNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C0B21AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -355,11 +355,11 @@
 		1479CBC21C9668DD00D26433 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
 				843D91DD1CC5211A00DEB22D /* Database */,
 				843D91DE1CC5211A00DEB22D /* FileSytem */,
 				843D91DF1CC5211A00DEB22D /* Memory */,
 				843D91E01CC5211A00DEB22D /* RemoteServer */,
-				1479CBC31C9668DD00D26433 /* LibraryAPI.swift */,
 				84192D761CBFF721001866DD /* LoginClient.swift */,
 			);
 			path = API;
@@ -662,8 +662,8 @@
 		D8D76ABE1C0FF1670041D0ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				849AFA161CD5D306006FBF61 /* Images.xcassets */,
 				D849C0A11AF078E4001C01AC /* Main.storyboard */,
-				D849C0A41AF078E4001C01AC /* Images.xcassets */,
 				D849C0A61AF078E4001C01AC /* LaunchScreen.xib */,
 			);
 			name = Resources;
@@ -897,9 +897,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */,
 				D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */,
 				D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */,
-				D849C0A51AF078E4001C01AC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

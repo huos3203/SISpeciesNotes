@@ -101,27 +101,65 @@ class AsyncTheOldWayTest: XCTestCase {
     func testAsynForNotification()
     {
         //监听测试通知
-        expectationForNotification("监听通知的名称xxx", object: nil, handler: nil)
+        expectationForNotification("BLDownloadImageNotification", object: nil) { (notification) -> Bool in
+            //
+            let userInfo = notification.userInfo as! [String:String]
+            let name = userInfo["name"]
+            let sex = userInfo["sex"]
+            print("name:\(name), sex = \(sex)")
+            return true
+        }
         //发送通知
-        NSNotificationCenter.defaultCenter().postNotificationName("监听通知的名称xxx", object: nil)
+//        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["name":"huosan","sex":"man"])
         
         //设置延迟多少秒后，如果没有满足测试条件就报错
         waitForExpectationsWithTimeout(3, handler: nil)
     }
     
+
     /**
      这个例子也可以用expectationWithDescription实现,帮助理解 expectationForNotification 方法和 expectationWithDescription 的区别。
      同理，expectationForPredicate方法也可以使用expectationWithDescription实现。
      */
     func testAsynForNotificationWithExpectation() {
-        let expectation = expectationWithDescription("监听通知的名称xxx")
-        let sub = NSNotificationCenter.defaultCenter().addObserverForName("监听通知的名称xxx", object: nil, queue: nil) { (not) -> Void in
+        let expectation = expectationWithDescription("BLDownloadImageNotification")
+        let sub = NSNotificationCenter.defaultCenter().addObserverForName("BLDownloadImageNotification", object: nil, queue: nil) { (not) -> Void in
             expectation.fulfill()
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("监听通知的名称xxx", object: nil)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: nil)
+        
         waitForExpectationsWithTimeout(1, handler: nil)
         NSNotificationCenter.defaultCenter().removeObserver(sub)
     }
+    
+    /**
+       通过userInfo参数 传递 expectation 
+     */
+    func testAsynForNotificationWithExpectation2() {
+        let expectation = expectationWithDescription("BLDownloadImageNotification")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AsyncTheOldWayTest.downLoadImage(_:)), name: "BLDownloadImageNotification", object: nil)
+
+        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["name":"huosan","sex":"man","expectation":expectation])
+        
+        waitForExpectationsWithTimeout(1, handler: nil)
+                NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func downLoadImage(notification:NSNotification) {
+        //
+        
+        let userInfo = notification.userInfo as! [String:AnyObject]
+        let name = userInfo["name"]
+        let sex = userInfo["sex"]
+        print("name:\(name), sex = \(sex)")
+        
+        let expectation = userInfo["expectation"] as! XCTestExpectation
+        expectation.fulfill()
+        
+    }
+    
     
     /**
      *  @author shuguang, 16-04-16 23:04:47

@@ -24,7 +24,7 @@ public class AlbumsListViewController: UIViewController {
     //周期方法
     override public func viewDidLoad() {
         //获取数据
-        albums = LibraryAPI().getAlbums()
+        albums = LibraryAPI.shareInstance.getAlbums()
         initScroller()
         initTableView()
      }

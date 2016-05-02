@@ -14,7 +14,7 @@ class LocalFileManager: NSFileManager {
     }
     //文件本地路径Document目录
     func createDocumentPathFrom(filePath:NSString) -> String {
-        let docPath = NSSearchPathForDirectoriesInDomains(.UserDirectory, .UserDomainMask, true)[0]
+        let docPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         return docPath.stringByAppendingString(filePath.lastPathComponent)
     }
     
@@ -22,13 +22,15 @@ class LocalFileManager: NSFileManager {
    override func fileExistsAtPath(path: String) -> Bool {
         //
         let filePath = createDocumentPathFrom(path)
-        print("documentPath:\(path)")
         return super.fileExistsAtPath(filePath)
     }
     
-    override func copyItemAtPath(srcPath: String, toPath dstPath: String) throws {
+    //保存到本地
+    func saveImageToDocument(tmpUrl:NSURL,imageURL:String)->String  {
         //
-        let dst = createDocumentPathFrom(srcPath)
-        try super.copyItemAtPath(srcPath, toPath: dst)
+        let docpath = createDocumentPathFrom(imageURL)
+        let imageData = NSData(contentsOfURL: tmpUrl)
+        imageData?.writeToFile(docpath, atomically: true)
+        return docpath
     }
 }

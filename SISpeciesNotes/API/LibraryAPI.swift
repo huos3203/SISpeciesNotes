@@ -48,6 +48,11 @@ class LibraryAPI: NSObject
 
         super.init()
 
+        /**
+         现象：在加载图片时，albumView发出的广播，LibraryAPI无法收到通知....
+         问题：由于albums = LibraryAPI().getAlbums()
+         解决：必须使用单例模式：albums = LibraryAPI.shareInstance.getAlbums()
+         */
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "DowdloadImage:", name: "BLDownloadImageNotification", object: nil)
     }
     
@@ -72,28 +77,32 @@ class LibraryAPI: NSObject
         }
     }
     
-    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     //MARK: - 通知方法 
     //下载图片
     func DowdloadImage(notification:NSNotification){
         
         let ueserInfo = notification.userInfo as! [String:AnyObject]
         let imagePath = ueserInfo["imageUrl"] as! String
-        var coverImage = ueserInfo["coverImage"] as! UIImage
+        var coverImageView = ueserInfo["coverImage"] as! UIImageView
         
+        coverImageView.image = UIImage(named: "barcelona-thumb")
         //缓存文件
         if !localFile.fileExistsAtPath(imagePath){
             //网络下载数据
-            let locationUrl = httpClient.downloadCoverImage(imagePath){location in
-                coverImage = UIImage(named: location)!
+            httpClient.downloadCoverImage(imagePath){location in
+                //以图片格式保存到本地
+                let imageDocPath = self.localFile.saveImageToDocument(location, imageURL: imagePath)
+                coverImageView.image = UIImage.init(contentsOfFile: imageDocPath)
             }
-            //持久化
-            try! localFile.copyItemAtPath(locationUrl.absoluteString, toPath: imagePath)
+        }else{
+            let localImagePath = localFile.createDocumentPathFrom(imagePath)
+            coverImageView.image = UIImage.init(contentsOfFile: localImagePath)
         }
-        coverImage = UIImage(named: "barcelona-thumb")!
+        
     }
     
-    deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
+   
 }
