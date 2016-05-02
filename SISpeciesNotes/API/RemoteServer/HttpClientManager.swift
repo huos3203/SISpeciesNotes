@@ -34,7 +34,9 @@ class HttpClientManager {
         let fileUrl = NSURL(string: filePath as String)
         let coverSession = NSURLSession.sharedSession().downloadTaskWithURL(fileUrl!) { (location, response, error) in
             //完成
-            complection((location)!)
+            if (location != nil){
+                complection((location)!)
+            }
         }
         coverSession.resume()
     }

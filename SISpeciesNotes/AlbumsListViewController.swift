@@ -34,15 +34,15 @@ public class AlbumsListViewController: UIViewController {
     
     //轮播图
     func initScroller(){
-        
         //轮播图
         scroller.scrollerDataSource = self
         scroller.scrollerDelegate = self
         view.addSubview(scroller)
         scroller.snp_makeConstraints { (make) in
             //
-            make.height.equalTo(200)
-            make.top.left.right.equalTo(view).inset(8)
+            make.height.equalTo(100)
+            make.top.equalTo(self.snp_topLayoutGuideBottom).inset(-20)
+            make.left.right.equalTo(view).inset(8)
         }
         scroller.initScrollView()
     }
@@ -58,7 +58,7 @@ public class AlbumsListViewController: UIViewController {
         tableView.snp_makeConstraints { (make) in
             //
             make.left.right.bottom.equalTo(view).inset(8)
-            make.top.equalTo(scroller.snp_bottom).inset(0)
+            make.top.equalTo(scroller.snp_bottom).offset(100)
         }
 
     }
@@ -119,7 +119,7 @@ extension AlbumsListViewController:HorizontalScrollerDataSource{
         //自定义AlbumView
         let coverUrl = albums[imageViewIndex].coverUrl
 //        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200), ablumCover: coverUrl)
-        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200),ablumCover:coverUrl)
+        let view = AlbumView(frame: CGRectMake(0, 0, 100, 100),ablumCover:coverUrl)
         return view
     }
 }

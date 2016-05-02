@@ -31,7 +31,7 @@ import SnapKit
 //适配器：通过委托方式来实现适配器模式
 public class HorizontalScroller: UIView {
     
-    let imgWidth = 200
+    let imgWidth = 100
     let imgPadding = 0
     //weak 定义委托
     public weak var scrollerDelegate:HorizontalScrollerDelegate?
@@ -43,6 +43,7 @@ public class HorizontalScroller: UIView {
 
         addSubview(scrollView)
         scrollView.delegate = self
+        scrollView.backgroundColor = UIColor.blueColor()
         scrollView.snp_makeConstraints { (make) in
             make.left.top.right.bottom.equalTo(self)
         }
@@ -75,15 +76,15 @@ public class HorizontalScroller: UIView {
                     //
                     make.centerY.equalTo(preView)
                     make.left.equalTo(preView.snp_right)
-                    make.size.equalTo(CGSizeMake(200, 200))
+                    make.size.equalTo(CGSizeMake(100, 100))
                 })
             }else{
                 //第一个ImageView的约束
                 imageview!.snp_makeConstraints(closure: { (make) in
                     //
-                    make.centerY.equalTo(scrollView)
+                    make.centerY.equalTo(scrollView).offset(-65)
                     make.left.equalTo(scrollView)
-                    make.size.equalTo(CGSizeMake(200, 200))
+                    make.size.equalTo(CGSizeMake(100, 100))
                 })
             }
             preView = imageview
@@ -97,7 +98,6 @@ public class HorizontalScroller: UIView {
     
     //点击后，自动居中显示
     func tapImageAction(tapGesture:UITapGestureRecognizer) {
-        //
         //获取当前Image
         print("点击图片....")
         let imageView = tapGesture.view!
@@ -124,7 +124,7 @@ extension HorizontalScroller:UIScrollViewDelegate{
         let offset = scrollView.contentOffset.x + CGFloat(space_x)
         
         print("当前坐标:\(current_x),图片索引：\(imageIndex)和中心坐标：\(replace_x)\n偏移量：\(space_x)")
-        scrollView.setContentOffset(CGPointMake(CGFloat(offset), 0), animated: true)
+        scrollView.setContentOffset(CGPointMake(CGFloat(offset), scrollView.contentOffset.y), animated: true)
     }
     
     //侧滑结束
@@ -139,8 +139,6 @@ extension HorizontalScroller:UIScrollViewDelegate{
             centerCurrentImageView()
         }
     }
-    
-
 }
 
 

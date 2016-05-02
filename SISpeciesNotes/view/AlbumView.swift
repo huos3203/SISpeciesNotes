@@ -28,7 +28,7 @@ class AlbumView: UIView {
         addSubview(coverImage)
         indicator = UIActivityIndicatorView()
         indicator.center = center
-        indicator.activityIndicatorViewStyle = .White
+        indicator.activityIndicatorViewStyle = .Gray
         indicator.startAnimating()
         addSubview(indicator)
         
