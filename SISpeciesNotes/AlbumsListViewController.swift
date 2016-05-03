@@ -38,14 +38,13 @@ public class AlbumsListViewController: UIViewController {
         scroller.scrollerDataSource = self
         scroller.scrollerDelegate = self
         view.addSubview(scroller)
-        
-        scroller.initScrollView()
         scroller.snp_makeConstraints { (make) in
             //
-            make.height.equalTo(100)
+            make.height.equalTo(200)
             make.top.equalTo(self.snp_topLayoutGuideBottom).offset(20)
             make.left.right.equalTo(view).inset(8)
         }
+        scroller.initScrollView(200, imgPadding: 10)
     }
     
     //tableView
@@ -59,7 +58,7 @@ public class AlbumsListViewController: UIViewController {
         tableView.snp_makeConstraints { (make) in
             //
             make.left.right.bottom.equalTo(view).inset(8)
-            make.top.equalTo(scroller.snp_bottom).offset(100)
+            make.top.equalTo(scroller.snp_bottom).offset(10)
         }
 
     }
@@ -120,7 +119,7 @@ extension AlbumsListViewController:HorizontalScrollerDataSource{
         //自定义AlbumView
         let coverUrl = albums[imageViewIndex].coverUrl
 //        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200), ablumCover: coverUrl)
-        let view = AlbumView(frame: CGRectMake(0, 0, 100, 100),ablumCover:coverUrl)
+        let view = AlbumView(frame: CGRectMake(0, 0, 200, 200),ablumCover:coverUrl)
         return view
     }
 }

@@ -31,22 +31,25 @@ import SnapKit
 //适配器：通过委托方式来实现适配器模式
 public class HorizontalScroller: UIView {
     
-    let imgWidth = 100
-    let imgPadding = 0
+    private var imgWidth:CGFloat = 200
+    private var imgPadding:CGFloat = 0
     //weak 定义委托
     public weak var scrollerDelegate:HorizontalScrollerDelegate?
     public weak var scrollerDataSource:HorizontalScrollerDataSource?
     //scrollview对象
     let scrollView = UIScrollView()
     
-    public func initScrollView() {
+    public func initScrollView(imgWidth:CGFloat,imgPadding:CGFloat) {
 
+        self.imgWidth = imgWidth
+        self.imgPadding = imgPadding
+        
         addSubview(scrollView)
         scrollView.delegate = self
         scrollView.backgroundColor = UIColor.blueColor()
         backgroundColor = UIColor.blackColor()
         scrollView.snp_makeConstraints { (make) in
-            make.left.top.right.bottom.equalTo(self).inset(10)
+            make.left.top.right.bottom.equalTo(self).inset(8)
         }
         //
         scrollView.alwaysBounceHorizontal = true
@@ -76,8 +79,8 @@ public class HorizontalScroller: UIView {
                 imageview!.snp_makeConstraints(closure: { (make) in
                     //
                     make.centerY.equalTo(preView)
-                    make.left.equalTo(preView.snp_right)
-                    make.size.equalTo(CGSizeMake(100, 100))
+                    make.left.equalTo(preView.snp_right).offset(imgPadding)
+                    make.size.equalTo(preView)
                 })
             }else{
                 //第一个ImageView的约束
@@ -87,8 +90,8 @@ public class HorizontalScroller: UIView {
                         更好的解决办法是：轮播图与scrollView父视图垂直居中对齐： make.centerY.equalTo(self)
                      */
                     make.centerY.equalTo(self)
-                    make.left.equalTo(scrollView)
-                    make.size.equalTo(CGSizeMake(100, 100))
+                    make.left.equalTo(scrollView).offset(imgPadding)
+                    make.size.equalTo(CGSizeMake(imgWidth, imgWidth))
                 })
             }
             preView = imageview
@@ -96,7 +99,7 @@ public class HorizontalScroller: UIView {
         
         //循环结束之后，为最后一个ImageView添加right约束
         preView.snp_makeConstraints { (make) in
-            make.right.equalTo(scrollView)
+            make.right.equalTo(scrollView).offset(imgPadding)
         }
     }
     
@@ -119,13 +122,13 @@ extension HorizontalScroller:UIScrollViewDelegate{
         //先通过偏移量算出屏幕中心点的 x 坐标
         let current_x = scrollView.contentOffset.x + scrollView.frame.size.width/2
         //再通过中心点 X 坐标，算出当前居中位置的图片索引,确定居中图片对象
-        let imageIndex = Int(current_x)/(imgWidth+imgPadding)
+        let imageIndex = Int(current_x/(imgWidth+imgPadding))
         //根据图片origin.x + width/2 算出即将居中的x坐标
-        let replace_x = Int(scrollView.subviews[imageIndex].frame.origin.x) + imgWidth/2
+        let replace_x = scrollView.subviews[imageIndex].frame.origin.x + imgWidth/2
         //根据当前屏幕中心的x 坐标，和即将居中的x坐标点,求出坐标差，
-        let space_x = replace_x - Int(current_x)
+        let space_x = replace_x - current_x
         //当前偏移量 + (当前图片中心坐标 - 原中心x)
-        let offset = scrollView.contentOffset.x + CGFloat(space_x)
+        let offset = scrollView.contentOffset.x + space_x
         
         print("当前坐标:\(current_x),图片索引：\(imageIndex)和中心坐标：\(replace_x)\n偏移量：\(space_x)")
         scrollView.setContentOffset(CGPointMake(CGFloat(offset), 0), animated: true)

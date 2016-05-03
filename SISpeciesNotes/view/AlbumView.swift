@@ -22,7 +22,7 @@ class AlbumView: UIView {
         
         super.init(frame: frame)
         backgroundColor = UIColor.blackColor()
-        coverImage = UIImageView.init(frame: CGRectMake(5, 5, frame.size.width - 10, frame.size.height - 10))
+        coverImage = UIImageView.init(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
         //添加观察者
         coverImage.addObserver(self, forKeyPath: "image", options: [], context: nil)
         addSubview(coverImage)

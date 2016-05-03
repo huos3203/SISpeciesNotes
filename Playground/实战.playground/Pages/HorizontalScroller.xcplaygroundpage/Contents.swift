@@ -149,11 +149,9 @@ class horizontalScrollViewController:UIViewController{
         scrollView.scrollerDataSource = self
         view.addSubview(scrollView)
         scrollView.snp_makeConstraints { (make) in
-//            make.height.equalTo(100)
-//            make.left.right.centerY.equalTo(view)
-            make.height.equalTo(200)
-//            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(40)
-            make.top.equalTo(view).offset(80)
+            make.height.equalTo(100)
+            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(40)
+//            make.top.equalTo(view).offset(80)
             make.left.right.equalTo(view)
 
             //            make.edges.equalTo(view).inset(UIEdgeInsetsMake(20, 20, 20, 20))
@@ -187,9 +185,13 @@ extension horizontalScrollViewController:HorizontalScrollerDataSource{
     }
 
 }
-XCPlaygroundPage.currentPage.liveView = horizontalScrollViewController()
+/**
+ 当有导航控制器时，由于scrollview默认偏移量是导航条的高度，此时make.centerY.equalTo(scrollView)会导致轮初始化轮播图默认位置偏下方，可以添加.offset(-65)
+ 更好的解决办法是：轮播图与scrollView父视图垂直居中对齐： make.centerY.equalTo(self)
+ */
+//XCPlaygroundPage.currentPage.liveView = horizontalScrollViewController()
 let nav = UINavigationController.init(rootViewController: horizontalScrollViewController())
-//XCPlaygroundPage.currentPage.liveView = nav
+XCPlaygroundPage.currentPage.liveView = nav
 
 
 
