@@ -68,4 +68,7 @@ class PersistencyManager {
         //
         albums.removeAtIndex(index)
     }
+    
+    
+    
 }

@@ -52,6 +52,7 @@
 		14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14427F891CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift */; };
 		144377611CC4756F002B2A05 /* URLSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144377601CC4756F002B2A05 /* URLSessionTest.swift */; };
 		145110C01CC4F131005269E1 /* AlamofireTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145110BF1CC4F131005269E1 /* AlamofireTest.swift */; };
+		145968CD1CD8B2A400732D9A /* MementoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145968CC1CD8B2A400732D9A /* MementoManager.swift */; };
 		145B72DF1CC8861700315B72 /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE4CD1CC12B57000AC0C1 /* OnclickLikeViewController.swift */; };
 		145B72E11CC8A81C00315B72 /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */; };
 		1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146198291CBB3F0100BAA78C /* ShadeAnimationViewController.m */; };
@@ -177,6 +178,7 @@
 		14427F891CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AlamofireImageTests.swift"; sourceTree = "<group>"; };
 		144377601CC4756F002B2A05 /* URLSessionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTest.swift; sourceTree = "<group>"; };
 		145110BF1CC4F131005269E1 /* AlamofireTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireTest.swift; sourceTree = "<group>"; };
+		145968CC1CD8B2A400732D9A /* MementoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MementoManager.swift; path = SISpeciesNotes/API/FileSystem/MementoManager.swift; sourceTree = SOURCE_ROOT; };
 		145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScroller.swift; sourceTree = "<group>"; };
 		145B72E21CC8B8D800315B72 /* 每日阅读.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "每日阅读.md"; sourceTree = "<group>"; };
 		146198281CBB3F0100BAA78C /* ShadeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadeAnimationViewController.h; path = Controller/ShadeAnimationViewController.h; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				14EC64171CD1B5FE00735501 /* LocalFileManager.swift */,
+				145968CC1CD8B2A400732D9A /* MementoManager.swift */,
 			);
 			path = FileSytem;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 				14D52E461CAB812800A0595C /* FlowCell.swift in Sources */,
 				D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */,
 				1479CBBA1C965CCF00D26433 /* Album.swift in Sources */,
+				145968CD1CD8B2A400732D9A /* MementoManager.swift in Sources */,
 				843D91E41CC52E7200DEB22D /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
