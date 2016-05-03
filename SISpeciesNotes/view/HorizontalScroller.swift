@@ -44,8 +44,9 @@ public class HorizontalScroller: UIView {
         addSubview(scrollView)
         scrollView.delegate = self
         scrollView.backgroundColor = UIColor.blueColor()
+        backgroundColor = UIColor.blackColor()
         scrollView.snp_makeConstraints { (make) in
-            make.left.top.right.bottom.equalTo(self)
+            make.left.top.right.bottom.equalTo(self).inset(10)
         }
         //
         scrollView.alwaysBounceHorizontal = true
@@ -81,8 +82,11 @@ public class HorizontalScroller: UIView {
             }else{
                 //第一个ImageView的约束
                 imageview!.snp_makeConstraints(closure: { (make) in
-                    //
-                    make.centerY.equalTo(scrollView).offset(-65)
+                    /**
+                     *  当有导航控制器时，由于scrollview默认偏移量是导航条的高度，此时make.centerY.equalTo(scrollView)会导致轮初始化轮播图默认位置偏下方，可以添加.offset(-65)
+                        更好的解决办法是：轮播图与scrollView父视图垂直居中对齐： make.centerY.equalTo(self)
+                     */
+                    make.centerY.equalTo(self)
                     make.left.equalTo(scrollView)
                     make.size.equalTo(CGSizeMake(100, 100))
                 })
@@ -124,7 +128,7 @@ extension HorizontalScroller:UIScrollViewDelegate{
         let offset = scrollView.contentOffset.x + CGFloat(space_x)
         
         print("当前坐标:\(current_x),图片索引：\(imageIndex)和中心坐标：\(replace_x)\n偏移量：\(space_x)")
-        scrollView.setContentOffset(CGPointMake(CGFloat(offset), scrollView.contentOffset.y), animated: true)
+        scrollView.setContentOffset(CGPointMake(CGFloat(offset), 0), animated: true)
     }
     
     //侧滑结束

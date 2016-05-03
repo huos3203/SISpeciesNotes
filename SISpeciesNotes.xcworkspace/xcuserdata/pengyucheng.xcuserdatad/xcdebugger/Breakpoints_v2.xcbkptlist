@@ -54,31 +54,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SISpeciesNotes.LibraryAPI.DowdloadImage (__ObjC.NSNotification) -&gt; ()"
+                  symbolName = "SISpeciesNotes.LibraryAPI.__deallocating_deinit"
                   moduleName = "SISpeciesNotes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "483530638.449095"
+                  timestampString = "483950486.460676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "30">
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SISFramework.LibraryAPI.DowdloadImage (__ObjC.NSNotification) -&gt; ()"
+                  symbolName = "SISFramework.LibraryAPI.__deallocating_deinit"
                   moduleName = "SISFramework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "483530638.449346"
+                  timestampString = "483950486.460818"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "30">
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -143,39 +143,53 @@ class horizontalScrollViewController:UIViewController{
     var images:[UIImage]?
     override func viewDidLoad() {
         //
-        
         view.backgroundColor = UIColor.whiteColor()
         images = [[#Image(imageLiteral: "barcelona-thumb@3x.jpg")#],[#Image(imageLiteral: "beijing-thumb@3x.jpg")#],[#Image(imageLiteral: "london-thumb@3x.jpg")#],[#Image(imageLiteral: "walt-disney-world-thumb@3x.jpg")#],[#Image(imageLiteral: "sydney-thumb@3x.jpg")#],[#Image(imageLiteral: "barcelona-thumb@2x.jpg")#]]
         scrollView.scrollerDelegate = self
-        scrollView.initScrollView()
-        
+        scrollView.scrollerDataSource = self
         view.addSubview(scrollView)
         scrollView.snp_makeConstraints { (make) in
-            make.edges.equalTo(view).inset(UIEdgeInsetsMake(20, 20, 20, 20))
+//            make.height.equalTo(100)
+//            make.left.right.centerY.equalTo(view)
+            make.height.equalTo(200)
+//            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(40)
+            make.top.equalTo(view).offset(80)
+            make.left.right.equalTo(view)
+
+            //            make.edges.equalTo(view).inset(UIEdgeInsetsMake(20, 20, 20, 20))
         }
+        scrollView.initScrollView()
+        
+     
     }
 }
 
 extension horizontalScrollViewController:HorizontalScrollerDelegate{
-    
-    func pageNumOfScroller() -> Int {
-        print("放回长度 == ")
-        return 5
-    }
-    
-    func horizontalScroller(index: Int) -> UIImageView {
-        //
-        let imageView = UIImageView(image: images![index])
-        return imageView
-    }
-    
-    func onclickPageImageView(imageView: UIImageView) {
+    func onclickPageImageView(imageView: UIView) {
         print("点击图片....")
     }
 
 }
 
+extension horizontalScrollViewController:HorizontalScrollerDataSource{
+    
+    func pageNumOfScroller() -> Int {
+        print("图片个数：.....")
+        return 5
+    }
+    
+    func horizontalScroller(scroller:UIScrollView ,imageViewIndex: Int) -> UIView {
+        //
+        let imageView = UIImageView(image: images![imageViewIndex])
+        let view = UIView()
+        view.addSubview(imageView)
+        return view
+    }
+
+}
 XCPlaygroundPage.currentPage.liveView = horizontalScrollViewController()
+let nav = UINavigationController.init(rootViewController: horizontalScrollViewController())
+//XCPlaygroundPage.currentPage.liveView = nav
 
 
 

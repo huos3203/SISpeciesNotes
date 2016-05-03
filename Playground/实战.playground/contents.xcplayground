@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' auto-termination-delay='50' executeOnSourceChanges='false' timelineScrubberEnabled='true'>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false' timelineScrubberEnabled='true'>
     <pages>
         <page name='计时器'/>
         <page name='AlamofireImage'/>
         <page name='Untitled Page'/>
         <page name='albumsList'/>
         <page name='HorizontalScroller'/>
-        <page name='snapkit'/>
-        <page name='Visual format language'/>
-        <page name='notification'/>
     </pages>
 </playground>

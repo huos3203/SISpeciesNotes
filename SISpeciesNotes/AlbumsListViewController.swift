@@ -38,13 +38,14 @@ public class AlbumsListViewController: UIViewController {
         scroller.scrollerDataSource = self
         scroller.scrollerDelegate = self
         view.addSubview(scroller)
+        
+        scroller.initScrollView()
         scroller.snp_makeConstraints { (make) in
             //
             make.height.equalTo(100)
-            make.top.equalTo(self.snp_topLayoutGuideBottom).inset(-20)
+            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(20)
             make.left.right.equalTo(view).inset(8)
         }
-        scroller.initScrollView()
     }
     
     //tableView

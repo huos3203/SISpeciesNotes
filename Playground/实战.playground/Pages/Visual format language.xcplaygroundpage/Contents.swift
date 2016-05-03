@@ -18,7 +18,7 @@ class viewController: UIViewController {
         //
         let viewShade = UIView()
         view.addSubview(viewShade)
-        viewShade.addGuideFullScreen()
+        viewShade.addGuideShadeToFullScreen()
         
         viewShade.backgroundImageView = UIImageView(image: [#Image(imageLiteral: "beijing-thumb@3x.jpg")#])
         let btn1 = UIButton()
