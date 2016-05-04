@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "DowdloadImage(_:)"
+            landmarkName = "deinit"
             landmarkType = "5">
             <Locations>
                <Location
@@ -58,7 +58,7 @@
                   moduleName = "SISpeciesNotes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "483953404.268367"
+                  timestampString = "484035088.759151"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -73,12 +73,204 @@
                   moduleName = "SISFramework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "483953404.268546"
+                  timestampString = "484035088.759318"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
                   endingLineNumber = "81"
                   offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotes/AlbumsListViewController.swift"
+            timestampString = "484034468.979175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "saveCurrentImageIndex()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISpeciesNotes.AlbumsListViewController.saveCurrentImageIndex () -&gt; ()"
+                  moduleName = "SISpeciesNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.778301"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISFramework.AlbumsListViewController.saveCurrentImageIndex () -&gt; ()"
+                  moduleName = "SISFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.778654"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotes/AlbumsListViewController.swift"
+            timestampString = "484034758.901565"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "loadCurrentImageIndex()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISpeciesNotes.AlbumsListViewController.loadCurrentImageIndex () -&gt; ()"
+                  moduleName = "SISpeciesNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.801641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISFramework.AlbumsListViewController.loadCurrentImageIndex () -&gt; ()"
+                  moduleName = "SISFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.801803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotes/AlbumsListViewController.swift"
+            timestampString = "484034802.532675"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "AlbumsListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISpeciesNotes.AlbumsListViewController.currentImageIndex.getter : Swift.Int"
+                  moduleName = "SISpeciesNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.802734"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISFramework.AlbumsListViewController.currentImageIndex.getter : Swift.Int"
+                  moduleName = "SISFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/AlbumsListViewController.swift"
+                  timestampString = "484035088.802874"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotes/view/HorizontalScroller.swift"
+            timestampString = "484034998.248626"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "centerCurrentImageView(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISpeciesNotes.HorizontalScroller.centerCurrentImageView (Swift.Bool) -&gt; ()"
+                  moduleName = "SISpeciesNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/view/HorizontalScroller.swift"
+                  timestampString = "484035088.804654"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "1189">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SISFramework.HorizontalScroller.centerCurrentImageView (Swift.Bool) -&gt; ()"
+                  moduleName = "SISFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/view/HorizontalScroller.swift"
+                  timestampString = "484035088.804877"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "1189">
                </Location>
             </Locations>
          </BreakpointContent>

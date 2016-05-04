@@ -29,4 +29,7 @@
    <FileRef
       location = "group:SwiftSingleton-master/Singleton.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:TextKitNotepad/TextKitNotepad.xcodeproj">
+   </FileRef>
 </Workspace>

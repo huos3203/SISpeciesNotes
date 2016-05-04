@@ -15,6 +15,7 @@ public class AlbumsListViewController: UIViewController {
     //存储变量
     private var tableView = UITableView()
     private var scroller = HorizontalScroller()
+    private var currentIndex = 0
     //系列数组
     private var albums = [Album]()
     
@@ -27,6 +28,8 @@ public class AlbumsListViewController: UIViewController {
         albums = LibraryAPI.shareInstance.getAlbums()
         initScroller()
         initTableView()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AlbumsListViewController.saveCurrentImageIndex), name: UIApplicationDidEnterBackgroundNotification, object: nil)
      }
     
     
@@ -44,6 +47,7 @@ public class AlbumsListViewController: UIViewController {
             make.top.equalTo(self.snp_topLayoutGuideBottom).offset(20)
             make.left.right.equalTo(view).inset(8)
         }
+        loadCurrentImageIndex()
         scroller.initScrollView(200, imgPadding: 10)
     }
     
@@ -61,6 +65,17 @@ public class AlbumsListViewController: UIViewController {
             make.top.equalTo(scroller.snp_bottom).offset(10)
         }
 
+    }
+    
+    //MARK: 备忘录：加载/持久化轮播图当前状态
+    func saveCurrentImageIndex() {
+        //
+        NSUserDefaults.standardUserDefaults().setInteger(currentIndex, forKey: "CurrentImageIndex")
+    }
+    
+    func loadCurrentImageIndex() {
+        //
+        currentIndex = NSUserDefaults.standardUserDefaults().integerForKey("CurrentImageIndex")
     }
 }
 
@@ -111,9 +126,22 @@ extension AlbumsListViewController:UITableViewDataSource{
 // MARK: - 修饰模式，使用扩展来实现scroller相关委托
 extension AlbumsListViewController:HorizontalScrollerDataSource{
     
-    public func pageNumOfScroller() -> Int {
+//    public func pageNumOfScroller() -> Int {
+//        return albums.count
+//    }
+    public var currentImageIndex: Int{
+        get{
+            return self.currentIndex
+        }
+        set{
+            self.currentIndex = newValue
+        }
+    }
+    
+    public var pageNumOfScroller: Int{
         return albums.count
     }
+    
     
     public func horizontalScroller(scroller: UIScrollView, imageViewIndex: Int) -> UIView {
         //自定义AlbumView

@@ -22,7 +22,10 @@ import SnapKit
 @objc public protocol HorizontalScrollerDataSource {
 
     //滚动图片的个数
-    func pageNumOfScroller() -> Int
+    var pageNumOfScroller:Int{get}
+    
+    var currentImageIndex:Int{get set}
+    
     
     func horizontalScroller(scroller:UIScrollView ,imageViewIndex:Int)->UIView
 }
@@ -56,13 +59,14 @@ public class HorizontalScroller: UIView {
         //拖动时锁定方向
         scrollView.directionalLockEnabled = true
         addSubPageView()
+        centerCurrentImageView(true)
     }
     
     //添加五张图片
     private func addSubPageView() {
         //向scrollview中添加操作
         var preView:UIView!
-        guard let pageNum = scrollerDataSource?.pageNumOfScroller() else
+        guard let pageNum = scrollerDataSource?.pageNumOfScroller else
         {
             print("图片为0张")
             return
@@ -117,12 +121,20 @@ public class HorizontalScroller: UIView {
 extension HorizontalScroller:UIScrollViewDelegate{
     
     //实现侧滑停止后，居中显示当前屏幕上的图片
-    func centerCurrentImageView(){
+    func centerCurrentImageView(initScroller:Bool){
         
         //先通过偏移量算出屏幕中心点的 x 坐标
         let current_x = scrollView.contentOffset.x + scrollView.frame.size.width/2
         //再通过中心点 X 坐标，算出当前居中位置的图片索引,确定居中图片对象
-        let imageIndex = Int(current_x/(imgWidth+imgPadding))
+        var imageIndex = Int(current_x/(imgWidth+imgPadding))
+        if initScroller {
+            //
+            imageIndex = (scrollerDataSource?.currentImageIndex)!
+        }else
+        {
+            imageIndex = Int(current_x/(imgWidth+imgPadding))
+            scrollerDataSource?.currentImageIndex = imageIndex
+        }
         //根据图片origin.x + width/2 算出即将居中的x坐标
         let replace_x = scrollView.subviews[imageIndex].frame.origin.x + imgWidth/2
         //根据当前屏幕中心的x 坐标，和即将居中的x坐标点,求出坐标差，
@@ -137,13 +149,13 @@ extension HorizontalScroller:UIScrollViewDelegate{
     //侧滑结束
     public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         //
-        centerCurrentImageView()
+        centerCurrentImageView(false)
     }
     
     public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //
         if !decelerate {
-            centerCurrentImageView()
+            centerCurrentImageView(false)
         }
     }
 }
