@@ -24,6 +24,9 @@ class TextKitNotepadTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let noteModel = NoteModel.init(newText: "Use XCTAssert and related functions to verify your\n tests produce the correct results")
+        print(noteModel.title)
     }
     
     func testPerformanceExample() {
