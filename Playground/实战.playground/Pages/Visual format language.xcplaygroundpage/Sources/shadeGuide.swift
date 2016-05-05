@@ -5,7 +5,9 @@
 //  Created by pengyucheng on 16/4/26.
 //  Copyright © 2016年 pyc.com.cn. All rights reserved.
 //
-import Foundation
+//import Foundation
+//import UIKit
+
 import UIKit
 
 protocol hiddenGuideItem {
@@ -17,16 +19,6 @@ protocol hiddenGuideItem {
     func hiddenGuideItem(item:UIButton)
     
 }
-
-//
-//  View+shadeGuide.swift
-//  PBB
-//
-//  Created by pengyucheng on 16/4/26.
-//  Copyright © 2016年 pyc.com.cn. All rights reserved.
-//
-import Foundation
-import UIKit
 
 // MARK: - 扩展UIView添加全屏遮罩
 

@@ -16,6 +16,9 @@
       <FileRef
          location = "group:&#x9762;&#x5411;&#x5bf9;&#x8c61;.playground">
       </FileRef>
+      <FileRef
+         location = "group:TextKit.playground">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
