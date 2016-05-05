@@ -8,14 +8,19 @@ import UIKit
 // 画三角形
 func drawTrianglePath() {
     
+    //1. 创建一个UIBezierPath对象
     let path = UIBezierPath()
+    //2. 调用-moveToPoint:设置初始线段的起点
     path.moveToPoint(CGPointMake(20, 20))
+    //3. 添加线或者曲线去定义一个或者多个子路径
     path.addLineToPoint(CGPointMake(50, 50))
     path.addLineToPoint(CGPointMake(10, 80))
     // 最后的闭合线是可以通过调用closePath方法来自动生成的，也可以调用-addLineToPoint:方法来添加
     //  [path addLineToPoint:CGPointMake(20, 20)];
     path.closePath()
     
+    
+    //4. 改变UIBezierPath对象跟绘图相关的属性。如，我们可以设置画笔的属性、填充样式等
     // 设置线宽
     path.lineWidth = 1.5;
     
@@ -31,17 +36,18 @@ func drawTrianglePath() {
     path.stroke()
 }
 
-drawTrianglePath()
-
-
 //画矩形
-func drawRectPath(){
+func drawRectPath(frame:CGRect){
     
-    let path = UIBezierPath.init(rect: CGRectMake(20, 20, 200, 200))
-    
-    path.lineWidth = 10
-    path.lineCapStyle = .Round
-    path.lineJoinStyle = .Bevel
+    let path = UIBezierPath.init(rect: frame)
+    //改变UIBezierPath对象跟绘图相关的属性。如，我们可以设置画笔的属性、填充样式等
+    path.lineWidth = 20
+    //lineCapStyle属性是用来设置线条拐角帽的样式的，其中有三个选择：
+    //Butt:第一个是默认的，Round:轻微圆角，Square:正方形。
+    path.lineCapStyle = .Butt
+    //lineJoinStyle属性是用来设置两条线连结点的样式，其中也有三个选择
+    //Miter:默认的表示斜接，Round:圆滑衔接，Bevel:斜角连接。
+    path.lineJoinStyle = .Round
     //设置填充色
     UIColor.yellowColor().setFill()
     path.fill()
@@ -52,7 +58,176 @@ func drawRectPath(){
 
 }
 
-drawRectPath()
+
+//画圆形:要画圆，我们需要传的rect参数必须是正方形哦！
+func drawCiclePath(frame:CGRect){
+    
+    //创建实例
+    let path = UIBezierPath.init(ovalInRect: frame)
+    
+    //设置线条样式
+    path.lineWidth = 1.5
+    
+    //填充色
+    UIColor.brownColor().setFill()
+    path.fill()
+    
+    //画笔色
+    UIColor.redColor().set()
+    path.stroke()
+}
+
+//画椭圆形:需要传的rect参数必须是长方形
+func drawOvalPath(frame:CGRect){
+
+    let path = UIBezierPath.init(ovalInRect: frame)
+    
+    //fill color
+    UIColor.cyanColor().setFill()
+    path.fill()
+    
+    //画笔色
+    UIColor.darkGrayColor().set()
+    path.stroke()
+}
+
+
+//画带有圆角的矩形：四角全是圆角、指定其中一角为圆角
+func drawRoundRectPath(frame:CGRect){
+    
+    //第一个参数是矩形，第二个参数是圆角大小。
+//    let path = UIBezierPath.init(roundedRect: frame, cornerRadius: 20)
+    
+    //可以指定某一个角画成圆角。
+    //其中第一个参数是矩形，第二个参数是指定在哪个方向画圆角，第三个参数是一个CGSize类型，用来指定水平和垂直方向的半径的大小
+    let path = UIBezierPath.init(roundedRect: frame, byRoundingCorners: .TopRight, cornerRadii: CGSizeMake(20, 20))
+    UIColor.redColor().setFill()
+    path.fill()
+    
+    path.lineWidth = 10
+    UIColor.blueColor().set()
+    path.stroke()
+}
+
+
+
+//画圆弧
+/**
+ 画弧参数startAngle和endAngle使用的是弧度，而不是角度，因此我们需要将常用的角度转换成弧度。对于效果图中，我们设置弧的中心为控件的中心，起点弧度为0，也就是正东方向，而终点是135度角的位置。如果设置的clockwise:YES是逆时针方向绘制![](http://upload-images.jianshu.io/upload_images/1255547-479c3e62e7ae42af.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)，如果设置为NO顺时针方向绘制![](http://upload-images.jianshu.io/upload_images/1255547-034eae4657f68d86.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)
+
+ */
+
+func drawARCPath(frame:CGRect){
+
+    //center
+    let center = CGPointMake(frame.width/2, frame.height/2)
+    //path
+    let path = UIBezierPath.init(arcCenter: center,
+                                 radius: 100,
+                                 startAngle: 0,
+                                 endAngle: CGFloat(135).degreesToRadians,
+                                 clockwise: true)
+    path.lineCapStyle = .Round
+    path.lineJoinStyle = .Round
+    path.lineWidth = 5
+    
+    //画圆弧不需要填充颜色，否则就画成半圆形
+//    UIColor.blueColor().setFill()
+//    path.fill()
+    
+    UIColor.redColor().set()
+    path.stroke()
+}
+
+//扩展计算属性，返回弧度值
+extension CGFloat{
+    
+    var degreesToRadians:CGFloat{
+        let pi = 3.14159265359
+        return (CGFloat(pi) * self)/180
+    }
+}
+
+
+//画二次贝塞尔曲线
+/**
+ 画二次贝塞尔曲线的步骤：
+ 
+ 1. 先设置一个起始点，也就是通过-moveToPoint:设置
+ 2. 调用-addQuadCurveToPoint:controlPoint:方法设置终端点和控制点，
+ ![](http://upload-images.jianshu.io/upload_images/1255547-99c1c61130607358.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ */
+func drawSecondBezierPath(){
+    
+    let path = UIBezierPath()
+    
+    //设置起点
+    path.moveToPoint(CGPointMake(80, 20))
+    
+    //添加二次曲线
+    // endPoint： 终端点
+    //controlPoint：控制点，对于二次贝塞尔曲线，只有一个控制点
+    path.addQuadCurveToPoint(CGPointMake(80, 80), controlPoint: CGPointMake(10, 20))
+    
+    path.lineWidth = 10
+    path.lineJoinStyle = .Round
+    path.lineCapStyle = .Round
+    
+    UIColor.redColor().set()
+    path.stroke()
+}
+
+//画三次贝塞尔曲线:其组成是起始端点+控制点1+控制点2+终止端点
+/**
+ 贝塞尔曲线必定通过首尾两个点，称为端点；中间两个点虽然未必要通过，但却起到牵制曲线形状路径的作用，称作控制点。关于三次贝塞尔曲线的控制器，看下图：![](http://upload-images.jianshu.io/upload_images/1255547-2b7dbc9b577e6d57.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2)
+ 
+ */
+func drawThirdBezierPath() {
+    //
+    let path = UIBezierPath()
+    
+    path.moveToPoint(CGPointMake(20, 150))
+    path.addCurveToPoint(CGPointMake(300, 150), controlPoint1: CGPointMake(160, 0), controlPoint2: CGPointMake(160, 250))
+    
+    path.lineWidth = 10
+    path.lineCapStyle = .Round
+    path.lineJoinStyle = .Round
+    
+    UIColor.redColor().set()
+    path.stroke()
+}
+
+
+class pathView: UIView {
+    //
+    override init(frame: CGRect) {
+        //
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func drawRect(rect: CGRect) {
+        //
+//        drawRectPath(rect)
+//        drawCiclePath(rect)
+//        drawOvalPath(rect)
+//        drawRoundRectPath(rect)
+//        drawARCPath(rect)
+//        drawSecondBezierPath()
+        drawThirdBezierPath()
+    }
+
+}
+
+let view = pathView(frame: CGRectMake(20, 20, 300, 300))
+
+
+
+
+
+
 
 
 
