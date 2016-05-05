@@ -113,7 +113,11 @@ func drawRoundRectPath(frame:CGRect){
 
 //画圆弧
 /**
- 画弧参数startAngle和endAngle使用的是弧度，而不是角度，因此我们需要将常用的角度转换成弧度。对于效果图中，我们设置弧的中心为控件的中心，起点弧度为0，也就是正东方向，而终点是135度角的位置。如果设置的clockwise:YES是逆时针方向绘制![](http://upload-images.jianshu.io/upload_images/1255547-479c3e62e7ae42af.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)，如果设置为NO顺时针方向绘制![](http://upload-images.jianshu.io/upload_images/1255547-034eae4657f68d86.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)
+ 画弧参数startAngle和endAngle使用的是弧度，而不是角度，因此我们需要将常用的角度转换成弧度。对于效果图中，我们设置弧的中心为控件的中心，起点弧度为0，也就是正东方向，而终点是135度角的位置。
+ 1. 如果设置的clockwise:YES是逆时针方向绘制：
+    ![](http://upload-images.jianshu.io/upload_images/1255547-479c3e62e7ae42af.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)，
+ 2. 如果设置为NO顺时针方向绘制：
+    ![](http://upload-images.jianshu.io/upload_images/1255547-034eae4657f68d86.jpg?imageMogr2/auto-orient/strip%7CimageView2/2)
 
  */
 

@@ -35,11 +35,12 @@ public class TimeIndicatorView: UIView {
     
     func curvePathWithOrigin(origin:CGPoint)->UIBezierPath{
     
+        //画弧形
         let path = UIBezierPath.init(arcCenter: origin,
                                      radius: radiusToSurroundFrame(timeLabel.frame),
                                      startAngle: 180,
                                      endAngle: -180,
-                                     clockwise: true)
+                                     clockwise: false)
 //        UIColor.blueColor().set()
 //        path.fill()
 //        UIColor.blueColor().set()
@@ -50,10 +51,10 @@ public class TimeIndicatorView: UIView {
     public override func drawRect(rect: CGRect) {
         
         //Returns the current graphics context.
-//        let ctx = UIGraphicsGetCurrentContext()
+        let ctx = UIGraphicsGetCurrentContext()
 ////        Sets anti-aliasing on or off for a graphics context.
 ////        Anti-aliasing is a graphics state parameter.
-//        CGContextSetShouldAntialias(ctx, true)
+        CGContextSetShouldAntialias(ctx, true)
         let path = curvePathWithOrigin(timeLabel.center)
         //填充色
         UIColor.blueColor().setFill()
