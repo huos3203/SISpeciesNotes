@@ -50,10 +50,10 @@ public class TimeIndicatorView: UIView {
     public override func drawRect(rect: CGRect) {
         
         //Returns the current graphics context.
-        let ctx = UIGraphicsGetCurrentContext()
-//        Sets anti-aliasing on or off for a graphics context.
-//        Anti-aliasing is a graphics state parameter.
-        CGContextSetShouldAntialias(ctx, true)
+//        let ctx = UIGraphicsGetCurrentContext()
+////        Sets anti-aliasing on or off for a graphics context.
+////        Anti-aliasing is a graphics state parameter.
+//        CGContextSetShouldAntialias(ctx, true)
         let path = curvePathWithOrigin(timeLabel.center)
         //填充色
         UIColor.blueColor().setFill()
