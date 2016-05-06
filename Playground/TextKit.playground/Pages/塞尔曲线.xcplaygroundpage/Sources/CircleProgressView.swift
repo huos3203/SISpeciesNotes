@@ -21,7 +21,6 @@ public class CircleProgressView: UIView {
             print("-----------进度:\(progress)")
             drawProgressPath()
         }
-    
     }
     
     public var trackPathWidth:CGFloat = 10

@@ -31,15 +31,12 @@ class pathView: UIView {
 
 //let view = pathView(frame: CGRectMake(20, 20, 300, 300))
 
-//let cicleView = CircleProgressView(frame:CGRectMake(0, 0, 200, 200))
 
-//cicleView.progress = 130
-//cicleView.progressColor = UIColor.redColor()
+//绘画笑脸
+let faceView = FaceDraw(frame:CGRectMake(0, 0, 400, 400))
 
-//cicleView
+//XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
 
-
-XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
 
 
 
