@@ -3,5 +3,6 @@
     <pages>
         <page name='ExclusionPath'/>
         <page name='塞尔曲线'/>
+        <page name='Layer动画'/>
     </pages>
 </playground>
