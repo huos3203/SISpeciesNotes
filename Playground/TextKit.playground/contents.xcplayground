@@ -4,5 +4,6 @@
         <page name='ExclusionPath'/>
         <page name='塞尔曲线'/>
         <page name='CALayer动画'/>
+        <page name='核心动画Core Animation'/>
     </pages>
 </playground>

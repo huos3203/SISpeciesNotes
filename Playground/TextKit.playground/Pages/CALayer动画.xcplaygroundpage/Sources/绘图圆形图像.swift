@@ -12,6 +12,7 @@ import Foundation
 
 import UIKit
 
+/// 绘制圆形图片和边框阴影
 public class DrawRoundPhoto:UIViewController{
 
     let photoHeight:CGFloat = 100

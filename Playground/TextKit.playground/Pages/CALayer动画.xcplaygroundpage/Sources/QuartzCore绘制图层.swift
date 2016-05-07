@@ -1,7 +1,33 @@
 import Foundation
 
 import UIKit
-
+public class drawLayerViewController: UIViewController {
+    //
+    
+    override public func viewDidLoad() {
+        //
+        let layer = DrawLayer.DrawLayer(CGRectMake(0, 0, 100, 100))
+        view.layer.addSublayer(layer)
+        view.backgroundColor = UIColor.whiteColor()
+    }
+    
+    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        //
+        let touch = touches.first
+        let layer = view.layer.sublayers![0]
+        var width = layer.bounds.size.width
+        if width == 50 {
+            width = 50 * 4
+        }else
+        {
+            width = 50
+        }
+        
+        layer.bounds = CGRectMake(0, 0, width, width)
+        layer.position = (touch?.locationInView(self.view))!
+        layer.cornerRadius = width/2
+    }
+}
 /// 1. CALayer中透明度使用opacity表示而不是alpha；中心点使用position表示而不是center。
 /// 2. anchorPoint属性是图层的锚点，范围在（0~1,0~1）表示在x、y轴的比例，这个点永远可以同position（中心点）重合，当图层中心点固定后，调整anchorPoint即可达到调整图层显示位置的作用（因为它永远和position重合）
 
