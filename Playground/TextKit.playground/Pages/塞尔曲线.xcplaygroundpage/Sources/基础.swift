@@ -125,8 +125,8 @@ public func drawARCPath(frame:CGRect){
     let path = UIBezierPath.init(arcCenter: center,
                                  radius: 100,
                                  startAngle: 0,
-                                 endAngle: 10.degreesToRadians,
-                                 clockwise: true)
+                                 endAngle: -180,//.degreesToRadians,
+                                 clockwise: false)
     path.lineCapStyle = .Round
     path.lineJoinStyle = .Round
     path.lineWidth = 5

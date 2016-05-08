@@ -22,18 +22,18 @@ class pathView: UIView {
 //        drawCiclePath(rect)
 //        drawOvalPath(rect)
 //        drawRoundRectPath(rect)
-//        drawARCPath(rect)
+        drawARCPath(rect)
 //        drawSecondBezierPath()
 //        drawThirdBezierPath()
     }
 
 }
 
-//let view = pathView(frame: CGRectMake(20, 20, 300, 300))
+let view = pathView(frame: CGRectMake(20, 20, 300, 300))
 
 
 //绘画笑脸
-let faceView = FaceDraw(frame:CGRectMake(0, 0, 400, 400))
+//let faceView = FaceDraw(frame:CGRectMake(0, 0, 400, 400))
 
 //XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
 
