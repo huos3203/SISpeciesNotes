@@ -99,6 +99,11 @@ class NoteEditorViewController: UIViewController,UITextViewDelegate {
         timeIndicatorView.frame = CGRectOffset(timeIndicatorView.frame,
                                                view.frame.size.width - timeIndicatorView.frame.size.width, 0.0)
     }
+}
+
+//键盘遮挡问题
+extension NoteEditorViewController{
+
     //键盘问题
     func keyboardDidShow(notification:NSNotification) {
         //
@@ -123,7 +128,6 @@ class NoteEditorViewController: UIViewController,UITextViewDelegate {
         textView.frame = CGRectMake(0,0,view.frame.size.width,view.frame.size.height - keyboardHeight)
     }
 }
-
 
 class SyntaxHighlightTextStorage: NSTextStorage {
     //文本存储器子类必须提供它自己的“数据持久化层”。
