@@ -6,8 +6,13 @@ import UIKit
 import XCPlayground
 
 class CoreAnimationViewController: UIViewController {
+    
     //
     var animationLayer:CALayer!
+    
+    //UIView封装动画对象
+    var animationImageView:UIImageView!
+    
     override func viewDidLoad() {
         //
         view.backgroundColor = UIColor.whiteColor()
@@ -16,7 +21,12 @@ class CoreAnimationViewController: UIViewController {
         //UIViewAnimateWithDuration()
         //绘制图层动画的图层
         DrawAnimationLayer()
+        
+        //添加图片控件，演示UIView封装的关键帧动画
+        addImageView()
     }
+    
+    //绘制图层动画的图层
     func DrawAnimationLayer() {
         
         //设置根layer背景图片 废弃：colorWithPatternImage
@@ -33,6 +43,16 @@ class CoreAnimationViewController: UIViewController {
         view.layer.addSublayer(animationLayer)
     }
 
+    
+    //添加图片控件，演示UIView封装动画
+    func addImageView() {
+        //设置根layer背景图片 废弃：colorWithPatternImage
+        view.layer.contents = UIImage.init(named: "background.jpg")?.CGImage
+        //
+        animationImageView = UIImageView.init(image: UIImage(named:"petal"))
+        animationImageView.center = CGPointMake(50, 150)
+        view.addSubview(animationImageView)
+    }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         //基础动画
@@ -52,14 +72,17 @@ class CoreAnimationViewController: UIViewController {
                 animationPause()
             }
         }else{
+            print("启动动画......")
             //启动基础动画
 //            BasicAnimation(location!)
             
             //启动关键帧动画
-            translationAnimation()
-            
+//            translationAnimation()
             //旋转动画
-            rotationAnimation()
+//            rotationAnimation()
+            
+            //启动UIView封装的关键帧动画
+            UIViewtranslationAnimation()
         }
     }
     
@@ -90,18 +113,40 @@ extension CoreAnimationViewController{
         let location = touch.locationInView(view)
         
         let imageView = view.subviews[0]
-        //直接动画，持续1s
-        //        UIView.animateWithDuration(1, animations: {
-        //            //
-        //            imageView.center = location!
-        //            }, completion: nil)
         
-        //延迟2s开始动画，动画持续1s
+        //方法1：block方式 延迟2s开始动画，动画持续1s
+        /*开始动画，UIView的动画方法执行完后动画会停留在重点位置，而不需要进行任何特殊处理
+         duration:执行时间
+         delay:延迟时间
+         options:动画设置，例如自动恢复、匀速运动等
+         completion:动画完成回调方法        
+         */
         UIView.animateWithDuration(1, delay: 2, options: .BeginFromCurrentState, animations: {
             imageView.center = location
             }, completion: nil)
+        
+        
+        //嵌套函数,未使用
+        func staticMethod() {
+            //方法2：静态方法
+            //开始动画
+            UIView.beginAnimations("KCBasicAnimation", context: nil)
+            UIView.setAnimationDuration(5.0)
+            //[UIView setAnimationDelay:1.0];//设置延迟
+            //[UIView setAnimationRepeatAutoreverses:NO];//是否回复
+            //[UIView setAnimationRepeatCount:10];//重复次数
+            //[UIView setAnimationStartDate:(NSDate *)];//设置动画开始运行的时间
+            //[UIView setAnimationDelegate:self];//设置代理
+            //[UIView setAnimationWillStartSelector:(SEL)];//设置动画开始运动的执行方法
+            //[UIView setAnimationDidStopSelector:(SEL)];//设置动画运行结束后的执行方法
+            
+            imageView.center = location
+            
+            //开始动画
+            UIView.commitAnimations()
+        }
+        
     }
-
 }
 
 //CABasicAnimation：基础动画，通过属性修改进行动画参数控制，只有初始状态和结束状态。
@@ -182,20 +227,22 @@ extension CoreAnimationViewController{
 //CAKeyframeAnimation关键帧动画
 
 //关键帧动画开发分为两种形式：一种是通过设置不同的属性值进行关键帧控制，另一种是通过绘制路径进行关键帧控制。后者优先级高于前者，如果设置了路径则属性值就不再起作用。
-
 extension CoreAnimationViewController{
 
     //关键帧动画
     func translationAnimation(){
         //1.创建关键帧动画并设置动画属性
         let keyframeAnimation = CAKeyframeAnimation.init(keyPath: "position")
-//--------------
+
+//------通过设置不同的属性值进行关键帧控制--------
         //2.设置关键帧,这里有四个关键帧
 //        let key1 = NSValue.init(CGPoint:CGPointMake(80, 220))
 //        let key2 = NSValue.init(CGPoint:CGPointMake(45, 300))
 //        let key3 = NSValue.init(CGPoint:CGPointMake(55, 400))
 //        keyframeAnimation.values = [key1,key2,key3]
-//--------------
+//--------------end
+        
+//------通过绘制路径进行关键帧控制--------
          /// UIBezierPath对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线和曲线段去创建。使用此类可以定义简单的形状，如椭圆或者矩形，或者有多个直线和曲线段组成的形状。
         //let keyBezierPath = UIBezierPath()
         
@@ -206,7 +253,8 @@ extension CoreAnimationViewController{
         CGPathAddCurveToPoint(keyPath, nil, 160, 280, -30, 300, 55, 400)
         ///设置path属性
         keyframeAnimation.path = keyPath
-//--------------
+//--------------end
+        
         //设置其他属性
         keyframeAnimation.duration = 8
         keyframeAnimation.beginTime = CACurrentMediaTime() + 2 ////设置延迟2秒执行
@@ -253,6 +301,36 @@ extension CoreAnimationViewController{
     }
 }
 
+
+//UIView封装的关键帧动画：从iOS7开始UIView动画中封装了关键帧动画，这里实现前面关键帧动画部分对于落花的控制。
+extension CoreAnimationViewController{
+    
+    func UIViewtranslationAnimation() {
+        
+        print(" UIView封装的关键帧动画 .....")
+        //UIViewAnimationOptionCurveLinear
+        UIView.animateKeyframesWithDuration(5, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
+            ////第二个关键帧（准确的说第一个关键帧是开始位置）:从0秒开始持续50%的时间，也就是5.0*0.5=2.5秒
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0.5, animations: { 
+                //
+                self.animationImageView.center = CGPointMake(80.0, 220.0)
+            })
+            //第三个关键帧，从0.5*5.0秒开始，持续5.0*0.25=1.25秒
+            UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.25, animations: { 
+                //
+                self.animationImageView.center = CGPointMake(45.0, 300.0)
+            })
+            //第四个关键帧：从0.75*5.0秒开始，持所需5.0*0.25=1.25秒
+            UIView.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 0.25, animations: {
+                //
+                self.animationImageView.center = CGPointMake(55.0, 400.0)
+            })
+            
+            }, completion: nil)
+        
+    }
+
+}
 
 //动画组:是一系列动画的组合，凡是添加到动画组中的动画都受控于动画组，这样一来各类动画公共的行为就可以统一进行控制而不必单独设置，而且放到动画组中的各个动画可以并发执行，共同构建出复杂的动画效果。
 //首先单独创建单个动画（可以是基础动画也可以是关键帧动画），然后将基础动画添加到动画组，最后将动画组添加到图层即可。

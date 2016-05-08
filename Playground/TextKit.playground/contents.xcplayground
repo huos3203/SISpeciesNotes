@@ -5,5 +5,8 @@
         <page name='塞尔曲线'/>
         <page name='CALayer动画'/>
         <page name='核心动画Core Animation'/>
+        <page name='转场动画'/>
+        <page name='逐帧动画'/>
+        <page name='UIView动画封装'/>
     </pages>
 </playground>
