@@ -205,7 +205,7 @@ extension SyntaxHighlightTextStorage{
             // 2. match items surrounded by asterisks
             //创建一个正则表达式来定位星号符包围的文本。
             //例如，在字符串“iOS 7 is *awesome*”中，存储在regExStr中的正则表达式将会匹配并返回文本“*awesome*”。
-//            let regexStr = "(w+(sw+))s"
+            //let regexStr = "(w+(sw+))s"
             let regex = try! NSRegularExpression(pattern: regexStr, options: .CaseInsensitive)
             
             let textAttributes = replacements[regexStr]
@@ -233,7 +233,6 @@ extension SyntaxHighlightTextStorage{
 //使用正则表达式来寻找和替换限定字符，然后用applyStylesToRange来设置想要的文本样式即可。
 extension SyntaxHighlightTextStorage{
 
-    
     func createHighlightPatterns()  {
         
         //使用Zapfino字体来创建了“script”风格
@@ -254,7 +253,7 @@ extension SyntaxHighlightTextStorage{
         let boldAttributes = createAttributesForFontStyle(UIFontTextStyleBody, trait: .TraitBold)
         
         let italicAttributes = createAttributesForFontStyle(UIFontTextStyleBody, trait: .TraitItalic)
-//        let strikeThroughAttributes = [NSStrikethroughStyleAttributeName:NSNumber.init(int: 1)]
+        let strikeThroughAttributes = [NSStrikethroughStyleAttributeName:NSNumber.init(int: 1)]
         let scriptAttributes = [NSFontAttributeName:scriptFont]
         let redTextAttributes = [NSForegroundColorAttributeName:UIColor.redColor()]
 
@@ -268,7 +267,7 @@ extension SyntaxHighlightTextStorage{
             "(*w+(sw+)**)s" : boldAttributes,
             "(w+(sw+)*_)s" : italicAttributes,
             "([0-9]+.)s" : boldAttributes,
-//            "(-w+(sw+)*–)s" : strikeThroughAttributes,
+            "(-w+(sw+)*–)s" : strikeThroughAttributes,
             "(~w+(sw+)*~)s" : scriptAttributes,
             "s([A-Z]{2,})s" : redTextAttributes]
     }

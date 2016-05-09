@@ -19,6 +19,9 @@
       <FileRef
          location = "group:TextKit.playground">
       </FileRef>
+      <FileRef
+         location = "group:Java&#x200b;Script&#x200b;Core.playground">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
