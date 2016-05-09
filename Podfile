@@ -31,7 +31,8 @@ pod 'SnapKit', '~> 0.20.0'  #swift
 #工具
 pod  'SwiftFilePath'
 
-
+#mustache模板引擎
+pod 'GRMustache.swift', '~> 1.0'
 
 #target :<#TargetName#>Tests, :exclusive => true do
 # pod 'Kiwi'

@@ -1,9 +1,10 @@
 PODS:
-  - Alamofire (3.3.1)
+  - Alamofire (3.4.0)
   - AlamofireImage (2.4.0):
     - Alamofire (~> 3.3)
   - AlamofireNetworkActivityIndicator (1.0.1):
     - Alamofire (~> 3.3)
+  - GRMustache.swift (1.0.1)
   - Masonry (1.0.0)
   - ObjectMapper (1.1.5)
   - OHHTTPStubs (5.0.0):
@@ -21,9 +22,9 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (5.0.0)
   - OHHTTPStubs/Swift (5.0.0):
     - OHHTTPStubs/Core
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
   - SnapKit (0.20.0)
   - SwiftFilePath (0.0.6)
   - WeiboSDK (3.1.3)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.0)
   - AlamofireImage (~> 2.0)
   - AlamofireNetworkActivityIndicator (~> 1.0)
+  - GRMustache.swift (~> 1.0)
   - Masonry
   - ObjectMapper (= 1.1.5)
   - OHHTTPStubs
@@ -51,13 +53,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
+  GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
   WeiboSDK: 5f2a707c4569a64f4641f4171acd712016f24342

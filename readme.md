@@ -417,9 +417,24 @@ Timely — 测试应该和生产代码一同书写
 
 
 ##### JavaScriptCore 调用 swift
+[JavaScriptCore](http://nshipster.cn/javascriptcore/)
+[源码](https://github.com/phoboslab/JavaScriptCore-iOS)
+[JavaScriptCore框架在iOS7中的对象交互和管理](http://blog.iderzheng.com/ios7-objects-management-in-javascriptcore-framework/)
+[JavaScriptCore 使用](http://www.jianshu.com/p/a329cd4a67ee)
 [Changing a JSContext-passed Swift object with JavaScriptCore](http://stackoverflow.com/questions/27034803/changing-a-jscontext-passed-swift-object-with-javascriptcore)
 
-##### JSExportAs
+##### 语言穿梭机—JSExport协议
+
+JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Objective-C编程里可不能脱离类和继承了写代码。所以JavaScriptCore就提供了JSExport作为两种语言的互通协议。JSExport中没有约定任何的方法，连可选的(@optional)都没有，但是所有继承了该协议(@protocol)的协议（注意不是Objective-C的类(@interface)）中定义的方法，都可以在JSContext中被使用
+######## JSExportAs 宏
+对于多参数的方法，JavaScriptCore的转换方式将Objective-C的方法每个部分都合并在一起，冒号后的字母变为大写并移除冒号。比如下边协议中的方法，在JavaScript调用就是：doFooWithBar(foo, bar);
+```
+@protocol MultiArgs <JSExport>
+- (void)doFoo:(id)foo withBar:(id)bar;
+@end
+``` `
+如果希望方法在JavaScript中有一个比较短的名字，就需要用的JSExport.h中提供的宏：
+`JSExportAs(PropertyName, Selector)`
 
 在 JS 中方法的命名规则与 Objective-C 中有点不一样，如 Objective-C 中的方法-(void)setX:(id)x Y:(id)y Z:(id)z;，加入到 JSExport 协议中，在 JS 中调用就得是setXYZ(x, y, z);，当然如果你不想根据这种命名转换规则，你也可以通过 JSExport.h 中的方法来修改：
 1. [oc版本：宏定义](xcdoc://?url=developer.apple.com/library/etc/redirect/xcode/ios/1151/documentation/JavaScriptCore/Reference/JSExport_Ref/index.html )
@@ -437,3 +452,21 @@ JSExportAs(set3D,
 #####安装JS编辑工具
 [Sublime Text 3 安装Package Control](http://www.cnblogs.com/luoshupeng/archive/2013/09/09/3310777.html)
 [nodejs安装](https://nodejs.org/en/)
+
+#####[Mustache JS library](http://mustache.github.io)
+安装：pod 'GRMustache.swift', '~> 1.0'
+[mustache模板引擎](http://blog.csdn.net/kevin_luan/article/details/46485561)
+[Mustache 的 Swift 语言实现版本](https://github.com/BjornRuud/Swiftache)
+mustache 支持功能比较弱，不过我们可以建立在mustache 之上进行扩展实现。  
+mustache的特点就是很语法很简单，主要语法如下:
+1. {{ name }} 打印变量，默认是escape过的，如果不要escape,用3个分隔符 {{{ name }}}，或者用 {{ &name }}，这个和分隔符无关
+2. {{#person}}…{{/person}} 区块，4种方式
+    person是真假值，决定是否输出
+    person 是list of array，会循环展开 for x in person:section.render('xxx)
+    person 是匿名函数/object, 区块包裹的html 会作为参数传递进去
+    person 是dict，直接打印 dict[key]
+3. {{^person}}…{{/person}，反向区块
+4. {{！name }} 注释
+5. {{> box }} 载入子模块
+
+

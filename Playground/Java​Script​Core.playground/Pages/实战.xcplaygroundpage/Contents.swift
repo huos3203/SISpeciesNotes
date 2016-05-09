@@ -3,6 +3,7 @@
 import Foundation
 import JavaScriptCore
 import UIKit
+import Mustache
 
 //JSExportAs对象
 //[swift版本](https://gist.github.com/zeitiger/1387f7d996f64b493608.js )
