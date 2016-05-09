@@ -415,3 +415,25 @@ Timely — 测试应该和生产代码一同书写
 正确地Stub依赖
 不要测试构造函数
 
+
+##### JavaScriptCore 调用 swift
+[Changing a JSContext-passed Swift object with JavaScriptCore](http://stackoverflow.com/questions/27034803/changing-a-jscontext-passed-swift-object-with-javascriptcore)
+
+##### JSExportAs
+
+在 JS 中方法的命名规则与 Objective-C 中有点不一样，如 Objective-C 中的方法-(void)setX:(id)x Y:(id)y Z:(id)z;，加入到 JSExport 协议中，在 JS 中调用就得是setXYZ(x, y, z);，当然如果你不想根据这种命名转换规则，你也可以通过 JSExport.h 中的方法来修改：
+1. [oc版本：宏定义](xcdoc://?url=developer.apple.com/library/etc/redirect/xcode/ios/1151/documentation/JavaScriptCore/Reference/JSExport_Ref/index.html )
+实现：
+#define JSExportAs(PropertyName, Selector) \
+@optional Selector __JS_EXPORT_AS__##PropertyName:(id)argument; @required Selector
+#endif
+
+如 setX:Y:Z 方法，我们可以给他重命名，让 JS 中通过 set3D(x,y,z) 来调用
+JSExportAs(set3D,
+- (void)setX:(id)x Y:(id)y Z:(id)z
+);
+2. [swift版本](https://gist.github.com/zeitiger/1387f7d996f64b493608.js )
+
+#####安装JS编辑工具
+[Sublime Text 3 安装Package Control](http://www.cnblogs.com/luoshupeng/archive/2013/09/09/3310777.html)
+[nodejs安装](https://nodejs.org/en/)
