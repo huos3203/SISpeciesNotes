@@ -479,3 +479,9 @@ mustache的特点就是很语法很简单，主要语法如下:
 
 ####百度网盘开发者公告http://developer.baidu.com/announcement/115
 “个人云存储(PCS)”：不再支持新用户接入，老用户可继续使用；9月8日起，百度开发者中心不再提供个人云存储(PCS)相关链接和服务。
+
+####React Native连[IDE](http://nuclide.io/)
+动态添加业务模块目前还是推荐尝试React Native，但React Native并不会提供原生OC接口的反射调用和方法替换，无法做到修改原生代码，JSPatch以小巧的引擎补足这个缺口，配合React Native用统一的JS语言让一个原生APP时刻处于可扩展可修改的状态。
+nuclide安装
+
+https://atom.io
