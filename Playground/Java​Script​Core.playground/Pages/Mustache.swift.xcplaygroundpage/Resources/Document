@@ -1,0 +1,5 @@
+Hello {{name}}
+Your luggage will arrive on {{format(date)}}.
+{{#late}}
+Well, on {{format(real_date)}} due to Martian attack.
+{{/late}}

@@ -454,7 +454,12 @@ JSExportAs(set3D,
 [nodejs安装](https://nodejs.org/en/)
 
 #####[Mustache JS library](http://mustache.github.io)
+
+Mustache 是一个很强大的 template 引擎，可以通过解析 json 来绑定并渲染占位符。如果你做过一些前端开发的话，会知道这是一种很常用的 HTML 绑定 Model 的做法，GRMustache.swift 是这个框架的 Swift 实现。
+
+
 安装：pod 'GRMustache.swift', '~> 1.0'
+
 [mustache模板引擎](http://blog.csdn.net/kevin_luan/article/details/46485561)
 [Mustache 的 Swift 语言实现版本](https://github.com/BjornRuud/Swiftache)
 mustache 支持功能比较弱，不过我们可以建立在mustache 之上进行扩展实现。  
@@ -469,4 +474,8 @@ mustache的特点就是很语法很简单，主要语法如下:
 4. {{！name }} 注释
 5. {{> box }} 载入子模块
 
+#####[swift反射](http://www.cocoachina.com/industry/20140623/8923.html)
+[swift Reflect框架](https://github.com/CharlinFeng/Reflect/blob/master/README_CN.md)
 
+####百度网盘开发者公告http://developer.baidu.com/announcement/115
+“个人云存储(PCS)”：不再支持新用户接入，老用户可继续使用；9月8日起，百度开发者中心不再提供个人云存储(PCS)相关链接和服务。

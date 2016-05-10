@@ -3,5 +3,8 @@
     <pages>
         <page name='基础'/>
         <page name='实战'/>
+        <page name='Mustache.swift'/>
+        <page name='JSCore+Request'/>
+        <page name='JS-Bridging-Header'/>
     </pages>
 </playground>

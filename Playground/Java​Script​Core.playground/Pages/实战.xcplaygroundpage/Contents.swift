@@ -61,6 +61,23 @@ public class Person:NSObject,PersonJSExports{
         return "\(firstName) \(lastName)"
     }
 }
+/* 继承NSObject的类，无法实现MustacheBoxble协议，否则实现协议的计算属性时，出现被overrite的特性
+extension Person:MustacheBoxable{
+    
+        var mustacheBox: MustacheBox{
+            return MustacheBox(value: self, keyedSubscript: { (key: String) in
+                switch key {
+                case "getFullName":
+                    return Box("\(self.firstName) \(self.lastName)")
+                case "birthYear":
+                    return Box(self.birthYear)
+                default:
+                    return Box()
+                }
+            })
+        }
+}
+*/
 
 // #### JSContext 配置
 let context = JSContext()
@@ -91,12 +108,16 @@ if let peopleJSON = try? NSString(contentsOfURL:[#FileReference(fileReferenceLit
         print("\(people)")
         // get rendering function and create template
         //用Mustache模板渲染。导入 Mustache JS library，应用模板到我们的 Person 对象。
-        let mustacheRender = context.objectForKeyedSubscript("Mustache").objectForKeyedSubscript("render")
-        let template = "{{getFullName}}, born {{birthYear}}"
+//        let mustacheRender = context.objectForKeyedSubscript("Mustache").objectForKeyedSubscript("render")
+//        let template = "{{getFullName}}, born {{birthYear}}"
+        let template2 = try! Template(string: "{{getFullName}}, born {{birthYear}}")
+        
         
         // loop through people and render Person object as string
         for person in people {
-            print(mustacheRender.callWithArguments([template, person]))
+//            print(mustacheRender.callWithArguments([template, person]))
+            let rendering2 = try! template2.render(Box(person))
+            print(rendering2)
         }
     }
 }
