@@ -34,6 +34,8 @@ pod  'SwiftFilePath'
 #mustache模板引擎
 pod 'GRMustache.swift', '~> 1.0'
 
+pod 'JSPatch'
+
 #target :<#TargetName#>Tests, :exclusive => true do
 # pod 'Kiwi'
 #end

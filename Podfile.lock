@@ -5,6 +5,9 @@ PODS:
   - AlamofireNetworkActivityIndicator (1.0.1):
     - Alamofire (~> 3.3)
   - GRMustache.swift (1.0.1)
+  - JSPatch (1.0):
+    - JSPatch/Core (= 1.0)
+  - JSPatch/Core (1.0)
   - Masonry (1.0.0)
   - ObjectMapper (1.1.5)
   - OHHTTPStubs (5.0.0):
@@ -34,6 +37,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 2.0)
   - AlamofireNetworkActivityIndicator (~> 1.0)
   - GRMustache.swift (~> 1.0)
+  - JSPatch
   - Masonry
   - ObjectMapper (= 1.1.5)
   - OHHTTPStubs
@@ -57,6 +61,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
+  JSPatch: c689ea4dde17441f2f4a95d40dfedb8900c20099
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159

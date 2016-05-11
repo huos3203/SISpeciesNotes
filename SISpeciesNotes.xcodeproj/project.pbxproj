@@ -76,8 +76,6 @@
 		14BA997A1CE1956900B4A635 /* Person.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 14BA99771CE1956900B4A635 /* Person.mustache */; };
 		14BA997B1CE1956900B4A635 /* ReadMeExample1.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 14BA99781CE1956900B4A635 /* ReadMeExample1.mustache */; };
 		14BA997C1CE1956900B4A635 /* ReadMeExample2.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 14BA99791CE1956900B4A635 /* ReadMeExample2.mustache */; };
-		14CA5F711CE1DF890013B32C /* JavaScriptCoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA5F701CE1DF890013B32C /* JavaScriptCoreTest.swift */; };
-		14CA5F721CE1DF890013B32C /* JavaScriptCoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA5F701CE1DF890013B32C /* JavaScriptCoreTest.swift */; };
 		14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E421CAB811F00A0595C /* MapViewExtension.swift */; };
 		14D52E461CAB812800A0595C /* FlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E441CAB812800A0595C /* FlowCell.swift */; };
 		14D52E471CAB812800A0595C /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D52E451CAB812800A0595C /* LogCell.swift */; };
@@ -1100,7 +1098,6 @@
 				1461982B1CBB3F0100BAA78C /* ShadeAnimationViewController.m in Sources */,
 				8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */,
 				14D52E431CAB811F00A0595C /* MapViewExtension.swift in Sources */,
-				14CA5F711CE1DF890013B32C /* JavaScriptCoreTest.swift in Sources */,
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
@@ -1140,7 +1137,6 @@
 				14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */,
 				84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */,
 				14BA99761CE194D200B4A635 /* MustacheTest.swift in Sources */,
-				14CA5F721CE1DF890013B32C /* JavaScriptCoreTest.swift in Sources */,
 				14427F881CCE067C007E80CF /* ImageDownloaderTests.swift in Sources */,
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,

@@ -6,7 +6,7 @@ import XCPlayground
 
 
 //文本排除区域：通过
-//XCPlaygroundPage.currentPage.liveView = ExclusionPath()
+XCPlaygroundPage.currentPage.liveView = ExclusionPath()
 
 //日期戳
 //let view = TimeIndicatorView.init(time: NSDate())

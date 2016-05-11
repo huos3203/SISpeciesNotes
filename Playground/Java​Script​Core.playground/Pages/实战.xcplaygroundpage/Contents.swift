@@ -53,7 +53,8 @@ public class Person:NSObject,PersonJSExports{
     
     //1. 由于JavaScriptCore 没有初始化，不能像原生的 JavaScript 类型那样简单地用 var person = new Person()，所以 create... 类方法是必要的
     //2: 由于 JavaScript 没有参数 名称，任何外部参数名称都会被转换为驼峰形式并且附加到函数名后。在这个例子中，Objective-C 的方法 createWithFirstName:lastName: 变成了在JavaScript中的 createWithFirstNameLastName()。
-    class func createWithFirstName(firstName: String, lastName: String) -> Person {
+    //3. 在JSPatch可以调用被dynamic修饰的方法，在此处即使dynamic修饰，js中调用createWithFirstNameLastName同样失败
+    dynamic class func createWithFirstName(firstName: String, lastName: String) -> Person {
         return Person(firstName: firstName, lastName: lastName)
     }
 
@@ -81,11 +82,11 @@ extension Person:MustacheBoxable{
 
 // #### JSContext 配置
 let context = JSContext()
-//===========导入Person类 到 JavaScript 环境，无效：在JS脚本中调用静态方法：class func createWithFirstName()=============
-// export Person class   
-//OC版本:context[@"Person"] = [Person class];
+// export Person class
+//===========导入Person类 到 JavaScript 环境，无效：在JS脚本中调用静态方法：class func createWithFirstName()=======
 //[对象下标索引](http://nshipster.cn/object-subscripting/ )
-//context.setObject(Person.self, forKeyedSubscript: "Person")
+context.setObject(Person.self, forKeyedSubscript: "Person")
+//OC版本:context[@"Person"] = [Person class];
 //========================
 
 //使用block形式创建Person实例对象，然后配置到context中
@@ -109,8 +110,8 @@ if let peopleJSON = try? NSString(contentsOfURL:[#FileReference(fileReferenceLit
         // get rendering function and create template
         //用Mustache模板渲染。导入 Mustache JS library，应用模板到我们的 Person 对象。
 //        let mustacheRender = context.objectForKeyedSubscript("Mustache").objectForKeyedSubscript("render")
-//        let template = "{{getFullName}}, born {{birthYear}}"
-        let template2 = try! Template(string: "{{getFullName}}, born {{birthYear}}")
+        let template = "{{getFullName}}, born {{birthYear}}"
+        let template2 = try! Template(string: template)
         
         
         // loop through people and render Person object as string

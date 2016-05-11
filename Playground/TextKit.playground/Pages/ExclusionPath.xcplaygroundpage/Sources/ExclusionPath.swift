@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-
 /**
  *  使用textKit实现文本和图片混排，在拖动图片移动时，更新富文本布局
  */
