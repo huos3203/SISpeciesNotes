@@ -495,5 +495,13 @@ JSPatch 能做到通过 JS 调用和改写 OC 方法最根本的原因是 Object
 
 TestSwiftVC继承自UIViewController，基类NSObject，而Swift为了兼容Objective-C，凡是继承自NSObject的类都会保留其动态性，所以我们能通过runtime拿到他的方法。
 
+######git提交问题
+[The Repository is Locked](http://stackoverflow.com/questions/32990720/the-repository-is-locked-error-while-trying-to-commit-into-source-control)
+All you need to do is:
 
-
+Close Xcode
+Open the .git folder in your xcode project folder. The folder is hidden, so you would need to either use terminal to open the directory or the "Go to Folder" option in Finder.
+Then delete the "index.lock" file. Either through terminal or Finder.
+Try and commit again.
+If it fails again, repeat 1 to 3 but commit first with terminal.
+If you know what you're doing just typing this command into terminal in the current directory of your project and it should delete the lock file: rm -f .git/index.lock
