@@ -45,6 +45,8 @@
 /* Begin PBXBuildFile section */
 		1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA431C7F0D9F0089E00D /* CategoryModel.swift */; };
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
+		143F0EF31CE44BF100965C96 /* JSPatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143F0EF21CE44BF100965C96 /* JSPatchTest.swift */; };
+		143F0EF51CE44CF300965C96 /* jsClassTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 143F0EF41CE44CF300965C96 /* jsClassTest.js */; };
 		14427F781CCDC4A2007E80CF /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */; };
 		14427F821CCE03FE007E80CF /* ImageFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14427F811CCE03FE007E80CF /* ImageFilterTests.swift */; };
 		14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14427F831CCE0456007E80CF /* BaseTestCase.swift */; };
@@ -178,6 +180,8 @@
 /* Begin PBXFileReference section */
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
+		143F0EF21CE44BF100965C96 /* JSPatchTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSPatchTest.swift; sourceTree = "<group>"; };
+		143F0EF41CE44CF300965C96 /* jsClassTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsClassTest.js; sourceTree = "<group>"; };
 		14427F811CCE03FE007E80CF /* ImageFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
 		14427F831CCE0456007E80CF /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		14427F871CCE067C007E80CF /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
@@ -580,6 +584,7 @@
 				14BA99771CE1956900B4A635 /* Person.mustache */,
 				14BA99781CE1956900B4A635 /* ReadMeExample1.mustache */,
 				14BA99791CE1956900B4A635 /* ReadMeExample2.mustache */,
+				143F0EF41CE44CF300965C96 /* jsClassTest.js */,
 				84DCB7D61CC33B610028EE9A /* user.json */,
 				84DCB7D71CC33B880028EE9A /* stub.txt */,
 			);
@@ -656,6 +661,7 @@
 				14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */,
 				14BA99751CE194D200B4A635 /* MustacheTest.swift */,
 				14CA5F701CE1DF890013B32C /* JavaScriptCoreTest.swift */,
+				143F0EF21CE44BF100965C96 /* JSPatchTest.swift */,
 				847503951C59C3F300E804EE /* SwiftDocumentation */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
 			);
@@ -941,6 +947,7 @@
 			files = (
 				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
 				14BA997A1CE1956900B4A635 /* Person.mustache in Resources */,
+				143F0EF51CE44CF300965C96 /* jsClassTest.js in Resources */,
 				14BA997B1CE1956900B4A635 /* ReadMeExample1.mustache in Resources */,
 				84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */,
 				14BA997C1CE1956900B4A635 /* ReadMeExample2.mustache in Resources */,
@@ -1133,6 +1140,7 @@
 				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
 				14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */,
 				14427F821CCE03FE007E80CF /* ImageFilterTests.swift in Sources */,
+				143F0EF31CE44BF100965C96 /* JSPatchTest.swift in Sources */,
 				147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */,
 				14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */,
 				84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */,

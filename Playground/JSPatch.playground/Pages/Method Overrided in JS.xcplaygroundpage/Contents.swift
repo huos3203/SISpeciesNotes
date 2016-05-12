@@ -25,7 +25,7 @@ class rrviewController :UIViewController{
         view.addSubview(vieww)
     }
     
-    //必须添加dynamic修饰符
+    //overrided in JS 必须添加dynamic修饰符
     dynamic func genView() -> UIView {
         //
         return UIView.init(frame: CGRectMake(0, 0, 320, 320))
