@@ -62,6 +62,9 @@
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
+		147CE6151CE581C500424C7F /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6141CE581C500424C7F /* test.js */; };
+		147CE6181CE5837200424C7F /* newProtocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6161CE5837200424C7F /* newProtocolTest.js */; };
+		147CE6191CE5837200424C7F /* protocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6171CE5837200424C7F /* protocolTest.js */; };
 		148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E31CC52E7200DEB22D /* PersistencyManager.swift */; };
 		148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
@@ -203,6 +206,9 @@
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		147CE6141CE581C500424C7F /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		147CE6161CE5837200424C7F /* newProtocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = newProtocolTest.js; sourceTree = "<group>"; };
+		147CE6171CE5837200424C7F /* protocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = protocolTest.js; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
@@ -584,6 +590,9 @@
 				14BA99771CE1956900B4A635 /* Person.mustache */,
 				14BA99781CE1956900B4A635 /* ReadMeExample1.mustache */,
 				14BA99791CE1956900B4A635 /* ReadMeExample2.mustache */,
+				147CE6141CE581C500424C7F /* test.js */,
+				147CE6161CE5837200424C7F /* newProtocolTest.js */,
+				147CE6171CE5837200424C7F /* protocolTest.js */,
 				143F0EF41CE44CF300965C96 /* jsClassTest.js */,
 				84DCB7D61CC33B610028EE9A /* user.json */,
 				84DCB7D71CC33B880028EE9A /* stub.txt */,
@@ -946,10 +955,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
+				147CE6191CE5837200424C7F /* protocolTest.js in Resources */,
+				147CE6181CE5837200424C7F /* newProtocolTest.js in Resources */,
 				14BA997A1CE1956900B4A635 /* Person.mustache in Resources */,
 				143F0EF51CE44CF300965C96 /* jsClassTest.js in Resources */,
 				14BA997B1CE1956900B4A635 /* ReadMeExample1.mustache in Resources */,
 				84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */,
+				147CE6151CE581C500424C7F /* test.js in Resources */,
 				14BA997C1CE1956900B4A635 /* ReadMeExample2.mustache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

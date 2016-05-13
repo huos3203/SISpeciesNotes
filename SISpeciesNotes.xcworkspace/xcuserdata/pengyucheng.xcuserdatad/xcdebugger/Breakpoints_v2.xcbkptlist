@@ -58,7 +58,7 @@
                   moduleName = "SISpeciesNotes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "484738062.536713"
+                  timestampString = "484823570.402465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -73,7 +73,7 @@
                   moduleName = "SISFramework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/SISpeciesNotes/API/LibraryAPI.swift"
-                  timestampString = "484738062.536901"
+                  timestampString = "484823570.402634"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -89,12 +89,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISpeciesNotesTests/source/jsClassTest.js"
-            timestampString = "484737904.896165"
+            filePath = "SISpeciesNotesTests/source/test.js"
+            timestampString = "484822318.112326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71">
+            startingLineNumber = "107"
+            endingLineNumber = "107">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotesTests/JSPatchTest.swift"
+            timestampString = "484823569.391541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "testEngine()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISpeciesNotesTests/JSPatchTest.swift"
+            timestampString = "484823569.391541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "loadPatch(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

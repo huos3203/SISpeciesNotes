@@ -29,13 +29,107 @@ class JPJSClassTest:NSObject {
     }
 }
 
-class JSPatchTest: XCTestCase {
 
-//    - (void)loadPatch:(NSString *)patchName
-//    {
-//    NSString *jsPath = [[NSBundle bundleForClass:[self class]] pathForResource:patchName ofType:@"js"];
-//    [JPEngine evaluateScriptWithPath:jsPath];
-//    }
+@objc(JPTestObject)
+class JPTestObject: NSObject {
+    //
+    dynamic func funcWithInt(intValue:Int) {
+        //
+        funcWithIntPassed = intValue == 42
+    }
+    
+    var funcReturnVoidPassed:Bool!
+    var funcReturnStringPassed:Bool!
+    var funcReturnViewWithFramePassed:Bool!
+    var funcWithViewAndReturnViewPassed:Bool!
+    
+    var funcWithIntPassed:Bool!
+    var funcWithNilPassed:Bool!
+    var funcReturnNilPassed:Bool!
+    var funcWithNilAndOthersPassed:Bool!
+    var funcWithNullPassed:Bool!
+    var funcTestBoolPassed:Bool!
+    var funcTestNSNumberPassed:Bool!
+    
+    var funcWithDictAndDoublePassed:Bool!
+    
+    var funcWithRangeAndReturnRangePassed:Bool!
+    var funcWithRectAndReturnRectPassed:Bool!
+    var funcWithPointAndReturnPointPassed:Bool!
+    var funcWithSizeAndReturnSizePassed:Bool!
+
+    
+}
+
+extension JPTestObject{
+
+    dynamic func funcReturnVoid() {
+        //
+        funcReturnVoidPassed = true
+    }
+    
+    dynamic func funcReturnString() ->String{
+        //
+        return "stringFromOC"
+    }
+    
+    dynamic func funcWithRectAndReturnRect(rect:CGRect)->CGRect {
+        //
+        return rect
+    }
+    
+    dynamic func funcWithPointAndReturnPoint(point:CGPoint) -> CGPoint {
+        //
+        return point
+    }
+    
+    dynamic func funcWithSizeAndReturnSize(size:CGSize) -> CGSize {
+        //
+        return size
+    }
+    
+    dynamic func funcWithRangeAndReturnRange(range:NSRange) -> NSRange {
+        //
+        return range
+    }
+    
+    dynamic func funcReturnViewWithFrame(frame:CGRect) -> UIView {
+        //
+        let view = UIView.init(frame: frame)
+        return view
+    }
+}
+
+class JPTestSubObject: JPTestObject {
+    //
+    var funcCallSuperSubObjectPassed:Bool! = true
+    
+    func funcCallSuper() {
+        //
+        funcCallSuperSubObjectPassed = true
+    }
+    
+    
+}
+
+protocol JPTestProtocol {
+    //
+    func protocolWithDouble(num:Double,dictionary:NSDictionary) -> Double
+    static func classProtocolWithString(string:String,num:Int)
+}
+
+@objc
+protocol JPTestProtocol2 {
+    //
+   optional func protocolWithInt(num:Int) -> Int
+}
+@objc
+class JPTestProtocolObject: NSObject,JPTestProtocol,JPTestProtocol2 {
+    //
+    func testProtocolMethods() -> Bool
+}
+
+class JSPatchTest: XCTestCase {
 
     func loadPatch(patchName:String) {
         //
@@ -57,9 +151,7 @@ class JSPatchTest: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
         loadPatch("jsClassTest")
-        
         XCTAssert(JPJSClassTest.isPassA())
         XCTAssert(JPJSClassTest.isPassB())
         XCTAssert(JPJSClassTest.isPassC())
@@ -71,6 +163,27 @@ class JSPatchTest: XCTestCase {
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    
+    func testEngine(){
+        
+        loadPatch("test")
+//        let objValue = JPEngine.context().evaluateScript("ocObj")
+//        let obj = objValue.toObjectOfClass(JPTestObject.self) as! JPTestObject
+        
+//        XCTAssert(obj.funcReturnVoidPassed,"funcReturnVoidPassed")
+//        XCTAssert(obj.funcReturnStringPassed, "funcReturnStringPassed")
+        
+//        XCTAssert(obj.funcWithIntPassed, "funcWithIntPassed")
+//        
+//        
+//        XCTAssert(obj.funcWithRectAndReturnRectPassed, "funcWithRectAndReturnRectPassed")
+//        XCTAssert(obj.funcWithSizeAndReturnSizePassed, "funcWithSizeAndReturnSizePassed")
+//        XCTAssert(obj.funcWithPointAndReturnPointPassed, "funcWithPointAndReturnPointPassed")
+//        XCTAssert(obj.funcWithRangeAndReturnRangePassed, "funcWithRangeAndReturnRangePassed")
+        
+        
     }
 
 }

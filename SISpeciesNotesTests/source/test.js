@@ -105,7 +105,7 @@ require('JPEngine').defineStruct({
   })
 
   var JPTestObject = require("JPTestObject") 
-  var UIView = require("UIView") 
+  var UIView = require("UIView")
   var obj = JPTestObject.alloc().init() 
   global.ocObj = obj.__obj;
 
@@ -120,7 +120,6 @@ require('JPEngine').defineStruct({
 
   ////////Base
   obj.funcReturnVoid();
- //执行funcReturnString方法，再调用计算属性的set方法
   var testReturnString = obj.funcReturnString().toJS();
   obj.setFuncReturnStringPassed(testReturnString == "stringFromOC")
 
