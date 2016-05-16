@@ -490,6 +490,10 @@ https://atom.io
 基础原理：
 JSPatch 能做到通过 JS 调用和改写 OC 方法最根本的原因是 Objective-C 是动态语言，OC 上所有方法的调用/类的生成都通过 Objective-C Runtime 在运行时进行，我们可以通过类名/方法名反射得到相应的类和方法：
 根据Objective-C 对象模型和动态消息发送的原理：理论上可以在运行时通过类名/方法名调用到任何 OC 方法，替换任何类的实现以及新增任意类。
+JS与OC接口映射：由OC runtime机制解决,__c元函数，
+    在 OC 执行 JS 脚本前，通过正则把所有方法调用都改成调用 __c() 函数，即在JS 对象基类 Object 的 prototype 加上 __c 成员，这样所有对象都可以调用到 __c的消息转发机制：就是_methodFunc()把相关信息传给OC，OC用 Runtime 接口调用相应方法，返回结果值。
+JS和OC消息传递：由JavaScriptCore.FrameWork解决
+    这里用到了 JavaScriptCore 的接口，OC 端在启动 JSPatch 引擎时会创建一个 JSContext 实例，JSContext 是 JS 代码的执行环境，可以给 JSContext 添加方法，JS 就可以直接调用这个方法，JS 通过调用 JSContext 定义的方法把数据传给 OC，OC 通过返回值传会给 JS。
 [Swift Runtime分析：还像OC Runtime一样吗？](https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=403153173&idx=1&sn=c631f95b28a0eb4b842a9494e43a30e5&scene=1&srcid=0411nXUTkQ6iwljBxNeAy5jg&key=b28b03434249256b60dcb9aea88dce40e7a1ee0e66963b948073d936b9786aa8046c2a3ba77f72f6cd452d879551fca7&ascene=0&uin=MTIwODIw&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.5+build(14F1713)&version=11020201&pass_ticket=pKQWNzQ2V2dg3tSKmDrWNBPOSe7PPshsFTP6OHAGVys%3D)
 纯Swift类的函数调用已经不再是Objective-c的运行时发消息，而是类似C++的vtable，在编译时就确定了调用哪个函数，所以没法通过runtime获取方法、属性。
 
