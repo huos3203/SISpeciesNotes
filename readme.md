@@ -509,3 +509,10 @@ Then delete the "index.lock" file. Either through terminal or Finder.
 Try and commit again.
 If it fails again, repeat 1 to 3 but commit first with terminal.
 If you know what you're doing just typing this command into terminal in the current directory of your project and it should delete the lock file: rm -f .git/index.lock
+
+#####[Clang Diagnostics](http://nshipster.cn/clang-diagnostics/)
+[Xcode中去掉烦人的警告](http://blog.csdn.net/aries4ever/article/details/50704087)
+[Swift alternative for #pragma clang diagnostic](http://stackoverflow.com/questions/28357297/swift-alternative-for-pragma-clang-diagnostic)
+[Swift Build Configurations](http://www.technoburgh.com/ios/swift-build-configuration/)
+
+
