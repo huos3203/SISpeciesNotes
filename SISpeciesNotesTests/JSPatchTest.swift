@@ -111,23 +111,35 @@ class JPTestSubObject: JPTestObject {
     
     
 }
-
-protocol JPTestProtocol {
+@objc
+protocol JPTestProtocol:NSObjectProtocol {
     //
-    func protocolWithDouble(num:Double,dictionary:NSDictionary) -> Double
-    static func classProtocolWithString(string:String,num:Int)
+    optional func protocolWithDouble(num:Double,dict:NSDictionary) -> Double
+    optional static func classProtocolWithString(string:String,int:Int)->String
 }
 
+
 @objc
-protocol JPTestProtocol2 {
+protocol JPTestProtocol2:NSObjectProtocol {
     //
    optional func protocolWithInt(num:Int) -> Int
 }
+
+@available(iOS 7.0, OSX 10.10, *)
 @objc
 class JPTestProtocolObject: NSObject,JPTestProtocol,JPTestProtocol2 {
     //
-    func testProtocolMethods() -> Bool
+    func testProtocolMethods() -> Bool {
+        
+        let dNum = protocolWithDouble(4.2, dict: ["name":"JSPatch"])
+        let iNum = protocolWithInt(42)
+        let str = JPTestProtocolObject.classProtocolWithString("JSPatch", int: 42)
+        return dNum - 4.2 < 0.001 && iNum == 42
+    
+    }
+    
 }
+
 
 class JSPatchTest: XCTestCase {
 
@@ -147,7 +159,7 @@ class JSPatchTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
+    //@available(iOS 8.0, OSX 10.10, *)
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
