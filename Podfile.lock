@@ -53,7 +53,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WeiboSDK:
-    :commit: 73edfa5b97ab254983f0a349ab1c8d604452d009
+    :commit: e0e27810cd7592d828b332a7c97b4ccbdf434431
     :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
