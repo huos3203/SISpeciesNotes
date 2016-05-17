@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 bang. All rights reserved.
 //
 
-#import "JPEngine.h"
+#import <JSPatch/JPEngine.h>
 #import <CoreGraphics/CoreGraphics.h>
-#import "SISpeciesNotesTests-Swift.h"
 
 @interface JPCGTransform : JPExtension
 

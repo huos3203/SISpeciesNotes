@@ -68,13 +68,8 @@
 		148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		148DA3621CC8741900FF27E4 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
-		149129001CEB24AF004FFA1C /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
 		149129041CEB2567004FFA1C /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129031CEB2567004FFA1C /* jsc.m */; };
 		149129061CEB26BC004FFA1C /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129031CEB2567004FFA1C /* jsc.m */; };
-		149129091CEB2947004FFA1C /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129081CEB2947004FFA1C /* JPCGTransform.m */; };
-		1491290A1CEB2976004FFA1C /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129081CEB2947004FFA1C /* JPCGTransform.m */; };
-		1491290B1CEB2982004FFA1C /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
-		1491290E1CEB2A35004FFA1C /* JPCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */; };
 		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14B5B99B1CE1D831008A0CBD /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */; };
 		14B5B99C1CE1D831008A0CBD /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */; };
@@ -118,6 +113,24 @@
 		843D92251CC7E10700DEB22D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D92241CC7E10700DEB22D /* File.swift */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
+		8482D8C21CEB5D9300CC5028 /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
+		8482D9201CEB655A00CC5028 /* JPCGBitmapContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D8FE1CEB655A00CC5028 /* JPCGBitmapContext.m */; };
+		8482D9211CEB655A00CC5028 /* JPCGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9001CEB655A00CC5028 /* JPCGColor.m */; };
+		8482D9221CEB655A00CC5028 /* JPCGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9021CEB655A00CC5028 /* JPCGContext.m */; };
+		8482D9231CEB655A00CC5028 /* JPCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9041CEB655A00CC5028 /* JPCGGeometry.m */; };
+		8482D9241CEB655A00CC5028 /* JPCGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9061CEB655A00CC5028 /* JPCGImage.m */; };
+		8482D9251CEB655A00CC5028 /* JPCGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9081CEB655A00CC5028 /* JPCGPath.m */; };
+		8482D9261CEB655A00CC5028 /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D90A1CEB655A00CC5028 /* JPCGTransform.m */; };
+		8482D9271CEB655A00CC5028 /* JPCoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D90C1CEB655A00CC5028 /* JPCoreGraphics.m */; };
+		8482D9281CEB655A00CC5028 /* JPCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D90E1CEB655A00CC5028 /* JPCleaner.m */; };
+		8482D9291CEB655A00CC5028 /* JPLocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9101CEB655A00CC5028 /* JPLocker.m */; };
+		8482D92A1CEB655A00CC5028 /* JPMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9121CEB655A00CC5028 /* JPMemory.m */; };
+		8482D92B1CEB655A00CC5028 /* JPSpecialInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9141CEB655A00CC5028 /* JPSpecialInit.m */; };
+		8482D92C1CEB655A00CC5028 /* JPStructPointer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9161CEB655A00CC5028 /* JPStructPointer.m */; };
+		8482D92D1CEB655A00CC5028 /* JPUIGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D9191CEB655A00CC5028 /* JPUIGeometry.m */; };
+		8482D92E1CEB655A00CC5028 /* JPUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91B1CEB655A00CC5028 /* JPUIGraphics.m */; };
+		8482D92F1CEB655A00CC5028 /* JPUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91D1CEB655A00CC5028 /* JPUIImage.m */; };
+		8482D9301CEB655A00CC5028 /* JPUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91F1CEB655A00CC5028 /* JPUIKit.m */; };
 		849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AFA161CD5D306006FBF61 /* Images.xcassets */; };
 		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
 		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
@@ -218,10 +231,6 @@
 		149129021CEB2567004FFA1C /* jsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		149129031CEB2567004FFA1C /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsc.m; sourceTree = "<group>"; };
 		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		149129071CEB2947004FFA1C /* JPCGTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGTransform.h; sourceTree = "<group>"; };
-		149129081CEB2947004FFA1C /* JPCGTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGTransform.m; sourceTree = "<group>"; };
-		1491290C1CEB2A35004FFA1C /* JPCGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGGeometry.h; sourceTree = "<group>"; };
-		1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGGeometry.m; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +304,40 @@
 		847503791C58B76A00E804EE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		8475037A1C58B76A00E804EE /* undocumented.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = undocumented.txt; sourceTree = "<group>"; };
 		847503961C59C4A200E804EE /* Bicycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
+		8482D8FD1CEB655A00CC5028 /* JPCGBitmapContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGBitmapContext.h; sourceTree = "<group>"; };
+		8482D8FE1CEB655A00CC5028 /* JPCGBitmapContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGBitmapContext.m; sourceTree = "<group>"; };
+		8482D8FF1CEB655A00CC5028 /* JPCGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGColor.h; sourceTree = "<group>"; };
+		8482D9001CEB655A00CC5028 /* JPCGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGColor.m; sourceTree = "<group>"; };
+		8482D9011CEB655A00CC5028 /* JPCGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGContext.h; sourceTree = "<group>"; };
+		8482D9021CEB655A00CC5028 /* JPCGContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGContext.m; sourceTree = "<group>"; };
+		8482D9031CEB655A00CC5028 /* JPCGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGGeometry.h; sourceTree = "<group>"; };
+		8482D9041CEB655A00CC5028 /* JPCGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGGeometry.m; sourceTree = "<group>"; };
+		8482D9051CEB655A00CC5028 /* JPCGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGImage.h; sourceTree = "<group>"; };
+		8482D9061CEB655A00CC5028 /* JPCGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGImage.m; sourceTree = "<group>"; };
+		8482D9071CEB655A00CC5028 /* JPCGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGPath.h; sourceTree = "<group>"; };
+		8482D9081CEB655A00CC5028 /* JPCGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGPath.m; sourceTree = "<group>"; };
+		8482D9091CEB655A00CC5028 /* JPCGTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGTransform.h; sourceTree = "<group>"; };
+		8482D90A1CEB655A00CC5028 /* JPCGTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGTransform.m; sourceTree = "<group>"; };
+		8482D90B1CEB655A00CC5028 /* JPCoreGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCoreGraphics.h; sourceTree = "<group>"; };
+		8482D90C1CEB655A00CC5028 /* JPCoreGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCoreGraphics.m; sourceTree = "<group>"; };
+		8482D90D1CEB655A00CC5028 /* JPCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCleaner.h; sourceTree = "<group>"; };
+		8482D90E1CEB655A00CC5028 /* JPCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCleaner.m; sourceTree = "<group>"; };
+		8482D90F1CEB655A00CC5028 /* JPLocker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLocker.h; sourceTree = "<group>"; };
+		8482D9101CEB655A00CC5028 /* JPLocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLocker.m; sourceTree = "<group>"; };
+		8482D9111CEB655A00CC5028 /* JPMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMemory.h; sourceTree = "<group>"; };
+		8482D9121CEB655A00CC5028 /* JPMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMemory.m; sourceTree = "<group>"; };
+		8482D9131CEB655A00CC5028 /* JPSpecialInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSpecialInit.h; sourceTree = "<group>"; };
+		8482D9141CEB655A00CC5028 /* JPSpecialInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSpecialInit.m; sourceTree = "<group>"; };
+		8482D9151CEB655A00CC5028 /* JPStructPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStructPointer.h; sourceTree = "<group>"; };
+		8482D9161CEB655A00CC5028 /* JPStructPointer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStructPointer.m; sourceTree = "<group>"; };
+		8482D9181CEB655A00CC5028 /* JPUIGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIGeometry.h; sourceTree = "<group>"; };
+		8482D9191CEB655A00CC5028 /* JPUIGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIGeometry.m; sourceTree = "<group>"; };
+		8482D91A1CEB655A00CC5028 /* JPUIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIGraphics.h; sourceTree = "<group>"; };
+		8482D91B1CEB655A00CC5028 /* JPUIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIGraphics.m; sourceTree = "<group>"; };
+		8482D91C1CEB655A00CC5028 /* JPUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIImage.h; sourceTree = "<group>"; };
+		8482D91D1CEB655A00CC5028 /* JPUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIImage.m; sourceTree = "<group>"; };
+		8482D91E1CEB655A00CC5028 /* JPUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIKit.h; sourceTree = "<group>"; };
+		8482D91F1CEB655A00CC5028 /* JPUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIKit.m; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		849AFA161CD5D306006FBF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
@@ -447,10 +490,7 @@
 				841816871CEA141300EF1DE4 /* JPTestObject.swift */,
 				149128FE1CEB24AF004FFA1C /* JPTestObject.h */,
 				149128FF1CEB24AF004FFA1C /* JPTestObject.m */,
-				149129071CEB2947004FFA1C /* JPCGTransform.h */,
-				149129081CEB2947004FFA1C /* JPCGTransform.m */,
-				1491290C1CEB2A35004FFA1C /* JPCGGeometry.h */,
-				1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */,
+				8482D8FB1CEB655A00CC5028 /* Extensions */,
 			);
 			path = JSPatch;
 			sourceTree = "<group>";
@@ -618,6 +658,63 @@
 				847503961C59C4A200E804EE /* Bicycle.swift */,
 			);
 			path = SwiftDocumentation;
+			sourceTree = "<group>";
+		};
+		8482D8FB1CEB655A00CC5028 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8482D9171CEB655A00CC5028 /* UIKit */,
+				8482D8FC1CEB655A00CC5028 /* CoreGraphics */,
+				8482D90D1CEB655A00CC5028 /* JPCleaner.h */,
+				8482D90E1CEB655A00CC5028 /* JPCleaner.m */,
+				8482D90F1CEB655A00CC5028 /* JPLocker.h */,
+				8482D9101CEB655A00CC5028 /* JPLocker.m */,
+				8482D9111CEB655A00CC5028 /* JPMemory.h */,
+				8482D9121CEB655A00CC5028 /* JPMemory.m */,
+				8482D9131CEB655A00CC5028 /* JPSpecialInit.h */,
+				8482D9141CEB655A00CC5028 /* JPSpecialInit.m */,
+				8482D9151CEB655A00CC5028 /* JPStructPointer.h */,
+				8482D9161CEB655A00CC5028 /* JPStructPointer.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8482D8FC1CEB655A00CC5028 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				8482D8FD1CEB655A00CC5028 /* JPCGBitmapContext.h */,
+				8482D8FE1CEB655A00CC5028 /* JPCGBitmapContext.m */,
+				8482D8FF1CEB655A00CC5028 /* JPCGColor.h */,
+				8482D9001CEB655A00CC5028 /* JPCGColor.m */,
+				8482D9011CEB655A00CC5028 /* JPCGContext.h */,
+				8482D9021CEB655A00CC5028 /* JPCGContext.m */,
+				8482D9031CEB655A00CC5028 /* JPCGGeometry.h */,
+				8482D9041CEB655A00CC5028 /* JPCGGeometry.m */,
+				8482D9051CEB655A00CC5028 /* JPCGImage.h */,
+				8482D9061CEB655A00CC5028 /* JPCGImage.m */,
+				8482D9071CEB655A00CC5028 /* JPCGPath.h */,
+				8482D9081CEB655A00CC5028 /* JPCGPath.m */,
+				8482D9091CEB655A00CC5028 /* JPCGTransform.h */,
+				8482D90A1CEB655A00CC5028 /* JPCGTransform.m */,
+				8482D90B1CEB655A00CC5028 /* JPCoreGraphics.h */,
+				8482D90C1CEB655A00CC5028 /* JPCoreGraphics.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		8482D9171CEB655A00CC5028 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8482D9181CEB655A00CC5028 /* JPUIGeometry.h */,
+				8482D9191CEB655A00CC5028 /* JPUIGeometry.m */,
+				8482D91A1CEB655A00CC5028 /* JPUIGraphics.h */,
+				8482D91B1CEB655A00CC5028 /* JPUIGraphics.m */,
+				8482D91C1CEB655A00CC5028 /* JPUIImage.h */,
+				8482D91D1CEB655A00CC5028 /* JPUIImage.m */,
+				8482D91E1CEB655A00CC5028 /* JPUIKit.h */,
+				8482D91F1CEB655A00CC5028 /* JPUIKit.m */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		84DCB7D51CC33B610028EE9A /* source */ = {
@@ -1156,9 +1253,7 @@
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
-				1491290A1CEB2976004FFA1C /* JPCGTransform.m in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
-				1491290B1CEB2982004FFA1C /* JPTestObject.m in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
 				84192D771CBFF721001866DD /* LoginClient.swift in Sources */,
 				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,
@@ -1190,22 +1285,37 @@
 				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
 				14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */,
 				149129041CEB2567004FFA1C /* jsc.m in Sources */,
+				8482D9201CEB655A00CC5028 /* JPCGBitmapContext.m in Sources */,
+				8482D9231CEB655A00CC5028 /* JPCGGeometry.m in Sources */,
 				14427F821CCE03FE007E80CF /* ImageFilterTests.swift in Sources */,
 				147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */,
 				14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */,
+				8482D9251CEB655A00CC5028 /* JPCGPath.m in Sources */,
 				84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */,
 				14BA99761CE194D200B4A635 /* MustacheTest.swift in Sources */,
+				8482D92C1CEB655A00CC5028 /* JPStructPointer.m in Sources */,
+				8482D92B1CEB655A00CC5028 /* JPSpecialInit.m in Sources */,
+				8482D9241CEB655A00CC5028 /* JPCGImage.m in Sources */,
+				8482D92F1CEB655A00CC5028 /* JPUIImage.m in Sources */,
+				8482D9301CEB655A00CC5028 /* JPUIKit.m in Sources */,
 				14427F881CCE067C007E80CF /* ImageDownloaderTests.swift in Sources */,
-				1491290E1CEB2A35004FFA1C /* JPCGGeometry.m in Sources */,
+				8482D9281CEB655A00CC5028 /* JPCleaner.m in Sources */,
+				8482D92D1CEB655A00CC5028 /* JPUIGeometry.m in Sources */,
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				841816861CEA13BB00EF1DE4 /* JSPatchTest.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
+				8482D9261CEB655A00CC5028 /* JPCGTransform.m in Sources */,
 				14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */,
-				149129091CEB2947004FFA1C /* JPCGTransform.m in Sources */,
+				8482D9271CEB655A00CC5028 /* JPCoreGraphics.m in Sources */,
+				8482D92E1CEB655A00CC5028 /* JPUIGraphics.m in Sources */,
+				8482D9221CEB655A00CC5028 /* JPCGContext.m in Sources */,
+				8482D92A1CEB655A00CC5028 /* JPMemory.m in Sources */,
+				8482D9211CEB655A00CC5028 /* JPCGColor.m in Sources */,
 				144377611CC4756F002B2A05 /* URLSessionTest.swift in Sources */,
 				145110C01CC4F131005269E1 /* AlamofireTest.swift in Sources */,
-				149129001CEB24AF004FFA1C /* JPTestObject.m in Sources */,
+				8482D8C21CEB5D9300CC5028 /* JPTestObject.m in Sources */,
 				14EC641A1CD1F3DE00735501 /* SwiftFilePathTests.swift in Sources */,
+				8482D9291CEB655A00CC5028 /* JPLocker.m in Sources */,
 				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

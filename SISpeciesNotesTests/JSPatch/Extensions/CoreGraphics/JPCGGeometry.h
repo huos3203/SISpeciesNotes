@@ -6,7 +6,7 @@
 //  Copyright © 2015年 bang. All rights reserved.
 //
 
-#import "JPEngine.h"
+#import <JSPatch/JPEngine.h>
 
 @interface JPCGGeometry : JPExtension
 

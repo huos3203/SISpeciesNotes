@@ -9,6 +9,8 @@
 import XCTest
 import JSPatch
 
+//@testable import SISpeciesNotes
+
 @objc(JPJSClassTest)
 class JPJSClassTest:NSObject {
     //

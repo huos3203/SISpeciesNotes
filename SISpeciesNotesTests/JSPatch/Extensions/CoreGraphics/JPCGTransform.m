@@ -8,7 +8,7 @@
 
 #import "JPCGTransform.h"
 #import "JPCGGeometry.h"
-#import "SISpeciesNotesTests-Swift.h"
+
 #define TRANSFORM_DEFINE @{ \
     @"name": @"CGAffineTransform",  \
     @"types": @"FFFFFF",    \
