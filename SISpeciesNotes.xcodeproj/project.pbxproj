@@ -68,13 +68,18 @@
 		148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		148DA3611CC8741900FF27E4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
 		148DA3621CC8741900FF27E4 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
+		149129001CEB24AF004FFA1C /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
+		149129041CEB2567004FFA1C /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129031CEB2567004FFA1C /* jsc.m */; };
+		149129061CEB26BC004FFA1C /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129031CEB2567004FFA1C /* jsc.m */; };
+		149129091CEB2947004FFA1C /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129081CEB2947004FFA1C /* JPCGTransform.m */; };
+		1491290A1CEB2976004FFA1C /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 149129081CEB2947004FFA1C /* JPCGTransform.m */; };
+		1491290B1CEB2982004FFA1C /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
+		1491290E1CEB2A35004FFA1C /* JPCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */; };
 		14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */; };
 		14B5B99B1CE1D831008A0CBD /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */; };
 		14B5B99C1CE1D831008A0CBD /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */; };
 		14B5B99E1CE1D844008A0CBD /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99D1CE1D844008A0CBD /* OnclickLikeViewController.swift */; };
 		14B5B99F1CE1D844008A0CBD /* OnclickLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B99D1CE1D844008A0CBD /* OnclickLikeViewController.swift */; };
-		14B5B9A21CE1D965008A0CBD /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B9A11CE1D965008A0CBD /* jsc.m */; };
-		14B5B9A31CE1D985008A0CBD /* jsc.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5B9A11CE1D965008A0CBD /* jsc.m */; };
 		14B6A6C91CC7649B00C0896B /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
 		14BA99761CE194D200B4A635 /* MustacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BA99751CE194D200B4A635 /* MustacheTest.swift */; };
 		14BA997A1CE1956900B4A635 /* Person.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 14BA99771CE1956900B4A635 /* Person.mustache */; };
@@ -101,7 +106,6 @@
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
 		841816861CEA13BB00EF1DE4 /* JSPatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841816851CEA13BB00EF1DE4 /* JSPatchTest.swift */; };
-		841816881CEA141300EF1DE4 /* JPTestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841816871CEA141300EF1DE4 /* JPTestObject.swift */; };
 		84192D6F1CBFE6A8001866DD /* SISpeciesNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D6E1CBFE6A8001866DD /* SISpeciesNotesUITests.swift */; };
 		84192D771CBFF721001866DD /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D761CBFF721001866DD /* LoginClient.swift */; };
 		84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84192D781CBFFFA1001866DD /* LoginViewController.swift */; };
@@ -209,17 +213,24 @@
 		147CE6141CE581C500424C7F /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		147CE6161CE5837200424C7F /* newProtocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = newProtocolTest.js; sourceTree = "<group>"; };
 		147CE6171CE5837200424C7F /* protocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = protocolTest.js; sourceTree = "<group>"; };
+		149128FE1CEB24AF004FFA1C /* JPTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTestObject.h; sourceTree = "<group>"; };
+		149128FF1CEB24AF004FFA1C /* JPTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTestObject.m; sourceTree = "<group>"; };
+		149129021CEB2567004FFA1C /* jsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
+		149129031CEB2567004FFA1C /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsc.m; sourceTree = "<group>"; };
+		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		149129071CEB2947004FFA1C /* JPCGTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGTransform.h; sourceTree = "<group>"; };
+		149129081CEB2947004FFA1C /* JPCGTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGTransform.m; sourceTree = "<group>"; };
+		1491290C1CEB2A35004FFA1C /* JPCGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGGeometry.h; sourceTree = "<group>"; };
+		1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGGeometry.m; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
 		14B5B99D1CE1D844008A0CBD /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnclickLikeViewController.swift; path = Controller/OnclickLikeViewController.swift; sourceTree = "<group>"; };
-		14B5B9A11CE1D965008A0CBD /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = jsc.m; path = SISpeciesNotesTests/jsc.m; sourceTree = SOURCE_ROOT; };
 		14B6A6A71CC71A4700C0896B /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../../Library/Developer/Xcode/DerivedData/SISpeciesNotes-axtwkgkpmpacrbdsutotqzseqpsr/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		14BA99751CE194D200B4A635 /* MustacheTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MustacheTest.swift; sourceTree = "<group>"; };
 		14BA99771CE1956900B4A635 /* Person.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Person.mustache; sourceTree = "<group>"; };
 		14BA99781CE1956900B4A635 /* ReadMeExample1.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMeExample1.mustache; sourceTree = "<group>"; };
 		14BA99791CE1956900B4A635 /* ReadMeExample2.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMeExample2.mustache; sourceTree = "<group>"; };
-		14CA5F6E1CE1DD870013B32C /* jsc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = jsc.h; path = SISpeciesNotesTests/jsc.h; sourceTree = SOURCE_ROOT; };
 		14CA5F701CE1DF890013B32C /* JavaScriptCoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaScriptCoreTest.swift; sourceTree = "<group>"; };
 		14D52E421CAB811F00A0595C /* MapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		14D52E441CAB812800A0595C /* FlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCell.swift; sourceTree = "<group>"; };
@@ -392,11 +403,19 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		149129011CEB2567004FFA1C /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				149129021CEB2567004FFA1C /* jsc.h */,
+				149129031CEB2567004FFA1C /* jsc.m */,
+				149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
 		14B5B9A01CE1D8D5008A0CBD /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				14CA5F6E1CE1DD870013B32C /* jsc.h */,
-				14B5B9A11CE1D965008A0CBD /* jsc.m */,
 			);
 			name = "Objective-C";
 			path = "Object-C";
@@ -426,6 +445,12 @@
 			children = (
 				841816851CEA13BB00EF1DE4 /* JSPatchTest.swift */,
 				841816871CEA141300EF1DE4 /* JPTestObject.swift */,
+				149128FE1CEB24AF004FFA1C /* JPTestObject.h */,
+				149128FF1CEB24AF004FFA1C /* JPTestObject.m */,
+				149129071CEB2947004FFA1C /* JPCGTransform.h */,
+				149129081CEB2947004FFA1C /* JPCGTransform.m */,
+				1491290C1CEB2A35004FFA1C /* JPCGGeometry.h */,
+				1491290D1CEB2A35004FFA1C /* JPCGGeometry.m */,
 			);
 			path = JSPatch;
 			sourceTree = "<group>";
@@ -668,6 +693,7 @@
 		D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */ = {
 			isa = PBXGroup;
 			children = (
+				149129011CEB2567004FFA1C /* OC */,
 				14427F801CCE03FE007E80CF /* AlamofireImage */,
 				D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */,
 				8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */,
@@ -1094,7 +1120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B5B9A31CE1D985008A0CBD /* jsc.m in Sources */,
+				149129061CEB26BC004FFA1C /* jsc.m in Sources */,
 				14EC641B1CD1FDEB00735501 /* LocalFileManager.swift in Sources */,
 				148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */,
 				145B72E11CC8A81C00315B72 /* HorizontalScroller.swift in Sources */,
@@ -1120,7 +1146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B5B9A21CE1D965008A0CBD /* jsc.m in Sources */,
 				1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */,
 				14B5B99E1CE1D844008A0CBD /* OnclickLikeViewController.swift in Sources */,
 				14D52E4D1CAB818400A0595C /* AddNewEntryController.swift in Sources */,
@@ -1131,7 +1156,9 @@
 				14D52E4E1CAB818400A0595C /* CategoriesTableViewController.swift in Sources */,
 				14B07F411CB52FB300A9B1F9 /* Label+Animation.swift in Sources */,
 				14D52E631CAB9F4B00A0595C /* SDEModalTransitionDelegate.swift in Sources */,
+				1491290A1CEB2976004FFA1C /* JPCGTransform.m in Sources */,
 				1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */,
+				1491290B1CEB2982004FFA1C /* JPTestObject.m in Sources */,
 				14D52E501CAB818400A0595C /* MapViewController.swift in Sources */,
 				84192D771CBFF721001866DD /* LoginClient.swift in Sources */,
 				84192D791CBFFFA1001866DD /* LoginViewController.swift in Sources */,
@@ -1159,22 +1186,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841816881CEA141300EF1DE4 /* JPTestObject.swift in Sources */,
 				84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */,
 				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
 				14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */,
+				149129041CEB2567004FFA1C /* jsc.m in Sources */,
 				14427F821CCE03FE007E80CF /* ImageFilterTests.swift in Sources */,
 				147226AD1CBF6B000009B42D /* OHHTTPStubsTest.swift in Sources */,
 				14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */,
 				84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */,
 				14BA99761CE194D200B4A635 /* MustacheTest.swift in Sources */,
 				14427F881CCE067C007E80CF /* ImageDownloaderTests.swift in Sources */,
+				1491290E1CEB2A35004FFA1C /* JPCGGeometry.m in Sources */,
 				D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */,
 				841816861CEA13BB00EF1DE4 /* JSPatchTest.swift in Sources */,
 				847503971C59C4A200E804EE /* Bicycle.swift in Sources */,
 				14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */,
+				149129091CEB2947004FFA1C /* JPCGTransform.m in Sources */,
 				144377611CC4756F002B2A05 /* URLSessionTest.swift in Sources */,
 				145110C01CC4F131005269E1 /* AlamofireTest.swift in Sources */,
+				149129001CEB24AF004FFA1C /* JPTestObject.m in Sources */,
 				14EC641A1CD1F3DE00735501 /* SwiftFilePathTests.swift in Sources */,
 				8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */,
 			);
@@ -1621,7 +1651,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.1-xing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
 			};
@@ -1640,7 +1670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.1-xing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
 			};

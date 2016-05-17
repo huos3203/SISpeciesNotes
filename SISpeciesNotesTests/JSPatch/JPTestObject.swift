@@ -20,11 +20,11 @@ protocol JPTestProtocol2:NSObjectProtocol {
     optional func protocolWithInt(num:Int) -> Int
 }
 
-@available(iOS 7.0, OSX 10.10, *)
+//@available(iOS 7.0, OSX 10.10, *)
 @objc
 class JPTestProtocolObject: NSObject,JPTestProtocol,JPTestProtocol2 {
     //
-    func testProtocolMethods() -> Bool {
+    dynamic func testProtocolMethods() -> Bool {
         
         //        let dNum = protocolWithDouble(4.2, dict: ["name":"JSPatch"])
         //        let iNum = protocolWithInt(42)
@@ -40,43 +40,98 @@ class JPTestProtocolObject: NSObject,JPTestProtocol,JPTestProtocol2 {
 @objc(JPTestObject)
 class JPTestObject: NSObject {
 
-    var funcReturnVoidPassed:Bool!
-    var funcReturnStringPassed:Bool!
-    var funcReturnViewWithFramePassed:Bool!
-    var funcWithViewAndReturnViewPassed:Bool!
+    dynamic var funcReturnVoidPassed = false
+    dynamic var funcReturnStringPassed = false
+    dynamic var funcReturnViewWithFramePassed = false
+    dynamic var funcWithViewAndReturnViewPassed = false
     
-    var funcWithIntPassed:Bool!
-    var funcWithNilPassed:Bool!
-    var funcReturnNilPassed:Bool!
-    var funcWithNilAndOthersPassed:Bool!
-    var funcWithNullPassed:Bool!
-    var funcTestBoolPassed:Bool!
-    var funcTestNSNumberPassed:Bool!
+    dynamic var funcWithIntPassed = false
+    dynamic var funcWithNilPassed = false
+    dynamic var funcReturnNilPassed = false
+    dynamic var funcWithNilAndOthersPassed = false
+    dynamic var funcWithNullPassed = false
+    dynamic var funcTestBoolPassed = false
+    dynamic var funcTestNSNumberPassed = false
     
-    var funcWithDictAndDoublePassed:Bool!
+    dynamic var funcWithDictAndDoublePassed = false
     
-    var funcWithRangeAndReturnRangePassed:Bool!
-    var funcWithRectAndReturnRectPassed:Bool!
-    var funcWithPointAndReturnPointPassed:Bool!
-    var funcWithSizeAndReturnSizePassed:Bool!
+    dynamic var funcWithRangeAndReturnRangePassed = false
+    dynamic var funcWithRectAndReturnRectPassed = false
+    dynamic var funcWithPointAndReturnPointPassed = false
+    dynamic var funcWithSizeAndReturnSizePassed = false
     
-    var testBoxingObjPassed:Bool!
+    dynamic var testBoxingObjPassed = false
     
-    var funcReturnBlockPassed:Bool!
-    var funcReturnObjectBlockPassed:Bool!
-    var callBlockWithStringAndIntReturnValuePassed:Bool!
-    var callBlockWithBoolAndBlockPassed:Bool!
-    var callBlockWithObjectAndBlockPassed:Bool!
+    dynamic var funcReturnBlockPassed = false
+    dynamic var funcReturnObjectBlockPassed = false
+    dynamic var callBlockWithStringAndIntReturnValuePassed = false
+    dynamic var callBlockWithBoolAndBlockPassed = false
+    dynamic var callBlockWithObjectAndBlockPassed = false
     
-    var funcToSwizzleWithStringViewIntPassed:Bool!
-    var funcToSwizzleViewCalledOriginalPassed:Bool!
+    dynamic var funcToSwizzleWithStringViewIntPassed = false
+    dynamic var funcToSwizzleViewCalledOriginalPassed = false
     
-    var funcToSwizzleReturnViewPassed:Bool!
-    var funcToSwizzleParamNilPassed:Bool!
-    var funcToSwizzleReturnIntPassed:Bool!
+    dynamic var funcToSwizzleReturnViewPassed = false
+    dynamic var funcToSwizzleParamNilPassed = false
+    dynamic var funcToSwizzleReturnIntPassed = false
     
-    var classFuncToSwizzleReturnObjPassed:Bool!
-    var classFuncToSwizzleReturnObjCalledOriginalPassed:Bool!
+    dynamic var classFuncToSwizzleReturnObjPassed = false
+    dynamic var classFuncToSwizzleReturnObjCalledOriginalPassed = false
+    
+    dynamic var funcTestCharPassed = false
+    dynamic var funcTestPointerPassed = false
+    
+    
+    dynamic var funcToSwizzleViewPassed = false
+    dynamic var funcToSwizzleWithBlockPassed = false
+    dynamic var funcToSwizzle_withUnderLine_Passed = false
+    dynamic var funcToSwizzleReturnRectPassed = false
+    dynamic var funcToSwizzleReturnPointPassed = false
+    dynamic var funcToSwizzleReturnSizePassed = false
+    dynamic var funcToSwizzleReturnRangePassed = false
+    dynamic var funcToSwizzleReturnEdgeInsetsPassed = false
+    dynamic var funcToSwizzleReturnRectJSPassed = false
+    dynamic var funcToSwizzleReturnPointJSPassed = false
+    dynamic var funcToSwizzleReturnSizeJSPassed = false
+    dynamic var funcToSwizzleReturnRangeJSPassed = false
+    dynamic var funcToSwizzleReturnEdgeInsetsJSPassed = false
+    dynamic var funcToSwizzleTestGCDPassed = false
+    dynamic var funcToSwizzleTestClassPassed = false
+    dynamic var funcToSwizzleTestSelectorPassed = false
+    dynamic var funcToSwizzleTestCharPassed = false
+    dynamic var funcToSwizzleTestPointerPassed = false
+    dynamic var funcTestSizeofPassed = false
+    dynamic var funcTestGetPointerPassed = false
+    dynamic var funcTestNSErrorPointerPassed = false
+    dynamic var funcTestNilParametersInBlockPassed = false
+    dynamic var classFuncToSwizzlePassed = false
+    dynamic var classFuncToSwizzleReturnIntPassed = false
+    
+    
+    dynamic var funcCallSuperPassed = false
+    dynamic var callForwardInvocationPassed = false
+    dynamic var propertySetFramePassed = false
+    dynamic var propertySetViewPassed = false
+    
+    dynamic var newTestObjectReturnViewPassed = false
+    dynamic var newTestObjectReturnBoolPassed = false
+    dynamic var newTestObjectCustomFuncPassed = false
+    
+    dynamic var mutableArrayPassed = false
+    dynamic var mutableStringPassed = false
+    dynamic var mutableDictionaryPassed = false
+    
+    dynamic var funcWithTransformPassed = false
+    dynamic var transformTranslatePassed = false
+    dynamic var funcWithRectPointerPassed = false
+    dynamic var funcWithTransformPointerPassed = false
+    
+    dynamic var consoleLogPassed = false
+    dynamic var overrideParentMethodPassed = false
+    
+    dynamic var variableParameterMethodPassed = false
+    
+    dynamic var funcCallSuperSubObjectPassed = false
     
     //
     dynamic func funcWithInt(intValue:Int) {
@@ -85,7 +140,7 @@ class JPTestObject: NSObject {
     }
     
     dynamic func funcWithNil(nilObj:AnyObject?){
-        funcWithNilPassed = nil
+        funcWithNilPassed = false
     }
     
     dynamic func funcReturnNil()-> AnyObject?{
@@ -102,11 +157,11 @@ class JPTestObject: NSObject {
         funcReturnVoidPassed = true
     }
     
-    func funcWithNull(nullObj:NSNull){
-        funcWithNullPassed = nullObj.isKindOfClass(NSNull.self)
+    dynamic func funcWithNull(nullObj:NSNull){
+        funcWithNullPassed = nullObj is NSNull
     }
     
-    func funcTestNSNumber(num:NSNumber) -> NSNumber {
+    dynamic func funcTestNSNumber(num:NSNumber) -> NSNumber {
         return num
     }
     
@@ -115,6 +170,7 @@ class JPTestObject: NSObject {
         return "stringFromOC"
     }
     
+    //----------Foundation数据类型
     dynamic func funcWithRectAndReturnRect(rect:CGRect)->CGRect {
         //
         return rect
@@ -135,65 +191,66 @@ class JPTestObject: NSObject {
         return range
     }
     
-    dynamic func funcReturnViewWithFrame(frame:CGRect) -> UIView {
+     dynamic func funcReturnViewWithFrame(frame:CGRect) -> UIView {
         //
         let view = UIView.init(frame: frame)
         return view
     }
     
-    func funcWithNil(nilObj:AnyObject?,dict:[String:String],str:String,num:Double) {
+    dynamic func funcWithNil(nilObj:AnyObject?,dict:[String:String],str:String,num:Double) {
         //
         funcWithNilAndOthersPassed = nilObj == nil && dict["K"] == "JSPatch" && str == "JSPatch" && num - 4.2 < 0.001
     }
+    
 }
 
 
 //MARK:  NSDictionary / NSArray
 extension JPTestObject{
     
-    func funcWithDict(dict:[String:String],doubleValue:Double) {
+    dynamic func funcWithDict(dict:[String:String],doubleValue:Double) {
         //
         let dictPass = dict["test"] == "test"
         let doublePass = doubleValue - 4.2 < 0.001
         funcWithDictAndDoublePassed = dictPass && doublePass
     }
     
-    func funcReturnDict(dict:NSDictionary) -> NSDictionary{
+    dynamic func funcReturnDict(dict:NSDictionary) -> NSDictionary{
         return dict
     }
     
-    func funcReturnDictStringInt() -> [String:AnyObject] {
+    dynamic func funcReturnDictStringInt() -> [String:AnyObject] {
         //
         return ["str":"stringFromOC","num":NSNumber.init(int: 42)]
     }
     
-    func funcReturnDictStringView()->[String:AnyObject]{
+    dynamic func funcReturnDictStringView()->[String:AnyObject]{
         let view = UIView.init(frame: CGRectMake(0, 0, 100, 100))
         return ["view":view,"str":"stringFromOC"]
     }
     
-    func funcReturnArrayControllerViewString() -> [AnyObject] {
+    dynamic func funcReturnArrayControllerViewString() -> [AnyObject] {
         //
         let controller = UIViewController()
         let view = UIView()
         return [controller,view,"stringFromOC"]
     }
     
-    func getString()->String {
+    dynamic func getString()->String {
         //
         return "JSPatch"
     }
     
-    func getArray() -> [AnyObject] {
+    dynamic func getArray() -> [AnyObject] {
         //
         return ["JSPatch",1]
     }
     
-    func getDictionary() -> [String:String] {
+    dynamic func getDictionary() -> [String:String] {
         //
         return ["k":"JSPatch"]
     }
-    func funcTestBoxingObj(data:Array<AnyObject>) {
+    dynamic func funcTestBoxingObj(data:Array<AnyObject>) {
         //
         let str = data[0]
         let dict:[String:String] = data[1] as! [String : String]
@@ -207,7 +264,7 @@ typealias ISTestBlock = (String,Int)->()
 typealias JPTestObjectBlock = (Dictionary<String,AnyObject>,UIView)->AnyObject
 extension JPTestObject{
     
-    func funcReturnBlock() -> ISTestBlock {
+    dynamic func funcReturnBlock() -> ISTestBlock {
         //
         let block:ISTestBlock = {(str,num) in
             self.funcReturnBlockPassed = str == "stringFromJS" && num == 42
@@ -215,28 +272,28 @@ extension JPTestObject{
         return block
     }
     
-    func funcReturnObjectBlock() -> JPTestObjectBlock {
+    dynamic func funcReturnObjectBlock() -> JPTestObjectBlock {
         //
         let block:JPTestObjectBlock = {(dict,view)->AnyObject in
-           self.funcReturnObjectBlockPassed = dict["str"] as! String == "stringFromJS" && (dict["view"] as! NSObject).isKindOfClass(UIView.self) && view.frame.size.width == 100
+           self.funcReturnObjectBlockPassed = dict["str"] as! String == "stringFromJS" && (dict["view"] as! NSObject) is UIView && view.frame.size.width == 100
             return "succ"
         }
         return block
     }
     
-    func callBlockWithStringAndInt(block:(String,Int)->AnyObject) {
+    dynamic func callBlockWithStringAndInt(block:(String,Int)->AnyObject) {
         //
         let ret = block("stringFromOC",42)
         self.callBlockWithStringAndIntReturnValuePassed = ret as! String == "succ"
     }
     
-    func callBlockWithArrayAndView(block:(Array<AnyObject>,UIView)->()) {
+    dynamic func callBlockWithArrayAndView(block:(Array<AnyObject>,UIView)->()) {
         //
         let view = UIView.init(frame: CGRectMake(0, 0, 100, 100))
         block(["stringFromOC",view],view)
     }
     
-    func callBlockWithBoolAndBlock(block:(Bool,ISTestBlock)->()) {
+    dynamic func callBlockWithBoolAndBlock(block:(Bool,ISTestBlock)->()) {
         //
         let cbBlock:ISTestBlock = {(str,num) in
             self.callBlockWithBoolAndBlockPassed = str == "stringFromJS" && num == 42
@@ -244,11 +301,11 @@ extension JPTestObject{
         block(true,cbBlock)
     }
     
-    func callBlockWithObjectAndBlock(block:(UIView,JPTestObjectBlock)->()) {
+    dynamic func callBlockWithObjectAndBlock(block:(UIView,JPTestObjectBlock)->()) {
         //
         let view = UIView.init(frame: CGRectMake(0, 0, 100, 100))
         let cbBlock:JPTestObjectBlock = {(dict,view)->AnyObject in
-            self.callBlockWithObjectAndBlockPassed = dict["str"] as! String == "stringFromJS" && (dict["view"]as! NSObject).isKindOfClass(UIView.self) && view.frame.size.width == 100
+            self.callBlockWithObjectAndBlockPassed = dict["str"] as! String == "stringFromJS" && (dict["view"]as! NSObject)is UIView && view.frame.size.width == 100
             return "succ"
         }
         block(view,cbBlock)
@@ -256,15 +313,15 @@ extension JPTestObject{
 }
 
 //MARK: - swizzle
+@objc(JPTestStruct)
 struct JPTestStruct{
-    var name:Character
+    var name:CChar
     var idx:Int
 }
 
 extension JPTestObject{
     
-    
-    func callSwizleMethod() {
+    dynamic func callSwizzleMethod() {
         //
         funcToSwizzleWithString("stringFromOC", view: UIView(), i: 42)
         funcToSwizzle(4.2, view: UIView())
@@ -278,116 +335,226 @@ extension JPTestObject{
         
         JPTestObject.classFuncToSwizzle(self, i: 10)
         let ret = JPTestObject.classFuncToSwizzleReturnObj(self)
-        if (ret as! NSObject).isKindOfClass(JPTestObject.self){
+        if ((ret as! NSObject) is JPTestObject){
             classFuncToSwizzleReturnObjPassed = true
         }
         
     }
     
-    func funcToSwizzleWithString(str:String,view:UIView,i:Int) {
+    dynamic func funcToSwizzleWithString(str:String,view:UIView,i:Int) {
         //
         funcToSwizzleWithStringViewIntPassed = false
     }
     
-    func funcToSwizzle(num:Double,view:UIView?) {
+    dynamic func funcToSwizzle(num:Double,view:UIView?) {
         //
         self.funcToSwizzleViewCalledOriginalPassed = ((4.2 - num) < 0.01) && (view != nil)
     }
     
-    func funcToSwizzleReturnView(view:UIView?)->UIView? {
+    dynamic func funcToSwizzleReturnView(view:UIView?)->UIView? {
         //
         return nil
     }
     
-    func funcToSwizzleReturnInt(num:Int) -> Int {
-        //
-        return 0
-    }
-    
-    func funcToSwizzleReturnDictionary(dict:NSDictionary) -> NSDictionary? {
-        //
-        return nil
-    }
-    
-    func funcToSwizzleReturnJSDictionary() -> NSDictionary? {
-        return nil
-    }
-    
-    func funcToSwizzleReturnArray(arr:NSArray) -> NSArray? {
-        return nil
-    }
-    
-    func funcToSwizzleReturnString(str:NSString) -> NSString? {
-        return nil
-    }
-    
-    func funcToSwizzleWithBlock(block:(UIView,Int)->()) {
+    dynamic func funcToSwizzleWithBlock(block:(UIView,Int)->()) {
         //
         
     }
     
-    func funcToSwizzle_withUnderLine_(num:Int) {
+    dynamic func funcToSwizzle_withUnderLine_(num:Int) {
         //
     }
     
-    func funcToSwizzleReturnRect(rect:CGRect) -> CGRect {
-        return CGRectZero
-    }
-    
-    func funcToSwizzleReturnPoint(point:CGPoint) -> CGPoint {
-        //
-        return CGPointZero
-    }
-    
-    func funcToSwizzleReturnSize(size:CGSize) -> CGSize {
-        return CGSizeZero
-    }
-    func funcToSwizzleReturnRange(range:NSRange) -> NSRange {
-        //
-        return NSMakeRange(0, 0)
-    }
-    func funcToSwizzleReturnEdgeInsets(edgeInsets:UIEdgeInsets) -> UIEdgeInsets {
-        //
-        return UIEdgeInsetsZero
-    }
-    
-    func funcToSwizzleTestGCD(block:()->()) {
+    dynamic func funcToSwizzleTestGCD(block:()->()) {
         //
     }
     
-    func funcToSwizzleTestClass(cls:AnyClass) -> AnyClass? {
-        return nil
-    }
-    
-    func funcToSwizzleTestSelector(selector:Selector) -> Selector? {
-        return nil
-    }
-    
-    func funcToSwizzleTestChar(cStr:Character) -> Character? {
-        //
-        return nil
-    }
-    
-    func funcReturnChar() -> Character? {
-//        return "JSPatch"
-        return nil
-    }
-    
-    class func classFuncToSwizzle(testObject:JPTestObject,i:Int) {
-        //
-        
-    }
-    
-    class func classFuncToSwizzleReturnObj(obj:JPTestObject) -> AnyObject? {
-        //
-        obj.classFuncToSwizzleReturnObjCalledOriginalPassed = true
+    dynamic func funcToSwizzleTestSelector(selector:Selector) -> Selector? {
         return nil
     }
 }
 
+//MARK: C语言 Char ,指针
+extension JPTestObject{
+    
+    dynamic func funcToSwizzleTestChar(cStr:CChar) -> CChar? {
+        //
+        return nil
+    }
+    
+    dynamic func funcReturnChar() -> CChar {
+        //String.fromCString("")
+        let charString = "JSPatch"
+        let ccharOptional = charString.cStringUsingEncoding(NSUTF8StringEncoding)?[0]  // CChar?
+        let cchar = (charString.cStringUsingEncoding(NSUTF8StringEncoding)?[0])!   // CChar
+        return cchar
+    }
+    
+    dynamic func funcTestChar(cStr:CChar) {
+        //self.funcTestCharPassed = strcmp("JSPatch", cStr) == 0;
+        let charString = "JSPatch"
+        let cchar = (charString.cStringUsingEncoding(NSUTF8StringEncoding)?[0])!   // CChar
+        funcTestCharPassed = cchar == cStr
+    }
+    
+    //    https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-ID17
+    dynamic func funcToSwizzleTestPointer(pointer:UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void> {
+        //
+        return nil
+    }
+    
+    dynamic func funcTestNSErrorPointer(error:NSErrorPointer) -> Bool {
+        //
+        let tmp = NSError.init(domain: "com.albert43", code: 43, userInfo: ["msg":"test error"])
+        error.memory = tmp
+        return true
+    }
+    
+    dynamic func funcReturnPointer() -> JPTestStruct {
+        //
+        let charString = "JSPatch"
+        let cchar = (charString.cStringUsingEncoding(NSUTF8StringEncoding)?[0])!   // CChar
+        let testStruct = JPTestStruct.init(name: cchar, idx: 42)
+        return testStruct
+    }
+    
+    dynamic func funcTestPointer(pointer:UnsafeMutablePointer<Void>) {
+        //
+//        let testStruct:UnsafeMutablePointer<JPTestStruct> = pointer
+//        funcTestPointerPassed = testStruct.idx == 42 && testStruct
+    }
+    
+    dynamic func funcTestGetPointer1(str:String) -> Bool {
+        if str == "JSPatch" {
+            return true
+        }
+        return false
+    }
+
+    dynamic func funcTestGetPointer2(error:NSError) -> Bool {
+        //
+        let errDescription = error.userInfo.description
+        if errDescription == ["msg":"test"].description {
+            return true
+        }
+        return false
+    }
+    
+    dynamic func funcTestGetPointer3(arr:UnsafeMutablePointer<Void>) -> Bool {
+        //
+//        let p = arr
+//        for i in 0..<10 {
+//            //
+////            if p[i] != "A"{
+////                return false
+////            }
+//        }
+        return true
+    }
+   
+}
+
+//MARK: Foundation数据类型
+extension JPTestObject{
+
+    dynamic func funcToSwizzleReturnRect(rect:CGRect) -> CGRect {
+        return CGRectZero
+    }
+    
+    dynamic func funcToSwizzleReturnPoint(point:CGPoint) -> CGPoint {
+        //
+        return CGPointZero
+    }
+    
+    dynamic func funcToSwizzleReturnSize(size:CGSize) -> CGSize {
+        return CGSizeZero
+    }
+    dynamic func funcToSwizzleReturnRange(range:NSRange) -> NSRange {
+        //
+        return NSMakeRange(0, 0)
+    }
+    dynamic func funcToSwizzleReturnEdgeInsets(edgeInsets:UIEdgeInsets) -> UIEdgeInsets {
+        //
+        return UIEdgeInsetsZero
+    }
+}
+
+//MARK: String,Number,集合,字典
+extension JPTestObject{
+
+    dynamic func funcToSwizzleReturnInt(num:Int) -> Int {
+        //
+        return 0
+    }
+    
+    dynamic func funcToSwizzleReturnDictionary(dict:NSDictionary) -> NSDictionary? {
+        //
+        return nil
+    }
+    
+    dynamic func funcToSwizzleReturnJSDictionary() -> NSDictionary? {
+        return nil
+    }
+    
+    dynamic func funcToSwizzleReturnArray(arr:NSArray) -> NSArray? {
+        return nil
+    }
+    
+    dynamic func funcToSwizzleReturnString(str:NSString) -> NSString? {
+        return nil
+    }
+}
+
+//MARK: class类转换
+extension JPTestObject{
+    
+    dynamic func funcToSwizzleTestClass(cls:AnyClass) -> AnyClass? {
+        return nil
+    }
+
+    class dynamic func classFuncToSwizzle(testObject:JPTestObject,i:Int) {
+        //
+    }
+    
+    class dynamic func classFuncToSwizzleReturnObj(obj:JPTestObject) -> AnyObject? {
+        //
+        obj.classFuncToSwizzleReturnObjCalledOriginalPassed = true
+        return nil
+    }
+
+}
+
+//MARK: block 
+extension JPTestObject{
+
+    typealias JSBlock = (NSError!)->NSString
+    dynamic func funcGenerateBlock() -> JSBlock {
+        //
+        let block:JSBlock = {(err) in
+            if err != nil {
+                return err.description
+            }else{
+                return "no error"
+            }
+        }
+        return block
+    }
+    
+    dynamic func excuteBlockWithNilParameters(blk:JSBlock!) -> NSString? {
+        //
+        if blk != nil{
+            //
+            return blk(nil)
+        }
+        return nil
+    }
+}
+
+
+
 class JPTestSubObject: JPTestObject {
     //
-    var funcCallSuperSubObjectPassed:Bool! = true
+    
     
     func funcCallSuper() {
         //

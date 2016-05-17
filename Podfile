@@ -22,7 +22,7 @@ pod 'OHHTTPStubs/Swift'
 #autolayout框架
 pod 'Masonry'  #OC
 pod 'SnapKit', '~> 0.20.0'  #swift
-#仿UIStackView的两个开源库，用户兼容9以下版本
+#------仿UIStackView的两个开源库，用户兼容9以下版本-----
 #OAStackView，基于OC的StackView库，支持iOS7+以上的系统。同时支持代码和IB视图。功能强大，无需质疑。
 #TZStackView，基于Swift的StackView库，同样支持iOS7+以上的系统，但是不支持storyboard。
 #pod "TZStackView", "1.1.2"
