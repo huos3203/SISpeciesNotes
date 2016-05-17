@@ -45,136 +45,136 @@
     
     JSValue *objValue = [JPEngine context][@"ocObj"];
     JPTestObject *obj = [objValue toObjectOfClass:[JPTestObject class]];
-//    JSValue *subObjValue = [JPEngine context][@"subObj"];
-//    JPTestSubObject *subObj = [subObjValue toObjectOfClass:[JPTestSubObject class]];
+    JSValue *subObjValue = [JPEngine context][@"subObj"];
+    JPTestSubObject *subObj = [subObjValue toObjectOfClass:[JPTestSubObject class]];
     
-    XCTAssert(obj.funcReturnVoidPassed, @"地对地导弹");
+    XCTAssert(obj.funcReturnVoidPassed, @"funcReturnVoidPassed");
     
-//    XCTAssert(obj.funcReturnStringPassed, @"funcReturnStringPassed");
-//    
-//    XCTAssert(obj.funcWithIntPassed, @"funcWithIntPassed");
-//    XCTAssert(obj.funcWithNilPassed, @"funcWithNilPassed");
-//    XCTAssert(obj.funcReturnNilPassed, @"funcReturnNilPassed");
-//    XCTAssert(obj.funcWithNilAndOthersPassed, @"funcWithNilAndOthersPassed");
-//    XCTAssert(obj.funcWithNullPassed, @"funcWithNullPassed");
-//    XCTAssert(obj.funcTestBoolPassed, @"funcTestBoolPassed");
-//    XCTAssert(obj.funcTestNSNumberPassed, @"funcTestNSNumberPassed");
-//    
-//    XCTAssert(obj.funcWithDictAndDoublePassed, @"funcWithDictAndDoublePassed");
-//    
-//    XCTAssert(obj.funcWithRectAndReturnRectPassed, @"funcWithRectAndReturnRectPassed");
-//    XCTAssert(obj.funcWithSizeAndReturnSizePassed, @"funcWithSizeAndReturnSizePassed");
-//    XCTAssert(obj.funcWithPointAndReturnPointPassed, @"funcWithPointAndReturnPointPassed");
-//    XCTAssert(obj.funcWithRangeAndReturnRangePassed, @"funcWithRangeAndReturnRangePassed");
-//    
-//    XCTAssert(obj.funcReturnViewWithFramePassed, @"funcReturnViewWithFramePassed");
-//    XCTAssert(obj.funcWithViewAndReturnViewPassed, @"funcWithViewAndReturnViewPassed");
-//    
-//    XCTAssert(obj.funcReturnDictStringViewPassed, @"funcReturnDictStringViewPassed");
-//    XCTAssert(obj.funcReturnDictStringIntPassed, @"funcReturnDictStringIntPassed");
-//    XCTAssert(obj.funcReturnArrayControllerViewStringPassed, @"funcReturnArrayControllerViewStringPassed");
-//    XCTAssert(obj.funcReturnDictPassed, @"funcReturnDictPassed");
-//    XCTAssert(obj.funcReturnDictPassed, @"testBoxingObjPassed");
-//    
-//    XCTAssert(obj.funcReturnBlockPassed, @"funcReturnBlockPassed");
-//    XCTAssert(obj.funcReturnObjectBlockPassed, @"funcReturnObjectBlockPassed");
-//    XCTAssert(obj.funcReturnObjectBlockReturnValuePassed, @"funcReturnObjectBlockReturnValuePassed");
-//    XCTAssert(obj.callBlockWithStringAndIntPassed, @"callBlockWithStringAndIntPassed");
-//    XCTAssert(obj.callBlockWithStringAndIntReturnValuePassed, @"callBlockWithStringAndIntReturnValuePassed");
-//    XCTAssert(obj.callBlockWithArrayAndViewPassed, @"callBlockWithArrayAndViewPassed");
-//    XCTAssert(obj.callBlockWithBoolAndBlockPassed, @"callBlockWithBoolAndBlockPassed");
-//    XCTAssert(obj.callBlockWithObjectAndBlockPassed, @"callBlockWithObjectAndBlockPassed");
-//    XCTAssert(obj.callBlockWithObjectAndBlockReturnValuePassed, @"callBlockWithObjectAndBlockReturnValuePassed");
-//    
-//    XCTAssert(obj.funcToSwizzleWithStringViewIntPassed, @"funcToSwizzleWithStringViewIntPassed");
-//    XCTAssert(obj.funcToSwizzleViewPassed, @"funcToSwizzleViewPassed");
-//    XCTAssert(obj.funcToSwizzleViewCalledOriginalPassed, @"funcToSwizzleViewCalledOriginalPassed");
-//    XCTAssert(obj.funcToSwizzleReturnViewPassed, @"funcToSwizzleReturnViewPassed");
-//    XCTAssert(obj.funcToSwizzleParamNilPassed, @"funcToSwizzleParamNilPassed");
-//    XCTAssert(obj.funcToSwizzleReturnIntPassed, @"funcToSwizzleReturnIntPassed");
-//    XCTAssert(obj.funcToSwizzleWithBlockPassed, @"funcToSwizzleWithBlockPassed");
-//    XCTAssert(obj.funcToSwizzle_withUnderLine_Passed, @"funcToSwizzle_withUnderLine_Passed");
-//    XCTAssert(obj.funcToSwizzleReturnRectPassed, @"funcToSwizzleReturnRectPassed");
-//    XCTAssert(obj.funcToSwizzleReturnPointPassed, @"funcToSwizzleReturnPointPassed");
-//    XCTAssert(obj.funcToSwizzleReturnSizePassed, @"funcToSwizzleReturnSizePassed");
-//    XCTAssert(obj.funcToSwizzleReturnRangePassed, @"funcToSwizzleReturnRangePassed");
-//    XCTAssert(obj.funcToSwizzleReturnEdgeInsetsPassed, @"funcToSwizzleReturnEdgeInsetsPassed");
-//    
-//    
-//    XCTAssert(obj.funcToSwizzleReturnRectJSPassed, @"funcToSwizzleReturnRectJSPassed");
-//    XCTAssert(obj.funcToSwizzleReturnPointJSPassed, @"funcToSwizzleReturnPointJSPassed");
-//    XCTAssert(obj.funcToSwizzleReturnSizeJSPassed, @"funcToSwizzleReturnSizeJSPassed");
-//    XCTAssert(obj.funcToSwizzleReturnRangeJSPassed, @"funcToSwizzleReturnRangeJSPassed");
-//    XCTAssert(obj.funcToSwizzleReturnEdgeInsetsJSPassed, @"funcToSwizzleReturnEdgeInsetsJSPassed");
-//    
-//    
-//    XCTAssert(obj.funcToSwizzleTestClassPassed, @"funcToSwizzleTestClassPassed");
-//    XCTAssert(obj.funcToSwizzleTestSelectorPassed, @"funcToSwizzleTestSelectorPassed");
-//    XCTAssert(obj.funcToSwizzleTestCharPassed, @"funcToSwizzleTestCharPassed");
-//    XCTAssert(obj.funcTestCharPassed, @"funcTestCharPassed");
-//    XCTAssert(obj.funcToSwizzleTestPointerPassed, @"funcToSwizzleTestPointerPassed");
-//    XCTAssert(obj.funcTestPointerPassed, @"funcTestPointerPassed");
-//    XCTAssert(obj.funcTestSizeofPassed,@"funcSizeofPassed");
-//    XCTAssert(obj.funcTestGetPointerPassed, @"funcGetPointerPassed");
-//    XCTAssert(obj.funcTestNSErrorPointerPassed, @"funcTestNSErrorPointerPassed");
-//    XCTAssert(obj.funcTestNilParametersInBlockPassed, @"funcTestNilParametersInBlockPassed");
-//    NSDictionary *originalDict = @{@"k": @"v"};
-//    NSDictionary *dict = [obj funcToSwizzleReturnDictionary:originalDict];
-//    XCTAssert(originalDict == dict, @"funcToSwizzleReturnDictionary");
-//    
-//    dict = [obj funcToSwizzleReturnJSDictionary];
-//    XCTAssertEqualObjects(dict[@"str"], @"js_string", @"funcToSwizzleReturnJSDictionary");
-//    
-//    NSArray *originalArr = @[@"js", @"patch"];
-//    NSArray *arr = [obj funcToSwizzleReturnArray:originalArr];
-//    XCTAssert(originalArr == arr, @"funcToSwizzleReturnArray");
-//    
-//    NSString *originalStr = @"JSPatch";
-//    NSString *str = [obj funcToSwizzleReturnString:originalStr];
-//    XCTAssert(originalStr == str, @"funcToSwizzleReturnString");
-//    
-//    
-//    XCTAssert(obj.classFuncToSwizzlePassed, @"classFuncToSwizzlePassed");
-//    XCTAssert(obj.classFuncToSwizzleReturnObjPassed, @"classFuncToSwizzleReturnObjPassed");
-//    XCTAssert(obj.classFuncToSwizzleReturnObjCalledOriginalPassed, @"classFuncToSwizzleReturnObjCalledOriginalPassed");
-//    XCTAssert(obj.classFuncToSwizzleReturnIntPassed, @"classFuncToSwizzleReturnIntPassed");
-//    
-//    XCTAssert(subObj.funcCallSuperSubObjectPassed, @"funcCallSuperSubObjectPassed");
-//    XCTAssert(subObj.funcCallSuperPassed, @"funcCallSuperPassed");
-//    XCTAssert(obj.callForwardInvocationPassed, @"callForwardInvocationPassed");
-//    
-//    XCTAssert(obj.propertySetFramePassed, @"propertySetFramePassed");
-//    XCTAssert(obj.propertySetViewPassed, @"propertySetViewPassed");
-//    
-//    XCTAssert(obj.newTestObjectReturnViewPassed, @"newTestObjectReturnViewPassed");
-//    XCTAssert(obj.newTestObjectReturnBoolPassed, @"newTestObjectReturnBoolPassed");
-//
-//    XCTAssert(obj.mutableArrayPassed, @"mutableArrayPassed");
-//    XCTAssert(obj.mutableDictionaryPassed, @"mutableDictionaryPassed");
-//    XCTAssert(obj.mutableStringPassed, @"mutableStringPassed");
-//    
-//    XCTAssert(obj.funcWithTransformPassed, @"funcWithTransformPassed");
-//    XCTAssert(obj.transformTranslatePassed, @"funcWithTransformPassed");
-//    XCTAssert(obj.funcWithRectPointerPassed, @"funcWithRectPointerPassed");
-//    XCTAssert(obj.funcWithTransformPointerPassed, @"funcWithTransformPointerPassed");
-//    
-//    XCTAssertEqualObjects(@"overrided",[subObj funcOverrideParentMethod]);
-//    
-//    XCTAssert(obj.variableParameterMethodPassed, @"variableParameterMethodPassed");
-//    
-//    
-//    JPTestProtocolObject *testProtocolObj = [[JPTestProtocolObject alloc] init];
-//    XCTAssert([testProtocolObj testProtocolMethods], @"testProtocolMethodsPassed");
-//    
-//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-//    [obj funcToSwizzleTestGCD:^{
-//        XCTAssert(obj.funcToSwizzleTestGCDPassed, @"funcToSwizzleTestGCDPassed");
-//        dispatch_semaphore_signal(semaphore);
-//    }];
-//    
-//    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
-//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
-//                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    XCTAssert(obj.funcReturnStringPassed, @"funcReturnStringPassed");
+    
+    XCTAssert(obj.funcWithIntPassed, @"funcWithIntPassed");
+    XCTAssert(obj.funcWithNilPassed, @"funcWithNilPassed");
+    XCTAssert(obj.funcReturnNilPassed, @"funcReturnNilPassed");
+    XCTAssert(obj.funcWithNilAndOthersPassed, @"funcWithNilAndOthersPassed");
+    XCTAssert(obj.funcWithNullPassed, @"funcWithNullPassed");
+    XCTAssert(obj.funcTestBoolPassed, @"funcTestBoolPassed");
+    XCTAssert(obj.funcTestNSNumberPassed, @"funcTestNSNumberPassed");
+    
+    XCTAssert(obj.funcWithDictAndDoublePassed, @"funcWithDictAndDoublePassed");
+    
+    XCTAssert(obj.funcWithRectAndReturnRectPassed, @"funcWithRectAndReturnRectPassed");
+    XCTAssert(obj.funcWithSizeAndReturnSizePassed, @"funcWithSizeAndReturnSizePassed");
+    XCTAssert(obj.funcWithPointAndReturnPointPassed, @"funcWithPointAndReturnPointPassed");
+    XCTAssert(obj.funcWithRangeAndReturnRangePassed, @"funcWithRangeAndReturnRangePassed");
+    
+    XCTAssert(obj.funcReturnViewWithFramePassed, @"funcReturnViewWithFramePassed");
+    XCTAssert(obj.funcWithViewAndReturnViewPassed, @"funcWithViewAndReturnViewPassed");
+    
+    XCTAssert(obj.funcReturnDictStringViewPassed, @"funcReturnDictStringViewPassed");
+    XCTAssert(obj.funcReturnDictStringIntPassed, @"funcReturnDictStringIntPassed");
+    XCTAssert(obj.funcReturnArrayControllerViewStringPassed, @"funcReturnArrayControllerViewStringPassed");
+    XCTAssert(obj.funcReturnDictPassed, @"funcReturnDictPassed");
+    XCTAssert(obj.funcReturnDictPassed, @"testBoxingObjPassed");
+    
+    XCTAssert(obj.funcReturnBlockPassed, @"funcReturnBlockPassed");
+    XCTAssert(obj.funcReturnObjectBlockPassed, @"funcReturnObjectBlockPassed");
+    XCTAssert(obj.funcReturnObjectBlockReturnValuePassed, @"funcReturnObjectBlockReturnValuePassed");
+    XCTAssert(obj.callBlockWithStringAndIntPassed, @"callBlockWithStringAndIntPassed");
+    XCTAssert(obj.callBlockWithStringAndIntReturnValuePassed, @"callBlockWithStringAndIntReturnValuePassed");
+    XCTAssert(obj.callBlockWithArrayAndViewPassed, @"callBlockWithArrayAndViewPassed");
+    XCTAssert(obj.callBlockWithBoolAndBlockPassed, @"callBlockWithBoolAndBlockPassed");
+    XCTAssert(obj.callBlockWithObjectAndBlockPassed, @"callBlockWithObjectAndBlockPassed");
+    XCTAssert(obj.callBlockWithObjectAndBlockReturnValuePassed, @"callBlockWithObjectAndBlockReturnValuePassed");
+    
+    XCTAssert(obj.funcToSwizzleWithStringViewIntPassed, @"funcToSwizzleWithStringViewIntPassed");
+    XCTAssert(obj.funcToSwizzleViewPassed, @"funcToSwizzleViewPassed");
+    XCTAssert(obj.funcToSwizzleViewCalledOriginalPassed, @"funcToSwizzleViewCalledOriginalPassed");
+    XCTAssert(obj.funcToSwizzleReturnViewPassed, @"funcToSwizzleReturnViewPassed");
+    XCTAssert(obj.funcToSwizzleParamNilPassed, @"funcToSwizzleParamNilPassed");
+    XCTAssert(obj.funcToSwizzleReturnIntPassed, @"funcToSwizzleReturnIntPassed");
+    XCTAssert(obj.funcToSwizzleWithBlockPassed, @"funcToSwizzleWithBlockPassed");
+    XCTAssert(obj.funcToSwizzle_withUnderLine_Passed, @"funcToSwizzle_withUnderLine_Passed");
+    XCTAssert(obj.funcToSwizzleReturnRectPassed, @"funcToSwizzleReturnRectPassed");
+    XCTAssert(obj.funcToSwizzleReturnPointPassed, @"funcToSwizzleReturnPointPassed");
+    XCTAssert(obj.funcToSwizzleReturnSizePassed, @"funcToSwizzleReturnSizePassed");
+    XCTAssert(obj.funcToSwizzleReturnRangePassed, @"funcToSwizzleReturnRangePassed");
+    XCTAssert(obj.funcToSwizzleReturnEdgeInsetsPassed, @"funcToSwizzleReturnEdgeInsetsPassed");
+    
+    
+    XCTAssert(obj.funcToSwizzleReturnRectJSPassed, @"funcToSwizzleReturnRectJSPassed");
+    XCTAssert(obj.funcToSwizzleReturnPointJSPassed, @"funcToSwizzleReturnPointJSPassed");
+    XCTAssert(obj.funcToSwizzleReturnSizeJSPassed, @"funcToSwizzleReturnSizeJSPassed");
+    XCTAssert(obj.funcToSwizzleReturnRangeJSPassed, @"funcToSwizzleReturnRangeJSPassed");
+    XCTAssert(obj.funcToSwizzleReturnEdgeInsetsJSPassed, @"funcToSwizzleReturnEdgeInsetsJSPassed");
+    
+    
+    XCTAssert(obj.funcToSwizzleTestClassPassed, @"funcToSwizzleTestClassPassed");
+    XCTAssert(obj.funcToSwizzleTestSelectorPassed, @"funcToSwizzleTestSelectorPassed");
+    XCTAssert(obj.funcToSwizzleTestCharPassed, @"funcToSwizzleTestCharPassed");
+    XCTAssert(obj.funcTestCharPassed, @"funcTestCharPassed");
+    XCTAssert(obj.funcToSwizzleTestPointerPassed, @"funcToSwizzleTestPointerPassed");
+    XCTAssert(obj.funcTestPointerPassed, @"funcTestPointerPassed");
+    XCTAssert(obj.funcTestSizeofPassed,@"funcSizeofPassed");
+    XCTAssert(obj.funcTestGetPointerPassed, @"funcGetPointerPassed");
+    XCTAssert(obj.funcTestNSErrorPointerPassed, @"funcTestNSErrorPointerPassed");
+    XCTAssert(obj.funcTestNilParametersInBlockPassed, @"funcTestNilParametersInBlockPassed");
+    NSDictionary *originalDict = @{@"k": @"v"};
+    NSDictionary *dict = [obj funcToSwizzleReturnDictionary:originalDict];
+    XCTAssert(originalDict == dict, @"funcToSwizzleReturnDictionary");
+    
+    dict = [obj funcToSwizzleReturnJSDictionary];
+    XCTAssertEqualObjects(dict[@"str"], @"js_string", @"funcToSwizzleReturnJSDictionary");
+    
+    NSArray *originalArr = @[@"js", @"patch"];
+    NSArray *arr = [obj funcToSwizzleReturnArray:originalArr];
+    XCTAssert(originalArr == arr, @"funcToSwizzleReturnArray");
+    
+    NSString *originalStr = @"JSPatch";
+    NSString *str = [obj funcToSwizzleReturnString:originalStr];
+    XCTAssert(originalStr == str, @"funcToSwizzleReturnString");
+    
+    
+    XCTAssert(obj.classFuncToSwizzlePassed, @"classFuncToSwizzlePassed");
+    XCTAssert(obj.classFuncToSwizzleReturnObjPassed, @"classFuncToSwizzleReturnObjPassed");
+    XCTAssert(obj.classFuncToSwizzleReturnObjCalledOriginalPassed, @"classFuncToSwizzleReturnObjCalledOriginalPassed");
+    XCTAssert(obj.classFuncToSwizzleReturnIntPassed, @"classFuncToSwizzleReturnIntPassed");
+    
+    XCTAssert(subObj.funcCallSuperSubObjectPassed, @"funcCallSuperSubObjectPassed");
+    XCTAssert(subObj.funcCallSuperPassed, @"funcCallSuperPassed");
+    XCTAssert(obj.callForwardInvocationPassed, @"callForwardInvocationPassed");
+    
+    XCTAssert(obj.propertySetFramePassed, @"propertySetFramePassed");
+    XCTAssert(obj.propertySetViewPassed, @"propertySetViewPassed");
+    
+    XCTAssert(obj.newTestObjectReturnViewPassed, @"newTestObjectReturnViewPassed");
+    XCTAssert(obj.newTestObjectReturnBoolPassed, @"newTestObjectReturnBoolPassed");
+
+    XCTAssert(obj.mutableArrayPassed, @"mutableArrayPassed");
+    XCTAssert(obj.mutableDictionaryPassed, @"mutableDictionaryPassed");
+    XCTAssert(obj.mutableStringPassed, @"mutableStringPassed");
+    
+    XCTAssert(obj.funcWithTransformPassed, @"funcWithTransformPassed");
+    XCTAssert(obj.transformTranslatePassed, @"funcWithTransformPassed");
+    XCTAssert(obj.funcWithRectPointerPassed, @"funcWithRectPointerPassed");
+    XCTAssert(obj.funcWithTransformPointerPassed, @"funcWithTransformPointerPassed");
+    
+    XCTAssertEqualObjects(@"overrided",[subObj funcOverrideParentMethod]);
+    
+    XCTAssert(obj.variableParameterMethodPassed, @"variableParameterMethodPassed");
+    
+    
+    JPTestProtocolObject *testProtocolObj = [[JPTestProtocolObject alloc] init];
+    XCTAssert([testProtocolObj testProtocolMethods], @"testProtocolMethodsPassed");
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [obj funcToSwizzleTestGCD:^{
+        XCTAssert(obj.funcToSwizzleTestGCDPassed, @"funcToSwizzleTestGCDPassed");
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
 }
 
 - (void)testJSClass

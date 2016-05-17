@@ -45,7 +45,6 @@
 /* Begin PBXBuildFile section */
 		1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA431C7F0D9F0089E00D /* CategoryModel.swift */; };
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
-		143F0EF51CE44CF300965C96 /* jsClassTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 143F0EF41CE44CF300965C96 /* jsClassTest.js */; };
 		14427F781CCDC4A2007E80CF /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */; };
 		14427F821CCE03FE007E80CF /* ImageFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14427F811CCE03FE007E80CF /* ImageFilterTests.swift */; };
 		14427F841CCE0456007E80CF /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14427F831CCE0456007E80CF /* BaseTestCase.swift */; };
@@ -61,8 +60,6 @@
 		1479CBBA1C965CCF00D26433 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBB91C965CCF00D26433 /* Album.swift */; };
 		1479CBBF1C96600300D26433 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		1479CBC41C9668DD00D26433 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBC31C9668DD00D26433 /* LibraryAPI.swift */; };
-		147CE6151CE581C500424C7F /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6141CE581C500424C7F /* test.js */; };
-		147CE6181CE5837200424C7F /* newProtocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6161CE5837200424C7F /* newProtocolTest.js */; };
 		147CE6191CE5837200424C7F /* protocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 147CE6171CE5837200424C7F /* protocolTest.js */; };
 		148DA35F1CC8741900FF27E4 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E31CC52E7200DEB22D /* PersistencyManager.swift */; };
 		148DA3601CC8741900FF27E4 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D91E51CC5393A00DEB22D /* HttpClientManager.swift */; };
@@ -131,6 +128,9 @@
 		8482D92E1CEB655A00CC5028 /* JPUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91B1CEB655A00CC5028 /* JPUIGraphics.m */; };
 		8482D92F1CEB655A00CC5028 /* JPUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91D1CEB655A00CC5028 /* JPUIImage.m */; };
 		8482D9301CEB655A00CC5028 /* JPUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482D91F1CEB655A00CC5028 /* JPUIKit.m */; };
+		8482D9351CEB68C500CC5028 /* jsClassTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9321CEB68C500CC5028 /* jsClassTest.js */; };
+		8482D9361CEB68C500CC5028 /* newProtocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9331CEB68C500CC5028 /* newProtocolTest.js */; };
+		8482D9371CEB68C500CC5028 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9341CEB68C500CC5028 /* test.js */; };
 		849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AFA161CD5D306006FBF61 /* Images.xcassets */; };
 		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
 		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
@@ -201,7 +201,6 @@
 /* Begin PBXFileReference section */
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
-		143F0EF41CE44CF300965C96 /* jsClassTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsClassTest.js; sourceTree = "<group>"; };
 		14427F811CCE03FE007E80CF /* ImageFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
 		14427F831CCE0456007E80CF /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		14427F871CCE067C007E80CF /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
@@ -223,8 +222,6 @@
 		1479CBB91C965CCF00D26433 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1479CBBE1C96600300D26433 /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		1479CBC31C9668DD00D26433 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
-		147CE6141CE581C500424C7F /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
-		147CE6161CE5837200424C7F /* newProtocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = newProtocolTest.js; sourceTree = "<group>"; };
 		147CE6171CE5837200424C7F /* protocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = protocolTest.js; sourceTree = "<group>"; };
 		149128FE1CEB24AF004FFA1C /* JPTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTestObject.h; sourceTree = "<group>"; };
 		149128FF1CEB24AF004FFA1C /* JPTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTestObject.m; sourceTree = "<group>"; };
@@ -338,6 +335,9 @@
 		8482D91D1CEB655A00CC5028 /* JPUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIImage.m; sourceTree = "<group>"; };
 		8482D91E1CEB655A00CC5028 /* JPUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIKit.h; sourceTree = "<group>"; };
 		8482D91F1CEB655A00CC5028 /* JPUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIKit.m; sourceTree = "<group>"; };
+		8482D9321CEB68C500CC5028 /* jsClassTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsClassTest.js; sourceTree = "<group>"; };
+		8482D9331CEB68C500CC5028 /* newProtocolTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = newProtocolTest.js; sourceTree = "<group>"; };
+		8482D9341CEB68C500CC5028 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		849AFA161CD5D306006FBF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
@@ -491,6 +491,7 @@
 				149128FE1CEB24AF004FFA1C /* JPTestObject.h */,
 				149128FF1CEB24AF004FFA1C /* JPTestObject.m */,
 				8482D8FB1CEB655A00CC5028 /* Extensions */,
+				8482D9311CEB68C500CC5028 /* js */,
 			);
 			path = JSPatch;
 			sourceTree = "<group>";
@@ -717,16 +718,23 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		8482D9311CEB68C500CC5028 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				8482D9321CEB68C500CC5028 /* jsClassTest.js */,
+				8482D9331CEB68C500CC5028 /* newProtocolTest.js */,
+				8482D9341CEB68C500CC5028 /* test.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
 		84DCB7D51CC33B610028EE9A /* source */ = {
 			isa = PBXGroup;
 			children = (
 				14BA99771CE1956900B4A635 /* Person.mustache */,
 				14BA99781CE1956900B4A635 /* ReadMeExample1.mustache */,
 				14BA99791CE1956900B4A635 /* ReadMeExample2.mustache */,
-				147CE6141CE581C500424C7F /* test.js */,
-				147CE6161CE5837200424C7F /* newProtocolTest.js */,
 				147CE6171CE5837200424C7F /* protocolTest.js */,
-				143F0EF41CE44CF300965C96 /* jsClassTest.js */,
 				84DCB7D61CC33B610028EE9A /* user.json */,
 				84DCB7D71CC33B880028EE9A /* stub.txt */,
 			);
@@ -1090,13 +1098,13 @@
 			files = (
 				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
 				147CE6191CE5837200424C7F /* protocolTest.js in Resources */,
-				147CE6181CE5837200424C7F /* newProtocolTest.js in Resources */,
 				14BA997A1CE1956900B4A635 /* Person.mustache in Resources */,
-				143F0EF51CE44CF300965C96 /* jsClassTest.js in Resources */,
 				14BA997B1CE1956900B4A635 /* ReadMeExample1.mustache in Resources */,
+				8482D9371CEB68C500CC5028 /* test.js in Resources */,
 				84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */,
-				147CE6151CE581C500424C7F /* test.js in Resources */,
+				8482D9351CEB68C500CC5028 /* jsClassTest.js in Resources */,
 				14BA997C1CE1956900B4A635 /* ReadMeExample2.mustache in Resources */,
+				8482D9361CEB68C500CC5028 /* newProtocolTest.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

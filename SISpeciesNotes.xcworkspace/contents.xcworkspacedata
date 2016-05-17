@@ -44,4 +44,7 @@
    <FileRef
       location = "group:JSPatch-master/Demo/iOSDemo/JSPatchDemo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:InstrumentsSwift-Starter/InstrumentsTutorial.xcodeproj">
+   </FileRef>
 </Workspace>

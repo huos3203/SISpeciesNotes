@@ -74,10 +74,9 @@ class JSPatchTest: XCTestCase {
         let obj = objValue.toObjectOfClass(JPTestObject.self) as! JPTestObject
         
         XCTAssert(obj.funcReturnVoidPassed,"funcReturnVoidPassed")
-//        XCTAssert(obj.funcReturnStringPassed, "funcReturnStringPassed")
-        
-//        XCTAssert(obj.funcWithIntPassed, "funcWithIntPassed")
-//        
+        XCTAssert(obj.funcReturnStringPassed, "funcReturnStringPassed")
+        XCTAssert(obj.funcWithIntPassed, "funcWithIntPassed")
+//
 //        
 //        XCTAssert(obj.funcWithRectAndReturnRectPassed, "funcWithRectAndReturnRectPassed")
 //        XCTAssert(obj.funcWithSizeAndReturnSizePassed, "funcWithSizeAndReturnSizePassed")
