@@ -9,6 +9,7 @@ PODS:
     - JSPatch/Core (= 1.0)
   - JSPatch/Core (1.0)
   - Masonry (1.0.0)
+  - Nimble (4.0.1)
   - ObjectMapper (1.1.5)
   - OHHTTPStubs (5.0.0):
     - OHHTTPStubs/Default (= 5.0.0)
@@ -25,6 +26,14 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (5.0.0)
   - OHHTTPStubs/Swift (5.0.0):
     - OHHTTPStubs/Core
+  - Quick (0.9.2)
+  - RxBlocking (2.1.0):
+    - RxSwift (~> 2.0)
+  - RxCocoa (2.1.0):
+    - RxSwift (~> 2.0)
+  - RxSwift (2.0.0)
+  - RxTests (2.1.0):
+    - RxSwift (~> 2.0)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -39,9 +48,15 @@ DEPENDENCIES:
   - GRMustache.swift (~> 1.0)
   - JSPatch
   - Masonry
+  - Nimble
   - ObjectMapper (= 1.1.5)
   - OHHTTPStubs
   - OHHTTPStubs/Swift
+  - Quick
+  - RxBlocking (~> 2.0)
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0.0)
+  - RxTests (~> 2.0)
   - SDWebImage (~> 3.7)
   - SnapKit (~> 0.20.0)
   - SwiftFilePath
@@ -63,8 +78,14 @@ SPEC CHECKSUMS:
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
   JSPatch: c689ea4dde17441f2f4a95d40dfedb8900c20099
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
+  RxBlocking: fa297def258d85c5beae9ed507f94645260b3747
+  RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
+  RxSwift: d83246efa6f16c50c143bec134649d045498f601
+  RxTests: 94c67ffc37c36bd8c7aec90a84601a3db142be94
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7

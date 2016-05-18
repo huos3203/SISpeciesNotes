@@ -34,11 +34,30 @@ pod  'SwiftFilePath'
 #mustache模板引擎
 pod 'GRMustache.swift', '~> 1.0'
 
+#热修复/热更新库
 pod 'JSPatch'
 
-#target :<#TargetName#>Tests, :exclusive => true do
-# pod 'Kiwi'
-#end
+#响应式开发依赖库 https://realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/
+pod 'RxSwift', '~> 2.0.0'
+pod 'RxCocoa', '~> 2.0'
+
+#添加单元测试依赖库
+#介绍： https://realm.io/cn/news/tryswift-ash-furrow-artsy-testing-tour/
+#https://github.com/Quick/Quick/blob/master/Documentation/en-us/InstallingQuick.md#cocoapods
+def testing_pods
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'RxBlocking', '~> 2.0'
+    pod 'RxTests',    '~> 2.0'
+end
+
+target 'SISpeciesNotesTests', :exclusive => true do
+    testing_pods
+end
+
+target 'SISpeciesNotesUITests' do
+    testing_pods
+end
 
 
 
