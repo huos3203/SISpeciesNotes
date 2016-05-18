@@ -519,7 +519,9 @@ If you know what you're doing just typing this command into terminal in the curr
 [RxSwift 入坑手册 Part0 - 基础概念](http://blog.callmewhy.com/2015/09/21/rxswift-getting-started-0/)
 [RxSwift 函数响应式编程](https://realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/)
 
-
+#####配置文件build setting预编译位置
+Preprocessor Macros:
+Other Swift Flags:
 
 
 
