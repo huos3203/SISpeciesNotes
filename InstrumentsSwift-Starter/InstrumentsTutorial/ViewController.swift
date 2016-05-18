@@ -25,7 +25,7 @@ class ViewController: UIViewController {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let destination = segue.destinationViewController as? SearchResultsViewController {
-      if let indexPath = tableView.indexPathsForSelectedRows?.first as? NSIndexPath {
+      if let indexPath = (tableView.indexPathsForSelectedRows?.first)! as NSIndexPath? {
         destination.searchResults = searches[indexPath.row]
       }
     }
@@ -48,7 +48,7 @@ extension ViewController : UISearchBarDelegate {
     searchBar.hidden = true
     activityIndicator.startAnimating()
     
-    flickr.searchFlickrForTerm(searchBar.text) { results, error in
+    flickr.searchFlickrForTerm(searchBar.text!) { results, error in
       self.searchBar.hidden = false
       self.activityIndicator.stopAnimating()
 

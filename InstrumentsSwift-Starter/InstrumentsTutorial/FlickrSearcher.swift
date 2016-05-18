@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let apiKey = "2bd9bc566325719127de8831766d1a36"
+let apiKey = "77e3791687c77867f657da988a6637ef"
 
 struct FlickrSearchResults {
   let searchTerm : String
@@ -38,16 +38,16 @@ class FlickrPhoto : Equatable {
   }
   
   func loadThumbnail(completion: ImageLoadCompletion) {
-    loadImageFromURL(URL: flickrImageURL(size: "m")) { image, error in
+    loadImageFromURL(flickrImageURL("m")) { image, error in
       completion(image: image, error: error)
     }
   }
 
   func loadLargeImage(completion: ImageLoadCompletion) {
-    loadImageFromURL(URL: flickrImageURL(size: "b"), completion: completion)
+    loadImageFromURL(flickrImageURL("b"), completion: completion)
   }
   
-  func loadImageFromURL(#URL: NSURL, completion: ImageLoadCompletion) {
+  func loadImageFromURL(URL: NSURL, completion: ImageLoadCompletion) {
     let loadRequest = NSURLRequest(URL: URL)
     NSURLConnection.sendAsynchronousRequest(loadRequest,
       queue: NSOperationQueue.mainQueue()) {
@@ -59,7 +59,7 @@ class FlickrPhoto : Equatable {
         }
         
         if data != nil {
-          completion(image: UIImage(data: data), error: nil)
+          completion(image: UIImage(data: data!), error: nil)
           return
         }
         
@@ -100,7 +100,7 @@ class Flickr {
       }
       
       var JSONError : NSError?
-      let resultsDictionary = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(rawValue: 0)) as? NSDictionary
+      let resultsDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions(rawValue: 0)) as? NSDictionary
       if JSONError != nil {
         completion(results: nil, error: JSONError)
         return
