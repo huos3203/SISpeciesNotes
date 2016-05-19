@@ -34,6 +34,7 @@
 		28FCBF0C0DE6A6C6007A15C7 /* RecipeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FCBF0B0DE6A6C6007A15C7 /* RecipeListTableViewController.m */; };
 		53506710188075A9003726E2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5350670E188075A9003726E2 /* Storyboard.storyboard */; };
 		53757D0C18AC306A0080EA8D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53757D0B18AC306A0080EA8D /* Media.xcassets */; };
+		849CBA241CEE13D200389EB7 /* logElementTree.js in Resources */ = {isa = PBXBuildFile; fileRef = 849CBA231CEE13D200389EB7 /* logElementTree.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		69A0E6150DE92A470087803E /* RecipePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipePhotoViewController.m; sourceTree = "<group>"; };
 		69D8E9400DE7A5FC0045AF3C /* RecipeAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeAddViewController.h; sourceTree = "<group>"; };
 		69D8E9410DE7A5FC0045AF3C /* RecipeAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeAddViewController.m; sourceTree = "<group>"; };
+		849CBA231CEE13D200389EB7 /* logElementTree.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = logElementTree.js; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966D0AFA0DF4CB4D0054F11F /* IngredientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientDetailViewController.h; sourceTree = "<group>"; };
 		966D0AFB0DF4CB4D0054F11F /* IngredientDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientDetailViewController.m; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				849CBA231CEE13D200389EB7 /* logElementTree.js */,
 				28CB440A0DF7129800C7BCF9 /* ReadMe.txt */,
 				286DDA180DE761A2005EF016 /* Application */,
 				28FCBE8F0DE69AD4007A15C7 /* Model and Model Classes */,
@@ -287,6 +290,7 @@
 				282FFCBB0FC8AAB500A28FE2 /* Recipes.sqlite in Resources */,
 				53757D0C18AC306A0080EA8D /* Media.xcassets in Resources */,
 				53506710188075A9003726E2 /* Storyboard.storyboard in Resources */,
+				849CBA241CEE13D200389EB7 /* logElementTree.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
