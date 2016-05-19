@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143BBE621CED62E400BE3A77 /* readMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		17A1E85D1AB0E6BC003A4798 /* ImageUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtilities.swift; sourceTree = "<group>"; };
 		17D45BF71A9F52D400DC4881 /* InstrumentsTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstrumentsTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D45BFB1A9F52D400DC4881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 				17D45C031A9F52D400DC4881 /* Images.xcassets */,
 				17D45C051A9F52D400DC4881 /* LaunchScreen.xib */,
 				17D45BFA1A9F52D400DC4881 /* Supporting Files */,
+				143BBE621CED62E400BE3A77 /* readMe.md */,
 			);
 			path = InstrumentsTutorial;
 			sourceTree = "<group>";

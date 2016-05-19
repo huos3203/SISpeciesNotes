@@ -53,4 +53,7 @@
    <FileRef
       location = "group:InstrumentsSwift-Starter/InstrumentsTutorial.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:iPhoneCoreDataRecipes/Recipes.xcodeproj">
+   </FileRef>
 </Workspace>
