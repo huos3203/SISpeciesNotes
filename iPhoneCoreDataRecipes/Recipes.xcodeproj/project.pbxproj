@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14817B331CEEAECD00C6CB0A /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14817B321CEEAECC00C6CB0A /* readme.md */; };
 		184FEA3E0DEF6D4D00887625 /* WeightConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FEA3A0DEF6D4D00887625 /* WeightConverterViewController.m */; };
 		184FEA3F0DEF6D4D00887625 /* TemperatureConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FEA3B0DEF6D4D00887625 /* TemperatureConverterViewController.m */; };
 		1D3623260D0F684500981E51 /* RecipesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* RecipesAppDelegate.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14817B321CEEAECC00C6CB0A /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		180F09140DCA9C0500D424D6 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		180F09150DCA9C0500D424D6 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		184FEA390DEF6D4D00887625 /* WeightConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeightConverterViewController.h; path = Classes/WeightConverterViewController.h; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				14817B321CEEAECC00C6CB0A /* readme.md */,
 				849CBA231CEE13D200389EB7 /* logElementTree.js */,
 				28CB440A0DF7129800C7BCF9 /* ReadMe.txt */,
 				286DDA180DE761A2005EF016 /* Application */,
@@ -319,6 +322,7 @@
 				2858E6C00FC6464700DEACE0 /* TypeSelectionViewController.m in Sources */,
 				2858E70B0FC6583300DEACE0 /* Ingredient.m in Sources */,
 				2858E7430FC65DDE00DEACE0 /* IngredientDetailViewController.m in Sources */,
+				14817B331CEEAECD00C6CB0A /* readme.md in Sources */,
 				2858E7790FC6625400DEACE0 /* EditingTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

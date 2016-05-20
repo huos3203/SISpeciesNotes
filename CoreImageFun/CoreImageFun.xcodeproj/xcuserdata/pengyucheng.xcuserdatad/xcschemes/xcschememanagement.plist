@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Recipes.xcscheme</key>
+		<key>CoreImageFun.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D6058900D05DD3D006BFB54</key>
+		<key>5E9799DB1977141C00423A05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E9799ED1977141D00423A05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

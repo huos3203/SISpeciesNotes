@@ -26,6 +26,8 @@ class ImageCache {
   }
 }
 
+//黑白滤镜
+//[Core Image Programming Guide--图像编程指南 ](http://supershll.blog.163.com/blog/static/370704362012513113447720/ )
 extension UIImage {
   func applyTonalFilter() -> UIImage? {
     let context = CIContext(options:nil)

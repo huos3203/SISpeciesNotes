@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let apiKey = "d4a47ff42274335c76b940e3ef520dcd"
+let apiKey = "294e72a918044d22512d1188d7da408d"
 
 struct FlickrSearchResults {
   let searchTerm : String
@@ -23,8 +23,10 @@ class FlickrPhoto : Equatable {
   private let server : String
   private let secret : String
   
+    //完成下载闭包
   typealias ImageLoadCompletion = (image: UIImage?, error: NSError?) -> Void
   
+    //构造器
   init (photoID:String, title:String, farm:Int, server:String, secret:String) {
     self.photoID = photoID
     self.title = title
@@ -37,12 +39,14 @@ class FlickrPhoto : Equatable {
     return NSURL(string: "http://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_\(size).jpg")!
   }
   
+    //下载预览图
   func loadThumbnail(completion: ImageLoadCompletion) {
     loadImageFromURL(flickrImageURL("m")) { image, error in
       completion(image: image, error: error)
     }
   }
 
+    //下载原图
   func loadLargeImage(completion: ImageLoadCompletion) {
     loadImageFromURL(flickrImageURL("b"), completion: completion)
   }
@@ -68,7 +72,7 @@ class FlickrPhoto : Equatable {
   }
 }
 
-
+//点赞
 extension FlickrPhoto {
   var isFavourite: Bool {
     get {
@@ -80,6 +84,7 @@ extension FlickrPhoto {
   }
 }
 
+//自定义 == 方法
 func == (lhs: FlickrPhoto, rhs: FlickrPhoto) -> Bool {
   return lhs.photoID == rhs.photoID
 }
