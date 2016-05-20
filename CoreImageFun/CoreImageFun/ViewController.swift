@@ -21,11 +21,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   
   @IBAction func amountSliderValueChanged(sender: UISlider) {
     let sliderValue = sender.value
-    
+    //Get the output CIImage from the CIFilter.
     let outputImage = self.oldPhoto(beginImage, withAmount: sliderValue)
-    
+    //Convert the CIImage to a CGImage.
     let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
     
+    //onvert the CGImage to a UIImage, and display it in the image view.
     let newImage = UIImage(CGImage: cgimg, scale:1, orientation:orientation)
     self.imageView.image = newImage
   }
@@ -55,23 +56,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // 1
+    // 1 creates an NSURL object that holds the path to your image file.
     let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
     
-    // 2
+    // 2 Next you create your CIImage with the CIImage(contentsOfURL:) constructor
     beginImage = CIImage(contentsOfURL: fileURL)
     
-    // 3
+    // 3 create CISepiaTone filter. The CIFilter constructor takes the name of the filter
     filter = CIFilter(name: "CISepiaTone")
+    //the KCIInputImageKey (a CIImage)
     filter.setValue(beginImage, forKey: kCIInputImageKey)
+    //the kCIInputIntensityKey, a float value between 0 and 1. Here you give that value 0.5.
     filter.setValue(0.5, forKey: kCIInputIntensityKey)
     let outputImage = filter.outputImage
     
-    // 1
+    // 1 The CIContext(options:) constructor takes an NSDictionary that specifies options such as the color format, or whether the context should run on the CPU or GPU
     context = CIContext(options:nil)
+    //Calling createCGImage(outputImage:fromRect:) on the context with the supplied CIImage will return a new CGImage instance
     let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
     
-    // 2
+    // 2 Note that there is no need to explicitly release the CGImage after we are finished with it, as there would have been in Objective-C. In Swift, ARC can automatically release Core Foundation objects.
     let newImage = UIImage(CGImage: cgimg)
     self.imageView.image = newImage
     

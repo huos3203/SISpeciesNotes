@@ -31,6 +31,9 @@
       <FileRef
          location = "group:RxSwift &#x51fd;&#x6570;&#x54cd;&#x5e94;&#x5f0f;&#x7f16;&#x7a0b;.playground">
       </FileRef>
+      <FileRef
+         location = "group:CoreImageProgrammingGuide.playground">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
@@ -55,5 +58,11 @@
    </FileRef>
    <FileRef
       location = "group:iPhoneCoreDataRecipes/Recipes.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CoreImageFun/CoreImageFun.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CoolTable/CoolTable.xcodeproj">
    </FileRef>
 </Workspace>
