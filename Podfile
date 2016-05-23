@@ -51,7 +51,7 @@ def testing_pods
     pod 'RxTests',    '~> 2.0'
 end
 
-target 'SISpeciesNotesTests', :exclusive => true do
+target 'SISpeciesNotesTests' do
     testing_pods
 end
 
