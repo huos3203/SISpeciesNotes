@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
+		1437DD6E1CF2A75F001BD2D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6D1CF2A75F001BD2D2 /* ViewController.swift */; };
+		1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
+		1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
+		1437DD7E1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD7D1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift */; };
+		1437DD891CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD881CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift */; };
+		1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */; };
+		1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
+		1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
+		1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1437DD7A1CF2A75F001BD2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1437DD671CF2A75F001BD2D2;
+			remoteInfo = ScaryBugsMac;
+		};
+		1437DD851CF2A75F001BD2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1437DD671CF2A75F001BD2D2;
+			remoteInfo = ScaryBugsMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1437DD6D1CF2A75F001BD2D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1437DD721CF2A75F001BD2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1437DD741CF2A75F001BD2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1437DD791CF2A75F001BD2D2 /* ScaryBugsMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScaryBugsMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1437DD7D1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaryBugsMacTests.swift; sourceTree = "<group>"; };
+		1437DD7F1CF2A75F001BD2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1437DD841CF2A75F001BD2D2 /* ScaryBugsMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScaryBugsMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1437DD881CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaryBugsMacUITests.swift; sourceTree = "<group>"; };
+		1437DD8A1CF2A75F001BD2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugData.swift; path = Model/ScaryBugData.swift; sourceTree = "<group>"; };
+		1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugDoc.swift; path = Model/ScaryBugDoc.swift; sourceTree = "<group>"; };
+		1437DD9F1CF2AF7C001BD2D2 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1437DD651CF2A75F001BD2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD761CF2A75F001BD2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD811CF2A75F001BD2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1437DD5F1CF2A75E001BD2D2 = {
+			isa = PBXGroup;
+			children = (
+				1437DD6A1CF2A75F001BD2D2 /* ScaryBugsMac */,
+				1437DD7C1CF2A75F001BD2D2 /* ScaryBugsMacTests */,
+				1437DD871CF2A75F001BD2D2 /* ScaryBugsMacUITests */,
+				1437DD691CF2A75F001BD2D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1437DD691CF2A75F001BD2D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */,
+				1437DD791CF2A75F001BD2D2 /* ScaryBugsMacTests.xctest */,
+				1437DD841CF2A75F001BD2D2 /* ScaryBugsMacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1437DD6A1CF2A75F001BD2D2 /* ScaryBugsMac */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD9A1CF2AC6E001BD2D2 /* Model */,
+				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
+				1437DD6D1CF2A75F001BD2D2 /* ViewController.swift */,
+				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
+				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
+				1437DD741CF2A75F001BD2D2 /* Info.plist */,
+				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
+				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
+			);
+			path = ScaryBugsMac;
+			sourceTree = "<group>";
+		};
+		1437DD7C1CF2A75F001BD2D2 /* ScaryBugsMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD7D1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift */,
+				1437DD7F1CF2A75F001BD2D2 /* Info.plist */,
+			);
+			path = ScaryBugsMacTests;
+			sourceTree = "<group>";
+		};
+		1437DD871CF2A75F001BD2D2 /* ScaryBugsMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD881CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift */,
+				1437DD8A1CF2A75F001BD2D2 /* Info.plist */,
+			);
+			path = ScaryBugsMacUITests;
+			sourceTree = "<group>";
+		};
+		1437DD9A1CF2AC6E001BD2D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */,
+				1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1437DD671CF2A75F001BD2D2 /* ScaryBugsMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
+			buildPhases = (
+				1437DD641CF2A75F001BD2D2 /* Sources */,
+				1437DD651CF2A75F001BD2D2 /* Frameworks */,
+				1437DD661CF2A75F001BD2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScaryBugsMac;
+			productName = ScaryBugsMac;
+			productReference = 1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1437DD781CF2A75F001BD2D2 /* ScaryBugsMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
+			buildPhases = (
+				1437DD751CF2A75F001BD2D2 /* Sources */,
+				1437DD761CF2A75F001BD2D2 /* Frameworks */,
+				1437DD771CF2A75F001BD2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1437DD7B1CF2A75F001BD2D2 /* PBXTargetDependency */,
+			);
+			name = ScaryBugsMacTests;
+			productName = ScaryBugsMacTests;
+			productReference = 1437DD791CF2A75F001BD2D2 /* ScaryBugsMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1437DD831CF2A75F001BD2D2 /* ScaryBugsMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1437DD931CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacUITests" */;
+			buildPhases = (
+				1437DD801CF2A75F001BD2D2 /* Sources */,
+				1437DD811CF2A75F001BD2D2 /* Frameworks */,
+				1437DD821CF2A75F001BD2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1437DD861CF2A75F001BD2D2 /* PBXTargetDependency */,
+			);
+			name = ScaryBugsMacUITests;
+			productName = ScaryBugsMacUITests;
+			productReference = 1437DD841CF2A75F001BD2D2 /* ScaryBugsMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1437DD601CF2A75E001BD2D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = recomend;
+				TargetAttributes = {
+					1437DD671CF2A75F001BD2D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1437DD781CF2A75F001BD2D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1437DD671CF2A75F001BD2D2;
+					};
+					1437DD831CF2A75F001BD2D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1437DD671CF2A75F001BD2D2;
+					};
+				};
+			};
+			buildConfigurationList = 1437DD631CF2A75E001BD2D2 /* Build configuration list for PBXProject "ScaryBugsMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1437DD5F1CF2A75E001BD2D2;
+			productRefGroup = 1437DD691CF2A75F001BD2D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1437DD671CF2A75F001BD2D2 /* ScaryBugsMac */,
+				1437DD781CF2A75F001BD2D2 /* ScaryBugsMacTests */,
+				1437DD831CF2A75F001BD2D2 /* ScaryBugsMacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1437DD661CF2A75F001BD2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
+				1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD771CF2A75F001BD2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD821CF2A75F001BD2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1437DD641CF2A75F001BD2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1437DD6E1CF2A75F001BD2D2 /* ViewController.swift in Sources */,
+				1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */,
+				1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */,
+				1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */,
+				1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */,
+				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD751CF2A75F001BD2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1437DD7E1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1437DD801CF2A75F001BD2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1437DD891CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1437DD7B1CF2A75F001BD2D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1437DD671CF2A75F001BD2D2 /* ScaryBugsMac */;
+			targetProxy = 1437DD7A1CF2A75F001BD2D2 /* PBXContainerItemProxy */;
+		};
+		1437DD861CF2A75F001BD2D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1437DD671CF2A75F001BD2D2 /* ScaryBugsMac */;
+			targetProxy = 1437DD851CF2A75F001BD2D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1437DD711CF2A75F001BD2D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1437DD721CF2A75F001BD2D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1437DD8B1CF2A75F001BD2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1437DD8C1CF2A75F001BD2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1437DD8E1CF2A75F001BD2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1437DD8F1CF2A75F001BD2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1437DD911CF2A75F001BD2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScaryBugsMac.app/Contents/MacOS/ScaryBugsMac";
+			};
+			name = Debug;
+		};
+		1437DD921CF2A75F001BD2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScaryBugsMac.app/Contents/MacOS/ScaryBugsMac";
+			};
+			name = Release;
+		};
+		1437DD941CF2A75F001BD2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ScaryBugsMac;
+			};
+			name = Debug;
+		};
+		1437DD951CF2A75F001BD2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScaryBugsMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ScaryBugsMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1437DD631CF2A75E001BD2D2 /* Build configuration list for PBXProject "ScaryBugsMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1437DD8B1CF2A75F001BD2D2 /* Debug */,
+				1437DD8C1CF2A75F001BD2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1437DD8E1CF2A75F001BD2D2 /* Debug */,
+				1437DD8F1CF2A75F001BD2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1437DD911CF2A75F001BD2D2 /* Debug */,
+				1437DD921CF2A75F001BD2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1437DD931CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1437DD941CF2A75F001BD2D2 /* Debug */,
+				1437DD951CF2A75F001BD2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1437DD601CF2A75E001BD2D2 /* Project object */;
+}

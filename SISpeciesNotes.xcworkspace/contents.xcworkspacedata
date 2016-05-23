@@ -65,4 +65,7 @@
    <FileRef
       location = "group:CoolTable/CoolTable.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
+   </FileRef>
 </Workspace>
