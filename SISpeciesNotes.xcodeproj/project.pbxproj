@@ -96,6 +96,8 @@
 		14EC641B1CD1FDEB00735501 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC64171CD1B5FE00735501 /* LocalFileManager.swift */; };
 		14EC64201CD2116200735501 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */; };
+		1CFFC3FFD74C6B64C003691D /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FE22D8DE83EC0F651F7A7A /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */; };
+		7F51B9507F38FE8BB1C0CFB0 /* Pods_SISpeciesNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752FED9D86D574661B6E20C5 /* Pods_SISpeciesNotes.framework */; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
 		841816861CEA13BB00EF1DE4 /* JSPatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841816851CEA13BB00EF1DE4 /* JSPatchTest.swift */; };
@@ -139,6 +141,7 @@
 		84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */; };
 		84EC49A51CC2A024002CFF69 /* RealmSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */; };
 		A6CC5AFC0FE212126527628D /* Pods_SISpeciesNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B24C7CA307322DEE42EDA96 /* Pods_SISpeciesNotesUITests.framework */; };
+		C70955020360C0517514384A /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB13997DE8C59585929532E /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework */; };
 		D849C09E1AF078E4001C01AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C09D1AF078E4001C01AC /* AppDelegate.swift */; };
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
 		D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A61AF078E4001C01AC /* LaunchScreen.xib */; };
@@ -200,6 +203,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01BF4E6DAF66D4D255E5A801 /* Pods-SISpeciesNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
 		14427F811CCE03FE007E80CF /* ImageFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
@@ -256,7 +260,10 @@
 		14EC64191CD1F3DE00735501 /* SwiftFilePathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFilePathTests.swift; sourceTree = "<group>"; };
 		14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitTest.swift; sourceTree = "<group>"; };
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C82227D643A918905A625FC /* Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EB8E0588CB7B2E97E5D0F9F /* Pods-SISpeciesNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesUITests/Pods-SISpeciesNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		59891B69CD330D0E55AFEAD4 /* Pods-SISpeciesNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes.release.xcconfig"; sourceTree = "<group>"; };
+		752FED9D86D574661B6E20C5 /* Pods_SISpeciesNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFEF595A925CC0612995674 /* Pods-SISpeciesNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PercentageCalculatorViewController.swift; path = Controller/PercentageCalculatorViewController.swift; sourceTree = "<group>"; };
 		8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageCalculator.swift; sourceTree = "<group>"; };
@@ -347,10 +354,13 @@
 		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
 		84EC49A21CC29F4F002CFF69 /* ErrorHandingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandingTest.swift; sourceTree = "<group>"; };
 		84EC49A41CC2A024002CFF69 /* RealmSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftTest.swift; sourceTree = "<group>"; };
+		905ACDE9ECFA02528EEA861D /* Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90BE4B20C6A229955FEE8DB9 /* Pods-SISpeciesNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesUITests/Pods-SISpeciesNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9B24C7CA307322DEE42EDA96 /* Pods_SISpeciesNotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D949BE645FB04CE0BCBCC7A /* Pods-SISpeciesNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3EC17CD0F03A52BAE903632 /* Pods_SISpeciesNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FE22D8DE83EC0F651F7A7A /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotes_SISpeciesNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D403CD5D21943D8B6060C792 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		D849C0981AF078E4001C01AC /* SISpeciesNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISpeciesNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C09C1AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C09D1AF078E4001C01AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -359,6 +369,8 @@
 		D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISpeciesNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C0B21AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISpeciesNotesTests.swift; sourceTree = "<group>"; };
+		EC01402A0AA90E2AF704A01F /* Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDB13997DE8C59585929532E /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotes_SISpeciesNotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6CC5AFC0FE212126527628D /* Pods_SISpeciesNotesUITests.framework in Frameworks */,
+				C70955020360C0517514384A /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843D921C1CC7E0D900DEB22D /* SISFramework.framework in Frameworks */,
+				7F51B9507F38FE8BB1C0CFB0 /* Pods_SISpeciesNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041A8836DE8D57311FA504A4 /* Pods_SISpeciesNotesTests.framework in Frameworks */,
+				1CFFC3FFD74C6B64C003691D /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +511,12 @@
 				7EFEF595A925CC0612995674 /* Pods-SISpeciesNotesTests.release.xcconfig */,
 				3EB8E0588CB7B2E97E5D0F9F /* Pods-SISpeciesNotesUITests.debug.xcconfig */,
 				90BE4B20C6A229955FEE8DB9 /* Pods-SISpeciesNotesUITests.release.xcconfig */,
+				01BF4E6DAF66D4D255E5A801 /* Pods-SISpeciesNotes.debug.xcconfig */,
+				59891B69CD330D0E55AFEAD4 /* Pods-SISpeciesNotes.release.xcconfig */,
+				EC01402A0AA90E2AF704A01F /* Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig */,
+				D403CD5D21943D8B6060C792 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */,
+				2C82227D643A918905A625FC /* Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig */,
+				905ACDE9ECFA02528EEA861D /* Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -888,6 +909,9 @@
 				20F40A34149E21A67CD352AF /* Pods.framework */,
 				A3EC17CD0F03A52BAE903632 /* Pods_SISpeciesNotesTests.framework */,
 				9B24C7CA307322DEE42EDA96 /* Pods_SISpeciesNotesUITests.framework */,
+				752FED9D86D574661B6E20C5 /* Pods_SISpeciesNotes.framework */,
+				C1FE22D8DE83EC0F651F7A7A /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */,
+				EDB13997DE8C59585929532E /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework */,
 			);
 			name = Frameworks;
 			path = SISpeciesNotes;
@@ -968,11 +992,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D849C0B71AF078E4001C01AC /* Build configuration list for PBXNativeTarget "SISpeciesNotes" */;
 			buildPhases = (
+				05F69C398C4BEE0F21BD8D8A /* 📦 Check Pods Manifest.lock */,
 				D849C0941AF078E4001C01AC /* Sources */,
 				D849C0951AF078E4001C01AC /* Frameworks */,
 				D849C0961AF078E4001C01AC /* Resources */,
 				848841B31C7F593000929B21 /* ShellScript */,
 				14DBA0B21CAE15E100BAB345 /* Embed Frameworks */,
+				3512609844A05067F2207924 /* 📦 Embed Pods Frameworks */,
+				774E6DF65AA176D7DCA7EA4E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1123,6 +1150,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05F69C398C4BEE0F21BD8D8A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3512609844A05067F2207924 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774E6DF65AA176D7DCA7EA4E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		840ED9271C4CEE8E00420D8C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1204,7 +1276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C3EF83BA82035CF8C212E693 /* 📦 Embed Pods Frameworks */ = {
@@ -1219,7 +1291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C72C1CB335D644685B981C50 /* 📦 Check Pods Manifest.lock */ = {
@@ -1249,7 +1321,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesUITests/Pods-SISpeciesNotesUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1450,7 +1522,7 @@
 		};
 		84192D741CBFE6A8001866DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB8E0588CB7B2E97E5D0F9F /* Pods-SISpeciesNotesUITests.debug.xcconfig */;
+			baseConfigurationReference = 2C82227D643A918905A625FC /* Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1465,7 +1537,7 @@
 		};
 		84192D751CBFE6A8001866DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90BE4B20C6A229955FEE8DB9 /* Pods-SISpeciesNotesUITests.release.xcconfig */;
+			baseConfigurationReference = 905ACDE9ECFA02528EEA861D /* Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				INFOPLIST_FILE = SISpeciesNotesUITests/Info.plist;
@@ -1659,6 +1731,7 @@
 		};
 		D849C0B81AF078E4001C01AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01BF4E6DAF66D4D255E5A801 /* Pods-SISpeciesNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1728,6 +1801,7 @@
 		};
 		D849C0B91AF078E4001C01AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59891B69CD330D0E55AFEAD4 /* Pods-SISpeciesNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1794,7 +1868,7 @@
 		};
 		D849C0BB1AF078E4001C01AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D949BE645FB04CE0BCBCC7A /* Pods-SISpeciesNotesTests.debug.xcconfig */;
+			baseConfigurationReference = EC01402A0AA90E2AF704A01F /* Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_TESTABILITY = YES;
@@ -1820,7 +1894,7 @@
 		};
 		D849C0BC1AF078E4001C01AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EFEF595A925CC0612995674 /* Pods-SISpeciesNotesTests.release.xcconfig */;
+			baseConfigurationReference = D403CD5D21943D8B6060C792 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
