@@ -7,10 +7,21 @@
 //
 
 import AppKit
+import EDStarRating
 
-class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource {
+class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource,EDStarRatingProtocol {
 
     var bugs:Array<ScaryBugDoc>!
+
+    
+    @IBOutlet weak var bugsTableView: NSTableView!
+    
+    @IBOutlet weak var bugTitleView: NSTextField!
+    
+    @IBOutlet weak var bugImageView: NSImageView!
+    
+    @IBOutlet weak var bugRating: EDStarRating!
+    
     
     override func viewDidLoad() {
         
@@ -18,6 +29,22 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         bugs = ScaryBugDoc.getSampleData()
         
         
+    }
+    
+    override func loadView() {
+        //
+        super.loadView()
+        
+        self.bugRating.starImage = NSImage.init(named: "star")
+        self.bugRating.starHighlightedImage = NSImage.init(named: "shockedface2_full")
+        self.bugRating.starImage = NSImage.init(named: "shockedface2_empty")
+        self.bugRating.maxRating = 5
+        self.bugRating.delegate = self as! EDStarRatingProtocol
+        self.bugRating.horizontalMargin = 12
+        self.bugRating.editable = true
+        self.bugRating.displayMode = UInt(EDStarRatingDisplayFull)
+
+        self.bugRating.rating = 0.0
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -40,4 +67,75 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         
         return cellView
     }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        //
+        let bugDoc = selectedBugDoc()
+        setDetailInfo(bugDoc)
+    }
+    
+    func selectedBugDoc() -> ScaryBugDoc? {
+        //
+        let selectedRow = bugsTableView.selectedRow
+        if(selectedRow >= 0 && bugs.count > selectedRow){
+        
+            return bugs[selectedRow]
+        }
+        return nil
+    }
+    
+    func setDetailInfo(bugDoc:ScaryBugDoc!) {
+        //
+        var title = ""
+        var image:NSImage!
+        var rating:Float!
+        if(bugDoc != nil){
+            //
+            title = bugDoc.data.title
+            image = bugDoc.fullImage
+            rating = bugDoc.data.rating
+        }
+        bugTitleView.stringValue = title
+        bugImageView.image = image
+        bugRating.rating = rating
+    }
+    
+    
+    @IBAction func addBug(sender: AnyObject) {
+        //
+        // 1. Create a new ScaryBugDoc object with a default name
+        let bugDoc = ScaryBugDoc.init(title: "", rating: 2, thumbImage: NSImage.init(named: "centipedeThumb")!, fullImage: NSImage.init(named: "centipede")!)
+        
+        // 2. Add the new bug object to our model (insert into the array)
+        bugs.append(bugDoc)
+        let newRowIndex = bugs.count - 1
+        // 3. Insert new row in the table view
+        bugsTableView.insertRowsAtIndexes(NSIndexSet.init(index: newRowIndex), withAnimation: .SlideRight)
+        
+        // 4. Select the new bug and scroll to make sure it's visible
+        bugsTableView.selectRowIndexes(NSIndexSet.init(index: newRowIndex), byExtendingSelection: false)
+        bugsTableView.scrollRowToVisible(newRowIndex)
+    }
+    
+    @IBAction func deleteBug(sender: AnyObject) {
+        
+        // 1. Get selected doc
+        let selectedBug = selectedBugDoc()
+        
+        // 2. Remove the bug from the model
+        if(selectedBug != nil){
+            
+//            let index = try! bugs.index
+            bugs.removeObject(selectedBug!)
+        }
+        
+        // 3. Remove the selected row from the table view.
+        
+        // Clear detail info
+        setDetailInfo(nil)
+        
+    }
+    
 }
+
+

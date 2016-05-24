@@ -1,3 +1,4 @@
+#存在多个project的workspace中引入cocoapods管理https://yq.aliyun.com/articles/8315
 workspace 'SISpeciesNotes.xcworkspace'
 xcodeproj 'SISpeciesNotes.xcodeproj'
 

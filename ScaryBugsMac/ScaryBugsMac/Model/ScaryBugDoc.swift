@@ -9,7 +9,7 @@
 import Foundation
 import AppKit
 
-class ScaryBugDoc {
+class ScaryBugDoc:Equatable {
     //
     var data:ScaryBugData
     var thumbImage:NSImage

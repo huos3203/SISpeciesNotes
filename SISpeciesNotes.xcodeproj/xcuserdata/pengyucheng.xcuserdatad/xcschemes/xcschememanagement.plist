@@ -7,7 +7,7 @@
 		<key>GenerateDoc.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SISFramework.xcscheme</key>
 		<dict>
@@ -17,7 +17,7 @@
 		<key>SISpeciesNotes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SISpeciesNotesTests.xcscheme</key>
 		<dict>
@@ -34,7 +34,7 @@
 		<key>generateByJazzy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

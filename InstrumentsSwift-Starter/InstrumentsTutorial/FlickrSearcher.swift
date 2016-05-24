@@ -84,7 +84,8 @@ extension FlickrPhoto {
   }
 }
 
-//自定义 == 方法
+//Equatable:
+//该协议要求任何遵循的类型实现等式符(==)和不等符(!=)对任何两个该类型进行比较。所有的Swift标准类型自动支持Equatable协议
 func == (lhs: FlickrPhoto, rhs: FlickrPhoto) -> Bool {
   return lhs.photoID == rhs.photoID
 }
