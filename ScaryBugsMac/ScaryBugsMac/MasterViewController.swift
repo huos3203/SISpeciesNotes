@@ -39,7 +39,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         self.bugRating.starHighlightedImage = NSImage.init(named: "shockedface2_full")
         self.bugRating.starImage = NSImage.init(named: "shockedface2_empty")
         self.bugRating.maxRating = 5
-        self.bugRating.delegate = self as! EDStarRatingProtocol
+        self.bugRating.delegate = self as EDStarRatingProtocol
         self.bugRating.horizontalMargin = 12
         self.bugRating.editable = true
         self.bugRating.displayMode = UInt(EDStarRatingDisplayFull)
@@ -87,8 +87,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     func setDetailInfo(bugDoc:ScaryBugDoc!) {
         //
         var title = ""
-        var image:NSImage!
-        var rating:Float!
+        var image:NSImage = NSImage.init()
+        var rating:Float = 0
         if(bugDoc != nil){
             //
             title = bugDoc.data.title
@@ -100,6 +100,20 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         bugRating.rating = rating
     }
     
+    @IBAction func bugTitleDidEndEdit(sender: AnyObject) {
+        
+        // 1. Get selected bug
+        if let selectedBug = selectedBugDoc(){
+            
+            // 2. Get the new name from the text field
+            selectedBug.data.title = bugTitleView.stringValue
+            
+            // 3. Update the cell
+            let indexSet = NSIndexSet.init(index: 2)
+            let columnIndexSet = NSIndexSet.init(index: 0)
+            bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnIndexSet)
+        }
+    }
     
     @IBAction func addBug(sender: AnyObject) {
         //
@@ -125,7 +139,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         // 2. Remove the bug from the model
         if(selectedBug != nil){
             
-//            let index = try! bugs.index
+            // let index = try! bugs.index
             bugs.removeObject(selectedBug!)
         }
         
