@@ -109,7 +109,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
             selectedBug.data.title = bugTitleView.stringValue
             
             // 3. Update the cell
-            let indexSet = NSIndexSet.init(index: 2)
+            let index = (bugs as NSArray).indexOfObject(selectedBug)
+            let indexSet = NSIndexSet.init(index: index)
             let columnIndexSet = NSIndexSet.init(index: 0)
             bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnIndexSet)
         }
