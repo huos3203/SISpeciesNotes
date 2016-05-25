@@ -526,6 +526,46 @@ Other Swift Flags:
 
 
 
+##### pod update: TypeError - Unable to convert Ruby value `"AFNetworking"' into a CFTypeRef. #5200
+[原文](https://github.com/CocoaPods/CocoaPods/issues/5200)
+解决方法：更新ruby到最新版：ruby-install ruby 2.3.1
+[更简单灵活地管理 Ruby 版本](https://segmentfault.com/a/1190000003957439)
+安装 ruby-install
+brew install ruby-install
+安装指定 Ruby 版本
+ruby-install ruby 2.2.3
+安装 chruby
+brew install chruby
+切换 Ruby 版本
+然后在 .bashrc 或者 .bash_profile 里加入脚本（具体路径最好照官方说明来）。
+第一个脚本加载 chruby,第二个脚本控制自动切换（按 .ruby-version 文件）:
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/auto.sh
+全选复制放进笔记chruby ruby-2.2.3
+
+切换ruby版本之后，检查该版本是否安装cocoapods工具：
+pod -version
+如果没有安装：
+gem install cocoapods
+
+最后：pod update 成功
+
+
+#####Error: Current platform “darwin 15” does not match expected platform "darwin 14
+搜索解决方案： http://stackoverflow.com/questions/31483432/how-do-i-remove-macports-on-an-unsupported-os-i-e-el-capitan-public-beta
+解决：MacPorts 迁移至 EI Capitan:从官网下载安装包： https://www.macports.org/install.php ,直接利用安装包安装即可。
+
+#####安装包管理工具
+[homebrew — Mac OS X 下新的软件包管理工具VS MacPorts,Fink](http://blog.jjgod.org/2009/12/21/homebrew-package-management/)
+[Homebrew](http://brew.sh/index_zh-cn.html)
+[MacPorts]()
+
+#####SSL_connect returned=1 errno=0 state=error: certificate verify failed (https://rubygems-china.oss-cn-hangzhou.aliyuncs.com/specs.4.8.gz)
+有一种解决方式：
+切换源，不用淘宝的了，用基于腾讯云的：http://gems.ruby-china.org/
+$ gem sources --remove https://rubygems.org/
+$ gem sources --remove https://ruby.taobao.org/  
+$ gem sources -a http://gems.ruby-china.org/ //这里注意是http,不是https
 
 
 

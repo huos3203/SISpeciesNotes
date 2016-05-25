@@ -130,6 +130,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         }
         
         // 3. Remove the selected row from the table view.
+        bugsTableView.removeRowsAtIndexes(NSIndexSet.init(index: bugsTableView.selectedRow), withAnimation: .SlideRight)
         
         // Clear detail info
         setDetailInfo(nil)

@@ -1,11 +1,11 @@
 #存在多个project的workspace中引入cocoapods管理https://yq.aliyun.com/articles/8315
 workspace 'SISpeciesNotes.xcworkspace'
-xcodeproj 'SISpeciesNotes.xcodeproj'
+project 'SISpeciesNotes.xcodeproj'
 
 target 'SISpeciesNotes' do
     platform :ios, '8.0'
     use_frameworks!
-    xcodeproj 'SISpeciesNotes.xcodeproj'
+    project 'SISpeciesNotes.xcodeproj'
     
     #pod 'RealmSwift', '~> 0.98.2'
     pod 'ObjectMapper', '= 1.1.5'
@@ -65,7 +65,7 @@ end
 target 'ScaryBugsMac' do
     platform :osx, '10.6'
     use_frameworks!
-    xcodeproj 'ScaryBugsMac/ScaryBugsMac.xcodeproj'
+    project 'ScaryBugsMac/ScaryBugsMac.xcodeproj'
     pod 'EDStarRating'
 end
 
