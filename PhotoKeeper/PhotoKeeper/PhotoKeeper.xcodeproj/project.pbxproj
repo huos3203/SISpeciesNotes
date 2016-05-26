@@ -15,6 +15,7 @@
 		14CC2D9E1CF6ED370058A9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2D9C1CF6ED370058A9D2 /* LaunchScreen.storyboard */; };
 		14CC2DA91CF6ED370058A9D2 /* PhotoKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DA81CF6ED370058A9D2 /* PhotoKeeperTests.swift */; };
 		14CC2DB41CF6ED370058A9D2 /* PhotoKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */; };
+		14CC2DC31CF702B50058A9D2 /* PTKData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DC21CF702B50058A9D2 /* PTKData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		14CC2DAF1CF6ED370058A9D2 /* PhotoKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeeperUITests.swift; sourceTree = "<group>"; };
 		14CC2DB51CF6ED370058A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14CC2DC21CF702B50058A9D2 /* PTKData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTKData.swift; path = Model/PTKData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		14CC2D901CF6ED370058A9D2 /* PhotoKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				14CC2DC11CF7027B0058A9D2 /* Model */,
 				14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */,
 				14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */,
 				14CC2D951CF6ED370058A9D2 /* DetailViewController.swift */,
@@ -126,6 +129,14 @@
 				14CC2DB51CF6ED370058A9D2 /* Info.plist */,
 			);
 			path = PhotoKeeperUITests;
+			sourceTree = "<group>";
+		};
+		14CC2DC11CF7027B0058A9D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2DC21CF702B50058A9D2 /* PTKData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14CC2D961CF6ED370058A9D2 /* DetailViewController.swift in Sources */,
+				14CC2DC31CF702B50058A9D2 /* PTKData.swift in Sources */,
 				14CC2D941CF6ED370058A9D2 /* MasterViewController.swift in Sources */,
 				14CC2D921CF6ED370058A9D2 /* AppDelegate.swift in Sources */,
 			);
