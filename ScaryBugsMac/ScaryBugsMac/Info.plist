@@ -4,6 +4,27 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>pbb</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>PBBReader</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.cn.pyc.PbbReader</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
@@ -20,6 +41,21 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>ladybug</string>
+			<key>CFBundleURLName</key>
+			<string>com.cn.pyc.PBBReader</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>PBBReader</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
@@ -30,5 +66,37 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>PBBReader</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://www.w3.org/Graphics/JPEG/</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.nspboard-type</key>
+				<array>
+					<string>public.data</string>
+				</array>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>JPEG</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>pbb</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>data</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

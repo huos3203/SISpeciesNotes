@@ -12,7 +12,7 @@
 		<key>SISFramework.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>6</integer>
 		</dict>
 		<key>SISpeciesNotes.xcscheme</key>
 		<dict>
@@ -24,12 +24,12 @@
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>4</integer>
 		</dict>
 		<key>aggregateFrameWork.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>5</integer>
 		</dict>
 		<key>generateByJazzy.xcscheme</key>
 		<dict>

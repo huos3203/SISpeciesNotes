@@ -68,4 +68,7 @@
    <FileRef
       location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:PhotoKeeper/PhotoKeeper/PhotoKeeper.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14CC2D921CF6ED370058A9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */; };
+		14CC2D941CF6ED370058A9D2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */; };
+		14CC2D961CF6ED370058A9D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D951CF6ED370058A9D2 /* DetailViewController.swift */; };
+		14CC2D991CF6ED370058A9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2D971CF6ED370058A9D2 /* Main.storyboard */; };
+		14CC2D9B1CF6ED370058A9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2D9A1CF6ED370058A9D2 /* Assets.xcassets */; };
+		14CC2D9E1CF6ED370058A9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2D9C1CF6ED370058A9D2 /* LaunchScreen.storyboard */; };
+		14CC2DA91CF6ED370058A9D2 /* PhotoKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DA81CF6ED370058A9D2 /* PhotoKeeperTests.swift */; };
+		14CC2DB41CF6ED370058A9D2 /* PhotoKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14CC2DA51CF6ED370058A9D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14CC2D861CF6ED350058A9D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14CC2D8D1CF6ED360058A9D2;
+			remoteInfo = PhotoKeeper;
+		};
+		14CC2DB01CF6ED370058A9D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14CC2D861CF6ED350058A9D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14CC2D8D1CF6ED360058A9D2;
+			remoteInfo = PhotoKeeper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14CC2D8E1CF6ED360058A9D2 /* PhotoKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		14CC2D951CF6ED370058A9D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		14CC2D981CF6ED370058A9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14CC2D9A1CF6ED370058A9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14CC2D9D1CF6ED370058A9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14CC2D9F1CF6ED370058A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14CC2DA41CF6ED370058A9D2 /* PhotoKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14CC2DA81CF6ED370058A9D2 /* PhotoKeeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeeperTests.swift; sourceTree = "<group>"; };
+		14CC2DAA1CF6ED370058A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14CC2DAF1CF6ED370058A9D2 /* PhotoKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeeperUITests.swift; sourceTree = "<group>"; };
+		14CC2DB51CF6ED370058A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14CC2D8B1CF6ED360058A9D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DA11CF6ED370058A9D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DAC1CF6ED370058A9D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14CC2D851CF6ED350058A9D2 = {
+			isa = PBXGroup;
+			children = (
+				14CC2D901CF6ED370058A9D2 /* PhotoKeeper */,
+				14CC2DA71CF6ED370058A9D2 /* PhotoKeeperTests */,
+				14CC2DB21CF6ED370058A9D2 /* PhotoKeeperUITests */,
+				14CC2D8F1CF6ED360058A9D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14CC2D8F1CF6ED360058A9D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2D8E1CF6ED360058A9D2 /* PhotoKeeper.app */,
+				14CC2DA41CF6ED370058A9D2 /* PhotoKeeperTests.xctest */,
+				14CC2DAF1CF6ED370058A9D2 /* PhotoKeeperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14CC2D901CF6ED370058A9D2 /* PhotoKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */,
+				14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */,
+				14CC2D951CF6ED370058A9D2 /* DetailViewController.swift */,
+				14CC2D971CF6ED370058A9D2 /* Main.storyboard */,
+				14CC2D9A1CF6ED370058A9D2 /* Assets.xcassets */,
+				14CC2D9C1CF6ED370058A9D2 /* LaunchScreen.storyboard */,
+				14CC2D9F1CF6ED370058A9D2 /* Info.plist */,
+			);
+			path = PhotoKeeper;
+			sourceTree = "<group>";
+		};
+		14CC2DA71CF6ED370058A9D2 /* PhotoKeeperTests */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2DA81CF6ED370058A9D2 /* PhotoKeeperTests.swift */,
+				14CC2DAA1CF6ED370058A9D2 /* Info.plist */,
+			);
+			path = PhotoKeeperTests;
+			sourceTree = "<group>";
+		};
+		14CC2DB21CF6ED370058A9D2 /* PhotoKeeperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */,
+				14CC2DB51CF6ED370058A9D2 /* Info.plist */,
+			);
+			path = PhotoKeeperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14CC2D8D1CF6ED360058A9D2 /* PhotoKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14CC2DB81CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeper" */;
+			buildPhases = (
+				14CC2D8A1CF6ED360058A9D2 /* Sources */,
+				14CC2D8B1CF6ED360058A9D2 /* Frameworks */,
+				14CC2D8C1CF6ED360058A9D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoKeeper;
+			productName = PhotoKeeper;
+			productReference = 14CC2D8E1CF6ED360058A9D2 /* PhotoKeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14CC2DA31CF6ED370058A9D2 /* PhotoKeeperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14CC2DBB1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperTests" */;
+			buildPhases = (
+				14CC2DA01CF6ED370058A9D2 /* Sources */,
+				14CC2DA11CF6ED370058A9D2 /* Frameworks */,
+				14CC2DA21CF6ED370058A9D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14CC2DA61CF6ED370058A9D2 /* PBXTargetDependency */,
+			);
+			name = PhotoKeeperTests;
+			productName = PhotoKeeperTests;
+			productReference = 14CC2DA41CF6ED370058A9D2 /* PhotoKeeperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14CC2DAE1CF6ED370058A9D2 /* PhotoKeeperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14CC2DBE1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperUITests" */;
+			buildPhases = (
+				14CC2DAB1CF6ED370058A9D2 /* Sources */,
+				14CC2DAC1CF6ED370058A9D2 /* Frameworks */,
+				14CC2DAD1CF6ED370058A9D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14CC2DB11CF6ED370058A9D2 /* PBXTargetDependency */,
+			);
+			name = PhotoKeeperUITests;
+			productName = PhotoKeeperUITests;
+			productReference = 14CC2DAF1CF6ED370058A9D2 /* PhotoKeeperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14CC2D861CF6ED350058A9D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = recomend;
+				TargetAttributes = {
+					14CC2D8D1CF6ED360058A9D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					14CC2DA31CF6ED370058A9D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 14CC2D8D1CF6ED360058A9D2;
+					};
+					14CC2DAE1CF6ED370058A9D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 14CC2D8D1CF6ED360058A9D2;
+					};
+				};
+			};
+			buildConfigurationList = 14CC2D891CF6ED350058A9D2 /* Build configuration list for PBXProject "PhotoKeeper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14CC2D851CF6ED350058A9D2;
+			productRefGroup = 14CC2D8F1CF6ED360058A9D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14CC2D8D1CF6ED360058A9D2 /* PhotoKeeper */,
+				14CC2DA31CF6ED370058A9D2 /* PhotoKeeperTests */,
+				14CC2DAE1CF6ED370058A9D2 /* PhotoKeeperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14CC2D8C1CF6ED360058A9D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14CC2D9E1CF6ED370058A9D2 /* LaunchScreen.storyboard in Resources */,
+				14CC2D9B1CF6ED370058A9D2 /* Assets.xcassets in Resources */,
+				14CC2D991CF6ED370058A9D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DA21CF6ED370058A9D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DAD1CF6ED370058A9D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14CC2D8A1CF6ED360058A9D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14CC2D961CF6ED370058A9D2 /* DetailViewController.swift in Sources */,
+				14CC2D941CF6ED370058A9D2 /* MasterViewController.swift in Sources */,
+				14CC2D921CF6ED370058A9D2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DA01CF6ED370058A9D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14CC2DA91CF6ED370058A9D2 /* PhotoKeeperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14CC2DAB1CF6ED370058A9D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14CC2DB41CF6ED370058A9D2 /* PhotoKeeperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14CC2DA61CF6ED370058A9D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14CC2D8D1CF6ED360058A9D2 /* PhotoKeeper */;
+			targetProxy = 14CC2DA51CF6ED370058A9D2 /* PBXContainerItemProxy */;
+		};
+		14CC2DB11CF6ED370058A9D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14CC2D8D1CF6ED360058A9D2 /* PhotoKeeper */;
+			targetProxy = 14CC2DB01CF6ED370058A9D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14CC2D971CF6ED370058A9D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14CC2D981CF6ED370058A9D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14CC2D9C1CF6ED370058A9D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14CC2D9D1CF6ED370058A9D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14CC2DB61CF6ED370058A9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14CC2DB71CF6ED370058A9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14CC2DB91CF6ED370058A9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoKeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14CC2DBA1CF6ED370058A9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoKeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		14CC2DBC1CF6ED370058A9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoKeeperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoKeeper.app/PhotoKeeper";
+			};
+			name = Debug;
+		};
+		14CC2DBD1CF6ED370058A9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoKeeperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoKeeper.app/PhotoKeeper";
+			};
+			name = Release;
+		};
+		14CC2DBF1CF6ED370058A9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoKeeperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhotoKeeper;
+			};
+			name = Debug;
+		};
+		14CC2DC01CF6ED370058A9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoKeeperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhotoKeeper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14CC2D891CF6ED350058A9D2 /* Build configuration list for PBXProject "PhotoKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14CC2DB61CF6ED370058A9D2 /* Debug */,
+				14CC2DB71CF6ED370058A9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14CC2DB81CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14CC2DB91CF6ED370058A9D2 /* Debug */,
+				14CC2DBA1CF6ED370058A9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14CC2DBB1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14CC2DBC1CF6ED370058A9D2 /* Debug */,
+				14CC2DBD1CF6ED370058A9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14CC2DBE1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14CC2DBF1CF6ED370058A9D2 /* Debug */,
+				14CC2DC01CF6ED370058A9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14CC2D861CF6ED350058A9D2 /* Project object */;
+}
