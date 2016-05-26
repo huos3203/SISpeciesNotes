@@ -680,7 +680,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="BUq-RH-H21">
-                                            <rect key="frame" x="0.0" y="0.0" width="172" height="217"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -745,7 +745,7 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="Qpf-0E-uhb">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="Qpf-0E-uhb">
                                     <rect key="frame" x="1" y="218" width="171" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -795,7 +795,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cnW-Xg-5Od">
                                 <rect key="frame" x="162" y="7" width="13" height="21"/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dfk-Bn-asD">
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dfk-Bn-asD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -811,9 +811,24 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kU9-77-gOd">
+                                <rect key="frame" x="213" y="-1" width="253" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="WyS-ZY-knn"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Change Picture" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qd8-k4-8zU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="ChangePicture:" target="XfG-lQ-9wD" id="Con-5B-dHl"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="kU9-77-gOd" firstAttribute="trailing" secondItem="ilG-HY-SBH" secondAttribute="trailing" id="19L-lK-wKC"/>
                             <constraint firstItem="H6Q-ly-Hr8" firstAttribute="top" secondItem="Pbh-BJ-IbV" secondAttribute="bottom" constant="6" id="2EX-nx-aff"/>
+                            <constraint firstItem="kU9-77-gOd" firstAttribute="top" secondItem="cnW-Xg-5Od" secondAttribute="top" id="EPD-8m-HCO"/>
                             <constraint firstItem="Qva-zC-a0g" firstAttribute="leading" secondItem="Pbh-BJ-IbV" secondAttribute="leading" id="EmT-vF-JGd"/>
                             <constraint firstItem="ilG-HY-SBH" firstAttribute="top" secondItem="H6Q-ly-Hr8" secondAttribute="bottom" constant="8" symbolic="YES" id="FIc-7w-UYb"/>
                             <constraint firstAttribute="trailing" secondItem="Qva-zC-a0g" secondAttribute="trailing" constant="20" symbolic="YES" id="Nm1-b6-Krv"/>
@@ -842,6 +857,9 @@
                         <outlet property="bugRating" destination="H6Q-ly-Hr8" id="dks-2t-kEj"/>
                         <outlet property="bugTitleView" destination="Qva-zC-a0g" id="0dg-ul-nDx"/>
                         <outlet property="bugsTableView" destination="BUq-RH-H21" id="jgV-dn-uD9"/>
+                        <outlet property="ibAddBug" destination="Mme-Sq-Po8" id="gFr-7O-1pD"/>
+                        <outlet property="ibChagePicture" destination="kU9-77-gOd" id="Tb9-A6-w9d"/>
+                        <outlet property="ibDeleteBug" destination="cnW-Xg-5Od" id="Lpx-xk-DYP"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

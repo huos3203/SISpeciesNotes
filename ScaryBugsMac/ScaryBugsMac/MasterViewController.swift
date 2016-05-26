@@ -8,6 +8,7 @@
 
 import AppKit
 import EDStarRating
+import Quartz
 
 class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource,EDStarRatingProtocol {
 
@@ -22,6 +23,12 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     
     @IBOutlet weak var bugRating: EDStarRating!
     
+    
+    @IBOutlet weak var ibAddBug: NSButton!
+    
+    @IBOutlet weak var ibDeleteBug: NSButton!
+    
+    @IBOutlet weak var ibChagePicture: NSButton!
     
     override func viewDidLoad() {
         
@@ -41,9 +48,9 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         self.bugRating.maxRating = 5
         self.bugRating.delegate = self as EDStarRatingProtocol
         self.bugRating.horizontalMargin = 12
-        self.bugRating.editable = true
         self.bugRating.displayMode = UInt(EDStarRatingDisplayFull)
-
+        self.bugRating.editable = false
+        
         self.bugRating.rating = 0.0
     }
     
@@ -70,8 +77,14 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     
     func tableViewSelectionDidChange(notification: NSNotification) {
         //
-        let bugDoc = selectedBugDoc()
-        setDetailInfo(bugDoc)
+        if let bugDoc = selectedBugDoc(){
+            setDetailInfo(bugDoc)
+            // Enable/Disable buttons based on selection
+            ibAddBug.enabled = true
+            ibDeleteBug.enabled = true
+            ibChagePicture.enabled = true
+            bugTitleView.enabled = true
+        }
     }
     
     func selectedBugDoc() -> ScaryBugDoc? {
@@ -149,6 +162,52 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         
         // Clear detail info
         setDetailInfo(nil)
+        
+    }
+    
+    
+    func starsSelectionChanged(control: EDStarRating!, rating: Float) {
+        //
+        if let selectedBug = selectedBugDoc(){
+            selectedBug.data.rating = self.bugRating.rating
+        }
+    }
+    
+    
+    @IBAction func ChangePicture(sender: AnyObject) {
+        //create a shared instance by calling the pictureTaker method of the IKPictureTaker class
+        let pictureTaker = IKPictureTaker.pictureTaker()
+        
+        //launch the picture taker as a standalone window using this method
+        pictureTaker.beginPictureTakerSheetForWindow(self.view.window,
+                                                     withDelegate: self,
+                                                     didEndSelector: #selector(MasterViewController.pictureTakerDidEnd(_:returnCode:contextInfo:)),
+                                                     contextInfo: nil)
+        
+        //
+    }
+    
+    
+    func pictureTakerDidEnd(sheet:IKPictureTaker,returnCode:Int,contextInfo:UnsafeMutablePointer<Void>) {
+        //
+        guard let image = sheet.outputImage()
+        else{
+            return
+        }
+        if returnCode == NSModalResponseOK {
+            //
+            bugImageView.image = image
+            //更新cell缩略图
+            if let selectedBug = selectedBugDoc(){
+                selectedBug.fullImage = image
+                selectedBug.thumbImage = image.imageByScalingAndCroppingForSize(CGSizeMake(44, 44))
+                let index = (bugs as NSArray).indexOfObject(selectedBug)
+                let indexSet = NSIndexSet.init(index: index)
+                let columset = NSIndexSet.init(index: 0)
+                bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columset)
+            }
+            
+        }
         
     }
     
