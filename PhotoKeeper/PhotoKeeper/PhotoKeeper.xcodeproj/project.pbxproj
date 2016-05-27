@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1434FBD21CF8485100517FE1 /* NSDate+FormattedStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1434FBD11CF8485100517FE1 /* NSDate+FormattedStrings.m */; };
 		14CC2D921CF6ED370058A9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */; };
 		14CC2D941CF6ED370058A9D2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */; };
 		14CC2D961CF6ED370058A9D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2D951CF6ED370058A9D2 /* DetailViewController.swift */; };
@@ -16,6 +17,11 @@
 		14CC2DA91CF6ED370058A9D2 /* PhotoKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DA81CF6ED370058A9D2 /* PhotoKeeperTests.swift */; };
 		14CC2DB41CF6ED370058A9D2 /* PhotoKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */; };
 		14CC2DC31CF702B50058A9D2 /* PTKData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DC21CF702B50058A9D2 /* PTKData.swift */; };
+		14CC2DC61CF7DFC30058A9D2 /* PTKDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DC51CF7DFC30058A9D2 /* PTKDocument.swift */; };
+		14CC2DC81CF7E0260058A9D2 /* PTKMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2DC71CF7E0260058A9D2 /* PTKMetadata.swift */; };
+		14EE61961CF8186D0051FD1A /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE61951CF8186D0051FD1A /* UIImageExtras.m */; };
+		14EE61991CF829500051FD1A /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 14EE61981CF829500051FD1A /* readme.md */; };
+		14EE619C1CF82B270051FD1A /* PTKEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE619B1CF82B270051FD1A /* PTKEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1434FBD01CF8485100517FE1 /* NSDate+FormattedStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FormattedStrings.h"; sourceTree = "<group>"; };
+		1434FBD11CF8485100517FE1 /* NSDate+FormattedStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FormattedStrings.m"; sourceTree = "<group>"; };
 		14CC2D8E1CF6ED360058A9D2 /* PhotoKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +59,13 @@
 		14CC2DB31CF6ED370058A9D2 /* PhotoKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeeperUITests.swift; sourceTree = "<group>"; };
 		14CC2DB51CF6ED370058A9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14CC2DC21CF702B50058A9D2 /* PTKData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTKData.swift; path = Model/PTKData.swift; sourceTree = "<group>"; };
+		14CC2DC51CF7DFC30058A9D2 /* PTKDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTKDocument.swift; path = FileSytem/PTKDocument.swift; sourceTree = "<group>"; };
+		14CC2DC71CF7E0260058A9D2 /* PTKMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTKMetadata.swift; path = Model/PTKMetadata.swift; sourceTree = "<group>"; };
+		14EE61941CF8186D0051FD1A /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
+		14EE61951CF8186D0051FD1A /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
+		14EE61971CF81A9C0051FD1A /* PhotoKeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoKeeper-Bridging-Header.h"; sourceTree = "<group>"; };
+		14EE61981CF829500051FD1A /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		14EE619B1CF82B270051FD1A /* PTKEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTKEntry.swift; path = API/PTKEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +116,9 @@
 		14CC2D901CF6ED370058A9D2 /* PhotoKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				14EE619A1CF82ADA0051FD1A /* API */,
+				14EE61841CF8167E0051FD1A /* Helper */,
+				14CC2DC41CF7DF720058A9D2 /* FileSytem */,
 				14CC2DC11CF7027B0058A9D2 /* Model */,
 				14CC2D911CF6ED370058A9D2 /* AppDelegate.swift */,
 				14CC2D931CF6ED370058A9D2 /* MasterViewController.swift */,
@@ -109,6 +127,8 @@
 				14CC2D9A1CF6ED370058A9D2 /* Assets.xcassets */,
 				14CC2D9C1CF6ED370058A9D2 /* LaunchScreen.storyboard */,
 				14CC2D9F1CF6ED370058A9D2 /* Info.plist */,
+				14EE61971CF81A9C0051FD1A /* PhotoKeeper-Bridging-Header.h */,
+				14EE61981CF829500051FD1A /* readme.md */,
 			);
 			path = PhotoKeeper;
 			sourceTree = "<group>";
@@ -135,8 +155,44 @@
 			isa = PBXGroup;
 			children = (
 				14CC2DC21CF702B50058A9D2 /* PTKData.swift */,
+				14CC2DC71CF7E0260058A9D2 /* PTKMetadata.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		14CC2DC41CF7DF720058A9D2 /* FileSytem */ = {
+			isa = PBXGroup;
+			children = (
+				14CC2DC51CF7DFC30058A9D2 /* PTKDocument.swift */,
+			);
+			name = FileSytem;
+			sourceTree = "<group>";
+		};
+		14EE61841CF8167E0051FD1A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				14EE61851CF8167E0051FD1A /* extension */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		14EE61851CF8167E0051FD1A /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				1434FBD01CF8485100517FE1 /* NSDate+FormattedStrings.h */,
+				1434FBD11CF8485100517FE1 /* NSDate+FormattedStrings.m */,
+				14EE61941CF8186D0051FD1A /* UIImageExtras.h */,
+				14EE61951CF8186D0051FD1A /* UIImageExtras.m */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		14EE619A1CF82ADA0051FD1A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				14EE619B1CF82B270051FD1A /* PTKEntry.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CC2DC61CF7DFC30058A9D2 /* PTKDocument.swift in Sources */,
 				14CC2D961CF6ED370058A9D2 /* DetailViewController.swift in Sources */,
+				14EE61961CF8186D0051FD1A /* UIImageExtras.m in Sources */,
+				14EE619C1CF82B270051FD1A /* PTKEntry.swift in Sources */,
+				14CC2DC81CF7E0260058A9D2 /* PTKMetadata.swift in Sources */,
 				14CC2DC31CF702B50058A9D2 /* PTKData.swift in Sources */,
+				1434FBD21CF8485100517FE1 /* NSDate+FormattedStrings.m in Sources */,
 				14CC2D941CF6ED370058A9D2 /* MasterViewController.swift in Sources */,
+				14EE61991CF829500051FD1A /* readme.md in Sources */,
 				14CC2D921CF6ED370058A9D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,10 +479,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PhotoKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhotoKeeper/PhotoKeeper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,10 +493,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PhotoKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PhotoKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhotoKeeper/PhotoKeeper-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -500,6 +567,7 @@
 				14CC2DBA1CF6ED370058A9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14CC2DBB1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +576,7 @@
 				14CC2DBD1CF6ED370058A9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14CC2DBE1CF6ED370058A9D2 /* Build configuration list for PBXNativeTarget "PhotoKeeperUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +585,7 @@
 				14CC2DC01CF6ED370058A9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

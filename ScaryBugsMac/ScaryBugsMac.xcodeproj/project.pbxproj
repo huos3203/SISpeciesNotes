@@ -17,8 +17,8 @@
 		1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
 		1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
 		1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
-		147A61811CF6A09300390F83 /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 147A61801CF6A09300390F83 /* NSImage+Extras.m */; };
-		148EEC871CF455DA00ABF251 /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148EEC861CF455DA00ABF251 /* Array+RemoveObject.swift */; };
+		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
+		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,9 +57,9 @@
 		1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugDoc.swift; path = Model/ScaryBugDoc.swift; sourceTree = "<group>"; };
 		1437DD9F1CF2AF7C001BD2D2 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
-		147A617F1CF6A09300390F83 /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
-		147A61801CF6A09300390F83 /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
-		148EEC861CF455DA00ABF251 /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+RemoveObject.swift"; path = "extension/Array+RemoveObject.swift"; sourceTree = "<group>"; };
+		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
+		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
+		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 		38F806A46B5F4D642393CF22 /* Pods-ScaryBugsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.release.xcconfig"; sourceTree = "<group>"; };
 		73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		1437DD6A1CF2A75F001BD2D2 /* ScaryBugsMac */ = {
 			isa = PBXGroup;
 			children = (
-				148EEC851CF4559200ABF251 /* extension */,
+				14EE61891CF816E50051FD1A /* Helper */,
 				1437DD9A1CF2AC6E001BD2D2 /* Model */,
 				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
 				1437DD6D1CF2A75F001BD2D2 /* ViewController.swift */,
@@ -157,14 +157,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		148EEC851CF4559200ABF251 /* extension */ = {
+		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				147A617F1CF6A09300390F83 /* NSImage+Extras.h */,
-				147A61801CF6A09300390F83 /* NSImage+Extras.m */,
-				148EEC861CF455DA00ABF251 /* Array+RemoveObject.swift */,
+				14EE618A1CF816E50051FD1A /* extension */,
 			);
-			name = extension;
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		14EE618A1CF816E50051FD1A /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */,
+				14EE618C1CF816E50051FD1A /* NSImage+Extras.h */,
+				14EE618D1CF816E50051FD1A /* NSImage+Extras.m */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		41FC969B23ABC5E9052852E0 /* Frameworks */ = {
@@ -366,12 +374,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1437DD6E1CF2A75F001BD2D2 /* ViewController.swift in Sources */,
-				147A61811CF6A09300390F83 /* NSImage+Extras.m in Sources */,
+				14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */,
 				1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */,
 				1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */,
 				1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */,
 				1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */,
-				148EEC871CF455DA00ABF251 /* Array+RemoveObject.swift in Sources */,
+				14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,31 +9,32 @@
 import Foundation
 import UIKit
 
+/// this is a very simple model class that only has one piece of data to track – the full size photo. It implements the NSCoding protocol to encode/decode to a buffer of data.
 class PTKData:NSObject, NSCoding {
 
-    var thumbnail:UIImage?
+    var photo:UIImage
     
-    init(thumbnail:UIImage) {
+    init(photo:UIImage) {
         //
+        self.photo = photo
         super.init()
-        self.thumbnail = thumbnail
     }
     required init?(coder aDecoder: NSCoder) {
         //
-        super.init()
+        
         aDecoder.decodeIntForKey(kVersionKey)
-        let thumbnailData = aDecoder.decodeObjectForKey(kThumbnailKey)
-        thumbnail = UIImage.init(data: thumbnailData as! NSData)
+        let photoData = aDecoder.decodeObjectForKey(kPhotoKey)
+        photo = UIImage.init(data: photoData as! NSData)!
+        super.init()
     }
     
     let kVersionKey = "Version"
-    let kThumbnailKey = "Thumbnail"
+    let kPhotoKey = "Photo"
     func encodeWithCoder(aCoder: NSCoder) {
         //
-        
         aCoder.encodeInt(1, forKey: kVersionKey)
-        let thumbnailData = UIImagePNGRepresentation(thumbnail!)
-        aCoder.encodeObject(thumbnailData,forKey: kThumbnailKey)
+        let photoData = UIImagePNGRepresentation(photo)
+        aCoder.encodeObject(photoData,forKey: kPhotoKey)
         
     }
     
