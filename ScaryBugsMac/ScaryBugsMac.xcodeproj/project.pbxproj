@@ -20,6 +20,7 @@
 		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
+		840AA6911CFCA2EA00819203 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 		38F806A46B5F4D642393CF22 /* Pods-ScaryBugsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.release.xcconfig"; sourceTree = "<group>"; };
 		73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
+				840AA6901CFCA2EA00819203 /* 114.png */,
 				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
 				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840AA6911CFCA2EA00819203 /* 114.png in Resources */,
 				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
 				1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */,
 			);

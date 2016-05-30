@@ -11,10 +11,12 @@
 			<array>
 				<string>pbb</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>114.png</string>
 			<key>CFBundleTypeName</key>
 			<string>PBBReader</string>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -47,7 +49,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
-			<string>ladybug</string>
+			<string>ladybug.jpg</string>
 			<key>CFBundleURLName</key>
 			<string>com.cn.pyc.PBBReader</string>
 			<key>CFBundleURLSchemes</key>
@@ -75,25 +77,15 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>PBBReader</string>
-			<key>UTTypeReferenceURL</key>
-			<string>http://www.w3.org/Graphics/JPEG/</string>
+			<key>UTTypeIconFile</key>
+			<string>114.png</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.cn.pyc.PbbReader</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.nspboard-type</key>
-				<array>
-					<string>public.data</string>
-				</array>
-				<key>com.apple.ostype</key>
-				<array>
-					<string>JPEG</string>
-				</array>
 				<key>public.filename-extension</key>
 				<array>
 					<string>pbb</string>
-				</array>
-				<key>public.mime-type</key>
-				<array>
-					<string>data</string>
 				</array>
 			</dict>
 		</dict>

@@ -9,7 +9,7 @@ PODS:
   - JSPatch (1.0):
     - JSPatch/Core (= 1.0)
   - JSPatch/Core (1.0)
-  - Masonry (1.0.0)
+  - Masonry (1.0.1)
   - Nimble (4.0.1)
   - ObjectMapper (1.1.5)
   - OHHTTPStubs (5.0.0):
@@ -80,7 +80,7 @@ SPEC CHECKSUMS:
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
   JSPatch: c689ea4dde17441f2f4a95d40dfedb8900c20099
-  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
