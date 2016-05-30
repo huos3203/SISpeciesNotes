@@ -30,6 +30,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     
     @IBOutlet weak var ibChagePicture: NSButton!
     
+    //MARK: 生命周期
     override func viewDidLoad() {
         
         //获取数据
@@ -54,6 +55,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         self.bugRating.rating = 0.0
     }
     
+    //MARK: - tableView
+    //MARK:DataSource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return bugs.count
     }
@@ -75,6 +78,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         return cellView
     }
     
+    //MARK: Delegate
     func tableViewSelectionDidChange(notification: NSNotification) {
         //
         if let bugDoc = selectedBugDoc(){
@@ -87,6 +91,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         }
     }
     
+    //MARK: - Helper
+    //MARK:  Row
     func selectedBugDoc() -> ScaryBugDoc? {
         //
         let selectedRow = bugsTableView.selectedRow
@@ -96,7 +102,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         }
         return nil
     }
-    
+    //MARK: update Detail Info
     func setDetailInfo(bugDoc:ScaryBugDoc!) {
         //
         var title = ""
@@ -113,6 +119,16 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         bugRating.rating = rating
     }
     
+    //MARK: - EDStrarRating delegate
+    func starsSelectionChanged(control: EDStarRating!, rating: Float) {
+        //
+        if let selectedBug = selectedBugDoc(){
+            selectedBug.data.rating = self.bugRating.rating
+        }
+    }
+    
+    //MARK: - IBAction
+    //MARK: TextField action
     @IBAction func bugTitleDidEndEdit(sender: AnyObject) {
         
         // 1. Get selected bug
@@ -128,7 +144,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
             bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnIndexSet)
         }
     }
-    
+    //MARK: add Button
     @IBAction func addBug(sender: AnyObject) {
         //
         // 1. Create a new ScaryBugDoc object with a default name
@@ -144,7 +160,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         bugsTableView.selectRowIndexes(NSIndexSet.init(index: newRowIndex), byExtendingSelection: false)
         bugsTableView.scrollRowToVisible(newRowIndex)
     }
-    
+    //MARK: delete Button
     @IBAction func deleteBug(sender: AnyObject) {
         
         // 1. Get selected doc
@@ -165,15 +181,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         
     }
     
-    
-    func starsSelectionChanged(control: EDStarRating!, rating: Float) {
-        //
-        if let selectedBug = selectedBugDoc(){
-            selectedBug.data.rating = self.bugRating.rating
-        }
-    }
-    
-    
+    //MARK: Change Picture Button
     @IBAction func ChangePicture(sender: AnyObject) {
         //create a shared instance by calling the pictureTaker method of the IKPictureTaker class
         let pictureTaker = IKPictureTaker.pictureTaker()
@@ -187,7 +195,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         //
     }
     
-    
+    //MARK: - Picture Taker Action
     func pictureTakerDidEnd(sheet:IKPictureTaker,returnCode:Int,contextInfo:UnsafeMutablePointer<Void>) {
         //
         guard let image = sheet.outputImage()
