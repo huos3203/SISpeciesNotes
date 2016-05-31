@@ -61,6 +61,7 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //
     func insertNewObject(sender: AnyObject) {
         
         // Determine a unique filename to create
@@ -73,7 +74,6 @@ class MasterViewController: UITableViewController {
             if(!success){
                 return
             }
-            
             NSLog("File created at \(fileURL)")
             let metadata = doc.metadata
             let fileURL = doc.fileURL
@@ -104,7 +104,7 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
+    //MARK: dataSource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -113,6 +113,7 @@ class MasterViewController: UITableViewController {
         return objects.count
     }
 
+    //MARK: Delegate
     // Replace tableView:cellForRowAtIndexPath with the following
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
@@ -141,13 +142,25 @@ class MasterViewController: UITableViewController {
 
 }
 
-//MARK Helpers
+//MARK: Helpers
 extension MasterViewController{
     
+    /**
+     The same document also recommends that users have an option to disable iCloud for your app
+     
+     - returns: <#return value description#>
+     */
     func iCloudOn()->Bool {
         return false
     }
     
+    /**
+     通过文档名获取文档全路径
+     
+     - parameter fileName: 文档名
+     
+     - returns: 文档全路径
+     */
     func getDocURL(fileName:String) -> NSURL? {
         //
         if iCloudOn() {
@@ -158,6 +171,13 @@ extension MasterViewController{
         }
     }
     
+    /**
+     通过文档名判断是否已经存在
+     
+     - parameter docName: 文档名
+     
+     - returns: 是否已存在
+     */
     func docNameExistsInObjects(docName:String) -> Bool {
         //
         var nameExists = false
@@ -172,7 +192,14 @@ extension MasterViewController{
         return nameExists
     }
     
-    
+    /**
+     获取文档名
+     
+     - parameter prefix:          <#prefix description#>
+     - parameter uniqueInObjects: <#uniqueInObjects description#>
+     
+     - returns: <#return value description#>
+     */
     func getDocFilename(prefix:String,uniqueInObjects:Bool)->String? {
         //
         var docCount = 0
@@ -187,8 +214,7 @@ extension MasterViewController{
                 first = false
                 newDocName = "\(prefix).\(PTK_EXTENSION)"
             }
-            // Look for an existing document with the same name. If one is
-            // found, increment the docCount value and try again.
+            // Look for an existing document with the same name. If one is found, increment the docCount value and try again.
             var nameExists = false
             if uniqueInObjects {
                 nameExists = docNameExistsInObjects(newDocName)

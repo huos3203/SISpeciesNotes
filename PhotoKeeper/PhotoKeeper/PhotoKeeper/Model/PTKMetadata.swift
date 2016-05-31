@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 
-/// the purpose of this class is so we can store a much smaller thumbnail version of the photo that will load quickly in the master view controller,
-///This is pretty much exactly the same as PTKData, so no need to discuss further here. We even could have used the same class, but it’s better to keep things separate in case we need more data fields in the future
+let kThumbnailKey = "Thumbnail"
+
+// This will be anything the master view controller needs to display a preview. the purpose of this class is so we can store a much smaller thumbnail version of the photo that will load quickly in the master view controller.
+
+// This is pretty much exactly the same as PTKData,We even could have used the same class, but it’s better to keep things separate in case we need more data fields in the future
+
 class PTKMetadata: NSObject,NSCoding {
 
     var thumbnail:UIImage
@@ -29,10 +33,6 @@ class PTKMetadata: NSObject,NSCoding {
         super.init()
     }
     
-    /// This makes it easy to update the data structure if you want to in the future while still supporting older files
-    /// If you ever add a new field, you bump up the version number, then while decoding you can check the version number to see if the new field is available.
-    let kVersionKey = "Version"
-    let kThumbnailKey = "Thumbnail"
     func encodeWithCoder(aCoder: NSCoder) {
         //
         aCoder.encodeInt(1, forKey: kVersionKey)
