@@ -27,3 +27,7 @@ An imported UTI declaration is used to declare a type that the bundle does not o
 第二步：配置Document Type ：
 1. CFBundleTypeIconFiles：两个图像将作为支持的邮件和其他应用程序能够显示文件类型的图标。
 2. LSItemContentTypes：键可让您提供一个可以使您的应用程序打开的统一类型标识符（UTI）数组.此处就是关联第一步的UTTypeIdentifier的。
+
+
+#####Opening Supported File Types
+
