@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 
+  
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
     }
@@ -21,6 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    
+    func application(sender: NSApplication, openFiles filenames: [String]) {
+        //
+        
+    }
 
 }
 

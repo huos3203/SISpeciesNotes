@@ -17,6 +17,49 @@
 		1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
 		1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
 		1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
+		14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
+		14B25FA21CFD7823001BCE84 /* SM3.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7C1CFD7823001BCE84 /* SM3.c */; };
+		14B25FA31CFD7823001BCE84 /* SMS4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7E1CFD7823001BCE84 /* SMS4.cpp */; };
+		14B25FA41CFD7823001BCE84 /* PycFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F821CFD7823001BCE84 /* PycFile.m */; };
+		14B25FA51CFD7823001BCE84 /* PycFileOperateCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F841CFD7823001BCE84 /* PycFileOperateCommon.m */; };
+		14B25FA61CFD7823001BCE84 /* PycFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F861CFD7823001BCE84 /* PycFolder.m */; };
+		14B25FA71CFD7823001BCE84 /* PycPrivateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F881CFD7823001BCE84 /* PycPrivateFile.m */; };
+		14B25FA81CFD7823001BCE84 /* RefreshDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F8B1CFD7823001BCE84 /* RefreshDataModel.m */; };
+		14B25FA91CFD7823001BCE84 /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
+		14B25FAA1CFD7823001BCE84 /* NewPycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F951CFD7823001BCE84 /* NewPycUserRemote.m */; };
+		14B25FAB1CFD7823001BCE84 /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
+		14B25FAC1CFD7823001BCE84 /* Des.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F991CFD7823001BCE84 /* Des.cpp */; };
+		14B25FAD1CFD7823001BCE84 /* HttpDes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9B1CFD7823001BCE84 /* HttpDes.cpp */; };
+		14B25FAE1CFD7823001BCE84 /* PycCodeUrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9E1CFD7823001BCE84 /* PycCodeUrl.mm */; };
+		14B25FAF1CFD7823001BCE84 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9F1CFD7823001BCE84 /* utility.cpp */; };
+		14B25FB51CFD815A001BCE84 /* ToolString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB41CFD815A001BCE84 /* ToolString.m */; };
+		14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB91CFD8335001BCE84 /* NSDate+String.m */; };
+		14B25FBD1CFD8335001BCE84 /* NSDate+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBB1CFD8335001BCE84 /* NSDate+TimeInterval.m */; };
+		14B25FC01CFD834C001BCE84 /* NSString+More.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBF1CFD834C001BCE84 /* NSString+More.m */; };
+		14B25FC41CFD8397001BCE84 /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC31CFD8396001BCE84 /* DateTool.m */; };
+		14B25FF11CFD844E001BCE84 /* ArticleDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC81CFD844E001BCE84 /* ArticleDao.m */; };
+		14B25FF21CFD844E001BCE84 /* ReceiveFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCA1CFD844E001BCE84 /* ReceiveFileDao.m */; };
+		14B25FF31CFD844E001BCE84 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
+		14B25FF41CFD844E001BCE84 /* SendFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCE1CFD844E001BCE84 /* SendFileDao.m */; };
+		14B25FF51CFD844E001BCE84 /* SeriesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD01CFD844E001BCE84 /* SeriesDao.m */; };
+		14B25FF61CFD844E001BCE84 /* userDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD21CFD844E001BCE84 /* userDao.m */; };
+		14B25FF71CFD844E001BCE84 /* VerificationCodeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD41CFD844E001BCE84 /* VerificationCodeDao.m */; };
+		14B25FF81CFD844E001BCE84 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD71CFD844E001BCE84 /* BaseDao.m */; };
+		14B25FF91CFD844E001BCE84 /* DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD91CFD844E001BCE84 /* DB.m */; };
+		14B25FFA1CFD844E001BCE84 /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */; };
+		14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */; };
+		14B25FFC1CFD844E001BCE84 /* SendFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDF1CFD844E001BCE84 /* SendFileManager.m */; };
+		14B25FFD1CFD844E001BCE84 /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE21CFD844E001BCE84 /* ArticleModel.m */; };
+		14B25FFE1CFD844E001BCE84 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
+		14B25FFF1CFD844E001BCE84 /* MyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE61CFD844E001BCE84 /* MyProduct.m */; };
+		14B260001CFD844E001BCE84 /* OutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE81CFD844E001BCE84 /* OutFile.m */; };
+		14B260011CFD844E001BCE84 /* SecretModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEA1CFD844E001BCE84 /* SecretModel.m */; };
+		14B260021CFD844E001BCE84 /* SeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEC1CFD844E001BCE84 /* SeriesModel.m */; };
+		14B260031CFD844E001BCE84 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEE1CFD844E001BCE84 /* UserModel.m */; };
+		14B260041CFD844E001BCE84 /* VerificationCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */; };
+		14B260071CFD86A8001BCE84 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
+		14B2600A1CFD8AA3001BCE84 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260091CFD8AA3001BCE84 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2600C1CFD8AED001BCE84 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
@@ -58,6 +101,99 @@
 		1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugDoc.swift; path = Model/ScaryBugDoc.swift; sourceTree = "<group>"; };
 		1437DD9F1CF2AF7C001BD2D2 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		14B25F7A1CFD7823001BCE84 /* PycCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycCode.h; sourceTree = "<group>"; };
+		14B25F7B1CFD7823001BCE84 /* PycCode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PycCode.mm; sourceTree = "<group>"; };
+		14B25F7C1CFD7823001BCE84 /* SM3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SM3.c; sourceTree = "<group>"; };
+		14B25F7D1CFD7823001BCE84 /* SM3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SM3.h; sourceTree = "<group>"; };
+		14B25F7E1CFD7823001BCE84 /* SMS4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SMS4.cpp; sourceTree = "<group>"; };
+		14B25F7F1CFD7823001BCE84 /* SMS4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMS4.h; sourceTree = "<group>"; };
+		14B25F811CFD7823001BCE84 /* PycFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycFile.h; sourceTree = "<group>"; };
+		14B25F821CFD7823001BCE84 /* PycFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFile.m; sourceTree = "<group>"; };
+		14B25F831CFD7823001BCE84 /* PycFileOperateCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycFileOperateCommon.h; sourceTree = "<group>"; };
+		14B25F841CFD7823001BCE84 /* PycFileOperateCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFileOperateCommon.m; sourceTree = "<group>"; };
+		14B25F851CFD7823001BCE84 /* PycFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycFolder.h; sourceTree = "<group>"; };
+		14B25F861CFD7823001BCE84 /* PycFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFolder.m; sourceTree = "<group>"; };
+		14B25F871CFD7823001BCE84 /* PycPrivateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycPrivateFile.h; sourceTree = "<group>"; };
+		14B25F881CFD7823001BCE84 /* PycPrivateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycPrivateFile.m; sourceTree = "<group>"; };
+		14B25F891CFD7823001BCE84 /* PycPrivateFileDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycPrivateFileDefine.h; sourceTree = "<group>"; };
+		14B25F8A1CFD7823001BCE84 /* RefreshDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshDataModel.h; sourceTree = "<group>"; };
+		14B25F8B1CFD7823001BCE84 /* RefreshDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshDataModel.m; sourceTree = "<group>"; };
+		14B25F8D1CFD7823001BCE84 /* FileOutPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOutPublic.h; sourceTree = "<group>"; };
+		14B25F8E1CFD7823001BCE84 /* NewUserPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserPublic.h; sourceTree = "<group>"; };
+		14B25F8F1CFD7823001BCE84 /* PycUserRemoteDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycUserRemoteDefine.h; sourceTree = "<group>"; };
+		14B25F901CFD7823001BCE84 /* UserPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPublic.h; sourceTree = "<group>"; };
+		14B25F911CFD7823001BCE84 /* PycSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycSocket.h; sourceTree = "<group>"; };
+		14B25F921CFD7823001BCE84 /* PycSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycSocket.m; sourceTree = "<group>"; };
+		14B25F941CFD7823001BCE84 /* NewPycUserRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPycUserRemote.h; sourceTree = "<group>"; };
+		14B25F951CFD7823001BCE84 /* NewPycUserRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPycUserRemote.m; sourceTree = "<group>"; };
+		14B25F961CFD7823001BCE84 /* PycUserRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycUserRemote.h; sourceTree = "<group>"; };
+		14B25F971CFD7823001BCE84 /* PycUserRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycUserRemote.m; sourceTree = "<group>"; };
+		14B25F991CFD7823001BCE84 /* Des.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Des.cpp; sourceTree = "<group>"; };
+		14B25F9A1CFD7823001BCE84 /* Des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Des.h; sourceTree = "<group>"; };
+		14B25F9B1CFD7823001BCE84 /* HttpDes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HttpDes.cpp; sourceTree = "<group>"; };
+		14B25F9C1CFD7823001BCE84 /* HttpDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpDes.h; sourceTree = "<group>"; };
+		14B25F9D1CFD7823001BCE84 /* PycCodeUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycCodeUrl.h; sourceTree = "<group>"; };
+		14B25F9E1CFD7823001BCE84 /* PycCodeUrl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PycCodeUrl.mm; sourceTree = "<group>"; };
+		14B25F9F1CFD7823001BCE84 /* utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
+		14B25FA01CFD7823001BCE84 /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		14B25FB31CFD815A001BCE84 /* ToolString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolString.h; sourceTree = "<group>"; };
+		14B25FB41CFD815A001BCE84 /* ToolString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolString.m; sourceTree = "<group>"; };
+		14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PBB-Prefix.pch"; sourceTree = "<group>"; };
+		14B25FB81CFD8335001BCE84 /* NSDate+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+String.h"; sourceTree = "<group>"; };
+		14B25FB91CFD8335001BCE84 /* NSDate+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+String.m"; sourceTree = "<group>"; };
+		14B25FBA1CFD8335001BCE84 /* NSDate+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeInterval.h"; sourceTree = "<group>"; };
+		14B25FBB1CFD8335001BCE84 /* NSDate+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeInterval.m"; sourceTree = "<group>"; };
+		14B25FBE1CFD834C001BCE84 /* NSString+More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+More.h"; sourceTree = "<group>"; };
+		14B25FBF1CFD834C001BCE84 /* NSString+More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+More.m"; sourceTree = "<group>"; };
+		14B25FC11CFD8368001BCE84 /* DateTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateTool.h; sourceTree = "<group>"; };
+		14B25FC21CFD837F001BCE84 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		14B25FC31CFD8396001BCE84 /* DateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTool.m; sourceTree = "<group>"; };
+		14B25FC71CFD844E001BCE84 /* ArticleDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDao.h; sourceTree = "<group>"; };
+		14B25FC81CFD844E001BCE84 /* ArticleDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDao.m; sourceTree = "<group>"; };
+		14B25FC91CFD844E001BCE84 /* ReceiveFileDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveFileDao.h; sourceTree = "<group>"; };
+		14B25FCA1CFD844E001BCE84 /* ReceiveFileDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveFileDao.m; sourceTree = "<group>"; };
+		14B25FCB1CFD844E001BCE84 /* SecretDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretDao.h; sourceTree = "<group>"; };
+		14B25FCC1CFD844E001BCE84 /* SecretDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretDao.m; sourceTree = "<group>"; };
+		14B25FCD1CFD844E001BCE84 /* SendFileDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendFileDao.h; sourceTree = "<group>"; };
+		14B25FCE1CFD844E001BCE84 /* SendFileDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendFileDao.m; sourceTree = "<group>"; };
+		14B25FCF1CFD844E001BCE84 /* SeriesDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesDao.h; sourceTree = "<group>"; };
+		14B25FD01CFD844E001BCE84 /* SeriesDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesDao.m; sourceTree = "<group>"; };
+		14B25FD11CFD844E001BCE84 /* userDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDao.h; sourceTree = "<group>"; };
+		14B25FD21CFD844E001BCE84 /* userDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDao.m; sourceTree = "<group>"; };
+		14B25FD31CFD844E001BCE84 /* VerificationCodeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationCodeDao.h; sourceTree = "<group>"; };
+		14B25FD41CFD844E001BCE84 /* VerificationCodeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeDao.m; sourceTree = "<group>"; };
+		14B25FD61CFD844E001BCE84 /* BaseDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDao.h; sourceTree = "<group>"; };
+		14B25FD71CFD844E001BCE84 /* BaseDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDao.m; sourceTree = "<group>"; };
+		14B25FD81CFD844E001BCE84 /* DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DB.h; sourceTree = "<group>"; };
+		14B25FD91CFD844E001BCE84 /* DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DB.m; sourceTree = "<group>"; };
+		14B25FDA1CFD844E001BCE84 /* LKDaoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDaoBase.h; sourceTree = "<group>"; };
+		14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDaoBase.m; sourceTree = "<group>"; };
+		14B25FDC1CFD844E001BCE84 /* ReceiveFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveFileManager.h; sourceTree = "<group>"; };
+		14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveFileManager.m; sourceTree = "<group>"; };
+		14B25FDE1CFD844E001BCE84 /* SendFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendFileManager.h; sourceTree = "<group>"; };
+		14B25FDF1CFD844E001BCE84 /* SendFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendFileManager.m; sourceTree = "<group>"; };
+		14B25FE11CFD844E001BCE84 /* ArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		14B25FE21CFD844E001BCE84 /* ArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
+		14B25FE31CFD844E001BCE84 /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
+		14B25FE41CFD844E001BCE84 /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
+		14B25FE51CFD844E001BCE84 /* MyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProduct.h; sourceTree = "<group>"; };
+		14B25FE61CFD844E001BCE84 /* MyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProduct.m; sourceTree = "<group>"; };
+		14B25FE71CFD844E001BCE84 /* OutFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutFile.h; sourceTree = "<group>"; };
+		14B25FE81CFD844E001BCE84 /* OutFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutFile.m; sourceTree = "<group>"; };
+		14B25FE91CFD844E001BCE84 /* SecretModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretModel.h; sourceTree = "<group>"; };
+		14B25FEA1CFD844E001BCE84 /* SecretModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretModel.m; sourceTree = "<group>"; };
+		14B25FEB1CFD844E001BCE84 /* SeriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesModel.h; sourceTree = "<group>"; };
+		14B25FEC1CFD844E001BCE84 /* SeriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesModel.m; sourceTree = "<group>"; };
+		14B25FED1CFD844E001BCE84 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		14B25FEE1CFD844E001BCE84 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		14B25FEF1CFD844E001BCE84 /* VerificationCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationCodeModel.h; sourceTree = "<group>"; };
+		14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeModel.m; sourceTree = "<group>"; };
+		14B260051CFD86A8001BCE84 /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
+		14B260061CFD86A8001BCE84 /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
+		14B260081CFD8AA3001BCE84 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		14B260091CFD8AA3001BCE84 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
@@ -129,6 +265,7 @@
 				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
 				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
+				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 			);
 			path = ScaryBugsMac;
 			sourceTree = "<group>";
@@ -160,9 +297,197 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		14B25F771CFD7823001BCE84 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F781CFD7823001BCE84 /* RemoteSocket */,
+				14B25FC51CFD844E001BCE84 /* sqlite */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		14B25F781CFD7823001BCE84 /* RemoteSocket */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F911CFD7823001BCE84 /* PycSocket.h */,
+				14B25F921CFD7823001BCE84 /* PycSocket.m */,
+				14B25F791CFD7823001BCE84 /* code */,
+				14B25F801CFD7823001BCE84 /* other */,
+				14B25F8C1CFD7823001BCE84 /* publiclib */,
+				14B25F931CFD7823001BCE84 /* userfuninterface */,
+				14B25F981CFD7823001BCE84 /* weburl_code */,
+			);
+			path = RemoteSocket;
+			sourceTree = "<group>";
+		};
+		14B25F791CFD7823001BCE84 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F7A1CFD7823001BCE84 /* PycCode.h */,
+				14B25F7B1CFD7823001BCE84 /* PycCode.mm */,
+				14B25F7C1CFD7823001BCE84 /* SM3.c */,
+				14B25F7D1CFD7823001BCE84 /* SM3.h */,
+				14B25F7E1CFD7823001BCE84 /* SMS4.cpp */,
+				14B25F7F1CFD7823001BCE84 /* SMS4.h */,
+			);
+			path = code;
+			sourceTree = "<group>";
+		};
+		14B25F801CFD7823001BCE84 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F811CFD7823001BCE84 /* PycFile.h */,
+				14B25F821CFD7823001BCE84 /* PycFile.m */,
+				14B25F831CFD7823001BCE84 /* PycFileOperateCommon.h */,
+				14B25F841CFD7823001BCE84 /* PycFileOperateCommon.m */,
+				14B25F851CFD7823001BCE84 /* PycFolder.h */,
+				14B25F861CFD7823001BCE84 /* PycFolder.m */,
+				14B25F871CFD7823001BCE84 /* PycPrivateFile.h */,
+				14B25F881CFD7823001BCE84 /* PycPrivateFile.m */,
+				14B25F891CFD7823001BCE84 /* PycPrivateFileDefine.h */,
+				14B25F8A1CFD7823001BCE84 /* RefreshDataModel.h */,
+				14B25F8B1CFD7823001BCE84 /* RefreshDataModel.m */,
+				14B25FB31CFD815A001BCE84 /* ToolString.h */,
+				14B25FB41CFD815A001BCE84 /* ToolString.m */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		14B25F8C1CFD7823001BCE84 /* publiclib */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F8D1CFD7823001BCE84 /* FileOutPublic.h */,
+				14B25F8E1CFD7823001BCE84 /* NewUserPublic.h */,
+				14B25F8F1CFD7823001BCE84 /* PycUserRemoteDefine.h */,
+				14B25F901CFD7823001BCE84 /* UserPublic.h */,
+			);
+			path = publiclib;
+			sourceTree = "<group>";
+		};
+		14B25F931CFD7823001BCE84 /* userfuninterface */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F941CFD7823001BCE84 /* NewPycUserRemote.h */,
+				14B25F951CFD7823001BCE84 /* NewPycUserRemote.m */,
+				14B25F961CFD7823001BCE84 /* PycUserRemote.h */,
+				14B25F971CFD7823001BCE84 /* PycUserRemote.m */,
+			);
+			path = userfuninterface;
+			sourceTree = "<group>";
+		};
+		14B25F981CFD7823001BCE84 /* weburl_code */ = {
+			isa = PBXGroup;
+			children = (
+				14B25F991CFD7823001BCE84 /* Des.cpp */,
+				14B25F9A1CFD7823001BCE84 /* Des.h */,
+				14B25F9B1CFD7823001BCE84 /* HttpDes.cpp */,
+				14B25F9C1CFD7823001BCE84 /* HttpDes.h */,
+				14B25F9D1CFD7823001BCE84 /* PycCodeUrl.h */,
+				14B25F9E1CFD7823001BCE84 /* PycCodeUrl.mm */,
+				14B25F9F1CFD7823001BCE84 /* utility.cpp */,
+				14B25FA01CFD7823001BCE84 /* utility.h */,
+			);
+			path = weburl_code;
+			sourceTree = "<group>";
+		};
+		14B25FB71CFD8322001BCE84 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				14B2600B1CFD8AED001BCE84 /* Reachability.h */,
+				14B2600C1CFD8AED001BCE84 /* Reachability.m */,
+				14B25FB81CFD8335001BCE84 /* NSDate+String.h */,
+				14B25FB91CFD8335001BCE84 /* NSDate+String.m */,
+				14B25FBA1CFD8335001BCE84 /* NSDate+TimeInterval.h */,
+				14B25FBB1CFD8335001BCE84 /* NSDate+TimeInterval.m */,
+				14B25FBE1CFD834C001BCE84 /* NSString+More.h */,
+				14B25FBF1CFD834C001BCE84 /* NSString+More.m */,
+				14B25FC11CFD8368001BCE84 /* DateTool.h */,
+				14B25FC31CFD8396001BCE84 /* DateTool.m */,
+				14B25FC21CFD837F001BCE84 /* Singleton.h */,
+				14B260051CFD86A8001BCE84 /* SandboxFile.h */,
+				14B260061CFD86A8001BCE84 /* SandboxFile.m */,
+				14B260081CFD8AA3001BCE84 /* OpenUDID.h */,
+				14B260091CFD8AA3001BCE84 /* OpenUDID.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		14B25FC51CFD844E001BCE84 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				14B25FC61CFD844E001BCE84 /* dao */,
+				14B25FD51CFD844E001BCE84 /* db */,
+				14B25FE01CFD844E001BCE84 /* model */,
+			);
+			path = sqlite;
+			sourceTree = "<group>";
+		};
+		14B25FC61CFD844E001BCE84 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				14B25FC71CFD844E001BCE84 /* ArticleDao.h */,
+				14B25FC81CFD844E001BCE84 /* ArticleDao.m */,
+				14B25FC91CFD844E001BCE84 /* ReceiveFileDao.h */,
+				14B25FCA1CFD844E001BCE84 /* ReceiveFileDao.m */,
+				14B25FCB1CFD844E001BCE84 /* SecretDao.h */,
+				14B25FCC1CFD844E001BCE84 /* SecretDao.m */,
+				14B25FCD1CFD844E001BCE84 /* SendFileDao.h */,
+				14B25FCE1CFD844E001BCE84 /* SendFileDao.m */,
+				14B25FCF1CFD844E001BCE84 /* SeriesDao.h */,
+				14B25FD01CFD844E001BCE84 /* SeriesDao.m */,
+				14B25FD11CFD844E001BCE84 /* userDao.h */,
+				14B25FD21CFD844E001BCE84 /* userDao.m */,
+				14B25FD31CFD844E001BCE84 /* VerificationCodeDao.h */,
+				14B25FD41CFD844E001BCE84 /* VerificationCodeDao.m */,
+			);
+			path = dao;
+			sourceTree = "<group>";
+		};
+		14B25FD51CFD844E001BCE84 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				14B25FD61CFD844E001BCE84 /* BaseDao.h */,
+				14B25FD71CFD844E001BCE84 /* BaseDao.m */,
+				14B25FD81CFD844E001BCE84 /* DB.h */,
+				14B25FD91CFD844E001BCE84 /* DB.m */,
+				14B25FDA1CFD844E001BCE84 /* LKDaoBase.h */,
+				14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */,
+				14B25FDC1CFD844E001BCE84 /* ReceiveFileManager.h */,
+				14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */,
+				14B25FDE1CFD844E001BCE84 /* SendFileManager.h */,
+				14B25FDF1CFD844E001BCE84 /* SendFileManager.m */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		14B25FE01CFD844E001BCE84 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				14B25FE11CFD844E001BCE84 /* ArticleModel.h */,
+				14B25FE21CFD844E001BCE84 /* ArticleModel.m */,
+				14B25FE31CFD844E001BCE84 /* DataFactory.h */,
+				14B25FE41CFD844E001BCE84 /* DataFactory.m */,
+				14B25FE51CFD844E001BCE84 /* MyProduct.h */,
+				14B25FE61CFD844E001BCE84 /* MyProduct.m */,
+				14B25FE71CFD844E001BCE84 /* OutFile.h */,
+				14B25FE81CFD844E001BCE84 /* OutFile.m */,
+				14B25FE91CFD844E001BCE84 /* SecretModel.h */,
+				14B25FEA1CFD844E001BCE84 /* SecretModel.m */,
+				14B25FEB1CFD844E001BCE84 /* SeriesModel.h */,
+				14B25FEC1CFD844E001BCE84 /* SeriesModel.m */,
+				14B25FED1CFD844E001BCE84 /* UserModel.h */,
+				14B25FEE1CFD844E001BCE84 /* UserModel.m */,
+				14B25FEF1CFD844E001BCE84 /* VerificationCodeModel.h */,
+				14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				14B25FB71CFD8322001BCE84 /* util */,
+				14B25F771CFD7823001BCE84 /* API */,
 				14EE618A1CF816E50051FD1A /* extension */,
 			);
 			path = Helper;
@@ -377,14 +702,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B25FF31CFD844E001BCE84 /* SecretDao.m in Sources */,
 				1437DD6E1CF2A75F001BD2D2 /* ViewController.swift in Sources */,
 				14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */,
+				14B25FF61CFD844E001BCE84 /* userDao.m in Sources */,
+				14B25FF81CFD844E001BCE84 /* BaseDao.m in Sources */,
+				14B25FC41CFD8397001BCE84 /* DateTool.m in Sources */,
+				14B25FA61CFD7823001BCE84 /* PycFolder.m in Sources */,
+				14B25FF51CFD844E001BCE84 /* SeriesDao.m in Sources */,
 				1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */,
+				14B25FFC1CFD844E001BCE84 /* SendFileManager.m in Sources */,
+				14B260041CFD844E001BCE84 /* VerificationCodeModel.m in Sources */,
+				14B25FF91CFD844E001BCE84 /* DB.m in Sources */,
+				14B25FF11CFD844E001BCE84 /* ArticleDao.m in Sources */,
+				14B25FF21CFD844E001BCE84 /* ReceiveFileDao.m in Sources */,
 				1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */,
+				14B260001CFD844E001BCE84 /* OutFile.m in Sources */,
+				14B25FAF1CFD7823001BCE84 /* utility.cpp in Sources */,
+				14B25FF41CFD844E001BCE84 /* SendFileDao.m in Sources */,
+				14B260011CFD844E001BCE84 /* SecretModel.m in Sources */,
+				14B25FA31CFD7823001BCE84 /* SMS4.cpp in Sources */,
+				14B25FF71CFD844E001BCE84 /* VerificationCodeDao.m in Sources */,
+				14B2600A1CFD8AA3001BCE84 /* OpenUDID.m in Sources */,
+				14B25FAD1CFD7823001BCE84 /* HttpDes.cpp in Sources */,
+				14B25FC01CFD834C001BCE84 /* NSString+More.m in Sources */,
+				14B25FAA1CFD7823001BCE84 /* NewPycUserRemote.m in Sources */,
+				14B25FFF1CFD844E001BCE84 /* MyProduct.m in Sources */,
+				14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */,
 				1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */,
+				14B25FA81CFD7823001BCE84 /* RefreshDataModel.m in Sources */,
+				14B260071CFD86A8001BCE84 /* SandboxFile.m in Sources */,
+				14B25FA91CFD7823001BCE84 /* PycSocket.m in Sources */,
+				14B25FAB1CFD7823001BCE84 /* PycUserRemote.m in Sources */,
 				1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */,
+				14B25FFE1CFD844E001BCE84 /* DataFactory.m in Sources */,
+				14B25FA71CFD7823001BCE84 /* PycPrivateFile.m in Sources */,
+				14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */,
+				14B25FAE1CFD7823001BCE84 /* PycCodeUrl.mm in Sources */,
+				14B25FA41CFD7823001BCE84 /* PycFile.m in Sources */,
+				14B25FA51CFD7823001BCE84 /* PycFileOperateCommon.m in Sources */,
+				14B25FAC1CFD7823001BCE84 /* Des.cpp in Sources */,
+				14B25FB51CFD815A001BCE84 /* ToolString.m in Sources */,
+				14B260031CFD844E001BCE84 /* UserModel.m in Sources */,
+				14B260021CFD844E001BCE84 /* SeriesModel.m in Sources */,
+				14B25FA21CFD7823001BCE84 /* SM3.c in Sources */,
+				14B25FFA1CFD844E001BCE84 /* LKDaoBase.m in Sources */,
 				14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */,
+				14B25FBD1CFD8335001BCE84 /* NSDate+TimeInterval.m in Sources */,
+				14B25FFD1CFD844E001BCE84 /* ArticleModel.m in Sources */,
+				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
+				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "ScaryBugsMac/PBB-Prefix.pch";
 				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMac;
@@ -536,6 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "ScaryBugsMac/PBB-Prefix.pch";
 				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMac;

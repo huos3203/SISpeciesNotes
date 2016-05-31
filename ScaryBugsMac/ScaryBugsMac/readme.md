@@ -20,6 +20,7 @@ An imported UTI declaration is used to declare a type that the bundle does not o
 
 #####实现双击启动APP功能 
 [UTI iPhone支持依文件后缀名打开应用](http://blog.csdn.net/zaitianaoxiang/article/details/6658492)
+[OSX下自定义文件类型和QuickLook](http://ixhan.com/2012/02/define-custom-file-format-on-osx/)
 第一步：先配置UTI，使系统上的其他应用程序能知道它的存在。
 1. UTTypeIdentifier:com.cn.pyc.pbbReader
 2. UTTypeConformsTo: public.data // 设置之后，打开方式列表中只显示本应用。
@@ -29,5 +30,5 @@ An imported UTI declaration is used to declare a type that the bundle does not o
 2. LSItemContentTypes：键可让您提供一个可以使您的应用程序打开的统一类型标识符（UTI）数组.此处就是关联第一步的UTTypeIdentifier的。
 
 
-#####Opening Supported File Types
+##### Opening Supported File Types
 

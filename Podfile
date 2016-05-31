@@ -67,6 +67,9 @@ target 'ScaryBugsMac' do
     use_frameworks!
     project 'ScaryBugsMac/ScaryBugsMac.xcodeproj'
     pod 'EDStarRating'
+    #pod 'SwiftWebSocket'
+    pod 'CocoaAsyncSocket'
+    pod 'FMDB'
 end
 
 

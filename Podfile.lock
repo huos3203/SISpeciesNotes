@@ -4,7 +4,11 @@ PODS:
     - Alamofire (~> 3.3)
   - AlamofireNetworkActivityIndicator (1.0.1):
     - Alamofire (~> 3.3)
+  - CocoaAsyncSocket (7.2.2)
   - EDStarRating (1.1)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - GRMustache.swift (1.0.1)
   - JSPatch (1.0):
     - JSPatch/Core (= 1.0)
@@ -40,13 +44,14 @@ PODS:
   - SDWebImage/Core (3.7.6)
   - SnapKit (0.20.0)
   - SwiftFilePath (0.0.6)
-  - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - AlamofireImage (~> 2.0)
   - AlamofireNetworkActivityIndicator (~> 1.0)
+  - CocoaAsyncSocket
   - EDStarRating
+  - FMDB
   - GRMustache.swift (~> 1.0)
   - JSPatch
   - Masonry
@@ -62,22 +67,14 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7)
   - SnapKit (~> 0.20.0)
   - SwiftFilePath
-  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
-
-EXTERNAL SOURCES:
-  WeiboSDK:
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
-
-CHECKOUT OPTIONS:
-  WeiboSDK:
-    :commit: 024997bef30c81a787425739a32d3575a9264a5d
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
+  CocoaAsyncSocket: 7ddbc667d52f23bf1d79988b53c61976b8ddbd24
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
   JSPatch: c689ea4dde17441f2f4a95d40dfedb8900c20099
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
@@ -92,8 +89,7 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
-  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 03baac2bc5c2b9f0f2c9364cd91ba8ef41234b8b
+PODFILE CHECKSUM: c4cbf74b5265e3bd43afb1216a1464d6c5a76f96
 
 COCOAPODS: 1.0.0
