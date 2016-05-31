@@ -11,7 +11,8 @@
 #import "PycFile.h"
 #import "FileOutPublic.h"
 #import "PycCode.h"
-#import "AsyncSocket.h"
+//#import "AsyncSocket.h"
+#import <CocoaAsyncSocket/AsyncSocket.h>
 #import "PycSocket.h"
 #import "PycFolder.h"
 #import "RefreshDataModel.h"

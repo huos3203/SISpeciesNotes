@@ -70,6 +70,10 @@ target 'ScaryBugsMac' do
     #pod 'SwiftWebSocket'
     pod 'CocoaAsyncSocket'
     pod 'FMDB'
+    
+    target 'ScaryBugsMacTests' do
+        pod 'EDStarRating'
+    end
 end
 
 

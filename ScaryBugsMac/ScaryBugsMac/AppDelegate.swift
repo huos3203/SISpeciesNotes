@@ -9,11 +9,9 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate ,PycFileDelegate{
 
-
-
-  
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
     }
@@ -25,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func application(sender: NSApplication, openFiles filenames: [String]) {
         //
-        
+//        let pycFile = PycFile.init()
     }
 
 }

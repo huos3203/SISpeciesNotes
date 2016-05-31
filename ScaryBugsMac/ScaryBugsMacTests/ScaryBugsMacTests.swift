@@ -21,16 +21,49 @@ class ScaryBugsMacTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    //数据库
+    func testReceiveFileDao(){
+        
+        let outfile = OutFile.initWithSendFileId(1,
+                                                 fileName: "test",
+                                                 logName: "macUser",
+                                                 fileUrl: "/user/name/dd.pbb",
+                                                 fileType: "mp3",
+                                                 startTime: NSDate(),
+                                                 endTime: NSDate(),
+                                                 limitTime: 1,
+                                                 forbid: 1,
+                                                 limitNum: 1,
+                                                 readNum: 1,
+                                                 note: "测试",
+                                                 sendTime: NSDate(),
+                                                 fileQQ: "122342",
+                                                 fileEmail: "dddd@qq.com",
+                                                 filePhone: "2343434",
+                                                 fileOpenDay: 1,
+                                                 fileOpenYear: 1,
+                                                 fileMakeType: 1,
+                                                 fileBindMachineNum: 1,
+                                                 fileActivationNum: 1,
+                                                 orderNum: "4",
+                                                 isEye: true)
+        
+        ReceiveFileDao.sharedReceiveFileDao().saveReceiveFile(outfile as! OutFile)
+        
+        //数据库路径
+        
+        //查询内容
+        let out = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileByFileId(1, logName: "macUser")
+        print(out.description)
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    //socket网络访问
+    func testPycFile() {
+        //
+        let pyc = PycFile.init()
+        var isOnline:ObjCBool = false  //http://swifter.tips/unsafe/
+        let result = pyc.seePycFile("test", forUser: "macUser", pbbFile: "test", phoneNo: "", messageID: "", isOffLine: &isOnline, fileOpenedNum: 3)
+        
     }
-    
 }

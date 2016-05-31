@@ -1,9 +1,11 @@
+#####seter，geter方法使用选择器
 [@selector() in Swift?](http://stackoverflow.com/questions/24007650/selector-in-swift )
  There are a couple of extra caveats for the function references you pass to the #selector expression:
  
  Multiple functions with the same base name can be differentiated by their parameter labels using the aforementioned syntax for function references (e.g. insertSubview(_:, atIndex:) vs insertSubview(_:aboveSubview:)). But if a function has no parameters, the only way to disambiguate it is to use an as cast with the function's type signature (e.g. foo as () -> () vs foo(_:)).
  Swift doesn't know about the ObjC accessors for property getter/setter pairs. So, for example, given a var foo: Int, there isn't a func setFoo(_:) that you can construct a #selector from, even though there is a Selector(setFoo:).
 
+#####Swift和C语法的调用
 [数组 ENUMERATE](http://swifter.tips/enumerate/)
  这里我们需要用到 *stop 这个停止标记的指针，并且直接设置它对应的值为 YES 来打断并跳出循环。而在 Swift 中，这个 API 的 *stop 被转换为了对应的 UnsafeMutablePointer<ObjCBool>。如果不明白 Swift 的指针的表示形式的话，一开始可能会被吓一跳，但是一旦当我们明白 Unsafe 开头的这些指针类型的用法之后，就会知道我们需要对应做的事情就是将这个指向 ObjCBool 的指针指向的内存的内容设置为 true 而已：
  
@@ -17,6 +19,18 @@
  }
  print(result)
  // 输出：6
+ 
+[UNSAFEPOINTER](http://swifter.tips/unsafe/)
+在 C 中，对某个指针进行取值使用的是 *，而在 Swift 中我们可以使用 memory 属性来读取相应内存中存储的内容。通过传入指针地址进行方法调用的时候就都比较相似了，都是在前面加上 & 符号，C 的版本和 Swift 的版本只在声明变量的时候有所区别：
+
+// C
+int a = 123;
+method(&a);   // 输出 123
+
+// Swift
+var a: CInt = 123
+method(&a)    // 输出 123
+
 
 #####APP涉及到的知识点：
  iCloud Document-Based App Overview

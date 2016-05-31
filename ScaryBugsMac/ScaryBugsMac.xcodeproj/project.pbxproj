@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */; };
 		1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
 		1437DD6E1CF2A75F001BD2D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6D1CF2A75F001BD2D2 /* ViewController.swift */; };
 		1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		840AA6911CFCA2EA00819203 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
+		84A0F1F01CFDD0E800A353F0 /* MyProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,8 +200,13 @@
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 		38F806A46B5F4D642393CF22 /* Pods-ScaryBugsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.release.xcconfig"; sourceTree = "<group>"; };
+		3966EFD670D9A683DBAB23B4 /* Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig"; sourceTree = "<group>"; };
+		3B3CF38BED12036D8DD08002 /* Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
+		84A0F1EE1CFDD0E800A353F0 /* MyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyProtocol.h; path = ScaryBugsMac/Model/MyProtocol.h; sourceTree = SOURCE_ROOT; };
+		84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyProtocol.m; path = ScaryBugsMac/Model/MyProtocol.m; sourceTree = SOURCE_ROOT; };
+		A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +494,8 @@
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				84A0F1EE1CFDD0E800A353F0 /* MyProtocol.h */,
+				84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */,
 				14B25FB71CFD8322001BCE84 /* util */,
 				14B25F771CFD7823001BCE84 /* API */,
 				14EE618A1CF816E50051FD1A /* extension */,
@@ -507,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */,
+				A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -516,6 +527,8 @@
 			children = (
 				E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */,
 				38F806A46B5F4D642393CF22 /* Pods-ScaryBugsMac.release.xcconfig */,
+				3B3CF38BED12036D8DD08002 /* Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig */,
+				3966EFD670D9A683DBAB23B4 /* Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -547,9 +560,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
+				5AB1BF30CD81B87F73EBA38F /* 📦 Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
 				1437DD761CF2A75F001BD2D2 /* Frameworks */,
 				1437DD771CF2A75F001BD2D2 /* Resources */,
+				6FDB33C4F6E59869C95E4DF4 /* 📦 Embed Pods Frameworks */,
+				F62444A3597D61EC6E8C25C2 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -665,6 +681,36 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5AB1BF30CD81B87F73EBA38F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FDB33C4F6E59869C95E4DF4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DBC6F66F1CEBBA2B3AB2A7BD /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -693,6 +739,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F62444A3597D61EC6E8C25C2 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -741,6 +802,7 @@
 				14B25FAE1CFD7823001BCE84 /* PycCodeUrl.mm in Sources */,
 				14B25FA41CFD7823001BCE84 /* PycFile.m in Sources */,
 				14B25FA51CFD7823001BCE84 /* PycFileOperateCommon.m in Sources */,
+				84A0F1F01CFDD0E800A353F0 /* MyProtocol.m in Sources */,
 				14B25FAC1CFD7823001BCE84 /* Des.cpp in Sources */,
 				14B25FB51CFD815A001BCE84 /* ToolString.m in Sources */,
 				14B260031CFD844E001BCE84 /* UserModel.m in Sources */,
@@ -916,6 +978,7 @@
 		};
 		1437DD911CF2A75F001BD2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3CF38BED12036D8DD08002 /* Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -929,6 +992,7 @@
 		};
 		1437DD921CF2A75F001BD2D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3966EFD670D9A683DBAB23B4 /* Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
