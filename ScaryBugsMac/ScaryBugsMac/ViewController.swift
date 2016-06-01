@@ -5,17 +5,18 @@
 //  Created by pengyucheng on 16/5/23.
 //  Copyright © 2016年 recomend. All rights reserved.
 //
-
-import Cocoa
-
-class ViewController: NSViewController,dddProtocol,PycFileDelegate{
+//@objc
+class ViewController: NSViewController,dddProtocol{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let ddd = MyProtocol.init()
         ddd.delegate = self
         
-//        var pycFile:PycFile! = PycFile()
+//        let pyc = PycFile.init()
+
+//        PycFile.sharedPycFile().delegate = self
+        MyProtocol.sharedMyProtocol().delegate = self
     }
 
     override var representedObject: AnyObject? {
@@ -29,6 +30,16 @@ class ViewController: NSViewController,dddProtocol,PycFileDelegate{
 
 }
 
+extension ViewController{
+    
+    func initPycFile() {
+        //
+//        PycFile.sharedPycFile().delegate = self
+    }
+    
+    
+    
+}
 
 class name:NSObject,dddProtocol,PycFileDelegate{
     //
@@ -40,6 +51,6 @@ class name:NSObject,dddProtocol,PycFileDelegate{
         //
         
         ddd2.delegate = self
-        pycFile.delegate = self
+//        pycFile.delegate = self
     }
 }

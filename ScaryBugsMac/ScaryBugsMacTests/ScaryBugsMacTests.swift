@@ -9,7 +9,7 @@
 import XCTest
 @testable import ScaryBugsMac
 
-class ScaryBugsMacTests: XCTestCase {
+class ScaryBugsMacTests: XCTestCase,PycFileDelegate {
     
     override func setUp() {
         super.setUp()
@@ -61,9 +61,8 @@ class ScaryBugsMacTests: XCTestCase {
     //socket网络访问
     func testPycFile() {
         //
-        let pyc = PycFile.init()
         var isOnline:ObjCBool = false  //http://swifter.tips/unsafe/
-        let result = pyc.seePycFile("test", forUser: "macUser", pbbFile: "test", phoneNo: "", messageID: "", isOffLine: &isOnline, fileOpenedNum: 3)
+        PycFile.sharedPycFile().seePycFile("test", forUser: "macUser", pbbFile: "test", phoneNo: "", messageID: "", isOffLine: &isOnline, fileOpenedNum: 3)
         
     }
 }
