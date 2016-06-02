@@ -23,6 +23,10 @@
 		143A68611CFEB64300BC66A1 /* PycFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A68601CFEB64300BC66A1 /* PycFile.m */; };
 		143A68671CFEC71600BC66A1 /* PycSocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */; };
 		143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
+		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
+		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
+		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
+		148AB4821CFFD78600CAF9BA /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
 		14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
 		14B25FA21CFD7823001BCE84 /* SM3.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7C1CFD7823001BCE84 /* SM3.c */; };
 		14B25FA31CFD7823001BCE84 /* SMS4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7E1CFD7823001BCE84 /* SMS4.cpp */; };
@@ -115,6 +119,13 @@
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
 		143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycReceiveModel.swift; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
+		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
+		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
+		148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingImgCache.m; sourceTree = "<group>"; };
+		148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
+		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
+		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
 		14B25F7A1CFD7823001BCE84 /* PycCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycCode.h; sourceTree = "<group>"; };
 		14B25F7B1CFD7823001BCE84 /* PycCode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PycCode.mm; sourceTree = "<group>"; };
 		14B25F7C1CFD7823001BCE84 /* SM3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SM3.c; sourceTree = "<group>"; };
@@ -283,6 +294,8 @@
 				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
+				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
+				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 			);
 			path = ScaryBugsMac;
 			sourceTree = "<group>";
@@ -313,6 +326,18 @@
 				143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		148AB47A1CFFD78600CAF9BA /* Advertising */ = {
+			isa = PBXGroup;
+			children = (
+				148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */,
+				148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */,
+				148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */,
+				148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */,
+				148AB47F1CFFD78600CAF9BA /* advitising.jpg */,
+			);
+			path = Advertising;
 			sourceTree = "<group>";
 		};
 		14B25F771CFD7823001BCE84 /* API */ = {
@@ -505,6 +530,7 @@
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				148AB47A1CFFD78600CAF9BA /* Advertising */,
 				14B25FB71CFD8322001BCE84 /* util */,
 				14B25F771CFD7823001BCE84 /* API */,
 				14EE618A1CF816E50051FD1A /* extension */,
@@ -662,6 +688,7 @@
 				840AA6911CFCA2EA00819203 /* 114.png in Resources */,
 				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
 				1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */,
+				148AB4821CFFD78600CAF9BA /* advitising.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +846,7 @@
 				1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */,
 				14B25FFE1CFD844E001BCE84 /* DataFactory.m in Sources */,
 				14B25FA71CFD7823001BCE84 /* PycPrivateFile.m in Sources */,
+				148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */,
 				14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */,
 				14B25FAE1CFD7823001BCE84 /* PycCodeUrl.mm in Sources */,
 				14B25FA51CFD7823001BCE84 /* PycFileOperateCommon.m in Sources */,
@@ -827,12 +855,14 @@
 				14B25FB51CFD815A001BCE84 /* ToolString.m in Sources */,
 				14B260031CFD844E001BCE84 /* UserModel.m in Sources */,
 				14B260021CFD844E001BCE84 /* SeriesModel.m in Sources */,
+				148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */,
 				14B25FA21CFD7823001BCE84 /* SM3.c in Sources */,
 				14B25FFA1CFD844E001BCE84 /* LKDaoBase.m in Sources */,
 				14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */,
 				14B25FBD1CFD8335001BCE84 /* NSDate+TimeInterval.m in Sources */,
 				14B25FFD1CFD844E001BCE84 /* ArticleModel.m in Sources */,
 				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
+				148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
 				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 			);

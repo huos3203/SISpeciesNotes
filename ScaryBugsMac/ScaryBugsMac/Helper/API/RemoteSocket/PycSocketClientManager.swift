@@ -44,7 +44,7 @@ class PycSocketClientManager{
             return "2"
         }
         
-        var hashValue:[Byte]
+        var hashValue:[UInt8]?
         
         
         
