@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 #import "OutFile.h"
+
 @interface ReceiveFileManager : NSObject
 
 singleton_interface(ReceiveFileManager)

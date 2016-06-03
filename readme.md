@@ -569,6 +569,42 @@ $ gem sources -a http://gems.ruby-china.org/ //这里注意是http,不是https
 
 
 
+#####[CURL常用命令](http://www.cnblogs.com/gbyukg/p/3326825.html)
+下载单个文件，默认将输出打印到标准输出中(STDOUT)中
+    curl http://www.centos.org
+通过-o/-O选项保存下载的文件到指定的文件中：
+    -o：将文件保存为命令行中指定的文件名的文件中
+    -O：使用URL中默认的文件名保存文件到本地
+
+将文件下载到本地并命名为mygettext.html
+    curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
+将文件保存到本地并命名为gettext.html
+    curl -O http://www.gnu.org/software/gettext/manual/gettext.html
+同样可以使用转向字符">"对输出进行转向输出
+同时获取多个文件
+1 curl -O URL1 -O URL2
+
+######在osx版本上使用Pod工具安装realmSwift
+问题描述：
+Installing Realm (1.0.0)
+[!] /bin/bash -c 
+set -e
+sh build.sh cocoapods-setup
+
+core is not a symlink. Deleting...
+Downloading dependency: core 1.0.1
+Downloading core failed:
+curl: (56) SSLRead() return error -36
+
+[解决通过Cocoapods安装或升级Realm时候CURL报SSLRead()的错误](http://cdbit.com/read/sslread-error-when-install-realm-with-cocoapods.html)
+1. 先下载https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2核心包
+   终端下载命令： curl -output realm-core-1.0.1.tar.bz2 https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2
+2. 找到$TMPDIR/core_bin目录
+   终端敲入命令：cd $TMPDIR/core_bin 
+3. 把下载的好的核心包，拷贝到core_bin目录
+4. 再次：pod update
+
+
 
 
 

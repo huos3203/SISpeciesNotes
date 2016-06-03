@@ -23,7 +23,8 @@ class ScaryBugsMacTests: XCTestCase,PycFileDelegate {
     
     //数据库
     func testReceiveFileDao(){
-        
+//        NSString *logname = [[userDao shareduserDao] getLogName];
+//        let logname = userDao.
         let outfile = OutFile.initWithSendFileId(1,
                                                  fileName: "test",
                                                  logName: "macUser",
@@ -58,11 +59,4 @@ class ScaryBugsMacTests: XCTestCase,PycFileDelegate {
         
     }
     
-    //socket网络访问
-    func testPycFile() {
-        //
-        var isOnline:ObjCBool = false  //http://swifter.tips/unsafe/
-        PycFile.sharedPycFile().seePycFile("test", forUser: "macUser", pbbFile: "test", phoneNo: "", messageID: "", isOffLine: &isOnline, fileOpenedNum: 3)
-        
-    }
 }

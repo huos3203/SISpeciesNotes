@@ -63,12 +63,13 @@ target 'SISpeciesNotes' do
 end
 
 target 'ScaryBugsMac' do
-    platform :osx, '10.6'
+    platform :osx, '10.9'
     use_frameworks!
     project 'ScaryBugsMac/ScaryBugsMac.xcodeproj'
     pod 'EDStarRating'
-    #pod 'SwiftWebSocket'
+#    pod 'SwiftWebSocket'
     pod 'CocoaAsyncSocket'
+    pod 'RealmSwift'
     pod 'FMDB'
     
     target 'ScaryBugsMacTests' do

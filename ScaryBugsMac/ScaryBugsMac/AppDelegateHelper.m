@@ -8,7 +8,6 @@
 
 #import "AppDelegateHelper.h"
 #import "ReceiveFileDao.h"
-#import "userDao.h"
 #import "AdvertisingView.h"
 #import "SeriesDao.h"
 #import "LookMedia.h"
@@ -43,7 +42,7 @@
     NSString *fileName = @"";
     NSInteger openedNum = 0;
     BOOL OutLine = NO;
-    NSString *logname = [[userDao shareduserDao] getLogName];
+    NSString *logname = @"";
     if (isReceiveFileExist) {
         //在接收列表存在
         outFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:fileID LogName:logname];

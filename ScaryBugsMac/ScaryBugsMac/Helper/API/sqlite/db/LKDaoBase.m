@@ -5,9 +5,7 @@
 //
 
 #import "LKDAOBase.h"
-#import "FMResultSet.h"
 #import <objc/runtime.h>
-#import "ToolString.h"
 
 @implementation LKDAOBase
 @synthesize columeNames;

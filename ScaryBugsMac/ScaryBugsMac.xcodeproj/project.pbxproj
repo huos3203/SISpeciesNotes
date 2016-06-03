@@ -25,6 +25,7 @@
 		143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
+		1476F53D1D016E9B0002AF6A /* LKDaoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -123,6 +124,7 @@
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookMedia.m; sourceTree = "<group>"; };
+		1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKDaoBase.swift; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				14B25FC61CFD844E001BCE84 /* dao */,
 				14B25FD51CFD844E001BCE84 /* db */,
 				14B25FE01CFD844E001BCE84 /* model */,
+				1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */,
 			);
 			path = sqlite;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				143A68671CFEC71600BC66A1 /* PycSocketClientManager.swift in Sources */,
 				14B25FA61CFD7823001BCE84 /* PycFolder.m in Sources */,
 				14B25FF51CFD844E001BCE84 /* SeriesDao.m in Sources */,
+				1476F53D1D016E9B0002AF6A /* LKDaoBase.swift in Sources */,
 				1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */,
 				14B25FFC1CFD844E001BCE84 /* SendFileManager.m in Sources */,
 				14B260041CFD844E001BCE84 /* VerificationCodeModel.m in Sources */,
