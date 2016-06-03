@@ -6,11 +6,12 @@
 //  Copyright (c) 2014年 pyc.com.cn. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//@import AppKit;
+#import <Cocoa/Cocoa.h>
 #import "AdvertisingImgCache.h"
-@interface AdvertisingView : UIView
+@interface AdvertisingView : NSView
 
-@property (weak, nonatomic) IBOutlet UIImageView *ibImageView;
+@property (weak, nonatomic) IBOutlet NSImageView *ibImageView;
 
 @property(strong,nonatomic)AdvertisingImgCache *imgCache;
 

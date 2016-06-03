@@ -41,7 +41,7 @@
     /* 这里开始初始化 */
     
     //如果需要重新调用drawRect则设置contentMode为UIViewContentModeRedraw
-    self.contentMode = UIViewContentModeRedraw;
+//    self.contentMode = NSViewContentModeRedraw;
     //不允许从Autoresizing转换Autolayout的Constraints
     //貌似Storyboard创建时调用initWithCoder方法时translatesAutoresizingMaskIntoConstraints已经是NO了
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -50,7 +50,7 @@
 
 
 //设置Autolayout中的边距辅助方法
-- (void)setEdge:(UIView*)superview view:(UIView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
+- (void)setEdge:(NSView*)superview view:(NSView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
 {
     [superview addConstraint:[NSLayoutConstraint constraintWithItem:view
                                                           attribute:attr
@@ -64,7 +64,7 @@
 {
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
-    UIView *superView = [[UIApplication sharedApplication] keyWindow];
+    NSView *superView = [[NSApplication sharedApplication] keyWindow];
     [superView addSubview:self];
     [self setEdge:superView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:superView view:self attr:NSLayoutAttributeBottom constant:0];
@@ -96,10 +96,10 @@
 
             if (imgPath) {
                 //
-                [_ibImageView setImage:[[UIImage alloc] initWithContentsOfFile:imgPath]];
+                [_ibImageView setImage:[[NSImage alloc] initWithContentsOfFile:imgPath]];
             }else{
                 //
-                [_ibImageView setImage:[UIImage imageNamed:@"advitising.jpg"]];
+                [_ibImageView setImage:[NSImage imageNamed:@"advitising.jpg"]];
                 
             }
             //当此时，广告已加载完成

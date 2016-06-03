@@ -23,7 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     
     func application(sender: NSApplication, openFiles filenames: [String]) {
         //
-//        let pycFile = PycFile.init()
+        let appHelper = AppDelegateHelper()
+        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
     }
 
 }

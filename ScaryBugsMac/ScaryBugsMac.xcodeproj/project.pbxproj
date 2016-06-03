@@ -23,6 +23,8 @@
 		143A68611CFEB64300BC66A1 /* PycFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A68601CFEB64300BC66A1 /* PycFile.m */; };
 		143A68671CFEC71600BC66A1 /* PycSocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */; };
 		143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
+		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
+		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -118,6 +120,9 @@
 		143A68601CFEB64300BC66A1 /* PycFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFile.m; sourceTree = "<group>"; };
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
 		143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycReceiveModel.swift; sourceTree = "<group>"; };
+		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
+		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookMedia.h; sourceTree = "<group>"; };
+		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookMedia.m; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
@@ -286,6 +291,8 @@
 				14EE61891CF816E50051FD1A /* Helper */,
 				1437DD9A1CF2AC6E001BD2D2 /* Model */,
 				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
+				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
+				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
@@ -294,8 +301,6 @@
 				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
-				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
-				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 			);
 			path = ScaryBugsMac;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */,
 				148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */,
 				148AB47F1CFFD78600CAF9BA /* advitising.jpg */,
+				14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */,
 			);
 			path = Advertising;
 			sourceTree = "<group>";
@@ -343,6 +349,8 @@
 		14B25F771CFD7823001BCE84 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				14430C291D012D1D00A5394D /* LookMedia.h */,
+				14430C2A1D012D1D00A5394D /* LookMedia.m */,
 				14B25F781CFD7823001BCE84 /* RemoteSocket */,
 				14B25FC51CFD844E001BCE84 /* sqlite */,
 			);
@@ -687,6 +695,7 @@
 			files = (
 				840AA6911CFCA2EA00819203 /* 114.png in Resources */,
 				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
+				14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */,
 				1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */,
 				148AB4821CFFD78600CAF9BA /* advitising.jpg in Resources */,
 			);
@@ -821,6 +830,7 @@
 				14B260041CFD844E001BCE84 /* VerificationCodeModel.m in Sources */,
 				14B25FF91CFD844E001BCE84 /* DB.m in Sources */,
 				14B25FF11CFD844E001BCE84 /* ArticleDao.m in Sources */,
+				14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */,
 				143A685E1CFE860600BC66A1 /* MyDelegate.m in Sources */,
 				143A68611CFEB64300BC66A1 /* PycFile.m in Sources */,
 				14B25FF21CFD844E001BCE84 /* ReceiveFileDao.m in Sources */,

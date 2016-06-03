@@ -10,7 +10,7 @@
 #import "PycFile.h"
 @interface AppDelegateHelper : NSObject<PycFileDelegate>
 
--(BOOL)openURLOfPycFileByLaunchedApp:(NSURL*)openURL;
+-(BOOL)openURLOfPycFileByLaunchedApp:(NSString*)openURL;
 
 
 @end
