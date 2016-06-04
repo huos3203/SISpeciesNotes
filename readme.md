@@ -604,6 +604,8 @@ curl: (56) SSLRead() return error -36
 3. 把下载的好的核心包，拷贝到core_bin目录
 4. 再次：pod update
 
+use `@import PodName;` in Obj-C, or `import PodName` in swift.
+
 
 
 

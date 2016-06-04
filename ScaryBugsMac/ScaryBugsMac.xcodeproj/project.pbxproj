@@ -25,7 +25,6 @@
 		143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
-		1476F53D1D016E9B0002AF6A /* LKDaoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -77,6 +76,7 @@
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		840AA6911CFCA2EA00819203 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
 		84A0F1F01CFDD0E800A353F0 /* MyProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */; };
+		84E5CB201D032FFD003430F2 /* OutFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +124,6 @@
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookMedia.m; sourceTree = "<group>"; };
-		1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKDaoBase.swift; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
@@ -234,6 +233,7 @@
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		84A0F1EE1CFDD0E800A353F0 /* MyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyProtocol.h; path = ScaryBugsMac/Model/MyProtocol.h; sourceTree = SOURCE_ROOT; };
 		84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyProtocol.m; path = ScaryBugsMac/Model/MyProtocol.m; sourceTree = SOURCE_ROOT; };
+		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
 		A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +331,7 @@
 				1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */,
 				1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */,
 				143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */,
+				84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -472,7 +473,6 @@
 				14B25FC61CFD844E001BCE84 /* dao */,
 				14B25FD51CFD844E001BCE84 /* db */,
 				14B25FE01CFD844E001BCE84 /* model */,
-				1476F53C1D016E9B0002AF6A /* LKDaoBase.swift */,
 			);
 			path = sqlite;
 			sourceTree = "<group>";
@@ -593,12 +593,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
 			buildPhases = (
-				F126E906437D4404B256B584 /* 📦 Check Pods Manifest.lock */,
+				F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */,
 				1437DD641CF2A75F001BD2D2 /* Sources */,
 				1437DD651CF2A75F001BD2D2 /* Frameworks */,
 				1437DD661CF2A75F001BD2D2 /* Resources */,
-				DBC6F66F1CEBBA2B3AB2A7BD /* 📦 Embed Pods Frameworks */,
-				019BD761AA6E7196E0AB110E /* 📦 Copy Pods Resources */,
+				DBC6F66F1CEBBA2B3AB2A7BD /* [CP] Embed Pods Frameworks */,
+				019BD761AA6E7196E0AB110E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -613,12 +613,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
-				5AB1BF30CD81B87F73EBA38F /* 📦 Check Pods Manifest.lock */,
+				5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
 				1437DD761CF2A75F001BD2D2 /* Frameworks */,
 				1437DD771CF2A75F001BD2D2 /* Resources */,
-				6FDB33C4F6E59869C95E4DF4 /* 📦 Embed Pods Frameworks */,
-				F62444A3597D61EC6E8C25C2 /* 📦 Copy Pods Resources */,
+				6FDB33C4F6E59869C95E4DF4 /* [CP] Embed Pods Frameworks */,
+				F62444A3597D61EC6E8C25C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -721,14 +721,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		019BD761AA6E7196E0AB110E /* 📦 Copy Pods Resources */ = {
+		019BD761AA6E7196E0AB110E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,14 +736,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AB1BF30CD81B87F73EBA38F /* 📦 Check Pods Manifest.lock */ = {
+		5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,14 +751,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6FDB33C4F6E59869C95E4DF4 /* 📦 Embed Pods Frameworks */ = {
+		6FDB33C4F6E59869C95E4DF4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,14 +766,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DBC6F66F1CEBBA2B3AB2A7BD /* 📦 Embed Pods Frameworks */ = {
+		DBC6F66F1CEBBA2B3AB2A7BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,14 +781,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F126E906437D4404B256B584 /* 📦 Check Pods Manifest.lock */ = {
+		F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,14 +796,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F62444A3597D61EC6E8C25C2 /* 📦 Copy Pods Resources */ = {
+		F62444A3597D61EC6E8C25C2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,7 +828,6 @@
 				143A68671CFEC71600BC66A1 /* PycSocketClientManager.swift in Sources */,
 				14B25FA61CFD7823001BCE84 /* PycFolder.m in Sources */,
 				14B25FF51CFD844E001BCE84 /* SeriesDao.m in Sources */,
-				1476F53D1D016E9B0002AF6A /* LKDaoBase.swift in Sources */,
 				1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */,
 				14B25FFC1CFD844E001BCE84 /* SendFileManager.m in Sources */,
 				14B260041CFD844E001BCE84 /* VerificationCodeModel.m in Sources */,
@@ -878,6 +877,7 @@
 				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
 				148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
+				84E5CB201D032FFD003430F2 /* OutFileModel.swift in Sources */,
 				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1021,6 +1021,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScaryBugsMac/ScaryBugsMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
 			};
 			name = Debug;
 		};
@@ -1037,6 +1038,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.ScaryBugsMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScaryBugsMac/ScaryBugsMac-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
 			};
 			name = Release;
 		};

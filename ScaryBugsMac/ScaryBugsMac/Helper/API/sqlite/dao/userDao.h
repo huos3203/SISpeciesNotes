@@ -8,6 +8,7 @@
 
 #import "BaseDao.h"
 #import "UserModel.h"
+#import "Singleton.h"
 @interface userDao : BaseDao
 singleton_interface(userDao)
 

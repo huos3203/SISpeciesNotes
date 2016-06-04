@@ -5,8 +5,10 @@
 //  Copyright (c) 2012年 SKY. All rights reserved.
 //
 
-//#import <Foundation/Foundation.h>
-#import "FMDB-umbrella.h"
+#import <Foundation/Foundation.h>
+#import "FMDatabaseQueue.h"
+#import "FMResultSet.h"
+#import "FMDatabase.h"
 #import "SandboxFile.h"
 
 
