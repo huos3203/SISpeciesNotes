@@ -5,6 +5,9 @@
       location = "group:Playground"
       name = "Playground">
       <FileRef
+         location = "group:/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/RealmSwiftGettingStarted.playground">
+      </FileRef>
+      <FileRef
          location = "group:Learn the Essentials of Swift.playground">
       </FileRef>
       <FileRef

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 bang. All rights reserved.
 //
 
-#import <JSPatch/JPEngine.h>
+#import "JPEngine.h"
 #import <CoreGraphics/CoreGraphics.h>
 
 @interface JPCGTransform : JPExtension

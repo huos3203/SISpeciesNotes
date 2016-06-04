@@ -73,7 +73,7 @@ class CategoriesTableViewController: UITableViewController{
             try! realm.commitWrite() // 7
             self.results = realm.objects(CategoryModel)
             //打印数据库的物理位置：
-            print(realm.path)
+//            print(realm.path)
         }
     }
 }

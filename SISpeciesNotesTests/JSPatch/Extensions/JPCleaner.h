@@ -6,7 +6,7 @@
 //  Copyright © 2016 bang. All rights reserved.
 //
 
-#import <JSPatch/JPEngine.h>
+#import "JPEngine.h"
 
 @interface JPCleaner : JPExtension
 + (void)cleanAll;

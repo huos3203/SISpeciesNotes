@@ -233,6 +233,8 @@
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		84A0F1EE1CFDD0E800A353F0 /* MyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyProtocol.h; path = ScaryBugsMac/Model/MyProtocol.h; sourceTree = SOURCE_ROOT; };
 		84A0F1EF1CFDD0E800A353F0 /* MyProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyProtocol.m; path = ScaryBugsMac/Model/MyProtocol.m; sourceTree = SOURCE_ROOT; };
+		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
+		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
 		A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -470,6 +472,8 @@
 		14B25FC51CFD844E001BCE84 /* sqlite */ = {
 			isa = PBXGroup;
 			children = (
+				84CB248E1D0349AB0088112B /* FMResultSet_备份.h */,
+				84CB248F1D0349AB0088112B /* FMResultSet_备份.m */,
 				14B25FC61CFD844E001BCE84 /* dao */,
 				14B25FD51CFD844E001BCE84 /* db */,
 				14B25FE01CFD844E001BCE84 /* model */,

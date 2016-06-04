@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 bang. All rights reserved.
 //
 
-#import <JSPatch/JPEngine.h>
+#import "JPEngine.h"
 
 @interface JPUIImage : JPExtension
 

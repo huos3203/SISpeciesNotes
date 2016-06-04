@@ -7,7 +7,7 @@ target 'SISpeciesNotes' do
     use_frameworks!
     project 'SISpeciesNotes.xcodeproj'
     
-    #pod 'RealmSwift', '~> 0.98.2'
+    pod 'RealmSwift'
     pod 'ObjectMapper', '= 1.1.5'
     
     pod 'Alamofire', '~> 3.0'
@@ -23,7 +23,7 @@ target 'SISpeciesNotes' do
     #autolayout框架
     pod 'Masonry'  #OC
     pod 'SnapKit', '~> 0.20.0'  #swift
-    #pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+    pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
     #------仿UIStackView的两个开源库，用户兼容9以下版本-----
     #OAStackView，基于OC的StackView库，支持iOS7+以上的系统。同时支持代码和IB视图。功能强大，无需质疑。
     #TZStackView，基于Swift的StackView库，同样支持iOS7+以上的系统，但是不支持storyboard。
@@ -47,10 +47,11 @@ target 'SISpeciesNotes' do
     #介绍： https://realm.io/cn/news/tryswift-ash-furrow-artsy-testing-tour/
     #https://github.com/Quick/Quick/blob/master/Documentation/en-us/InstallingQuick.md#cocoapods
     def testing_pods
+        pod 'JSPatch'
         pod 'Quick'
         pod 'Nimble'
         pod 'RxBlocking', '~> 2.0'
-        pod 'RxTests',    '~> 2.0'
+#        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
     end
 
     target 'SISpeciesNotesTests' do

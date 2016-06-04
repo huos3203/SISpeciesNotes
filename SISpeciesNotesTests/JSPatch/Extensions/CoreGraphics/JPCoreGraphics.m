@@ -7,7 +7,7 @@
 //
 
 #import "JPCoreGraphics.h"
-#import <JSPatch/JPEngine.h>
+#import "JPEngine.h"
 
 
 @implementation JPCoreGraphics

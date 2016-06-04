@@ -68,9 +68,18 @@ class RealmSwiftTest: XCTestCase {
             if !realmPath.isEmpty
             {
                 //
-                let config = Realm.Configuration(path: realmPath)
-                let testRealm = try! Realm(configuration: config)
-                injectRealm = testRealm
+//                let config = try! Realm.init(fileURL:NSURL(fileURLWithPath:realmPath))
+//                let testRealm = try! Realm(configuration: config)
+//                injectRealm = testRealm
+                
+                var config = Realm.Configuration()
+                
+                // 使用默认的目录，但是使用用户名来替换默认的文件名
+                config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?
+                    .URLByAppendingPathComponent("\(realmPath).realm")
+                
+                // 将这个配置应用到默认的 Realm 数据库当中
+                Realm.Configuration.defaultConfiguration = config
             }
             else
             {
@@ -101,7 +110,10 @@ class RealmSwiftTest: XCTestCase {
     {
         let config = Realm.Configuration(
             // Get the path to the bundled file
-            path: NSBundle.mainBundle().pathForResource("MyBundledData", ofType:"realm"),
+            // 获取需要打包文件的 URL 路径
+            fileURL: NSBundle.mainBundle().URLForResource("MyBundledData", withExtension: "realm"),
+//            path: NSBundle.mainBundle().pathForResource("MyBundledData", ofType:"realm"),
+            
             // Open the file in read-only mode as application bundles are not writeable
             readOnly: true,
             // 设置新的架构版本。
@@ -143,7 +155,8 @@ class RealmSwiftTest: XCTestCase {
         
         //定位 realm 的所在位置，使用与最终版本相同的数据模型来创建 Realm 数据库，
         //并将您想要打包的数据放置到您的应用当中
-        try! Realm().writeCopyToPath(path ,encryptionKey:getKey())
+//        try! Realm().writeCopyToPath(path ,encryptionKey:getKey()) //过时
+        try! Realm().writeCopyToURL(NSURL(fileURLWithPath:path), encryptionKey:getKey())
         //将您最终的 Realm 文件的压缩拷贝拖懂到您最终应用的Xcode项目导航栏中,前往您应用的Xcode Build Phase 选项卡，添加 Realm 文件到”Copy Bundle Resources”当中,这样，就能够在应用中使用这个打包好的 Realm 数据库了。 您能通过使用NSBundle.mainBundle().pathForResource(_:ofType:)来得到数据库路径
         
         //如果打包的 Realm 文件包含有您不想修改的固定数据，您也能通过为Realm.Configuration 对象设置 readOnly = true 选项，这样就可以将其从包路径直接打开了。 如果您打算修改初始数据的话，您可以通过NSFileManager.defaultManager().copyItemAtPath(_:toPath:)，将这个打包的文件拷贝到应用的 Document 文件夹下。
