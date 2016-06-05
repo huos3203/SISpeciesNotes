@@ -127,6 +127,8 @@
 		8482D9361CEB68C500CC5028 /* newProtocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9331CEB68C500CC5028 /* newProtocolTest.js */; };
 		8482D9371CEB68C500CC5028 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9341CEB68C500CC5028 /* test.js */; };
 		849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AFA161CD5D306006FBF61 /* Images.xcassets */; };
+		84CB24941D03C3C00088112B /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 84CB24931D03C3C00088112B /* JSPatch.js */; };
+		84CB24971D03C5C00088112B /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB24961D03C5C00088112B /* JPEngine.m */; };
 		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
 		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
 		84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */; };
@@ -219,7 +221,7 @@
 		149128FF1CEB24AF004FFA1C /* JPTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTestObject.m; sourceTree = "<group>"; };
 		149129021CEB2567004FFA1C /* jsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		149129031CEB2567004FFA1C /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsc.m; sourceTree = "<group>"; };
-		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SISpeciesNotesTests-Bridging-Header.h"; path = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +336,9 @@
 		8482D9341CEB68C500CC5028 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		849AFA161CD5D306006FBF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84CB24931D03C3C00088112B /* JSPatch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = JSPatch.js; path = ../../Pods/JSPatch/JSPatch/JSPatch.js; sourceTree = "<group>"; };
+		84CB24951D03C5C00088112B /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPEngine.h; path = ../../Pods/JSPatch/JSPatch/JPEngine.h; sourceTree = "<group>"; };
+		84CB24961D03C5C00088112B /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPEngine.m; path = ../../Pods/JSPatch/JSPatch/JPEngine.m; sourceTree = "<group>"; };
 		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		84DCB7D71CC33B880028EE9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
@@ -450,7 +455,6 @@
 			children = (
 				149129021CEB2567004FFA1C /* jsc.h */,
 				149129031CEB2567004FFA1C /* jsc.m */,
-				149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */,
 			);
 			path = OC;
 			sourceTree = "<group>";
@@ -479,6 +483,9 @@
 				841816871CEA141300EF1DE4 /* JPTestObject.swift */,
 				149128FE1CEB24AF004FFA1C /* JPTestObject.h */,
 				149128FF1CEB24AF004FFA1C /* JPTestObject.m */,
+				84CB24931D03C3C00088112B /* JSPatch.js */,
+				84CB24951D03C5C00088112B /* JPEngine.h */,
+				84CB24961D03C5C00088112B /* JPEngine.m */,
 				8482D8FB1CEB655A00CC5028 /* Extensions */,
 				8482D9311CEB68C500CC5028 /* js */,
 			);
@@ -735,6 +742,7 @@
 			children = (
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */,
+				149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */,
 				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				843D92081CC7E0D900DEB22D /* SISFramework */,
 				843D92161CC7E0D900DEB22D /* SISFrameworkTests */,
@@ -1096,6 +1104,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CB24941D03C3C00088112B /* JSPatch.js in Resources */,
 				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
 				147CE6191CE5837200424C7F /* protocolTest.js in Resources */,
 				14BA997A1CE1956900B4A635 /* Person.mustache in Resources */,
@@ -1360,6 +1369,7 @@
 			files = (
 				84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */,
 				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
+				84CB24971D03C5C00088112B /* JPEngine.m in Sources */,
 				14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */,
 				149129041CEB2567004FFA1C /* jsc.m in Sources */,
 				8482D9201CEB655A00CC5028 /* JPCGBitmapContext.m in Sources */,
@@ -1841,7 +1851,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
-				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/Core\"";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/JSPatch\"";
 			};
 			name = Debug;
 		};
@@ -1861,7 +1871,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
-				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/Core\"";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/JSPatch\"";
 			};
 			name = Release;
 		};

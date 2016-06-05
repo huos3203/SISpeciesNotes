@@ -67,17 +67,15 @@ class RealmSwiftTest: XCTestCase {
         func makeInjectRealm(injectPathOfRealm realmPath:String){
             if !realmPath.isEmpty
             {
-                //
-//                let config = try! Realm.init(fileURL:NSURL(fileURLWithPath:realmPath))
-//                let testRealm = try! Realm(configuration: config)
-//                injectRealm = testRealm
-                
+                /* 代码过时
+                let config = try! Realm.init(fileURL:NSURL(fileURLWithPath:realmPath))
+                let testRealm = try! Realm(configuration: config)
+                injectRealm = testRealm
+                */
                 var config = Realm.Configuration()
-                
                 // 使用默认的目录，但是使用用户名来替换默认的文件名
                 config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?
                     .URLByAppendingPathComponent("\(realmPath).realm")
-                
                 // 将这个配置应用到默认的 Realm 数据库当中
                 Realm.Configuration.defaultConfiguration = config
             }

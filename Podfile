@@ -47,7 +47,6 @@ target 'SISpeciesNotes' do
     #介绍： https://realm.io/cn/news/tryswift-ash-furrow-artsy-testing-tour/
     #https://github.com/Quick/Quick/blob/master/Documentation/en-us/InstallingQuick.md#cocoapods
     def testing_pods
-        pod 'JSPatch'
         pod 'Quick'
         pod 'Nimble'
         pod 'RxBlocking', '~> 2.0'
