@@ -1851,7 +1851,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
-				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/JSPatch\"";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1871,7 +1871,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISpeciesNotes.app/SISpeciesNotes";
-				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/JSPatch/JSPatch\"";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
