@@ -39,6 +39,10 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:Podfile"
+      assignedFileDataType = "public.ruby-script">
+   </FileRef>
+   <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
    </FileRef>
    <FileRef

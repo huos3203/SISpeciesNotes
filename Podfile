@@ -5,6 +5,7 @@ project 'SISpeciesNotes.xcodeproj'
 target 'SISpeciesNotes' do
     platform :ios, '8.0'
     use_frameworks!
+    inhibit_all_warnings!
     project 'SISpeciesNotes.xcodeproj'
     
     pod 'RealmSwift'
@@ -53,7 +54,11 @@ target 'SISpeciesNotes' do
 #        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
     end
 
+    # Has its own copy of Quick,Nimble,RxBlocking
+    # and has access to JSPatch via the SISpeciesNotes app
+    # that hosts the test target
     target 'SISpeciesNotesTests' do
+        inherit! :search_paths
         testing_pods
     end
 
@@ -78,9 +83,11 @@ target 'ScaryBugsMac' do
 end
 
 
-
-
-
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        puts target.name
+    end
+end
 
 
 

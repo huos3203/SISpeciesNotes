@@ -43,6 +43,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		03076564A2CBF16397AF2015 /* Pods_SISpeciesNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABB13622FA4CB005E5E75E4 /* Pods_SISpeciesNotesTests.framework */; };
 		1412DA451C7F0D9F0089E00D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA431C7F0D9F0089E00D /* CategoryModel.swift */; };
 		1412DA461C7F0D9F0089E00D /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */; };
 		14427F781CCDC4A2007E80CF /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B72E01CC8A81C00315B72 /* HorizontalScroller.swift */; };
@@ -103,6 +104,10 @@
 		843D92181CC7E0D900DEB22D /* SISFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D92171CC7E0D900DEB22D /* SISFrameworkTests.swift */; };
 		843D921C1CC7E0D900DEB22D /* SISFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D92071CC7E0D900DEB22D /* SISFramework.framework */; };
 		843D921D1CC7E0D900DEB22D /* SISFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 843D92071CC7E0D900DEB22D /* SISFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		845C4AB21D03DF9C004D8EAB /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 845C4AB11D03DF9C004D8EAB /* JSPatch.js */; };
+		845C4ABC1D03E0C5004D8EAB /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 845C4AB11D03DF9C004D8EAB /* JSPatch.js */; };
+		845C4ABF1D03E159004D8EAB /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C4ABE1D03E159004D8EAB /* JPEngine.m */; };
+		845C4AC01D03E159004D8EAB /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C4ABE1D03E159004D8EAB /* JPEngine.m */; };
 		847503971C59C4A200E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		847503981C59C70600E804EE /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847503961C59C4A200E804EE /* Bicycle.swift */; };
 		8482D8C21CEB5D9300CC5028 /* JPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 149128FF1CEB24AF004FFA1C /* JPTestObject.m */; };
@@ -127,8 +132,6 @@
 		8482D9361CEB68C500CC5028 /* newProtocolTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9331CEB68C500CC5028 /* newProtocolTest.js */; };
 		8482D9371CEB68C500CC5028 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 8482D9341CEB68C500CC5028 /* test.js */; };
 		849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AFA161CD5D306006FBF61 /* Images.xcassets */; };
-		84CB24941D03C3C00088112B /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 84CB24931D03C3C00088112B /* JSPatch.js */; };
-		84CB24971D03C5C00088112B /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB24961D03C5C00088112B /* JPEngine.m */; };
 		84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D71CC33B880028EE9A /* stub.txt */; };
 		84DCB7D91CC3448C0028EE9A /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DCB7D61CC33B610028EE9A /* user.json */; };
 		84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */; };
@@ -193,6 +196,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		071E0ADBC2B4AE8F299A844D /* Pods-SISpeciesNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1412DA431C7F0D9F0089E00D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		1412DA441C7F0D9F0089E00D /* SpeciesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
 		14427F811CCE03FE007E80CF /* ImageFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
@@ -221,7 +225,7 @@
 		149128FF1CEB24AF004FFA1C /* JPTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTestObject.m; sourceTree = "<group>"; };
 		149129021CEB2567004FFA1C /* jsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		149129031CEB2567004FFA1C /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsc.m; sourceTree = "<group>"; };
-		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SISpeciesNotesTests-Bridging-Header.h"; path = "SISpeciesNotesTests/OC/SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SISpeciesNotesTests-Bridging-Header.h"; path = "OC/SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 		20F40A34149E21A67CD352AF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F7A9936402F3AF2F46487E /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotes_SISpeciesNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B648EBFCE73ED3751CA8D /* Pods_SISpeciesNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B5982C87D34834DBBBEA22 /* Pods-SISpeciesNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		68178B4D0A01F01A6A3D56B1 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		6A78E423662EF95E0E87AAFD /* Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		82310C980BC6E260BC735B44 /* Pods-SISpeciesNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SISpeciesNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +276,9 @@
 		843D92171CC7E0D900DEB22D /* SISFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISFrameworkTests.swift; sourceTree = "<group>"; };
 		843D92191CC7E0D900DEB22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843D92241CC7E10700DEB22D /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		845C4AB11D03DF9C004D8EAB /* JSPatch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = JSPatch.js; path = ../../../Pods/JSPatch/JSPatch/JSPatch.js; sourceTree = "<group>"; };
+		845C4ABD1D03E159004D8EAB /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPEngine.h; path = ../../../Pods/JSPatch/JSPatch/JPEngine.h; sourceTree = "<group>"; };
+		845C4ABE1D03E159004D8EAB /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPEngine.m; path = ../../../Pods/JSPatch/JSPatch/JPEngine.m; sourceTree = "<group>"; };
 		8475035C1C58B76A00E804EE /* AddNewEntryController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddNewEntryController.html; sourceTree = "<group>"; };
 		8475035D1C58B76A00E804EE /* AppDelegate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppDelegate.html; sourceTree = "<group>"; };
 		8475035E1C58B76A00E804EE /* CategoriesTableViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CategoriesTableViewController.html; sourceTree = "<group>"; };
@@ -336,9 +344,6 @@
 		8482D9341CEB68C500CC5028 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		848F1E2E1C214D5500874436 /* .gitignore */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = .gitignore; sourceTree = "<group>"; };
 		849AFA161CD5D306006FBF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		84CB24931D03C3C00088112B /* JSPatch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = JSPatch.js; path = ../../Pods/JSPatch/JSPatch/JSPatch.js; sourceTree = "<group>"; };
-		84CB24951D03C5C00088112B /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPEngine.h; path = ../../Pods/JSPatch/JSPatch/JPEngine.h; sourceTree = "<group>"; };
-		84CB24961D03C5C00088112B /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPEngine.m; path = ../../Pods/JSPatch/JSPatch/JPEngine.m; sourceTree = "<group>"; };
 		84DCB7D61CC33B610028EE9A /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		84DCB7D71CC33B880028EE9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		84EC49A01CC27C66002CFF69 /* AsyncTheOldWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTheOldWayTest.swift; sourceTree = "<group>"; };
@@ -356,6 +361,7 @@
 		D849C0AD1AF078E4001C01AC /* SISpeciesNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISpeciesNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D849C0B21AF078E4001C01AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SISpeciesNotesTests.swift; sourceTree = "<group>"; };
+		DABB13622FA4CB005E5E75E4 /* Pods_SISpeciesNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SISpeciesNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307843054462A740206AF553 /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework in Frameworks */,
+				03076564A2CBF16397AF2015 /* Pods_SISpeciesNotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,14 +466,6 @@
 			path = OC;
 			sourceTree = "<group>";
 		};
-		14B5B9A01CE1D8D5008A0CBD /* Objective-C */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Objective-C";
-			path = "Object-C";
-			sourceTree = "<group>";
-		};
 		14D52E541CAB81D700A0595C /* animatedTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,9 +482,6 @@
 				841816871CEA141300EF1DE4 /* JPTestObject.swift */,
 				149128FE1CEB24AF004FFA1C /* JPTestObject.h */,
 				149128FF1CEB24AF004FFA1C /* JPTestObject.m */,
-				84CB24931D03C3C00088112B /* JSPatch.js */,
-				84CB24951D03C5C00088112B /* JPEngine.h */,
-				84CB24961D03C5C00088112B /* JPEngine.m */,
 				8482D8FB1CEB655A00CC5028 /* Extensions */,
 				8482D9311CEB68C500CC5028 /* js */,
 			);
@@ -558,6 +554,25 @@
 				843D92191CC7E0D900DEB22D /* Info.plist */,
 			);
 			path = SISFrameworkTests;
+			sourceTree = "<group>";
+		};
+		845C4AB51D03E067004D8EAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				845C4AB61D03E067004D8EAB /* JSPatch */,
+			);
+			name = Frameworks;
+			path = SISpeciesNotes/Frameworks;
+			sourceTree = SOURCE_ROOT;
+		};
+		845C4AB61D03E067004D8EAB /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				845C4AB11D03DF9C004D8EAB /* JSPatch.js */,
+				845C4ABD1D03E159004D8EAB /* JPEngine.h */,
+				845C4ABE1D03E159004D8EAB /* JPEngine.m */,
+			);
+			path = JSPatch;
 			sourceTree = "<group>";
 		};
 		8475035A1C58B76A00E804EE /* swift_output */ = {
@@ -742,7 +757,6 @@
 			children = (
 				D849C09A1AF078E4001C01AC /* SISpeciesNotes */,
 				D849C0B01AF078E4001C01AC /* SISpeciesNotesTests */,
-				149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */,
 				84192D6D1CBFE6A8001866DD /* SISpeciesNotesUITests */,
 				843D92081CC7E0D900DEB22D /* SISFramework */,
 				843D92161CC7E0D900DEB22D /* SISFrameworkTests */,
@@ -771,7 +785,6 @@
 		D849C09A1AF078E4001C01AC /* SISpeciesNotes */ = {
 			isa = PBXGroup;
 			children = (
-				14B5B9A01CE1D8D5008A0CBD /* Objective-C */,
 				D897B1ED1AF1CFA300DAD3EB /* Controller */,
 				1479CBC21C9668DD00D26433 /* API */,
 				1412DA421C7F0D9F0089E00D /* Model */,
@@ -812,6 +825,7 @@
 				841816841CEA13BB00EF1DE4 /* JSPatch */,
 				847503951C59C3F300E804EE /* SwiftDocumentation */,
 				D849C0B11AF078E4001C01AC /* Supporting Files */,
+				149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */,
 			);
 			path = SISpeciesNotesTests;
 			sourceTree = "<group>";
@@ -848,6 +862,7 @@
 		D8D76ABE1C0FF1670041D0ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				845C4AB51D03E067004D8EAB /* Frameworks */,
 				849AFA161CD5D306006FBF61 /* Images.xcassets */,
 				D849C0A11AF078E4001C01AC /* Main.storyboard */,
 				D849C0A61AF078E4001C01AC /* LaunchScreen.xib */,
@@ -868,6 +883,7 @@
 				4B8B648EBFCE73ED3751CA8D /* Pods_SISpeciesNotes.framework */,
 				36F7A9936402F3AF2F46487E /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */,
 				A5816339F0D8EFD1FE54751C /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework */,
+				DABB13622FA4CB005E5E75E4 /* Pods_SISpeciesNotesTests.framework */,
 			);
 			name = Frameworks;
 			path = SISpeciesNotes;
@@ -882,6 +898,8 @@
 				68178B4D0A01F01A6A3D56B1 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */,
 				6A78E423662EF95E0E87AAFD /* Pods-SISpeciesNotes-SISpeciesNotesUITests.debug.xcconfig */,
 				961225A07A6ACED4ED73B3A1 /* Pods-SISpeciesNotes-SISpeciesNotesUITests.release.xcconfig */,
+				071E0ADBC2B4AE8F299A844D /* Pods-SISpeciesNotesTests.debug.xcconfig */,
+				64B5982C87D34834DBBBEA22 /* Pods-SISpeciesNotesTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1094,6 +1112,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845C4AB21D03DF9C004D8EAB /* JSPatch.js in Resources */,
 				849AFA171CD5D306006FBF61 /* Images.xcassets in Resources */,
 				D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */,
 				D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */,
@@ -1104,13 +1123,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CB24941D03C3C00088112B /* JSPatch.js in Resources */,
 				84DCB7D91CC3448C0028EE9A /* user.json in Resources */,
 				147CE6191CE5837200424C7F /* protocolTest.js in Resources */,
 				14BA997A1CE1956900B4A635 /* Person.mustache in Resources */,
 				14BA997B1CE1956900B4A635 /* ReadMeExample1.mustache in Resources */,
 				8482D9371CEB68C500CC5028 /* test.js in Resources */,
 				84DCB7D81CC3420B0028EE9A /* stub.txt in Resources */,
+				845C4ABC1D03E0C5004D8EAB /* JSPatch.js in Resources */,
 				8482D9351CEB68C500CC5028 /* jsClassTest.js in Resources */,
 				14BA997C1CE1956900B4A635 /* ReadMeExample2.mustache in Resources */,
 				8482D9361CEB68C500CC5028 /* newProtocolTest.js in Resources */,
@@ -1246,7 +1265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5B93E3ABAB0106A670EEE5B /* [CP] Copy Pods Resources */ = {
@@ -1261,7 +1280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesTests/Pods-SISpeciesNotes-SISpeciesNotesTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DB95CD00E593B6874EC23C7C /* [CP] Check Pods Manifest.lock */ = {
@@ -1350,6 +1369,7 @@
 				14D52E511CAB818400A0595C /* WeiboCollectionViewController.swift in Sources */,
 				14427F781CCDC4A2007E80CF /* HorizontalScroller.swift in Sources */,
 				14D52E531CAB81BB00A0595C /* SpeciesAnnotation.swift in Sources */,
+				845C4ABF1D03E159004D8EAB /* JPEngine.m in Sources */,
 				14B6A6C91CC7649B00C0896B /* HttpClientManager.swift in Sources */,
 				14D52E471CAB812800A0595C /* LogCell.swift in Sources */,
 				14B5B99B1CE1D831008A0CBD /* AlbumsListViewController.swift in Sources */,
@@ -1369,7 +1389,7 @@
 			files = (
 				84EC49A31CC29F4F002CFF69 /* ErrorHandingTest.swift in Sources */,
 				84EC49A11CC27C66002CFF69 /* AsyncTheOldWayTest.swift in Sources */,
-				84CB24971D03C5C00088112B /* JPEngine.m in Sources */,
+				845C4AC01D03E159004D8EAB /* JPEngine.m in Sources */,
 				14427F8A1CCE07A4007E80CF /* UIImage+AlamofireImageTests.swift in Sources */,
 				149129041CEB2567004FFA1C /* jsc.m in Sources */,
 				8482D9201CEB655A00CC5028 /* JPCGBitmapContext.m in Sources */,
@@ -1708,6 +1728,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1776,6 +1797,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1831,7 +1853,7 @@
 		};
 		D849C0BB1AF078E4001C01AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC26411142B4B77F835B1345 /* Pods-SISpeciesNotes-SISpeciesNotesTests.debug.xcconfig */;
+			baseConfigurationReference = 071E0ADBC2B4AE8F299A844D /* Pods-SISpeciesNotesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_TESTABILITY = YES;
@@ -1857,7 +1879,7 @@
 		};
 		D849C0BC1AF078E4001C01AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68178B4D0A01F01A6A3D56B1 /* Pods-SISpeciesNotes-SISpeciesNotesTests.release.xcconfig */;
+			baseConfigurationReference = 64B5982C87D34834DBBBEA22 /* Pods-SISpeciesNotesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
