@@ -12,11 +12,12 @@
 #import "SeriesDao.h"
 #import "LookMedia.h"
 #import "ToolString.h"
+#import "userDao.h"
 #import <Cocoa/Cocoa.h>
 
 @implementation AppDelegateHelper
 {
-    PycFile *fileManager;
+    PycFile *_fileManager;
     int fileID;
     NSString *filePath;
     BOOL isReceiveFileExist;
@@ -29,10 +30,10 @@
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-    fileManager = [[PycFile alloc]init];
-    fileManager.delegate = self;
+    _fileManager = [[PycFile alloc] init];
+    _fileManager.delegate = self;
     filePath = openURL;
-    fileID = [fileManager getAttributePycFileId:filePath];
+    fileID = [_fileManager getAttributePycFileId:filePath];
     if (fileID==0) {
         NSLog(@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！");
         return YES;
@@ -42,7 +43,9 @@
     NSString *fileName = @"";
     NSInteger openedNum = 0;
     BOOL OutLine = NO;
-    NSString *logname = @"";
+    NSString *logname = [[userDao shareduserDao] getLogName];
+    // 判断已接受数据库是否存在
+    isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
     if (isReceiveFileExist) {
         //在接收列表存在
         outFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:fileID LogName:logname];
@@ -53,18 +56,24 @@
             OutLine = YES;
         }
     }
-    
-    //
-//    AdvertisingView *custormActivityView = [[NSNib new] initWithNibNamed:@"AdvertisingView" bundle:nil][0];
 
-    custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-    
-    [custormActivityView startLoading:fileID isOutLine:OutLine];
+    //    custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
+    NSArray *array;
+    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
+    [nib instantiateWithOwner:self topLevelObjects:&array];
+    for (int i = 0; i < array.count; i++) {
+        //
+        id obj = array[i];
+        if ([obj isKindOfClass:[AdvertisingView class]]) {
+            custormActivityView = (AdvertisingView *)array[0];
+            [custormActivityView startLoading:fileID isOutLine:OutLine];
+        }
+    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
-        fileManager.receiveFile = outFile;
-        NSString *result =[fileManager seePycFile2:filePath
+        _fileManager.receiveFile = outFile;
+        NSString *result =[_fileManager seePycFile2:filePath
                                         forUser:logname
                                         pbbFile:fileName
                                         phoneNo:@""

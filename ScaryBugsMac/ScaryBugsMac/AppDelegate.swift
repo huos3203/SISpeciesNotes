@@ -11,7 +11,9 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
-    
+    //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
+    //还出现第一次启动执行两次openFiles方法
+    let appHelper = AppDelegateHelper()
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
     }
@@ -23,7 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     
     func application(sender: NSApplication, openFiles filenames: [String]) {
         //
-        let appHelper = AppDelegateHelper()
         appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
     }
 
