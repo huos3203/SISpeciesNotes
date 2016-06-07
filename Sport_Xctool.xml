@@ -980,3 +980,72 @@ AdmindeMacBook-Air:~ admin$ jenkins_cli get-job PbbForMac2
         <completeBuild>true</completeBuild>
     </runPostStepsIfResult>
 </maven2-moduleset>
+
+AdmindeMacBook-Air:~ admin$ jenkins_cli get-job PBBFromPyc.com.cn
+[WARN] Failed to authenticate with your SSH keys. Proceeding as anonymous
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+    <actions/>
+    <description></description>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.2">
+        <locations>
+            <hudson.scm.SubversionSCM_-ModuleLocation>
+                <remote>svn://svn.pyc.local/svn/%E9%B9%8F%E4%BF%9D%E5%AE%9DforIOS/trunk/codes/PBB_ios7/PBB</remote>
+                <credentialsId>f6c43eec-605a-48e4-8c7a-7e67241485fb</credentialsId>
+                <local>.</local>
+                <depthOption>infinity</depthOption>
+                <ignoreExternalsOption>false</ignoreExternalsOption>
+            </hudson.scm.SubversionSCM_-ModuleLocation>
+        </locations>
+        <excludedRegions></excludedRegions>
+        <includedRegions></includedRegions>
+        <excludedUsers></excludedUsers>
+        <excludedRevprop></excludedRevprop>
+        <excludedCommitMessages></excludedCommitMessages>
+        <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+        <ignoreDirPropChanges>false</ignoreDirPropChanges>
+        <filterChangelog>false</filterChangelog>
+    </scm>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <au.com.rayh.XCodeBuilder plugin="xcode-plugin@1.4.2">
+            <cleanBeforeBuild>true</cleanBeforeBuild>
+            <cleanTestReports>false</cleanTestReports>
+            <configuration>Debug</configuration>
+            <target>PBB</target>
+            <sdk></sdk>
+            <symRoot></symRoot>
+            <configurationBuildDir></configurationBuildDir>
+            <xcodeProjectPath></xcodeProjectPath>
+            <xcodeProjectFile></xcodeProjectFile>
+            <xcodebuildArguments></xcodebuildArguments>
+            <xcodeSchema></xcodeSchema>
+            <xcodeWorkspaceFile></xcodeWorkspaceFile>
+            <embeddedProfileFile></embeddedProfileFile>
+            <cfBundleVersionValue></cfBundleVersionValue>
+            <cfBundleShortVersionStringValue></cfBundleShortVersionStringValue>
+            <buildIpa>true</buildIpa>
+            <generateArchive>false</generateArchive>
+            <unlockKeychain>false</unlockKeychain>
+            <keychainName>none (specify one below)</keychainName>
+            <keychainPath></keychainPath>
+            <keychainPwd></keychainPwd>
+            <codeSigningIdentity></codeSigningIdentity>
+            <allowFailingBuildResults>false</allowFailingBuildResults>
+            <ipaName>PBB_${VERSION}_${BUILD_DATE}</ipaName>
+            <ipaOutputDirectory></ipaOutputDirectory>
+            <provideApplicationVersion>false</provideApplicationVersion>
+        </au.com.rayh.XCodeBuilder>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <au.com.rayh.OSXKeychainBuildWrapper plugin="xcode-plugin@1.4.2"/>
+    </buildWrappers>
+</project>
