@@ -606,8 +606,66 @@ curl: (56) SSLRead() return error -36
 
 use `@import PodName;` in Obj-C, or `import PodName` in swift.
 
+#####单元测试 Specta VS Quick  和 Expecta VS Nimble
+[iOS项目的持续集成与管理](http://www.jianshu.com/p/9ae446d76271)
+[Specta](https://github.com/specta/specta)
+Specta让我们采用行为驱动开发(BDD)风格的语法来编写测试，相比于XCTest的语法，它更加易读。它还有一个强大的分组测试功能，在测试之前或之后运行一些代码块，这样的话，能够极大地减少重复代码。
+[Expecta](https://github.com/specta/expecta)
+Expecta是一个匹配器框架，我们可以在测试中使用它来创建断言。它的语法非常强大，与此同时，它比内建的XCAssert套件更加易读.
+[Artsy 的测试之旅](https://realm.io/cn/news/tryswift-ash-furrow-artsy-testing-tour/)
 
+Quick 为我们引入了一个 RSpec 风格的测试框架，
+Nimble 为我们引入了一个非常好用的匹配器。
+在 Eidolon 当中，一个好的测试是非常简短的，我想说通常而言，一个好的测试都是简短的。它拥有三个步骤：安排、操作及断言。
+```
+#介绍： 
+#https://github.com/Quick/Quick/blob/master/Documentation/en-us/InstallingQuick.md#cocoapods
 
+def testing_pods
+pod 'Quick'         #Specta “可视化”测试
+pod 'Nimble'
+pod 'RxBlocking', '~> 2.0'
+#        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
+end
+```
+
+ddd
+
+Building in workspace /Users/pengyucheng/.jenkins/jobs/GuildBrowser/workspace
+jenkins 1.540
+`
+#####问题：配置osc私有库jenkins库管理，出现的问题：
+Failed to connect to repository : Command "git -c core.askpass=true ls-remote -h https://git.oschina.net/huosan/recomend.git HEAD" returned status code 128:
+stdout: 
+stderr: fatal: Authentication failed for 'https://git.oschina.net/huosan/recomend.git/'
+
+3. 设置git
+1). “新建” —> 勾选“构建一个自由风格的软件项目”  -> “源码管理”中勾选“Git”
+2).  配置repo的URL以及SSH keys生成的private key填入下面的输入框中。生成SSH keys的过程具体请参考：https://help.github.com/articles/generating-ssh-keys/，对git比较熟悉的话，这个过程应该不会陌生。记得不要忘记把public key添加 repo的访问权限中，无论是github/gitlab/bitbucket都是类似的。执行下面两行命令，直接到输入框里粘贴即可。
+
+```
+ssh-keygen -t rsa -N "" -f ~/Tools/jenkins.key # 生成key
+cat ~/Tools/jenkins.key | pbcopy # 把private key copy到粘贴板
+```   
+`
+解决：
+[ssh key相关问题](http://git.mydoc.io/?t=83157)
+[github](https://help.github.com/articles/generating-ssh-keys/)
+你可以按如下命令来生成sshkey
+
+ssh-keygen -t rsa -C "xxxxx@xxxxx.com"# Creates a new ssh key using the provided email
+# Generating public/private rsa key pair...
+查看你的public key，并把他添加到 Git @ OSC http://git.oschina.net/keys
+
+cat ~/.ssh/id_rsa.pub
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....
+添加后，在终端（Terminal）中输入
+
+ssh -T git@git.oschina.net
+若返回
+
+Welcome to Git@OSC, yourname! 
+则证明添加成功。
 
 
 

@@ -47,10 +47,13 @@ target 'SISpeciesNotes' do
     #添加单元测试依赖库
     #介绍： https://realm.io/cn/news/tryswift-ash-furrow-artsy-testing-tour/
     #https://github.com/Quick/Quick/blob/master/Documentation/en-us/InstallingQuick.md#cocoapods
+    #Specta让我们采用行为驱动开发(BDD)风格的语法来编写测试，相比于XCTest的语法，它更加易读。它还有一个强大的分组测试功能，在测试之前或之后运行一些代码块，这样的话，能够极大地减少重复代码。
+    
+#    Expecta是一个匹配器框架，我们可以在测试中使用它来创建断言。它的语法非常强大，与此同时，它比内建的XCAssert套件更加易读。例如
     def testing_pods
-        pod 'Quick'
-        pod 'Nimble'
-        pod 'RxBlocking', '~> 2.0'
+    pod 'Quick'         #Specta “可视化”测试
+    pod 'Nimble'        # Expecta 匹配器框架
+    pod 'RxBlocking', '~> 2.0'
 #        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
     end
 
