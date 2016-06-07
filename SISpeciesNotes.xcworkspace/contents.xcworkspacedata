@@ -43,6 +43,9 @@
       assignedFileDataType = "public.ruby-script">
    </FileRef>
    <FileRef
+      location = "group:Sport_Xctool.xml">
+   </FileRef>
+   <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
    </FileRef>
    <FileRef
