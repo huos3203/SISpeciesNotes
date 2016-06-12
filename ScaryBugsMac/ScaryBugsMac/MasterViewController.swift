@@ -50,7 +50,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         self.bugRating.delegate = self as EDStarRatingProtocol
         self.bugRating.horizontalMargin = 12
         self.bugRating.displayMode = UInt(EDStarRatingDisplayFull)
-        self.bugRating.editable = false
+        //rating能否编辑控制属性,等同于View属性User Interaction Enabled
+        self.bugRating.editable = true
         
         self.bugRating.rating = 0.0
     }
@@ -120,8 +121,9 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     }
     
     //MARK: - EDStrarRating delegate
+    //前提bugRating.editablerating = true 必须设置为true
     func starsSelectionChanged(control: EDStarRating!, rating: Float) {
-        //
+        
         if let selectedBug = selectedBugDoc(){
             selectedBug.data.rating = self.bugRating.rating
         }

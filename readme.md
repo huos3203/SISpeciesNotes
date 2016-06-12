@@ -667,6 +667,9 @@ ssh -T git@git.oschina.net
 Welcome to Git@OSC, yourname! 
 则证明添加成功。
 
+######在jenkins中执行pod update 出错的解决办法：
+在jenkins系统配置中添加全局属性键值对列表：LANG : zh_CN_UTF-8
+[CocoaPods requires your terminal to be using UTF-8 encoding.](http://runningyoung.github.io/2016/04/01/2016-04-05-jenkins2/)
 
 
 
