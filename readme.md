@@ -668,5 +668,49 @@ Welcome to Git@OSC, yourname!
 则证明添加成功。
 
 
+#####问题
+[iResearch] $ /bin/sh -xe /Users/Shared/Jenkins/tmp/hudson7464482011388604717.sh
++ source /usr/local/share/chruby/chruby.sh
+++ CHRUBY_VERSION=0.3.9
+++ RUBIES=()
+++ for dir in '"$PREFIX/opt/rubies"' '"$HOME/.rubies"'
+++ [[ -d /opt/rubies ]]
+++ for dir in '"$PREFIX/opt/rubies"' '"$HOME/.rubies"'
+++ [[ -d /Users/Shared/Jenkins/.rubies ]]
+++ unset dir
++ pwd
+/Users/Shared/Jenkins/Home/workspace/iResearch
++ cd Recommend/
++ pwd
+/Users/Shared/Jenkins/Home/workspace/iResearch/Recommend
++ ruby -v
+ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]
++ echo ruby-2.3.1
++ chruby ruby-2.3.1
++ case "$1" in
++ local dir match
++ [[ -z '' ]]
++ echo 'chruby: unknown Ruby: ruby-2.3.1'
+chruby: unknown Ruby: ruby-2.3.1
++ return 1
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
+
+####配置：
+
+#cd ~
+#pwd
+su jenkins pyc123
+source /usr/local/share/chruby/chruby.sh
+pwd
+cd Recommend/
+pwd
+which ruby
+ruby -v
+chruby
+echo ruby-2.3.1 > .ruby-version
+chruby ruby-2.3.1
+fastlane -v
+fastlane example
 
 
