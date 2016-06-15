@@ -10,7 +10,7 @@
 //#import "FileOutPublic.h"
 #import "PycSocket.h"
 
-#import "MyProtocol.h"
+//#import "MyProtocol.h"
 
 #import "FileOutPublic.h"
 #import "AppDelegateHelper.h"

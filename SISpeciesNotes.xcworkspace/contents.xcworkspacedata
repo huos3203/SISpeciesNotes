@@ -81,4 +81,7 @@
    <FileRef
       location = "group:PhotoKeeper/PhotoKeeper/PhotoKeeper.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Panagram/Panagram.xcodeproj">
+   </FileRef>
 </Workspace>
