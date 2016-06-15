@@ -90,6 +90,8 @@
 		843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
 		843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
 		843CAE241D09367800CE84F4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
+		843CAE401D10E2E000CE84F4 /* build-ffmpeg_cankao.sh in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE3E1D10E2E000CE84F4 /* build-ffmpeg_cankao.sh */; };
+		843CAE411D10E2E000CE84F4 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE3F1D10E2E000CE84F4 /* build-ffmpeg.sh */; };
 		84E5CB201D032FFD003430F2 /* OutFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +260,8 @@
 		843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = secondary_first_sub_category.txt; sourceTree = "<group>"; };
 		843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = secondary_second_sub_category.txt; sourceTree = "<group>"; };
 		843CAE121D09367800CE84F4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		843CAE3E1D10E2E000CE84F4 /* build-ffmpeg_cankao.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg_cankao.sh"; sourceTree = "<group>"; };
+		843CAE3F1D10E2E000CE84F4 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
@@ -601,6 +605,8 @@
 		843CADFD1D09367800CE84F4 /* fastlane */ = {
 			isa = PBXGroup;
 			children = (
+				843CAE3E1D10E2E000CE84F4 /* build-ffmpeg_cankao.sh */,
+				843CAE3F1D10E2E000CE84F4 /* build-ffmpeg.sh */,
 				843CADFE1D09367800CE84F4 /* Appfile */,
 				843CADFF1D09367800CE84F4 /* Deliverfile */,
 				843CAE001D09367800CE84F4 /* Fastfile */,
@@ -773,6 +779,7 @@
 				843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */,
 				843CAE1C1D09367800CE84F4 /* release_notes.txt in Resources */,
 				840AA6911CFCA2EA00819203 /* 114.png in Resources */,
+				843CAE401D10E2E000CE84F4 /* build-ffmpeg_cankao.sh in Resources */,
 				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
 				843CAE241D09367800CE84F4 /* README.txt in Resources */,
 				843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */,
@@ -783,6 +790,7 @@
 				843CAE211D09367800CE84F4 /* secondary_category.txt in Resources */,
 				843CAE191D09367800CE84F4 /* marketing_url.txt in Resources */,
 				843CAE1A1D09367800CE84F4 /* name.txt in Resources */,
+				843CAE411D10E2E000CE84F4 /* build-ffmpeg.sh in Resources */,
 				843CAE1B1D09367800CE84F4 /* privacy_url.txt in Resources */,
 				843CAE171D09367800CE84F4 /* description.txt in Resources */,
 				843CAE1E1D09367800CE84F4 /* primary_category.txt in Resources */,
