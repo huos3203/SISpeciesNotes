@@ -8,6 +8,12 @@
 
 import Foundation
 
+//This defines the output method to use when writing messages
+enum OutputType {
+    case Error
+    case Standard
+}
+
 //Panagram has three options: -p to detect palindromes, -a for anagrams and -h to show the usage information.
 enum OptionType:String {
     case Palindrome = "p"
@@ -50,4 +56,13 @@ class ConsoleIO{
         return (OptionType(value:option),option)
     }
 
+    //This function has two parameters; the first is the actual message to print, and the second is where to write it. This defaults to .Standard.
+    func writeMessage(message:String,to:OutputType = .Standard) {
+        switch to {
+        case .Standard:
+            print("\u{001B}[;m\(message)]")
+        case .Error:
+            fputs("\u{001B}[0;31m\(message)\n]", stderr)
+        }
+    }
 }
