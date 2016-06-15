@@ -84,4 +84,10 @@
    <FileRef
       location = "group:Panagram/Panagram.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:mpv-examples/mpv-examples.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OpenWithMPV/OpenWithMPV.xcodeproj">
+   </FileRef>
 </Workspace>

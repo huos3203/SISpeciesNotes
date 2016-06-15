@@ -13,6 +13,7 @@ let panagram = Panagram()
 
 if Process.argc < 2{
     //Handle interactive mode
+    panagram.interactiveMode()
 }else{
     panagram.staticMode()
 }

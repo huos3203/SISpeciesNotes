@@ -19,6 +19,7 @@ enum OptionType:String {
     case Palindrome = "p"
     case Anagram = "a"
     case Help = "h"
+    case Quit = "q"
     case Unknown
     
     init(value:String){
@@ -29,6 +30,9 @@ enum OptionType:String {
             self = .Palindrome
         case "h":
             self = .Help
+        case "q":
+            self = .Quit
+            
         default:
             self = .Unknown
         }
@@ -64,5 +68,17 @@ class ConsoleIO{
         case .Error:
             fputs("\u{001B}[0;31m\(message)\n]", stderr)
         }
+    }
+    
+    
+    func getInput() -> String {
+        //1. First, grab a handle to stdin.
+        let keyboard = NSFileHandle.fileHandleWithStandardInput()
+        //2. read any data on the stream.
+        let inputData = keyboard.availableData
+        //3. Convert the data to a string.
+        let strData = NSString(data: inputData,encoding: NSUTF8StringEncoding)!
+        //4. remove any newline characters and return the string.
+        return strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
     }
 }
