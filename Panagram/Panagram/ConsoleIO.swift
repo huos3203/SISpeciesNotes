@@ -8,6 +8,27 @@
 
 import Foundation
 
+//Panagram has three options: -p to detect palindromes, -a for anagrams and -h to show the usage information.
+enum OptionType:String {
+    case Palindrome = "p"
+    case Anagram = "a"
+    case Help = "h"
+    case Unknown
+    
+    init(value:String){
+        switch value {
+        case "a":
+            self = .Anagram
+        case "p":
+            self = .Palindrome
+        case "h":
+            self = .Help
+        default:
+            self = .Unknown
+        }
+    }
+}
+
 class ConsoleIO{
     
     //prints usage information to the console
@@ -22,4 +43,11 @@ class ConsoleIO{
         print("\(executableName) -h to show usage information")
         print("Type \(executableName) without an option to enter interactive mode.")
     }
+    
+    //accepts a String as its argument and returns a tuple of OptionType and String.
+    func getOption(option:String) -> (option:OptionType,value:String) {
+        //
+        return (OptionType(value:option),option)
+    }
+
 }
