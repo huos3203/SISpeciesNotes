@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14562FC41D10F39100DB35E2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14562FC31D10F39100DB35E2 /* main.swift */; };
+		14562FCB1D10F49000DB35E2 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14562FCA1D10F49000DB35E2 /* ConsoleIO.swift */; };
+		14562FCD1D10F66800DB35E2 /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14562FCC1D10F66800DB35E2 /* Panagram.swift */; };
+		14562FCF1D11049B00DB35E2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14562FCE1D11049B00DB35E2 /* StringExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14562FBE1D10F39100DB35E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		14562FC01D10F39100DB35E2 /* Panagram */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Panagram; sourceTree = BUILT_PRODUCTS_DIR; };
+		14562FC31D10F39100DB35E2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		14562FCA1D10F49000DB35E2 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
+		14562FCC1D10F66800DB35E2 /* Panagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
+		14562FCE1D11049B00DB35E2 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14562FBD1D10F39100DB35E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14562FB71D10F39100DB35E2 = {
+			isa = PBXGroup;
+			children = (
+				14562FC21D10F39100DB35E2 /* Panagram */,
+				14562FC11D10F39100DB35E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14562FC11D10F39100DB35E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14562FC01D10F39100DB35E2 /* Panagram */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14562FC21D10F39100DB35E2 /* Panagram */ = {
+			isa = PBXGroup;
+			children = (
+				14562FC31D10F39100DB35E2 /* main.swift */,
+				14562FCA1D10F49000DB35E2 /* ConsoleIO.swift */,
+				14562FCC1D10F66800DB35E2 /* Panagram.swift */,
+				14562FCE1D11049B00DB35E2 /* StringExtension.swift */,
+			);
+			path = Panagram;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14562FBF1D10F39100DB35E2 /* Panagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14562FC71D10F39100DB35E2 /* Build configuration list for PBXNativeTarget "Panagram" */;
+			buildPhases = (
+				14562FBC1D10F39100DB35E2 /* Sources */,
+				14562FBD1D10F39100DB35E2 /* Frameworks */,
+				14562FBE1D10F39100DB35E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Panagram;
+			productName = Panagram;
+			productReference = 14562FC01D10F39100DB35E2 /* Panagram */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14562FB81D10F39100DB35E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = recomend;
+				TargetAttributes = {
+					14562FBF1D10F39100DB35E2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 14562FBB1D10F39100DB35E2 /* Build configuration list for PBXProject "Panagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 14562FB71D10F39100DB35E2;
+			productRefGroup = 14562FC11D10F39100DB35E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14562FBF1D10F39100DB35E2 /* Panagram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14562FBC1D10F39100DB35E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14562FCF1D11049B00DB35E2 /* StringExtension.swift in Sources */,
+				14562FC41D10F39100DB35E2 /* main.swift in Sources */,
+				14562FCB1D10F49000DB35E2 /* ConsoleIO.swift in Sources */,
+				14562FCD1D10F66800DB35E2 /* Panagram.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		14562FC51D10F39100DB35E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14562FC61D10F39100DB35E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		14562FC81D10F39100DB35E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14562FC91D10F39100DB35E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14562FBB1D10F39100DB35E2 /* Build configuration list for PBXProject "Panagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14562FC51D10F39100DB35E2 /* Debug */,
+				14562FC61D10F39100DB35E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14562FC71D10F39100DB35E2 /* Build configuration list for PBXNativeTarget "Panagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14562FC81D10F39100DB35E2 /* Debug */,
+				14562FC91D10F39100DB35E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14562FB81D10F39100DB35E2 /* Project object */;
+}

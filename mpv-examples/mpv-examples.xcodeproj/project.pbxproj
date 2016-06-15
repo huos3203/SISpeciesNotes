@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FDD1D11498400DB35E2 /* AppDelegate.m */; };
+		14562FE11D11498400DB35E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE01D11498400DB35E2 /* main.m */; };
+		14562FE41D11498400DB35E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE31D11498400DB35E2 /* ViewController.m */; };
+		14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE51D11498400DB35E2 /* Assets.xcassets */; };
+		14562FE91D11498400DB35E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE71D11498400DB35E2 /* Main.storyboard */; };
+		14562FF41D11498400DB35E2 /* mpv_examplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FF31D11498400DB35E2 /* mpv_examplesTests.m */; };
+		145630041D11526D00DB35E2 /* mpv.def in Resources */ = {isa = PBXBuildFile; fileRef = 145630001D11526C00DB35E2 /* mpv.def */; };
+		145630051D11526D00DB35E2 /* mpv.pc.in in Resources */ = {isa = PBXBuildFile; fileRef = 145630011D11526C00DB35E2 /* mpv.pc.in */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14562FF01D11498400DB35E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14562FD11D11498400DB35E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14562FD81D11498400DB35E2;
+			remoteInfo = "mpv-examples";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14562FD91D11498400DB35E2 /* mpv-examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mpv-examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14562FDC1D11498400DB35E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14562FDD1D11498400DB35E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14562FE01D11498400DB35E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14562FE21D11498400DB35E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		14562FE31D11498400DB35E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14562FE51D11498400DB35E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14562FE81D11498400DB35E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14562FEA1D11498400DB35E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14562FEF1D11498400DB35E2 /* mpv-examplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mpv-examplesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14562FF31D11498400DB35E2 /* mpv_examplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpv_examplesTests.m; sourceTree = "<group>"; };
+		14562FF51D11498400DB35E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14562FFF1D11526C00DB35E2 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
+		145630001D11526C00DB35E2 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
+		145630011D11526C00DB35E2 /* mpv.pc.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.pc.in; sourceTree = "<group>"; };
+		145630021D11526C00DB35E2 /* opengl_cb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_cb.h; sourceTree = "<group>"; };
+		145630031D11526C00DB35E2 /* qthelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = qthelper.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14562FD61D11498400DB35E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14562FEC1D11498400DB35E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14562FD01D11498400DB35E2 = {
+			isa = PBXGroup;
+			children = (
+				14562FDB1D11498400DB35E2 /* mpv-examples */,
+				14562FF21D11498400DB35E2 /* mpv-examplesTests */,
+				14562FDA1D11498400DB35E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14562FDA1D11498400DB35E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14562FD91D11498400DB35E2 /* mpv-examples.app */,
+				14562FEF1D11498400DB35E2 /* mpv-examplesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14562FDB1D11498400DB35E2 /* mpv-examples */ = {
+			isa = PBXGroup;
+			children = (
+				14562FFE1D11526C00DB35E2 /* libmpv */,
+				14562FDC1D11498400DB35E2 /* AppDelegate.h */,
+				14562FDD1D11498400DB35E2 /* AppDelegate.m */,
+				14562FE21D11498400DB35E2 /* ViewController.h */,
+				14562FE31D11498400DB35E2 /* ViewController.m */,
+				14562FE51D11498400DB35E2 /* Assets.xcassets */,
+				14562FE71D11498400DB35E2 /* Main.storyboard */,
+				14562FEA1D11498400DB35E2 /* Info.plist */,
+				14562FDF1D11498400DB35E2 /* Supporting Files */,
+			);
+			path = "mpv-examples";
+			sourceTree = "<group>";
+		};
+		14562FDF1D11498400DB35E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14562FE01D11498400DB35E2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14562FF21D11498400DB35E2 /* mpv-examplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				14562FF31D11498400DB35E2 /* mpv_examplesTests.m */,
+				14562FF51D11498400DB35E2 /* Info.plist */,
+			);
+			path = "mpv-examplesTests";
+			sourceTree = "<group>";
+		};
+		14562FFE1D11526C00DB35E2 /* libmpv */ = {
+			isa = PBXGroup;
+			children = (
+				14562FFF1D11526C00DB35E2 /* client.h */,
+				145630001D11526C00DB35E2 /* mpv.def */,
+				145630011D11526C00DB35E2 /* mpv.pc.in */,
+				145630021D11526C00DB35E2 /* opengl_cb.h */,
+				145630031D11526C00DB35E2 /* qthelper.hpp */,
+			);
+			path = libmpv;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14562FD81D11498400DB35E2 /* mpv-examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */;
+			buildPhases = (
+				14562FD51D11498400DB35E2 /* Sources */,
+				14562FD61D11498400DB35E2 /* Frameworks */,
+				14562FD71D11498400DB35E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mpv-examples";
+			productName = "mpv-examples";
+			productReference = 14562FD91D11498400DB35E2 /* mpv-examples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14562FEE1D11498400DB35E2 /* mpv-examplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14562FFB1D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examplesTests" */;
+			buildPhases = (
+				14562FEB1D11498400DB35E2 /* Sources */,
+				14562FEC1D11498400DB35E2 /* Frameworks */,
+				14562FED1D11498400DB35E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14562FF11D11498400DB35E2 /* PBXTargetDependency */,
+			);
+			name = "mpv-examplesTests";
+			productName = "mpv-examplesTests";
+			productReference = 14562FEF1D11498400DB35E2 /* mpv-examplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14562FD11D11498400DB35E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = recomend;
+				TargetAttributes = {
+					14562FD81D11498400DB35E2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					14562FEE1D11498400DB35E2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 14562FD81D11498400DB35E2;
+					};
+				};
+			};
+			buildConfigurationList = 14562FD41D11498400DB35E2 /* Build configuration list for PBXProject "mpv-examples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14562FD01D11498400DB35E2;
+			productRefGroup = 14562FDA1D11498400DB35E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14562FD81D11498400DB35E2 /* mpv-examples */,
+				14562FEE1D11498400DB35E2 /* mpv-examplesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14562FD71D11498400DB35E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				145630041D11526D00DB35E2 /* mpv.def in Resources */,
+				14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */,
+				145630051D11526D00DB35E2 /* mpv.pc.in in Resources */,
+				14562FE91D11498400DB35E2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14562FED1D11498400DB35E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14562FD51D11498400DB35E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14562FE41D11498400DB35E2 /* ViewController.m in Sources */,
+				14562FE11D11498400DB35E2 /* main.m in Sources */,
+				14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14562FEB1D11498400DB35E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14562FF41D11498400DB35E2 /* mpv_examplesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14562FF11D11498400DB35E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14562FD81D11498400DB35E2 /* mpv-examples */;
+			targetProxy = 14562FF01D11498400DB35E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14562FE71D11498400DB35E2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14562FE81D11498400DB35E2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14562FF61D11498400DB35E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		14562FF71D11498400DB35E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		14562FF91D11498400DB35E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				INFOPLIST_FILE = "mpv-examples/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14562FFA1D11498400DB35E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				INFOPLIST_FILE = "mpv-examples/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		14562FFC1D11498400DB35E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mpv-examplesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examplesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpv-examples.app/Contents/MacOS/mpv-examples";
+			};
+			name = Debug;
+		};
+		14562FFD1D11498400DB35E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mpv-examplesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examplesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpv-examples.app/Contents/MacOS/mpv-examples";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14562FD41D11498400DB35E2 /* Build configuration list for PBXProject "mpv-examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14562FF61D11498400DB35E2 /* Debug */,
+				14562FF71D11498400DB35E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14562FF91D11498400DB35E2 /* Debug */,
+				14562FFA1D11498400DB35E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14562FFB1D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14562FFC1D11498400DB35E2 /* Debug */,
+				14562FFD1D11498400DB35E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14562FD11D11498400DB35E2 /* Project object */;
+}
