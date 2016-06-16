@@ -22,6 +22,8 @@
 		143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
+		144D95621D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */; };
+		144D95641D12976C00E495F6 /* main.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 144D95631D12938100E495F6 /* main.scpt */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -68,6 +70,7 @@
 		14B260071CFD86A8001BCE84 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		14B2600A1CFD8AA3001BCE84 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260091CFD8AA3001BCE84 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2600C1CFD8AED001BCE84 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14DDC93B1D12AEDD00F77B1D /* BigBuck.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 14DDC9391D12AD1200F77B1D /* BigBuck.m4v */; };
 		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
@@ -135,6 +138,8 @@
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
+		144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCallAppleScriptTests.swift; sourceTree = "<group>"; };
+		144D95631D12938100E495F6 /* main.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.scpt; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 		14B260091CFD8AA3001BCE84 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		14DDC9391D12AD1200F77B1D /* BigBuck.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = BigBuck.m4v; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
@@ -342,8 +348,11 @@
 		1437DD7C1CF2A75F001BD2D2 /* ScaryBugsMacTests */ = {
 			isa = PBXGroup;
 			children = (
+				144D95631D12938100E495F6 /* main.scpt */,
+				14DDC9391D12AD1200F77B1D /* BigBuck.m4v */,
 				1437DD7D1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift */,
 				1437DD7F1CF2A75F001BD2D2 /* Info.plist */,
+				144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */,
 			);
 			path = ScaryBugsMacTests;
 			sourceTree = "<group>";
@@ -778,6 +787,7 @@
 				843CAE1F1D09367800CE84F4 /* primary_first_sub_category.txt in Resources */,
 				843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */,
 				843CAE1C1D09367800CE84F4 /* release_notes.txt in Resources */,
+				144D95641D12976C00E495F6 /* main.scpt in Resources */,
 				840AA6911CFCA2EA00819203 /* 114.png in Resources */,
 				843CAE401D10E2E000CE84F4 /* build-ffmpeg_cankao.sh in Resources */,
 				1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */,
@@ -799,6 +809,7 @@
 				843CAE161D09367800CE84F4 /* copyright.txt in Resources */,
 				843CAE181D09367800CE84F4 /* keywords.txt in Resources */,
 				843CAE141D09367800CE84F4 /* Deliverfile in Resources */,
+				14DDC93B1D12AEDD00F77B1D /* BigBuck.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +992,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1437DD7E1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift in Sources */,
+				144D95621D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
