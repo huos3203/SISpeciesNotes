@@ -90,4 +90,7 @@
    <FileRef
       location = "group:OpenWithMPV/OpenWithMPV.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:AttachAScript/AttachAScript.xcodeproj">
+   </FileRef>
 </Workspace>
