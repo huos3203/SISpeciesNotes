@@ -535,7 +535,7 @@ brew install ruby-install
 安装指定 Ruby 版本
 ruby-install ruby 2.2.3
 安装 chruby
-brew install chruby
+brew install chruby 
 切换 Ruby 版本
 然后在 .bashrc 或者 .bash_profile 里加入脚本（具体路径最好照官方说明来）。
 第一个脚本加载 chruby,第二个脚本控制自动切换（按 .ruby-version 文件）:
@@ -592,13 +592,13 @@ set -e
 sh build.sh cocoapods-setup
 
 core is not a symlink. Deleting...
-Downloading dependency: core 1.0.1
+Downloading dependency: core 1.1.1
 Downloading core failed:
 curl: (56) SSLRead() return error -36
 
 [解决通过Cocoapods安装或升级Realm时候CURL报SSLRead()的错误](http://cdbit.com/read/sslread-error-when-install-realm-with-cocoapods.html)
-1. 先下载https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2核心包
-   终端下载命令： curl -output realm-core-1.0.1.tar.bz2 https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2
+1. 先下载https://static.realm.io/downloads/core/realm-core-1.1.1.tar.bz2核心包
+   终端下载命令： curl -output core-1.1.1.tar.bz2 https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2
 2. 找到$TMPDIR/core_bin目录
    终端敲入命令：cd $TMPDIR/core_bin 
 3. 把下载的好的核心包，拷贝到core_bin目录

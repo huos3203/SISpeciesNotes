@@ -88,6 +88,9 @@
       location = "group:mpv-examples/mpv-examples.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ffmpegc-demo/ffmpegc-demo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:OpenWithMPV/OpenWithMPV.xcodeproj">
    </FileRef>
    <FileRef

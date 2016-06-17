@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14358F591D13F27A0058914F /* libmpv.1.21.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */; };
+		14358F5A1D13F27A0058914F /* libmpv.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F571D13F27A0058914F /* libmpv.1.dylib */; };
+		14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F581D13F27A0058914F /* libmpv.dylib */; };
 		14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FDD1D11498400DB35E2 /* AppDelegate.m */; };
 		14562FE11D11498400DB35E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE01D11498400DB35E2 /* main.m */; };
 		14562FE41D11498400DB35E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE31D11498400DB35E2 /* ViewController.m */; };
 		14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE51D11498400DB35E2 /* Assets.xcassets */; };
 		14562FE91D11498400DB35E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE71D11498400DB35E2 /* Main.storyboard */; };
 		14562FF41D11498400DB35E2 /* mpv_examplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FF31D11498400DB35E2 /* mpv_examplesTests.m */; };
-		145630041D11526D00DB35E2 /* mpv.def in Resources */ = {isa = PBXBuildFile; fileRef = 145630001D11526C00DB35E2 /* mpv.def */; };
-		145630051D11526D00DB35E2 /* mpv.pc.in in Resources */ = {isa = PBXBuildFile; fileRef = 145630011D11526C00DB35E2 /* mpv.pc.in */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14358F311D13E7AA0058914F /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
+		14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.21.0.dylib; sourceTree = "<group>"; };
+		14358F571D13F27A0058914F /* libmpv.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.dylib; sourceTree = "<group>"; };
+		14358F581D13F27A0058914F /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
 		14562FD91D11498400DB35E2 /* mpv-examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mpv-examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14562FDC1D11498400DB35E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14562FDD1D11498400DB35E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,11 +45,6 @@
 		14562FEF1D11498400DB35E2 /* mpv-examplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mpv-examplesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14562FF31D11498400DB35E2 /* mpv_examplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpv_examplesTests.m; sourceTree = "<group>"; };
 		14562FF51D11498400DB35E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14562FFF1D11526C00DB35E2 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
-		145630001D11526C00DB35E2 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
-		145630011D11526C00DB35E2 /* mpv.pc.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.pc.in; sourceTree = "<group>"; };
-		145630021D11526C00DB35E2 /* opengl_cb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_cb.h; sourceTree = "<group>"; };
-		145630031D11526C00DB35E2 /* qthelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = qthelper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */,
+				14358F591D13F27A0058914F /* libmpv.1.21.0.dylib in Frameworks */,
+				14358F5A1D13F27A0058914F /* libmpv.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,11 +122,10 @@
 		14562FFE1D11526C00DB35E2 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
-				14562FFF1D11526C00DB35E2 /* client.h */,
-				145630001D11526C00DB35E2 /* mpv.def */,
-				145630011D11526C00DB35E2 /* mpv.pc.in */,
-				145630021D11526C00DB35E2 /* opengl_cb.h */,
-				145630031D11526C00DB35E2 /* qthelper.hpp */,
+				14358F311D13E7AA0058914F /* client.h */,
+				14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */,
+				14358F571D13F27A0058914F /* libmpv.1.dylib */,
+				14358F581D13F27A0058914F /* libmpv.dylib */,
 			);
 			path = libmpv;
 			sourceTree = "<group>";
@@ -208,9 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145630041D11526D00DB35E2 /* mpv.def in Resources */,
 				14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */,
-				145630051D11526D00DB35E2 /* mpv.pc.in in Resources */,
 				14562FE91D11498400DB35E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,9 +351,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -364,9 +366,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -417,6 +421,7 @@
 				14562FFA1D11498400DB35E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14562FFB1D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examplesTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				14562FFD1D11498400DB35E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

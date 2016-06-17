@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oh3-hY-J1k"/>
+                        <viewControllerLayoutGuide type="bottom" id="qg2-RJ-Xzc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nb-Mb-yp8">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem width="120" style="plain" systemItem="fixedSpace" id="t7p-r0-RUi"/>
+                                    <barButtonItem title="Play" id="mJL-5N-sny">
+                                        <connections>
+                                            <action selector="playClicked:" destination="2" id="mtP-TZ-c3a"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJr-X8-iXF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2h-eX-SDY">
+                                <rect key="frame" x="289" y="535" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jJr-X8-iXF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="D6W-hu-gen"/>
+                            <constraint firstAttribute="bottom" secondItem="v2h-eX-SDY" secondAttribute="bottom" constant="12" id="Jt7-3y-YLR"/>
+                            <constraint firstAttribute="trailing" secondItem="v2h-eX-SDY" secondAttribute="trailing" constant="20" symbolic="YES" id="LFU-px-f0C"/>
+                            <constraint firstItem="jJr-X8-iXF" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="Mro-t9-OAV"/>
+                            <constraint firstItem="jJr-X8-iXF" firstAttribute="top" secondItem="3" secondAttribute="top" id="O9J-Ib-lIg"/>
+                            <constraint firstItem="7nb-Mb-yp8" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="Wyy-DR-uqO"/>
+                            <constraint firstItem="jJr-X8-iXF" firstAttribute="bottom" secondItem="7nb-Mb-yp8" secondAttribute="top" id="Yij-Pe-xBF"/>
+                            <constraint firstItem="7nb-Mb-yp8" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="h5N-Wa-0h1"/>
+                            <constraint firstItem="7nb-Mb-yp8" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="trg-GV-pYt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="v2h-eX-SDY" id="Wrn-IO-Nm8"/>
+                        <outlet property="playButton" destination="mJL-5N-sny" id="jlI-qO-HMK"/>
+                        <outlet property="videoView" destination="jJr-X8-iXF" id="m5V-4o-wBj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
