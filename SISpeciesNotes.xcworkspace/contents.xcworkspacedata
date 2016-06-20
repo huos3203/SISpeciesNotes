@@ -96,4 +96,7 @@
    <FileRef
       location = "group:AttachAScript/AttachAScript.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
+   </FileRef>
 </Workspace>
