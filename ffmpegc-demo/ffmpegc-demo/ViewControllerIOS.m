@@ -9,11 +9,11 @@
 #import "ViewController.h"
 #import "Utilities.h"
 
-@interface ViewController ()
+@interface ViewControllerIOS ()
 
 @end
 
-@implementation ViewController
+@implementation ViewControllerIOS
 
 - (void)viewDidLoad
 {

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VideoFrameExtractor.h"
 
-@interface ViewControllerIOS : UIViewController {
+@interface ViewController : UIViewController {
     float lastFrameTime;
 }
 

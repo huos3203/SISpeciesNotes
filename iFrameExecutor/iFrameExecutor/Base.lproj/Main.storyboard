@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +642,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -667,11 +668,52 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ubF-yf-7hG">
+                                <rect key="frame" x="0.0" y="29" width="480" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="241" id="oZT-OX-84x"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="K0z-lQ-0sE"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dkl-Rf-rWW">
+                                <rect key="frame" x="14" y="-2" width="65" height="32"/>
+                                <buttonCell key="cell" type="push" title="play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tKj-10-WdV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playClicked:" target="XfG-lQ-9wD" id="LnS-eK-mOV"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-Os-ILK">
+                                <rect key="frame" x="415" y="4" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="bUY-vg-LO7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dkl-Rf-rWW" firstAttribute="top" secondItem="ubF-yf-7hG" secondAttribute="bottom" constant="3" id="0en-HS-usE"/>
+                            <constraint firstItem="ubF-yf-7hG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="3Pj-NA-DjB"/>
+                            <constraint firstItem="ubF-yf-7hG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="AXe-Ee-53U"/>
+                            <constraint firstItem="dkl-Rf-rWW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="I88-Vr-SKx"/>
+                            <constraint firstAttribute="trailing" secondItem="f1J-Os-ILK" secondAttribute="trailing" constant="30" id="jt3-bf-ISb"/>
+                            <constraint firstItem="f1J-Os-ILK" firstAttribute="top" secondItem="ubF-yf-7hG" secondAttribute="bottom" constant="8" symbolic="YES" id="wnz-47-QOz"/>
+                            <constraint firstAttribute="trailing" secondItem="ubF-yf-7hG" secondAttribute="trailing" id="zCU-cY-l71"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="f1J-Os-ILK" id="o0W-Ue-tYE"/>
+                        <outlet property="playButton" destination="dkl-Rf-rWW" id="B5o-op-j4A"/>
+                        <outlet property="videoView" destination="ubF-yf-7hG" id="7ML-cp-4IB"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

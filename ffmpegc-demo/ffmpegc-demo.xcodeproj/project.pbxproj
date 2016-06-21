@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		14358F6A1D13F9A70058914F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358F691D13F9A70058914F /* main.m */; };
 		14358F6D1D13F9A70058914F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358F6C1D13F9A70058914F /* AppDelegate.m */; };
-		14358F701D13F9A70058914F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358F6F1D13F9A70058914F /* ViewController.m */; };
+		14358F701D13F9A70058914F /* ViewControllerIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358F6F1D13F9A70058914F /* ViewControllerIOS.m */; };
 		14358F751D13F9A70058914F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14358F741D13F9A70058914F /* Assets.xcassets */; };
 		14358F781D13F9A70058914F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14358F761D13F9A70058914F /* LaunchScreen.storyboard */; };
 		14358F851D13FA180058914F /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358F811D13FA180058914F /* Utilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -35,8 +35,8 @@
 		14358F691D13F9A70058914F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14358F6B1D13F9A70058914F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14358F6C1D13F9A70058914F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14358F6E1D13F9A70058914F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14358F6F1D13F9A70058914F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14358F6E1D13F9A70058914F /* ViewControllerIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerIOS.h; sourceTree = "<group>"; };
+		14358F6F1D13F9A70058914F /* ViewControllerIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerIOS.m; sourceTree = "<group>"; };
 		14358F741D13F9A70058914F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14358F771D13F9A70058914F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14358F791D13F9A70058914F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 				14358F7F1D13FA180058914F /* iFrameExecutor */,
 				14358F6B1D13F9A70058914F /* AppDelegate.h */,
 				14358F6C1D13F9A70058914F /* AppDelegate.m */,
-				14358F6E1D13F9A70058914F /* ViewController.h */,
-				14358F6F1D13F9A70058914F /* ViewController.m */,
+				14358F6E1D13F9A70058914F /* ViewControllerIOS.h */,
+				14358F6F1D13F9A70058914F /* ViewControllerIOS.m */,
 				14358F741D13F9A70058914F /* Assets.xcassets */,
 				14358F881D13FBA50058914F /* Main.storyboard */,
 				14358F761D13F9A70058914F /* LaunchScreen.storyboard */,
@@ -488,7 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14358F871D13FA180058914F /* README.md in Sources */,
-				14358F701D13F9A70058914F /* ViewController.m in Sources */,
+				14358F701D13F9A70058914F /* ViewControllerIOS.m in Sources */,
 				14358F6D1D13F9A70058914F /* AppDelegate.m in Sources */,
 				14358F851D13FA180058914F /* Utilities.m in Sources */,
 				14358F6A1D13F9A70058914F /* main.m in Sources */,
@@ -657,6 +657,7 @@
 				14358F7E1D13F9A70058914F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

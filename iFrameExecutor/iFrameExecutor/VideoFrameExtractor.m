@@ -5,7 +5,7 @@
 //  Created by lajos on 1/10/10.
 //  Copyright 2010 www.codza.com. All rights reserved.
 //
-
+#import <AppKit/AppKit.h>
 #import "VideoFrameExtractor.h"
 #import "Utilities.h"
 
@@ -201,7 +201,9 @@ initError:
 									   NO, 
 									   kCGRenderingIntentDefault);
 	CGColorSpaceRelease(colorSpace);
-    NSImage *image = [NSImage initWithCGImage:cgImage size:CGSizeMake(100, 100)];
+//    NSImage *image = [NSImage initWithCGImage:cgImage size:CGSizeMake(100, 100)];
+    NSImage *image = [self imageFromCGImageRef:cgImage];
+//    image = [NSImage imageFromCGImageRef:cgImage];
 	CGImageRelease(cgImage);
 	CGDataProviderRelease(provider);
 	CFRelease(data);
@@ -209,6 +211,40 @@ initError:
 	return image;
 }
 
+//将CGImageRef转换为NSImage *
+- (NSImage*) imageFromCGImageRef:(CGImageRef)image
+
+{
+    
+    NSRect imageRect = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+    
+    CGContextRef imageContext = nil;
+    
+    NSImage* newImage = nil;
+    
+    // Get the image dimensions.
+    
+    imageRect.size.height = CGImageGetHeight(image);
+    
+    imageRect.size.width = CGImageGetWidth(image);
+    
+    // Create a new image to receive the Quartz image data.
+    
+    newImage = [[[NSImage alloc] initWithSize:imageRect.size] autorelease];
+    
+    [newImage lockFocus];
+    
+    // Get the Quartz context and draw.
+    
+    imageContext = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    
+    CGContextDrawImage(imageContext, *(CGRect*)&imageRect, image);
+    
+    [newImage unlockFocus];
+    
+    return newImage;
+    
+}
 -(void)savePPMPicture:(AVPicture)pict width:(int)width height:(int)height index:(int)iFrame {
     FILE *pFile;
 	NSString *fileName;
