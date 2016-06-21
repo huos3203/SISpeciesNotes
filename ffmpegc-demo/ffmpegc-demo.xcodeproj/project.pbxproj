@@ -26,8 +26,9 @@
 		14358FFE1D13FDCF0058914F /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358FFD1D13FDCE0058914F /* libiconv.2.4.0.tbd */; };
 		143590001D13FE020058914F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358FFF1D13FE010058914F /* libz.tbd */; };
 		143590021D13FE140058914F /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 143590011D13FE130058914F /* libbz2.1.0.tbd */; };
-		143590041D13FEC50058914F /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = 143590031D13FEC50058914F /* build-ffmpeg.sh */; };
 		143590071D1400760058914F /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 143590061D1400760058914F /* for_the_birds.avi */; };
+		148AB1DE1D192DC200655601 /* build-ffmpeg_cankao.sh in Resources */ = {isa = PBXBuildFile; fileRef = 148AB1DC1D192DC200655601 /* build-ffmpeg_cankao.sh */; };
+		148AB1DF1D192DC200655601 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = 148AB1DD1D192DC200655601 /* build-ffmpeg.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,8 +147,9 @@
 		14358FFD1D13FDCE0058914F /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		14358FFF1D13FE010058914F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		143590011D13FE130058914F /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
-		143590031D13FEC50058914F /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		143590061D1400760058914F /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
+		148AB1DC1D192DC200655601 /* build-ffmpeg_cankao.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg_cankao.sh"; sourceTree = "<group>"; };
+		148AB1DD1D192DC200655601 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,8 @@
 		14358F5C1D13F9A60058914F = {
 			isa = PBXGroup;
 			children = (
-				143590031D13FEC50058914F /* build-ffmpeg.sh */,
+				148AB1DC1D192DC200655601 /* build-ffmpeg_cankao.sh */,
+				148AB1DD1D192DC200655601 /* build-ffmpeg.sh */,
 				14358F671D13F9A60058914F /* ffmpegc-demo */,
 				14358F661D13F9A60058914F /* Products */,
 			);
@@ -474,7 +477,8 @@
 			files = (
 				14358F8A1D13FBA50058914F /* Main.storyboard in Resources */,
 				14358F781D13F9A70058914F /* LaunchScreen.storyboard in Resources */,
-				143590041D13FEC50058914F /* build-ffmpeg.sh in Resources */,
+				148AB1DF1D192DC200655601 /* build-ffmpeg.sh in Resources */,
+				148AB1DE1D192DC200655601 /* build-ffmpeg_cankao.sh in Resources */,
 				143590071D1400760058914F /* for_the_birds.avi in Resources */,
 				14358F751D13F9A70058914F /* Assets.xcassets in Resources */,
 			);

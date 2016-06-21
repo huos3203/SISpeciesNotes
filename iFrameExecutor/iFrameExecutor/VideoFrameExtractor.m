@@ -251,6 +251,7 @@ initError:
     int  y;
 	
 	fileName = [Utilities documentsPath:[NSString stringWithFormat:@"image%04d.ppm",iFrame]];
+    
     // Open file
     NSLog(@"write image file: %@",fileName);
     pFile=fopen([fileName cStringUsingEncoding:NSASCIIStringEncoding], "wb");

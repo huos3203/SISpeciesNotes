@@ -22,14 +22,6 @@
 #改命令会自动搭建环境，安装homebrew,下载FFmpeg源码包，下载并配置gas-preprocessor.pl依赖。
 #命令行如下：
 #安装homebrew:ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" \
-#Mac os 升级10.11 后 Homebrew 报错解决方案(http://www.libing.cc/mac-os-升级10-11-后-homebrew-报错解决方案/)
-#第一步：
-#
-#sudo chown -R $(whoami):admin /usr/local
-#第二步：
-#
-#cd $(brew --prefix) && git fetch origin && git reset --hard origin/master
-#好了！现在你的brew已经满血复活了！
 #
 #下载并解压FFmpeg源码包:curl http://www.ffmpeg.org/releases/$SOURCE.tar.bz2 | tar xj \
 #注：下载程序包的版本时，是通过$SOURCE全局变量指定
@@ -67,8 +59,8 @@ fi
 # avresample
 #CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
-#ARCHS="arm64 armv7s armv7 x86_64 i386"
-ARCHS="x86_64"
+ARCHS="arm64 armv7s armv7 x86_64 i386"
+
 COMPILE="y"
 LIPO="y"
 
@@ -133,9 +125,9 @@ then
 		    PLATFORM="iPhoneSimulator"    #模拟器
 		    CFLAGS="$CFLAGS -mios-simulator-version-min=$DEPLOYMENT_TARGET"
 		else
-		    PLATFORM="OSX"             #真机
+		    PLATFORM="iPhoneOS"             #真机
 		    CFLAGS="$CFLAGS -mios-version-min=$DEPLOYMENT_TARGET"
-		    if [ "$ARCH" = "x86_64" ]
+		    if [ "$ARCH" = "arm64" ]
 		    then
 		        EXPORT="GASPP_FIX_XCODE5=1"
 		    fi

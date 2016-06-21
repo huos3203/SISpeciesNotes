@@ -91,12 +91,12 @@
       location = "group:ffmpegc-demo/ffmpegc-demo.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:OpenWithMPV/OpenWithMPV.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:AttachAScript/AttachAScript.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
    </FileRef>
 </Workspace>
