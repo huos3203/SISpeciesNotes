@@ -18,21 +18,21 @@
     NSBundle *bundle = [NSBundle mainBundle];
     videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
 //    videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
-//    videoPath = @"/Users/pengyucheng/Downloads/1-2.mp4.pbb";
+    videoPath = @"/Users/pengyucheng/Desktop/3V7.8.0.mp4";
     NSLog(@"read video path: %@", videoPath);
     
     self.video = [[VideoFrameExtractor alloc] initWithVideo:videoPath];
     DLog(@"success.");
     
     DLog(@"setting video exetractor size....");
-    self.video.outputWidth = 426;
-    self.video.outputHeight = 320;
+
     // Do any additional setup after loading the view, typically from a nib.
     
     
     NSLog(@"video duration: %f", self.video.duration);
     NSLog(@"video size: %d x %d", self.video.sourceWidth, self.video.sourceHeight);
-
+        self.video.outputWidth = self.video.sourceWidth;
+        self.video.outputHeight = self.video.sourceHeight;
     // Do any additional setup after loading the view.
 }
 

@@ -39,7 +39,7 @@
 #-o /usr/local/bin/gas-preprocessor.pl \    #修改文件权限
 
 # directories
-SOURCE="ffmpeg-3.0.2"
+SOURCE="ffmpeg-2.5.2"
 FAT="FFmpeg-iOS"
 
 SCRATCH="scratch"
@@ -50,6 +50,9 @@ THIN=`pwd`/"thin"
 #X264=`pwd`/fat-x264
 
 #FDK_AAC=`pwd`/fdk-aac/fdk-aac-ios
+
+#裁剪
+#　　我们知道FFmpeg库是一个非常庞大的库，包括编码，解码以及流媒体的支持等，如果不做裁剪全部编译进来的话，最后生成的静态库会很大。实际使用中我们可能只想用到解码(例如播放器)，因此我们可以使用相关选项指定编译时禁用编码部分。当然我们还可以做进一步的裁剪，例如只打开部分常用格式的解码，禁用掉其他的解码，这样编译出来的静态库将会更小。
 
 CONFIGURE_FLAGS="--enable-cross-compile --disable-debug --disable-programs \
 --disable-doc --enable-pic"
@@ -67,6 +70,7 @@ fi
 # avresample
 #CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
+# 要编译的架构列表
 #ARCHS="arm64 armv7s armv7 x86_64 i386"
 ARCHS="x86_64"
 COMPILE="y"

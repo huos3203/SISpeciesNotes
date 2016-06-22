@@ -8,6 +8,7 @@
 #import <AppKit/AppKit.h>
 #import "VideoFrameExtractor.h"
 #import "Utilities.h"
+#import "pbb_key.h"
 
 @interface VideoFrameExtractor (private)
 -(void)convertFrameToRGB;
@@ -62,7 +63,12 @@
 //	if(av_open_input_file(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding],NULL, 0,NULL)!=0)
 //        goto initError; // Couldn't open file
 	// avformat_open_input(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding],NULL, NULL)!=0
-    if(avformat_open_input(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding], nil, nil) != 0)
+    unsigned char key[] = {-29,-69,-24,-80,29,127,-113,43,-96,84,44,59,-7,-20,-65,-76};
+    long long code_len = 0;
+    long long file_len = 2408936;
+    long long offset = 0;
+    set_key_info(key, code_len,file_len,offset);
+    if(avformat_open_input(&pFormatCtx, [moviePath cStringUsingEncoding:NSUTF8StringEncoding], nil, nil) != 0)
         goto initError; // Couldn't open file
 
 //	if(av_open_input_stream(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding], nil, 0, nil) != 0)
