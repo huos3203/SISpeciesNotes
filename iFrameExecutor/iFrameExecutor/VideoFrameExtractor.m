@@ -59,7 +59,8 @@
     av_register_all();
 	
     // Open video file
-	// av_open_input_file(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding],NULL, 0,NULL)!=0
+//	if(av_open_input_file(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding],NULL, 0,NULL)!=0)
+//        goto initError; // Couldn't open file
 	// avformat_open_input(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding],NULL, NULL)!=0
     if(avformat_open_input(&pFormatCtx, [moviePath cStringUsingEncoding:NSASCIIStringEncoding], nil, nil) != 0)
         goto initError; // Couldn't open file
