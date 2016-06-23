@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14358F591D13F27A0058914F /* libmpv.1.21.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */; };
-		14358F5A1D13F27A0058914F /* libmpv.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F571D13F27A0058914F /* libmpv.1.dylib */; };
 		14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F581D13F27A0058914F /* libmpv.dylib */; };
 		14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FDD1D11498400DB35E2 /* AppDelegate.m */; };
 		14562FE11D11498400DB35E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE01D11498400DB35E2 /* main.m */; };
@@ -30,8 +28,6 @@
 
 /* Begin PBXFileReference section */
 		14358F311D13E7AA0058914F /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
-		14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.21.0.dylib; sourceTree = "<group>"; };
-		14358F571D13F27A0058914F /* libmpv.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.dylib; sourceTree = "<group>"; };
 		14358F581D13F27A0058914F /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
 		14562FD91D11498400DB35E2 /* mpv-examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mpv-examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14562FDC1D11498400DB35E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,8 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */,
-				14358F591D13F27A0058914F /* libmpv.1.21.0.dylib in Frameworks */,
-				14358F5A1D13F27A0058914F /* libmpv.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				14358F311D13E7AA0058914F /* client.h */,
-				14358F561D13F27A0058914F /* libmpv.1.21.0.dylib */,
-				14358F571D13F27A0058914F /* libmpv.1.dylib */,
 				14358F581D13F27A0058914F /* libmpv.dylib */,
 			);
 			path = libmpv;
@@ -352,10 +344,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/mpv-examples/libmpv",
+					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/include/,
+				);
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/mpv-examples/libmpv",
+					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/lib/,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -367,10 +365,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/mpv-examples/libmpv",
+					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/include/,
+				);
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/mpv-examples/libmpv",
+					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/lib/,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

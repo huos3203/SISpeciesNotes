@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
-
+#import <Cocoa/Cocoa.h>
 
 static inline void check_error(int status)
 {
@@ -17,8 +16,6 @@ static inline void check_error(int status)
         exit(1);
     }
 }
-
-#import <Cocoa/Cocoa.h>
 
 @interface CocoaWindow : NSWindow
 @end
