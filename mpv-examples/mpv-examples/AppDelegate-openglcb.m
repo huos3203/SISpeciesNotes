@@ -136,14 +136,6 @@ static void wakeup(void *);
         [NSApp setActivationPolicy:NSApplicationActivationPolicyProhibited];
     });
     
-    // Read filename
-    NSArray *args = [NSProcessInfo processInfo].arguments;
-    if (args.count < 2) {
-        NSLog(@"Expected filename on command line");
-//        exit(1);
-    }
-    NSString *filename = @"/Users/pengyucheng/Desktop/d.mp4";
-    
     [self createWindow];
     window.pauseButton.target = self;
     
@@ -152,36 +144,31 @@ static void wakeup(void *);
         printf("failed creating context\n");
         exit(1);
     }
-    
     check_error(mpv_set_option_string(mpv, "input-media-keys", "yes"));
     // request important errors
     check_error(mpv_request_log_messages(mpv, "warn"));
     
     check_error(mpv_initialize(mpv));
     check_error(mpv_set_option_string(mpv, "vo", "opengl-cb"));
-    mpv_opengl_cb_context *mpvGL = mpv_get_sub_api(mpv, MPV_SUB_API_OPENGL_CB);
+    
+    mpv_opengl_cb_context *mpvGL = mpv_get_sub_api(self->mpv, MPV_SUB_API_OPENGL_CB);
     if (!mpvGL) {
         puts("libmpv does not have the opengl-cb sub-API.");
         exit(1);
     }
     // pass the mpvGL context to our view
     window.glView.mpvGL = mpvGL;
-    int r = mpv_opengl_cb_init_gl(mpvGL, NULL, get_proc_address, NULL);
+    int r = mpv_opengl_cb_init_gl(window.glView.mpvGL, NULL, get_proc_address, NULL);
     if (r < 0) {
         puts("gl init has failed.");
         exit(1);
     }
-    mpv_opengl_cb_set_update_callback(mpvGL, glupdate, (__bridge void *)window.glView);
+    mpv_opengl_cb_set_update_callback(window.glView.mpvGL, glupdate, (__bridge void *)window.glView);
     
     // Deal with MPV in the background.
     queue = dispatch_queue_create("mpv", DISPATCH_QUEUE_SERIAL);
-    dispatch_async(queue, ^{
-        // Register to be woken up whenever mpv generates new events.
-        mpv_set_wakeup_callback(mpv, wakeup, (__bridge void *)self);
-        // Load the indicated file
-        const char *cmd[] = {"loadfile", filename.UTF8String, NULL};
-        check_error(mpv_command(mpv, cmd));
-    });
+    
+    [self openfileVideo:@""];
 }
 
 static void glupdate(void *ctx)
@@ -253,6 +240,35 @@ static void wakeup(void *context)
 {
     AppDelegate_openglcb *a = (__bridge AppDelegate_openglcb *) context;
     [a readEvents];
+}
+
+-(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
+{
+    // Read filename
+    if(mpv){
+        [self openfileVideo:filename];
+        return YES;
+    }else{
+        return NO;
+    }
+    
+}
+
+-(void)openfileVideo:(NSString*)fileName{
+    // Read filename
+    NSArray *args = [NSProcessInfo processInfo].arguments;
+    if (args.count < 2) {
+        NSLog(@"Expected filename on command line");
+        exit(1);
+    }
+    NSString *filename = fileName;
+    dispatch_async(queue, ^{
+        // Register to be woken up whenever mpv generates new events.
+        mpv_set_wakeup_callback(mpv, wakeup, (__bridge void *)self);
+        // Load the indicated file
+        const char *cmd[] = {"loadfile", filename.UTF8String, NULL};
+        check_error(mpv_command(mpv, cmd));
+    });
 }
 
 // quit when the window is closed.
