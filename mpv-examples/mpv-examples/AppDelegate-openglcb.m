@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate-openglcb.h"
-
+#import "PlayerLoader.h"
 
 static inline void check_error(int status)
 {
@@ -242,8 +242,19 @@ static void wakeup(void *context)
     [a readEvents];
 }
 
+-(void)application:(NSApplication *)sender openFiles:(NSArray<NSString *> *)filenames
+{
+    //bilibi播放器
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:filenames];
+    NSLog(@"Handle open files: %@",filenames);
+}
+//
 -(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
 {
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[filename]];
+    NSLog(@"Handle open files: %@",@[filename]);
+    return YES;
+    
     // Read filename
     if(mpv){
         [self openfileVideo:filename];
