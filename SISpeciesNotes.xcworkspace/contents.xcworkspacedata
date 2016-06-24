@@ -96,4 +96,7 @@
    <FileRef
       location = "group:AttachAScript/AttachAScript.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:InstallerPluginSample/SamplePlugins.xcodeproj">
+   </FileRef>
 </Workspace>
