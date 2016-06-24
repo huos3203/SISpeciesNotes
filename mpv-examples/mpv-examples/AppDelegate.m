@@ -88,7 +88,7 @@ static void wakeup(void *);
         NSLog(@"Expected filename on command line");
         exit(1);
     }
-    NSString *filename = args[1];
+    NSString *filename = @"/Users/pengyucheng/Desktop/d.mp4";
     
     [self createWindow];
     

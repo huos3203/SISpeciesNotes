@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F581D13F27A0058914F /* libmpv.dylib */; };
-		14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FDD1D11498400DB35E2 /* AppDelegate.m */; };
+		143F37E51D1CDDE400DD70C9 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 143F37E41D1CDDE400DD70C9 /* readme.md */; };
+		143F37E71D1CE0E800DD70C9 /* AppDelegate-openglcb.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */; };
 		14562FE11D11498400DB35E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE01D11498400DB35E2 /* main.m */; };
 		14562FE41D11498400DB35E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FE31D11498400DB35E2 /* ViewController.m */; };
 		14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE51D11498400DB35E2 /* Assets.xcassets */; };
@@ -29,9 +30,13 @@
 /* Begin PBXFileReference section */
 		14358F311D13E7AA0058914F /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14358F581D13F27A0058914F /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
+		143F37DD1D1CCEE100DD70C9 /* AppDelegate-openglcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate-openglcb.h"; sourceTree = "<group>"; };
+		143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate-openglcb.m"; sourceTree = "<group>"; };
+		143F37E01D1CCFD300DD70C9 /* opengl_cb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opengl_cb.h; sourceTree = "<group>"; };
+		143F37E11D1CD2D100DD70C9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		143F37E21D1CD2D100DD70C9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		143F37E41D1CDDE400DD70C9 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14562FD91D11498400DB35E2 /* mpv-examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mpv-examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14562FDC1D11498400DB35E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		14562FDD1D11498400DB35E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14562FE01D11498400DB35E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14562FE21D11498400DB35E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		14562FE31D11498400DB35E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		14562FD01D11498400DB35E2 = {
 			isa = PBXGroup;
 			children = (
+				143F37E41D1CDDE400DD70C9 /* readme.md */,
 				14562FDB1D11498400DB35E2 /* mpv-examples */,
 				14562FF21D11498400DB35E2 /* mpv-examplesTests */,
 				14562FDA1D11498400DB35E2 /* Products */,
@@ -84,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				14562FFE1D11526C00DB35E2 /* libmpv */,
-				14562FDC1D11498400DB35E2 /* AppDelegate.h */,
-				14562FDD1D11498400DB35E2 /* AppDelegate.m */,
+				143F37E11D1CD2D100DD70C9 /* AppDelegate.h */,
+				143F37E21D1CD2D100DD70C9 /* AppDelegate.m */,
 				14562FE21D11498400DB35E2 /* ViewController.h */,
 				14562FE31D11498400DB35E2 /* ViewController.m */,
+				143F37DD1D1CCEE100DD70C9 /* AppDelegate-openglcb.h */,
+				143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */,
 				14562FE51D11498400DB35E2 /* Assets.xcassets */,
 				14562FE71D11498400DB35E2 /* Main.storyboard */,
 				14562FEA1D11498400DB35E2 /* Info.plist */,
@@ -116,6 +124,7 @@
 		14562FFE1D11526C00DB35E2 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
+				143F37E01D1CCFD300DD70C9 /* opengl_cb.h */,
 				14358F311D13E7AA0058914F /* client.h */,
 				14358F581D13F27A0058914F /* libmpv.dylib */,
 			);
@@ -221,9 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143F37E71D1CE0E800DD70C9 /* AppDelegate-openglcb.m in Sources */,
 				14562FE41D11498400DB35E2 /* ViewController.m in Sources */,
+				143F37E51D1CDDE400DD70C9 /* readme.md in Sources */,
 				14562FE11D11498400DB35E2 /* main.m in Sources */,
-				14562FDE1D11498400DB35E2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
