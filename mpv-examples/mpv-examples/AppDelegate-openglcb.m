@@ -168,7 +168,7 @@ static void wakeup(void *);
     // Deal with MPV in the background.
     queue = dispatch_queue_create("mpv", DISPATCH_QUEUE_SERIAL);
     
-    [self openfileVideo:@""];
+    [self openfileVideo:@"/Users/pengyucheng/Desktop/d.mp4"];
 }
 
 static void glupdate(void *ctx)

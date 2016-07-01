@@ -18,7 +18,7 @@
     NSBundle *bundle = [NSBundle mainBundle];
     videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
 //    videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
-    videoPath = @"/Users/pengyucheng/Desktop/3V7.8.0.mp4";
+//    videoPath = @"/Users/pengyucheng/Desktop/3V7.8.0.mp4";
     NSLog(@"read video path: %@", videoPath);
     
     self.video = [[VideoFrameExtractor alloc] initWithVideo:videoPath];

@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358F581D13F27A0058914F /* libmpv.dylib */; };
+		1414E0111D264AA6003CC7D1 /* libavcodec.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD11D25091600E923C2 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0121D264AA6003CC7D1 /* libavdevice.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD21D25091600E923C2 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0131D264AA6003CC7D1 /* libavfilter.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD31D25091600E923C2 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0141D264AA6003CC7D1 /* libavformat.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD41D25091600E923C2 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0151D264AA6003CC7D1 /* libavutil.55.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD51D25091600E923C2 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0161D264AA6003CC7D1 /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD71D25091600E923C2 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1414E0171D264AA6003CC7D1 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD81D25091600E923C2 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		143F37E51D1CDDE400DD70C9 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 143F37E41D1CDDE400DD70C9 /* readme.md */; };
 		143F37E71D1CE0E800DD70C9 /* AppDelegate-openglcb.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */; };
 		143F37F01D1D05A700DD70C9 /* MyInstallerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F37EF1D1D05A700DD70C9 /* MyInstallerPane.m */; };
@@ -41,8 +47,6 @@
 		143F387A1D1D1EA900DD70C9 /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F38721D1D1EA900DD70C9 /* VideoProvider.m */; };
 		143F387C1D1D1EA900DD70C9 /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F38761D1D1EA900DD70C9 /* VP_Local.m */; };
 		143F38801D1D207400DD70C9 /* SimpleVideoFormatParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 143F387F1D1D207400DD70C9 /* SimpleVideoFormatParser.mm */; };
-		143F38B41D1D31A500DD70C9 /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 143F38B11D1D31A500DD70C9 /* libmediainfo.0.dylib */; };
-		143F38B61D1D31BB00DD70C9 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 143F38B51D1D31BB00DD70C9 /* libz.1.tbd */; };
 		143F38B81D1D345600DD70C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143F38B71D1D345600DD70C9 /* Main.storyboard */; };
 		143F38E21D1D360800DD70C9 /* backwards.png in Resources */ = {isa = PBXBuildFile; fileRef = 143F38BA1D1D360800DD70C9 /* backwards.png */; };
 		143F38E31D1D360800DD70C9 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 143F38BB1D1D360800DD70C9 /* copy.png */; };
@@ -88,6 +92,17 @@
 		14562FE61D11498400DB35E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE51D11498400DB35E2 /* Assets.xcassets */; };
 		14562FE91D11498400DB35E2 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14562FE71D11498400DB35E2 /* Main1.storyboard */; };
 		14562FF41D11498400DB35E2 /* mpv_examplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14562FF31D11498400DB35E2 /* mpv_examplesTests.m */; };
+		1493EFD91D25091600E923C2 /* libavcodec.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD11D25091600E923C2 /* libavcodec.57.dylib */; };
+		1493EFDA1D25091600E923C2 /* libavdevice.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD21D25091600E923C2 /* libavdevice.57.dylib */; };
+		1493EFDB1D25091600E923C2 /* libavfilter.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD31D25091600E923C2 /* libavfilter.6.dylib */; };
+		1493EFDC1D25091600E923C2 /* libavformat.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD41D25091600E923C2 /* libavformat.57.dylib */; };
+		1493EFDD1D25091600E923C2 /* libavutil.55.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD51D25091600E923C2 /* libavutil.55.dylib */; };
+		1493EFDE1D25091600E923C2 /* libmpv.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD61D25091600E923C2 /* libmpv.1.dylib */; };
+		1493EFDF1D25091600E923C2 /* libswresample.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD71D25091600E923C2 /* libswresample.2.dylib */; };
+		1493EFE01D25091600E923C2 /* libswscale.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD81D25091600E923C2 /* libswscale.4.dylib */; };
+		1493EFE61D25092400E923C2 /* libmpv.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD61D25091600E923C2 /* libmpv.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1493EFF71D25149100E923C2 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; };
+		1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,9 +115,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		143F39091D23B3F000DD70C9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = lib;
+			dstSubfolderSpec = 6;
+			files = (
+				1414E0111D264AA6003CC7D1 /* libavcodec.57.dylib in CopyFiles */,
+				1414E0121D264AA6003CC7D1 /* libavdevice.57.dylib in CopyFiles */,
+				1414E0131D264AA6003CC7D1 /* libavfilter.6.dylib in CopyFiles */,
+				1414E0141D264AA6003CC7D1 /* libavformat.57.dylib in CopyFiles */,
+				1414E0151D264AA6003CC7D1 /* libavutil.55.dylib in CopyFiles */,
+				1414E0161D264AA6003CC7D1 /* libswresample.2.dylib in CopyFiles */,
+				1414E0171D264AA6003CC7D1 /* libswscale.4.dylib in CopyFiles */,
+				1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */,
+				1493EFE61D25092400E923C2 /* libmpv.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		14358F311D13E7AA0058914F /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
-		14358F581D13F27A0058914F /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
 		143F37DD1D1CCEE100DD70C9 /* AppDelegate-openglcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate-openglcb.h"; sourceTree = "<group>"; };
 		143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate-openglcb.m"; sourceTree = "<group>"; };
 		143F37E01D1CCFD300DD70C9 /* opengl_cb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opengl_cb.h; sourceTree = "<group>"; };
@@ -175,10 +210,8 @@
 		143F387E1D1D207400DD70C9 /* SimpleVideoFormatParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVideoFormatParser.h; sourceTree = "<group>"; };
 		143F387F1D1D207400DD70C9 /* SimpleVideoFormatParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimpleVideoFormatParser.mm; sourceTree = "<group>"; };
 		143F38811D1D215900DD70C9 /* mpv_nullsafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mpv_nullsafe.h; sourceTree = "<group>"; };
-		143F38B11D1D31A500DD70C9 /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
 		143F38B21D1D31A500DD70C9 /* MediaInfoDLL_Static.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaInfoDLL_Static.h; sourceTree = "<group>"; };
 		143F38B31D1D31A500DD70C9 /* MediaInfoDLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaInfoDLL.h; sourceTree = "<group>"; };
-		143F38B51D1D31BB00DD70C9 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		143F38B71D1D345600DD70C9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		143F38BA1D1D360800DD70C9 /* backwards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backwards.png; sourceTree = "<group>"; };
 		143F38BB1D1D360800DD70C9 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
@@ -229,6 +262,15 @@
 		14562FEF1D11498400DB35E2 /* mpv-examplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mpv-examplesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14562FF31D11498400DB35E2 /* mpv_examplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpv_examplesTests.m; sourceTree = "<group>"; };
 		14562FF51D11498400DB35E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1493EFD11D25091600E923C2 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
+		1493EFD21D25091600E923C2 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
+		1493EFD31D25091600E923C2 /* libavfilter.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavfilter.6.dylib; sourceTree = "<group>"; };
+		1493EFD41D25091600E923C2 /* libavformat.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavformat.57.dylib; sourceTree = "<group>"; };
+		1493EFD51D25091600E923C2 /* libavutil.55.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavutil.55.dylib; sourceTree = "<group>"; };
+		1493EFD61D25091600E923C2 /* libmpv.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.dylib; sourceTree = "<group>"; };
+		1493EFD71D25091600E923C2 /* libswresample.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswresample.2.dylib; sourceTree = "<group>"; };
+		1493EFD81D25091600E923C2 /* libswscale.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswscale.4.dylib; sourceTree = "<group>"; };
+		1493EFF61D25149100E923C2 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,9 +285,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143F38B61D1D31BB00DD70C9 /* libz.1.tbd in Frameworks */,
-				14358F5B1D13F27A0058914F /* libmpv.dylib in Frameworks */,
-				143F38B41D1D31A500DD70C9 /* libmediainfo.0.dylib in Frameworks */,
+				1493EFF71D25149100E923C2 /* libz.1.dylib in Frameworks */,
+				1493EFDE1D25091600E923C2 /* libmpv.1.dylib in Frameworks */,
+				1493EFDC1D25091600E923C2 /* libavformat.57.dylib in Frameworks */,
+				1493EFDD1D25091600E923C2 /* libavutil.55.dylib in Frameworks */,
+				1493EFDF1D25091600E923C2 /* libswresample.2.dylib in Frameworks */,
+				1493EFDB1D25091600E923C2 /* libavfilter.6.dylib in Frameworks */,
+				1493EFDA1D25091600E923C2 /* libavdevice.57.dylib in Frameworks */,
+				1493EFD91D25091600E923C2 /* libavcodec.57.dylib in Frameworks */,
+				1493EFE01D25091600E923C2 /* libswscale.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +483,6 @@
 		14562FD01D11498400DB35E2 = {
 			isa = PBXGroup;
 			children = (
-				143F38B51D1D31BB00DD70C9 /* libz.1.tbd */,
 				143F37E41D1CDDE400DD70C9 /* readme.md */,
 				14562FDB1D11498400DB35E2 /* mpv-examples */,
 				14562FF21D11498400DB35E2 /* mpv-examplesTests */,
@@ -494,13 +541,20 @@
 		14562FFE1D11526C00DB35E2 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
-				143F37E01D1CCFD300DD70C9 /* opengl_cb.h */,
-				14358F311D13E7AA0058914F /* client.h */,
+				1493EFF61D25149100E923C2 /* libz.1.dylib */,
+				1493EFD11D25091600E923C2 /* libavcodec.57.dylib */,
+				1493EFD21D25091600E923C2 /* libavdevice.57.dylib */,
+				1493EFD31D25091600E923C2 /* libavfilter.6.dylib */,
+				1493EFD41D25091600E923C2 /* libavformat.57.dylib */,
+				1493EFD51D25091600E923C2 /* libavutil.55.dylib */,
+				1493EFD61D25091600E923C2 /* libmpv.1.dylib */,
+				1493EFD71D25091600E923C2 /* libswresample.2.dylib */,
+				1493EFD81D25091600E923C2 /* libswscale.4.dylib */,
 				143F38811D1D215900DD70C9 /* mpv_nullsafe.h */,
-				143F38B11D1D31A500DD70C9 /* libmediainfo.0.dylib */,
 				143F38B21D1D31A500DD70C9 /* MediaInfoDLL_Static.h */,
 				143F38B31D1D31A500DD70C9 /* MediaInfoDLL.h */,
-				14358F581D13F27A0058914F /* libmpv.dylib */,
+				143F37E01D1CCFD300DD70C9 /* opengl_cb.h */,
+				14358F311D13E7AA0058914F /* client.h */,
 			);
 			path = libmpv;
 			sourceTree = "<group>";
@@ -532,6 +586,8 @@
 				14562FD51D11498400DB35E2 /* Sources */,
 				14562FD61D11498400DB35E2 /* Frameworks */,
 				14562FD71D11498400DB35E2 /* Resources */,
+				143F39091D23B3F000DD70C9 /* CopyFiles */,
+				1414E0181D2650CA003CC7D1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -672,6 +728,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1414E0181D2650CA003CC7D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\necho \"@executable_path/lib/${dirlist}\"\necho \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/${dirlist} @execu_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		143F37E81D1D05A700DD70C9 /* Sources */ = {
@@ -881,17 +953,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/mpv-examples/libmpv",
-					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/include/,
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/mpv-examples/libmpv",
-					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/lib/,
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/pengyucheng/git/SISpeciesNotes/Pods/FMDB/src/fmdb;
@@ -903,17 +969,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/mpv-examples/libmpv",
-					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/include/,
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/mpv-examples/libmpv",
-					/Users/pengyucheng/git/SISpeciesNotes/iFrameExecutor/iFrameExecutor/MacOSX10.11/lib/,
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/pengyucheng/git/SISpeciesNotes/Pods/FMDB/src/fmdb;

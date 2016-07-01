@@ -19,8 +19,6 @@
 		148AB15B1D18D7C400655601 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB15A1D18D7C400655601 /* CoreVideo.framework */; };
 		148AB15D1D18D7DE00655601 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB15C1D18D7DE00655601 /* CoreFoundation.framework */; };
 		148AB15F1D18D87900655601 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB15E1D18D87900655601 /* CoreMedia.framework */; };
-		148AB1641D18E0FB00655601 /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 148AB1621D18E0FB00655601 /* for_the_birds.avi */; };
-		148AB1DB1D1926C000655601 /* build-ffmpeg_x86_64.sh in Resources */ = {isa = PBXBuildFile; fileRef = 148AB1DA1D1926C000655601 /* build-ffmpeg_x86_64.sh */; };
 		148AB7781D1A405900655601 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB7711D1A405900655601 /* libavcodec.a */; };
 		148AB7791D1A405900655601 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB7721D1A405900655601 /* libavdevice.a */; };
 		148AB77A1D1A405900655601 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148AB7731D1A405900655601 /* libavfilter.a */; };
@@ -32,7 +30,6 @@
 		14C2F40B1D17F5A500840A6C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C2F40A1D17F5A500840A6C /* libz.tbd */; };
 		14C2F40D1D17F5AF00840A6C /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C2F40C1D17F5AF00840A6C /* libiconv.2.4.0.tbd */; };
 		14C2F40F1D17F5E400840A6C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C2F40E1D17F5E300840A6C /* VideoToolbox.framework */; };
-		14F9915C1D1800E9001A4383 /* build_osX.sh in Resources */ = {isa = PBXBuildFile; fileRef = 14F9915B1D1800E9001A4383 /* build_osX.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -574,9 +571,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F9915C1D1800E9001A4383 /* build_osX.sh in Resources */,
-				148AB1DB1D1926C000655601 /* build-ffmpeg_x86_64.sh in Resources */,
-				148AB1641D18E0FB00655601 /* for_the_birds.avi in Resources */,
 				14358E151D13D1A00058914F /* Assets.xcassets in Resources */,
 				14358E181D13D1A10058914F /* Main.storyboard in Resources */,
 			);
@@ -729,7 +723,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iFrameExecutor/MacOSX10.11/lib",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.iFrameExecutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -751,7 +745,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iFrameExecutor/MacOSX10.11/lib",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.iFrameExecutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
