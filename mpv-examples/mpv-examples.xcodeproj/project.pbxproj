@@ -97,12 +97,12 @@
 		1493EFDB1D25091600E923C2 /* libavfilter.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD31D25091600E923C2 /* libavfilter.6.dylib */; };
 		1493EFDC1D25091600E923C2 /* libavformat.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD41D25091600E923C2 /* libavformat.57.dylib */; };
 		1493EFDD1D25091600E923C2 /* libavutil.55.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD51D25091600E923C2 /* libavutil.55.dylib */; };
-		1493EFDE1D25091600E923C2 /* libmpv.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD61D25091600E923C2 /* libmpv.1.dylib */; };
 		1493EFDF1D25091600E923C2 /* libswresample.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD71D25091600E923C2 /* libswresample.2.dylib */; };
 		1493EFE01D25091600E923C2 /* libswscale.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFD81D25091600E923C2 /* libswscale.4.dylib */; };
-		1493EFE61D25092400E923C2 /* libmpv.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFD61D25091600E923C2 /* libmpv.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1493EFF71D25149100E923C2 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; };
 		1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14A3977F1D2A0D950075930D /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; };
+		14A397801D2A0DD00075930D /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +122,7 @@
 			dstPath = lib;
 			dstSubfolderSpec = 6;
 			files = (
+				14A397801D2A0DD00075930D /* libmpv.dylib in CopyFiles */,
 				1414E0111D264AA6003CC7D1 /* libavcodec.57.dylib in CopyFiles */,
 				1414E0121D264AA6003CC7D1 /* libavdevice.57.dylib in CopyFiles */,
 				1414E0131D264AA6003CC7D1 /* libavfilter.6.dylib in CopyFiles */,
@@ -130,7 +131,6 @@
 				1414E0161D264AA6003CC7D1 /* libswresample.2.dylib in CopyFiles */,
 				1414E0171D264AA6003CC7D1 /* libswscale.4.dylib in CopyFiles */,
 				1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */,
-				1493EFE61D25092400E923C2 /* libmpv.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +267,10 @@
 		1493EFD31D25091600E923C2 /* libavfilter.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavfilter.6.dylib; sourceTree = "<group>"; };
 		1493EFD41D25091600E923C2 /* libavformat.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavformat.57.dylib; sourceTree = "<group>"; };
 		1493EFD51D25091600E923C2 /* libavutil.55.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavutil.55.dylib; sourceTree = "<group>"; };
-		1493EFD61D25091600E923C2 /* libmpv.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.1.dylib; sourceTree = "<group>"; };
 		1493EFD71D25091600E923C2 /* libswresample.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswresample.2.dylib; sourceTree = "<group>"; };
 		1493EFD81D25091600E923C2 /* libswscale.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswscale.4.dylib; sourceTree = "<group>"; };
 		1493EFF61D25149100E923C2 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
+		14A3977E1D2A0D950075930D /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,12 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1493EFF71D25149100E923C2 /* libz.1.dylib in Frameworks */,
-				1493EFDE1D25091600E923C2 /* libmpv.1.dylib in Frameworks */,
 				1493EFDC1D25091600E923C2 /* libavformat.57.dylib in Frameworks */,
 				1493EFDD1D25091600E923C2 /* libavutil.55.dylib in Frameworks */,
 				1493EFDF1D25091600E923C2 /* libswresample.2.dylib in Frameworks */,
 				1493EFDB1D25091600E923C2 /* libavfilter.6.dylib in Frameworks */,
 				1493EFDA1D25091600E923C2 /* libavdevice.57.dylib in Frameworks */,
+				14A3977F1D2A0D950075930D /* libmpv.dylib in Frameworks */,
 				1493EFD91D25091600E923C2 /* libavcodec.57.dylib in Frameworks */,
 				1493EFE01D25091600E923C2 /* libswscale.4.dylib in Frameworks */,
 			);
@@ -547,7 +547,7 @@
 				1493EFD31D25091600E923C2 /* libavfilter.6.dylib */,
 				1493EFD41D25091600E923C2 /* libavformat.57.dylib */,
 				1493EFD51D25091600E923C2 /* libavutil.55.dylib */,
-				1493EFD61D25091600E923C2 /* libmpv.1.dylib */,
+				14A3977E1D2A0D950075930D /* libmpv.dylib */,
 				1493EFD71D25091600E923C2 /* libswresample.2.dylib */,
 				1493EFD81D25091600E923C2 /* libswscale.4.dylib */,
 				143F38811D1D215900DD70C9 /* mpv_nullsafe.h */,
@@ -732,16 +732,16 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1414E0181D2650CA003CC7D1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\necho \"@executable_path/lib/${dirlist}\"\necho \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/${dirlist} @execu_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n\n\n";
+			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -958,6 +958,7 @@
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				OTHER_LDFLAGS = "-rpath";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/pengyucheng/git/SISpeciesNotes/Pods/FMDB/src/fmdb;
@@ -974,6 +975,7 @@
 				INFOPLIST_FILE = "mpv-examples/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mpv-examples/libmpv";
+				OTHER_LDFLAGS = "-rpath";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.recomend.mpv-examples";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/pengyucheng/git/SISpeciesNotes/Pods/FMDB/src/fmdb;

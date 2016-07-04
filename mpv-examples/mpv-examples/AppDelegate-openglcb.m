@@ -268,10 +268,10 @@ static void wakeup(void *context)
 -(void)openfileVideo:(NSString*)fileName{
     // Read filename
     NSArray *args = [NSProcessInfo processInfo].arguments;
-    if (args.count < 2) {
-        NSLog(@"Expected filename on command line");
-        exit(1);
-    }
+//    if (args.count < 2) {
+//        NSLog(@"Expected filename on command line");
+//        exit(1);
+//    }
     NSString *filename = fileName;
     dispatch_async(queue, ^{
         // Register to be woken up whenever mpv generates new events.
