@@ -85,12 +85,12 @@ target 'ScaryBugsMac' do
     end
 end
 
-target 'mpv-examples' do
-    platform :osx, '10.9'
-    use_frameworks!
-    project 'mpv-examples/mpv-examples.xcodeproj'
-    pod 'FMDB'
-end
+#target 'mpv-examples' do
+#    platform :osx, '10.9'
+#    use_frameworks!
+#    project 'mpv-examples/mpv-examples.xcodeproj'
+#    pod 'FMDB'
+#end
 
 
 #post_install do |installer|

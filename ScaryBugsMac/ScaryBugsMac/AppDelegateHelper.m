@@ -15,6 +15,8 @@
 #import "userDao.h"
 #import <Cocoa/Cocoa.h>
 
+#import "PlayerLoader.h"
+
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -30,6 +32,7 @@
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
+    
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
@@ -318,6 +321,8 @@
             look.imageData = seePycFile.imageData;
             
 //            [look lookMedia:_navRootVc];
+            //bilibili
+            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.fileName]];
         }
         else if(returnValue & ERR_FEE_SALER)
         {

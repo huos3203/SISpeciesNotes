@@ -251,6 +251,7 @@ static void wakeup(void *context)
 //
 -(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
 {
+    //bilibili
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[filename]];
     NSLog(@"Handle open files: %@",@[filename]);
     return YES;
