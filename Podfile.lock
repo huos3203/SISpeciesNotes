@@ -16,11 +16,11 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - GRMustache.swift (1.0.1)
-  - JSPatch (1.0):
-    - JSPatch/Core (= 1.0)
-  - JSPatch/Core (1.0)
+  - JSPatch (1.1):
+    - JSPatch/Core (= 1.1)
+  - JSPatch/Core (1.1)
   - Masonry (1.0.1)
-  - Nimble (4.0.1)
+  - Nimble (4.1.0)
   - ObjectMapper (1.1.5)
   - OHHTTPStubs (5.1.0):
     - OHHTTPStubs/Default (= 5.1.0)
@@ -96,9 +96,9 @@ SPEC CHECKSUMS:
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
-  JSPatch: c689ea4dde17441f2f4a95d40dfedb8900c20099
+  JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
+  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
@@ -112,6 +112,6 @@ SPEC CHECKSUMS:
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
   WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 70f53dbb54539af1943f490013655d6117d5c673
+PODFILE CHECKSUM: a4a9e53ac3eccb0d27a525d3cca933d04d0227d4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.0.0

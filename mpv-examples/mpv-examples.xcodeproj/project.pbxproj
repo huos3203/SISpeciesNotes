@@ -103,6 +103,7 @@
 		1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14A3977F1D2A0D950075930D /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; };
 		14A397801D2A0DD00075930D /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F5AA071BF6E3496CE7742D9E /* Pods_mpv_examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCBA0249BD43CB5DCCE6C75 /* Pods_mpv_examples.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,8 +178,6 @@
 		143F383E1D1D1BA300DD70C9 /* PlayerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerView.mm; sourceTree = "<group>"; };
 		143F383F1D1D1BA300DD70C9 /* PlayerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerWindow.h; sourceTree = "<group>"; };
 		143F38401D1D1BA300DD70C9 /* PlayerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerWindow.m; sourceTree = "<group>"; };
-		143F38421D1D1BA300DD70C9 /* AirPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlayView.h; sourceTree = "<group>"; };
-		143F38431D1D1BA300DD70C9 /* AirPlayView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AirPlayView.mm; sourceTree = "<group>"; };
 		143F38441D1D1BA300DD70C9 /* PlayLocalFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayLocalFile.h; sourceTree = "<group>"; };
 		143F38451D1D1BA300DD70C9 /* PlayLocalFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayLocalFile.m; sourceTree = "<group>"; };
 		143F38461D1D1BA300DD70C9 /* PostComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostComment.h; sourceTree = "<group>"; };
@@ -271,6 +270,9 @@
 		1493EFD81D25091600E923C2 /* libswscale.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswscale.4.dylib; sourceTree = "<group>"; };
 		1493EFF61D25149100E923C2 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
 		14A3977E1D2A0D950075930D /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
+		356C86FE8C6858240948F695 /* Pods-mpv-examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpv-examples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples.release.xcconfig"; sourceTree = "<group>"; };
+		7FCBA0249BD43CB5DCCE6C75 /* Pods_mpv_examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpv_examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE536B0611697B63924E65C4 /* Pods-mpv-examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpv-examples.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 				14A3977F1D2A0D950075930D /* libmpv.dylib in Frameworks */,
 				1493EFD91D25091600E923C2 /* libavcodec.57.dylib in Frameworks */,
 				1493EFE01D25091600E923C2 /* libswscale.4.dylib in Frameworks */,
+				F5AA071BF6E3496CE7742D9E /* Pods_mpv_examples.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +385,6 @@
 		143F38411D1D1BA300DD70C9 /* Util Window */ = {
 			isa = PBXGroup;
 			children = (
-				143F38421D1D1BA300DD70C9 /* AirPlayView.h */,
-				143F38431D1D1BA300DD70C9 /* AirPlayView.mm */,
 				143F38441D1D1BA300DD70C9 /* PlayLocalFile.h */,
 				143F38451D1D1BA300DD70C9 /* PlayLocalFile.m */,
 				143F38461D1D1BA300DD70C9 /* PostComment.h */,
@@ -488,6 +489,8 @@
 				14562FF21D11498400DB35E2 /* mpv-examplesTests */,
 				143F37ED1D1D05A700DD70C9 /* mpv-install */,
 				14562FDA1D11498400DB35E2 /* Products */,
+				2D3D1F4072DA0ED0C976DD14 /* Pods */,
+				DA79636F09CDC5ACA6D6EAD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -559,6 +562,23 @@
 			path = libmpv;
 			sourceTree = "<group>";
 		};
+		2D3D1F4072DA0ED0C976DD14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE536B0611697B63924E65C4 /* Pods-mpv-examples.debug.xcconfig */,
+				356C86FE8C6858240948F695 /* Pods-mpv-examples.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA79636F09CDC5ACA6D6EAD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FCBA0249BD43CB5DCCE6C75 /* Pods_mpv_examples.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -583,11 +603,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */;
 			buildPhases = (
+				B3C98ED6C76E7A72126602BB /* 📦 Check Pods Manifest.lock */,
 				14562FD51D11498400DB35E2 /* Sources */,
 				14562FD61D11498400DB35E2 /* Frameworks */,
 				14562FD71D11498400DB35E2 /* Resources */,
 				143F39091D23B3F000DD70C9 /* CopyFiles */,
 				1414E0181D2650CA003CC7D1 /* ShellScript */,
+				739BD06528F6173C3EDAB383 /* 📦 Embed Pods Frameworks */,
+				1DF9F1E98C3F118EA7D1CF39 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -742,6 +765,51 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n\n\n";
+		};
+		1DF9F1E98C3F118EA7D1CF39 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		739BD06528F6173C3EDAB383 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3C98ED6C76E7A72126602BB /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -950,6 +1018,7 @@
 		};
 		14562FF91D11498400DB35E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE536B0611697B63924E65C4 /* Pods-mpv-examples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -967,6 +1036,7 @@
 		};
 		14562FFA1D11498400DB35E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 356C86FE8C6858240948F695 /* Pods-mpv-examples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

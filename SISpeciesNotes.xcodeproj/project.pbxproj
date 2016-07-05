@@ -922,11 +922,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84192D731CBFE6A8001866DD /* Build configuration list for PBXNativeTarget "SISpeciesNotesUITests" */;
 			buildPhases = (
+				261204D61396CE8CE31C0C2A /* 📦 Check Pods Manifest.lock */,
 				0EFA84C41BE1936988ADAD36 /* [CP] Check Pods Manifest.lock */,
 				84192D681CBFE6A8001866DD /* Sources */,
 				84192D691CBFE6A8001866DD /* Frameworks */,
 				84192D6A1CBFE6A8001866DD /* Resources */,
 				567F8FD3532D463DD21156C8 /* [CP] Copy Pods Resources */,
+				4041898CE8908D378A28A316 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -979,6 +981,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D849C0B71AF078E4001C01AC /* Build configuration list for PBXNativeTarget "SISpeciesNotes" */;
 			buildPhases = (
+				0C62C89ED9F1936C798BD15D /* 📦 Check Pods Manifest.lock */,
 				7BCB1E3A00612816FF5E27D3 /* [CP] Check Pods Manifest.lock */,
 				D849C0941AF078E4001C01AC /* Sources */,
 				D849C0951AF078E4001C01AC /* Frameworks */,
@@ -987,6 +990,8 @@
 				14DBA0B21CAE15E100BAB345 /* Embed Frameworks */,
 				DDECE745A8FC7C9AF09E1747 /* [CP] Embed Pods Frameworks */,
 				2277E9121D864B20B4AFF385 /* [CP] Copy Pods Resources */,
+				56F9A1D7E42529C18B06479A /* 📦 Embed Pods Frameworks */,
+				96570225F0803319754A58D4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1002,12 +1007,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D849C0BA1AF078E4001C01AC /* Build configuration list for PBXNativeTarget "SISpeciesNotesTests" */;
 			buildPhases = (
+				F640E367599401F32BA4C31D /* 📦 Check Pods Manifest.lock */,
 				DB95CD00E593B6874EC23C7C /* [CP] Check Pods Manifest.lock */,
 				D849C0A91AF078E4001C01AC /* Sources */,
 				D849C0AA1AF078E4001C01AC /* Frameworks */,
 				D849C0AB1AF078E4001C01AC /* Resources */,
 				87D65294A8DFC93C7FC640AC /* [CP] Embed Pods Frameworks */,
 				D5B93E3ABAB0106A670EEE5B /* [CP] Copy Pods Resources */,
+				BA051512539054826FD4050A /* 📦 Embed Pods Frameworks */,
+				7975013F357DD371F15A737B /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1139,6 +1147,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C62C89ED9F1936C798BD15D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		0EFA84C41BE1936988ADAD36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1169,6 +1192,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		261204D61396CE8CE31C0C2A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4041898CE8908D378A28A316 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		567F8FD3532D463DD21156C8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1182,6 +1235,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes-SISpeciesNotesUITests/Pods-SISpeciesNotes-SISpeciesNotesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56F9A1D7E42529C18B06479A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7975013F357DD371F15A737B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7BCB1E3A00612816FF5E27D3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1268,6 +1351,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		96570225F0803319754A58D4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA051512539054826FD4050A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotesTests/Pods-SISpeciesNotesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D5B93E3ABAB0106A670EEE5B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1311,6 +1424,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SISpeciesNotes/Pods-SISpeciesNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F640E367599401F32BA4C31D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1728,7 +1856,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1797,7 +1924,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/SISpeciesNotes/Frameworks/Realm",
 				);
 				INFOPLIST_FILE = SISpeciesNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

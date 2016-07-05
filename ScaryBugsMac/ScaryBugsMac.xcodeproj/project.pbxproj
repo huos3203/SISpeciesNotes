@@ -89,7 +89,6 @@
 		14AA40DB1D2A187300838B88 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F981D2A187300838B88 /* PlayerManager.m */; };
 		14AA40DC1D2A187300838B88 /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
 		14AA40DD1D2A187300838B88 /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
-		14AA40DE1D2A187300838B88 /* AirPlayView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9F1D2A187300838B88 /* AirPlayView.mm */; };
 		14AA40DF1D2A187300838B88 /* PlayLocalFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA11D2A187300838B88 /* PlayLocalFile.m */; };
 		14AA40E01D2A187300838B88 /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA31D2A187300838B88 /* PostComment.m */; };
 		14AA40E11D2A187300838B88 /* PlayerControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3FA41D2A187300838B88 /* PlayerControl.xib */; };
@@ -299,8 +298,6 @@
 		14AA3F9A1D2A187300838B88 /* PlayerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerView.mm; sourceTree = "<group>"; };
 		14AA3F9B1D2A187300838B88 /* PlayerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerWindow.h; sourceTree = "<group>"; };
 		14AA3F9C1D2A187300838B88 /* PlayerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerWindow.m; sourceTree = "<group>"; };
-		14AA3F9E1D2A187300838B88 /* AirPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlayView.h; sourceTree = "<group>"; };
-		14AA3F9F1D2A187300838B88 /* AirPlayView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AirPlayView.mm; sourceTree = "<group>"; };
 		14AA3FA01D2A187300838B88 /* PlayLocalFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayLocalFile.h; sourceTree = "<group>"; };
 		14AA3FA11D2A187300838B88 /* PlayLocalFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayLocalFile.m; sourceTree = "<group>"; };
 		14AA3FA21D2A187300838B88 /* PostComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostComment.h; sourceTree = "<group>"; };
@@ -715,8 +712,6 @@
 		14AA3F9D1D2A187300838B88 /* Util Window */ = {
 			isa = PBXGroup;
 			children = (
-				14AA3F9E1D2A187300838B88 /* AirPlayView.h */,
-				14AA3F9F1D2A187300838B88 /* AirPlayView.mm */,
 				14AA3FA01D2A187300838B88 /* PlayLocalFile.h */,
 				14AA3FA11D2A187300838B88 /* PlayLocalFile.m */,
 				14AA3FA21D2A187300838B88 /* PostComment.h */,
@@ -1047,12 +1042,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
 			buildPhases = (
+				9150ABBDE8643BB0A28C6C2F /* 📦 Check Pods Manifest.lock */,
 				F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */,
 				1437DD641CF2A75F001BD2D2 /* Sources */,
 				1437DD651CF2A75F001BD2D2 /* Frameworks */,
 				1437DD661CF2A75F001BD2D2 /* Resources */,
 				DBC6F66F1CEBBA2B3AB2A7BD /* [CP] Embed Pods Frameworks */,
 				019BD761AA6E7196E0AB110E /* [CP] Copy Pods Resources */,
+				99C2A8D6925AF74AEBB8ABE0 /* 📦 Embed Pods Frameworks */,
+				CB26480A5D399C0C6C9F199F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1067,12 +1065,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
+				8209479971E8807479EC849B /* 📦 Check Pods Manifest.lock */,
 				5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
 				1437DD761CF2A75F001BD2D2 /* Frameworks */,
 				1437DD771CF2A75F001BD2D2 /* Resources */,
 				6FDB33C4F6E59869C95E4DF4 /* [CP] Embed Pods Frameworks */,
 				F62444A3597D61EC6E8C25C2 /* [CP] Copy Pods Resources */,
+				412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */,
+				E7AB17D4F41A912BD24BA2B1 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1251,6 +1252,21 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1281,6 +1297,66 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8209479971E8807479EC849B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9150ABBDE8643BB0A28C6C2F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99C2A8D6925AF74AEBB8ABE0 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB26480A5D399C0C6C9F199F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DBC6F66F1CEBBA2B3AB2A7BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1294,6 +1370,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AB17D4F41A912BD24BA2B1 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */ = {
@@ -1395,7 +1486,6 @@
 				14AA40AC1D2A187300838B88 /* BGTheme.m in Sources */,
 				14AA40AE1D2A187300838B88 /* ControlsWithVibracy.m in Sources */,
 				14AA40AA1D2A187300838B88 /* MBProgressHUD.m in Sources */,
-				14AA40DE1D2A187300838B88 /* AirPlayView.mm in Sources */,
 				14AA40E41D2A187300838B88 /* NSString+LcsDiff.m in Sources */,
 				14AA40D81D2A187300838B88 /* Player.m in Sources */,
 				14AA40DC1D2A187300838B88 /* PlayerView.mm in Sources */,
@@ -1550,10 +1640,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm-OSX\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RealmSwift-OSX\"",
+				);
 				GCC_PREFIX_HEADER = "ScaryBugsMac/PBB-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv";
 				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv",
@@ -1576,7 +1674,7 @@
 				GCC_PREFIX_HEADER = "ScaryBugsMac/PBB-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv";
 				INFOPLIST_FILE = ScaryBugsMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv",
