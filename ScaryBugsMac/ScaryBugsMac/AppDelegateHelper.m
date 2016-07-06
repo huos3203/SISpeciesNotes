@@ -34,20 +34,23 @@
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-
-    unsigned char key[] = {45,35,92,-47,-58,-36,-20,49,-75,32,39,-86,15,7,-40,-88};
-    long long code_len = 2030336;
-    long long file_len = 2030327;
-    long long offset = 0;
-    set_key_info(key, code_len,file_len,offset);
-    //bilibili
-    NSBundle *bundle = [NSBundle mainBundle];
-//    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
-    NSString *videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
-    //
-    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[videoPath]];
-    
-    return YES;
+//1.mp4.pbb：{45,35,92,-47,-58,-36,-20,49,-75,32,39,-86,15,7,-40,-88};
+//    long long code_len = 2030336;
+//    long long file_len = 2030327;
+//    unsigned char key[] = ;
+//    
+//    long long code_len = 2030336;
+//    long long file_len = 2030327;
+//    long long offset = 0;
+//    set_key_info(key, code_len,file_len,offset);
+//    //bilibili
+//    NSBundle *bundle = [NSBundle mainBundle];
+////    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
+//    NSString *videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
+//    //
+//    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[videoPath]];
+//    
+//    return YES;
     
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
@@ -338,7 +341,23 @@
             
 //            [look lookMedia:_navRootVc];
             //bilibili
-            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.fileName]];
+//            unsigned char key[] = ;
+//            
+//            long long code_len = 2030336;
+//            long long file_len = 2030327;
+//            long long offset = 0;
+//            set_key_info(key, code_len,file_len,offset);
+            NSString *bytestr = @"";
+            for (int i = 0; i<16; i++)
+            {
+                bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[seePycFile.fileSecretkeyR1 bytes])[i]]];
+            }
+            NSLog(@"密钥=====:%@",bytestr);
+            set_key_info((unsigned char*)(Byte *)[seePycFile.fileSecretkeyR1 bytes],
+                         (long)seePycFile.encryptedLen,
+                         (long)seePycFile.fileSize,
+                         (long)seePycFile.offset);
+            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.filePycName]];
         }
         else if(returnValue & ERR_FEE_SALER)
         {
