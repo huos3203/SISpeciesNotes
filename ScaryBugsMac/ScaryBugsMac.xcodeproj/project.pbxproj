@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */; };
+		14248E471D2CCEFC00D3704C /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 14248E461D2CCEFC00D3704C /* for_the_birds.avi */; };
+		142EC39E1D2CDE0A00B88F96 /* 1.mp4.pbb in Resources */ = {isa = PBXBuildFile; fileRef = 142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */; };
 		1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
 		1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
 		1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
@@ -28,14 +30,7 @@
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
 		148AB4821CFFD78600CAF9BA /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
-		14AA3FFF1D2A187300838B88 /* libavcodec.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; };
-		14AA40001D2A187300838B88 /* libavdevice.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; };
-		14AA40011D2A187300838B88 /* libavfilter.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; };
-		14AA40021D2A187300838B88 /* libavformat.57.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; };
-		14AA40031D2A187300838B88 /* libavutil.55.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; };
 		14AA40041D2A187300838B88 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
-		14AA40051D2A187300838B88 /* libswresample.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; };
-		14AA40061D2A187300838B88 /* libswscale.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; };
 		14AA40071D2A187300838B88 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
 		14AA40AA1D2A187300838B88 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F591D2A187300838B88 /* MBProgressHUD.m */; };
 		14AA40AB1D2A187300838B88 /* BGHUDSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5D1D2A187300838B88 /* BGHUDSliderCell.m */; };
@@ -143,9 +138,19 @@
 		14B260071CFD86A8001BCE84 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		14B2600A1CFD8AA3001BCE84 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260091CFD8AA3001BCE84 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2600C1CFD8AED001BCE84 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14B53F191D2CB15400283A4D /* libavcodec.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1A1D2CB15400283A4D /* libavdevice.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1B1D2CB15400283A4D /* libavfilter.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1C1D2CB15400283A4D /* libavformat.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1D1D2CB15400283A4D /* libavutil.55.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1E1D2CB15400283A4D /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F1F1D2CB15400283A4D /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F201D2CB15400283A4D /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B53F211D2CB15400283A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14DDC93B1D12AEDD00F77B1D /* BigBuck.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 14DDC9391D12AD1200F77B1D /* BigBuck.m4v */; };
 		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
+		4BF1227EA46555A9FCC29814 /* Pods_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB66EDC7B50BDB6E0056988 /* Pods_ScaryBugsMacTests.framework */; };
 		6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		840AA6911CFCA2EA00819203 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
 		843CAE131D09367800CE84F4 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 843CADFE1D09367800CE84F4 /* Appfile */; };
@@ -166,7 +171,6 @@
 		843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
 		843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
 		843CAE241D09367800CE84F4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
-		84E5CB201D032FFD003430F2 /* OutFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +190,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		14B53F181D2CB12B00283A4D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = lib;
+			dstSubfolderSpec = 6;
+			files = (
+				14B53F191D2CB15400283A4D /* libavcodec.57.dylib in CopyFiles */,
+				14B53F1A1D2CB15400283A4D /* libavdevice.57.dylib in CopyFiles */,
+				14B53F1B1D2CB15400283A4D /* libavfilter.6.dylib in CopyFiles */,
+				14B53F1C1D2CB15400283A4D /* libavformat.57.dylib in CopyFiles */,
+				14B53F1D1D2CB15400283A4D /* libavutil.55.dylib in CopyFiles */,
+				14B53F1E1D2CB15400283A4D /* libmpv.dylib in CopyFiles */,
+				14B53F1F1D2CB15400283A4D /* libswresample.2.dylib in CopyFiles */,
+				14B53F201D2CB15400283A4D /* libswscale.4.dylib in CopyFiles */,
+				14B53F211D2CB15400283A4D /* libz.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
+		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -447,7 +474,10 @@
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
+		93E7DD59FEAE727BC98A1F9E /* Pods-ScaryBugsMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMacTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE68F50785B0CD863CE734B5 /* Pods-ScaryBugsMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMacTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEB66EDC7B50BDB6E0056988 /* Pods_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5EBACF205BD502E62A017 /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaryBugsMac.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -457,15 +487,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AA40071D2A187300838B88 /* libz.1.dylib in Frameworks */,
-				14AA40021D2A187300838B88 /* libavformat.57.dylib in Frameworks */,
-				14AA40051D2A187300838B88 /* libswresample.2.dylib in Frameworks */,
-				14AA40061D2A187300838B88 /* libswscale.4.dylib in Frameworks */,
 				6D8CF83E5CC91F34BCBF736D /* Pods_ScaryBugsMac.framework in Frameworks */,
 				14AA40041D2A187300838B88 /* libmpv.dylib in Frameworks */,
-				14AA40031D2A187300838B88 /* libavutil.55.dylib in Frameworks */,
-				14AA40011D2A187300838B88 /* libavfilter.6.dylib in Frameworks */,
-				14AA40001D2A187300838B88 /* libavdevice.57.dylib in Frameworks */,
-				14AA3FFF1D2A187300838B88 /* libavcodec.57.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */,
+				4BF1227EA46555A9FCC29814 /* Pods_ScaryBugsMacTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +549,8 @@
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
 				840AA6901CFCA2EA00819203 /* 114.png */,
+				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
+				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
 			);
@@ -971,6 +997,7 @@
 			children = (
 				73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */,
 				A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */,
+				CEB66EDC7B50BDB6E0056988 /* Pods_ScaryBugsMacTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1031,6 +1058,8 @@
 				38F806A46B5F4D642393CF22 /* Pods-ScaryBugsMac.release.xcconfig */,
 				3B3CF38BED12036D8DD08002 /* Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig */,
 				3966EFD670D9A683DBAB23B4 /* Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig */,
+				93E7DD59FEAE727BC98A1F9E /* Pods-ScaryBugsMacTests.debug.xcconfig */,
+				BE68F50785B0CD863CE734B5 /* Pods-ScaryBugsMacTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1051,6 +1080,7 @@
 				019BD761AA6E7196E0AB110E /* [CP] Copy Pods Resources */,
 				99C2A8D6925AF74AEBB8ABE0 /* 📦 Embed Pods Frameworks */,
 				CB26480A5D399C0C6C9F199F /* 📦 Copy Pods Resources */,
+				14B53F181D2CB12B00283A4D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1151,6 +1181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142EC39E1D2CDE0A00B88F96 /* 1.mp4.pbb in Resources */,
 				14AA40BE1D2A187300838B88 /* exitfillscreen_lr.pdf in Resources */,
 				843CAE131D09367800CE84F4 /* Appfile in Resources */,
 				14AA40B81D2A187300838B88 /* MovieFileIcon.png in Resources */,
@@ -1170,6 +1201,7 @@
 				843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */,
 				14AA40BC1D2A187300838B88 /* credits.txt in Resources */,
 				14AA40CB1D2A187300838B88 /* titlebar-middle.png in Resources */,
+				14248E471D2CCEFC00D3704C /* for_the_birds.avi in Resources */,
 				14AA40D21D2A187300838B88 /* vol_no.pdf in Resources */,
 				14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */,
 				14AA40BB1D2A187300838B88 /* b_play.pdf in Resources */,
@@ -1264,7 +1296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */ = {
@@ -1384,7 +1416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */ = {
@@ -1479,7 +1511,6 @@
 				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
 				148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
-				84E5CB201D032FFD003430F2 /* OutFileModel.swift in Sources */,
 				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 				14AA40AB1D2A187300838B88 /* BGHUDSliderCell.m in Sources */,
 				14AA40AD1D2A187300838B88 /* BGThemeManager.m in Sources */,
@@ -1688,7 +1719,7 @@
 		};
 		1437DD911CF2A75F001BD2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3CF38BED12036D8DD08002 /* Pods-ScaryBugsMac-ScaryBugsMacTests.debug.xcconfig */;
+			baseConfigurationReference = 93E7DD59FEAE727BC98A1F9E /* Pods-ScaryBugsMacTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1702,7 +1733,7 @@
 		};
 		1437DD921CF2A75F001BD2D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3966EFD670D9A683DBAB23B4 /* Pods-ScaryBugsMac-ScaryBugsMacTests.release.xcconfig */;
+			baseConfigurationReference = BE68F50785B0CD863CE734B5 /* Pods-ScaryBugsMacTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;

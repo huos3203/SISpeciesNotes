@@ -51,9 +51,9 @@ target 'SISpeciesNotes' do
     
 #    Expecta是一个匹配器框架，我们可以在测试中使用它来创建断言。它的语法非常强大，与此同时，它比内建的XCAssert套件更加易读。例如
     def testing_pods
-    pod 'Quick'         #Specta “可视化”测试
-    pod 'Nimble'        # Expecta 匹配器框架
-    pod 'RxBlocking', '~> 2.0'
+        pod 'Quick'         #Specta “可视化”测试
+        pod 'Nimble'        # Expecta 匹配器框架
+        pod 'RxBlocking', '~> 2.0'
 #        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
     end
 
@@ -66,6 +66,7 @@ target 'SISpeciesNotes' do
     end
 
     target 'SISpeciesNotesUITests' do
+        inherit! :search_paths
         testing_pods
     end
 end
@@ -77,10 +78,11 @@ target 'ScaryBugsMac' do
     pod 'EDStarRating'
 #    pod 'SwiftWebSocket'
     pod 'CocoaAsyncSocket'
-    pod 'RealmSwift'
+#    pod 'RealmSwift'
     pod 'FMDB'
     
     target 'ScaryBugsMacTests' do
+        inherit! :search_paths
         pod 'EDStarRating'
     end
 end

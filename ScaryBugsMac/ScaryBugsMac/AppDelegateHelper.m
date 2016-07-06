@@ -33,6 +33,18 @@
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
     
+//    unsigned char key[] = {-29,-69,-24,-80,29,127,-113,43,-96,84,44,59,-7,-20,-65,-76};
+//    long long code_len = 0;
+//    long long file_len = 2408936;
+//    long long offset = 0;
+//    set_key_info(key, code_len,file_len,offset);
+    //bilibili
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[videoPath]];
+    
+    return YES;
+    
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;

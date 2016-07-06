@@ -43,13 +43,13 @@
       assignedFileDataType = "public.ruby-script">
    </FileRef>
    <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Sport_Xctool.xml">
    </FileRef>
    <FileRef
       location = "group:SISpeciesNotes.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:VacationSpots_Starter/VacationSpots.xcodeproj">

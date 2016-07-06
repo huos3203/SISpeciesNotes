@@ -21,7 +21,7 @@
                 </windowController>
                 <customObject id="VRB-F4-4Y5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-627" y="-131"/>
+            <point key="canvasLocation" x="-652" y="-142"/>
         </scene>
         <!--Media Player View Controller-->
         <scene sceneID="HPp-cU-Hxk">
