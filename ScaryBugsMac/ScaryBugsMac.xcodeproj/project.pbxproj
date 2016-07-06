@@ -10,6 +10,8 @@
 		07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */; };
 		14248E471D2CCEFC00D3704C /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 14248E461D2CCEFC00D3704C /* for_the_birds.avi */; };
 		142EC39E1D2CDE0A00B88F96 /* 1.mp4.pbb in Resources */ = {isa = PBXBuildFile; fileRef = 142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */; };
+		142EC3AB1D2D0B1A00B88F96 /* readMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 142EC3AA1D2D0B1A00B88F96 /* readMe.md */; };
+		142EC3B11D2D0B8D00B88F96 /* mpv.def in Resources */ = {isa = PBXBuildFile; fileRef = 142EC3B01D2D0B8D00B88F96 /* mpv.def */; };
 		1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
 		1437DD701CF2A75F001BD2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
 		1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
@@ -214,6 +216,11 @@
 /* Begin PBXFileReference section */
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
+		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
+		142EC3AC1D2D0B5700B88F96 /* stream_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream_file.c; sourceTree = "<group>"; };
+		142EC3AD1D2D0B5700B88F96 /* SMS4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMS4.h; sourceTree = "<group>"; };
+		142EC3AE1D2D0B5700B88F96 /* pbb_key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pbb_key.h; sourceTree = "<group>"; };
+		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
 		1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -511,6 +518,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142EC3A91D2D0B1A00B88F96 /* SMS4 */ = {
+			isa = PBXGroup;
+			children = (
+				142EC3AC1D2D0B5700B88F96 /* stream_file.c */,
+				142EC3AD1D2D0B5700B88F96 /* SMS4.h */,
+				142EC3AE1D2D0B5700B88F96 /* pbb_key.h */,
+				142EC3AA1D2D0B1A00B88F96 /* readMe.md */,
+				142EC3B01D2D0B8D00B88F96 /* mpv.def */,
+			);
+			path = SMS4;
+			sourceTree = "<group>";
+		};
 		1437DD5F1CF2A75E001BD2D2 = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +641,7 @@
 		14AA3DCA1D2A187200838B88 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
+				142EC3A91D2D0B1A00B88F96 /* SMS4 */,
 				14AA3E351D2A187200838B88 /* libavcodec.57.dylib */,
 				14AA3E361D2A187200838B88 /* libavdevice.57.dylib */,
 				14AA3E371D2A187200838B88 /* libavfilter.6.dylib */,
@@ -1186,6 +1206,7 @@
 				843CAE131D09367800CE84F4 /* Appfile in Resources */,
 				14AA40B81D2A187300838B88 /* MovieFileIcon.png in Resources */,
 				14AA40D61D2A187300838B88 /* SubFileIcon.png in Resources */,
+				142EC3B11D2D0B8D00B88F96 /* mpv.def in Resources */,
 				14AA40D51D2A187300838B88 /* search.png in Resources */,
 				843CAE1F1D09367800CE84F4 /* primary_first_sub_category.txt in Resources */,
 				14AA40CF1D2A187300838B88 /* vol_high.pdf in Resources */,
@@ -1483,6 +1504,7 @@
 				14B2600A1CFD8AA3001BCE84 /* OpenUDID.m in Sources */,
 				14B25FAD1CFD7823001BCE84 /* HttpDes.cpp in Sources */,
 				14B25FC01CFD834C001BCE84 /* NSString+More.m in Sources */,
+				142EC3AB1D2D0B1A00B88F96 /* readMe.md in Sources */,
 				14B25FAA1CFD7823001BCE84 /* NewPycUserRemote.m in Sources */,
 				14B25FFF1CFD844E001BCE84 /* MyProduct.m in Sources */,
 				14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */,

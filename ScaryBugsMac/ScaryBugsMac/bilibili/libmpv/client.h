@@ -411,6 +411,8 @@ const char *mpv_client_name(mpv_handle *ctx);
  */
 mpv_handle *mpv_create(void);
 
+void release_key(void);
+void set_key_info(unsigned char* key, long long code_len,long long file_len, long long offset);
 /**
  * Initialize an uninitialized mpv instance. If the mpv instance is already
  * running, an error is retuned.
@@ -1620,3 +1622,5 @@ void *mpv_get_sub_api(mpv_handle *ctx, mpv_sub_api sub_api);
 #endif
 
 #endif
+
+

@@ -17,6 +17,7 @@
 
 #import "PlayerLoader.h"
 
+#import "client.h"
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -30,17 +31,20 @@
     NSInteger applyNum; //自动激活次数
 }
 
+
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-    
-//    unsigned char key[] = {-29,-69,-24,-80,29,127,-113,43,-96,84,44,59,-7,-20,-65,-76};
-//    long long code_len = 0;
-//    long long file_len = 2408936;
-//    long long offset = 0;
-//    set_key_info(key, code_len,file_len,offset);
+
+    unsigned char key[] = {45,35,92,-47,-58,-36,-20,49,-75,32,39,-86,15,7,-40,-88};
+    long long code_len = 2030336;
+    long long file_len = 2030327;
+    long long offset = 0;
+    set_key_info(key, code_len,file_len,offset);
     //bilibili
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
+//    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
+    NSString *videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
+    //
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[videoPath]];
     
     return YES;
