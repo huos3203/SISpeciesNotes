@@ -642,7 +642,7 @@ static int file_read(int fd,  char *buf, int size) {
         
         //        printf("72\n");
         lseek(fd, cur_pos + valid_read, SEEK_SET); //这个是必须的。还原到和直接调用read(fd, buf, size)一样的效果
-        //        
+        //
         //        printf("8\n");
         
         r = valid_read;
@@ -712,27 +712,24 @@ static int write_buffer(stream_t *s, char *buffer, int len)
 
 static int seek(stream_t *s, int64_t newpos)
 {
-    //移动到新算法文件位置
-    if (offset_r > 0) {
-        newpos += offset_r;
-    }
+    
     struct priv *p = s->priv;
-    return lseek(p->fd, newpos, SEEK_SET) != (off_t)-1;
+    return lseek(p->fd, newpos += offset_r, SEEK_SET) != (off_t)-1;
 }
 
 static int control(stream_t *s, int cmd, void *arg)
 {
     struct priv *p = s->priv;
     switch (cmd) {
-    case STREAM_CTRL_GET_SIZE: {
-        off_t size = lseek(p->fd, 0, SEEK_END);
-        lseek(p->fd, s->pos, SEEK_SET);
-        if (size != (off_t)-1) {
-            *(int64_t *)arg = size;
-            return 1;
+        case STREAM_CTRL_GET_SIZE: {
+            off_t size = lseek(p->fd, 0, SEEK_END);
+            lseek(p->fd, s->pos += offset_r, SEEK_SET);
+            if (size != (off_t)-1) {
+                *(int64_t *)arg = size;
+                return 1;
+            }
+            break;
         }
-        break;
-    }
     }
     return STREAM_UNSUPPORTED;
 }
@@ -781,7 +778,7 @@ static bool check_stream_network(int fd)
             if (strcmp(stypes[i], fs.f_fstypename) == 0)
                 return true;
     return false;
-
+    
 }
 #elif HAVE_LINUX_FSTATFS
 static bool check_stream_network(int fd)
@@ -804,38 +801,38 @@ static bool check_stream_network(int fd)
         }
     }
     return false;
-
+    
 }
 #elif defined(_WIN32)
 static bool check_stream_network(int fd)
 {
     NTSTATUS (NTAPI *pNtQueryVolumeInformationFile)(HANDLE,
-        PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS) = NULL;
-
+                                                    PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS) = NULL;
+    
     // NtQueryVolumeInformationFile is an internal Windows function. It has
     // been present since Windows XP, however this code should fail gracefully
     // if it's removed from a future version of Windows.
     HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
     pNtQueryVolumeInformationFile = (NTSTATUS (NTAPI*)(HANDLE,
-        PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS))
-        GetProcAddress(ntdll, "NtQueryVolumeInformationFile");
-
+                                                       PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS))
+    GetProcAddress(ntdll, "NtQueryVolumeInformationFile");
+    
     if (!pNtQueryVolumeInformationFile)
         return false;
-
+    
     HANDLE h = (HANDLE)_get_osfhandle(fd);
     if (h == INVALID_HANDLE_VALUE)
         return false;
-
+    
     FILE_FS_DEVICE_INFORMATION info = { 0 };
     IO_STATUS_BLOCK io;
     NTSTATUS status = pNtQueryVolumeInformationFile(h, &io, &info,
-        sizeof(info), FileFsDeviceInformation);
+                                                    sizeof(info), FileFsDeviceInformation);
     if (!NT_SUCCESS(status))
         return false;
-
+    
     return info.DeviceType == FILE_DEVICE_NETWORK_FILE_SYSTEM ||
-           (info.Characteristics & FILE_REMOTE_DEVICE);
+    (info.Characteristics & FILE_REMOTE_DEVICE);
 }
 #else
 static bool check_stream_network(int fd)
@@ -852,17 +849,17 @@ static int open_f(stream_t *stream)
     };
     stream->priv = p;
     stream->type = STREAMTYPE_FILE;
-
+    
     bool write = stream->mode == STREAM_WRITE;
     int m = O_CLOEXEC | (write ? O_RDWR | O_CREAT | O_TRUNC : O_RDONLY);
-
+    
     char *filename = mp_file_url_to_filename(stream, bstr0(stream->url));
     if (filename) {
         stream->path = filename;
     } else {
         filename = stream->path;
     }
-
+    
     if (strncmp(stream->url, "fd://", 5) == 0) {
         char *end = NULL;
         p->fd = strtol(stream->url + 5, &end, 0);
@@ -911,28 +908,28 @@ static int open_f(stream_t *stream)
         }
         p->close = true;
     }
-
+    
 #ifdef __MINGW32__
     setmode(p->fd, O_BINARY);
 #endif
-
+    
     off_t len = lseek(p->fd, 0, SEEK_END);
-    lseek(p->fd, 0, SEEK_SET);
+    lseek(p->fd, offset_r, SEEK_SET);
     if (len != (off_t)-1) {
         stream->seek = seek;
         stream->seekable = true;
     }
-
+    
     stream->fast_skip = true;
     stream->fill_buffer = fill_buffer;
     stream->write_buffer = write_buffer;
     stream->control = control;
     stream->read_chunk = 64 * 1024;
     stream->close = s_close;
-
+    
     if (check_stream_network(p->fd))
         stream->streaming = true;
-
+    
     return STREAM_OK;
 }
 

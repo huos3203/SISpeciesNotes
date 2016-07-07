@@ -34,24 +34,6 @@
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-//1.mp4.pbb：{45,35,92,-47,-58,-36,-20,49,-75,32,39,-86,15,7,-40,-88};
-//    long long code_len = 2030336;
-//    long long file_len = 2030327;
-//    unsigned char key[] = ;
-//    
-//    long long code_len = 2030336;
-//    long long file_len = 2030327;
-//    long long offset = 0;
-//    set_key_info(key, code_len,file_len,offset);
-//    //bilibili
-//    NSBundle *bundle = [NSBundle mainBundle];
-////    NSString *videoPath = [bundle pathForResource:@"for_the_birds" ofType:@"avi"];
-//    NSString *videoPath = [bundle pathForResource:@"1.mp4" ofType:@"pbb"];
-//    //
-//    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[videoPath]];
-//    
-//    return YES;
-    
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
@@ -79,7 +61,7 @@
         }
     }
 
-    //    custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
+    //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
     NSArray *array;
     NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
     [nib instantiateWithOwner:self topLevelObjects:&array];
@@ -157,7 +139,7 @@
         return;
     }
     
-    NSArray *arr =@[@"jpg", @"png", @"pdf", @"mp4",@"3gp",@"mov", @"mp3", @"wav",@"flv",@"wmv"];
+    NSArray *arr =@[@"jpg", @"png", @"pdf", @"mp4",@"3gp",@"mov", @"mp3", @"wav",@"flv",@"wmv",@"avi"];
     NSRange rang;
     for (int i =0 ; i<[arr count]; i++) {
         rang = [[seePycFile.filePycNameFromServer lowercaseString] rangeOfString:[NSString stringWithFormat:@".%@",arr[i]]];
@@ -208,7 +190,8 @@
     if (!isReceiveFileExist) {
         //存储到SQLite 接收文件
         NSString *sandbox = [SandboxFile GetHomeDirectoryPath];
-        NSString *filePath = [seePycFile.filePycName stringByReplacingOccurrencesOfString:sandbox withString:@""];
+//        NSString *filePath = [seePycFile.filePycName stringByReplacingOccurrencesOfString:sandbox withString:@""];
+        NSString *filePath = seePycFile.filePycName;
         [[ReceiveFileDao sharedReceiveFileDao] saveReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                      FileName:[seePycFile.filePycNameFromServer stringByDeletingPathExtension]
                                                                                       LogName:seePycFile.fileSeeLogname
@@ -341,12 +324,6 @@
             
 //            [look lookMedia:_navRootVc];
             //bilibili
-//            unsigned char key[] = ;
-//            
-//            long long code_len = 2030336;
-//            long long file_len = 2030327;
-//            long long offset = 0;
-//            set_key_info(key, code_len,file_len,offset);
             NSString *bytestr = @"";
             for (int i = 0; i<16; i++)
             {
@@ -366,6 +343,7 @@
         }
         else
         {
+            //自由传播
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID
             
@@ -381,7 +359,18 @@
             look.EncryptedLen = seePycFile.encryptedLen;
             look.imageData = seePycFile.imageData;
             
-//            [look lookMedia:_navRootVc];
+            //bilibili
+            NSString *bytestr = @"";
+            for (int i = 0; i<16; i++)
+            {
+                bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[seePycFile.fileSecretkeyR1 bytes])[i]]];
+            }
+            NSLog(@"密钥=====:%@",bytestr);
+            set_key_info((unsigned char*)(Byte *)[seePycFile.fileSecretkeyR1 bytes],
+                         (long)seePycFile.encryptedLen,
+                         (long)seePycFile.fileSize,
+                         (long)seePycFile.offset);
+            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.filePycName]];
         }
     }
 }
