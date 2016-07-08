@@ -11,6 +11,9 @@
 #import "userDao.h"
 #import "ToolString.h"
 
+#import "PlayerLoader.h"
+#import "client.h"
+
 @implementation LookMedia
 {
     OutFile *_receiveFile;
@@ -18,22 +21,30 @@
     NSString *_filename;
 }
 
-- (void)lookMedia:(NSWindow *)rootVc
+- (void)lookMedia:(NSString *)openFilePath
 {
-//    //能查看，就更新数据库readNum+1
-//    if ([rootVc.topViewController isKindOfClass:[NewFeatrueViewController class]]) {
-//        [rootVc setNavigationBarHidden:NO];
-//    }
+
     [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToAddReadNumByFileId:[_receviveFileId integerValue]];
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:1 FileId:[_receviveFileId integerValue]];
     
     _receiveFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:[_receviveFileId integerValue]
                                                                                LogName:[[userDao shareduserDao] getLogName]];
-    if(! _receiveFile){
+    if(!_receiveFile && [openFilePath hasSuffix:@"pbb"]){
         return;
     }
     
-    
+    //bilibili
+//    NSString *bytestr = @"";
+//    for (int i = 0; i<16; i++)
+//    {
+//        bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
+//    }
+//    NSLog(@"密钥=====:%@",bytestr);
+    set_key_info((unsigned char*)(Byte *)[_fileSecretkeyR1 bytes],
+                 (long)_EncryptedLen,
+                 (long)_fileSize,
+                 (long)_offset);
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
     
 }
 -(BOOL)isShotScreen{

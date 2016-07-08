@@ -31,7 +31,7 @@
 @property(nonatomic, assign)long long     offset;
 
 @property(nonatomic,strong)NSData *imageData;
-- (void)lookMedia:(NSWindow *)rootVc;
+- (void)lookMedia:(NSString *)openFilePath;
 
 
 @end

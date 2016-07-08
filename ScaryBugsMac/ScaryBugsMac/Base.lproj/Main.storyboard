@@ -882,19 +882,19 @@
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-uU-Cub">
                                         <rect key="frame" x="166" y="95" width="100" height="100"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="loading" id="16C-Za-sOy"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="114" id="16C-Za-sOy"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-mF-MOd">
-                                        <rect key="frame" x="8" y="20" width="416" height="34"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="提示：开始播放后按回车可以发送弹幕" id="lWS-nP-uzE">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
+                                        <rect key="frame" x="146" y="70" width="141" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PBB Reader" id="hKe-h4-gkH">
                                             <font key="font" size="13" name="STHeitiSC-Light"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
-                                        <rect key="frame" x="146" y="70" width="141" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Loading" id="hKe-h4-gkH">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-mF-MOd">
+                                        <rect key="frame" x="8" y="20" width="416" height="34"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="lWS-nP-uzE">
                                             <font key="font" size="13" name="STHeitiSC-Light"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -936,10 +936,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="114" width="114" height="114"/>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
-        <image name="loading" width="69" height="70"/>
         <image name="wolfSpider" width="76.800003051757812" height="76.800003051757812"/>
     </resources>
 </document>

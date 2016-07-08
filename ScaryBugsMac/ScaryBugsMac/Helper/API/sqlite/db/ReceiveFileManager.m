@@ -33,6 +33,7 @@ singleton_implementation(ReceiveFileManager)
 -(id)init
 {
     if (self = [super init]) {
+        NSLog(@"数据库路径：%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:KDataBaseName]);
         _db = [FMDatabase databaseWithPath:KDataBasePath];
     }
     return self;
@@ -41,9 +42,13 @@ singleton_implementation(ReceiveFileManager)
 #pragma mark 重写子类的创建表方法
 -(void)createTable
 {
+//    [self intoFieldByName:@"timeType" FieldType:@"interger"];
+//    //最后阅读时间
+//    [self intoFieldByName:@"lastSeeTime" FieldType:@"text"];
+//    [self intoFieldByName:@"isChangeTime" FieldType:@"integer"];
     //打开数据库
     if (![_db open]) return;
-    [_db executeUpdate:@"create table if not exists t_receive(sqlId integer primary key autoincrement,fileId integer,fileName text,logName text,fileOwner text,fileOwnerNick text,fileUrl text,fileType VARCHAR(20),receiveTime TEXT,startTime TEXT,endTime TEXT,limitTime integer,note text,forbid integer, limitNum integer,readNum integer,reborn integer,fileQQ text,fileEmail text,filePhone text,fileOpenDay integer,fileOpenYear integer,fileMakeType integer,fileDayRemain integer,fileYearRemain integer,makeTime TEXT,appType integer,firstOpenTime text,isEye integer,Uid integer,applyId integer,actived integer,field1 text,field2 text,field1name text,field2name text,hardno text,EncodeKey blob,SelfFieldNum integer,DefineChecked integer,WaterMarkQQ text,WaterMarkPhone text,WaterMarkEmail text,seriesID integer);"];
+    [_db executeUpdate:@"create table if not exists t_receive(sqlId integer primary key autoincrement,fileId integer,fileName text,logName text,fileOwner text,fileOwnerNick text,fileUrl text,fileType VARCHAR(20),receiveTime TEXT,startTime TEXT,endTime TEXT,limitTime integer,note text,forbid integer, limitNum integer,readNum integer,reborn integer,fileQQ text,fileEmail text,filePhone text,fileOpenDay integer,fileOpenYear integer,fileMakeType integer,fileDayRemain integer,fileYearRemain integer,makeTime TEXT,appType integer,firstOpenTime text,isEye integer,Uid integer,applyId integer,actived integer,field1 text,field2 text,field1name text,field2name text,hardno text,EncodeKey blob,SelfFieldNum integer,DefineChecked integer,WaterMarkQQ text,WaterMarkPhone text,WaterMarkEmail text,seriesID integer,timeType interger,lastSeeTime text,isChangeTime integer);"];
     // 关闭数据库
     [_db close];
 }
@@ -463,7 +468,7 @@ singleton_implementation(ReceiveFileManager)
             open = 2;
             status = NO;
         }
-        NSString *fileUrl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:[self base64decode:[rs stringForColumn:@"fileUrl"]]];
+        NSString *fileUrl = [self base64decode:[rs stringForColumn:@"fileUrl"]];
         
         of = [OutFile initWithReceiveFileId:[rs intForColumn:@"fileId"]
                                    FileName:[self base64decode:[rs stringForColumn:@"fileName"]]
@@ -667,7 +672,7 @@ singleton_implementation(ReceiveFileManager)
             canopenFile = ERR_OUTLINE_OTHER_ERR; 
         }
         
-        NSString *fileUrl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:[self base64decode:[rs stringForColumn:@"fileUrl"]]];
+        NSString *fileUrl = [self base64decode:[rs stringForColumn:@"fileUrl"]];
         of = [OutFile initWithReceiveFileId:[rs intForColumn:@"fileId"]
                                    FileName:[self base64decode:[rs stringForColumn:@"fileName"]]
                               FileOwnerNick:[self base64decode:[rs stringForColumn:@"fileOwnerNick"]]
@@ -869,7 +874,7 @@ singleton_implementation(ReceiveFileManager)
             canopenFile = ERR_OUTLINE_OTHER_ERR;
         }
         
-        NSString *fileUrl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:[self base64decode:[rs stringForColumn:@"fileUrl"]]];
+        NSString *fileUrl = [self base64decode:[rs stringForColumn:@"fileUrl"]];
         of = [OutFile initWithReceiveFileId:[rs intForColumn:@"fileId"]
                                    FileName:[self base64decode:[rs stringForColumn:@"fileName"]]
                               FileOwnerNick:[self base64decode:[rs stringForColumn:@"fileOwnerNick"]]
@@ -1129,7 +1134,7 @@ singleton_implementation(ReceiveFileManager)
             canopenFile = ERR_OUTLINE_OTHER_ERR;
         }
 
-        NSString *fileUrl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:[self base64decode:[rs stringForColumn:@"fileUrl"]]];
+        NSString *fileUrl = [self base64decode:[rs stringForColumn:@"fileUrl"]];
         of = [OutFile initWithReceiveFileId:[rs intForColumn:@"fileId"]
                                    FileName:[self base64decode:[rs stringForColumn:@"fileName"]]
                               FileOwnerNick:[self base64decode:[rs stringForColumn:@"fileOwnerNick"]]
@@ -1322,7 +1327,7 @@ singleton_implementation(ReceiveFileManager)
     OutFile *of;
     while ([rs next]) {
         //
-        NSString *fileUrl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:[self base64decode:[rs stringForColumn:@"fileUrl"]]];
+        NSString *fileUrl = [self base64decode:[rs stringForColumn:@"fileUrl"]];
         NSDate *startTime = [NSDate dateWithStringByDay:[self base64decode:[rs stringForColumn:@"startTime"]]];
         NSDate *endTime = [NSDate dateWithStringByDay:[self base64decode:[rs stringForColumn:@"endTime"]]];
         NSDate *receiveTime = [NSDate dateWithStringByDay:[self base64decode:[rs stringForColumn:@"receiveTime"]]];

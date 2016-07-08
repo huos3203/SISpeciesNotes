@@ -15,9 +15,6 @@
 #import "userDao.h"
 #import <Cocoa/Cocoa.h>
 
-#import "PlayerLoader.h"
-
-#import "client.h"
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -34,6 +31,11 @@
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
+    if(![openURL hasSuffix:@"pbb"]){
+        LookMedia *look = [[LookMedia alloc] init];
+        [look lookMedia:openURL];
+        return YES;
+    }
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
@@ -44,7 +46,6 @@
     }
 
     // 判断已接受数据库是否存在
-    NSString *fileName = @"";
     NSInteger openedNum = 0;
     BOOL OutLine = NO;
     NSString *logname = [[userDao shareduserDao] getLogName];
@@ -53,7 +54,6 @@
     if (isReceiveFileExist) {
         //在接收列表存在
         outFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:fileID LogName:logname];
-        fileName = [NSString stringWithFormat:@"%@.pbb",outFile.filename];
         openedNum = outFile.readnum;
         
         if (outFile.fileMakeType == 0) {
@@ -79,7 +79,7 @@
         _fileManager.receiveFile = outFile;
         NSString *result =[_fileManager seePycFile2:filePath
                                         forUser:logname
-                                        pbbFile:fileName
+                                        pbbFile:openURL
                                         phoneNo:@""
                                       messageID:@""
                                       isOffLine:&isOffLine
@@ -148,10 +148,6 @@
         }
     }
     if (rang.length == 0) {
-        [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//seePycFile.fileID];
-        [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileIsChangeTime:fileID isChangeTime:1];
-        [self setAlertView:@"暂不支持此格式，请在PC端阅读。\n移动端支持的格式：\njpg/png/pdf/mp4/3gp/mov/mp3/wav/flv/wmv"];
-        
         return;
     }
     
@@ -189,9 +185,6 @@
     //第一open In 本地没有该文件时更新
     if (!isReceiveFileExist) {
         //存储到SQLite 接收文件
-        NSString *sandbox = [SandboxFile GetHomeDirectoryPath];
-//        NSString *filePath = [seePycFile.filePycName stringByReplacingOccurrencesOfString:sandbox withString:@""];
-        NSString *filePath = seePycFile.filePycName;
         [[ReceiveFileDao sharedReceiveFileDao] saveReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                      FileName:[seePycFile.filePycNameFromServer stringByDeletingPathExtension]
                                                                                       LogName:seePycFile.fileSeeLogname
@@ -227,7 +220,7 @@
                                                                                         LogName:seePycFile.fileSeeLogname
                                                                                       FileOwner:seePycFile.fileOwner
                                                                                   FileOwnerNick:seePycFile.nickname
-                                                                                        FileUrl:seePycFile.filePycName
+                                                                                        FileUrl:filePath
                                                                                        FileType:seePycFile.fileExtentionWithOutDot
                                                                                     ReceiveTime:receiveDay
                                                                                       StartTime:startDay
@@ -320,21 +313,11 @@
             look.openinfoid = seePycFile.openinfoid;
             look.fileSecretkeyR1 = seePycFile.fileSecretkeyR1;
             look.EncryptedLen = seePycFile.encryptedLen;
+            look.fileSize = seePycFile.fileSize;
+            look.offset = seePycFile.offset;
             look.imageData = seePycFile.imageData;
             
-//            [look lookMedia:_navRootVc];
-            //bilibili
-            NSString *bytestr = @"";
-            for (int i = 0; i<16; i++)
-            {
-                bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[seePycFile.fileSecretkeyR1 bytes])[i]]];
-            }
-            NSLog(@"密钥=====:%@",bytestr);
-            set_key_info((unsigned char*)(Byte *)[seePycFile.fileSecretkeyR1 bytes],
-                         (long)seePycFile.encryptedLen,
-                         (long)seePycFile.fileSize,
-                         (long)seePycFile.offset);
-            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.filePycName]];
+            [look lookMedia:seePycFile.filePycName];
         }
         else if(returnValue & ERR_FEE_SALER)
         {
@@ -357,20 +340,10 @@
             //                look.openinfoid = seePycFile.openinfoid;
             look.fileSecretkeyR1 = seePycFile.fileSecretkeyR1;
             look.EncryptedLen = seePycFile.encryptedLen;
+            look.fileSize = seePycFile.fileSize;
+            look.offset = seePycFile.offset;
             look.imageData = seePycFile.imageData;
-            
-            //bilibili
-            NSString *bytestr = @"";
-            for (int i = 0; i<16; i++)
-            {
-                bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[seePycFile.fileSecretkeyR1 bytes])[i]]];
-            }
-            NSLog(@"密钥=====:%@",bytestr);
-            set_key_info((unsigned char*)(Byte *)[seePycFile.fileSecretkeyR1 bytes],
-                         (long)seePycFile.encryptedLen,
-                         (long)seePycFile.fileSize,
-                         (long)seePycFile.offset);
-            [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[seePycFile.filePycName]];
+            [look lookMedia:seePycFile.filePycName];
         }
     }
 }
