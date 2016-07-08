@@ -284,7 +284,8 @@ getInfo:
 
     NSString *windowTitle = [self.player getAttr:@"title"];
     if(![windowTitle length]){
-        windowTitle = @"TYPCN Media Player";
+//        windowTitle = @"TYPCN Media Player";
+        windowTitle = [URL lastPathComponent];
     }
     
     NSString *cmfile = [self.player getAttr:@"commentFile"];

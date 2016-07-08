@@ -8,20 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AppDelegate-openglcb.h"
-//int main(int argc, const char * argv[]) {
-//    return NSApplicationMain(argc, argv);
-//}
 
-// Delete this if you already have a main.m.
+//bilibili
 int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        NSApplication *app = [NSApplication sharedApplication];
-        AppDelegate_openglcb *delegate = [AppDelegate_openglcb new];
-        app.delegate = delegate;
-        [app run];
-    }
-    return 0;
+    return NSApplicationMain(argc, argv);
 }
+
+//openglcb
+// Delete this if you already have a main.m.
+//int main(int argc, const char * argv[]) {
+//    @autoreleasepool {
+//        NSApplication *app = [NSApplication sharedApplication];
+//        AppDelegate_openglcb *delegate = [AppDelegate_openglcb new];
+//        app.delegate = delegate;
+//        [app run];
+//    }
+//    return 0;
+//}
 
 //#ifndef MPV_MACOSX_APPLICATION
 //#define MPV_MACOSX_APPLICATION

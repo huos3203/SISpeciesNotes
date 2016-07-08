@@ -66,16 +66,22 @@
 
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
-    NSView *superView = [[NSApplication sharedApplication] mainWindow].contentView;
+    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];//.contentView;
     if(!superView){
         _finish = YES;
         return;
     }
-    [superView addSubview:self];
-    [self setEdge:superView view:self attr:NSLayoutAttributeTop constant:0];
-    [self setEdge:superView view:self attr:NSLayoutAttributeBottom constant:0];
-    [self setEdge:superView view:self attr:NSLayoutAttributeLeft constant:0];
-    [self setEdge:superView view:self attr:NSLayoutAttributeRight constant:0];
+    superView = [[NSApplication sharedApplication] keyWindow];
+//    [superView resignKeyWindow];
+//    [superView deminiaturize:self];
+    [superView makeKeyAndOrderFront:NSApp];
+    [superView makeMainWindow];
+    NSView *lastView = superView.contentView;
+    [lastView addSubview:self];
+    [self setEdge:lastView view:self attr:NSLayoutAttributeTop constant:0];
+    [self setEdge:lastView view:self attr:NSLayoutAttributeBottom constant:0];
+    [self setEdge:lastView view:self attr:NSLayoutAttributeLeft constant:0];
+    [self setEdge:lastView view:self attr:NSLayoutAttributeRight constant:0];
     
     if(fileID == -1)
     {

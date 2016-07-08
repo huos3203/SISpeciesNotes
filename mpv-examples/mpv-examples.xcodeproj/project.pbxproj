@@ -103,6 +103,7 @@
 		1493EFF81D2514B600E923C2 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1493EFF61D25149100E923C2 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14A3977F1D2A0D950075930D /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; };
 		14A397801D2A0DD00075930D /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14A3977E1D2A0D950075930D /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B73D381D2F902E00F39A03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B73D371D2F902E00F39A03 /* AppDelegate.m */; };
 		F5AA071BF6E3496CE7742D9E /* Pods_mpv_examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCBA0249BD43CB5DCCE6C75 /* Pods_mpv_examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,8 +143,8 @@
 		143F37DD1D1CCEE100DD70C9 /* AppDelegate-openglcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate-openglcb.h"; sourceTree = "<group>"; };
 		143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate-openglcb.m"; sourceTree = "<group>"; };
 		143F37E01D1CCFD300DD70C9 /* opengl_cb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opengl_cb.h; sourceTree = "<group>"; };
-		143F37E11D1CD2D100DD70C9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		143F37E21D1CD2D100DD70C9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		143F37E11D1CD2D100DD70C9 /* AppDelegate_cocoabasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate_cocoabasic.h; sourceTree = "<group>"; };
+		143F37E21D1CD2D100DD70C9 /* AppDelegate_cocoabasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate_cocoabasic.m; sourceTree = "<group>"; };
 		143F37E41D1CDDE400DD70C9 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		143F37EC1D1D05A700DD70C9 /* mpv-install.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mpv-install.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		143F37EE1D1D05A700DD70C9 /* MyInstallerPane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInstallerPane.h; sourceTree = "<group>"; };
@@ -270,6 +271,8 @@
 		1493EFD81D25091600E923C2 /* libswscale.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libswscale.4.dylib; sourceTree = "<group>"; };
 		1493EFF61D25149100E923C2 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
 		14A3977E1D2A0D950075930D /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmpv.dylib; sourceTree = "<group>"; };
+		14B73D361D2F902E00F39A03 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14B73D371D2F902E00F39A03 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		356C86FE8C6858240948F695 /* Pods-mpv-examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpv-examples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples.release.xcconfig"; sourceTree = "<group>"; };
 		7FCBA0249BD43CB5DCCE6C75 /* Pods_mpv_examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpv_examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE536B0611697B63924E65C4 /* Pods-mpv-examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpv-examples.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples.debug.xcconfig"; sourceTree = "<group>"; };
@@ -507,14 +510,16 @@
 		14562FDB1D11498400DB35E2 /* mpv-examples */ = {
 			isa = PBXGroup;
 			children = (
+				14B73D361D2F902E00F39A03 /* AppDelegate.h */,
+				14B73D371D2F902E00F39A03 /* AppDelegate.m */,
 				143F38261D1D187300DD70C9 /* bilibili */,
 				14562FFE1D11526C00DB35E2 /* libmpv */,
-				143F37E11D1CD2D100DD70C9 /* AppDelegate.h */,
-				143F37E21D1CD2D100DD70C9 /* AppDelegate.m */,
 				14562FE21D11498400DB35E2 /* ViewController.h */,
 				14562FE31D11498400DB35E2 /* ViewController.m */,
 				143F37DD1D1CCEE100DD70C9 /* AppDelegate-openglcb.h */,
 				143F37DE1D1CCEE100DD70C9 /* AppDelegate-openglcb.m */,
+				143F37E11D1CD2D100DD70C9 /* AppDelegate_cocoabasic.h */,
+				143F37E21D1CD2D100DD70C9 /* AppDelegate_cocoabasic.m */,
 				14562FE51D11498400DB35E2 /* Assets.xcassets */,
 				14562FE71D11498400DB35E2 /* Main1.storyboard */,
 				143F38B71D1D345600DD70C9 /* Main.storyboard */,
@@ -847,6 +852,7 @@
 				143F386D1D1D1E4200DD70C9 /* MBProgressHUD.m in Sources */,
 				14562FE11D11498400DB35E2 /* main.m in Sources */,
 				143F387A1D1D1EA900DD70C9 /* VideoProvider.m in Sources */,
+				14B73D381D2F902E00F39A03 /* AppDelegate.m in Sources */,
 				143F38791D1D1EA900DD70C9 /* VideoAddress.m in Sources */,
 				143F38521D1D1BA300DD70C9 /* PlayerView.mm in Sources */,
 				143F386A1D1D1E2400DD70C9 /* SubtitleProvider.m in Sources */,
