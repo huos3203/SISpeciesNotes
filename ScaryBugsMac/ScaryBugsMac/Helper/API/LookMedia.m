@@ -23,23 +23,28 @@
 
 - (void)lookMedia:(NSString *)openFilePath
 {
+    //明文
+    if(![openFilePath hasSuffix:@"pbb"]){
+        [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+    }
 
+    //pbb文件
     [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToAddReadNumByFileId:[_receviveFileId integerValue]];
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:1 FileId:[_receviveFileId integerValue]];
     
     _receiveFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:[_receviveFileId integerValue]
                                                                                LogName:[[userDao shareduserDao] getLogName]];
-    if(!_receiveFile && [openFilePath hasSuffix:@"pbb"]){
+    if(!_receiveFile){
         return;
     }
     
     //bilibili
-//    NSString *bytestr = @"";
-//    for (int i = 0; i<16; i++)
-//    {
-//        bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
-//    }
-//    NSLog(@"密钥=====:%@",bytestr);
+    NSString *bytestr = @"";
+    for (int i = 0; i<16; i++)
+    {
+        bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
+    }
+    NSLog(@"密钥=====:%@",bytestr);
     set_key_info((unsigned char*)(Byte *)[_fileSecretkeyR1 bytes],
                  (long)_EncryptedLen,
                  (long)_fileSize,

@@ -874,41 +874,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oeR-Yw-Iwd" userLabel="PlayerView">
-                                <rect key="frame" x="0.0" y="0.0" width="437" height="265"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="oeR-Yw-Iwd" userLabel="PlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                             </customView>
-                            <customView canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView">
+                            <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView">
                                 <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-uU-Cub">
-                                        <rect key="frame" x="166" y="95" width="100" height="100"/>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-uU-Cub">
+                                        <rect key="frame" x="159" y="76" width="114" height="114"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="114" id="16C-Za-sOy"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
-                                        <rect key="frame" x="146" y="70" width="141" height="17"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
+                                        <rect key="frame" x="175" y="51" width="81" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PBB Reader" id="hKe-h4-gkH">
                                             <font key="font" size="13" name="STHeitiSC-Light"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-mF-MOd">
-                                        <rect key="frame" x="8" y="20" width="416" height="34"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="lWS-nP-uzE">
-                                            <font key="font" size="13" name="STHeitiSC-Light"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="1Dh-2g-yUQ" firstAttribute="top" secondItem="YbR-uU-Cub" secondAttribute="bottom" constant="8" id="Bid-uv-J3M"/>
+                                    <constraint firstItem="1Dh-2g-yUQ" firstAttribute="centerX" secondItem="5C1-Zb-9nT" secondAttribute="centerX" id="HxJ-Ce-CfH"/>
+                                    <constraint firstItem="YbR-uU-Cub" firstAttribute="centerY" secondItem="5C1-Zb-9nT" secondAttribute="centerY" id="X6d-RC-ZgF"/>
+                                    <constraint firstItem="YbR-uU-Cub" firstAttribute="centerX" secondItem="5C1-Zb-9nT" secondAttribute="centerX" id="xfo-no-PiS"/>
+                                </constraints>
                             </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="5C1-Zb-9nT" firstAttribute="top" secondItem="n1w-f8-DSb" secondAttribute="top" id="Cqd-Da-PJs"/>
+                            <constraint firstAttribute="trailing" secondItem="oeR-Yw-Iwd" secondAttribute="trailing" id="I9f-1J-Fdz"/>
+                            <constraint firstItem="5C1-Zb-9nT" firstAttribute="leading" secondItem="n1w-f8-DSb" secondAttribute="leading" id="Kml-rR-GfU"/>
+                            <constraint firstItem="oeR-Yw-Iwd" firstAttribute="top" secondItem="n1w-f8-DSb" secondAttribute="top" id="LT6-Nq-qI4"/>
+                            <constraint firstItem="oeR-Yw-Iwd" firstAttribute="leading" secondItem="n1w-f8-DSb" secondAttribute="leading" id="byZ-iZ-F0B"/>
+                            <constraint firstAttribute="trailing" secondItem="5C1-Zb-9nT" secondAttribute="trailing" id="cfV-yb-0dh"/>
+                            <constraint firstAttribute="bottom" secondItem="oeR-Yw-Iwd" secondAttribute="bottom" id="oag-kn-c12"/>
+                            <constraint firstAttribute="bottom" secondItem="5C1-Zb-9nT" secondAttribute="bottom" id="xNJ-qp-eg7"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="ContentView" destination="oeR-Yw-Iwd" id="1fe-mS-TTb"/>
                         <outlet property="LoadingView" destination="5C1-Zb-9nT" id="ShR-Si-QE2"/>
                         <outlet property="loadingImage" destination="YbR-uU-Cub" id="9AG-ua-OQz"/>
-                        <outlet property="subtip" destination="V0X-mF-MOd" id="s92-0A-rfv"/>
                         <outlet property="textTip" destination="1Dh-2g-yUQ" id="Y96-PO-cWD"/>
                     </connections>
                 </viewController>
