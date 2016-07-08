@@ -103,28 +103,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingImgCache.m"
-            timestampString = "489569816.421824"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "-AdvertisingForTerm:completionBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingView.m"
-            timestampString = "489571759.78279"
+            timestampString = "489639009.128076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-startLoading:isOutLine:"
             landmarkType = "5">
             <Locations>
@@ -136,11 +120,11 @@
                   moduleName = "ScaryBugsMac"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingView.m"
-                  timestampString = "489636654.189329"
+                  timestampString = "489639216.704366"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
                   offsetFromSymbolStart = "131">
                </Location>
                <Location
@@ -151,11 +135,11 @@
                   moduleName = "ScaryBugsMac"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingView.m"
-                  timestampString = "489636654.189751"
+                  timestampString = "489639216.704529"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
@@ -168,43 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingView.m"
-            timestampString = "489571777.702197"
+            timestampString = "489639009.128076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-startLoading:isOutLine:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/AppDelegateHelper.m"
-            timestampString = "489573896.893957"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-openURLOfPycFileByLaunchedApp:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/Advertising/AdvertisingView.m"
-            timestampString = "489572104.246104"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-startLoading:isOutLine:"
             landmarkType = "5">
          </BreakpointContent>

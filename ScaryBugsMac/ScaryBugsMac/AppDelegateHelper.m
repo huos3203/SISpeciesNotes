@@ -69,7 +69,7 @@
         //
         id obj = array[i];
         if ([obj isKindOfClass:[AdvertisingView class]]) {
-            custormActivityView = (AdvertisingView *)array[0];
+            custormActivityView = (AdvertisingView *)array[i];
             [custormActivityView startLoading:fileID isOutLine:OutLine];
         }
     }
@@ -106,7 +106,6 @@
             }
         });
     });
-
     return YES;
 }
 

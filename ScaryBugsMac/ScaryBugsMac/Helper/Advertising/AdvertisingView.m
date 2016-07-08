@@ -66,7 +66,11 @@
 
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
-    NSView *superView = [[NSApplication sharedApplication] keyWindow].contentView;
+    NSView *superView = [[NSApplication sharedApplication] mainWindow].contentView;
+    if(!superView){
+        _finish = YES;
+        return;
+    }
     [superView addSubview:self];
     [self setEdge:superView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:superView view:self attr:NSLayoutAttributeBottom constant:0];

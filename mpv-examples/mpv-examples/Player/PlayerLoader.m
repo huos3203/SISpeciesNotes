@@ -256,7 +256,7 @@
 - (void)drawRect:(NSRect)rect
 {
     [[NSColor clearColor] set];
-    //NSRectFill([selfframe]);
+    NSRectFill([self frame]);
 }
 
 @end
