@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */; };
+		14105B821D337FD1004CB1C2 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */; };
+		14105B8E1D339A7D004CB1C2 /* NSTextField+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */; };
 		14248E471D2CCEFC00D3704C /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 14248E461D2CCEFC00D3704C /* for_the_birds.avi */; };
 		142EC39E1D2CDE0A00B88F96 /* 1.mp4.pbb in Resources */ = {isa = PBXBuildFile; fileRef = 142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */; };
 		142EC3AB1D2D0B1A00B88F96 /* readMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 142EC3AA1D2D0B1A00B88F96 /* readMe.md */; };
@@ -214,6 +216,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Attribute.h"; sourceTree = "<group>"; };
+		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
@@ -246,8 +251,8 @@
 		144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCallAppleScriptTests.swift; sourceTree = "<group>"; };
 		144D95631D12938100E495F6 /* main.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.scpt; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
-		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
-		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
+		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
+		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
 		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
 		148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingImgCache.m; sourceTree = "<group>"; };
 		148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
@@ -561,9 +566,8 @@
 				14EE61891CF816E50051FD1A /* Helper */,
 				1437DD9A1CF2AC6E001BD2D2 /* Model */,
 				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
-				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
-				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
+				14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
@@ -912,6 +916,8 @@
 				14B260061CFD86A8001BCE84 /* SandboxFile.m */,
 				14B260081CFD8AA3001BCE84 /* OpenUDID.h */,
 				14B260091CFD8AA3001BCE84 /* OpenUDID.m */,
+				14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */,
+				14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -992,6 +998,8 @@
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
+				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 				14430C291D012D1D00A5394D /* LookMedia.h */,
 				14430C2A1D012D1D00A5394D /* LookMedia.m */,
 				148AB47A1CFFD78600CAF9BA /* Advertising */,
@@ -1506,6 +1514,7 @@
 				14B25FC01CFD834C001BCE84 /* NSString+More.m in Sources */,
 				142EC3AB1D2D0B1A00B88F96 /* readMe.md in Sources */,
 				14B25FAA1CFD7823001BCE84 /* NewPycUserRemote.m in Sources */,
+				14105B8E1D339A7D004CB1C2 /* NSTextField+Attribute.m in Sources */,
 				14B25FFF1CFD844E001BCE84 /* MyProduct.m in Sources */,
 				14B2600D1CFD8AED001BCE84 /* Reachability.m in Sources */,
 				1437DD6C1CF2A75F001BD2D2 /* AppDelegate.swift in Sources */,
@@ -1532,6 +1541,7 @@
 				14B25FFD1CFD844E001BCE84 /* ArticleModel.m in Sources */,
 				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
 				148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */,
+				14105B821D337FD1004CB1C2 /* ReceiveViewController.swift in Sources */,
 				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
 				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 				14AA40AB1D2A187300838B88 /* BGHUDSliderCell.m in Sources */,

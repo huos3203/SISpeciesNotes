@@ -4,7 +4,10 @@
 
 #import "NSImage+Extras.h"
 
+#import "NSTextField+Attribute.h"
+#import "NSDate+String.h"
 #import "userDao.h"
+#import "SeriesDao.h"
 #import "ReceiveFileDao.h"
 #import "PycFile.h"
 //#import "FileOutPublic.h"
