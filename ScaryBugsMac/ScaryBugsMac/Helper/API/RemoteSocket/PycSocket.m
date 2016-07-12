@@ -7,7 +7,6 @@
 //
 
 #import "PycSocket.h"
-#import "AsyncSocket.h"
 #import "GCDAsyncSocket.h"
 #import "PycCode.h"
 #import "PycFolder.h"
@@ -17,7 +16,6 @@
 
 @interface PycSocket()<GCDAsyncSocketDelegate>
 
-@property (strong, nonatomic) AsyncSocket * sock;
 @property(strong,nonatomic) GCDAsyncSocket *GCDSocket;
 
 @end

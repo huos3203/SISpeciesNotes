@@ -4,13 +4,9 @@ PODS:
     - Alamofire (~> 3.3)
   - AlamofireNetworkActivityIndicator (1.0.1):
     - Alamofire (~> 3.3)
-  - CocoaAsyncSocket (7.4.3):
-    - CocoaAsyncSocket/All (= 7.4.3)
-  - CocoaAsyncSocket/All (7.4.3):
-    - CocoaAsyncSocket/GCD
-    - CocoaAsyncSocket/RunLoop
-  - CocoaAsyncSocket/GCD (7.4.3)
-  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - CocoaAsyncSocket (7.5.0):
+    - CocoaAsyncSocket/GCD (= 7.5.0)
+  - CocoaAsyncSocket/GCD (7.5.0)
   - EDStarRating (1.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -53,7 +49,6 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SnapKit (0.20.0)
   - SwiftFilePath (0.0.6)
-  - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -77,22 +72,12 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7)
   - SnapKit (~> 0.20.0)
   - SwiftFilePath
-  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
-
-EXTERNAL SOURCES:
-  WeiboSDK:
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
-
-CHECKOUT OPTIONS:
-  WeiboSDK:
-    :commit: 024997bef30c81a787425739a32d3575a9264a5d
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
-  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
@@ -110,8 +95,7 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
-  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 55fae43849a0a5f94b7a7130e4bda32f377d126f
+PODFILE CHECKSUM: 6737ed18f61a8c9caefbeadd5ccca434c659b0ba
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

@@ -608,14 +608,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */;
 			buildPhases = (
-				B3C98ED6C76E7A72126602BB /* 📦 Check Pods Manifest.lock */,
+				B3C98ED6C76E7A72126602BB /* [CP] Check Pods Manifest.lock */,
 				14562FD51D11498400DB35E2 /* Sources */,
 				14562FD61D11498400DB35E2 /* Frameworks */,
 				14562FD71D11498400DB35E2 /* Resources */,
 				143F39091D23B3F000DD70C9 /* CopyFiles */,
 				1414E0181D2650CA003CC7D1 /* ShellScript */,
-				739BD06528F6173C3EDAB383 /* 📦 Embed Pods Frameworks */,
-				1DF9F1E98C3F118EA7D1CF39 /* 📦 Copy Pods Resources */,
+				739BD06528F6173C3EDAB383 /* [CP] Embed Pods Frameworks */,
+				1DF9F1E98C3F118EA7D1CF39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -771,14 +771,14 @@
 			shellPath = /bin/sh;
 			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n\n\n";
 		};
-		1DF9F1E98C3F118EA7D1CF39 /* 📦 Copy Pods Resources */ = {
+		1DF9F1E98C3F118EA7D1CF39 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,14 +786,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		739BD06528F6173C3EDAB383 /* 📦 Embed Pods Frameworks */ = {
+		739BD06528F6173C3EDAB383 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,14 +801,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3C98ED6C76E7A72126602BB /* 📦 Check Pods Manifest.lock */ = {
+		B3C98ED6C76E7A72126602BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

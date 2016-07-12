@@ -1108,7 +1108,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
 			buildPhases = (
-				9150ABBDE8643BB0A28C6C2F /* 📦 Check Pods Manifest.lock */,
+				9150ABBDE8643BB0A28C6C2F /* [CP] Check Pods Manifest.lock */,
 				F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */,
 				1437DD641CF2A75F001BD2D2 /* Sources */,
 				1437DD651CF2A75F001BD2D2 /* Frameworks */,
@@ -1132,7 +1132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
-				8209479971E8807479EC849B /* 📦 Check Pods Manifest.lock */,
+				8209479971E8807479EC849B /* [CP] Check Pods Manifest.lock */,
 				5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
 				1437DD761CF2A75F001BD2D2 /* Frameworks */,
@@ -1364,17 +1364,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8209479971E8807479EC849B /* 📦 Check Pods Manifest.lock */ = {
+		8209479971E8807479EC849B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1382,14 +1382,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9150ABBDE8643BB0A28C6C2F /* 📦 Check Pods Manifest.lock */ = {
+		9150ABBDE8643BB0A28C6C2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1484,7 +1484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac-ScaryBugsMacTests/Pods-ScaryBugsMac-ScaryBugsMacTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
