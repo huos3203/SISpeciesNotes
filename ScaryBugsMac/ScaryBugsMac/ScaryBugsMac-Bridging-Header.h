@@ -9,6 +9,7 @@
 #import "userDao.h"
 #import "SeriesDao.h"
 #import "ReceiveFileDao.h"
+#import "VerificationCodeDao.h"
 #import "PycFile.h"
 //#import "FileOutPublic.h"
 #import "PycSocket.h"

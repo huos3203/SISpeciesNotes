@@ -100,6 +100,9 @@
 		14AA40E91D2A187300838B88 /* VideoAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB51D2A187300838B88 /* VideoAddress.m */; };
 		14AA40EA1D2A187300838B88 /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
 		14AA40EC1D2A187300838B88 /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
+		14B0CF751D34C715004D22B5 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
+		14B0CF781D34F394004D22B5 /* ActivationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF771D34F394004D22B5 /* ActivationController.swift */; };
+		14B0CF7A1D34F3AE004D22B5 /* ActivationSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */; };
 		14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
 		14B25FA21CFD7823001BCE84 /* SM3.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7C1CFD7823001BCE84 /* SM3.c */; };
 		14B25FA31CFD7823001BCE84 /* SMS4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7E1CFD7823001BCE84 /* SMS4.cpp */; };
@@ -365,6 +368,9 @@
 		14AA3FBB1D2A187300838B88 /* VP_Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VP_Local.m; sourceTree = "<group>"; };
 		14AA3FBC1D2A187300838B88 /* VP_YouGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VP_YouGet.h; sourceTree = "<group>"; };
 		14AA3FBD1D2A187300838B88 /* VP_YouGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VP_YouGet.m; sourceTree = "<group>"; };
+		14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingPhoneViewController.swift; sourceTree = "<group>"; };
+		14B0CF771D34F394004D22B5 /* ActivationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationController.swift; sourceTree = "<group>"; };
+		14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationSuccessController.swift; sourceTree = "<group>"; };
 		14B25F7A1CFD7823001BCE84 /* PycCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycCode.h; sourceTree = "<group>"; };
 		14B25F7B1CFD7823001BCE84 /* PycCode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PycCode.mm; sourceTree = "<group>"; };
 		14B25F7C1CFD7823001BCE84 /* SM3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SM3.c; sourceTree = "<group>"; };
@@ -568,6 +574,9 @@
 				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
 				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
 				14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */,
+				14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */,
+				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
+				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
@@ -1488,6 +1497,7 @@
 				143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */,
 				14B25FF31CFD844E001BCE84 /* SecretDao.m in Sources */,
 				14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */,
+				14B0CF751D34C715004D22B5 /* BindingPhoneViewController.swift in Sources */,
 				14B25FF61CFD844E001BCE84 /* userDao.m in Sources */,
 				14B25FF81CFD844E001BCE84 /* BaseDao.m in Sources */,
 				14B25FC41CFD8397001BCE84 /* DateTool.m in Sources */,
@@ -1532,6 +1542,7 @@
 				14B25FAC1CFD7823001BCE84 /* Des.cpp in Sources */,
 				14B25FB51CFD815A001BCE84 /* ToolString.m in Sources */,
 				14B260031CFD844E001BCE84 /* UserModel.m in Sources */,
+				14B0CF7A1D34F3AE004D22B5 /* ActivationSuccessController.swift in Sources */,
 				14B260021CFD844E001BCE84 /* SeriesModel.m in Sources */,
 				148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */,
 				14B25FA21CFD7823001BCE84 /* SM3.c in Sources */,
@@ -1547,6 +1558,7 @@
 				14AA40AB1D2A187300838B88 /* BGHUDSliderCell.m in Sources */,
 				14AA40AD1D2A187300838B88 /* BGThemeManager.m in Sources */,
 				14AA40AC1D2A187300838B88 /* BGTheme.m in Sources */,
+				14B0CF781D34F394004D22B5 /* ActivationController.swift in Sources */,
 				14AA40AE1D2A187300838B88 /* ControlsWithVibracy.m in Sources */,
 				14AA40AA1D2A187300838B88 /* MBProgressHUD.m in Sources */,
 				14AA40E41D2A187300838B88 /* NSString+LcsDiff.m in Sources */,
