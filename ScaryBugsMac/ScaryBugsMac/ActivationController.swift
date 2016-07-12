@@ -53,13 +53,13 @@ class ActivationController: NSViewController {
     var field1name:String!
     var field2name:String!
     
-    var field1needprotect:Bool,field2needprotect:Bool
-    var selffieldnum:Int    // 用户选择自定义列数量
-    var bindNum:Int // 用户选择系统定义数量。
-    var definechecked:Int
+    var field1needprotect:Bool!,field2needprotect:Bool!
+    var selffieldnum:Int!    // 用户选择自定义列数量
+    var bindNum:Int! // 用户选择系统定义数量。
+    var definechecked:Int!
     
-    var needReApply:Int
-    var applyId:Int
+    var needReApply:Int!
+    var applyId:Int!
 
     
     override func viewDidLoad() {
