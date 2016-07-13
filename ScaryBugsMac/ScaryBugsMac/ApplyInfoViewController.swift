@@ -51,6 +51,8 @@ class ApplyInfoViewController: NSViewController {
         let userName = userDao.shareduserDao().getLogName()
         let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
         let pycFileHelper = AppDelegateHelper()
+        pycFileHelper.phoneNo = ""
+        pycFileHelper.messageID = ""
         pycFileHelper.applyFileByFidAndOrderId(fileId,
                                                orderId: orderId,
                                                qq: qqField.stringValue,

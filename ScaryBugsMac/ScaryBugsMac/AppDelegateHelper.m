@@ -752,6 +752,12 @@
 #pragma mark - 申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
+    if (!_fileManager) {
+        //
+        _fileManager = [[PycFile alloc] init];
+        _fileManager.delegate = self;
+    }
+   
     applyNum = 0;
     //重新申请
     if (needReapply == 0) {
@@ -762,7 +768,7 @@
                                               phone:thePhone
                                              field1:theField1
                                              field2:theField2
-                                         seeLogName:@""
+                                         seeLogName:theSeeLogName
                                            fileName:theFileName];
     }else{
         applyflag = [_fileManager reapplyFileByFidAndOrderId:fileId

@@ -1033,7 +1033,7 @@
                                     <rect key="frame" x="1" y="480" width="536" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="SF0-9A-3Id">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="2.2204460492503131e-16" horizontal="NO" id="SF0-9A-3Id">
                                     <rect key="frame" x="537" y="1" width="15" height="479"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1800,6 +1800,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EbS-Ja-y0i">
+                                <rect key="frame" x="2" y="93" width="634" height="44"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="laH-s0-eOT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1807,6 +1815,7 @@
                         <outlet property="ibMakerLabel" destination="tac-B8-Jp8" id="PQv-QY-vvB"/>
                         <outlet property="ibRemarkLabel" destination="V3l-Qe-GHU" id="JGv-nq-jtp"/>
                         <outlet property="ibRetoActivation" destination="aqC-s9-ZCx" id="920-Fv-JUL"/>
+                        <outlet property="ibSelfTitleLabel" destination="EbS-Ja-y0i" id="yCT-tn-QsV"/>
                         <outlet property="ibShowInfoLabel" destination="0iJ-Le-hT3" id="ANW-E8-ACw"/>
                         <outlet property="phoneLabel" destination="HWh-4X-21h" id="xI3-kR-TuH"/>
                         <outlet property="qqLabel" destination="mwq-hC-EzF" id="Ix8-47-N9P"/>
