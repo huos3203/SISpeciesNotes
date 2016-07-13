@@ -6,6 +6,7 @@
 
 #import "NSTextField+Attribute.h"
 #import "NSDate+String.h"
+#import "ToolString.h"
 #import "userDao.h"
 #import "SeriesDao.h"
 #import "ReceiveFileDao.h"

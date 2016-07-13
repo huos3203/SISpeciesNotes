@@ -64,7 +64,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     
     
     @IBAction func readBtn(sender: AnyObject) {
-        
+        appHelper.phoneNo = ""
+        appHelper.messageID = ""
         appHelper.openURLOfPycFileByLaunchedApp({receiveFile.fileurl}())
     }
     //MARK: Delegate

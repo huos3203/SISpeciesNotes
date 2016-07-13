@@ -17,4 +17,9 @@
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString*)openURL;
 
 -(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone;
+
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId;
+
+//申请手动激活
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName;
 @end

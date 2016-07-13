@@ -34,6 +34,7 @@
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
 		148AB4821CFFD78600CAF9BA /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
+		1494D60A1D36305900842CD1 /* ApplyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */; };
 		14AA40041D2A187300838B88 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		14AA40071D2A187300838B88 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
 		14AA40AA1D2A187300838B88 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F591D2A187300838B88 /* MBProgressHUD.m */; };
@@ -261,6 +262,7 @@
 		148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
+		1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyInfoViewController.swift; sourceTree = "<group>"; };
 		14AA3E0F1D2A187200838B88 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14AA3E351D2A187200838B88 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
 		14AA3E361D2A187200838B88 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */,
 				14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */,
 				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
+				1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */,
 				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
@@ -1108,6 +1111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
 			buildPhases = (
+				A3B6C697C5A4E0665B7E8F40 /* 📦 Check Pods Manifest.lock */,
 				9150ABBDE8643BB0A28C6C2F /* [CP] Check Pods Manifest.lock */,
 				F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */,
 				1437DD641CF2A75F001BD2D2 /* Sources */,
@@ -1132,6 +1136,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
+				CC7F24D4F7865BCE9E6DBF72 /* 📦 Check Pods Manifest.lock */,
 				8209479971E8807479EC849B /* [CP] Check Pods Manifest.lock */,
 				5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
@@ -1412,6 +1417,21 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3B6C697C5A4E0665B7E8F40 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		CB26480A5D399C0C6C9F199F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1425,6 +1445,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC7F24D4F7865BCE9E6DBF72 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DBC6F66F1CEBBA2B3AB2A7BD /* [CP] Embed Pods Frameworks */ = {
@@ -1577,6 +1612,7 @@
 				14AA40B01D2A187300838B88 /* TimeSliderCell.m in Sources */,
 				14AA40E61D2A187300838B88 /* SP_Local.m in Sources */,
 				14AA40E91D2A187300838B88 /* VideoAddress.m in Sources */,
+				1494D60A1D36305900842CD1 /* ApplyInfoViewController.swift in Sources */,
 				14AA40EC1D2A187300838B88 /* VP_Local.m in Sources */,
 				14AA40EA1D2A187300838B88 /* VideoProvider.m in Sources */,
 			);

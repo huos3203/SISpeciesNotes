@@ -14,10 +14,14 @@ class ActivationController: NSViewController {
     @IBOutlet weak var emailField: NSTextField!
     @IBOutlet weak var phoneField: NSTextField!
     @IBOutlet weak var self1Field: NSTextField!
+    @IBOutlet weak var self11Field: NSSecureTextField!
     @IBOutlet weak var self2Field: NSTextField!
+    @IBOutlet weak var self22Field: NSSecureTextField!
     
     @IBOutlet weak var self1label: NSTextField!
     @IBOutlet weak var self2label: NSTextField!
+
+    
     
     @IBOutlet weak var qqAsterisk: NSTextField!
     @IBOutlet weak var emailAsterisk: NSTextField!
@@ -50,21 +54,44 @@ class ActivationController: NSViewController {
     
     @IBOutlet weak var ibSelf2ToViewVertical:NSLayoutConstraint!
     
+    var needReApply = 0
+    var applyId = 0
+    var fileId = 0
+    var orderId = 0
+    var filename:String!
+    var fileOpenDay:String!
+    var canSeeNum:String!
+    var bOpenInCome = 0
+    
     var field1name:String!
     var field2name:String!
     
-    var field1needprotect:Bool!,field2needprotect:Bool!
-    var selffieldnum:Int!    // 用户选择自定义列数量
-    var bindNum:Int! // 用户选择系统定义数量。
-    var definechecked:Int!
+    var field1needprotect = false,field2needprotect = false
+    var selffieldnum = 0    // 用户选择自定义列数量
+    var bindNum = 0 // 用户选择系统定义数量。
+    var definechecked = 0
+    var qq:String!
+    var email:String!
+    var phone:String!
+    var self1:String!
+    var self2:String!
     
-    var needReApply:Int!
-    var applyId:Int!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        if (needReApply != 0) {
+            qqField.stringValue = qq
+            emailField.stringValue = email
+            phoneField.stringValue = phone
+            self1Field.stringValue = field1name
+            self2Field.stringValue = field2name
+        }
+        self1label.stringValue = self1
+        self2label.stringValue = self2
+        initWithWidgetLayout()
+
     }
     
     func initWithWidgetLayout() {
@@ -102,7 +129,7 @@ class ActivationController: NSViewController {
         
         var num = 1
         var y = 0
-        //    NSInteger priority=0;
+        //    NSInteger priority=0:String!
         
         
         //显示QQ
@@ -122,17 +149,17 @@ class ActivationController: NSViewController {
             if (isShowQQ) {
                 //默认以相邻控件的约束为主
             }else{
-                ibPhoneToViewVertical.priority = 722.0;
+                ibPhoneToViewVertical.priority = 722.0
             }
-            //        priority = 2-num-y;
+            //        priority = 2-num-y:String!
             
             //        switch (priority) {
             //            case <#constant#>:
             //                <#statements#>
-            //                break;
+            //                break:String!
             //
             //            default:
-            //                break;
+            //                break:String!
             //        }
             
             
@@ -166,56 +193,149 @@ class ActivationController: NSViewController {
         
         ////判断自定义字段的个数,是否用原有规则
         if (isShowSelf1) {
-            self1label.stringValue = "\(field1name):"
+            self1label.stringValue = "\(self1):"
             if (isSHowEmail) {
                 //默认以相邻的控件之间的约束为主
             }else if (isSHowPhone){
                 //当isShowPhone真时,提升Phone控件之间的约束优先级
-                ibSelf1ToPhoneVertical.priority = 722.0;
+                ibSelf1ToPhoneVertical.priority = 722.0
             }else if(isShowQQ){
                 //当isShowQQ真时,提升QQ控件之间的约束优先级
-                ibSelf1ToQQVertical.priority = 722.0;
+                ibSelf1ToQQVertical.priority = 722.0
             }else{
                 //隐藏该控件以上的控件
-                ibSelf1ToViewVertical.priority = 722.0;
+                ibSelf1ToViewVertical.priority = 722.0
             }
             
             if (field1needprotect) {
-//                self1Field.secureTextEntry = true
+                self1Field.hidden = true
+                self11Field.hidden = false
             }
             
         }else{
             self1label.hidden = true
             self1Field.hidden = true
+            self11Field.hidden = true
         }
         
         if (isShowSelf2) {
             
-            self2label.stringValue = "\(field2name):"
+            self2label.stringValue = "\(self2):"
             if (isShowSelf1) {
                 //默认以相邻的控件之间的约束为主
             }else if(isSHowEmail){
                 //当isShowQQ真时,提升QQ控件之间的约束优先级
-                ibSelf2ToEmailVertical.priority = 722.0;
+                ibSelf2ToEmailVertical.priority = 722.0
             }else if(isSHowPhone){
                 //当isShowPhone真时,提升Phone控件之间的约束优先级
-                ibSelf2ToPhoneVertical.priority = 722.0;
+                ibSelf2ToPhoneVertical.priority = 722.0
             }else if(isShowQQ){
                 //当isShowQQ真时,提升QQ控件之间的约束优先级
-                ibSelf2ToQQVertical.priority = 722.0;
+                ibSelf2ToQQVertical.priority = 722.0
             }else{
-                ibSelf2ToViewVertical.priority = 722.0;
+                ibSelf2ToViewVertical.priority = 722.0
             }
             
             if (field2needprotect) {
-//                self2Field.secureTextEntry = YES;
+                self2Field.hidden = true
+                self22Field.hidden = false
             }
         } else {
             self2label.hidden = true
             self2Field.hidden = true
+            self22Field.hidden = true
         }
-
-        
     }
    
+    func trimSpace(inputStr:String) -> String {
+        return inputStr.stringByReplacingOccurrencesOfString(" ", withString: "")
+    }
+    @IBAction func nextStepAction(sender: AnyObject) {
+        
+        if (selffieldnum == 0 && selffieldnum == 0 && definechecked == 0 ) {
+            
+            if (trimSpace(qqField.stringValue) == "" && trimSpace(phoneField.stringValue) == "") {
+//                [self.view makeToast:@"QQ、手机至少填写一项！" duration:1.0 position:@"center"];
+                return;
+            }
+            
+        }
+        
+        if (trimSpace(qqField.stringValue)=="" && definechecked&1 != 0) {
+//            qqField.background = [UIImage imageNamed:@"textfield_red.png"];
+//            [self.view makeToast:@"Q Q号不能为空！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if (trimSpace(phoneField.stringValue) == "" && definechecked&2 != 0) {
+//            _phoneField.background = [UIImage imageNamed:@"textfield_red.png"];
+//            [self.view makeToast:@"手机号不能为空！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if (trimSpace(emailField.stringValue) == ""&&definechecked&4 != 0) {
+//            _emailField.background = [UIImage imageNamed:@"textfield_red.png"];
+//            [self.view makeToast:@"邮箱不能为空！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if (selffieldnum==1 || selffieldnum==2) {
+            
+            if (trimSpace(self1Field.stringValue) == "") {
+//                _self1Field.background = [UIImage imageNamed:@"textfield_red.png"];
+//                [self.view makeToast:[NSString stringWithFormat:@"%@不能为空！",_field1name] duration:1.0 position:@"center"];
+                return;
+            }
+            
+            var fieldlen = trimSpace(self1Field.stringValue).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            if (fieldlen>24) {
+//                _self1Field.background = [UIImage imageNamed:@"textfield_red.png"];
+//                [self.view makeToast:[NSString stringWithFormat:@"%@长度最多24个字符！",_field1name] duration:1.0 position:@"center"];
+                return;
+            }
+            
+            if (selffieldnum == 2) {
+                
+                if (trimSpace(self2Field.stringValue) == "") {
+//                    _self2Field.background = [UIImage imageNamed:@"textfield_red.png"];
+//                    [self.view makeToast:[NSString stringWithFormat:@"%@不能为空！",_field2name] duration:1.0 position:@"center"];
+                    return;
+                }
+                
+                var fieldlen = trimSpace(self2Field.stringValue).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+                if (fieldlen>24) {
+//                    _self2Field.background = [UIImage imageNamed:@"textfield_red.png"];
+//                    [self.view makeToast:[NSString stringWithFormat:@"%@长度最多24个字符！",_field2name] duration:1.0 position:@"center"];
+                    return;
+                }
+            }
+            
+        }
+        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
+    }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        //
+        if (segue.identifier == "pushApplyInfo") {
+            
+             let applyInfo = segue.destinationController as! ApplyInfoViewController
+            
+            applyInfo.qq = trimSpace(qqField.stringValue)
+            applyInfo.phone = trimSpace(phoneField.stringValue)//_phoneField.text;
+            applyInfo.email = trimSpace(emailField.stringValue)//_emailField.text;
+            applyInfo.field1name = trimSpace(field1name)//_field1name;
+            applyInfo.field2name = trimSpace(field2name)//_field2name;
+            applyInfo.field1Str = trimSpace(self1Field.stringValue)//_self1Field.text;
+            applyInfo.field2Str = trimSpace(self2Field.stringValue)//_self2Field.text;
+            
+            applyInfo.fileId = fileId
+            applyInfo.orderId = orderId
+            applyInfo.bOpenInCome = bOpenInCome
+            applyInfo.field1needprotect = field1needprotect
+            applyInfo.field2needprotect = field2needprotect
+            applyInfo.needReApply = needReApply
+            applyInfo.applyId = applyId
+            
+        }
+    }
 }

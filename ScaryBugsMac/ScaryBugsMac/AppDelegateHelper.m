@@ -30,6 +30,13 @@
     
     //绑定手机
     BOOL _userPhone;
+    
+    //申请查看
+    NSInteger needReapply;
+    NSInteger bOpenInCome;
+    
+    //申请
+    NSString *applyflag;
 }
 
 
@@ -443,29 +450,15 @@
             }else{
                 applyNum=0;
                 [custormActivityView removeFromSuperview];
-                //申请成功界面
-//                _activationSucVc.qq = qq;
-//                _activationSucVc.email = _fileObject.email;
-//                _activationSucVc.phone = _fileObject.phone;
-//                _activationSucVc.showInfo = _fileObject.showInfo;
-//                _activationSucVc.needShowDiff = _fileObject.needShowDiff;
-//                _activationSucVc.makerNick = _fileObject.nickname;
-//                _activationSucVc.needReapply = _fileObject.needReapply;
-//                _activationSucVc.applyId = _fileObject.applyId;
-//                _activationSucVc.remark = _fileObject.remark;
-//                _activationSucVc.fileId = _fileID;//_fileObject.fileID;
-//                //申请已提交标识
-//                _activationSucVc.VCFlag = 0;
-//                if ([_navRootVc.topViewController isKindOfClass:[NewFeatrueViewController class]]) {
-//                    [_navRootVc setNavigationBarHidden:NO];
-//                }
-//                [_navRootVc pushViewController:_activationSucVc animated:NO];
+                //申请成功界
+                [self letusGOActivationSucVc:seePycFile];
             }
         }
         else if(returnValue & ERR_OK_IS_FEE)
         {
-            
-            [self activedForOver];
+            applyNum =0;
+            [custormActivityView removeFromSuperview];
+            [self letusGOActivationController:seePycFile];
         }
         else if((returnValue) & ERR_FREE && ((returnValue & ERR_FEE_SALER) == 0))
         {
@@ -474,8 +467,8 @@
             // 自由传播不能看
             if (seePycFile.bNeedBinding) {
                 // 需要验证手机号
-                BindingPhoneViewController *bindingPhone = [[NSStoryboard alloc] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
-//                bindingPhone.filePath = seePycFile.filePycName;
+                BindingPhoneViewController *bindingPhone = (BindingPhoneViewController *)[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
+                bindingPhone.filePath = seePycFile.filePycName;
                 NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
                 superView.contentViewController = bindingPhone;
             } else {
@@ -619,7 +612,7 @@
     
 }
 
-
+#pragma mark - 绑定手机号
 -(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone
 {
     if (!_fileManager) {
@@ -661,45 +654,6 @@
     }
 }
 
-
-
--(void)activedForOver
-{
-    applyNum=0;
-    [custormActivityView removeFromSuperview];
-    
-    //带有申请条件，可以展示条件，并申请，目前到申请界面
-    _activationVc.fileId = _fileID;//_fileObject.fileID;
-    _activationVc.orderId = _fileObject.orderID;
-    _activationVc.filename = [_fileObject.filePycNameFromServer stringByDeletingPathExtension];
-    _activationVc.field1name = _fileObject.field1;
-    _activationVc.field1needprotect = (_fileObject.field1needprotect==1)?YES:NO;
-    _activationVc.field2name = _fileObject.field2;
-    _activationVc.field2needprotect =(_fileObject.field2needprotect==1)?YES:NO;
-    _activationVc.selffieldnum = _fileObject.selffieldnum;
-    
-    _activationVc.definechecked = _fileObject.definechecked;
-    
-    if (_fileObject.openDay >0 && _fileObject.openYear >0) {
-        _activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 年 %ld 天",(long)_fileObject.openYear,(long)_fileObject.openDay];
-    }else if(_fileObject.openDay >0){
-        _activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 天",(long)_fileObject.openDay];
-    }else if(_fileObject.openYear >0){
-        _activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 年",(long)_fileObject.openYear];
-    }else{
-        _activationVc.fileOpenDay = @"";
-    }
-    if (_fileObject.AllowOpenmaxNum > 0) {
-        _activationVc.canSeeNum = [NSString stringWithFormat:@"%ld 次",(long)_fileObject.AllowOpenmaxNum];
-    }else{
-        _activationVc.canSeeNum = @"";
-    }
-    [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:_fileID];//_fileObject.fileID];
-    if ([_navRootVc.topViewController isKindOfClass:[NewFeatrueViewController class]]) {
-        [_navRootVc setNavigationBarHidden:NO];
-    }
-    [_navRootVc pushViewController:_activationVc animated:NO];
-}
 /**
  *  查看文件的接口
  *
@@ -716,13 +670,13 @@
                 NSString *userName = [[userDao shareduserDao] getLogName];
                 BOOL isOffLine = FALSE;
             
-                NSString *result=[_fileManager seePycFile2:seePycFile.filePycName
+                NSString *result=[_fileManager seePycFile2:fileObject.filePycName
                                                forUser:userName
-                                               pbbFile:seePycFile.filePycNameFromServer
+                                               pbbFile:fileObject.filePycNameFromServer
                                                phoneNo:@""
                                              messageID:@""
                                              isOffLine:&isOffLine
-                                         FileOpenedNum:seePycFile.haveOpenedNum];
+                                         FileOpenedNum:fileObject.haveOpenedNum];
         
                 if (![result isEqualToString:@"0"]) {
                     applyNum=0;
@@ -749,23 +703,254 @@
         NSString *qq = seePycFile.QQ;
         [custormActivityView removeFromSuperview];
         //申请成功界面
-//        _activationSucVc.qq = qq;
-//        _activationSucVc.email = _fileObject.email;
-//        _activationSucVc.phone = _fileObject.phone;
-//        _activationSucVc.showInfo = _fileObject.showInfo;
-//        _activationSucVc.needShowDiff = _fileObject.needShowDiff;
-//        _activationSucVc.makerNick = _fileObject.nickname;
-//        _activationSucVc.needReapply = _fileObject.needReapply;
-//        _activationSucVc.applyId = _fileObject.applyId;
-//        _activationSucVc.remark = _fileObject.remark;
-//        _activationSucVc.fileId = _fileID;//_fileObject.fileID;
-//        //申请已提交标识
-//        _activationSucVc.VCFlag = 0;
-//        if ([_navRootVc.topViewController isKindOfClass:[NewFeatrueViewController class]]) {
-//            [_navRootVc setNavigationBarHidden:NO];
-//        }
-//        [_navRootVc pushViewController:_activationSucVc animated:YES];
+        [self letusGOActivationSucVc:seePycFile];
     }
 }
+
+
+#pragma mark － 申请成功 0-0-0 重新提交
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId
+{
+    return [_fileManager getApplyFileInfoByApplyId:applyId];
+}
+
+//获取申请激活的文件信息
+-(void)PycFile:(PycFile *)fileObject didFinishGetApplyFileInfo:(MAKEPYCRECEIVE *)receiveData
+{
+//    [_indicator stopAnimating];
+    if (receiveData == nil || receiveData->returnValue == 0) {
+//        [self.view makeToast:@"您的网络不给力哦，请重试！" duration:1.0 position:@"center"];
+    } else {
+        
+        if(receiveData->returnValue == -1)
+        {
+//            [self.view makeToast:@"数据传输错误，请重试！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if(receiveData->returnValue & ERR_NEED_UPDATE)
+        {
+//            [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
+            return;
+        }
+        
+        if(receiveData->returnValue & ERR_OK_OR_CANOPEN)
+        {
+            
+            [self letusGOActivationController:fileObject];
+        }
+        else
+        {
+//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+    }
+
+}
+
+#pragma mark - 申请手动激活
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
+{
+    applyNum = 0;
+    //重新申请
+    if (needReapply == 0) {
+        applyflag = [_fileManager applyFileByFidAndOrderId:fileId
+                                            orderId:thOrderId
+                                                 qq:theQQ
+                                              email:theEmail
+                                              phone:thePhone
+                                             field1:theField1
+                                             field2:theField2
+                                         seeLogName:@""
+                                           fileName:theFileName];
+    }else{
+        applyflag = [_fileManager reapplyFileByFidAndOrderId:fileId
+                                              orderId:thOrderId
+                                              applyId:1
+                                                   qq:theQQ
+                                                email:theEmail
+                                                phone:thePhone
+                                               field1:theField1
+                                               field2:theField2];
+    }
+
+    return  @"";
+}
+
+#pragma mark pycfile 代理
+/**
+ * 申请激活回调函数
+ */
+-(void)PycFile:(PycFile *)fileObject didFinishApply:(MAKEPYCRECEIVE *)receiveData
+{
+    if (receiveData == nil || receiveData->returnValue == 0) {
+//        [_indicator stopAnimating];
+        if([applyflag isEqualToString:@"1"]){
+//            [self.view makeToast:@"您的网络不给力哦，请检查本地网络设置后重试！" duration:1.0 position:@"center"];
+        }else if ([applyflag isEqualToString:@"2"]){
+//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+        }else{
+//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+        }
+    } else {
+        
+        if(receiveData->returnValue == -1)
+        {
+//            [_indicator stopAnimating];
+//            [self.view makeToast:@"服务器繁忙，请稍候再试。错误代码：1003！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if(receiveData->returnValue & ERR_NEED_UPDATE)
+        {
+//            [_indicator stopAnimating];
+//            [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
+            return;
+        }
+        
+        /**
+         *  申请成功并能自动激活时,即第十二位为1时
+         *  此时，可以直接调用查看文件业务，且不需要展示广告页
+         */
+        if(receiveData->returnValue & ERR_OK_OR_CANOPEN || receiveData->returnValue & ERR_APPLIED)
+        {
+            
+            if (receiveData->returnValue & ERR_AUTO_APPLIED) {
+                [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
+            }else{
+                applyNum = 0;
+//                [_indicator stopAnimating];
+                //申请成功界面
+                [self letusGOActivationSucVc:fileObject];
+            }
+        }
+        else
+        {
+//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            return;
+        }
+    }
+}
+
+/**
+ * 重新申请回调函数
+ */
+-(void)PycFile:(PycFile *)fileObject didFinishReapply:(MAKEPYCRECEIVE *)receiveData
+{
+    if (receiveData == nil || receiveData->returnValue == 0) {
+//        [_indicator stopAnimating];
+        if([applyflag isEqualToString:@"1"]){
+//            [self.view makeToast:@"您的网络不给力哦，请检查本地网络设置后重试！" duration:1.0 position:@"center"];
+        }else if ([applyflag isEqualToString:@"2"]){
+//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+        }else{
+//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+        }
+    } else {
+        
+        if(receiveData->returnValue == -1)
+        {
+//            [_indicator stopAnimating];
+//            [self.view makeToast:@"数据传输错误，请重试！" duration:1.0 position:@"center"];
+            return;
+        }
+        
+        if(receiveData->returnValue & ERR_NEED_UPDATE)
+        {
+//            [_indicator stopAnimating];
+//            [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
+            return;
+        }
+        
+        /**
+         *  申请成功并能自动激活时,即第十二位为1时
+         *  此时，可以直接调用查看文件业务，且不需要展示广告页
+         */
+        if(receiveData->returnValue & ERR_OK_OR_CANOPEN || receiveData->returnValue & ERR_APPLIED)
+        {
+            if (receiveData->returnValue & ERR_AUTO_APPLIED) {
+                [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
+            }else{
+                applyNum = 0;
+//                [_indicator stopAnimating];
+                [self letusGOActivationSucVc:fileObject];
+           }
+        }
+        else
+        {
+//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            return;
+        }
+    }
+}
+
+
+#pragma mark - 跳转页面
+//申请激活成功页面
+-(void)letusGOActivationSucVc:(PycFile*)pycfileObject
+{
+    //申请成功，到成功界面
+    ActivationSuccessController *activationSucVc = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"ActivationSuccessController"];
+    activationSucVc.fileId = pycfileObject.fileID;
+    activationSucVc.qq = [NSString stringWithFormat:@"%@",pycfileObject.QQ];
+    activationSucVc.email = [NSString stringWithFormat:@"%@",pycfileObject.email];
+    activationSucVc.phone = [NSString stringWithFormat:@"%@",pycfileObject.phone];
+    activationSucVc.showInfo = pycfileObject.showInfo;
+    activationSucVc.needShowDiff = pycfileObject.needShowDiff;
+    activationSucVc.makerNick = pycfileObject.nickname;
+    activationSucVc.applyId = pycfileObject.applyId;
+    activationSucVc.remark = pycfileObject.remark;
+    activationSucVc.bOpenInCome = bOpenInCome;
+    [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
+    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
+    [superView.contentViewController presentViewControllerAsModalWindow:activationSucVc];
+}
+
+
+//填写申请表格页面
+-(void)letusGOActivationController:(PycFile *)pycFileObject
+{
+    ActivationController *activationVc = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"ActivationController"];
+    //带有申请条件，可以展示条件，并申请，目前到申请界面
+    activationVc.fileId = pycFileObject.fileID;
+    activationVc.orderId = pycFileObject.orderID;
+    activationVc.filename = [pycFileObject.filePycNameFromServer stringByDeletingPathExtension];
+    activationVc.field1name = pycFileObject.fild1name;
+    activationVc.field1needprotect = (pycFileObject.field1needprotect==1)?YES:NO;
+    activationVc.field2name = pycFileObject.fild2name;
+    activationVc.field2needprotect =(pycFileObject.field2needprotect==1)?YES:NO;
+    activationVc.selffieldnum = pycFileObject.selffieldnum;
+    activationVc.definechecked = pycFileObject.definechecked;
+    activationVc.bOpenInCome = bOpenInCome;
+    activationVc.qq = pycFileObject.QQ;
+    activationVc.email = pycFileObject.email;
+    activationVc.phone = pycFileObject.phone;
+    activationVc.self1 = pycFileObject.field1;
+    activationVc.self2 = pycFileObject.field2;
+    
+    activationVc.needReApply = pycFileObject.needReapply;
+    activationVc.applyId = pycFileObject.applyId;
+    
+    if (pycFileObject.openDay >0 && pycFileObject.openYear >0) {
+        activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 年 %ld 天",(long)pycFileObject.openYear,(long)pycFileObject.openDay];
+    }else if(pycFileObject.openDay >0){
+        activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 天",(long)pycFileObject.openDay];
+    }else if(pycFileObject.openYear >0){
+        activationVc.fileOpenDay = [NSString stringWithFormat:@"%ld 年",(long)pycFileObject.openYear];
+    }else{
+        activationVc.fileOpenDay = @"";
+    }
+    if (pycFileObject.AllowOpenmaxNum > 0) {
+        activationVc.canSeeNum = [NSString stringWithFormat:@"%ld 次",(long)pycFileObject.AllowOpenmaxNum];
+    }else{
+        activationVc.canSeeNum = @"";
+    }
+    [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];
+    
+    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
+    [superView.contentViewController presentViewControllerAsModalWindow:activationVc];
+}
+
 
 @end
