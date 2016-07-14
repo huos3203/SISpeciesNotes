@@ -37,8 +37,10 @@
     
     //申请
     NSString *applyflag;
+    
+    NSAlert *alertShow;
 }
-
+singleton_implementation(AppDelegateHelper);
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
@@ -494,13 +496,15 @@
 
 -(void)setAlertView:(NSString *)msg
 {
-    NSAlert *alert = [[NSAlert alloc] init];
-    [alert addButtonWithTitle:@"我知道了"];
+    if (!alertShow) {
+        alertShow = [[NSAlert alloc] init];
+    }
+    [alertShow addButtonWithTitle:@"我知道了"];
     //        [alert addButtonWithTitle:@"Cancel"];
-    [alert setMessageText:msg];
+    [alertShow setMessageText:msg];
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
-    [alert setAlertStyle:NSWarningAlertStyle];
-    if ([alert runModal] == NSAlertFirstButtonReturn) {
+    [alertShow setAlertStyle:NSWarningAlertStyle];
+    if ([alertShow runModal] == NSAlertFirstButtonReturn) {
         // OK clicked, delete the record
         
     }

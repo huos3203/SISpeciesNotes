@@ -26,6 +26,7 @@ class BindingPhoneViewController: NSViewController {
     var userPhone:Bool!
     
     let pycFileHelper = AppDelegateHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -35,9 +36,11 @@ class BindingPhoneViewController: NSViewController {
     
     @IBAction func getMessageBtnAction(sender: AnyObject) {
         /* 判断手机号是否合法 */
+        
+//        [alert runModal];
         if (isPhoneNumberOfString(phoneTF.stringValue)) {
             // 手机号不合法
-//            [self.view makeToast:@"请输入正确的手机号" duration:1.0 position:@"center"];
+            pycFileHelper.setAlertView("请输入正确的手机号")
             return ;
         }
         phoneNumber = phoneTF.stringValue;
@@ -52,7 +55,7 @@ class BindingPhoneViewController: NSViewController {
         /* 判断手机号是否合法 */
         if (!isPhoneNumberOfString(phoneTF.stringValue)) {
             // 手机号不合法
-//            [self.view makeToast:@"请输入正确的手机号" duration:1.0 position:@"center"];
+            pycFileHelper.setAlertView("请输入正确的手机号")
             return
         }
         
