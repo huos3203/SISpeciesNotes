@@ -76,30 +76,34 @@
       location = "group:CoolTable/CoolTable.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:PhotoKeeper/PhotoKeeper/PhotoKeeper.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Panagram/Panagram.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:mpv-examples/mpv-examples.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ffmpegc-demo/ffmpegc-demo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:AttachAScript/AttachAScript.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:InstallerPluginSample/SamplePlugins.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "osXdemo">
+      <FileRef
+         location = "group:AttachAScript/AttachAScript.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:mpv-examples/mpv-examples.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Panagram/Panagram.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
