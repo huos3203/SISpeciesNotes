@@ -31,8 +31,7 @@
     //绑定手机
     BOOL _userPhone;
     
-    //申请查看
-    NSInteger needReapply;
+    
     NSInteger bOpenInCome;
     
     //申请
@@ -498,8 +497,9 @@ singleton_implementation(AppDelegateHelper);
 {
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
+        [alertShow addButtonWithTitle:@"我知道了"];
     }
-    [alertShow addButtonWithTitle:@"我知道了"];
+
     //        [alert addButtonWithTitle:@"Cancel"];
     [alertShow setMessageText:msg];
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
@@ -754,17 +754,11 @@ singleton_implementation(AppDelegateHelper);
 }
 
 #pragma mark - 申请手动激活
-- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
-    if (!_fileManager) {
-        //
-        _fileManager = [[PycFile alloc] init];
-        _fileManager.delegate = self;
-    }
-   
     applyNum = 0;
     //重新申请
-    if (needReapply == 0) {
+    if (_needReapply == 0) {
         applyflag = [_fileManager applyFileByFidAndOrderId:fileId
                                             orderId:thOrderId
                                                  qq:theQQ
@@ -777,7 +771,7 @@ singleton_implementation(AppDelegateHelper);
     }else{
         applyflag = [_fileManager reapplyFileByFidAndOrderId:fileId
                                               orderId:thOrderId
-                                              applyId:1
+                                              applyId:theApplyId
                                                    qq:theQQ
                                                 email:theEmail
                                                 phone:thePhone
@@ -785,6 +779,7 @@ singleton_implementation(AppDelegateHelper);
                                                field2:theField2];
     }
 
+    _needReapply = 0;
     return  @"";
 }
 

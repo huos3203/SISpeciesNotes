@@ -18,7 +18,10 @@ class ActivationController: NSViewController {
     @IBOutlet weak var self2Field: NSTextField!
     @IBOutlet weak var self22Field: NSSecureTextField!
     
+    @IBOutlet weak var self1View: NSView!
     @IBOutlet weak var self1label: NSTextField!
+    
+    @IBOutlet weak var self2View: NSView!
     @IBOutlet weak var self2label: NSTextField!
 
     
@@ -77,6 +80,7 @@ class ActivationController: NSViewController {
     var self2:String!
     
 
+     let pycFileHelper = AppDelegateHelper.sharedAppDelegateHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +92,11 @@ class ActivationController: NSViewController {
             self1Field.stringValue = field1name
             self2Field.stringValue = field2name
         }
+        //label
         self1label.stringValue = self1
         self2label.stringValue = self2
+        
+       
         initWithWidgetLayout()
 
     }
@@ -255,65 +262,98 @@ class ActivationController: NSViewController {
         if (selffieldnum == 0 && selffieldnum == 0 && definechecked == 0 ) {
             
             if (trimSpace(qqField.stringValue) == "" && trimSpace(phoneField.stringValue) == "") {
-//                [self.view makeToast:@"QQ、手机至少填写一项！" duration:1.0 position:@"center"];
+                pycFileHelper.setAlertView("QQ、手机至少填写一项！")
                 return;
             }
             
         }
         
         if (trimSpace(qqField.stringValue)=="" && definechecked&1 != 0) {
-//            qqField.background = [UIImage imageNamed:@"textfield_red.png"];
-//            [self.view makeToast:@"Q Q号不能为空！" duration:1.0 position:@"center"];
+            qqField.layer?.borderColor = NSColor.redColor().CGColor
+            pycFileHelper.setAlertView("Q Q号不能为空！")
             return;
         }
         
         if (trimSpace(phoneField.stringValue) == "" && definechecked&2 != 0) {
-//            _phoneField.background = [UIImage imageNamed:@"textfield_red.png"];
-//            [self.view makeToast:@"手机号不能为空！" duration:1.0 position:@"center"];
+            phoneField.layer?.borderColor = NSColor.redColor().CGColor
+            pycFileHelper.setAlertView("手机号不能为空！")
             return;
         }
         
         if (trimSpace(emailField.stringValue) == ""&&definechecked&4 != 0) {
-//            _emailField.background = [UIImage imageNamed:@"textfield_red.png"];
-//            [self.view makeToast:@"邮箱不能为空！" duration:1.0 position:@"center"];
+            emailField.layer?.borderColor = NSColor.redColor().CGColor
+            pycFileHelper.setAlertView("邮箱不能为空！")
             return;
         }
         
         if (selffieldnum==1 || selffieldnum==2) {
             
-            if (trimSpace(self1Field.stringValue) == "") {
-//                _self1Field.background = [UIImage imageNamed:@"textfield_red.png"];
-//                [self.view makeToast:[NSString stringWithFormat:@"%@不能为空！",_field1name] duration:1.0 position:@"center"];
+            var sel1 = self1Field.stringValue
+            var sel2 = self2Field.stringValue
+            
+            if (field1needprotect) {
+                sel1 = self11Field.stringValue
+            }
+            if (field2needprotect) {
+                sel2 = self22Field.stringValue
+            }
+            
+            
+            if (trimSpace(sel1) == "") {
+                self1View.layer?.borderColor = NSColor.redColor().CGColor
+                pycFileHelper.setAlertView("\(self1)不能为空！")
                 return;
             }
             
-            var fieldlen = trimSpace(self1Field.stringValue).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            let fieldlen = trimSpace(sel1).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
             if (fieldlen>24) {
-//                _self1Field.background = [UIImage imageNamed:@"textfield_red.png"];
-//                [self.view makeToast:[NSString stringWithFormat:@"%@长度最多24个字符！",_field1name] duration:1.0 position:@"center"];
+                self1View.layer?.borderColor = NSColor.redColor().CGColor
+                pycFileHelper.setAlertView("\(self1)长度最多24个字符！")
                 return;
             }
             
             if (selffieldnum == 2) {
                 
-                if (trimSpace(self2Field.stringValue) == "") {
-//                    _self2Field.background = [UIImage imageNamed:@"textfield_red.png"];
-//                    [self.view makeToast:[NSString stringWithFormat:@"%@不能为空！",_field2name] duration:1.0 position:@"center"];
+                if (trimSpace(sel2) == "") {
+                    self2View.layer?.borderColor = NSColor.redColor().CGColor
+                    pycFileHelper.setAlertView("\(self2)不能为空！")
                     return;
                 }
                 
-                var fieldlen = trimSpace(self2Field.stringValue).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+                let fieldlen = trimSpace(sel2).lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
                 if (fieldlen>24) {
-//                    _self2Field.background = [UIImage imageNamed:@"textfield_red.png"];
-//                    [self.view makeToast:[NSString stringWithFormat:@"%@长度最多24个字符！",_field2name] duration:1.0 position:@"center"];
+                    self2View.layer?.borderColor = NSColor.redColor().CGColor
+                    pycFileHelper.setAlertView("\(self2)长度最多24个字符！")
                     return;
                 }
             }
             
         }
-        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
+        
+        
+        let userName = userDao.shareduserDao().getLogName()
+        let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
+        pycFileHelper.phoneNo = ""
+        pycFileHelper.messageID = ""
+        pycFileHelper.needReapply = needReApply
+        pycFileHelper.applyFileByFidAndOrderId(fileId,
+                                               orderId: orderId,
+                                               applyId: applyId,
+                                               qq: qqField.stringValue,
+                                               email: emailField.stringValue,
+                                               phone: phoneField.stringValue,
+                                               field1: self1Field.stringValue,
+                                               field2: self2Field.stringValue,
+                                               seeLogName: userName,
+                                               fileName: fileUrl)
+        
+        
+//        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        return false
+    }
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
         //
         if (segue.identifier == "pushApplyInfo") {

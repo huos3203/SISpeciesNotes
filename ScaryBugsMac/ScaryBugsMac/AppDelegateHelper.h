@@ -16,6 +16,8 @@ singleton_interface(AppDelegateHelper);
 @property(nonatomic,strong)NSString *phoneNo;
 @property(nonatomic,strong)NSString *messageID;
 @property(nonatomic,assign)NSInteger openedNum;
+//重新申请查看
+@property(nonatomic,assign)NSInteger needReapply;
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString*)openURL;
 
@@ -26,5 +28,5 @@ singleton_interface(AppDelegateHelper);
 -(void)setAlertView:(NSString *)msg;
 
 //申请手动激活
-- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName;
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName;
 @end

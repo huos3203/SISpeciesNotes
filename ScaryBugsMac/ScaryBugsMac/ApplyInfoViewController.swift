@@ -55,6 +55,7 @@ class ApplyInfoViewController: NSViewController {
         pycFileHelper.messageID = ""
         pycFileHelper.applyFileByFidAndOrderId(fileId,
                                                orderId: orderId,
+                                               applyId:  applyId,
                                                qq: qqField.stringValue,
                                                email: emailField.stringValue,
                                                phone: phoneField.stringValue,
