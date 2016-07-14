@@ -88,7 +88,7 @@
       location = "container:"
       name = "osXdemo">
       <FileRef
-         location = "group:AttachAScript/AttachAScript.xcodeproj">
+         location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:mpv-examples/mpv-examples.xcodeproj">
@@ -97,10 +97,10 @@
          location = "group:iFrameExecutor/iFrameExecutor.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
+         location = "group:Panagram/Panagram.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Panagram/Panagram.xcodeproj">
+         location = "group:AttachAScript/AttachAScript.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
