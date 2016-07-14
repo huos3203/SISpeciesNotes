@@ -53,6 +53,10 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper()
     
+    @IBOutlet var cntxMnuTableView: NSMenu!
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -60,6 +64,11 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll("")
         initThisView(false)
+        
+        // Observe all windows closing so we can remove them from our array
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_windowClosed:) name:NSWindowWillCloseNotification object:nil];
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "", object: nil)
     }
     
     
@@ -76,6 +85,14 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
                 self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
                 initThisView(true)
         }
+    }
+    
+    func openInPBBFile(notification:NSNotification){
+        let fileID = notification.userInfo!["pycFileID"] as! Int
+        self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+        receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
+        ReceiveTableView.reloadData()
+        initThisView(true)
     }
     
     //MARK: - Helper
@@ -100,6 +117,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             rootView.hidden = false
         }
         
+        readBtn.enabled = true
         //refresh:YES 刷新
         let seriesName = SeriesDao.sharedSeriesDao().fetchSeriesNameFromSeriesId(receiveFile.seriesID)
         if ((seriesName as NSString).length == 0 || seriesName == "未分组文件") {
@@ -452,4 +470,60 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         }
         return cellView
     }
+    
+    func indexesToProcessForContextMenu() -> NSIndexSet {
+        // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
+        var selectedIndexes = ReceiveTableView.selectedRowIndexes
+        if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.containsIndex(ReceiveTableView.clickedRow)) {
+            //
+            selectedIndexes = NSIndexSet.init(index:ReceiveTableView.clickedRow)
+        }
+        return selectedIndexes
+    }
+    
+    @IBAction func mnuRevealInFinderSelected(sender: AnyObject) {
+        let selectedIndexes = indexesToProcessForContextMenu()
+        selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
+            //
+            let ReceiveColumn = self.receiveArray[row] as! OutFile
+            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
+        }
+    }
+    @IBAction func mnuRemoveRowSelected(sender: AnyObject) {
+        
+        let selectedIndexes = indexesToProcessForContextMenu()
+        selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
+            //
+            let ReceiveColumn = self.receiveArray[row] as! OutFile
+            ReceiveFileDao.sharedReceiveFileDao().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
+            
+            
+            try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
+            let uid = ReceiveFileDao.sharedReceiveFileDao().fetchUid(ReceiveColumn.fileid)
+            if(ReceiveFileDao.sharedReceiveFileDao().fetchCountOfUid(ReceiveColumn.fileid) == 0)
+            {
+                let fileDir = SandboxFile.CreateList(SandboxFile.GetDocumentPath(), listName: "advert")
+                let pre = NSPredicate.init(format: "SELF contains[cd] '\(uid)'", argumentArray: nil)
+                let filesNames = SandboxFile.GetSubpathsAtPath(fileDir)
+                let oldFiles = (filesNames as NSArray).filteredArrayUsingPredicate(pre) as NSArray
+                oldFiles.enumerateObjectsUsingBlock({ (obj, idx, stop) in
+                    //
+                    let oldfile = "\(fileDir)/\(obj))"
+                    if(SandboxFile.IsFileExists(oldfile)){
+                        try! NSFileManager.defaultManager().removeItemAtPath(oldfile)
+                    }
+                })
+            }
+            
+            self.ReceiveTableView.beginUpdates()
+            self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
+            self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
+            self.ReceiveTableView.endUpdates()
+            
+            self.initThisView(false)
+        }
+
+    }
+
+
 }

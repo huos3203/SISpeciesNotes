@@ -257,6 +257,8 @@ singleton_implementation(AppDelegateHelper);
         
     }
     
+    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"" object:self userInfo:dic];
     /*!
      *  @author shuguang, 15-06-10 15:06:27
      *
@@ -358,14 +360,12 @@ singleton_implementation(AppDelegateHelper);
         
         if (returnValue & ERR_OUTLINE_NUM_ERR) {
             //次数已到
-            //            [[[[UIApplication sharedApplication]windows] firstObject] makeToast:@"阅读次数已用完！再次打开该文件，需要重新申请！" duration:1.0 position:@"center"];
             [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
             [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
         }
         if (returnValue & ERR_OUTLINE_DAY_ERR) {
             //时效已到
-            //            [[[[UIApplication sharedApplication]windows] firstObject] makeToast:@"阅读时间已用完！再次打开该文件，需要重新申请！" duration:1.0 position:@"center"];
             [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
             [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
@@ -406,7 +406,6 @@ singleton_implementation(AppDelegateHelper);
         }
         if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
             //并非原文件
-            //            [[[[UIApplication sharedApplication]windows] firstObject] makeToast:@"不能阅读！" duration:1.0 position:@"center"];
             [self setAlertView:@"不能阅读！"];
             [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
@@ -435,7 +434,6 @@ singleton_implementation(AppDelegateHelper);
         }
         if (returnValue & ERR_OUTLINE_STRUCTION_ERR) {
             //文件结构不对
-            //            [[[[UIApplication sharedApplication]windows] firstObject] makeToast:@"不能阅读！文件阅读错误！" duration:1.0 position:@"center"];
             [self setAlertView:@"不能阅读！文件阅读错误！"];
             [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
@@ -723,12 +721,12 @@ singleton_implementation(AppDelegateHelper);
 {
 //    [_indicator stopAnimating];
     if (receiveData == nil || receiveData->returnValue == 0) {
-//        [self.view makeToast:@"您的网络不给力哦，请重试！" duration:1.0 position:@"center"];
+        [self setAlertView:@"您的网络不给力哦，请重试！"];
     } else {
         
         if(receiveData->returnValue == -1)
         {
-//            [self.view makeToast:@"数据传输错误，请重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"数据传输错误，请重试！"];
             return;
         }
         
@@ -745,7 +743,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
-//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            [self setAlertView:@"申请失败！"];
             return;
         }
         
@@ -792,18 +790,18 @@ singleton_implementation(AppDelegateHelper);
     if (receiveData == nil || receiveData->returnValue == 0) {
 //        [_indicator stopAnimating];
         if([applyflag isEqualToString:@"1"]){
-//            [self.view makeToast:@"您的网络不给力哦，请检查本地网络设置后重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"您的网络不给力哦，请检查本地网络设置后重试！"];
         }else if ([applyflag isEqualToString:@"2"]){
-//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"服务器繁忙，请使用移动网络重试！"];
         }else{
-//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"服务器繁忙，请使用移动网络重试！"];
         }
     } else {
         
         if(receiveData->returnValue == -1)
         {
 //            [_indicator stopAnimating];
-//            [self.view makeToast:@"服务器繁忙，请稍候再试。错误代码：1003！" duration:1.0 position:@"center"];
+            [self setAlertView:@"服务器繁忙，请稍候再试。错误代码：1003！"];
             return;
         }
         
@@ -832,7 +830,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
-//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            [self setAlertView:@"申请失败！"];
             return;
         }
     }
@@ -846,18 +844,18 @@ singleton_implementation(AppDelegateHelper);
     if (receiveData == nil || receiveData->returnValue == 0) {
 //        [_indicator stopAnimating];
         if([applyflag isEqualToString:@"1"]){
-//            [self.view makeToast:@"您的网络不给力哦，请检查本地网络设置后重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"您的网络不给力哦，请检查本地网络设置后重试！"];
         }else if ([applyflag isEqualToString:@"2"]){
-//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"服务器繁忙，请使用移动网络重试！"];
         }else{
-//            [self.view makeToast:@"服务器繁忙，请使用移动网络重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"服务器繁忙，请使用移动网络重试！"];
         }
     } else {
         
         if(receiveData->returnValue == -1)
         {
 //            [_indicator stopAnimating];
-//            [self.view makeToast:@"数据传输错误，请重试！" duration:1.0 position:@"center"];
+            [self setAlertView:@"数据传输错误，请重试！"];
             return;
         }
         
@@ -884,7 +882,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
-//            [self.view makeToast:@"申请失败！" duration:1.0 position:@"center"];
+            [self setAlertView:@"申请失败！"];
             return;
         }
     }
