@@ -9,7 +9,7 @@
 import Cocoa
 
 let kGreen = NSColor.init(colorLiteralRed: 37.0 / 255.0, green: 170.0 / 255, blue: 70.0 / 255, alpha: 1.0)
-class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource{
+class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource,NSSplitViewDelegate{
 
     var receiveArray:NSMutableArray!
     var receiveFile:OutFile!
@@ -519,11 +519,17 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
             self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
             self.ReceiveTableView.endUpdates()
-            
             self.initThisView(false)
         }
 
     }
 
 
+    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        // Make sure the view on the right has at least 200 px wide
+        return splitView.bounds.size.width - 200
+    }
+    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        return 200
+    }
 }
