@@ -60,13 +60,9 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-//        receiveArray = [[ReceiveFileDao sharedReceiveFileDao] selectReceiveFileAll:_loginName];
-        
-        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll("")
+        loginName = userDao.shareduserDao().getLogName()
+        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
         initThisView(false)
-        
-        // Observe all windows closing so we can remove them from our array
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_windowClosed:) name:NSWindowWillCloseNotification object:nil];
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "", object: nil)
     }
@@ -79,8 +75,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     }
     //MARK: Delegate
     func tableViewSelectionDidChange(notification: NSNotification) {
-        //
-        loginName = userDao.shareduserDao().getLogName()
+        
         if let receiveFile = selectedFileList(){
                 self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
                 initThisView(true)
@@ -90,13 +85,6 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     func openInPBBFile(notification:NSNotification){
         let fileID = notification.userInfo!["pycFileID"] as! Int
         self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
-
-//        receiveArray.enumerateObjectsUsingBlock { (pycfile as! OutFile, index, stop) in
-//            if(pycfile.fileid == fileID){
-//                return
-//            }
-//            self.receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
-//        }
         for pycFile in receiveArray as! Array<OutFile> {
             if(pycFile.fileid == fileID){
                 return
@@ -536,7 +524,62 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
 
     }
 
+    @IBAction func btnMoveRowClick(sender:AnyObject) {
+        //
+        let fromRow = 1
+        let toRow = 3
+        ReceiveTableView.beginUpdates()
+        ReceiveTableView.moveRowAtIndex(fromRow, toIndex: toRow)
+        let object = receiveArray[fromRow]
+        receiveArray.removeObjectAtIndex(fromRow)
+        receiveArray.insertObject(object, atIndex: toRow)
+        ReceiveTableView.endUpdates()
+    }
+    
+    //双击
+    @IBAction func tblvwDoubleClick(sender:AnyObject)
+    {
+        let row = ReceiveTableView.selectedRow
+        if row != -1 {
+            //
+            let ReceiveColumn = self.receiveArray[row] as! OutFile
+            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
+        }
+    }
 
+    func selectRowStartingAtRow(var row:Int)
+    {
+        var theRow = row
+        if ReceiveTableView.selectedRow == -1 {
+            //
+            if theRow == -1{
+                theRow = 0
+            }
+            // Select the same or next row (if possible) but skip group rows
+            while theRow < ReceiveTableView.numberOfRows {
+                //
+                if !self.tableView(ReceiveTableView, row:theRow) {
+                    //
+                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                    return
+                }
+                theRow += 1
+            }
+            
+            theRow = ReceiveTableView.numberOfRows - 1
+            while theRow >= 0 {
+                //
+                if !tableView(ReceiveTableView, isGroupRow: theRow) {
+                    //
+                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                    return
+                }
+                theRow -= 1
+            }
+        }
+    }
+    
+    //分屏大小变化
     func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         // Make sure the view on the right has at least 200 px wide
         return splitView.bounds.size.width - 200
@@ -544,4 +587,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         return 200
     }
+    
+    
+    
 }
