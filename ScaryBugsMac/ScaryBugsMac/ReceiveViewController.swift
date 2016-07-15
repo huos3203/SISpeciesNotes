@@ -90,7 +90,19 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     func openInPBBFile(notification:NSNotification){
         let fileID = notification.userInfo!["pycFileID"] as! Int
         self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
-        receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
+
+//        receiveArray.enumerateObjectsUsingBlock { (pycfile as! OutFile, index, stop) in
+//            if(pycfile.fileid == fileID){
+//                return
+//            }
+//            self.receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
+//        }
+        for pycFile in receiveArray as! Array<OutFile> {
+            if(pycFile.fileid == fileID){
+                return
+            }
+            self.receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
+        }
         ReceiveTableView.reloadData()
         initThisView(true)
     }
