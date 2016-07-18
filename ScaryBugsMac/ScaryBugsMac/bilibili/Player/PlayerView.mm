@@ -68,7 +68,7 @@ inline void check_error(int status)
         dispatch_async(dispatch_get_main_queue(), ^(void){
             NSAlert *alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Fatal Error\nPlease open console.app and upload logs to GitHub or send email to typcncom@gmail.com"];
-            [alert runModal];
+//            [alert runModal];
         });
     }
 }
@@ -159,7 +159,7 @@ inline void check_error(int status)
     NSLog(@"[PlayerView] Starting load video");
 
     //添加业务代码
-    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[video nextPlayURL]];
+//    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[video nextPlayURL]];
     
     dispatch_async(self.player.queue, ^{
 getInfo:
