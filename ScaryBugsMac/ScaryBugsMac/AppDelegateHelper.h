@@ -19,6 +19,9 @@ singleton_interface(AppDelegateHelper);
 //重新申请查看
 @property(nonatomic,assign)NSInteger needReapply;
 
+//将网路访问嵌入播放器中
+-(void)loadVideoWithLocalFiles:(NSString *)openFilePath;
+//先网络后播放器
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString*)openURL;
 
 -(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone;

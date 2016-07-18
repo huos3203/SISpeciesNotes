@@ -38,7 +38,7 @@ class BindingPhoneViewController: NSViewController {
         /* 判断手机号是否合法 */
         
 //        [alert runModal];
-        if (isPhoneNumberOfString(phoneTF.stringValue)) {
+        if (!isPhoneNumberOfString(phoneTF.stringValue)) {
             // 手机号不合法
             pycFileHelper.setAlertView("请输入正确的手机号")
             return ;

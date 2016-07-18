@@ -16,6 +16,7 @@
 #import <Cocoa/Cocoa.h>
 #import "VerificationCodeDao.h"
 #import "ScaryBugsMac-Swift.h"
+#import "PlayerLoader.h"
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -40,6 +41,11 @@
     NSAlert *alertShow;
 }
 singleton_implementation(AppDelegateHelper);
+
+-(void)loadVideoWithLocalFiles:(NSString *)openFilePath
+{
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+}
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {

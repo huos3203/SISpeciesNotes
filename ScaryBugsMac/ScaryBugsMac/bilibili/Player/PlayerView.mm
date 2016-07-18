@@ -19,6 +19,8 @@
 //#import "LiveChat.h"
 //#import "PlayPosition.h"
 
+#import "AppDelegateHelper.h"
+
 //#import "../CommentConvert/danmaku2ass.hpp"
 
 @interface PlayerView (){
@@ -156,6 +158,9 @@ inline void check_error(int status)
 - (void)loadVideo:(VideoAddress *)video{
     NSLog(@"[PlayerView] Starting load video");
 
+    //添加业务代码
+    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[video nextPlayURL]];
+    
     dispatch_async(self.player.queue, ^{
 getInfo:
 
@@ -213,14 +218,13 @@ getInfo:
 
     // Start Playing Video
     self.player.mpv  = mpv_create();
-
+    
     if (!self.player.mpv) {
         NSLog(@"[PlayerView] Failed creating context");
         return [self setTip:@"无法创建播放器"];
     }
     
     [self setTip:@"正在载入视频"];
-    
     int64_t wid = (intptr_t) ContentView;
     check_error(mpv_set_option(self.player.mpv, "wid", MPV_FORMAT_INT64, &wid));
     
