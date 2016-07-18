@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840C9BC81D3D05690006EE4E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 840C9BC71D3D05690006EE4E /* README.md */; };
 		A0E63744197DBF9C00354078 /* Singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E63743197DBF9C00354078 /* Singleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0E6374A197DBF9C00354078 /* Singleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6373E197DBF9C00354078 /* Singleton.framework */; };
 		A0E6375D197DBFCA00354078 /* SingletonC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6375A197DBFCA00354078 /* SingletonC.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840C9BC71D3D05690006EE4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A0E6373E197DBF9C00354078 /* Singleton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Singleton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E63742197DBF9C00354078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E63743197DBF9C00354078 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		A0E63740197DBF9C00354078 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				840C9BC71D3D05690006EE4E /* README.md */,
 				A0E6375A197DBFCA00354078 /* SingletonC.swift */,
 				A0E6375B197DBFCA00354078 /* SingletonB.swift */,
 				A0E6375C197DBFCA00354078 /* SingletonA.swift */,
@@ -232,6 +235,7 @@
 			files = (
 				A0E6375E197DBFCA00354078 /* SingletonB.swift in Sources */,
 				A0E6375F197DBFCA00354078 /* SingletonA.swift in Sources */,
+				840C9BC81D3D05690006EE4E /* README.md in Sources */,
 				A0E6375D197DBFCA00354078 /* SingletonC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

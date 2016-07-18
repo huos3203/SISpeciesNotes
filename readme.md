@@ -597,8 +597,8 @@ Downloading core failed:
 curl: (56) SSLRead() return error -36
 
 [解决通过Cocoapods安装或升级Realm时候CURL报SSLRead()的错误](http://cdbit.com/read/sslread-error-when-install-realm-with-cocoapods.html)
-1. 先下载https://static.realm.io/downloads/core/realm-core-1.1.1.tar.bz2核心包
-   终端下载命令： curl -output core-1.1.1.tar.bz2 https://static.realm.io/downloads/core/realm-core-1.0.1.tar.bz2
+1. 先下载https://static.realm.io/downloads/core/realm-core-1.3.1.tar.bz2核心包
+   终端下载命令： curl -output core-1.3.1.tar.bz2 https://static.realm.io/downloads/core/realm-core-1.3.1.tar.bz2
 2. 找到$TMPDIR/core_bin目录
    终端敲入命令：cd $TMPDIR/core_bin 
 3. 把下载的好的核心包，拷贝到core_bin目录
