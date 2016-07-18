@@ -65,6 +65,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         initThisView(false)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "", object: nil)
+        
+        ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
     }
     
     
@@ -85,14 +87,35 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     func openInPBBFile(notification:NSNotification){
         let fileID = notification.userInfo!["pycFileID"] as! Int
         self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+        var isInset = true
         for pycFile in receiveArray as! Array<OutFile> {
             if(pycFile.fileid == fileID){
-                return
+                isInset = false
             }
-            self.receiveArray.insertObjects([self.receiveFile], atIndexes: NSIndexSet.init(index: 0))
         }
-        ReceiveTableView.reloadData()
-        initThisView(true)
+        if isInset {
+            insertNewRow(self.receiveFile)
+            initThisView(true)
+        }
+    }
+    
+    //插入新cell
+    func insertNewRow(file:OutFile){
+        var index = ReceiveTableView.selectedRow
+        if index == -1 {
+            //
+            if ReceiveTableView.numberOfRows == 0 {
+                //
+                index = 0
+            }else{
+                index = 1
+            }
+        }
+        receiveArray.insertObject(file, atIndex: index)
+        ReceiveTableView.beginUpdates()
+        ReceiveTableView.insertRowsAtIndexes(NSIndexSet.init(index: index), withAnimation: .EffectFade)
+        ReceiveTableView.scrollRowToVisible(index)
+        ReceiveTableView.endUpdates()
     }
     
     //MARK: - Helper
@@ -108,7 +131,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     
     func initThisView(result:Bool)
     {
-        if !result {
+        if !result || receiveArray.count == 0 {
             //
             rootView.hidden = true
             return
@@ -519,7 +542,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
             self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
             self.ReceiveTableView.endUpdates()
-            self.initThisView(false)
+            self.selectRowStartingAtRow(row)
+            self.initThisView(true)
         }
 
     }
@@ -548,7 +572,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         }
     }
 
-    //全选
+    //删除后，显示相邻的下一行
     func selectRowStartingAtRow(row:Int)
     {
         var theRow = row

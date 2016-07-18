@@ -37,11 +37,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="262" height="537"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" id="etR-g5-Pgh">
-                                    <rect key="frame" x="1" y="1" width="260" height="520"/>
+                                    <rect key="frame" x="1.5" y="1" width="260" height="535"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" viewBased="YES" id="39">
-                                            <rect key="frame" x="0.0" y="0.0" width="261" height="520"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="535"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -160,7 +160,7 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="40">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="40">
                                     <rect key="frame" x="1" y="521" width="260" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
