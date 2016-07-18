@@ -524,6 +524,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
 
     }
 
+    //移动单元格 从 - 到 -
     @IBAction func btnMoveRowClick(sender:AnyObject) {
         //
         let fromRow = 1
@@ -547,7 +548,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         }
     }
 
-    func selectRowStartingAtRow(var row:Int)
+    //全选
+    func selectRowStartingAtRow(row:Int)
     {
         var theRow = row
         if ReceiveTableView.selectedRow == -1 {
@@ -558,7 +560,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             // Select the same or next row (if possible) but skip group rows
             while theRow < ReceiveTableView.numberOfRows {
                 //
-                if !self.tableView(ReceiveTableView, row:theRow) {
+                if !self.tableView(ReceiveTableView, isGroupRow:theRow) {
                     //
                     ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
                     return
@@ -576,6 +578,16 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
                 }
                 theRow -= 1
             }
+        }
+    }
+    
+    // We want to make "group rows" for the folders
+    func tableView(tableView: NSTableView, isGroupRow row: Int) -> Bool {
+        //
+        if receiveArray[row] is SeriesModel{
+            return true
+        }else{
+            return false
         }
     }
     

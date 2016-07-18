@@ -103,6 +103,12 @@
          location = "group:AttachAScript/AttachAScript.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:TableViewPlayground/../SourceViewUsingNSOutlineViewwithNSTreeController/SourceView.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:TableViewPlayground/../DragNDropOutlineViewimplementingdraganddropinanNSOutlineView/DragNDropOutlineView.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
       </FileRef>
    </Group>
