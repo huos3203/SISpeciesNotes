@@ -112,4 +112,20 @@
          location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
       </FileRef>
    </Group>
+   <Group
+      location = "container:"
+      name = "Perfect">
+      <FileRef
+         location = "group:PerfectDemo/PerfectDemo.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PerfectDemo/../../../../../Perfect-1.0.0/PerfectLib/PerfectLib.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "absolute:/Users/admin/Perfect-1.0.0/PerfectLib/../PerfectServer/PerfectServer.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PerfectDemo/readMe.md">
+      </FileRef>
+   </Group>
 </Workspace>

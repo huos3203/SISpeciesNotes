@@ -1920,7 +1920,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"WeiboSDK\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 					"-framework",
@@ -1987,7 +1986,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"WeiboSDK\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 					"-framework",

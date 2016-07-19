@@ -49,7 +49,6 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SnapKit (0.20.0)
   - SwiftFilePath (0.0.6)
-  - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -66,23 +65,13 @@ DEPENDENCIES:
   - OHHTTPStubs
   - OHHTTPStubs/Swift
   - Quick
-  - RealmSwift
+  - RealmSwift (= 1.0.1)
   - RxBlocking (~> 2.0)
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0.0)
   - SDWebImage (~> 3.7)
   - SnapKit (~> 0.20.0)
   - SwiftFilePath
-  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
-
-EXTERNAL SOURCES:
-  WeiboSDK:
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
-
-CHECKOUT OPTIONS:
-  WeiboSDK:
-    :commit: 6031a8da4ce17867ff5887b8dfc59ea45930274e
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
@@ -106,8 +95,7 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
-  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 55fae43849a0a5f94b7a7130e4bda32f377d126f
+PODFILE CHECKSUM: 0b3b28a6271ece7056ec84653dc46a43b4d0dc67
 
 COCOAPODS: 1.0.0
