@@ -29,6 +29,17 @@ An imported UTI declaration is used to declare a type that the bundle does not o
 1. CFBundleTypeIconFiles：两个图像将作为支持的邮件和其他应用程序能够显示文件类型的图标。
 2. LSItemContentTypes：键可让您提供一个可以使您的应用程序打开的统一类型标识符（UTI）数组.此处就是关联第一步的UTTypeIdentifier的。
 
+####单独移出为独立项目需要的配置参数：
+
+1. 设置User-Defined -> PODS_BUILD_DIR:$BUILD_DIR  ,
+    PODS_CONFIGURATION_BUILD_DIR:$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME),
+    PODS_ROOT : ${SRCROOT}/Pods
+2. 设置Other Linker Flags : $(inherited) -framework "CocoaAsyncSocket" -framework "EDStarRating" -framework "FMDB"
+3. 设置Custom compiler Flags-> Other C Flags:$(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FMDB/FMDB.framework/Headers"
+
+4. 设置Runpath Search Paths:$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
+
+
 
 
 
