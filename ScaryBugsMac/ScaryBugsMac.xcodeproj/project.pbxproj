@@ -194,6 +194,7 @@
 		143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
+		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		144D95621D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */; };
 		144D95641D12976C00E495F6 /* main.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 144D95631D12938100E495F6 /* main.scpt */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
@@ -440,6 +441,7 @@
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
+		144AD8921D3F855500765907 /* OpenPBBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPBBDocument.swift; sourceTree = "<group>"; };
 		144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCallAppleScriptTests.swift; sourceTree = "<group>"; };
 		144D95631D12938100E495F6 /* main.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.scpt; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
 				1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */,
 				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
+				144AD8921D3F855500765907 /* OpenPBBDocument.swift */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
@@ -2090,6 +2093,7 @@
 				143E381E1D3F1809004B0A4D /* RefreshDataModel.m in Sources */,
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
+				144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */,
 				143E38211D3F1809004B0A4D /* PycUserRemote.m in Sources */,
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,

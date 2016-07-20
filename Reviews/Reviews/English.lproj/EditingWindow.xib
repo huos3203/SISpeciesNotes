@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -53,12 +53,12 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="100022" name="displayPatternValue1" keyPath="selection.@count" id="100027">
+                            <binding destination="100022" name="displayPatternValue2" keyPath="arrangedObjects.@count" previousBinding="100027" id="100028">
                                 <dictionary key="options">
                                     <string key="NSDisplayPattern">%{value1}@ out of %{value2}@</string>
                                 </dictionary>
                             </binding>
-                            <binding destination="100022" name="displayPatternValue2" keyPath="arrangedObjects.@count" previousBinding="100027" id="100028">
+                            <binding destination="100022" name="displayPatternValue1" keyPath="selection.@count" id="100027">
                                 <dictionary key="options">
                                     <string key="NSDisplayPattern">%{value1}@ out of %{value2}@</string>
                                 </dictionary>
@@ -73,7 +73,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" autosaveColumns="NO" headerView="100033" id="100032">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="81"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="211" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -121,7 +121,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="100068" id="100067">
-                                    <rect key="frame" x="0.0" y="0.0" width="719" height="111"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="578" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -311,8 +311,8 @@
                 <string>supportRating</string>
             </declaredKeys>
             <connections>
-                <binding destination="100022" name="contentSet" keyPath="selection.products" id="100093"/>
                 <binding destination="-2" name="managedObjectContext" keyPath="document.managedObjectContext" id="100090"/>
+                <binding destination="100022" name="contentSet" keyPath="selection.products" id="100093"/>
             </connections>
         </arrayController>
     </objects>
