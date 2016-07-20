@@ -114,6 +114,9 @@
       <FileRef
          location = "group:TableViewPlayground/TableViewPlayground.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Reviews/Reviews/Reviews.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "container:"

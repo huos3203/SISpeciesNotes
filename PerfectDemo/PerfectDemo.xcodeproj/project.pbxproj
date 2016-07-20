@@ -147,7 +147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "function installPerfect(){\n    echo '开始安装perfect环境...'\n    cd $1\n    pwd\n    #brew install openssl\n    #brew link openssl --force\n    #sh makefile\n}\n\npwd\ncd ~\nPerfectFolder=\"Perfect-1.0.0\"\nPerfect=\"Perfect-1.0.0.zip\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$Perfect\" ]; then\n\n    if [ -d \"$PerfectFolder\" ]; then\n        echo '文件已存在，且已被解压'\n        installPerfect $PerfectFolder\n    else\n        echo '文件已存在...开始解压'\n        unzip Perfect-1.0.0.zip\n        installPerfect $PerfectFolder\n    fi\nelse\n    echo '文件不存在...开始下载'\n    curl -o Perfect-1.0.0.zip https:\\/\\\n/codeload.github.com/PerfectlySoft/Perfect/zip/v1.0.0\n    echo '下载完成,开始解压'\n    unzip Perfect-1.0.0.zip\n    installPerfect $PerfectFolder\nfi\n\n\n\n";
+			shellScript = "function installPerfect(){\n    echo '开始安装perfect环境...'\n    cd $1\n    pwd\n    #export PATH=/usr/local/bin:$PATH\n    #brew install openssl\n    #brew link openssl --force\n    #sh makefile\n}\n\npwd\ncd ~\nPerfectFolder=\"Perfect-1.0.0\"\nPerfect=\"Perfect-1.0.0.zip\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$Perfect\" ]; then\n\n    if [ -d \"$PerfectFolder\" ]; then\n        echo '文件已存在，且已被解压'\n        installPerfect $PerfectFolder\n    else\n        echo '文件已存在...开始解压'\n        unzip Perfect-1.0.0.zip\n        installPerfect $PerfectFolder\n    fi\nelse\n    echo '文件不存在...开始下载'\n    curl -o Perfect-1.0.0.zip https:\\/\\\n/codeload.github.com/PerfectlySoft/Perfect/zip/v1.0.0\n    echo '下载完成,开始解压'\n    unzip Perfect-1.0.0.zip\n    installPerfect $PerfectFolder\nfi\n\n\n\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
