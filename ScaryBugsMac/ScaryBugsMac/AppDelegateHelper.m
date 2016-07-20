@@ -15,8 +15,13 @@
 #import "userDao.h"
 #import <Cocoa/Cocoa.h>
 #import "VerificationCodeDao.h"
-#import "ScaryBugsMac-Swift.h"
 #import "PlayerLoader.h"
+
+#if DEVELOPMENT
+#import "ScaryBugsMac-Swift.h"
+#else
+#import "PBBReader-Swift.h"
+#endif
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;

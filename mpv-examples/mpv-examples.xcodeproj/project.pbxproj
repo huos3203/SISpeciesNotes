@@ -614,7 +614,7 @@
 				14562FD61D11498400DB35E2 /* Frameworks */,
 				14562FD71D11498400DB35E2 /* Resources */,
 				143F39091D23B3F000DD70C9 /* CopyFiles */,
-				1414E0181D2650CA003CC7D1 /* ShellScript */,
+				1414E0181D2650CA003CC7D1 /* libmpv包文件执行install_name_tool */,
 				739BD06528F6173C3EDAB383 /* [CP] Embed Pods Frameworks */,
 				1DF9F1E98C3F118EA7D1CF39 /* [CP] Copy Pods Resources */,
 				5432494B11E1E1A8449E5B9D /* 📦 Embed Pods Frameworks */,
@@ -761,13 +761,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1414E0181D2650CA003CC7D1 /* ShellScript */ = {
+		1414E0181D2650CA003CC7D1 /* libmpv包文件执行install_name_tool */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "libmpv包文件执行install_name_tool";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;

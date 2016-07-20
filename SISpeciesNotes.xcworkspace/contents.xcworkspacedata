@@ -43,6 +43,9 @@
       assignedFileDataType = "public.ruby-script">
    </FileRef>
    <FileRef
+      location = "group:readme.md">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
@@ -119,10 +122,10 @@
          location = "group:PerfectDemo/PerfectDemo.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:PerfectDemo/../../../../../Perfect-1.0.0/PerfectLib/PerfectLib.xcodeproj">
+         location = "absolute:../../Perfect-1.0.0/PerfectLib/PerfectLib.xcodeproj">
       </FileRef>
       <FileRef
-         location = "absolute:/Users/admin/Perfect-1.0.0/PerfectLib/../PerfectServer/PerfectServer.xcodeproj">
+         location = "group:../../Perfect-1.0.0/PerfectServer/PerfectServer.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:PerfectDemo/readMe.md">

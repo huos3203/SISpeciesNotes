@@ -227,7 +227,6 @@
 		149129021CEB2567004FFA1C /* jsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		149129031CEB2567004FFA1C /* jsc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsc.m; sourceTree = "<group>"; };
 		149129051CEB258E004FFA1C /* SISpeciesNotesTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SISpeciesNotesTests-Bridging-Header.h"; path = "OC/SISpeciesNotesTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		14A3C68D1C83EB000065D226 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		14B07F401CB52FB300A9B1F9 /* Label+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Animation.swift"; sourceTree = "<group>"; };
 		14B5B99A1CE1D831008A0CBD /* AlbumsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumsListViewController.swift; path = Controller/AlbumsListViewController.swift; sourceTree = "<group>"; };
 		14B5B99D1CE1D844008A0CBD /* OnclickLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnclickLikeViewController.swift; path = Controller/OnclickLikeViewController.swift; sourceTree = "<group>"; };
@@ -768,7 +767,6 @@
 				D8D76ABF1C1021AC0041D0ED /* Frameworks */,
 				8475035A1C58B76A00E804EE /* swift_output */,
 				848F1E2E1C214D5500874436 /* .gitignore */,
-				14A3C68D1C83EB000065D226 /* readme.md */,
 				145B72E21CC8B8D800315B72 /* 每日阅读.md */,
 				D849C0991AF078E4001C01AC /* Products */,
 				F6D72DC43D5F24AD9145EA85 /* Pods */,

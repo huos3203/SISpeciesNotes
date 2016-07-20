@@ -71,16 +71,26 @@ target 'SISpeciesNotes' do
     end
 end
 
+def myPods   #def名不能以大写字母开头
+    pod 'EDStarRating'
+    #    pod 'SwiftWebSocket'
+    pod 'CocoaAsyncSocket'
+    #    pod 'RealmSwift'
+    pod 'FMDB'
+end
+
 target 'ScaryBugsMac' do
     platform :osx, '10.9'
     use_frameworks!
     project 'ScaryBugsMac/ScaryBugsMac.xcodeproj'
-    pod 'EDStarRating'
-#    pod 'SwiftWebSocket'
-    pod 'CocoaAsyncSocket'
-#    pod 'RealmSwift'
-    pod 'FMDB'
+       
+    myPods
     
+    target 'PBBReader' do
+        inherit! :search_paths
+        myPods
+    end
+
     target 'ScaryBugsMacTests' do
         inherit! :search_paths
         pod 'EDStarRating'
