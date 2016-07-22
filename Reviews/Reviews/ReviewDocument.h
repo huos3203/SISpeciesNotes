@@ -49,7 +49,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ReviewDocument : NSPersistentDocument {
-
+    
     NSWindowController *editingWindowController;
     IBOutlet NSCollectionView *collectionView;
     

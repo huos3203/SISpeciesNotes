@@ -195,6 +195,7 @@
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
 		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
+		144AD8941D40C68600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		144D95621D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */; };
 		144D95641D12976C00E495F6 /* main.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 144D95631D12938100E495F6 /* main.scpt */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
@@ -413,9 +414,6 @@
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
-		142EC3AC1D2D0B5700B88F96 /* stream_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream_file.c; sourceTree = "<group>"; };
-		142EC3AD1D2D0B5700B88F96 /* SMS4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMS4.h; sourceTree = "<group>"; };
-		142EC3AE1D2D0B5700B88F96 /* pbb_key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pbb_key.h; sourceTree = "<group>"; };
 		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
 		1437DD681CF2A75F001BD2D2 /* ScaryBugsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -444,6 +442,9 @@
 		144AD8921D3F855500765907 /* OpenPBBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPBBDocument.swift; sourceTree = "<group>"; };
 		144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCallAppleScriptTests.swift; sourceTree = "<group>"; };
 		144D95631D12938100E495F6 /* main.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.scpt; sourceTree = "<group>"; };
+		147985B71D422DF8004EA246 /* stream_file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stream_file.c; sourceTree = "<group>"; };
+		147985B81D422DF8004EA246 /* SMS4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMS4.h; sourceTree = "<group>"; };
+		147985B91D422DF8004EA246 /* pbb_key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pbb_key.h; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
@@ -738,9 +739,9 @@
 		142EC3A91D2D0B1A00B88F96 /* SMS4 */ = {
 			isa = PBXGroup;
 			children = (
-				142EC3AC1D2D0B5700B88F96 /* stream_file.c */,
-				142EC3AD1D2D0B5700B88F96 /* SMS4.h */,
-				142EC3AE1D2D0B5700B88F96 /* pbb_key.h */,
+				147985B71D422DF8004EA246 /* stream_file.c */,
+				147985B81D422DF8004EA246 /* SMS4.h */,
+				147985B91D422DF8004EA246 /* pbb_key.h */,
 				142EC3AA1D2D0B1A00B88F96 /* readMe.md */,
 				142EC3B01D2D0B8D00B88F96 /* mpv.def */,
 			);
@@ -1983,6 +1984,7 @@
 				14B25FA81CFD7823001BCE84 /* RefreshDataModel.m in Sources */,
 				14B260071CFD86A8001BCE84 /* SandboxFile.m in Sources */,
 				14B25FA91CFD7823001BCE84 /* PycSocket.m in Sources */,
+				144AD8941D40C68600765907 /* OpenPBBDocument.swift in Sources */,
 				14B25FAB1CFD7823001BCE84 /* PycUserRemote.m in Sources */,
 				1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */,
 				14B25FFE1CFD844E001BCE84 /* DataFactory.m in Sources */,
