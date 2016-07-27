@@ -22,6 +22,10 @@
 #else
 #import "PBBReader-Swift.h"
 #endif
+
+#import "MBProgressHUD.h"
+#import "PlayerWindow.h"
+
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -44,21 +48,24 @@
     NSString *applyflag;
     
     NSAlert *alertShow;
+    
+    MBProgressHUD *hud;
+    NSWindow *keyWindow;
 }
 singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
+    if(![openFilePath hasSuffix:@"pbb"]){
+        LookMedia *look = [[LookMedia alloc] init];
+        [look lookMedia:openFilePath];
+        return;
+    }
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
 }
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-    if(![openURL hasSuffix:@"pbb"]){
-        LookMedia *look = [[LookMedia alloc] init];
-        [look lookMedia:openURL];
-        return YES;
-    }
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
@@ -85,17 +92,27 @@ singleton_implementation(AppDelegateHelper);
     }
 
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-    NSArray *array;
-    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
-    [nib instantiateWithOwner:self topLevelObjects:&array];
-    for (int i = 0; i < array.count; i++) {
-        //
-        id obj = array[i];
-        if ([obj isKindOfClass:[AdvertisingView class]]) {
-            custormActivityView = (AdvertisingView *)array[i];
-            [custormActivityView startLoading:fileID isOutLine:OutLine];
+    
+    if(!custormActivityView){
+        [self setKeyWindow];
+        if (keyWindow) {
+            NSArray *array;
+            NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
+            [nib instantiateWithOwner:self topLevelObjects:&array];
+            for (int i = 0; i < array.count; i++) {
+                //
+                id obj = array[i];
+                if ([obj isKindOfClass:[AdvertisingView class]]) {
+                    custormActivityView = (AdvertisingView *)array[i];
+                    [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+                }
+            }
         }
+    }else{
+        [self setKeyWindow];
+        [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
     }
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
@@ -675,7 +692,7 @@ singleton_implementation(AppDelegateHelper);
 -(void)seeFile:(PycFile *)fileObject
 {
     BOOL reslut1 = NO;
-    if (!seePycFile.needShowDiff) {
+    if (!fileObject.needShowDiff) {
         applyNum++;
         if (applyNum <= 1) {
             
@@ -713,7 +730,6 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
-        NSString *qq = seePycFile.QQ;
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
@@ -917,8 +933,8 @@ singleton_implementation(AppDelegateHelper);
     activationSucVc.remark = pycfileObject.remark;
     activationSucVc.bOpenInCome = bOpenInCome;
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
-    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
-    [superView.contentViewController presentViewControllerAsModalWindow:activationSucVc];
+    [self setKeyWindow];
+    [keyWindow.contentViewController presentViewControllerAsSheet:activationSucVc];
 }
 
 
@@ -962,9 +978,41 @@ singleton_implementation(AppDelegateHelper);
     }
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];
     
-    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
-    [superView.contentViewController presentViewControllerAsModalWindow:activationVc];
+    [self setKeyWindow];
+    [keyWindow.contentViewController presentViewControllerAsSheet:activationVc];
 }
 
+
+
+-(void)setKeyWindow{
+    NSArray *windows = [[NSApplication sharedApplication] windows];
+    for (NSWindow *window in windows) {
+        //
+        if ([window isKindOfClass:[PlayerWindow class]]) {
+            //
+            keyWindow = (PlayerWindow *)window;
+        }
+    }
+}
+
+
+- (void)hide:(NSTimeInterval)i{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [hud hide:YES afterDelay:i];
+        [NSTimer scheduledTimerWithTimeInterval:i+0.5
+                                         target:self
+                                       selector:@selector(hideWindow)
+                                       userInfo:nil
+                                        repeats:NO];
+    });
+}
+
+- (void)hideWindow{
+    [[keyWindow contentView] setHidden:YES];
+    [keyWindow setLevel:NSNormalWindowLevel-1];
+    [keyWindow orderBack:self];
+    hud = NULL;
+    //    isLoading = NO;
+}
 
 @end

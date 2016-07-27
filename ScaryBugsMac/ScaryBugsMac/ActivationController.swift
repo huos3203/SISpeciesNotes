@@ -286,11 +286,10 @@ class ActivationController: NSViewController {
             return;
         }
         
+        var sel1 = self1Field.stringValue
+        var sel2 = self2Field.stringValue
+        
         if (selffieldnum==1 || selffieldnum==2) {
-            
-            var sel1 = self1Field.stringValue
-            var sel2 = self2Field.stringValue
-            
             if (field1needprotect) {
                 sel1 = self11Field.stringValue
             }
@@ -342,8 +341,8 @@ class ActivationController: NSViewController {
                                                qq: qqField.stringValue,
                                                email: emailField.stringValue,
                                                phone: phoneField.stringValue,
-                                               field1: self1Field.stringValue,
-                                               field2: self2Field.stringValue,
+                                               field1: sel1,
+                                               field2: sel2,
                                                seeLogName: userName,
                                                fileName: fileUrl)
         

@@ -12,6 +12,7 @@
 @interface AdvertisingView : NSView
 
 @property (weak, nonatomic) IBOutlet NSImageView *ibImageView;
+@property (weak) IBOutlet NSProgressIndicator *ibIndicator;
 
 @property(strong,nonatomic)AdvertisingImgCache *imgCache;
 
@@ -22,6 +23,6 @@
 @property(assign,nonatomic)NSInteger advertime;
 @property(strong,nonatomic)NSTimer *adverTimer;
 
--(void)startLoading:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
+-(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
 
 @end

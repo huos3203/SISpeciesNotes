@@ -61,27 +61,22 @@
                                                          multiplier:1.0
                                                            constant:constant]];
 }
--(void)startLoading:(NSInteger)fileID isOutLine:(BOOL)OutLine
+-(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)OutLine
 {
-
-    _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
-    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];//.contentView;
-    if(!superView){
+    if(![keywindow.contentView isKindOfClass:[NSView class]]){
         _finish = YES;
         return;
     }
-    superView = [[NSApplication sharedApplication] keyWindow];
-//    [superView resignKeyWindow];
-//    [superView deminiaturize:self];
-    [superView makeKeyAndOrderFront:NSApp];
-    [superView makeMainWindow];
-    NSView *lastView = superView.contentView;
-    [lastView addSubview:self];
-    [self setEdge:lastView view:self attr:NSLayoutAttributeTop constant:0];
-    [self setEdge:lastView view:self attr:NSLayoutAttributeBottom constant:0];
-    [self setEdge:lastView view:self attr:NSLayoutAttributeLeft constant:0];
-    [self setEdge:lastView view:self attr:NSLayoutAttributeRight constant:0];
+    
+    NSView *keyView = keywindow.contentView;
+    [keyView addSubview:self];
+    [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
+    [self setEdge:keyView view:self attr:NSLayoutAttributeBottom constant:0];
+    [self setEdge:keyView view:self attr:NSLayoutAttributeLeft constant:0];
+    [self setEdge:keyView view:self attr:NSLayoutAttributeRight constant:0];
+    
+    _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
     
     if(fileID == -1)
     {
@@ -98,7 +93,7 @@
     if (!_imgCache) {
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
-    
+    [_ibIndicator startAnimation:self];
     [_imgCache AdvertisingForTerm:UidOrImgUrl completionBlock:^(NSString *imgPath, NSInteger uid,NSError *error) {
         
 //        NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:imgPath]];

@@ -23,9 +23,11 @@
 
 - (void)lookMedia:(NSString *)openFilePath
 {
+     NSDictionary  *dic = [NSDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
     //明文
     if(![openFilePath hasSuffix:@"pbb"]){
-        [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+        set_key_info(nil,0,0,0);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
     }
 
     //pbb文件
@@ -49,7 +51,8 @@
                  (long)_EncryptedLen,
                  (long)_fileSize,
                  (long)_offset);
-    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+//    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
     
 }
 -(BOOL)isShotScreen{

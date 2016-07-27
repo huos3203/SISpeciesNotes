@@ -82,6 +82,10 @@ inline void check_error(int status)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //hsg
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+    
     lastWindow = [[NSApplication sharedApplication] keyWindow];
     [lastWindow resignKeyWindow];
     [lastWindow miniaturize:self];
@@ -147,6 +151,9 @@ inline void check_error(int status)
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
+    
+    //hsg
+    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[self.player.video firstFragmentURL]];
 }
 
 - (void)setTip:(NSString *)text{
@@ -157,10 +164,6 @@ inline void check_error(int status)
 
 - (void)loadVideo:(VideoAddress *)video{
     NSLog(@"[PlayerView] Starting load video");
-
-    //添加业务代码
-//    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[video nextPlayURL]];
-    
     dispatch_async(self.player.queue, ^{
 getInfo:
 
@@ -195,7 +198,7 @@ getInfo:
             videoDomain = fvHost;
         }
         
-        [self playVideo: playURL];
+//        [self playVideo: playURL];
     });
 }
 
@@ -211,10 +214,12 @@ getInfo:
     [window setTitle:title];
 }
 
-- (void)playVideo:(NSString *)URL{
+- (void)setKeyInfo:(NSNotification *) notification{
     if(self.player.pendingDealloc){
-//        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
+        //        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
     }
+    
+    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
 
     // Start Playing Video
     self.player.mpv  = mpv_create();

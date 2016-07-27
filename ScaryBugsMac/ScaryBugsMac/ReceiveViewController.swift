@@ -51,7 +51,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBOutlet weak var rootView: NSView!
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
-    let appHelper = AppDelegateHelper()
+    let appHelper = AppDelegateHelper.sharedAppDelegateHelper()
     
     @IBOutlet var cntxMnuTableView: NSMenu!
 
@@ -73,7 +73,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBAction func readBtn(sender: AnyObject) {
         appHelper.phoneNo = ""
         appHelper.messageID = ""
-        appHelper.openURLOfPycFileByLaunchedApp({receiveFile.fileurl}())
+        appHelper.loadVideoWithLocalFiles({receiveFile.fileurl}())
     }
     //MARK: Delegate
     func tableViewSelectionDidChange(notification: NSNotification) {
@@ -624,6 +624,23 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         return 200
     }
     
-    
+    @IBAction func ibaBrowseFinder(sender: AnyObject) {
+        let panel = NSOpenPanel()
+        panel.message = ""
+        panel.prompt = "OK"
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = true
+        var path_all = ""
+        var result = panel.runModal()
+        if result == NSFileHandlingPanelOKButton {
+            //
+            path_all = (panel.URL?.path!)!
+            print("文件路径：\(path_all)")
+            appHelper.phoneNo = ""
+            appHelper.messageID = ""
+            appHelper.loadVideoWithLocalFiles({path_all}())
+        }
+        
+    }
     
 }
