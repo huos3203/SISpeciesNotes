@@ -568,7 +568,11 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         if row != -1 {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
-            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
+//            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
+            appHelper.phoneNo = ""
+            appHelper.messageID = ""
+            appHelper.loadVideoWithLocalFiles({ReceiveColumn.fileurl}())
+
         }
     }
 

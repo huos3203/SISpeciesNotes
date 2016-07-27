@@ -706,6 +706,7 @@ getInfo:
 
 
 - (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"[PlayerView] Dealloc");
 }
 
