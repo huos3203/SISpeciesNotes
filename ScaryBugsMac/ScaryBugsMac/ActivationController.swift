@@ -290,10 +290,10 @@ class ActivationController: NSViewController {
         var sel2 = self2Field.stringValue
         
         if (selffieldnum==1 || selffieldnum==2) {
-            if (field1needprotect) {
+            if (!self11Field.hidden) {
                 sel1 = self11Field.stringValue
             }
-            if (field2needprotect) {
+            if (!self22Field.hidden) {
                 sel2 = self22Field.stringValue
             }
             
@@ -329,7 +329,7 @@ class ActivationController: NSViewController {
             
         }
         
-        
+        self.dismissController(nil)
         let userName = userDao.shareduserDao().getLogName()
         let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
         pycFileHelper.phoneNo = ""

@@ -1865,7 +1865,9 @@ _ALL_END:
     }
     else
     {
+        decodebegin = fileToAdd;
         NSLog(@"000 need not");
+        
     }
     
     self.fileSize = header->fileSize;

@@ -1072,22 +1072,46 @@ CA
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YoV-x0-Hh9">
-                                <rect key="frame" x="323" y="50" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="申请" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="U3p-fE-RtC">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="nextStepAction:" target="oTm-0h-HP8" id="YcN-YE-A3d"/>
-                                </connections>
-                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PIU-9M-Mos">
+                                <rect key="frame" x="270" y="32" width="170" height="61"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YoV-x0-Hh9">
+                                        <rect key="frame" x="90" y="13" width="66" height="32"/>
+                                        <buttonCell key="cell" type="push" title="申请" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="U3p-fE-RtC">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="nextStepAction:" target="oTm-0h-HP8" id="YcN-YE-A3d"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-rb-24r">
+                                        <rect key="frame" x="14" y="13" width="66" height="32"/>
+                                        <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zqw-PA-GEI">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dismissController:" target="foz-Te-kfu" id="gh1-di-Iox"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YoV-x0-Hh9" secondAttribute="bottom" constant="20" id="CWt-zG-HUs"/>
+                                    <constraint firstAttribute="trailing" secondItem="YoV-x0-Hh9" secondAttribute="trailing" constant="20" id="END-w0-NHL"/>
+                                    <constraint firstItem="YoV-x0-Hh9" firstAttribute="top" secondItem="PIU-9M-Mos" secondAttribute="top" constant="20" id="X1L-F9-dLs"/>
+                                    <constraint firstItem="hXl-rb-24r" firstAttribute="leading" secondItem="PIU-9M-Mos" secondAttribute="leading" constant="20" id="Yve-M9-E5P"/>
+                                    <constraint firstAttribute="bottom" secondItem="hXl-rb-24r" secondAttribute="bottom" constant="20" id="f1u-8y-yUg"/>
+                                    <constraint firstItem="hXl-rb-24r" firstAttribute="top" secondItem="PIU-9M-Mos" secondAttribute="top" constant="20" id="ghM-dF-Xgj"/>
+                                    <constraint firstItem="YoV-x0-Hh9" firstAttribute="leading" secondItem="hXl-rb-24r" secondAttribute="trailing" constant="22" id="uMv-hi-RYg"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="nfS-uh-eok" firstAttribute="top" secondItem="QCy-zv-GXu" secondAttribute="bottom" priority="720" constant="40" id="0EX-mF-O0j"/>
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="width" secondItem="QCy-zv-GXu" secondAttribute="width" id="0OB-1B-vug"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="centerX" secondItem="bw0-Hz-rxj" secondAttribute="centerX" id="0dW-X9-u60"/>
-                            <constraint firstItem="YoV-x0-Hh9" firstAttribute="centerX" secondItem="bw0-Hz-rxj" secondAttribute="centerX" id="1Bq-Jd-HWB"/>
+                            <constraint firstItem="PIU-9M-Mos" firstAttribute="centerX" secondItem="bw0-Hz-rxj" secondAttribute="centerX" id="16d-1d-Mhd"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="Uaa-Eu-DI8" secondAttribute="bottom" constant="8" id="4re-vh-i6y"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="centerX" secondItem="QCy-zv-GXu" secondAttribute="centerX" id="8tw-dB-Py4"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="leading" secondItem="yyJ-qJ-jr1" secondAttribute="leading" id="9K6-xW-YKj"/>
@@ -1102,7 +1126,6 @@ CA
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="height" secondItem="QCy-zv-GXu" secondAttribute="height" id="RpN-ug-qby"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="height" secondItem="QCy-zv-GXu" secondAttribute="height" id="Rwq-Dr-w0g"/>
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="leading" secondItem="QCy-zv-GXu" secondAttribute="leading" id="S45-3O-JN0"/>
-                            <constraint firstItem="YoV-x0-Hh9" firstAttribute="top" secondItem="kNV-ug-9IT" secondAttribute="bottom" constant="30" id="Sw4-hk-rWB"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="top" secondItem="QCy-zv-GXu" secondAttribute="bottom" priority="721" constant="40" id="SzO-4H-Gfw"/>
                             <constraint firstItem="dmX-Zo-Fwg" firstAttribute="leading" secondItem="QCy-zv-GXu" secondAttribute="leading" id="T88-RZ-4fI"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="xwo-8U-rrB" secondAttribute="bottom" priority="721" constant="40" id="U8f-Go-um8"/>
@@ -1121,6 +1144,7 @@ CA
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="top" secondItem="dmb-Gz-UQt" secondAttribute="bottom" priority="720" constant="40" id="jpe-8A-o0v"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="height" secondItem="QCy-zv-GXu" secondAttribute="height" id="kFy-BJ-44V"/>
                             <constraint firstItem="Dxa-uI-HxK" firstAttribute="leading" secondItem="nfS-uh-eok" secondAttribute="leading" id="nw7-LL-Tl3"/>
+                            <constraint firstItem="PIU-9M-Mos" firstAttribute="top" secondItem="kNV-ug-9IT" secondAttribute="bottom" constant="15" id="q3v-Qo-Qyy"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="dmb-Gz-UQt" secondAttribute="bottom" priority="720" constant="40" id="tOg-3O-bgV"/>
                             <constraint firstItem="Uaa-Eu-DI8" firstAttribute="leading" secondItem="kNV-ug-9IT" secondAttribute="leading" id="uSs-dD-zar"/>
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="top" secondItem="QCy-zv-GXu" secondAttribute="bottom" priority="720" constant="40" id="x34-nx-e6f"/>
@@ -1381,6 +1405,16 @@ CA
                                     <action selector="ibaRetoActivation:" target="Vg1-Cs-IcE" id="76J-Bi-wgY"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-gf-k6U">
+                                <rect key="frame" x="331" y="176" width="92" height="32"/>
+                                <buttonCell key="cell" type="push" title="我知道了" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xGK-IY-iy0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="MEd-aR-1rF" id="bc1-c9-fZa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tjH-Zb-v1w" firstAttribute="top" secondItem="0iJ-Le-hT3" secondAttribute="bottom" constant="14" id="471-lf-bsC"/>
@@ -1391,9 +1425,11 @@ CA
                             <constraint firstItem="0iJ-Le-hT3" firstAttribute="top" secondItem="ETz-w0-yOC" secondAttribute="top" constant="60" id="GEo-NR-TxK"/>
                             <constraint firstItem="mwq-hC-EzF" firstAttribute="centerY" secondItem="tjH-Zb-v1w" secondAttribute="centerY" id="Gby-rw-81O"/>
                             <constraint firstItem="V3l-Qe-GHU" firstAttribute="top" secondItem="fAF-VP-gHF" secondAttribute="bottom" constant="8" id="HK6-mO-hsm"/>
+                            <constraint firstItem="dpD-gf-k6U" firstAttribute="centerX" secondItem="ETz-w0-yOC" secondAttribute="centerX" id="JAW-2v-e9f"/>
                             <constraint firstItem="HWh-4X-21h" firstAttribute="centerY" secondItem="cBE-Bx-GUH" secondAttribute="centerY" id="MUE-6f-qzt"/>
                             <constraint firstItem="fAF-VP-gHF" firstAttribute="top" secondItem="MQN-Wm-AKr" secondAttribute="bottom" constant="8" id="OeR-nb-P5K"/>
                             <constraint firstItem="EbS-Ja-y0i" firstAttribute="centerX" secondItem="ETz-w0-yOC" secondAttribute="centerX" id="PVh-3p-deD"/>
+                            <constraint firstItem="dpD-gf-k6U" firstAttribute="top" secondItem="aqC-s9-ZCx" secondAttribute="bottom" constant="29" id="QYJ-5q-hQ5"/>
                             <constraint firstItem="fAF-VP-gHF" firstAttribute="leading" secondItem="MQN-Wm-AKr" secondAttribute="leading" id="T8r-GN-XBf"/>
                             <constraint firstItem="tac-B8-Jp8" firstAttribute="leading" secondItem="fAF-VP-gHF" secondAttribute="trailing" constant="4" id="ZMU-Im-csM"/>
                             <constraint firstItem="0iJ-Le-hT3" firstAttribute="leading" secondItem="ETz-w0-yOC" secondAttribute="leading" constant="20" id="hks-tV-Dt7"/>

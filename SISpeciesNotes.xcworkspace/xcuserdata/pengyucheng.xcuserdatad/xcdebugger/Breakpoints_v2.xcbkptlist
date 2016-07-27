@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScaryBugsMac/ScaryBugsMac/bilibili/Player/PlayerView.mm"
-            timestampString = "491282416.832861"
+            timestampString = "491292181.605308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-convertComments:"
             landmarkType = "5">
          </BreakpointContent>
@@ -254,6 +254,22 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "-applicationOpenUntitledFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScaryBugsMac/ScaryBugsMac/ActivationController.swift"
+            timestampString = "491284741.477013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "nextStepAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -91,5 +91,7 @@ class ActivationSuccessController: NSViewController {
     }
     
     @IBAction func ibaRetoActivation(sender: AnyObject) {
+        
+        AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
     }
 }

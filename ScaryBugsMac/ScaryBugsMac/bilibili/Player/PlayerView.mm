@@ -82,10 +82,6 @@ inline void check_error(int status)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //hsg
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
-    
     lastWindow = [[NSApplication sharedApplication] keyWindow];
     [lastWindow resignKeyWindow];
     [lastWindow miniaturize:self];
@@ -99,6 +95,9 @@ inline void check_error(int status)
             windowSetup = YES;
         }
     });
+    
+    //hsg
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
 }
 
 - (void)viewDidAppear{

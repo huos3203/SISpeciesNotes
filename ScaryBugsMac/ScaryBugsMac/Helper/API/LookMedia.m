@@ -47,6 +47,9 @@
         bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
     }
     NSLog(@"密钥=====:%@",bytestr);
+//    _EncryptedLen = 43313968;
+//    _offset = 2097162;
+//    _fileSize = 43313968;
     set_key_info((unsigned char*)(Byte *)[_fileSecretkeyR1 bytes],
                  (long)_EncryptedLen,
                  (long)_fileSize,
