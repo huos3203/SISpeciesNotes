@@ -217,6 +217,9 @@ class ActivationController: NSViewController {
             if (field1needprotect) {
                 self1Field.hidden = true
                 self11Field.hidden = false
+            }else{
+                self1Field.hidden = false
+                self11Field.hidden = true
             }
             
         }else{
@@ -246,6 +249,9 @@ class ActivationController: NSViewController {
             if (field2needprotect) {
                 self2Field.hidden = true
                 self22Field.hidden = false
+            }else{
+                self2Field.hidden = false
+                self22Field.hidden = true
             }
         } else {
             self2label.hidden = true

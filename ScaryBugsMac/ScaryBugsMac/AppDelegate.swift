@@ -28,8 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         //
         appHelper.phoneNo = ""
         appHelper.messageID = ""
-        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
-//        appHelper.loadVideoWithLocalFiles(filenames[0])
+//        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
+        appHelper.loadVideoWithLocalFiles(filenames[0])
         
     }
 

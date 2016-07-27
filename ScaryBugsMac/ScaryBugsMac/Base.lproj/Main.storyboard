@@ -89,6 +89,22 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="W48-6f-4Dl">
                                     <items>
+                                        <menuItem title="Cut" keyEquivalent="x" id="LTP-1y-uUI">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="MCc-ZG-6Tp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="dSR-1P-dKr">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="thu-1B-ysq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="xgw-JQ-gMx">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="iAW-bD-B4U"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="j4c-cs-j7u"/>
                                         <menuItem title="Delete" id="pa3-QI-u2k">
                                             <string key="keyEquivalent" base64-UTF8="YES">
 CA
@@ -582,7 +598,7 @@ CA
                             </splitView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
                                 <rect key="frame" x="161" y="497" width="100" height="32"/>
-                                <buttonCell key="cell" type="push" title="browser..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tg3-dJ-IXJ">
+                                <buttonCell key="cell" type="push" title="Browser..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tg3-dJ-IXJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

@@ -63,6 +63,7 @@ singleton_implementation(AppDelegateHelper);
 {
     if(![openURL hasSuffix:@"pbb"]){
         LookMedia *look = [[LookMedia alloc] init];
+        look.receviveFileId = @"1";
         [look lookMedia:openURL];
         return NO;
     }
@@ -112,7 +113,6 @@ singleton_implementation(AppDelegateHelper);
         [self setKeyWindow];
         [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
     }
-    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
@@ -730,6 +730,7 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
+        [self hide:1.0];
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
