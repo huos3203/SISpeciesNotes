@@ -94,4 +94,8 @@ class ActivationSuccessController: NSViewController {
         
         AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
     }
+    
+    override func dismissController(sender: AnyObject?) {
+        self.view.window?.performClose(self);
+    }
 }

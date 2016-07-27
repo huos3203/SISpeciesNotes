@@ -335,7 +335,6 @@ class ActivationController: NSViewController {
             
         }
         
-        self.dismissController(nil)
         let userName = userDao.shareduserDao().getLogName()
         let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
         pycFileHelper.phoneNo = ""
@@ -382,5 +381,11 @@ class ActivationController: NSViewController {
             applyInfo.applyId = applyId
             
         }
+    }
+    
+    override func dismissController(sender: AnyObject?) {
+        //
+        super.dismissController(sender)
+        self.view.window?.close()
     }
 }
