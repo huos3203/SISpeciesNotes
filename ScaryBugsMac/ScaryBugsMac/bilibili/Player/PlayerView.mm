@@ -159,6 +159,7 @@ inline void check_error(int status)
     [ep setAcceptsTouchEvents:YES];
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
+    
     [ep addSubview:ibWaterLabel positioned:NSWindowAbove relativeTo:nil];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
     
@@ -292,7 +293,7 @@ getInfo:
     if([self.player getAttr:@"live"] && [self.player getAttr:@"cid"]){
         dispatch_async(dispatch_get_main_queue(), ^{
 //            BarrageRenderer *_renderer = [[BarrageRenderer alloc] init];
-//            [self.view setWantsLayer:YES];
+            [self.view setWantsLayer:YES];
 //            [_renderer.view setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
 //            [_renderer.view setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
 //            [self.view addSubview:_renderer.view positioned:NSWindowAbove relativeTo:nil];

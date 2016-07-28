@@ -12,11 +12,16 @@ extension NSTextField
     
     var shadeOrigin:CGPoint{
         
-        let mvFrame = superview?.bounds
+        
+        guard let mvFrame = superview?.bounds
+        else
+        {
+            return CGPointMake(0,0);
+        }
         //x 区间大小（0...x_max）
-        let x_max = mvFrame!.width - self.frame.size.width
+        let x_max = mvFrame.width - self.frame.size.width
         //y 区间大小（0...y_max）
-        let y_max = mvFrame!.height - self.frame.size.height - 100
+        let y_max = mvFrame.height - self.frame.size.height - 100
         //随机区间 ＝ 区间最小值 + 随机值
         let x_random = arc4random() % UInt32(x_max)
         let y_random = arc4random() % UInt32(y_max) + 60
