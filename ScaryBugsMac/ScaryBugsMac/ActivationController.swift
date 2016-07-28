@@ -89,14 +89,16 @@ class ActivationController: NSViewController {
             qqField.stringValue = qq
             emailField.stringValue = email
             phoneField.stringValue = phone
-            self1Field.stringValue = field1name
-            self2Field.stringValue = field2name
+            self1Field.stringValue = self1
+            self2Field.stringValue = self2
+            self1label.stringValue = "\(field1name):"
+            self2label.stringValue = "\(field2name):"
+        }else{
+            //label
+            self1label.stringValue = self1
+            self2label.stringValue = self2
         }
-        //label
-        self1label.stringValue = self1
-        self2label.stringValue = self2
-        
-       
+      
         initWithWidgetLayout()
 
     }
@@ -200,7 +202,6 @@ class ActivationController: NSViewController {
         
         ////判断自定义字段的个数,是否用原有规则
         if (isShowSelf1) {
-            self1label.stringValue = "\(self1):"
             if (isSHowEmail) {
                 //默认以相邻的控件之间的约束为主
             }else if (isSHowPhone){
@@ -229,8 +230,6 @@ class ActivationController: NSViewController {
         }
         
         if (isShowSelf2) {
-            
-            self2label.stringValue = "\(self2):"
             if (isShowSelf1) {
                 //默认以相邻的控件之间的约束为主
             }else if(isSHowEmail){
@@ -334,7 +333,7 @@ class ActivationController: NSViewController {
             }
             
         }
-        
+        self.dismissController(true)
         let userName = userDao.shareduserDao().getLogName()
         let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
         pycFileHelper.phoneNo = ""
@@ -384,8 +383,9 @@ class ActivationController: NSViewController {
     }
     
     override func dismissController(sender: AnyObject?) {
-        //
         super.dismissController(sender)
-        self.view.window?.close()
+        if !(sender is Bool){
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+        }
     }
 }

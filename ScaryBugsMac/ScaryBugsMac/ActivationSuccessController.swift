@@ -70,7 +70,7 @@ class ActivationSuccessController: NSViewController {
         
         if (needReapply == 1) {
             ibSelfTitleLabel.stringValue = "激活失败"
-            
+            ibRetoActivation.hidden = false
         }else{
             ibSelfTitleLabel.stringValue = "申请已提交"
             ibRetoActivation.hidden = true
@@ -91,11 +91,14 @@ class ActivationSuccessController: NSViewController {
     }
     
     @IBAction func ibaRetoActivation(sender: AnyObject) {
-        
+        self.dismissController(true)
         AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
     }
     
     override func dismissController(sender: AnyObject?) {
-        self.view.window?.performClose(self);
+        super.dismissController(sender)
+        if !(sender is Bool){
+           NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+        }
     }
 }

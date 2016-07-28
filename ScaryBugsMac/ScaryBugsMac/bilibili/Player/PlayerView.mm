@@ -98,8 +98,12 @@ inline void check_error(int status)
     
     //hsg
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CancleClosePlayerWindows:) name:@"CancleClosePlayerWindows" object:nil];
 }
 
+-(void)CancleClosePlayerWindows:(NSNotification *)info {
+    [self.view.window performClose:self];
+}
 - (void)viewDidAppear{
     window = (PlayerWindow *)self.view.window;
     [window makeKeyAndOrderFront:NSApp];

@@ -51,6 +51,7 @@
     
     MBProgressHUD *hud;
     NSWindow *keyWindow;
+    BOOL isLoading;
 }
 singleton_implementation(AppDelegateHelper);
 
@@ -730,7 +731,7 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
-        [self hide:1.0];
+        [self hide:0.0];
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
@@ -937,6 +938,8 @@ singleton_implementation(AppDelegateHelper);
     activationSucVc.applyId = pycfileObject.applyId;
     activationSucVc.remark = pycfileObject.remark;
     activationSucVc.bOpenInCome = bOpenInCome;
+    activationSucVc.needReapply = pycfileObject.needReapply;
+    
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
     [self setKeyWindow];
     [keyWindow.contentViewController presentViewControllerAsSheet:activationSucVc];
@@ -951,19 +954,21 @@ singleton_implementation(AppDelegateHelper);
     activationVc.fileId = pycFileObject.fileID;
     activationVc.orderId = pycFileObject.orderID;
     activationVc.filename = [pycFileObject.filePycNameFromServer stringByDeletingPathExtension];
-    activationVc.field1name = pycFileObject.fild1name;
-    activationVc.field1needprotect = (pycFileObject.field1needprotect==1)?YES:NO;
-    activationVc.field2name = pycFileObject.fild2name;
-    activationVc.field2needprotect =(pycFileObject.field2needprotect==1)?YES:NO;
     activationVc.selffieldnum = pycFileObject.selffieldnum;
     activationVc.definechecked = pycFileObject.definechecked;
     activationVc.bOpenInCome = bOpenInCome;
     activationVc.qq = pycFileObject.QQ;
     activationVc.email = pycFileObject.email;
     activationVc.phone = pycFileObject.phone;
+    //自定义字段1
+    activationVc.field1name = pycFileObject.fild1name;
     activationVc.self1 = pycFileObject.field1;
+    activationVc.field1needprotect = (pycFileObject.field1needprotect==1)?YES:NO;
+    //自定义字段2
+    activationVc.field2name = pycFileObject.fild2name;
     activationVc.self2 = pycFileObject.field2;
-    
+    activationVc.field2needprotect =(pycFileObject.field2needprotect==1)?YES:NO;
+    //重新申请参数
     activationVc.needReApply = pycFileObject.needReapply;
     activationVc.applyId = pycFileObject.applyId;
     
@@ -996,7 +1001,7 @@ singleton_implementation(AppDelegateHelper);
 }
 
 - (void)show{
-    //    isLoading = YES;
+    isLoading = YES;
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
     [self setKeyWindow];
     if(!hud){
@@ -1023,6 +1028,9 @@ singleton_implementation(AppDelegateHelper);
 
 
 - (void)hide:(NSTimeInterval)i{
+    if (!isLoading) {
+        return;
+    }
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [hud hide:YES afterDelay:i];
         [NSTimer scheduledTimerWithTimeInterval:i+0.5
@@ -1034,11 +1042,11 @@ singleton_implementation(AppDelegateHelper);
 }
 
 - (void)hideWindow{
-    [[keyWindow contentView] setHidden:YES];
-    [keyWindow setLevel:NSNormalWindowLevel-1];
-    [keyWindow orderBack:self];
+//    [[keyWindow contentView] setHidden:YES];
+//    [keyWindow setLevel:NSNormalWindowLevel-1];
+//    [keyWindow orderBack:self];
     hud = NULL;
-    //    isLoading = NO;
+    isLoading = NO;
 }
 
 @end
