@@ -23,7 +23,7 @@
 
 - (void)lookMedia:(NSString *)openFilePath
 {
-     NSDictionary  *dic = [NSDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
+    NSMutableDictionary  *dic = [NSMutableDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
     if([openFilePath hasSuffix:@"pbb"]){
         //pbb文件
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToAddReadNumByFileId:[_receviveFileId integerValue]];
@@ -50,7 +50,8 @@
         //明文
         set_key_info(nil,0,0,0);
     }
-
+    
+    [dic setObject:_waterMark forKey:@"waterMark"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
     
 }

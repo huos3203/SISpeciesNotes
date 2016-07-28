@@ -478,7 +478,7 @@ getInfo:
         NSArray *blocks = [blockstr componentsSeparatedByString:@"|"];
         if([block length] > 0){
             for (NSString* string in blocks) {
-//                p->SetBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
+//                p->SetdBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
             }
         }
     }

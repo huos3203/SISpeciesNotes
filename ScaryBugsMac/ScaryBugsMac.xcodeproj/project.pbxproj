@@ -19,7 +19,6 @@
 		1437DD731CF2A75F001BD2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
 		1437DD7E1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD7D1CF2A75F001BD2D2 /* ScaryBugsMacTests.swift */; };
 		1437DD891CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD881CF2A75F001BD2D2 /* ScaryBugsMacUITests.swift */; };
-		1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */; };
 		1437DD9C1CF2AD92001BD2D2 /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
 		1437DD9E1CF2AE72001BD2D2 /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
 		1437DDA01CF2AF7C001BD2D2 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
@@ -85,7 +84,6 @@
 		143E38341D3F1809004B0A4D /* ReceiveFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */; };
 		143E38351D3F1809004B0A4D /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		143E38361D3F1809004B0A4D /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */; };
-		143E38371D3F1809004B0A4D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */; };
 		143E38381D3F1809004B0A4D /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB91CFD8335001BCE84 /* NSDate+String.m */; };
 		143E38391D3F1809004B0A4D /* BGHUDSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5D1D2A187300838B88 /* BGHUDSliderCell.m */; };
 		143E383A1D3F1809004B0A4D /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F611D2A187300838B88 /* BGThemeManager.m */; };
@@ -198,6 +196,10 @@
 		144AD8941D40C68600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		144D95621D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D95611D128F0D00E495F6 /* SwiftCallAppleScriptTests.swift */; };
 		144D95641D12976C00E495F6 /* main.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 144D95631D12938100E495F6 /* main.scpt */; };
+		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
+		14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE81D49D80400922A62 /* View+shadeGuide.swift */; };
+		14815AEA1D49E78200922A62 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */; };
+		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -446,6 +448,10 @@
 		147985B81D422DF8004EA246 /* SMS4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMS4.h; sourceTree = "<group>"; };
 		147985B91D422DF8004EA246 /* pbb_key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pbb_key.h; sourceTree = "<group>"; };
 		147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaryBugsMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+shadeAnimation.swift"; sourceTree = "<group>"; };
+		14815AE81D49D80400922A62 /* View+shadeGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+shadeGuide.swift"; sourceTree = "<group>"; };
+		14815AF01D49FCBC00922A62 /* PlayPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPosition.h; sourceTree = "<group>"; };
+		14815AF11D49FCBC00922A62 /* PlayPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPosition.m; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
 		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
@@ -832,6 +838,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		14815AEF1D49FCBC00922A62 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				14815AF01D49FCBC00922A62 /* PlayPosition.h */,
+				14815AF11D49FCBC00922A62 /* PlayPosition.m */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		148AB47A1CFFD78600CAF9BA /* Advertising */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,6 +869,7 @@
 				14AA3FA51D2A187300838B88 /* PlayerLoader.xib */,
 				14AA3FA61D2A187300838B88 /* SimpleVideoFormatParser.h */,
 				14AA3FA71D2A187300838B88 /* SimpleVideoFormatParser.mm */,
+				14815AEF1D49FCBC00922A62 /* DataStore */,
 				14AA3FA81D2A187300838B88 /* SubHelper */,
 				14AA3F5A1D2A187300838B88 /* Player */,
 				14AA3FB31D2A187300838B88 /* VideoProvider */,
@@ -1233,6 +1249,8 @@
 		14EE618A1CF816E50051FD1A /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */,
+				14815AE81D49D80400922A62 /* View+shadeGuide.swift */,
 				14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */,
 				14EE618C1CF816E50051FD1A /* NSImage+Extras.h */,
 				14EE618D1CF816E50051FD1A /* NSImage+Extras.m */,
@@ -2007,7 +2025,6 @@
 				14B25FFB1CFD844E001BCE84 /* ReceiveFileManager.m in Sources */,
 				148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */,
 				14105B821D337FD1004CB1C2 /* ReceiveViewController.swift in Sources */,
-				1437DD991CF2A8AC001BD2D2 /* MasterViewController.swift in Sources */,
 				14B25FBC1CFD8335001BCE84 /* NSDate+String.m in Sources */,
 				14AA40AB1D2A187300838B88 /* BGHUDSliderCell.m in Sources */,
 				14AA40AD1D2A187300838B88 /* BGThemeManager.m in Sources */,
@@ -2016,6 +2033,7 @@
 				14AA40AE1D2A187300838B88 /* ControlsWithVibracy.m in Sources */,
 				14AA40AA1D2A187300838B88 /* MBProgressHUD.m in Sources */,
 				14AA40E41D2A187300838B88 /* NSString+LcsDiff.m in Sources */,
+				14815AEA1D49E78200922A62 /* MasterViewController.swift in Sources */,
 				14AA40D81D2A187300838B88 /* Player.m in Sources */,
 				14AA40DC1D2A187300838B88 /* PlayerView.mm in Sources */,
 				14AA40DD1D2A187300838B88 /* PlayerWindow.m in Sources */,
@@ -2095,12 +2113,14 @@
 				143E381E1D3F1809004B0A4D /* RefreshDataModel.m in Sources */,
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
+				14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */,
 				144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */,
 				143E38211D3F1809004B0A4D /* PycUserRemote.m in Sources */,
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,
 				143E38241D3F1809004B0A4D /* PycPrivateFile.m in Sources */,
 				143E38251D3F1809004B0A4D /* AppDelegateHelper.m in Sources */,
+				14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */,
 				143E38261D3F1809004B0A4D /* PycCode.mm in Sources */,
 				143E38271D3F1809004B0A4D /* PycCodeUrl.mm in Sources */,
 				143E38281D3F1809004B0A4D /* PycFileOperateCommon.m in Sources */,
@@ -2118,7 +2138,6 @@
 				143E38341D3F1809004B0A4D /* ReceiveFileManager.m in Sources */,
 				143E38351D3F1809004B0A4D /* AdvertisingImgCache.m in Sources */,
 				143E38361D3F1809004B0A4D /* ReceiveViewController.swift in Sources */,
-				143E38371D3F1809004B0A4D /* MasterViewController.swift in Sources */,
 				143E38381D3F1809004B0A4D /* NSDate+String.m in Sources */,
 				143E38391D3F1809004B0A4D /* BGHUDSliderCell.m in Sources */,
 				143E383A1D3F1809004B0A4D /* BGThemeManager.m in Sources */,
@@ -2140,6 +2159,7 @@
 				143E384A1D3F1809004B0A4D /* SubtitleProvider.m in Sources */,
 				143E384B1D3F1809004B0A4D /* SubtitleHelper.m in Sources */,
 				143E384C1D3F1809004B0A4D /* TimeSliderCell.m in Sources */,
+				14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */,
 				143E384D1D3F1809004B0A4D /* SP_Local.m in Sources */,
 				143E384E1D3F1809004B0A4D /* VideoAddress.m in Sources */,
 				143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */,

@@ -1488,6 +1488,16 @@ CA
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="oeR-Yw-Iwd" userLabel="PlayerView">
                                 <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TUQ-8G-8Zi">
+                                        <rect key="frame" x="197" y="124" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="水印" id="Bmk-UZ-t9B" userLabel="水印">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
                             </customView>
                             <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView">
                                 <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
@@ -1527,6 +1537,7 @@ CA
                     <connections>
                         <outlet property="ContentView" destination="oeR-Yw-Iwd" id="1fe-mS-TTb"/>
                         <outlet property="LoadingView" destination="5C1-Zb-9nT" id="ShR-Si-QE2"/>
+                        <outlet property="ibWaterLabel" destination="TUQ-8G-8Zi" id="4Le-2g-OVu"/>
                         <outlet property="loadingImage" destination="YbR-uU-Cub" id="9AG-ua-OQz"/>
                         <outlet property="textTip" destination="1Dh-2g-yUQ" id="Y96-PO-cWD"/>
                     </connections>

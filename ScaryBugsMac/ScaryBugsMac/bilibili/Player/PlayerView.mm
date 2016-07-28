@@ -17,11 +17,13 @@
 #import "PlayerControlView.h"
 #import "PlayerEventProxy.h"
 //#import "LiveChat.h"
-//#import "PlayPosition.h"
+#import "PlayPosition.h"
 
 #import "AppDelegateHelper.h"
+#import "PBBReader-Swift.h"
 
 //#import "../CommentConvert/danmaku2ass.hpp"
+typedef void (^ShadeBlock)();
 
 @interface PlayerView (){
     __weak PlayerWindow *window;
@@ -30,6 +32,8 @@
     
     __weak IBOutlet NSView *ContentView;
     __weak IBOutlet NSView *LoadingView;
+    
+    __weak IBOutlet NSTextField *ibWaterLabel;
     
     PlayerControlWindowController *playerControlWindowController;
     NSString *videoDomain;
@@ -41,6 +45,8 @@
 
 
 @implementation PlayerView
+
+ShadeBlock shadeblock;
 
 @synthesize windowSetup;
 @synthesize liveChatWC;
@@ -153,6 +159,7 @@ inline void check_error(int status)
     [ep setAcceptsTouchEvents:YES];
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
+    [ep addSubview:ibWaterLabel positioned:NSWindowAbove relativeTo:nil];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
     
     //hsg
@@ -201,6 +208,7 @@ getInfo:
             videoDomain = fvHost;
         }
         
+        //hsg替换业务
 //        [self playVideo: playURL];
     });
 }
@@ -223,7 +231,11 @@ getInfo:
     }
     
     NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
-
+    NSString *water = [notification.userInfo valueForKey:@"waterMark"];
+    
+    if (water) {
+        ibWaterLabel.stringValue = water;
+    }
     // Start Playing Video
     self.player.mpv  = mpv_create();
     
@@ -324,13 +336,13 @@ getInfo:
         }
     }
     
-//    NSString *cid = [self.player getAttr:@"cid"];
-//    if(cid && [cid length]){
-//        int64_t start_pos = [[PlayPosition sharedManager] getKey:cid];
-//        if(start_pos > 1){
-//            [self setMPVOption:"start" :[[NSString stringWithFormat:@"%lld",start_pos] UTF8String]];
-//        }
-//    }
+    NSString *cid = [self.player getAttr:@"cid"];
+    if(cid && [cid length]){
+        int64_t start_pos = [[PlayPosition sharedManager] getKey:cid];
+        if(start_pos > 1){
+            [self setMPVOption:"start" :[[NSString stringWithFormat:@"%lld",start_pos] UTF8String]];
+        }
+    }
     
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [self setTitle:windowTitle];
@@ -607,6 +619,8 @@ getInfo:
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.loadingImage setAnimates:NO];
                 [LoadingView setHidden:YES];
+                //开启水印动画
+                shadeblock = [ibWaterLabel fireTimer];
             });
             break;
         }
@@ -619,6 +633,8 @@ getInfo:
         case MPV_EVENT_IDLE:{
             if(endFile){
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    if (shadeblock)
+                        shadeblock();
                     [LoadingView setHidden:NO];
                     [self.textTip setStringValue:NSLocalizedString(@"播放完成，关闭窗口继续", nil)];
                     [self runAutoSwitch];
@@ -629,14 +645,17 @@ getInfo:
         }
             
         case MPV_EVENT_PAUSE: {
+            if (shadeblock)
+                shadeblock();
             break;
         }
         case MPV_EVENT_UNPAUSE: {
+            shadeblock = [ibWaterLabel fireTimer];
             break;
         }
             
         default: ;
-            //NSLog(@"Player Event: %s", mpv_event_name(event->event_id));
+            NSLog(@"Player Event: %s", mpv_event_name(event->event_id));
     }
 }
 
