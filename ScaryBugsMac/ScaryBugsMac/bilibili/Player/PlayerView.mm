@@ -36,6 +36,9 @@ typedef void (^ShadeBlock)();
     
     __weak IBOutlet NSTextField *ibWaterLabel;
     
+    NSTextField *CountDownLabel;
+    NSTimeInterval *CountDown;
+    
     PlayerControlWindowController *playerControlWindowController;
     NSString *videoDomain;
     
@@ -48,6 +51,7 @@ typedef void (^ShadeBlock)();
 @implementation PlayerView
 
 ShadeBlock shadeblock;
+ShadeBlock countDownblock;
 
 @synthesize windowSetup;
 @synthesize liveChatWC;
@@ -106,6 +110,8 @@ inline void check_error(int status)
     //hsg
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CancleClosePlayerWindows:) name:@"CancleClosePlayerWindows" object:nil];
+    
+    CountDown = [NSTimeInterval ini];
 }
 
 -(void)CancleClosePlayerWindows:(NSNotification *)info {
@@ -161,9 +167,14 @@ inline void check_error(int status)
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
     
+    //水印
     [ep addSubview:ibWaterLabel positioned:NSWindowAbove relativeTo:nil];
-    [self.view setWantsLayer:YES];
+    //倒计时
+    CountDownLabel = [NSTextField new];
+    [ep addSubview:CountDownLabel positioned:NSWindowAbove relativeTo:nil];
+    
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
+    [self.view setWantsLayer:YES];
     
     //hsg
     [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[self.player.video firstFragmentURL]];
@@ -208,7 +219,9 @@ getInfo:
             NSNumber *height = [VideoInfoJson objectForKey:@"height"];
             
             if([height intValue] < 100 || [width intValue] < 100){
-                goto getInfo;
+                //goto getInfo;
+                [self.player setAttr:@"vheight" data:[NSNumber numberWithInt:500]];
+                [self.player setAttr:@"vwidth" data:[NSNumber numberWithInt:500]];
             }
             
             [self.player setAttr:@"vheight" data:width];
@@ -329,7 +342,7 @@ getInfo:
         }else if(converted_comment){ // If convert success but not have sub file
             subfile = converted_comment;
         }else{
-            windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
+           // windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
         }
     }
     
@@ -627,6 +640,7 @@ getInfo:
                 [LoadingView setHidden:YES];
                 //开启水印动画
                 shadeblock = [ibWaterLabel fireTimer];
+                countDownblock = [CountDownLabel fireTimer];
             });
             break;
         }
@@ -639,8 +653,12 @@ getInfo:
         case MPV_EVENT_IDLE:{
             if(endFile){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    if (shadeblock)
-                        shadeblock();
+                    if (shadeblock){
+                            shadeblock();
+                    }
+                    if (countDownblock) {
+                            countDownblock();
+                    }
                     [LoadingView setHidden:NO];
                     [self.textTip setStringValue:NSLocalizedString(@"播放完成，关闭窗口继续", nil)];
                     [self runAutoSwitch];
@@ -656,7 +674,7 @@ getInfo:
             break;
         }
         case MPV_EVENT_UNPAUSE: {
-            shadeblock = [ibWaterLabel fireTimer];
+            shadeblock = [ibWaterLabel fireTimer:<#(double)#>];
             break;
         }
             

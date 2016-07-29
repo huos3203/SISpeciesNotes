@@ -11,8 +11,6 @@ extension NSTextField
 {
     
     var shadeOrigin:CGPoint{
-        
-        
         guard let mvFrame = superview?.bounds
         else
         {
@@ -30,15 +28,46 @@ extension NSTextField
         //            let y = y_random + UInt32(self.frame.size.height)
 //        print("水印坐标：x = \(x_random),Y = \(y_random)")
         return CGPointMake(CGFloat(x_random), CGFloat(y_random))
-        
     }
     
-//    @objc static var shadeTimer:NSTimer?
-
-    func fireTimer()->()->()
+    //秒
+    var second:NSTimeInterval{
+        set{
+        }
+        get{
+            return self.second
+        }
+    }
+    //分
+    var minute:NSTimeInterval{
+        set(newValue){
+        }
+        get{
+            return self.minute
+        }
+    }
+    
+    func fireTimer(Countdown:Double)->()->()
     {
-        //默认显示，24s之后隐藏
-        let timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hidden as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
+        var timer:NSTimer!
+       
+        if Countdown == 0 {
+            //默认显示，24s之后隐藏
+            timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hidden as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
+        }else{
+    
+            if let mvFrame = superview?.bounds {
+                self.frame.origin = CGPointMake(CGFloat(mvFrame.width/2), CGFloat(0))
+            }else{
+                self.frame.origin = CGPointMake(CGFloat(200), CGFloat(0))
+            }
+            
+            self.minute = Countdown / 60
+            self.second = Countdown % 60
+
+            timer = NSTimer(timeInterval: Countdown, target: self, selector: #selector(NSTextField.Countdown(_:)), userInfo: nil, repeats: true)
+        }
+        
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         
         //匿名函数
@@ -50,6 +79,32 @@ extension NSTextField
         }
     }
 
+    func Countdown(time:NSTimeInterval) {
+        //
+        self.stringValue = "\(second) s"
+        if (time > 0) {
+            if (second<0) {
+                minute = minute - 1
+                second = 60
+            }
+            if (minute == 0) {
+                second = second - 1
+                self.stringValue = "\(second)秒"
+                //背景色
+                if (second < 10) {
+                    self.animator().alphaValue = 0.3
+                    self.backgroundColor = NSColor.redColor()
+                    if (second < 0) {
+                        //关闭播放器
+                        NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+                    }
+                }
+            } else {
+                self.stringValue = "\(minute)分\(second)秒"
+            }
+        }
+    }
+    
     func hidden()
     {
         //
