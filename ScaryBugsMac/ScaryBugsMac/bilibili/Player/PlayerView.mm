@@ -10,19 +10,20 @@
 #import "PlayerView.h"
 #import "MediaInfoDLL.h"
 #import "SimpleVideoFormatParser.h"
-//#import "BarrageHeader.h"
+#import "BarrageHeader.h"
 //#import "PreloadManager.h"
 #import "Player.h"
 #import "PlayerWindow.h"
 #import "PlayerControlView.h"
 #import "PlayerEventProxy.h"
-//#import "LiveChat.h"
+#import "LiveChat.h"
 #import "PlayPosition.h"
 
 #import "AppDelegateHelper.h"
 #import "PBBReader-Swift.h"
 
-//#import "../CommentConvert/danmaku2ass.hpp"
+#import "../CommentConvert/danmaku2ass.hpp"
+
 typedef void (^ShadeBlock)();
 
 @interface PlayerView (){
@@ -83,7 +84,7 @@ inline void check_error(int status)
     [m_player setVideoView:ContentView];
     self.player = m_player;
     [self loadControls];
-    [self loadVideo:self.player.video];
+//    [self loadVideo:self.player.video];
 }
 
 - (void)viewDidLoad {
@@ -161,6 +162,7 @@ inline void check_error(int status)
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
     
     [ep addSubview:ibWaterLabel positioned:NSWindowAbove relativeTo:nil];
+    [self.view setWantsLayer:YES];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
     
     //hsg
@@ -173,12 +175,21 @@ inline void check_error(int status)
     });
 }
 
-- (void)loadVideo:(VideoAddress *)video{
+//- (void)loadVideo:(VideoAddress *)video{
+
+- (void)setKeyInfo:(NSNotification *) notification{
+    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
+    NSString *water = [notification.userInfo valueForKey:@"waterMark"];
+    
+    if (water) {
+        ibWaterLabel.stringValue = water;
+    }
+    
     NSLog(@"[PlayerView] Starting load video");
     dispatch_async(self.player.queue, ^{
 getInfo:
 
-        NSString *playURL = [video nextPlayURL];
+        NSString *playURL = URL;
         if(!playURL){
             return [self setTip:@"所有视频源连接失败，可能视频已失效"];
         }
@@ -187,7 +198,7 @@ getInfo:
 
         NSLog(@"[PlayerView] Reading video info");
         
-        NSString *firstVideo = [video firstFragmentURL];
+        NSString *firstVideo = URL;
         if([self.player getAttr:@"commentFile"]){
             NSDictionary *VideoInfoJson = [self getVideoInfo:firstVideo];
             
@@ -200,8 +211,8 @@ getInfo:
                 goto getInfo;
             }
             
-            [self.player setAttr:@"vheight" data:height];
-            [self.player setAttr:@"vwidth" data:width];
+            [self.player setAttr:@"vheight" data:width];
+            [self.player setAttr:@"vwidth" data:height];
         }
         
         NSString *fvHost = [[NSURL URLWithString:firstVideo] host];
@@ -209,8 +220,7 @@ getInfo:
             videoDomain = fvHost;
         }
         
-        //hsg替换业务
-//        [self playVideo: playURL];
+        [self playVideo: playURL];
     });
 }
 
@@ -226,17 +236,12 @@ getInfo:
     [window setTitle:title];
 }
 
-- (void)setKeyInfo:(NSNotification *) notification{
+-(void)playVideo:(NSString *)URL{
+
     if(self.player.pendingDealloc){
         //        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
     }
     
-    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
-    NSString *water = [notification.userInfo valueForKey:@"waterMark"];
-    
-    if (water) {
-        ibWaterLabel.stringValue = water;
-    }
     // Start Playing Video
     self.player.mpv  = mpv_create();
     
@@ -292,18 +297,18 @@ getInfo:
 
     if([self.player getAttr:@"live"] && [self.player getAttr:@"cid"]){
         dispatch_async(dispatch_get_main_queue(), ^{
-//            BarrageRenderer *_renderer = [[BarrageRenderer alloc] init];
+            BarrageRenderer *_renderer = [[BarrageRenderer alloc] init];
             [self.view setWantsLayer:YES];
-//            [_renderer.view setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-//            [_renderer.view setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
-//            [self.view addSubview:_renderer.view positioned:NSWindowAbove relativeTo:nil];
-//            [_renderer start];
-//            self.player.barrageRenderer = _renderer;
-//            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-//            self.liveChatWC = [storyBoard instantiateControllerWithIdentifier:@"LiveChatWindow"];
-//            [self.liveChatWC showWindow:self];
-//            LiveChat *lc = (LiveChat *)self.liveChatWC.window.contentViewController;
-//            [lc setPlayerAndInit:self.player];
+            [_renderer.view setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
+            [_renderer.view setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
+            [self.view addSubview:_renderer.view positioned:NSWindowAbove relativeTo:nil];
+            [_renderer start];
+            self.player.barrageRenderer = _renderer;
+            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+            self.liveChatWC = [storyBoard instantiateControllerWithIdentifier:@"LiveChatWindow"];
+            [self.liveChatWC showWindow:self];
+            LiveChat *lc = (LiveChat *)self.liveChatWC.window.contentViewController;
+            [lc setPlayerAndInit:self.player];
         });
     }
 
@@ -478,7 +483,7 @@ getInfo:
     
     [[NSFileManager defaultManager] removeItemAtPath:OutFile error:nil];
     
-//    CommentParser *p = new CommentParser;
+    CommentParser *p = new CommentParser;
     
     NSString *block = [[NSUserDefaults standardUserDefaults] objectForKey:@"blockKeywords"];
     int blockBadword = [self getSettings:@"blcokBadword"];
@@ -504,21 +509,21 @@ getInfo:
         NSArray *blocks = [blockstr componentsSeparatedByString:@"|"];
         if([block length] > 0){
             for (NSString* string in blocks) {
-//                p->SetBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
+                p->SetBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
             }
         }
     }
     
-//    p->SetFile([file cStringUsingEncoding:NSUTF8StringEncoding], [OutFile cStringUsingEncoding:NSUTF8StringEncoding]);
-//    p->SetRes([width intValue], [height intValue]);
-//    p->SetFont([fontName cStringUsingEncoding:NSUTF8StringEncoding], (int)[height intValue]/fontsize);
-//    p->SetDuration(mq,5);
-//    p->SetAlpha([[NSString stringWithFormat:@"%.2f",[self getSettings:@"transparency"]] floatValue]);
-//    p->SetRemoveBottom(disableBottom);
-//    bool isSuc = p->Convert(0);
-//    if(!isSuc){
-//        return NULL;
-//    }
+    p->SetFile([file cStringUsingEncoding:NSUTF8StringEncoding], [OutFile cStringUsingEncoding:NSUTF8StringEncoding]);
+    p->SetRes([width intValue], [height intValue]);
+    p->SetFont([fontName cStringUsingEncoding:NSUTF8StringEncoding], (int)[height intValue]/fontsize);
+    p->SetDuration(mq,5);
+    p->SetAlpha([[NSString stringWithFormat:@"%.2f",[self getSettings:@"transparency"]] floatValue]);
+    p->SetRemoveBottom(disableBottom);
+    bool isSuc = p->Convert(0);
+    if(!isSuc){
+        return NULL;
+    }
     
     NSLog(@"Comment converted to %@",OutFile);
     return OutFile;

@@ -177,12 +177,12 @@ getInfo:
             NSNumber *width = [VideoInfoJson objectForKey:@"width"];
             NSNumber *height = [VideoInfoJson objectForKey:@"height"];
             
-            if([height intValue] < 100 || [width intValue] < 100){
-                goto getInfo;
-            }
+//            if([height intValue] < 100 || [width intValue] < 100){
+//                goto getInfo;
+//            }
             
-            [self.player setAttr:@"vheight" data:height];
-            [self.player setAttr:@"vwidth" data:width];
+            [self.player setAttr:@"vheight" data:[NSNumber numberWithInt:100]];
+            [self.player setAttr:@"vwidth" data:[NSNumber numberWithInt:100]];
         }
         
         NSString *fvHost = [[NSURL URLWithString:firstVideo] host];

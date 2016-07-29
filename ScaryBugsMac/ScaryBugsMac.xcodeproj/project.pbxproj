@@ -110,8 +110,6 @@
 		143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */; };
 		143E38501D3F1809004B0A4D /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
 		143E38511D3F1809004B0A4D /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
-		143E38531D3F1809004B0A4D /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
-		143E38551D3F1809004B0A4D /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		143E38571D3F1809004B0A4D /* 1.mp4.pbb in Resources */ = {isa = PBXBuildFile; fileRef = 142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */; };
 		143E38581D3F1809004B0A4D /* exitfillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F771D2A187300838B88 /* exitfillscreen_lr.pdf */; };
 		143E38591D3F1809004B0A4D /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 843CADFE1D09367800CE84F4 /* Appfile */; };
@@ -200,6 +198,35 @@
 		14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE81D49D80400922A62 /* View+shadeGuide.swift */; };
 		14815AEA1D49E78200922A62 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
+		14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
+		14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
+		14815B211D4AF55A00922A62 /* BarrageDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFA1D4AF55A00922A62 /* BarrageDescriptor.m */; };
+		14815B221D4AF55A00922A62 /* BarrageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFC1D4AF55A00922A62 /* BarrageDispatcher.m */; };
+		14815B231D4AF55A00922A62 /* BarrageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFE1D4AF55A00922A62 /* BarrageRenderer.m */; };
+		14815B241D4AF55A00922A62 /* BarrageSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B001D4AF55A00922A62 /* BarrageSpriteFactory.m */; };
+		14815B251D4AF55A00922A62 /* BarrageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B041D4AF55A00922A62 /* BarrageLoader.m */; };
+		14815B261D4AF55A00922A62 /* BarrageFloatImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B071D4AF55A00922A62 /* BarrageFloatImageSprite.m */; };
+		14815B271D4AF55A00922A62 /* BarrageFloatSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B091D4AF55A00922A62 /* BarrageFloatSprite.m */; };
+		14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */; };
+		14815B291D4AF55A00922A62 /* BarrageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0D1D4AF55A00922A62 /* BarrageSprite.m */; };
+		14815B2A1D4AF55A00922A62 /* BarrageSpriteUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B101D4AF55A00922A62 /* BarrageSpriteUtility.m */; };
+		14815B2B1D4AF55A00922A62 /* BarrageWalkImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B121D4AF55A00922A62 /* BarrageWalkImageSprite.m */; };
+		14815B2C1D4AF55A00922A62 /* BarrageWalkSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B141D4AF55A00922A62 /* BarrageWalkSprite.m */; };
+		14815B2D1D4AF55A00922A62 /* BarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B161D4AF55A00922A62 /* BarrageWalkTextSprite.m */; };
+		14815B2E1D4AF55A00922A62 /* NHDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B181D4AF55A00922A62 /* NHDisplayLink.m */; };
+		14815B2F1D4AF55A00922A62 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1A1D4AF55A00922A62 /* NSLabel.m */; };
+		14815B301D4AF55A00922A62 /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
+		14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1E1D4AF55A00922A62 /* NSView+UIView.m */; };
+		14815B351D4AFEBE00922A62 /* libdanmaku2ass.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
+		14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
+		14815B471D4B092100922A62 /* libdanmaku2ass.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */; };
+		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
+		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
+		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		14815B531D4B131A00922A62 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
+		14815B5A1D4B3A0C00922A62 /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */; };
+		14815B5B1D4B3A9F00922A62 /* libmediainfo.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -377,6 +404,8 @@
 			dstPath = lib;
 			dstSubfolderSpec = 6;
 			files = (
+				14815B5B1D4B3A9F00922A62 /* libmediainfo.0.dylib in CopyFiles */,
+				14815B351D4AFEBE00922A62 /* libdanmaku2ass.dylib in CopyFiles */,
 				143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in CopyFiles */,
 				143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in CopyFiles */,
 				143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in CopyFiles */,
@@ -452,6 +481,64 @@
 		14815AE81D49D80400922A62 /* View+shadeGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+shadeGuide.swift"; sourceTree = "<group>"; };
 		14815AF01D49FCBC00922A62 /* PlayPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPosition.h; sourceTree = "<group>"; };
 		14815AF11D49FCBC00922A62 /* PlayPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPosition.m; sourceTree = "<group>"; };
+		14815AF51D4AF55A00922A62 /* BarrageCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageCanvas.h; sourceTree = "<group>"; };
+		14815AF61D4AF55A00922A62 /* BarrageCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageCanvas.m; sourceTree = "<group>"; };
+		14815AF71D4AF55A00922A62 /* BarrageClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageClock.h; sourceTree = "<group>"; };
+		14815AF81D4AF55A00922A62 /* BarrageClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageClock.m; sourceTree = "<group>"; };
+		14815AF91D4AF55A00922A62 /* BarrageDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageDescriptor.h; sourceTree = "<group>"; };
+		14815AFA1D4AF55A00922A62 /* BarrageDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageDescriptor.m; sourceTree = "<group>"; };
+		14815AFB1D4AF55A00922A62 /* BarrageDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageDispatcher.h; sourceTree = "<group>"; };
+		14815AFC1D4AF55A00922A62 /* BarrageDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageDispatcher.m; sourceTree = "<group>"; };
+		14815AFD1D4AF55A00922A62 /* BarrageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageRenderer.h; sourceTree = "<group>"; };
+		14815AFE1D4AF55A00922A62 /* BarrageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageRenderer.m; sourceTree = "<group>"; };
+		14815AFF1D4AF55A00922A62 /* BarrageSpriteFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageSpriteFactory.h; sourceTree = "<group>"; };
+		14815B001D4AF55A00922A62 /* BarrageSpriteFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageSpriteFactory.m; sourceTree = "<group>"; };
+		14815B011D4AF55A00922A62 /* BarrageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageHeader.h; sourceTree = "<group>"; };
+		14815B031D4AF55A00922A62 /* BarrageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageLoader.h; sourceTree = "<group>"; };
+		14815B041D4AF55A00922A62 /* BarrageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageLoader.m; sourceTree = "<group>"; };
+		14815B061D4AF55A00922A62 /* BarrageFloatImageSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageFloatImageSprite.h; sourceTree = "<group>"; };
+		14815B071D4AF55A00922A62 /* BarrageFloatImageSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageFloatImageSprite.m; sourceTree = "<group>"; };
+		14815B081D4AF55A00922A62 /* BarrageFloatSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageFloatSprite.h; sourceTree = "<group>"; };
+		14815B091D4AF55A00922A62 /* BarrageFloatSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageFloatSprite.m; sourceTree = "<group>"; };
+		14815B0A1D4AF55A00922A62 /* BarrageFloatTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageFloatTextSprite.h; sourceTree = "<group>"; };
+		14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageFloatTextSprite.m; sourceTree = "<group>"; };
+		14815B0C1D4AF55A00922A62 /* BarrageSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageSprite.h; sourceTree = "<group>"; };
+		14815B0D1D4AF55A00922A62 /* BarrageSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageSprite.m; sourceTree = "<group>"; };
+		14815B0E1D4AF55A00922A62 /* BarrageSpriteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageSpriteProtocol.h; sourceTree = "<group>"; };
+		14815B0F1D4AF55A00922A62 /* BarrageSpriteUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageSpriteUtility.h; sourceTree = "<group>"; };
+		14815B101D4AF55A00922A62 /* BarrageSpriteUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageSpriteUtility.m; sourceTree = "<group>"; };
+		14815B111D4AF55A00922A62 /* BarrageWalkImageSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageWalkImageSprite.h; sourceTree = "<group>"; };
+		14815B121D4AF55A00922A62 /* BarrageWalkImageSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageWalkImageSprite.m; sourceTree = "<group>"; };
+		14815B131D4AF55A00922A62 /* BarrageWalkSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageWalkSprite.h; sourceTree = "<group>"; };
+		14815B141D4AF55A00922A62 /* BarrageWalkSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageWalkSprite.m; sourceTree = "<group>"; };
+		14815B151D4AF55A00922A62 /* BarrageWalkTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageWalkTextSprite.h; sourceTree = "<group>"; };
+		14815B161D4AF55A00922A62 /* BarrageWalkTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageWalkTextSprite.m; sourceTree = "<group>"; };
+		14815B171D4AF55A00922A62 /* NHDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHDisplayLink.h; sourceTree = "<group>"; };
+		14815B181D4AF55A00922A62 /* NHDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHDisplayLink.m; sourceTree = "<group>"; };
+		14815B191D4AF55A00922A62 /* NSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLabel.h; sourceTree = "<group>"; };
+		14815B1A1D4AF55A00922A62 /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
+		14815B1B1D4AF55A00922A62 /* NSValue+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+iOS.h"; sourceTree = "<group>"; };
+		14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+iOS.m"; sourceTree = "<group>"; };
+		14815B1D1D4AF55A00922A62 /* NSView+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+UIView.h"; sourceTree = "<group>"; };
+		14815B1E1D4AF55A00922A62 /* NSView+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+UIView.m"; sourceTree = "<group>"; };
+		14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libdanmaku2ass.dylib; sourceTree = "<group>"; };
+		14815B391D4B07BF00922A62 /* AssClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssClass.cpp; sourceTree = "<group>"; };
+		14815B3A1D4B07BF00922A62 /* AssClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssClass.hpp; sourceTree = "<group>"; };
+		14815B3B1D4B07BF00922A62 /* danmaku2ass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = danmaku2ass.cpp; sourceTree = "<group>"; };
+		14815B3C1D4B07BF00922A62 /* danmaku2ass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = danmaku2ass.h; sourceTree = "<group>"; };
+		14815B3D1D4B07BF00922A62 /* danmaku2ass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = danmaku2ass.hpp; sourceTree = "<group>"; };
+		14815B3F1D4B07BF00922A62 /* rapidxml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml.hpp; sourceTree = "<group>"; };
+		14815B401D4B07BF00922A62 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_iterators.hpp; sourceTree = "<group>"; };
+		14815B411D4B07BF00922A62 /* rapidxml_print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_print.hpp; sourceTree = "<group>"; };
+		14815B421D4B07BF00922A62 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
+		14815B491D4B0D0600922A62 /* BilibiliSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BilibiliSocketClient.h; sourceTree = "<group>"; };
+		14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BilibiliSocketClient.mm; sourceTree = "<group>"; };
+		14815B4B1D4B0D0600922A62 /* LiveChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveChat.h; sourceTree = "<group>"; };
+		14815B4C1D4B0D0600922A62 /* LiveChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveChat.m; sourceTree = "<group>"; };
+		14815B4D1D4B0D0600922A62 /* Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Socket.cpp; sourceTree = "<group>"; };
+		14815B4E1D4B0D0600922A62 /* Socket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Socket.hpp; sourceTree = "<group>"; };
+		14815B521D4B131A00922A62 /* water.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = water.xml; sourceTree = "<group>"; };
+		14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
 		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
@@ -733,9 +820,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143E38531D3F1809004B0A4D /* libz.1.dylib in Frameworks */,
-				143E38551D3F1809004B0A4D /* libmpv.dylib in Frameworks */,
+				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
+				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
+				14815B5A1D4B3A0C00922A62 /* libmediainfo.0.dylib in Frameworks */,
 				A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */,
+				14815B471D4B092100922A62 /* libdanmaku2ass.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +889,7 @@
 				840AA6901CFCA2EA00819203 /* 114.png */,
 				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
 				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
+				14815B521D4B131A00922A62 /* water.xml */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
 			);
@@ -847,6 +937,114 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
+		14815AF31D4AF55900922A62 /* BarrageRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				14815AF41D4AF55A00922A62 /* BarrageEngine */,
+				14815B011D4AF55A00922A62 /* BarrageHeader.h */,
+				14815B021D4AF55A00922A62 /* BarrageLoader */,
+				14815B051D4AF55A00922A62 /* BarrageSpirit */,
+				14815B171D4AF55A00922A62 /* NHDisplayLink.h */,
+				14815B181D4AF55A00922A62 /* NHDisplayLink.m */,
+				14815B191D4AF55A00922A62 /* NSLabel.h */,
+				14815B1A1D4AF55A00922A62 /* NSLabel.m */,
+				14815B1B1D4AF55A00922A62 /* NSValue+iOS.h */,
+				14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */,
+				14815B1D1D4AF55A00922A62 /* NSView+UIView.h */,
+				14815B1E1D4AF55A00922A62 /* NSView+UIView.m */,
+			);
+			path = BarrageRenderer;
+			sourceTree = "<group>";
+		};
+		14815AF41D4AF55A00922A62 /* BarrageEngine */ = {
+			isa = PBXGroup;
+			children = (
+				14815AF51D4AF55A00922A62 /* BarrageCanvas.h */,
+				14815AF61D4AF55A00922A62 /* BarrageCanvas.m */,
+				14815AF71D4AF55A00922A62 /* BarrageClock.h */,
+				14815AF81D4AF55A00922A62 /* BarrageClock.m */,
+				14815AF91D4AF55A00922A62 /* BarrageDescriptor.h */,
+				14815AFA1D4AF55A00922A62 /* BarrageDescriptor.m */,
+				14815AFB1D4AF55A00922A62 /* BarrageDispatcher.h */,
+				14815AFC1D4AF55A00922A62 /* BarrageDispatcher.m */,
+				14815AFD1D4AF55A00922A62 /* BarrageRenderer.h */,
+				14815AFE1D4AF55A00922A62 /* BarrageRenderer.m */,
+				14815AFF1D4AF55A00922A62 /* BarrageSpriteFactory.h */,
+				14815B001D4AF55A00922A62 /* BarrageSpriteFactory.m */,
+			);
+			path = BarrageEngine;
+			sourceTree = "<group>";
+		};
+		14815B021D4AF55A00922A62 /* BarrageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				14815B031D4AF55A00922A62 /* BarrageLoader.h */,
+				14815B041D4AF55A00922A62 /* BarrageLoader.m */,
+			);
+			path = BarrageLoader;
+			sourceTree = "<group>";
+		};
+		14815B051D4AF55A00922A62 /* BarrageSpirit */ = {
+			isa = PBXGroup;
+			children = (
+				14815B061D4AF55A00922A62 /* BarrageFloatImageSprite.h */,
+				14815B071D4AF55A00922A62 /* BarrageFloatImageSprite.m */,
+				14815B081D4AF55A00922A62 /* BarrageFloatSprite.h */,
+				14815B091D4AF55A00922A62 /* BarrageFloatSprite.m */,
+				14815B0A1D4AF55A00922A62 /* BarrageFloatTextSprite.h */,
+				14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */,
+				14815B0C1D4AF55A00922A62 /* BarrageSprite.h */,
+				14815B0D1D4AF55A00922A62 /* BarrageSprite.m */,
+				14815B0E1D4AF55A00922A62 /* BarrageSpriteProtocol.h */,
+				14815B0F1D4AF55A00922A62 /* BarrageSpriteUtility.h */,
+				14815B101D4AF55A00922A62 /* BarrageSpriteUtility.m */,
+				14815B111D4AF55A00922A62 /* BarrageWalkImageSprite.h */,
+				14815B121D4AF55A00922A62 /* BarrageWalkImageSprite.m */,
+				14815B131D4AF55A00922A62 /* BarrageWalkSprite.h */,
+				14815B141D4AF55A00922A62 /* BarrageWalkSprite.m */,
+				14815B151D4AF55A00922A62 /* BarrageWalkTextSprite.h */,
+				14815B161D4AF55A00922A62 /* BarrageWalkTextSprite.m */,
+			);
+			path = BarrageSpirit;
+			sourceTree = "<group>";
+		};
+		14815B381D4B07BF00922A62 /* CommentConvert */ = {
+			isa = PBXGroup;
+			children = (
+				14815B391D4B07BF00922A62 /* AssClass.cpp */,
+				14815B3A1D4B07BF00922A62 /* AssClass.hpp */,
+				14815B3B1D4B07BF00922A62 /* danmaku2ass.cpp */,
+				14815B3C1D4B07BF00922A62 /* danmaku2ass.h */,
+				14815B3D1D4B07BF00922A62 /* danmaku2ass.hpp */,
+				14815B3E1D4B07BF00922A62 /* rapidxml */,
+			);
+			path = CommentConvert;
+			sourceTree = "<group>";
+		};
+		14815B3E1D4B07BF00922A62 /* rapidxml */ = {
+			isa = PBXGroup;
+			children = (
+				14815B3F1D4B07BF00922A62 /* rapidxml.hpp */,
+				14815B401D4B07BF00922A62 /* rapidxml_iterators.hpp */,
+				14815B411D4B07BF00922A62 /* rapidxml_print.hpp */,
+				14815B421D4B07BF00922A62 /* rapidxml_utils.hpp */,
+			);
+			path = rapidxml;
+			sourceTree = "<group>";
+		};
+		14815B481D4B0D0600922A62 /* LiveChat */ = {
+			isa = PBXGroup;
+			children = (
+				14815B491D4B0D0600922A62 /* BilibiliSocketClient.h */,
+				14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */,
+				14815B4B1D4B0D0600922A62 /* LiveChat.h */,
+				14815B4C1D4B0D0600922A62 /* LiveChat.m */,
+				14815B4D1D4B0D0600922A62 /* Socket.cpp */,
+				14815B4E1D4B0D0600922A62 /* Socket.hpp */,
+			);
+			path = LiveChat;
+			sourceTree = "<group>";
+		};
 		148AB47A1CFFD78600CAF9BA /* Advertising */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +1061,9 @@
 		14AA3DC91D2A187200838B88 /* bilibili */ = {
 			isa = PBXGroup;
 			children = (
+				14815B481D4B0D0600922A62 /* LiveChat */,
+				14815B381D4B07BF00922A62 /* CommentConvert */,
+				14815AF31D4AF55900922A62 /* BarrageRenderer */,
 				14AA3F581D2A187300838B88 /* MBProgressHUD.h */,
 				14AA3F591D2A187300838B88 /* MBProgressHUD.m */,
 				14AA3FA41D2A187300838B88 /* PlayerControl.xib */,
@@ -881,6 +1082,8 @@
 		14AA3DCA1D2A187200838B88 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
+				14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */,
+				14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */,
 				142EC3A91D2D0B1A00B88F96 /* SMS4 */,
 				14AA3E351D2A187200838B88 /* libavcodec.57.dylib */,
 				14AA3E361D2A187200838B88 /* libavdevice.57.dylib */,
@@ -1419,6 +1622,8 @@
 				143E38A01D3F1809004B0A4D /* CopyFiles */,
 				6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */,
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
+				14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */,
+				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
 			);
 			buildRules = (
 			);
@@ -1626,6 +1831,7 @@
 				143E388E1D3F1809004B0A4D /* exitfillscreen_ub.pdf in Resources */,
 				143E388F1D3F1809004B0A4D /* menubutton.png in Resources */,
 				143E38901D3F1809004B0A4D /* copyright.txt in Resources */,
+				14815B531D4B131A00922A62 /* water.xml in Resources */,
 				143E38911D3F1809004B0A4D /* fillscreen_ub.pdf in Resources */,
 				143E38921D3F1809004B0A4D /* keywords.txt in Resources */,
 				143E38931D3F1809004B0A4D /* resizeindicator.png in Resources */,
@@ -1717,6 +1923,34 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "libmpv包文件执行install_name_tool";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\n#查看它们的 rpath\n#otool -L ${dirlist}\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n";
+		};
+		14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "单个文件执行install_name_tool";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nlib=\"libmediainfo.0.dylib\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$lib\" ]; then\notool -L ${lib}\ninstall_name_tool -id \"@executable_path/lib/${lib}\" ${lib}\notool -L ${lib}\nfi";
 		};
 		412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2078,26 +2312,37 @@
 			files = (
 				143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */,
 				143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */,
+				14815B2B1D4AF55A00922A62 /* BarrageWalkImageSprite.m in Sources */,
 				143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */,
 				143E37FF1D3F1809004B0A4D /* BindingPhoneViewController.swift in Sources */,
 				143E38001D3F1809004B0A4D /* userDao.m in Sources */,
+				14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */,
 				143E38011D3F1809004B0A4D /* BaseDao.m in Sources */,
 				143E38021D3F1809004B0A4D /* DateTool.m in Sources */,
 				143E38031D3F1809004B0A4D /* PycSocketClientManager.swift in Sources */,
 				143E38041D3F1809004B0A4D /* PycFolder.m in Sources */,
 				143E38051D3F1809004B0A4D /* SeriesDao.m in Sources */,
+				14815B221D4AF55A00922A62 /* BarrageDispatcher.m in Sources */,
 				143E38061D3F1809004B0A4D /* ScaryBugDoc.swift in Sources */,
+				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
 				143E38081D3F1809004B0A4D /* VerificationCodeModel.m in Sources */,
 				143E38091D3F1809004B0A4D /* DB.m in Sources */,
+				14815B241D4AF55A00922A62 /* BarrageSpriteFactory.m in Sources */,
 				143E380A1D3F1809004B0A4D /* ArticleDao.m in Sources */,
 				143E380B1D3F1809004B0A4D /* LookMedia.m in Sources */,
 				143E380C1D3F1809004B0A4D /* PycFile.m in Sources */,
 				143E380D1D3F1809004B0A4D /* ReceiveFileDao.m in Sources */,
+				14815B501D4B0D0600922A62 /* LiveChat.m in Sources */,
+				14815B271D4AF55A00922A62 /* BarrageFloatSprite.m in Sources */,
 				143E380E1D3F1809004B0A4D /* ScaryBugData.swift in Sources */,
+				14815B251D4AF55A00922A62 /* BarrageLoader.m in Sources */,
 				143E380F1D3F1809004B0A4D /* OutFile.m in Sources */,
 				143E38101D3F1809004B0A4D /* utility.cpp in Sources */,
+				14815B211D4AF55A00922A62 /* BarrageDescriptor.m in Sources */,
 				143E38111D3F1809004B0A4D /* SendFileDao.m in Sources */,
+				14815B511D4B0D0600922A62 /* Socket.cpp in Sources */,
+				14815B2C1D4AF55A00922A62 /* BarrageWalkSprite.m in Sources */,
 				143E38121D3F1809004B0A4D /* SecretModel.m in Sources */,
 				143E38131D3F1809004B0A4D /* SMS4.cpp in Sources */,
 				143E38141D3F1809004B0A4D /* VerificationCodeDao.m in Sources */,
@@ -2106,11 +2351,14 @@
 				143E38171D3F1809004B0A4D /* NSString+More.m in Sources */,
 				143E38181D3F1809004B0A4D /* readMe.md in Sources */,
 				143E38191D3F1809004B0A4D /* NewPycUserRemote.m in Sources */,
+				14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */,
 				143E381A1D3F1809004B0A4D /* NSTextField+Attribute.m in Sources */,
 				143E381B1D3F1809004B0A4D /* MyProduct.m in Sources */,
 				143E381C1D3F1809004B0A4D /* Reachability.m in Sources */,
 				143E381D1D3F1809004B0A4D /* AppDelegate.swift in Sources */,
 				143E381E1D3F1809004B0A4D /* RefreshDataModel.m in Sources */,
+				14815B291D4AF55A00922A62 /* BarrageSprite.m in Sources */,
+				14815B301D4AF55A00922A62 /* NSValue+iOS.m in Sources */,
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
 				14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */,
@@ -2119,6 +2367,7 @@
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,
 				143E38241D3F1809004B0A4D /* PycPrivateFile.m in Sources */,
+				14815B261D4AF55A00922A62 /* BarrageFloatImageSprite.m in Sources */,
 				143E38251D3F1809004B0A4D /* AppDelegateHelper.m in Sources */,
 				14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */,
 				143E38261D3F1809004B0A4D /* PycCode.mm in Sources */,
@@ -2131,11 +2380,14 @@
 				143E382D1D3F1809004B0A4D /* SeriesModel.m in Sources */,
 				143E382E1D3F1809004B0A4D /* AdvertisingView.m in Sources */,
 				143E382F1D3F1809004B0A4D /* SM3.c in Sources */,
+				14815B2D1D4AF55A00922A62 /* BarrageWalkTextSprite.m in Sources */,
 				143E38301D3F1809004B0A4D /* LKDaoBase.m in Sources */,
 				143E38311D3F1809004B0A4D /* Array+RemoveObject.swift in Sources */,
 				143E38321D3F1809004B0A4D /* NSDate+TimeInterval.m in Sources */,
 				143E38331D3F1809004B0A4D /* ArticleModel.m in Sources */,
+				14815B231D4AF55A00922A62 /* BarrageRenderer.m in Sources */,
 				143E38341D3F1809004B0A4D /* ReceiveFileManager.m in Sources */,
+				14815B2E1D4AF55A00922A62 /* NHDisplayLink.m in Sources */,
 				143E38351D3F1809004B0A4D /* AdvertisingImgCache.m in Sources */,
 				143E38361D3F1809004B0A4D /* ReceiveViewController.swift in Sources */,
 				143E38381D3F1809004B0A4D /* NSDate+String.m in Sources */,
@@ -2144,12 +2396,15 @@
 				143E383B1D3F1809004B0A4D /* BGTheme.m in Sources */,
 				143E383C1D3F1809004B0A4D /* ActivationController.swift in Sources */,
 				143E383D1D3F1809004B0A4D /* ControlsWithVibracy.m in Sources */,
+				14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */,
 				143E383E1D3F1809004B0A4D /* MBProgressHUD.m in Sources */,
 				143E383F1D3F1809004B0A4D /* NSString+LcsDiff.m in Sources */,
 				143E38401D3F1809004B0A4D /* Player.m in Sources */,
 				143E38411D3F1809004B0A4D /* PlayerView.mm in Sources */,
 				143E38421D3F1809004B0A4D /* PlayerWindow.m in Sources */,
 				143E38431D3F1809004B0A4D /* PlayerLoader.m in Sources */,
+				14815B2A1D4AF55A00922A62 /* BarrageSpriteUtility.m in Sources */,
+				14815B2F1D4AF55A00922A62 /* NSLabel.m in Sources */,
 				143E38441D3F1809004B0A4D /* PlayerManager.m in Sources */,
 				143E38451D3F1809004B0A4D /* PlayLocalFile.m in Sources */,
 				143E38461D3F1809004B0A4D /* PlayerEventProxy.m in Sources */,
@@ -2165,6 +2420,7 @@
 				143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */,
 				143E38501D3F1809004B0A4D /* VP_Local.m in Sources */,
 				143E38511D3F1809004B0A4D /* VideoProvider.m in Sources */,
+				14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

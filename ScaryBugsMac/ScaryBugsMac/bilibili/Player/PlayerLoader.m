@@ -124,6 +124,7 @@
         BOOL haveSub = [subHelper canHandle:_attrs];
         if(haveSub){
 //            [self setText:@"正在下载弹幕/字幕"];
+            [self setText:@"添加水印"];
             _attrs = [subHelper getSubtitle:attrs];
         }
         dispatch_async(dispatch_get_main_queue(), ^(void){

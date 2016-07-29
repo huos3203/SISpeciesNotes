@@ -57,7 +57,8 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
-    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+    NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
 }
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
