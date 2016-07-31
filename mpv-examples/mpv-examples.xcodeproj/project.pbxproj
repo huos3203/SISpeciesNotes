@@ -608,7 +608,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */;
 			buildPhases = (
-				96605ED4B4AFBE182AF2E6BA /* 📦 Check Pods Manifest.lock */,
+				96605ED4B4AFBE182AF2E6BA /* [CP] Check Pods Manifest.lock */,
 				B3C98ED6C76E7A72126602BB /* [CP] Check Pods Manifest.lock */,
 				14562FD51D11498400DB35E2 /* Sources */,
 				14562FD61D11498400DB35E2 /* Frameworks */,
@@ -820,14 +820,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-mpv-examples/Pods-mpv-examples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96605ED4B4AFBE182AF2E6BA /* 📦 Check Pods Manifest.lock */ = {
+		96605ED4B4AFBE182AF2E6BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

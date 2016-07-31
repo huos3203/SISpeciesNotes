@@ -37,7 +37,7 @@ typedef void (^ShadeBlock)();
     __weak IBOutlet NSTextField *ibWaterLabel;
     
     NSTextField *CountDownLabel;
-    NSTimeInterval *CountDown;
+    NSInteger CountDownTime;
     
     PlayerControlWindowController *playerControlWindowController;
     NSString *videoDomain;
@@ -110,8 +110,6 @@ inline void check_error(int status)
     //hsg
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CancleClosePlayerWindows:) name:@"CancleClosePlayerWindows" object:nil];
-    
-    CountDown = [NSTimeInterval ini];
 }
 
 -(void)CancleClosePlayerWindows:(NSNotification *)info {
@@ -191,9 +189,12 @@ inline void check_error(int status)
 - (void)setKeyInfo:(NSNotification *) notification{
     NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
     NSString *water = [notification.userInfo valueForKey:@"waterMark"];
-    
+    NSNumber *limitTime = [notification.userInfo valueForKey:@"CountDownTime"];
     if (water) {
         ibWaterLabel.stringValue = water;
+    }
+    if (limitTime) {
+        CountDownTime = limitTime.integerValue;
     }
     
     NSLog(@"[PlayerView] Starting load video");
@@ -496,7 +497,7 @@ getInfo:
     
     [[NSFileManager defaultManager] removeItemAtPath:OutFile error:nil];
     
-    CommentParser *p = new CommentParser;
+//    CommentParser *p = new CommentParser;
     
     NSString *block = [[NSUserDefaults standardUserDefaults] objectForKey:@"blockKeywords"];
     int blockBadword = [self getSettings:@"blcokBadword"];
@@ -522,21 +523,21 @@ getInfo:
         NSArray *blocks = [blockstr componentsSeparatedByString:@"|"];
         if([block length] > 0){
             for (NSString* string in blocks) {
-                p->SetBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
+//                p->SetBlockWord([string cStringUsingEncoding:NSUTF8StringEncoding]);
             }
         }
     }
     
-    p->SetFile([file cStringUsingEncoding:NSUTF8StringEncoding], [OutFile cStringUsingEncoding:NSUTF8StringEncoding]);
-    p->SetRes([width intValue], [height intValue]);
-    p->SetFont([fontName cStringUsingEncoding:NSUTF8StringEncoding], (int)[height intValue]/fontsize);
-    p->SetDuration(mq,5);
-    p->SetAlpha([[NSString stringWithFormat:@"%.2f",[self getSettings:@"transparency"]] floatValue]);
-    p->SetRemoveBottom(disableBottom);
-    bool isSuc = p->Convert(0);
-    if(!isSuc){
-        return NULL;
-    }
+//    p->SetFile([file cStringUsingEncoding:NSUTF8StringEncoding], [OutFile cStringUsingEncoding:NSUTF8StringEncoding]);
+//    p->SetRes([width intValue], [height intValue]);
+//    p->SetFont([fontName cStringUsingEncoding:NSUTF8StringEncoding], (int)[height intValue]/fontsize);
+//    p->SetDuration(mq,5);
+//    p->SetAlpha([[NSString stringWithFormat:@"%.2f",[self getSettings:@"transparency"]] floatValue]);
+//    p->SetRemoveBottom(disableBottom);
+//    bool isSuc = p->Convert(0);
+//    if(!isSuc){
+//        return NULL;
+//    }
     
     NSLog(@"Comment converted to %@",OutFile);
     return OutFile;
@@ -639,8 +640,8 @@ getInfo:
                 [self.loadingImage setAnimates:NO];
                 [LoadingView setHidden:YES];
                 //开启水印动画
-                shadeblock = [ibWaterLabel fireTimer];
-                countDownblock = [CountDownLabel fireTimer];
+                shadeblock = [ibWaterLabel fireTimer:CountDownTime];
+                countDownblock = [CountDownLabel fireTimer:CountDownTime];
             });
             break;
         }
@@ -674,7 +675,7 @@ getInfo:
             break;
         }
         case MPV_EVENT_UNPAUSE: {
-            shadeblock = [ibWaterLabel fireTimer:<#(double)#>];
+            shadeblock = [ibWaterLabel fireTimer:CountDownTime];
             break;
         }
             

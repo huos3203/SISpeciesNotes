@@ -217,16 +217,12 @@
 		14815B2F1D4AF55A00922A62 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1A1D4AF55A00922A62 /* NSLabel.m */; };
 		14815B301D4AF55A00922A62 /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
 		14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1E1D4AF55A00922A62 /* NSView+UIView.m */; };
-		14815B351D4AFEBE00922A62 /* libdanmaku2ass.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
-		14815B471D4B092100922A62 /* libdanmaku2ass.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */; };
 		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
 		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
 		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
 		14815B531D4B131A00922A62 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
-		14815B5A1D4B3A0C00922A62 /* libmediainfo.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */; };
-		14815B5B1D4B3A9F00922A62 /* libmediainfo.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		148AB4751CFFD24E00CAF9BA /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
 		148AB4801CFFD78600CAF9BA /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
 		148AB4811CFFD78600CAF9BA /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
@@ -404,8 +400,6 @@
 			dstPath = lib;
 			dstSubfolderSpec = 6;
 			files = (
-				14815B5B1D4B3A9F00922A62 /* libmediainfo.0.dylib in CopyFiles */,
-				14815B351D4AFEBE00922A62 /* libdanmaku2ass.dylib in CopyFiles */,
 				143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in CopyFiles */,
 				143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in CopyFiles */,
 				143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in CopyFiles */,
@@ -521,7 +515,6 @@
 		14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+iOS.m"; sourceTree = "<group>"; };
 		14815B1D1D4AF55A00922A62 /* NSView+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+UIView.h"; sourceTree = "<group>"; };
 		14815B1E1D4AF55A00922A62 /* NSView+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+UIView.m"; sourceTree = "<group>"; };
-		14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libdanmaku2ass.dylib; sourceTree = "<group>"; };
 		14815B391D4B07BF00922A62 /* AssClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssClass.cpp; sourceTree = "<group>"; };
 		14815B3A1D4B07BF00922A62 /* AssClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssClass.hpp; sourceTree = "<group>"; };
 		14815B3B1D4B07BF00922A62 /* danmaku2ass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = danmaku2ass.cpp; sourceTree = "<group>"; };
@@ -538,7 +531,6 @@
 		14815B4D1D4B0D0600922A62 /* Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Socket.cpp; sourceTree = "<group>"; };
 		14815B4E1D4B0D0600922A62 /* Socket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Socket.hpp; sourceTree = "<group>"; };
 		14815B521D4B131A00922A62 /* water.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = water.xml; sourceTree = "<group>"; };
-		14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmediainfo.0.dylib; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
 		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
@@ -822,9 +814,7 @@
 			files = (
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
-				14815B5A1D4B3A0C00922A62 /* libmediainfo.0.dylib in Frameworks */,
 				A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */,
-				14815B471D4B092100922A62 /* libdanmaku2ass.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,8 +1072,6 @@
 		14AA3DCA1D2A187200838B88 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
-				14815B321D4AFDD000922A62 /* libdanmaku2ass.dylib */,
-				14815B591D4B3A0C00922A62 /* libmediainfo.0.dylib */,
 				142EC3A91D2D0B1A00B88F96 /* SMS4 */,
 				14AA3E351D2A187200838B88 /* libavcodec.57.dylib */,
 				14AA3E361D2A187200838B88 /* libavdevice.57.dylib */,
@@ -1543,7 +1531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD8D1CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMac" */;
 			buildPhases = (
-				A3B6C697C5A4E0665B7E8F40 /* 📦 Check Pods Manifest.lock */,
+				A3B6C697C5A4E0665B7E8F40 /* [CP] Check Pods Manifest.lock */,
 				9150ABBDE8643BB0A28C6C2F /* [CP] Check Pods Manifest.lock */,
 				F126E906437D4404B256B584 /* [CP] Check Pods Manifest.lock */,
 				1437DD641CF2A75F001BD2D2 /* Sources */,
@@ -1568,7 +1556,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1437DD901CF2A75F001BD2D2 /* Build configuration list for PBXNativeTarget "ScaryBugsMacTests" */;
 			buildPhases = (
-				CC7F24D4F7865BCE9E6DBF72 /* 📦 Check Pods Manifest.lock */,
+				CC7F24D4F7865BCE9E6DBF72 /* [CP] Check Pods Manifest.lock */,
 				8209479971E8807479EC849B /* [CP] Check Pods Manifest.lock */,
 				5AB1BF30CD81B87F73EBA38F /* [CP] Check Pods Manifest.lock */,
 				1437DD751CF2A75F001BD2D2 /* Sources */,
@@ -1611,7 +1599,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
-				A7CEB6B6091EACAA3501D251 /* 📦 Check Pods Manifest.lock */,
+				A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */,
 				143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FA1D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FB1D3F1809004B0A4D /* Sources */,
@@ -1906,7 +1894,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		143E389D1D3F1809004B0A4D /* [CP] Copy Pods Resources */ = {
@@ -1921,7 +1909,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */ = {
@@ -2057,14 +2045,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3B6C697C5A4E0665B7E8F40 /* 📦 Check Pods Manifest.lock */ = {
+		A3B6C697C5A4E0665B7E8F40 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2072,14 +2060,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A7CEB6B6091EACAA3501D251 /* 📦 Check Pods Manifest.lock */ = {
+		A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2117,14 +2105,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC7F24D4F7865BCE9E6DBF72 /* 📦 Check Pods Manifest.lock */ = {
+		CC7F24D4F7865BCE9E6DBF72 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

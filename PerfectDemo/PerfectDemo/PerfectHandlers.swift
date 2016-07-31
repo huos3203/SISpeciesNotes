@@ -15,16 +15,16 @@ public func PerfectServerModuleInit() {
 	
 	// Register our handler class with the PageHandlerRegistry.
 	// The name "PerfectHandler", which we supply here, is used within a mustache template to associate the template with the handler.
-//	PageHandlerRegistry.addPageHandler("PerfectHandler") {
-//		
-//		// This closure is called in order to create the handler object.
-//		// It is called once for each relevant request.
-//		// The supplied WebResponse object can be used to tailor the return value.
-//		// However, all request processing should take place in the `valuesForResponse` function.
-//		(r:WebResponse) -> PageHandler in
-//		
-//		return PerfectHandler()
-//	}
+	PageHandlerRegistry.addPageHandler("PerfectHandler") {
+		
+		// This closure is called in order to create the handler object.
+		// It is called once for each relevant request.
+		// The supplied WebResponse object can be used to tailor the return value.
+		// However, all request processing should take place in the `valuesForResponse` function.
+		(r:WebResponse) -> PageHandler in
+		
+		return PerfectHandler()
+	}
     
     Routing.Handler.registerGlobally()
     

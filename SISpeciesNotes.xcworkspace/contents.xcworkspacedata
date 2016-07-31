@@ -4,6 +4,13 @@
    <Group
       location = "group:Playground"
       name = "Playground">
+      <Group
+         location = "container:"
+         name = "osx">
+         <FileRef
+            location = "group:Playground/osx/firstPlayground.playground">
+         </FileRef>
+      </Group>
       <FileRef
          location = "group:/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/RealmSwiftGettingStarted.playground">
       </FileRef>
@@ -125,10 +132,10 @@
          location = "group:PerfectDemo/PerfectDemo.xcodeproj">
       </FileRef>
       <FileRef
-         location = "absolute:../../Perfect-1.0.0/PerfectLib/PerfectLib.xcodeproj">
+         location = "group:Users/admin/Perfect-1.0.0/PerfectLib/PerfectLib.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:../../Perfect-1.0.0/PerfectServer/PerfectServer.xcodeproj">
+         location = "group:../../../../Perfect-1.0.0/PerfectServer/PerfectServer.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:PerfectDemo/readMe.md">

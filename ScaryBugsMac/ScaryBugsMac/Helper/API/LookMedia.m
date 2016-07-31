@@ -52,6 +52,7 @@
     }
     
     [dic setObject:_waterMark forKey:@"waterMark"];
+    [dic setObject:[NSNumber numberWithInteger:_limitTime] forKey:@"CountDownTime"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
     
 }
