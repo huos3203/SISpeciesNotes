@@ -205,7 +205,8 @@ inline void check_error(int status)
     }else{
         CountDownTime = -1;
     }
-    CountDownTime = 70;
+    CountDownTime = 20;
+    countDownblock = [CountDownLabel fireTimer:CountDownTime];
     NSLog(@"[PlayerView] Starting load video");
     dispatch_async(self.player.queue, ^{
 getInfo:
@@ -613,6 +614,9 @@ getInfo:
     switch (event->event_id) {
         case MPV_EVENT_SHUTDOWN: {
             dispatch_async(dispatch_get_main_queue(), ^(void){
+                if (shadeblock){
+                    shadeblock();
+                }
                 [self.view.window performClose:self];
             });
             NSLog(@"Stopping player");
@@ -650,7 +654,6 @@ getInfo:
                 [LoadingView setHidden:YES];
                 //开启水印动画
                 shadeblock = [ibWaterLabel fireTimer:0];
-                countDownblock = [CountDownLabel fireTimer:CountDownTime];
             });
             break;
         }
@@ -663,12 +666,6 @@ getInfo:
         case MPV_EVENT_IDLE:{
             if(endFile){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    if (shadeblock){
-                            shadeblock();
-                    }
-                    if (countDownblock) {
-                            countDownblock();
-                    }
                     [LoadingView setHidden:NO];
                     [self.textTip setStringValue:NSLocalizedString(@"播放完成，关闭窗口继续", nil)];
                     [self runAutoSwitch];
@@ -763,6 +760,13 @@ getInfo:
 
 
 - (void)dealloc{
+    if (countDownblock) {
+        countDownblock();
+    }
+    if (shadeblock){
+        shadeblock();
+    }
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"[PlayerView] Dealloc");
 }

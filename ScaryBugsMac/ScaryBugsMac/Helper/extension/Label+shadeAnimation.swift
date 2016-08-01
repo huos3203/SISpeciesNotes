@@ -77,13 +77,18 @@ extension NSTextField
             
             self.editable = false
             self.bordered = false
-            (self as NSControl).alignment = NSTextAlignment(rawValue:2)!
+            
+//            (self as NSControl).alignment = NSTextAlignment(rawValue:2)!
+            self.alignment = NSTextAlignment(rawValue:2)!
+//            (self as NSControl).font = NSFont.systemFontOfSize(CGFloat(20))
+            self.font = NSFont.systemFontOfSize(CGFloat(20))
             self.textColor = NSColor.whiteColor()
             self.backgroundColor = NSColor.grayColor()
             
             NSTextField.minutes = Int(Countdown / 60)
             NSTextField.seconds = Int(Countdown % 60)
             timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
+            
         }else{
             
             //默认显示，24s之后隐藏
@@ -119,7 +124,7 @@ extension NSTextField
             //背景色
             if (NSTextField.seconds < 10)
             {
-                self.animator().alphaValue = 0.3
+                self.animator().alphaValue = 0.7
                 self.backgroundColor = NSColor.redColor()
                 if (NSTextField.seconds == 0)
                 {
