@@ -170,8 +170,14 @@ inline void check_error(int status)
     //倒计时
     CountDownLabel = [NSTextField new];
     [ep addSubview:CountDownLabel positioned:NSWindowAbove relativeTo:nil];
-    
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
+    
+//    ep.translatesAutoresizingMaskIntoConstraints = NO;
+//    NSArray *epV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[ep]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ep)];
+//    NSArray *epH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[ep]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ep)];
+//    [self.view addConstraints:epV];
+//    [self.view addConstraints:epH];
+    
     [self.view setWantsLayer:YES];
     
     //hsg
@@ -193,10 +199,13 @@ inline void check_error(int status)
     if (water) {
         ibWaterLabel.stringValue = water;
     }
-    if (limitTime) {
-        CountDownTime = limitTime.integerValue;
-    }
     
+    if (limitTime.integerValue != 0) {
+        CountDownTime = limitTime.integerValue;
+    }else{
+        CountDownTime = -1;
+    }
+    CountDownTime = 70;
     NSLog(@"[PlayerView] Starting load video");
     dispatch_async(self.player.queue, ^{
 getInfo:
@@ -640,7 +649,7 @@ getInfo:
                 [self.loadingImage setAnimates:NO];
                 [LoadingView setHidden:YES];
                 //开启水印动画
-                shadeblock = [ibWaterLabel fireTimer:CountDownTime];
+                shadeblock = [ibWaterLabel fireTimer:0];
                 countDownblock = [CountDownLabel fireTimer:CountDownTime];
             });
             break;
@@ -675,7 +684,7 @@ getInfo:
             break;
         }
         case MPV_EVENT_UNPAUSE: {
-            shadeblock = [ibWaterLabel fireTimer:CountDownTime];
+            shadeblock = [ibWaterLabel fireTimer:0];
             break;
         }
             

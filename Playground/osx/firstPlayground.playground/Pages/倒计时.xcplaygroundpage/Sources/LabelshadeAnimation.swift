@@ -49,7 +49,6 @@ extension NSTextField
     public func fireTimer(Countdown:Double)->()->()
     {
         var timer:NSTimer!
-       
         if Countdown == 0 {
             //默认显示，24s之后隐藏
             timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hidden as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
@@ -60,10 +59,9 @@ extension NSTextField
             }else{
                 self.frame.origin = CGPointMake(CGFloat(100), CGFloat(0))
             }
-            
+
             self.minute = Countdown / 60
             self.second = Countdown % 60
-            print("\(self.minute),,,\(self.second)")
 
             timer = NSTimer(timeInterval: 1.0, target: self, selector:#selector(NSTextField.Countdown), userInfo: nil, repeats: true)
         }
@@ -83,7 +81,6 @@ extension NSTextField
         //
         var time = 10
         self.stringValue = "\(second) s"
-        print("\(self.minute),,,\(self.second)")
         if (time > 0) {
             if (second<0) {
                 minute = minute - 1

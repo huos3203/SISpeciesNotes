@@ -35,7 +35,7 @@ let getTask = NSURLSession.sharedSession().dataTaskWithURL(url) {
     print(dictionary)
 }
 
-getTask.resume()
+//getTask.resume()
 
 //: 延时运行也是有限度的。如果你足够有耐心，会发现在第一个例子中的 NSTimer 每秒打印一次的 Hi 的计数最终会停留在 30 次。这是因为即使在开启了持续执行的情况下，Playground 也不会永远运行下去，默认情况下它会在顶层代码最后一句运行后 30 秒的时候停止执行。这个时间长度对于绝大多数的需求场景来说都是足够的了，但是如果你想改变这个时间的话，可以通过 Alt + Cmd + 回车 来打开辅助编辑器。在这里你会看到控制台输出和时间轴，将右下角的 30 改成你想要的数字，就可以对延时运行的最长时间进行设定了。
 

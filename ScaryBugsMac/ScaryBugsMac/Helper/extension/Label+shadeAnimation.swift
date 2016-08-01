@@ -21,8 +21,15 @@ extension NSTextField
         //y 区间大小（0...y_max）
         let y_max = mvFrame.height - self.frame.size.height - 100
         //随机区间 ＝ 区间最小值 + 随机值
-        let x_random = arc4random() % UInt32(x_max)
-        let y_random = arc4random() % UInt32(y_max) + 60
+        var x_random:UInt32 = 0
+        var y_random:UInt32 = 0
+        if x_max > 0 {
+            x_random = arc4random() % UInt32(x_max)
+        }
+        if y_max > 0 {
+            y_random = arc4random() % UInt32(y_max) + 60
+        }
+        
         //随机坐标 : xy坐标为控件的左上角(0,0)所以不用作一下计算
         //            let x = x_random + UInt32(self.frame.size.width)
         //            let y = y_random + UInt32(self.frame.size.height)
@@ -30,8 +37,11 @@ extension NSTextField
         return CGPointMake(CGFloat(x_random), CGFloat(y_random))
     }
     
+    
     //秒
-    var second:NSTimeInterval{
+    static var seconds:Int!
+    static var minutes:Int!
+    var second:Double{
         set{
         }
         get{
@@ -39,7 +49,7 @@ extension NSTextField
         }
     }
     //分
-    var minute:NSTimeInterval{
+    var minute:Double{
         set(newValue){
         }
         get{
@@ -51,21 +61,33 @@ extension NSTextField
     {
         var timer:NSTimer!
        
-        if Countdown == 0 {
+        if Countdown > 0 {
+            
+            self.translatesAutoresizingMaskIntoConstraints = false
+            let textFieldV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[textField]",
+                                                                                      options: [],
+                                                                                      metrics: nil,
+                                                                                      views: ["textField":self])
+            let textFieldH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[textField]-0-|",
+                                                                                      options: [],
+                                                                                      metrics: nil,
+                                                                                      views: ["textField":self])
+            superview?.addConstraints(textFieldH)
+            superview?.addConstraints(textFieldV)
+            
+            self.editable = false
+            self.bordered = false
+            (self as NSControl).alignment = NSTextAlignment(rawValue:2)!
+            self.textColor = NSColor.whiteColor()
+            self.backgroundColor = NSColor.grayColor()
+            
+            NSTextField.minutes = Int(Countdown / 60)
+            NSTextField.seconds = Int(Countdown % 60)
+            timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
+        }else{
+            
             //默认显示，24s之后隐藏
             timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hidden as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
-        }else{
-    
-            if let mvFrame = superview?.bounds {
-                self.frame.origin = CGPointMake(CGFloat(mvFrame.width/2), CGFloat(0))
-            }else{
-                self.frame.origin = CGPointMake(CGFloat(200), CGFloat(0))
-            }
-            
-            self.minute = Countdown / 60
-            self.second = Countdown % 60
-
-            timer = NSTimer(timeInterval: Countdown, target: self, selector: #selector(NSTextField.Countdown(_:)), userInfo: nil, repeats: true)
         }
         
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
@@ -79,30 +101,38 @@ extension NSTextField
         }
     }
 
-    func Countdown(time:NSTimeInterval) {
+    @objc func Countdown() {
         //
-        self.stringValue = "\(second) s"
-        if (time > 0) {
-            if (second<0) {
-                minute = minute - 1
-                second = 60
+        if NSTextField.minutes > 0 {
+            //ms
+            self.stringValue = "\(Int(NSTextField.minutes))分\(Int(NSTextField.seconds))秒"
+            
+            if (NSTextField.seconds == 0) {
+                NSTextField.minutes = NSTextField.minutes - 1
+                NSTextField.seconds = 60
             }
-            if (minute == 0) {
-                second = second - 1
-                self.stringValue = "\(second)秒"
-                //背景色
-                if (second < 10) {
-                    self.animator().alphaValue = 0.3
-                    self.backgroundColor = NSColor.redColor()
-                    if (second < 0) {
-                        //关闭播放器
-                        NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
-                    }
+            
+            NSTextField.seconds = NSTextField.seconds - 1
+            
+        }else{
+            
+            //背景色
+            if (NSTextField.seconds < 10)
+            {
+                self.animator().alphaValue = 0.3
+                self.backgroundColor = NSColor.redColor()
+                if (NSTextField.seconds == 0)
+                {
+                    //关闭播放器
+                    NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
                 }
-            } else {
-                self.stringValue = "\(minute)分\(second)秒"
             }
+            //s
+            self.stringValue = "\(Int(NSTextField.seconds))秒"
+            NSTextField.seconds = NSTextField.seconds - 1
+            
         }
+//        self.sizeToFit()
     }
     
     func hidden()
