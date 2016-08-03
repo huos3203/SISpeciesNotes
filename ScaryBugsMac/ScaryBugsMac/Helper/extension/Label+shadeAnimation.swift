@@ -91,8 +91,11 @@ extension NSTextField
             
         }else{
             
+            if (stringValue as NSString).length > 0 {
+                return {}
+            }
             //默认显示，24s之后隐藏
-            timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hidden as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
+            timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hiddenShade as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
         }
         
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
@@ -140,7 +143,7 @@ extension NSTextField
 //        self.sizeToFit()
     }
     
-    func hidden()
+    func hiddenShade()
     {
         //
         NSAnimationContext.runAnimationGroup({ (context) in

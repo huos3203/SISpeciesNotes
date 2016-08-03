@@ -337,6 +337,7 @@ singleton_implementation(AppDelegateHelper);
         applyNum =0;
         if (returnValue & ERR_OK_IS_FEE)
         {
+            [self hide:0.0];
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID Status:0];
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileApplyOpen:1 FileId:fileID];//seePycFile.fileID];
@@ -353,8 +354,8 @@ singleton_implementation(AppDelegateHelper);
             look.EncryptedLen = seePycFile.encryptedLen;
             look.fileSize = seePycFile.fileSize;
             look.offset = seePycFile.offset;
-            look.imageData = seePycFile.imageData;
             
+            look.imageData = seePycFile.imageData;
             [look lookMedia:seePycFile.filePycName];
         }
         else if(returnValue & ERR_FEE_SALER)
@@ -364,10 +365,10 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
+            [self hide:0.0];
             //自由传播
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID
-            
             LookMedia *look = [[LookMedia alloc] init];
             look.urlImagePath = seePycFile.fileName;
             look.limitTime = seePycFile.openTimeLong;
@@ -380,6 +381,7 @@ singleton_implementation(AppDelegateHelper);
             look.EncryptedLen = seePycFile.encryptedLen;
             look.fileSize = seePycFile.fileSize;
             look.offset = seePycFile.offset;
+            
             look.imageData = seePycFile.imageData;
             [look lookMedia:seePycFile.filePycName];
         }
@@ -713,6 +715,7 @@ singleton_implementation(AppDelegateHelper);
         
                 if (![result isEqualToString:@"0"]) {
                     applyNum=0;
+                    [self hide:0.0];
                     if ([result isEqualToString:@"1"]||[result isEqualToString:@"2"]||[result isEqualToString:@"3"]||
                         [result isEqualToString:@"4"]||[result isEqualToString:@"5"]) {
                         dispatch_async(dispatch_get_main_queue(), ^{

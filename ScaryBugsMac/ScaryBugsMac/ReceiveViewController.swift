@@ -521,7 +521,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             ReceiveFileDao.sharedReceiveFileDao().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
             
             
-            try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
+//            try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
             let uid = ReceiveFileDao.sharedReceiveFileDao().fetchUid(ReceiveColumn.fileid)
             if(ReceiveFileDao.sharedReceiveFileDao().fetchCountOfUid(ReceiveColumn.fileid) == 0)
             {
@@ -631,11 +631,11 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBAction func ibaBrowseFinder(sender: AnyObject) {
         let panel = NSOpenPanel()
         panel.message = ""
-        panel.prompt = "OK"
+        panel.prompt = "open"
         panel.canChooseDirectories = true
         panel.canChooseFiles = true
         var path_all = ""
-        var result = panel.runModal()
+        let result = panel.runModal()
         if result == NSFileHandlingPanelOKButton {
             //
             path_all = (panel.URL?.path!)!

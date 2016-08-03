@@ -28,7 +28,6 @@
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
 		143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
-		143E37FF1D3F1809004B0A4D /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		143E38001D3F1809004B0A4D /* userDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD21CFD844E001BCE84 /* userDao.m */; };
 		143E38011D3F1809004B0A4D /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD71CFD844E001BCE84 /* BaseDao.m */; };
 		143E38021D3F1809004B0A4D /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC31CFD8396001BCE84 /* DateTool.m */; };
@@ -188,6 +187,7 @@
 		143E38A71D3F1809004B0A4D /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		143E38A81D3F1809004B0A4D /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		14430C1E1D01214000A5394D /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		14430C2B1D012D1D00A5394D /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
 		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
@@ -294,7 +294,6 @@
 		14AA40E91D2A187300838B88 /* VideoAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB51D2A187300838B88 /* VideoAddress.m */; };
 		14AA40EA1D2A187300838B88 /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
 		14AA40EC1D2A187300838B88 /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
-		14B0CF751D34C715004D22B5 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		14B0CF781D34F394004D22B5 /* ActivationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF771D34F394004D22B5 /* ActivationController.swift */; };
 		14B0CF7A1D34F3AE004D22B5 /* ActivationSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */; };
 		14B25FA11CFD7823001BCE84 /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
@@ -720,8 +719,8 @@
 		14B25FDF1CFD844E001BCE84 /* SendFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendFileManager.m; sourceTree = "<group>"; };
 		14B25FE11CFD844E001BCE84 /* ArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
 		14B25FE21CFD844E001BCE84 /* ArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
-		14B25FE31CFD844E001BCE84 /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
-		14B25FE41CFD844E001BCE84 /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
+		14B25FE31CFD844E001BCE84 /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFactory.h; path = ../model/DataFactory.h; sourceTree = "<group>"; };
+		14B25FE41CFD844E001BCE84 /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataFactory.m; path = ../model/DataFactory.m; sourceTree = "<group>"; };
 		14B25FE51CFD844E001BCE84 /* MyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProduct.h; sourceTree = "<group>"; };
 		14B25FE61CFD844E001BCE84 /* MyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProduct.m; sourceTree = "<group>"; };
 		14B25FE71CFD844E001BCE84 /* OutFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutFile.h; sourceTree = "<group>"; };
@@ -1391,6 +1390,8 @@
 				14B25FD91CFD844E001BCE84 /* DB.m */,
 				14B25FDA1CFD844E001BCE84 /* LKDaoBase.h */,
 				14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */,
+				14B25FE31CFD844E001BCE84 /* DataFactory.h */,
+				14B25FE41CFD844E001BCE84 /* DataFactory.m */,
 				14B25FDC1CFD844E001BCE84 /* ReceiveFileManager.h */,
 				14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */,
 				14B25FDE1CFD844E001BCE84 /* SendFileManager.h */,
@@ -1404,8 +1405,6 @@
 			children = (
 				14B25FE11CFD844E001BCE84 /* ArticleModel.h */,
 				14B25FE21CFD844E001BCE84 /* ArticleModel.m */,
-				14B25FE31CFD844E001BCE84 /* DataFactory.h */,
-				14B25FE41CFD844E001BCE84 /* DataFactory.m */,
 				14B25FE51CFD844E001BCE84 /* MyProduct.h */,
 				14B25FE61CFD844E001BCE84 /* MyProduct.m */,
 				14B25FE71CFD844E001BCE84 /* OutFile.h */,
@@ -2238,7 +2237,6 @@
 				143A68691CFEC9AD00BC66A1 /* PycReceiveModel.swift in Sources */,
 				14B25FF31CFD844E001BCE84 /* SecretDao.m in Sources */,
 				14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */,
-				14B0CF751D34C715004D22B5 /* BindingPhoneViewController.swift in Sources */,
 				14B25FF61CFD844E001BCE84 /* userDao.m in Sources */,
 				14B25FF81CFD844E001BCE84 /* BaseDao.m in Sources */,
 				14B25FC41CFD8397001BCE84 /* DateTool.m in Sources */,
@@ -2350,7 +2348,6 @@
 				143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */,
 				14815B2B1D4AF55A00922A62 /* BarrageWalkImageSprite.m in Sources */,
 				143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */,
-				143E37FF1D3F1809004B0A4D /* BindingPhoneViewController.swift in Sources */,
 				143E38001D3F1809004B0A4D /* userDao.m in Sources */,
 				14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */,
 				143E38011D3F1809004B0A4D /* BaseDao.m in Sources */,
@@ -2383,6 +2380,7 @@
 				143E38131D3F1809004B0A4D /* SMS4.cpp in Sources */,
 				143E38141D3F1809004B0A4D /* VerificationCodeDao.m in Sources */,
 				143E38151D3F1809004B0A4D /* OpenUDID.m in Sources */,
+				143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */,
 				143E38161D3F1809004B0A4D /* HttpDes.cpp in Sources */,
 				143E38171D3F1809004B0A4D /* NSString+More.m in Sources */,
 				143E38181D3F1809004B0A4D /* readMe.md in Sources */,

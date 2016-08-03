@@ -209,5 +209,101 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/extension/Label+shadeAnimation.swift"
+            timestampString = "491907841.272216"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "hiddenShade()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in PBBReader):__ObjC.NSTextField.hiddenShade () -&gt; ()"
+                  moduleName = "PBBReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/ScaryBugsMac/ScaryBugsMac/Helper/extension/Label+shadeAnimation.swift"
+                  timestampString = "491907843.389278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in PBBReader):__ObjC.NSTextField.(hiddenShade () -&gt; ()).(closure #1)"
+                  moduleName = "PBBReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pengyucheng/git/SISpeciesNotes/ScaryBugsMac/ScaryBugsMac/Helper/extension/Label+shadeAnimation.swift"
+                  timestampString = "491907843.389434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScaryBugsMac/ScaryBugsMac/ReceiveViewController.swift"
+            timestampString = "491887641.048481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "639"
+            endingLineNumber = "639"
+            landmarkName = "ibaBrowseFinder(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScaryBugsMac/ScaryBugsMac/AppDelegateHelper.m"
+            timestampString = "491896096.976467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "-didFinishSeePycFileForUser"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "491905627.89942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1512"
+            endingLineNumber = "1512"
+            landmarkName = "-MakeOpenFilePackage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -198,15 +198,17 @@ inline void check_error(int status)
     NSNumber *limitTime = [notification.userInfo valueForKey:@"CountDownTime"];
     if (water) {
         ibWaterLabel.stringValue = water;
+    }else{
+        ibWaterLabel.hidden = YES;
     }
     
     if (limitTime.integerValue != 0) {
         CountDownTime = limitTime.integerValue;
+        countDownblock = [CountDownLabel fireTimer:CountDownTime];
     }else{
         CountDownTime = -1;
     }
-    CountDownTime = 20;
-    countDownblock = [CountDownLabel fireTimer:CountDownTime];
+
     NSLog(@"[PlayerView] Starting load video");
     dispatch_async(self.player.queue, ^{
 getInfo:
