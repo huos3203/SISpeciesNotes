@@ -149,7 +149,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         ibSeriesNameLabel.stringValue = seriesName
         makerLabel.stringValue = "作者对你说:"
         if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil) {
-            makerLabel.stringValue = "作者%@对你说:\(receiveFile.fileOwnerNick)"
+            makerLabel.stringValue = "\(receiveFile.fileOwnerNick)对你说:"
         }
     
         ibMakeTime.stringValue = "制作时间: \(receiveFile.sendtime.dateString())"
@@ -265,7 +265,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         if (receiveFile.fileMakeType == 0) {
         
             //手动激活
-        //    makerSayLabel.hidden = true
+            makerSayLabel.hidden = true
             lastDayLabel.hidden = false
         //    nolimitDay.hidden = true
             
@@ -273,8 +273,6 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         
             //首次阅读
             if (receiveFile.firstOpenTime == "" || receiveFile.firstOpenTime == nil) {
-                
-            //    onceTimeNum.hidden = true
                 onceTimeNumLabel.hidden = true
                 onceTimeLabel.hidden = true
                 ibOnceLong.hidden = true

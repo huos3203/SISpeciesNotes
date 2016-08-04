@@ -63,6 +63,8 @@
 }
 -(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)OutLine
 {
+    //重置缓存图片
+    [_ibImageView setImage:nil];
     if(![keywindow.contentView isKindOfClass:[NSView class]]){
         _finish = YES;
         return;

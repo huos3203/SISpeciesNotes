@@ -332,10 +332,10 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-GE-5wk">
-                                                            <rect key="frame" x="75" y="283" width="56" height="17"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="你好回天" id="Zte-Xj-7RF">
+                                                            <rect key="frame" x="270" y="283" width="121" height="17"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="我已禁止该文件阅读" id="Zte-Xj-7RF">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
@@ -562,7 +562,7 @@ CA
                                                         <constraint firstItem="7Sw-2p-Afz" firstAttribute="bottom" secondItem="wpS-NR-ibR" secondAttribute="bottom" id="sht-Qq-vbI"/>
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="top" secondItem="ZjV-6p-I4T" secondAttribute="bottom" constant="6" id="suy-nX-h7r"/>
                                                         <constraint firstItem="7Sw-2p-Afz" firstAttribute="leading" secondItem="wpS-NR-ibR" secondAttribute="trailing" constant="-1" id="tDe-ED-8aB"/>
-                                                        <constraint firstItem="PUi-GE-5wk" firstAttribute="leading" secondItem="0lh-R2-CLI" secondAttribute="trailing" constant="5" id="u6q-xD-krJ"/>
+                                                        <constraint firstItem="PUi-GE-5wk" firstAttribute="leading" secondItem="0lh-R2-CLI" secondAttribute="trailing" constant="200" id="u6q-xD-krJ"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="baseline" secondItem="FHe-E5-RgE" secondAttribute="baseline" id="vBK-6b-S9p"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="trailing" secondItem="MTy-Ou-oki" secondAttribute="trailing" id="vpN-8c-r6b"/>
                                                         <constraint firstItem="rJo-gm-rXP" firstAttribute="leading" secondItem="nlA-v2-hP1" secondAttribute="trailing" constant="5" id="wLv-Tp-sb5"/>

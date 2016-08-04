@@ -139,9 +139,10 @@ inline void check_error(int status)
     NSRect rect = window.frame;
     double WX = [ud doubleForKey:@"playerX"];
     double WY = [ud doubleForKey:@"playerY"];
-    if(WX > -1 && WY > -1){
+    //hsg再次打开导致位置跳到默认位置
+//    if(WX > -1 && WY > -1){
         rect.origin = NSMakePoint(WX, WY);
-    }
+//    }
     
     double Wheight = [ud doubleForKey:@"playerheight"];
     double Wwidth = [ud doubleForKey:@"playerwidth"];
@@ -158,7 +159,7 @@ inline void check_error(int status)
     [window setPlayerAndInit:self.player];
     [window setLastWindow:lastWindow];
     [window setAcceptsMouseMovedEvents:YES];
-    [self.loadingImage setAnimates:YES];
+//    [self.loadingImage setAnimates:YES];
     
     PlayerEventProxy *ep = [[PlayerEventProxy alloc] init];
     [ep setAcceptsTouchEvents:YES];
