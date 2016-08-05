@@ -1969,7 +1969,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#递增build版本号，重命名app带版本号的文件名称\nPLIST_FILE_PATH = 'Recommend/Info.plist'\nbuildVersion = 1\nImportSVN = \"importSVN\"\ndef set_info_plist_value(path,key,value)\n    sh \"/usr/libexec/PlistBuddy -c \\\"set :#{key} #{value}\\\" #{path}\"\nend\n\ndef set_channel_id(channelId)\n    set_info_plist_value(\n            \"./../#{PLIST_FILE_PATH}\",\n            'ChannelID',\n            \"#{channelId}\"\n    )\nend\ncur_dir=\"$TARGET_BUILD_DIR/\"\ncd ${cur_dir}\n#新建导入目录\nmkdir \"${ImportSVN}_${buildVersion}\"\ncp -f \"$PRODUCT_NAME.app\" \"${ImportSVN}/$PRODUCT_NAME_${buildVersion}.app\"\nsvn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${buildVersion}\"\n\n\n\n\n";
+			shellScript = "#递增build版本号，重命名app带版本号的文件名称\nPLIST_FILE_PATH = 'Recommend/Info.plist'\nbuildVersion = 1\nImportSVN = \"importSVN\"\ndef set_info_plist_value(path,key,value)\n    sh \"/usr/libexec/PlistBuddy -c \\\"set :#{key} #{value}\\\" #{path}\"\nend\n\ndef set_buildVersion_id(buildVersion)\n    set_info_plist_value(\n            \"./../#{PLIST_FILE_PATH}\",\n            'CFBundleVersion',\n            \"#{buildVersion}\"\n    )\nend\n\nset_buildVersion_id(buildVersion)\n\ncur_dir=\"$TARGET_BUILD_DIR/\"\ncd ${cur_dir}\n#新建导入目录\nmkdir \"${ImportSVN}_${buildVersion}\"\ncp -f \"$PRODUCT_NAME.app\" \"${ImportSVN}/$PRODUCT_NAME_${buildVersion}.app\"\nsvn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${buildVersion}\"\n\n\n\n\n";
 		};
 		412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
