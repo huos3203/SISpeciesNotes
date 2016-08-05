@@ -66,13 +66,16 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
         initThisView(false)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
     }
     
     
     @IBAction func readBtn(sender: AnyObject) {
+        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) {
+            return
+        }
         appHelper.phoneNo = ""
         appHelper.messageID = ""
         appHelper.loadVideoWithLocalFiles({receiveFile.fileurl}())
@@ -88,16 +91,25 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     
     func openInPBBFile(notification:NSNotification){
         let fileID = notification.userInfo!["pycFileID"] as! Int
-        self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+        if receiveFile.fileid == fileID {
+            //直接刷新详情
+            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+            initThisView(true)
+            return
+        }
+        
         var isInset = true
         for pycFile in receiveArray as! Array<OutFile> {
             if(pycFile.fileid == fileID){
                 isInset = false
+                let theRow = receiveArray.indexOfObject(pycFile)
+                ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
             }
         }
+        //新增文件
         if isInset {
-            insertNewRow(self.receiveFile)
-            initThisView(true)
+            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+            insertNewRow(receiveFile)
         }
     }
     
@@ -113,11 +125,14 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
                 index = 1
             }
         }
+        //更新列表
         receiveArray.insertObject(file, atIndex: index)
         ReceiveTableView.beginUpdates()
         ReceiveTableView.insertRowsAtIndexes(NSIndexSet.init(index: index), withAnimation: .EffectFade)
         ReceiveTableView.scrollRowToVisible(index)
         ReceiveTableView.endUpdates()
+        //更新详情页面
+        ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: index), byExtendingSelection: false)
     }
     
     //MARK: - Helper
@@ -471,6 +486,10 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             readBtn.frame = CGRectMake(readBtn.frame.origin.x, 274, readBtn.frame.size.width, readBtn.frame.size.height);
         }
     
+        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) {
+            readBtn.image = NSImage.init(named: "send_read_no")
+            readBtn.enabled = false
+        }
     }
     
     //MARK: tableDataSource
@@ -490,6 +509,10 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.textField?.stringValue = ReceiveColumn.filename
+            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
+                //原文件存在
+                cellView.textField?.textColor = NSColor.grayColor()
+            }
             return cellView
         }
         return cellView
@@ -572,6 +595,10 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         if row != -1 {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
+            
+            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
+                return;
+            }
 //            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
             appHelper.phoneNo = ""
             appHelper.messageID = ""

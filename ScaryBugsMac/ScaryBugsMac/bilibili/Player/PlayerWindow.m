@@ -158,6 +158,8 @@
 
 - (void)windowDidExitFullScreen:(NSNotification *)notification{
     enteringFullScreen = NO;
+     //控制条上的全屏返回时，画面消失
+    [self makeKeyAndOrderFront:self];
 }
 
 - (void)resizePlayerControlView:(NSRect)old new:(NSRect)new{

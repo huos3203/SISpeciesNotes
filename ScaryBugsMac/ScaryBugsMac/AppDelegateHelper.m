@@ -74,7 +74,7 @@ singleton_implementation(AppDelegateHelper);
     filePath = openURL;
     fileID = [_fileManager getAttributePycFileId:filePath];
     if (fileID==0) {
-        NSLog(@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！");
+        [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
         return YES;
     }
 
@@ -287,8 +287,6 @@ singleton_implementation(AppDelegateHelper);
         
     }
     
-    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"" object:self userInfo:dic];
     /*!
      *  @author shuguang, 15-06-10 15:06:27
      *
@@ -523,6 +521,9 @@ singleton_implementation(AppDelegateHelper);
             //目前用不到
         }
     }
+    //通知主页面刷新
+    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
 }
 
 -(void)setAlertView:(NSString *)msg
@@ -538,7 +539,7 @@ singleton_implementation(AppDelegateHelper);
     [alertShow setAlertStyle:NSWarningAlertStyle];
     if ([alertShow runModal] == NSAlertFirstButtonReturn) {
         // OK clicked, delete the record
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:nil];
     }
 }
 
