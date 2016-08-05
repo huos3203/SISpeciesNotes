@@ -15,6 +15,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     var receiveFile:OutFile!
     var loginName = ""
     @IBOutlet weak var ibSeriesNameLabel: NSTextField!
+    @IBOutlet weak var ibSeriesLabel: NSTextField!
+    
     
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var makerLabel: NSTextField!
@@ -145,6 +147,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         let seriesName = SeriesDao.sharedSeriesDao().fetchSeriesNameFromSeriesId(receiveFile.seriesID)
         if ((seriesName as NSString).length == 0 || seriesName == "未分组文件") {
             ibSeriesNameLabel.hidden = true
+            ibSeriesLabel.hidden = true
         }
         ibSeriesNameLabel.stringValue = seriesName
         makerLabel.stringValue = "作者对你说:"
@@ -562,6 +565,9 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     //双击
     @IBAction func tblvwDoubleClick(sender:AnyObject)
     {
+        if(!readBtn.enabled){
+            return;
+        }
         let row = ReceiveTableView.selectedRow
         if row != -1 {
             //

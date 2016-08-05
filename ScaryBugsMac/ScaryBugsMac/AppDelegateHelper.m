@@ -500,8 +500,10 @@ singleton_implementation(AppDelegateHelper);
                 // 需要验证手机号
                 BindingPhoneViewController *bindingPhone = (BindingPhoneViewController *)[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
                 bindingPhone.filePath = seePycFile.filePycName;
-                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
-                superView.contentViewController = bindingPhone;
+//                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
+//                superView.contentViewController = bindingPhone;
+                [self setKeyWindow];
+                [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
                 applyNum =0;
                 [custormActivityView removeFromSuperview];

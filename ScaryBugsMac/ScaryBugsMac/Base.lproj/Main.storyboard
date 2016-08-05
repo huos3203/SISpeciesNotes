@@ -54,37 +54,6 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="File" id="dMs-cI-mzQ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="bib-Uj-vzu">
-                                    <items>
-                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open Recent" id="tXI-mr-wws">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="oas-Oc-fiZ">
-                                                <items>
-                                                    <menuItem title="Clear Menu" id="vNY-rz-j42">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="Daa-9d-B3U"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                                        <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
-                                            <connections>
-                                                <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
                             <menuItem title="Edit" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="W48-6f-4Dl">
@@ -222,17 +191,17 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="485"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" id="aFh-iY-Jsf">
-                                            <rect key="frame" x="2" y="0.0" width="244" height="482"/>
+                                            <rect key="frame" x="1" y="1" width="244" height="483"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="DGV-oq-2Kh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="483"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="ReceiveColumn" width="241.21710113544157" minWidth="40" maxWidth="1000" id="zPf-lN-Jnv">
+                                                        <tableColumn identifier="ReceiveColumn" width="241" minWidth="40" maxWidth="1000" id="zPf-lN-Jnv">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -293,7 +262,7 @@ CA
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Fuj-nc-TeU">
-                                            <rect key="frame" x="1" y="469" width="244" height="15"/>
+                                            <rect key="frame" x="1" y="469" width="0.0" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="HOR-xZ-tbc">
@@ -311,14 +280,15 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="yIm-cG-SVy">
                                                     <rect key="frame" x="0.0" y="0.0" width="544" height="470"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="70r-wq-hF2">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="70r-wq-hF2">
                                                             <rect key="frame" x="18" y="239" width="498" height="36"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" priority="700" constant="494" id="Uq1-Os-vM6"/>
+                                                                <constraint firstAttribute="width" constant="494" id="Uq1-Os-vM6"/>
                                                                 <constraint firstAttribute="height" constant="36" id="sg2-PK-fL8"/>
                                                             </constraints>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="备注：" id="y1w-NB-TOh">
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="y1w-NB-TOh">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                <string key="title">备注：Since Git 2.0, Git defaults to the more conservative 'simple' behavior, which only pushes the current branch to the corresponding remote branch that 'git pull' uses to update the current branch.</string>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -478,8 +448,8 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-KS-pUH">
-                                                            <rect key="frame" x="239" y="31" width="66" height="32"/>
-                                                            <buttonCell key="cell" type="push" title="阅读" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zM4-bf-qVQ">
+                                                            <rect key="frame" x="200" y="30" width="144" height="32"/>
+                                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="send_read" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="zM4-bf-qVQ">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                             </buttonCell>
@@ -488,10 +458,10 @@ CA
                                                             </connections>
                                                         </button>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="ihb-K2-VpE">
-                                                            <rect key="frame" x="20" y="69" width="504" height="50"/>
+                                                            <rect key="frame" x="20" y="82" width="504" height="37"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tJa-Vz-Ekf">
-                                                                    <rect key="frame" x="-2" y="17" width="69" height="17"/>
+                                                                    <rect key="frame" x="-2" y="10" width="69" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="每次能看：" id="IK0-5h-ZGP">
                                                                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -499,7 +469,7 @@ CA
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-Gh-QUG">
-                                                                    <rect key="frame" x="62" y="17" width="43" height="17"/>
+                                                                    <rect key="frame" x="62" y="10" width="43" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="不限制" id="Y1t-pf-xBV">
                                                                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -522,10 +492,10 @@ CA
                                                         <constraint firstItem="nlA-v2-hP1" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="4XW-n0-uiU"/>
                                                         <constraint firstItem="70r-wq-hF2" firstAttribute="top" secondItem="0lh-R2-CLI" secondAttribute="bottom" constant="8" id="5dD-cT-25Z"/>
                                                         <constraint firstItem="SPU-4d-lcK" firstAttribute="top" secondItem="70r-wq-hF2" secondAttribute="bottom" constant="10" id="5rl-zf-APf"/>
-                                                        <constraint firstItem="Hhm-KS-pUH" firstAttribute="top" secondItem="ihb-K2-VpE" secondAttribute="bottom" constant="10" id="60e-vQ-HVy"/>
+                                                        <constraint firstItem="Hhm-KS-pUH" firstAttribute="top" secondItem="ihb-K2-VpE" secondAttribute="bottom" constant="20" id="60e-vQ-HVy"/>
                                                         <constraint firstItem="gux-H6-7NY" firstAttribute="leading" secondItem="tWF-yf-b61" secondAttribute="trailing" constant="1" id="6JO-os-YZU"/>
                                                         <constraint firstItem="FHe-E5-RgE" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="trailing" constant="7" id="86n-W1-Oqj"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Hhm-KS-pUH" secondAttribute="bottom" constant="38" id="8a8-q1-1V7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Hhm-KS-pUH" secondAttribute="bottom" priority="700" constant="30" id="8a8-q1-1V7"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="top" secondItem="yIm-cG-SVy" secondAttribute="top" constant="11" id="AcX-Ae-IXO"/>
                                                         <constraint firstItem="ZYq-H1-S2i" firstAttribute="top" secondItem="rJo-gm-rXP" secondAttribute="bottom" constant="-2" id="Az3-8h-l6d"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="leading" secondItem="MTy-Ou-oki" secondAttribute="leading" id="Beq-S6-8JU"/>
@@ -625,6 +595,7 @@ CA
                         <outlet property="ibMakeTime" destination="Xds-lv-Fve" id="dlD-nb-jX4"/>
                         <outlet property="ibNote" destination="70r-wq-hF2" id="fcM-Ec-bRN"/>
                         <outlet property="ibOnceLong" destination="ihb-K2-VpE" id="lCu-lp-bDa"/>
+                        <outlet property="ibSeriesLabel" destination="iAQ-jZ-9Ii" id="vr1-eg-va4"/>
                         <outlet property="ibSeriesNameLabel" destination="YAl-1G-Ctg" id="CpA-uc-x0g"/>
                         <outlet property="lastDayLabel" destination="rJo-gm-rXP" id="Qx2-V0-kXE"/>
                         <outlet property="lastDayProgressView" destination="ZYq-H1-S2i" id="ANa-L9-3Ol"/>
@@ -650,7 +621,7 @@ CA
                                 <action selector="mnuRevealInFinderSelected:" target="3OW-Ec-nEc" id="ws1-bA-k1K"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Delete Row" id="4zO-8C-hKA">
+                        <menuItem title="Delete File" id="4zO-8C-hKA">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="mnuRemoveRowSelected:" target="3OW-Ec-nEc" id="ATv-Jx-3Av"/>
@@ -704,23 +675,38 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OoW-V6-emd">
-                                <rect key="frame" x="296" y="234" width="132" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show Message Label" id="Tke-sl-jLw">
+                                <rect key="frame" x="296" y="234" width="214" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="60秒后可重新获取验证码" id="Tke-sl-jLw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qId-fq-XUo">
-                                <rect key="frame" x="168" y="170" width="99" height="32"/>
-                                <buttonCell key="cell" type="push" title="提交" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yUc-42-9pY">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="submitBtnAction:" target="nvI-v2-tSb" id="zRV-Ig-ydM"/>
-                                </connections>
-                            </button>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOU-gD-cxJ">
+                                <rect key="frame" x="239" y="139" width="232" height="61"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-dr-k5G">
+                                        <rect key="frame" x="14" y="13" width="99" height="32"/>
+                                        <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uX2-2e-rRV">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dismissController:" target="4yR-Jo-GjT" id="G0a-z1-apB"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qId-fq-XUo">
+                                        <rect key="frame" x="119" y="13" width="99" height="32"/>
+                                        <buttonCell key="cell" type="push" title="提交" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yUc-42-9pY">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="submitBtnAction:" target="nvI-v2-tSb" id="zRV-Ig-ydM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
                         </subviews>
                     </view>
                     <connections>
@@ -1654,6 +1640,7 @@ CA
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="send_read" width="144" height="66"/>
         <image name="wolfSpider" width="76.800003051757812" height="76.800003051757812"/>
     </resources>
 </document>
