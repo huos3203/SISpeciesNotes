@@ -1614,6 +1614,7 @@
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
 				14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */,
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
+				14A4203D1D549CD7009B9DF3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1956,6 +1957,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nlib=\"libmediainfo.0.dylib\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$lib\" ]; then\notool -L ${lib}\ninstall_name_tool -id \"@executable_path/lib/${lib}\" ${lib}\notool -L ${lib}\nfi";
+		};
+		14A4203D1D549CD7009B9DF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#递增build版本号，重命名app带版本号的文件名称\nPLIST_FILE_PATH = 'Recommend/Info.plist'\nbuildVersion = 1\nImportSVN = \"importSVN\"\ndef set_info_plist_value(path,key,value)\n    sh \"/usr/libexec/PlistBuddy -c \\\"set :#{key} #{value}\\\" #{path}\"\nend\n\ndef set_channel_id(channelId)\n    set_info_plist_value(\n            \"./../#{PLIST_FILE_PATH}\",\n            'ChannelID',\n            \"#{channelId}\"\n    )\nend\ncur_dir=\"$TARGET_BUILD_DIR/\"\ncd ${cur_dir}\n#新建导入目录\nmkdir \"${ImportSVN}_${buildVersion}\"\ncp -f \"$PRODUCT_NAME.app\" \"${ImportSVN}/$PRODUCT_NAME_${buildVersion}.app\"\nsvn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${buildVersion}\"\n\n\n\n\n";
 		};
 		412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
