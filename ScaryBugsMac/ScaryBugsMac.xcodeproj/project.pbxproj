@@ -538,6 +538,7 @@
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
 		1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyInfoViewController.swift; sourceTree = "<group>"; };
+		14A4203E1D5822E1009B9DF3 /* ArchiveAPPScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ArchiveAPPScript.sh; sourceTree = SOURCE_ROOT; };
 		14AA3E0F1D2A187200838B88 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14AA3E351D2A187200838B88 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
 		14AA3E361D2A187200838B88 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
@@ -881,6 +882,7 @@
 				14815B521D4B131A00922A62 /* water.xml */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* ScaryBugsMac-Bridging-Header.h */,
+				14A4203E1D5822E1009B9DF3 /* ArchiveAPPScript.sh */,
 			);
 			path = ScaryBugsMac;
 			sourceTree = "<group>";
@@ -1600,6 +1602,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
+				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				0DECE3213ECDCD8C67DD6428 /* 📦 Check Pods Manifest.lock */,
 				A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */,
 				143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
@@ -1614,7 +1617,7 @@
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
 				14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */,
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
-				14A4203D1D549CD7009B9DF3 /* ShellScript */,
+				14A420411D582EE3009B9DF3 /* import svn */,
 			);
 			buildRules = (
 			);
@@ -1958,18 +1961,33 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nlib=\"libmediainfo.0.dylib\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$lib\" ]; then\notool -L ${lib}\ninstall_name_tool -id \"@executable_path/lib/${lib}\" ${lib}\notool -L ${lib}\nfi";
 		};
-		14A4203D1D549CD7009B9DF3 /* ShellScript */ = {
+		14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "自动递增build版本号";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#递增build版本号，重命名app带版本号的文件名称\nPLIST_FILE_PATH = 'Recommend/Info.plist'\nbuildVersion = 1\nImportSVN = \"importSVN\"\ndef set_info_plist_value(path,key,value)\n    sh \"/usr/libexec/PlistBuddy -c \\\"set :#{key} #{value}\\\" #{path}\"\nend\n\ndef set_buildVersion_id(buildVersion)\n    set_info_plist_value(\n            \"./../#{PLIST_FILE_PATH}\",\n            'CFBundleVersion',\n            \"#{buildVersion}\"\n    )\nend\n\nset_buildVersion_id(buildVersion)\n\ncur_dir=\"$TARGET_BUILD_DIR/\"\ncd ${cur_dir}\n#新建导入目录\nmkdir \"${ImportSVN}_${buildVersion}\"\ncp -f \"$PRODUCT_NAME.app\" \"${ImportSVN}/$PRODUCT_NAME_${buildVersion}.app\"\nsvn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${buildVersion}\"\n\n\n\n\n";
+			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
+		};
+		14A420411D582EE3009B9DF3 /* import svn */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "import svn";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"ImportSVN\"\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\necho \"import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\"\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\nsvn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n\n#删除SVN临时目录\nrm -rf ${ImportSVN}\n";
 		};
 		412958DECCF6C5EC7FEB7053 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
