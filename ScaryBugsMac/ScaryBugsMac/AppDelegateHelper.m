@@ -180,7 +180,7 @@ singleton_implementation(AppDelegateHelper);
         return;
     }
     
-    NSArray *arr =@[@"jpg", @"png", @"pdf", @"mp4",@"3gp",@"mov", @"mp3", @"wav",@"flv",@"wmv",@"avi"];
+    NSArray *arr =@[@"mp4",@"3gp",@"mov", @"wav",@"flv",@"wmv",@"avi"];
     NSRange rang;
     for (int i =0 ; i<[arr count]; i++) {
         rang = [[seePycFile.filePycNameFromServer lowercaseString] rangeOfString:[NSString stringWithFormat:@".%@",arr[i]]];
@@ -189,6 +189,7 @@ singleton_implementation(AppDelegateHelper);
         }
     }
     if (rang.length == 0) {
+        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
         return;
     }
     
@@ -504,6 +505,7 @@ singleton_implementation(AppDelegateHelper);
                 [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
                 applyNum =0;
+                [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
                 [custormActivityView removeFromSuperview];
                 return;
             }

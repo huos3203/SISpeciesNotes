@@ -1935,7 +1935,7 @@
 		};
 		14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1943,9 +1943,10 @@
 			name = "libmpv包文件执行install_name_tool";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nfor dirlist in $(ls ${cur_dir})\ndo\n#查看它们的 rpath\n#otool -L ${dirlist}\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\ndone\n";
+			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\n#for dirlist in $(ls ${cur_dir})\n#do\n#查看它们的 rpath\n#otool -L ${dirlist}\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\n#done\n";
+			showEnvVarsInLog = 0;
 		};
 		14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */ = {
 			isa = PBXShellScriptBuildPhase;
