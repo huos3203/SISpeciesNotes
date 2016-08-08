@@ -195,7 +195,7 @@ CA
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="DGV-oq-2Kh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="483"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -615,13 +615,13 @@ CA
                 <customObject id="xgm-Ot-lMp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="e7c-5h-iuS">
                     <items>
-                        <menuItem title="Reveal in Finder" id="B9D-vJ-lbe">
+                        <menuItem title="Show in Finder" id="B9D-vJ-lbe">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="mnuRevealInFinderSelected:" target="3OW-Ec-nEc" id="ws1-bA-k1K"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Delete File" id="4zO-8C-hKA">
+                        <menuItem title="Delete" id="4zO-8C-hKA">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="mnuRemoveRowSelected:" target="3OW-Ec-nEc" id="ATv-Jx-3Av"/>

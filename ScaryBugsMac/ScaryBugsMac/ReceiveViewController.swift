@@ -91,7 +91,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     
     func openInPBBFile(notification:NSNotification){
         let fileID = notification.userInfo!["pycFileID"] as! Int
-        if receiveFile.fileid == fileID {
+        if receiveFile != nil && receiveFile.fileid == fileID {
             //直接刷新详情
             receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
             initThisView(true)
