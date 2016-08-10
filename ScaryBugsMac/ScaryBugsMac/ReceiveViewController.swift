@@ -469,7 +469,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             readBtn.frame = CGRectMake(readBtn.frame.origin.x, 274, readBtn.frame.size.width, readBtn.frame.size.height);
         }
     
-        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) {
+        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) ||
+        !appHelper.fileIsTypeOfVideo(receiveFile.filetype){
             readBtn.image = NSImage.init(named: "send_read_no")
             readBtn.enabled = false
         }
@@ -598,7 +599,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBAction func tblvwDoubleClick(sender:AnyObject)
     {
         if(!readBtn.enabled){
-            return;
+            return
         }
         let row = ReceiveTableView.selectedRow
         if row != -1 {

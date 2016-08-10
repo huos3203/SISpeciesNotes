@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/API/sqlite/db/ReceiveFileManager.m"
-            timestampString = "492494029.184424"
+            filePath = "ScaryBugsMac/ScaryBugsMac/AppDelegateHelper.m"
+            timestampString = "492495391.556664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1185"
-            endingLineNumber = "1185"
-            landmarkName = "-fetchReceiveFileCellByFileId:LogName:"
+            startingLineNumber = "1007"
+            endingLineNumber = "1007"
+            landmarkName = "-show"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

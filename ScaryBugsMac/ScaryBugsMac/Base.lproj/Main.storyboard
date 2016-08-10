@@ -608,6 +608,13 @@ CA
                 <customObject id="xgm-Ot-lMp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="e7c-5h-iuS">
                     <items>
+                        <menuItem title="Refresh" id="gRi-DW-OMB">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="refreshReceiveTableView:" target="xgm-Ot-lMp" id="lJ7-g5-MrJ"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="47U-sn-XLe"/>
                         <menuItem title="Show in Finder" id="B9D-vJ-lbe">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
