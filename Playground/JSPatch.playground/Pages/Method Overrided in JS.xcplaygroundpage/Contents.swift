@@ -5,6 +5,7 @@ import JSPatch
 import XCPlayground
 
 
+
 //defineClass -> ddddrrviewController ,Swift类在Objective-C中会有模块前缀，
 //即：在JS中绑定类方法defineClass中时，必须先使用@objc指定的该类的名称，否则无法找到该类。
 
