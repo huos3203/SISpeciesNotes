@@ -171,24 +171,18 @@ singleton_implementation(AppDelegateHelper);
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
+        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
         return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
         [custormActivityView removeFromSuperview];
+        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
         return;
     }
     
-    NSArray *arr =@[@"mp4",@"3gp",@"mov", @"wav",@"flv",@"wmv",@"avi"];
-    NSRange rang;
-    for (int i =0 ; i<[arr count]; i++) {
-        rang = [[seePycFile.filePycNameFromServer lowercaseString] rangeOfString:[NSString stringWithFormat:@".%@",arr[i]]];
-        if (rang.length>0) {
-            break;
-        }
-    }
-    if (rang.length == 0) {
+    if (![self fileIsTypeOfVideo:[[seePycFile.filePycNameFromServer lastPathComponent] lowercaseString]]){
         [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
         return;
     }
@@ -1056,6 +1050,19 @@ singleton_implementation(AppDelegateHelper);
 //    [keyWindow orderBack:self];
     hud = NULL;
     isLoading = NO;
+}
+
+
+-(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
+{
+    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
+    pathExt = [pathExt lowercaseString];
+    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
+    NSRange range=[str rangeOfString: pathExt];
+    if (!(range.location==NSNotFound)) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

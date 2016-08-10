@@ -700,6 +700,7 @@ singleton_implementation(ReceiveFileManager)
               ];
         of.readnum = [rs intForColumn:@"readNum"];
         of.fileTimeType = [rs intForColumn:@"timeType"];
+        of.filetype = [self base64decode:[rs stringForColumn:@"fileType"]];
         [receiveArr addObject:of];
     }
     

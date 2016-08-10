@@ -304,25 +304,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             let openYear = "\(receiveFile.fileOpenYear)"
             let openDay = "\(receiveFile.fileOpenDay)"
         
-            var b_CanOpen = false
-        
-            if(receiveFile.forbid == 1){
-        
-                if(receiveFile.limitnum == 0 || receiveFile.readnum < receiveFile.limitnum)
-                {
-                    b_CanOpen = true
-                }
-                
-                if (b_CanOpen && ((receiveFile.fileOpenDay == 0 && receiveFile.fileOpenYear == 0) || receiveFile.fileDayRemain > 0 || receiveFile.fileYearRemain > 0))
-                {
-                }
-                else
-                {
-                    b_CanOpen = false
-                }
-            }
-        
-        
+
+            let b_CanOpen = isCanOpen(receiveFile)
             if (b_CanOpen) {
         
                 if (receiveFile.limitnum != 0)
@@ -492,6 +475,27 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         }
     }
     
+    func isCanOpen(outFile:OutFile) -> Bool {
+        var b_CanOpen = false
+        
+        if(outFile.forbid == 1){
+            
+            if(outFile.limitnum == 0 || outFile.readnum < outFile.limitnum)
+            {
+                b_CanOpen = true
+            }
+            
+            if (b_CanOpen && ((outFile.fileOpenDay == 0 && outFile.fileOpenYear == 0) || outFile.fileDayRemain > 0 || outFile.fileYearRemain > 0))
+            {
+            }
+            else
+            {
+                b_CanOpen = false
+            }
+        }
+        return b_CanOpen
+    }
+    
     //MARK: tableDataSource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         //
@@ -509,6 +513,11 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.textField?.stringValue = ReceiveColumn.filename
+            if !isCanOpen(ReceiveColumn) || !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
+            {
+                cellView.textField?.textColor = NSColor.grayColor()
+            }
+            
             if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
                 //原文件存在
                 cellView.textField?.textColor = NSColor.redColor()
@@ -678,4 +687,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         
     }
     
+    
+    @IBAction func refreshReceiveTableView(sender:AnyObject){
+        ReceiveTableView.reloadData()
+    }
 }

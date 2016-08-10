@@ -118,17 +118,5 @@
     return NO;
 }
 
--(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
-{
-    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
-    pathExt = [pathExt lowercaseString];
-    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
-    NSRange range=[str rangeOfString: pathExt];
-    if (!(range.location==NSNotFound)) {
-        return YES;
-    }
-    return NO;
-}
-
 
 @end
