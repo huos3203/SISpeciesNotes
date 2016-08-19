@@ -141,7 +141,7 @@ inline void check_error(int status)
     double WY = [ud doubleForKey:@"playerY"];
     //hsg再次打开导致位置跳到默认位置
     if(WX > -1 && WY > -1){
-        rect.origin = NSMakePoint(WX, WY);
+//        rect.origin = NSMakePoint(WX, WY);
     }
     
     double Wheight = [ud doubleForKey:@"playerheight"];

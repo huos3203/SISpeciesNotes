@@ -1,7 +1,8 @@
 //: [Previous](@previous)
 
 import Foundation
-import JSPatch
+//import JSPatch
+import Pods_SISpeciesNotes
 
 typealias myFunctionDefAlias = (@convention(block) (String,Bool)->())
 

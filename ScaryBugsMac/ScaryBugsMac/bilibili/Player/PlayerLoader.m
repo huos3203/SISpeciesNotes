@@ -58,7 +58,7 @@
     if(isLoading){
         return;
     }
-    [self setText:@"正在生成解析参数"];
+//    [self setText:@"正在生成解析参数"];
     dispatch_async(vl_queue, ^(void){
         NSDictionary *dict = [provider generateParamsFromURL:url];
         if(!dict){
@@ -74,7 +74,7 @@
     if(isLoading && !IS_VL_QUEUE){
         return;
     }
-    [self setText:@"正在解析视频地址"];
+//    [self setText:@"正在解析视频地址"];
     dispatch_async(vl_queue, ^(void){
         @try {
             VideoAddress *video = [provider getVideoAddress:params];
@@ -93,7 +93,7 @@
     if(isLoading){
         return;
     }
-    [self setText:@"正在打开本地文件"];
+//    [self setText:@"正在打开本地文件"];
     dispatch_async(vl_queue, ^(void){
         @try {
             NSDictionary *params = @{
@@ -134,7 +134,7 @@
 }
 
 - (void)_loadVideo:(VideoAddress *)video withAttrs:(NSDictionary *)attrs{
-    [self setText:@"正在创建播放器"];
+//    [self setText:@"正在创建播放器"];
     if(attrs[@"live"] && lastLivePlayerId){
         Player *p = [[PlayerManager sharedInstance] getPlayer:lastLivePlayerId];
         if(p){

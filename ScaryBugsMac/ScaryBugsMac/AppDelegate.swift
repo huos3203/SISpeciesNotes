@@ -33,5 +33,18 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         
     }
 
+    func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+//       return true
+        //dock点击图标显示主页面
+        if let mainWindow:NSWindow? = sender.windows[0]
+        {
+            mainWindow!.makeKeyAndOrderFront(nil)
+            return true
+        }else
+        {
+            return false
+        }
+        
+    }
 }
 

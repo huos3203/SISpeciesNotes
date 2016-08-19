@@ -69,6 +69,12 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
+//        
+//        [browser.window performSelector:@selector(makeMainWindow) withObject:nil afterDelay:0.2];
+//        [browser.window performSelector:@selector(makeKeyAndOrderFront:) withObject:NSApp afterDelay:0.2];
+//        [NSApp activateIgnoringOtherApps:YES];
+        
+        
     }
     
     

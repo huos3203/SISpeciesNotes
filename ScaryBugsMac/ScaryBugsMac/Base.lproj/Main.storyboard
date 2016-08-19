@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
@@ -14,39 +14,29 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="PBBReader" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About PBBReader" id="5kV-Vb-QxS">
+                                        <menuItem title="关于" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="偏好设置…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Services" id="NMo-om-nkz">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide PBBReader" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="隐藏" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                        <menuItem title="隐藏其他" keyEquivalent="h" id="Vdr-fp-XzO">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All" id="Kd2-mp-pUS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit PBBReader" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="退出" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -54,27 +44,27 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Edit" id="5QF-Oa-p0T">
+                            <menuItem title="编辑" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Edit" id="W48-6f-4Dl">
+                                <menu key="submenu" title="编辑" id="W48-6f-4Dl">
                                     <items>
-                                        <menuItem title="Cut" keyEquivalent="x" id="LTP-1y-uUI">
+                                        <menuItem title="剪切" keyEquivalent="x" id="LTP-1y-uUI">
                                             <connections>
                                                 <action selector="cut:" target="Ady-hI-5gd" id="MCc-ZG-6Tp"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Copy" keyEquivalent="c" id="dSR-1P-dKr">
+                                        <menuItem title="复制" keyEquivalent="c" id="dSR-1P-dKr">
                                             <connections>
                                                 <action selector="copy:" target="Ady-hI-5gd" id="thu-1B-ysq"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Paste" keyEquivalent="v" id="xgw-JQ-gMx">
+                                        <menuItem title="粘帖" keyEquivalent="v" id="xgw-JQ-gMx">
                                             <connections>
                                                 <action selector="paste:" target="Ady-hI-5gd" id="iAW-bD-B4U"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="j4c-cs-j7u"/>
-                                        <menuItem title="Delete" id="pa3-QI-u2k">
+                                        <menuItem title="删除" id="pa3-QI-u2k">
                                             <string key="keyEquivalent" base64-UTF8="YES">
 CA
 </string>
@@ -82,7 +72,7 @@ CA
                                                 <action selector="mnuRemoveRowSelected:" target="Ady-hI-5gd" id="yhl-dE-Z51"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Select All" keyEquivalent="a" id="Ruw-6m-B2m">
+                                        <menuItem title="全选" keyEquivalent="a" id="Ruw-6m-B2m">
                                             <connections>
                                                 <action selector="selectAll:" target="Ady-hI-5gd" id="VNm-Mi-diN"/>
                                             </connections>
@@ -90,11 +80,11 @@ CA
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="View" id="H8h-7b-M4v">
+                            <menuItem title="视图" id="H8h-7b-M4v">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="View" id="HyV-fh-RgO">
+                                <menu key="submenu" title="视图" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Refresh" keyEquivalent="r" id="7du-Hg-ekV">
+                                        <menuItem title="刷新" keyEquivalent="r" id="7du-Hg-ekV">
                                             <connections>
                                                 <action selector="refreshReceiveTableView:" target="Ady-hI-5gd" id="X2K-co-zVS"/>
                                             </connections>
@@ -102,36 +92,34 @@ CA
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Window" id="aUF-d1-5bR">
+                            <menuItem title="窗口" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                <menu key="submenu" title="窗口" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
-                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                        <menuItem title="最小化" keyEquivalent="m" id="OY7-WF-poV">
                                             <connections>
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                        <menuItem title="关闭" keyEquivalent="w" id="gb8-Jz-Qr8">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="d58-IA-tnl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="缩放" id="R4o-n2-Eq4">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
-                                            </connections>
-                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Help" id="wpr-3q-Mcd">
+                            <menuItem title="帮助" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                <menu key="submenu" title="帮助" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="PBBReader Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="帮助" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -153,10 +141,10 @@ CA
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="PBB Reader阅读器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="PBB Reader 阅读器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <windowPositionMask key="initialPositionMask" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
@@ -167,7 +155,7 @@ CA
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Tlq-7l-5LO" customClass="OpenPBBDocument" customModule="PBBReader" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="346"/>
+            <point key="canvasLocation" x="-237" y="403"/>
         </scene>
         <!--PBB Reader 首页-->
         <scene sceneID="2Na-B8-7mL">
@@ -287,7 +275,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZjV-6p-I4T">
-                                                            <rect key="frame" x="18" y="306" width="43" height="17"/>
+                                                            <rect key="frame" x="18" y="283" width="43" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="邮箱：" id="Pzr-DP-k0L">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -295,7 +283,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-GE-5wk">
-                                                            <rect key="frame" x="270" y="283" width="121" height="17"/>
+                                                            <rect key="frame" x="270" y="359" width="121" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="我已禁止该文件阅读" id="Zte-Xj-7RF">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,7 +291,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cc1-Vd-weM">
-                                                            <rect key="frame" x="60" y="306" width="98" height="17"/>
+                                                            <rect key="frame" x="60" y="283" width="98" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ddhdd@qq.com" id="m8n-hH-ztW">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -311,7 +299,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tWF-yf-b61">
-                                                            <rect key="frame" x="18" y="331" width="43" height="17"/>
+                                                            <rect key="frame" x="18" y="308" width="43" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="手机：" id="aii-MB-pdv">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -319,7 +307,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gux-H6-7NY">
-                                                            <rect key="frame" x="58" y="331" width="56" height="17"/>
+                                                            <rect key="frame" x="58" y="308" width="56" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1238736" id="rh7-JV-d1J">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -327,7 +315,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wpS-NR-ibR">
-                                                            <rect key="frame" x="18" y="359" width="37" height="17"/>
+                                                            <rect key="frame" x="18" y="333" width="37" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="QQ：" id="YAy-Rn-3E1">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -335,7 +323,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-2p-Afz">
-                                                            <rect key="frame" x="50" y="359" width="64" height="17"/>
+                                                            <rect key="frame" x="50" y="333" width="64" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="12834994" id="Daj-ZJ-VyD">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -425,7 +413,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0lh-R2-CLI">
-                                                            <rect key="frame" x="18" y="283" width="56" height="17"/>
+                                                            <rect key="frame" x="18" y="359" width="56" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="作者说：" id="ORn-NB-gWj">
                                                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -482,8 +470,8 @@ CA
                                                         <constraint firstItem="nlA-v2-hP1" firstAttribute="top" secondItem="SPU-4d-lcK" secondAttribute="bottom" constant="36" id="0qZ-h0-ifd"/>
                                                         <constraint firstItem="SPU-4d-lcK" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="27X-Jk-V14"/>
                                                         <constraint firstItem="Jlz-jx-He9" firstAttribute="leading" secondItem="rJo-gm-rXP" secondAttribute="leading" id="2Wn-z0-5EE"/>
+                                                        <constraint firstItem="wpS-NR-ibR" firstAttribute="top" secondItem="0lh-R2-CLI" secondAttribute="bottom" constant="9" id="3oJ-XO-wgP"/>
                                                         <constraint firstItem="nlA-v2-hP1" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="4XW-n0-uiU"/>
-                                                        <constraint firstItem="70r-wq-hF2" firstAttribute="top" secondItem="0lh-R2-CLI" secondAttribute="bottom" constant="8" id="5dD-cT-25Z"/>
                                                         <constraint firstItem="SPU-4d-lcK" firstAttribute="top" secondItem="70r-wq-hF2" secondAttribute="bottom" constant="10" id="5rl-zf-APf"/>
                                                         <constraint firstItem="Hhm-KS-pUH" firstAttribute="top" secondItem="ihb-K2-VpE" secondAttribute="bottom" constant="20" id="60e-vQ-HVy"/>
                                                         <constraint firstItem="gux-H6-7NY" firstAttribute="leading" secondItem="tWF-yf-b61" secondAttribute="trailing" constant="1" id="6JO-os-YZU"/>
@@ -505,7 +493,6 @@ CA
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="PQH-oz-jjC"/>
                                                         <constraint firstItem="ZYq-H1-S2i" firstAttribute="leading" secondItem="rJo-gm-rXP" secondAttribute="leading" id="Pea-gB-Mb0"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="top" secondItem="MTy-Ou-oki" secondAttribute="bottom" constant="-2" id="Qlq-mE-hLd"/>
-                                                        <constraint firstItem="wpS-NR-ibR" firstAttribute="top" secondItem="Xds-lv-Fve" secondAttribute="bottom" constant="14" id="QnK-uM-TTc"/>
                                                         <constraint firstItem="ZjV-6p-I4T" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="Ri3-1G-cwC"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="leading" secondItem="yIm-cG-SVy" secondAttribute="leading" constant="20" symbolic="YES" id="S1Z-A3-D6m"/>
                                                         <constraint firstAttribute="trailing" secondItem="ihb-K2-VpE" secondAttribute="trailing" constant="20" id="SbB-AQ-MfS"/>
@@ -518,13 +505,14 @@ CA
                                                         <constraint firstItem="Cc1-Vd-weM" firstAttribute="leading" secondItem="ZjV-6p-I4T" secondAttribute="trailing" constant="3" id="eaz-fQ-QGB"/>
                                                         <constraint firstItem="Jlz-jx-He9" firstAttribute="top" secondItem="ZYq-H1-S2i" secondAttribute="bottom" constant="-1" id="gVx-j8-bEV"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="leading" secondItem="tWF-yf-b61" secondAttribute="leading" id="iKu-kG-QGa"/>
-                                                        <constraint firstItem="tWF-yf-b61" firstAttribute="top" secondItem="wpS-NR-ibR" secondAttribute="bottom" constant="11" id="jr3-XT-iiE"/>
+                                                        <constraint firstItem="tWF-yf-b61" firstAttribute="top" secondItem="wpS-NR-ibR" secondAttribute="bottom" constant="8" id="jr3-XT-iiE"/>
+                                                        <constraint firstItem="70r-wq-hF2" firstAttribute="top" secondItem="ZjV-6p-I4T" secondAttribute="bottom" constant="8" id="kxA-oJ-YvR"/>
                                                         <constraint firstItem="ZjV-6p-I4T" firstAttribute="top" secondItem="tWF-yf-b61" secondAttribute="bottom" constant="8" id="oiS-Vu-QVE"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="leading" secondItem="wpS-NR-ibR" secondAttribute="leading" id="qUq-pA-k4x"/>
                                                         <constraint firstItem="ihb-K2-VpE" firstAttribute="leading" secondItem="nlA-v2-hP1" secondAttribute="leading" id="sZL-17-8w6"/>
                                                         <constraint firstItem="7Sw-2p-Afz" firstAttribute="bottom" secondItem="wpS-NR-ibR" secondAttribute="bottom" id="sht-Qq-vbI"/>
-                                                        <constraint firstItem="0lh-R2-CLI" firstAttribute="top" secondItem="ZjV-6p-I4T" secondAttribute="bottom" constant="6" id="suy-nX-h7r"/>
                                                         <constraint firstItem="7Sw-2p-Afz" firstAttribute="leading" secondItem="wpS-NR-ibR" secondAttribute="trailing" constant="-1" id="tDe-ED-8aB"/>
+                                                        <constraint firstItem="0lh-R2-CLI" firstAttribute="top" secondItem="Xds-lv-Fve" secondAttribute="bottom" constant="14" id="tNJ-gx-B1X"/>
                                                         <constraint firstItem="PUi-GE-5wk" firstAttribute="leading" secondItem="0lh-R2-CLI" secondAttribute="trailing" constant="200" id="u6q-xD-krJ"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="baseline" secondItem="FHe-E5-RgE" secondAttribute="baseline" id="vBK-6b-S9p"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="trailing" secondItem="MTy-Ou-oki" secondAttribute="trailing" id="vpN-8c-r6b"/>
@@ -560,10 +548,10 @@ CA
                                 </connections>
                             </splitView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
-                                <rect key="frame" x="161" y="497" width="100" height="32"/>
-                                <buttonCell key="cell" type="push" title="Browser..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tg3-dJ-IXJ">
+                                <rect key="frame" x="184" y="497" width="77" height="32"/>
+                                <buttonCell key="cell" type="push" title="浏览..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tg3-dJ-IXJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="ibaBrowseFinder:" target="3OW-Ec-nEc" id="w3A-cc-Odo"/>
@@ -608,20 +596,20 @@ CA
                 <customObject id="xgm-Ot-lMp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="e7c-5h-iuS">
                     <items>
-                        <menuItem title="Refresh" id="gRi-DW-OMB">
+                        <menuItem title="刷新" id="gRi-DW-OMB">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="refreshReceiveTableView:" target="xgm-Ot-lMp" id="lJ7-g5-MrJ"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="47U-sn-XLe"/>
-                        <menuItem title="Show in Finder" id="B9D-vJ-lbe">
+                        <menuItem title="在Finder中显示" id="B9D-vJ-lbe">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="mnuRevealInFinderSelected:" target="3OW-Ec-nEc" id="ws1-bA-k1K"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Delete" id="4zO-8C-hKA">
+                        <menuItem title="删除" id="4zO-8C-hKA">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="mnuRemoveRowSelected:" target="3OW-Ec-nEc" id="ATv-Jx-3Av"/>
