@@ -41,6 +41,7 @@ extension NSTextField
     //秒
     static var seconds:Int!
     static var minutes:Int!
+    static var countDownNumber:Int!
     var second:Double{
         set{
         }
@@ -57,12 +58,22 @@ extension NSTextField
         }
     }
     
+    var countDownNumber:Int{
+        set(newValue){
+            NSTextField.countDownNumber = newValue
+        }
+        get{
+            return NSTextField.countDownNumber
+        }
+    }
+    
     func fireTimer(Countdown:Double)->()->()
     {
+        //倒计时
         var timer:NSTimer!
-       
+        
         if Countdown > 0 {
-            
+            NSTextField.countDownNumber = Int(Countdown)
             self.translatesAutoresizingMaskIntoConstraints = false
             let textFieldV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[textField]",
                                                                                       options: [],
@@ -90,8 +101,8 @@ extension NSTextField
             timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
             
         }else{
-            
-            if (stringValue as NSString).length > 0 {
+            //水印
+            if (stringValue as NSString).length == 0 {
                 return {}
             }
             //默认显示，24s之后隐藏
@@ -138,9 +149,9 @@ extension NSTextField
             //s
             self.stringValue = "\(Int(NSTextField.seconds))秒"
             NSTextField.seconds = NSTextField.seconds - 1
-            
         }
 //        self.sizeToFit()
+        NSTextField.countDownNumber = NSTextField.countDownNumber - 1
     }
     
     func hiddenShade()

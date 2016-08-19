@@ -182,8 +182,8 @@ singleton_implementation(AppDelegateHelper);
         return;
     }
     
-    if (![self fileIsTypeOfVideo:[[seePycFile.filePycNameFromServer lastPathComponent] lowercaseString]]){
-        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
+    if (![self fileIsTypeOfVideo:[[seePycFile.fileName pathExtension] lowercaseString]]){
+        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",[seePycFile.fileName pathExtension]]];
         return;
     }
     
@@ -368,8 +368,8 @@ singleton_implementation(AppDelegateHelper);
             look.bOpenInCome = 1;
             look.receviveFileId = [NSString stringWithFormat:@"%ld",(long)fileID];//seePycFile.fileID];
             //水印
-            //                look.waterMark = [self waterMark:seePycFile];
-            //                look.openinfoid = seePycFile.openinfoid;
+            look.waterMark = [self waterMark:seePycFile];
+            look.openinfoid = seePycFile.openinfoid;
             look.fileSecretkeyR1 = seePycFile.fileSecretkeyR1;
             look.EncryptedLen = seePycFile.encryptedLen;
             look.fileSize = seePycFile.fileSize;

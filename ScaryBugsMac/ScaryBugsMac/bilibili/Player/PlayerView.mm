@@ -37,7 +37,6 @@ typedef void (^ShadeBlock)();
     __weak IBOutlet NSTextField *ibWaterLabel;
     
     NSTextField *CountDownLabel;
-    NSInteger CountDownTime;
     
     PlayerControlWindowController *playerControlWindowController;
     NSString *videoDomain;
@@ -140,9 +139,9 @@ inline void check_error(int status)
     double WX = [ud doubleForKey:@"playerX"];
     double WY = [ud doubleForKey:@"playerY"];
     //hsg再次打开导致位置跳到默认位置
-    if(WX > -1 && WY > -1){
-//        rect.origin = NSMakePoint(WX, WY);
-    }
+//    if(WX > -1 && WY > -1){
+        rect.origin = NSMakePoint(WX, WY);
+//    }
     
     double Wheight = [ud doubleForKey:@"playerheight"];
     double Wwidth = [ud doubleForKey:@"playerwidth"];
@@ -204,10 +203,9 @@ inline void check_error(int status)
     }
     
     if (limitTime.integerValue != 0) {
-        CountDownTime = limitTime.integerValue;
-        countDownblock = [CountDownLabel fireTimer:CountDownTime];
+        CountDownLabel.countDownNumber = limitTime.integerValue;
     }else{
-        CountDownTime = -1;
+        CountDownLabel.countDownNumber = -1;
     }
 
     NSLog(@"[PlayerView] Starting load video");
@@ -617,9 +615,6 @@ getInfo:
     switch (event->event_id) {
         case MPV_EVENT_SHUTDOWN: {
             dispatch_async(dispatch_get_main_queue(), ^(void){
-                if (shadeblock){
-                    shadeblock();
-                }
                 [self.view.window performClose:self];
             });
             NSLog(@"Stopping player");
@@ -655,8 +650,9 @@ getInfo:
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.loadingImage setAnimates:NO];
                 [LoadingView setHidden:YES];
-                //开启水印动画
+                //开始播放时，开启水印动画
                 shadeblock = [ibWaterLabel fireTimer:0];
+                countDownblock = [CountDownLabel fireTimer:CountDownLabel.countDownNumber];
             });
             break;
         }
@@ -679,12 +675,20 @@ getInfo:
         }
             
         case MPV_EVENT_PAUSE: {
+            //暂停
             if (shadeblock)
                 shadeblock();
+            
+//            if (countDownblock) {
+//                countDownblock();
+//            }
+            
             break;
         }
         case MPV_EVENT_UNPAUSE: {
+            //继续
             shadeblock = [ibWaterLabel fireTimer:0];
+//            countDownblock = [CountDownLabel fireTimer:CountDownLabel.countDownNumber];
             break;
         }
             
