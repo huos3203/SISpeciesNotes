@@ -386,18 +386,6 @@ singleton_implementation(AppDelegateHelper);
         applyNum =0;
         [custormActivityView removeFromSuperview];
         
-        if (returnValue & ERR_OUTLINE_NUM_ERR) {
-            //次数已到
-            [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
-            return;
-        }
-        if (returnValue & ERR_OUTLINE_DAY_ERR) {
-            //时效已到
-            [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
-            return;
-        }
         if (returnValue & ERR_OUTLINE_HDID_ERR) {
             //硬件标识不对
             /**
@@ -406,41 +394,52 @@ singleton_implementation(AppDelegateHelper);
              3、  点击【是】，清除离线结构中设置的值，提示：再次打开后进行申请。（手机端提示文字：再次打开/阅读时进行申请）
              4、  结束
              */
-//            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
-//                                                                      message:@"不能阅读！与原阅读设备不符！是否在此设备上申请阅读？"
-//                                                            cancelButtonTitle:@"否" otherButtonTitles:@"是"
-//                                                                  ButtonBlock:^(NSInteger i) {
-//                                                                      
-//                                                                      if (i == 0) {
-//                                                                          [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:_fileID];//_fileObject.fileID];
-//                                                                      }
-//                                                                      
-//                                                                      if (i == 1) {
-//                                                                          
-//                                                                          if ([_fileObject setOutLineStructData:_fileObject.filePycName isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
-//                                                                              // 设置成功
-//                                                                              [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
-//                                                                          } else {
-//                                                                              // 设置失败时重新设置一次
-//                                                                              if ([_fileObject setOutLineStructData:_fileObject.filePycName  isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
-//                                                                                  [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
-//                                                                              }
-//                                                                          }
-//                                                                      }
-//                                                                  }];
-//            [alert show];
+            //            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
+            //                                                                      message:@"不能阅读！与原阅读设备不符！是否在此设备上申请阅读？"
+            //                                                            cancelButtonTitle:@"否" otherButtonTitles:@"是"
+            //                                                                  ButtonBlock:^(NSInteger i) {
+            //
+            //                                                                      if (i == 0) {
+            //                                                                          [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:_fileID];//_fileObject.fileID];
+            //                                                                      }
+            //
+            //                                                                      if (i == 1) {
+            //
+            //                                                                          if ([_fileObject setOutLineStructData:_fileObject.filePycName isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
+            //                                                                              // 设置成功
+            //                                                                              [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
+            //                                                                          } else {
+            //                                                                              // 设置失败时重新设置一次
+            //                                                                              if ([_fileObject setOutLineStructData:_fileObject.filePycName  isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
+            //                                                                                  [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
+            //                                                                              }
+            //                                                                          }
+            //                                                                      }
+            //                                                                  }];
+            //            [alert show];
             
             return;
         }
+        
+        [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
+
+        if (returnValue & ERR_OUTLINE_NUM_ERR) {
+            //次数已到
+            [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
+            return;
+        }
+        if (returnValue & ERR_OUTLINE_DAY_ERR) {
+            //时效已到
+            [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
+            return;
+        }
+        
         if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
             //并非原文件
             [self setAlertView:@"不能阅读！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
         }
         if (returnValue & ERR_OUTLINE_TIME_CHANGED_ERR) {
-            
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             //本地时间被修改  本地时间被人为修改，需要联网获取授权！
             
             //联网校验
@@ -463,7 +462,6 @@ singleton_implementation(AppDelegateHelper);
         if (returnValue & ERR_OUTLINE_STRUCTION_ERR) {
             //文件结构不对
             [self setAlertView:@"不能阅读！文件阅读错误！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
         }
         
@@ -520,16 +518,13 @@ singleton_implementation(AppDelegateHelper);
             //目前用不到
         }
     }
-    //通知主页面刷新
-    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
 }
 
 -(void)setAlertView:(NSString *)msg
 {
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
-        [alertShow addButtonWithTitle:@"我知道了"];
+        [alertShow addButtonWithTitle:@"查看详情"];
     }
 
     //        [alert addButtonWithTitle:@"Cancel"];
@@ -539,6 +534,9 @@ singleton_implementation(AppDelegateHelper);
     if ([alertShow runModal] == NSAlertFirstButtonReturn) {
         // OK clicked, delete the record
         [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:nil];
+        //通知主页面刷新
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
     }
 }
 

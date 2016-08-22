@@ -111,8 +111,10 @@ inline void check_error(int status)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CancleClosePlayerWindows:) name:@"CancleClosePlayerWindows" object:nil];
 }
 
+//关闭播放器
 -(void)CancleClosePlayerWindows:(NSNotification *)info {
     [self.view.window performClose:self];
+    [[[NSApplication sharedApplication]delegate] performSelector:@selector(applicationShouldHandleReopen:hasVisibleWindows:) withObject:[NSApplication sharedApplication] withObject:[NSNumber numberWithInt:0]];
 }
 - (void)viewDidAppear{
     window = (PlayerWindow *)self.view.window;
@@ -773,7 +775,6 @@ getInfo:
     if (shadeblock){
         shadeblock();
     }
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"[PlayerView] Dealloc");
 }

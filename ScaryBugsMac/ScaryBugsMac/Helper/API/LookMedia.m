@@ -35,6 +35,10 @@
             return;
         }
         
+        //通知主页面刷新
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:_receviveFileId forKey:@"pycFileID"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
+        
         //bilibili
         NSString *bytestr = @"";
         for (int i = 0; i<16; i++)

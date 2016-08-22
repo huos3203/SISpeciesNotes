@@ -80,59 +80,14 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         appHelper.messageID = ""
         appHelper.loadVideoWithLocalFiles({receiveFile.fileurl}())
     }
-    //MARK: Delegate
+    //MARK: tableView Delegate
+    //单击单元格，显示详情信息
     func tableViewSelectionDidChange(notification: NSNotification) {
         
         if let receiveFile = selectedFileList(){
                 self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
                 initThisView(true)
         }
-    }
-    
-    func openInPBBFile(notification:NSNotification){
-        let fileID = notification.userInfo!["pycFileID"] as! Int
-        if receiveFile != nil && receiveFile.fileid == fileID {
-            //直接刷新详情
-            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
-            initThisView(true)
-            return
-        }
-        
-        var isInset = true
-        for pycFile in receiveArray as! Array<OutFile> {
-            if(pycFile.fileid == fileID){
-                isInset = false
-                let theRow = receiveArray.indexOfObject(pycFile)
-                ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
-            }
-        }
-        //新增文件
-        if isInset {
-            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
-            insertNewRow(receiveFile)
-        }
-    }
-    
-    //插入新cell
-    func insertNewRow(file:OutFile){
-        var index = ReceiveTableView.selectedRow
-        if index == -1 {
-            //
-            if ReceiveTableView.numberOfRows == 0 {
-                //
-                index = 0
-            }else{
-                index = 1
-            }
-        }
-        //更新列表
-        receiveArray.insertObject(file, atIndex: index)
-        ReceiveTableView.beginUpdates()
-        ReceiveTableView.insertRowsAtIndexes(NSIndexSet.init(index: index), withAnimation: .EffectFade)
-        ReceiveTableView.scrollRowToVisible(index)
-        ReceiveTableView.endUpdates()
-        //更新详情页面
-        ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: index), byExtendingSelection: false)
     }
     
     //MARK: - Helper
@@ -503,6 +458,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         return receiveArray.count
     }
     
+    //初始化单元格状态信息
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //
         // Get a new ViewCell
@@ -528,6 +484,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         return cellView
     }
     
+    //:MARK: 右击事件
     func indexesToProcessForContextMenu() -> NSIndexSet {
         // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
         var selectedIndexes = ReceiveTableView.selectedRowIndexes
@@ -538,6 +495,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         return selectedIndexes
     }
     
+    //右击菜单显示功能
     @IBAction func mnuRevealInFinderSelected(sender: AnyObject) {
         let selectedIndexes = indexesToProcessForContextMenu()
         selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
@@ -546,6 +504,8 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
         }
     }
+    
+    //右击菜单删除功能
     @IBAction func mnuRemoveRowSelected(sender: AnyObject) {
         
         let selectedIndexes = indexesToProcessForContextMenu()
@@ -554,8 +514,9 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             ReceiveFileDao.sharedReceiveFileDao().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
             
-            
+            //删除文件
 //            try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
+            //删除广告
             let uid = ReceiveFileDao.sharedReceiveFileDao().fetchUid(ReceiveColumn.fileid)
             if(ReceiveFileDao.sharedReceiveFileDao().fetchCountOfUid(ReceiveColumn.fileid) == 0)
             {
@@ -571,17 +532,23 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
                     }
                 })
             }
-            
-            self.ReceiveTableView.beginUpdates()
-            self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
-            self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
-            self.ReceiveTableView.endUpdates()
-            self.selectRowStartingAtRow(row)
-            self.initThisView(true)
         }
-
+        //从列表中移除所选项
+        self.ReceiveTableView.beginUpdates()
+        self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
+        self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
+        self.ReceiveTableView.endUpdates()
+        //显示下一个文件详情
+        self.selectRowStartingAtRow(selectedIndexes.firstIndex - 1)
+        self.initThisView(true)
     }
-
+    
+    //右击刷新功能
+    @IBAction func refreshReceiveTableView(sender:AnyObject){
+        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
+        ReceiveTableView.reloadData()
+    }
+    
     //移动单元格 从 - 到 -
     @IBAction func btnMoveRowClick(sender:AnyObject) {
         //
@@ -595,7 +562,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         ReceiveTableView.endUpdates()
     }
     
-    //双击
+    //双击打开文件
     @IBAction func tblvwDoubleClick(sender:AnyObject)
     {
         if(!readBtn.enabled){
@@ -688,9 +655,51 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         
     }
     
+    //MARK: 通知处理事件 更新主页
+    func openInPBBFile(notification:NSNotification){
+        let fileID = notification.userInfo!["pycFileID"] as! Int
+        if receiveFile != nil && receiveFile.fileid == fileID {
+            //当打开的文件是当前显示的文件，直接刷新详情
+            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+            initThisView(true)
+        }else{
+            
+            var isInset = true
+            for pycFile in receiveArray as! Array<OutFile> {
+                if(pycFile.fileid == fileID){
+                    //如果文件已在列表中，显示该文件的详情信息
+                    isInset = false
+                    let theRow = receiveArray.indexOfObject(pycFile)
+                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                }
+            }
+            //新增文件
+            if isInset {
+                receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+                insertNewRow(receiveFile)
+            }
+        }
+    }
     
-    @IBAction func refreshReceiveTableView(sender:AnyObject){
-        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
-        ReceiveTableView.reloadData()
+    //插入新cell
+    func insertNewRow(file:OutFile){
+        var index = ReceiveTableView.selectedRow
+        if index == -1 {
+            //
+            if ReceiveTableView.numberOfRows == 0 {
+                //
+                index = 0
+            }else{
+                index = 1
+            }
+        }
+        //更新列表
+        receiveArray.insertObject(file, atIndex: index)
+        ReceiveTableView.beginUpdates()
+        ReceiveTableView.insertRowsAtIndexes(NSIndexSet.init(index: index), withAnimation: .EffectFade)
+        ReceiveTableView.scrollRowToVisible(index)
+        ReceiveTableView.endUpdates()
+        //更新详情页面
+        ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: index), byExtendingSelection: false)
     }
 }

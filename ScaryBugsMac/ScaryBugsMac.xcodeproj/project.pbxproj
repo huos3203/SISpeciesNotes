@@ -740,6 +740,7 @@
 		14B260091CFD8AA3001BCE84 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		14DDC9391D12AD1200F77B1D /* BigBuck.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = BigBuck.m4v; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
@@ -2511,6 +2512,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1437DD721CF2A75F001BD2D2 /* Base */,
+				14C75DCC1D6AE9C6009CBE09 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
