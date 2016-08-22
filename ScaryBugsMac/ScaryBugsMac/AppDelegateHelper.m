@@ -52,6 +52,7 @@
     MBProgressHUD *hud;
     NSWindow *keyWindow;
     BOOL isLoading;
+    NSString *logname;
 }
 singleton_implementation(AppDelegateHelper);
 
@@ -81,7 +82,7 @@ singleton_implementation(AppDelegateHelper);
     // 判断已接受数据库是否存在
     NSInteger openedNum = 0;
     BOOL OutLine = NO;
-    NSString *logname = [[userDao shareduserDao] getLogName];
+    logname = [[userDao shareduserDao] getLogName];
     // 判断已接受数据库是否存在
     isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
     if (isReceiveFileExist) {
@@ -168,6 +169,8 @@ singleton_implementation(AppDelegateHelper);
 
 - (void)didFinishSeePycFileForUser
 {
+    isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
+    
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
