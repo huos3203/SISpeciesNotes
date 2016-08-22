@@ -29,22 +29,6 @@
             timestampString = "493526498.675869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1010"
-            endingLineNumber = "1010"
-            landmarkName = "-show"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/AppDelegateHelper.m"
-            timestampString = "493526498.675869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
             endingLineNumber = "341"
             landmarkName = "-didFinishSeePycFileForUser"
@@ -57,45 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/AppDelegateHelper.m"
-            timestampString = "493526498.675869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "721"
-            endingLineNumber = "721"
-            landmarkName = "-seeFile:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ScaryBugsMac/ScaryBugsMac/Helper/API/RemoteSocket/other/PycFile.m"
-            timestampString = "493295313.506829"
+            timestampString = "493529065.809295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1254"
-            endingLineNumber = "1254"
-            landmarkName = "-seePycFile2:forUser:pbbFile:phoneNo:messageID:isOffLine:FileOpenedNum:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScaryBugsMac/ScaryBugsMac/Helper/API/RemoteSocket/other/PycFile.m"
-            timestampString = "493295432.520981"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "-generateHash:outHash:length:haveOutStru:"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-makeReturnMessage:forOperateType:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

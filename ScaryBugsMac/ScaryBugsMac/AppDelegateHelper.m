@@ -664,9 +664,8 @@ singleton_implementation(AppDelegateHelper);
 {
     VerificationCodeModel *codeModel = [[VerificationCodeModel alloc] init];
     if (receiveData->returnValue == 0) {
-        [self setAlertView:@"您的网络不给力哦，请重试！"];
+        [self setAlertView:@"验证码发送失败！"];
     } else if(receiveData->returnValue == -1) {
-        
         [self setAlertView:@"数据传输错误，请重试！"];
     }
     else if (receiveData->returnValue == 256 && _userPhone)

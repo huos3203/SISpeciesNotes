@@ -1790,11 +1790,10 @@ _ALL_END:
     //
     return YES;
 }
+
+#pragma mark - 解析更新密文数据结构的内容信息
 -(BOOL) makeOpenFile
 {
-
-    
-    
     long structsize = 0;
     long fileheadoffset = 0;
 
@@ -1911,6 +1910,7 @@ _ALL_END:
     return NO;
 }
 
+#pragma mark - 封装网络数据包
 -(void)MakeFileOutPackage:(SENDDATA_NEW_NEW *)data
 {
     NSLog(@"*****************%s******************", __func__);
@@ -2014,8 +2014,6 @@ _ALL_END:
 
 -(void)receiveRefreshListInfoPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-   
-    
     int iLen = 0;
     Byte *receiveDataIinfo = (Byte *)&(receiveData->userData);
     while (receiveDataIinfo[iLen] != 0) {
@@ -2532,7 +2530,7 @@ _ALL_END:
     
 }
 
-#pragma mark finish connect
+#pragma mark - socket 连接成功，封装请求数据包，并发送
 -(void)PycSocket: (PycSocket *)fileObject didFinishConnect: (Byte *)receiveDataByte
 {
     NSLog(@"*****************%s******************", __func__);
@@ -2670,7 +2668,7 @@ _ALL_END:
 
 
 
-#pragma mark finish send
+#pragma mark - socket服务器响应，开始解析接收到的数据包
 -(void)PycSocket: (PycSocket *)fileObject didFinishSend: (Byte *)receiveDataByte
 {
     
