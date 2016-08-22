@@ -686,6 +686,8 @@ singleton_implementation(AppDelegateHelper);
             codeModel.seeFile = @"0";
         }
         [[VerificationCodeDao sharedVerificationCodeDao] insertVerificationCode:codeModel];
+        //开始倒计时
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"getCodeFinish" object:nil];
     }
 }
 

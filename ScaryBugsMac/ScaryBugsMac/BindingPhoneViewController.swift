@@ -32,6 +32,7 @@ class BindingPhoneViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         codeModel = VerificationCodeModel()
+        
 
     }
     
@@ -48,8 +49,13 @@ class BindingPhoneViewController: NSViewController {
         // 调取获取验证码业务
         let result = pycFileHelper.getVerificationCodeByPhone(phoneNumber, userPhone: userPhone)
         if result {
-             getCodeFinish()  // 获取验证码成功后 调整界面
+            // 获取验证码成功后 调整界面
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: "getCodeFinish", object: nil)
+        }else
+        {
+            pycFileHelper.setAlertView("验证码请求发送失败，请重试！")
         }
+        
     }
     
     @IBAction func submitBtnAction(sender: AnyObject) {
@@ -87,7 +93,6 @@ class BindingPhoneViewController: NSViewController {
             
         } else {
             pycFileHelper.setAlertView("验证码无效，请重新获取！")
-
         }
     }
     
@@ -110,7 +115,10 @@ class BindingPhoneViewController: NSViewController {
         remainedTime = 59  // 剩余时间
         getMessageBtn.enabled = false // 获取验证码按钮不可用
         // 启用计时器更改剩余时间
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
+        if timer == nil {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
+        }
+        
     }
     
     /**
@@ -153,6 +161,6 @@ class BindingPhoneViewController: NSViewController {
         if !(sender is Bool){
             NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
         }
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
 }
