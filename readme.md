@@ -394,6 +394,17 @@ If your framework is not a Swift framework the "Defines Module" build setting mu
 
 You must add an import statement to your playground for the framework.
 
+####Cocoapods与playground连用
+http://stackoverflow.com/questions/38216238/xcode-playground-with-cocoapods#
+You could use [ThisCouldBeUsButYouPlaying](https://github.com/neonichu/ThisCouldBeUsButYouPlaying) or add this to your Podfile
+
+post_install do |installer|
+installer.pods_project.targets.each do |target|
+target.build_configurations.each do |config|
+config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+end
+end
+end
 
 #### NSURLConnection 和 NSURLSession请求网络的一个坑
 在主项目中使用 

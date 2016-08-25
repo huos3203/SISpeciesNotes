@@ -5,7 +5,9 @@
 //: Rx 权利法案 (4:09)
 //:  我们的开发者拥有像管理迭代集合 (iterable collections) 一样管理异步事件的权利。
 import Foundation
+import SISFramework
 import RxSwift
+
 //: 在处理不同事件的时候，无论如何你都会持有一个包含这些事件的集合。
 
 var str = [1, 2, 3, 4, 5, 6].filter{ $0 % 2 == 0 }
@@ -76,30 +78,30 @@ create { (observer: AnyObserver<AuthResponse>) -> Disposable in
 //: 关联观察者-----------------
 //: combineLatest关联方法： 意味着当某个事件发生的时候，我们就将最近的两个事件之间建立关联。
 
-func rx_canBuy() -> Observable<Bool> {
-    let stockPulse : [Observable<StockPulse>]
-    let accountBalance : Observable<Double>
-    
-    return combineLatest(stockPulse, accountBalance,
-                         resultSelector: { (pulse, bal) -> Bool in
-                            return pulse.price < bal
-    })
-}
-
-rx_canBuy()
-    .subscribeNext { (canBuy) -> Void in
-        self.buyButton.enabled = canBuy
-}
+//func rx_canBuy() -> Observable<Bool> {
+//    let stockPulse : [Observable<StockPulse>]
+//    let accountBalance : Observable<Double>
+//    
+//    return combineLatest(stockPulse, accountBalance,
+//                         resultSelector: { (pulse, bal) -> Bool in
+//                            return pulse.price < bal
+//    })
+//}
+//
+//rx_canBuy()
+//    .subscribeNext { (canBuy) -> Void in
+//        self.buyButton.enabled = canBuy
+//}
 
 //合并merge()方法：这些参数的类型都是相同的 Observable<StockPulse> 类型。我需要知道它们何时被触发，我需要做的就是持有一个观察者数组。里面存放了我需要进行监听的多个不同种类的股票行情，我可以在一个输出流中将它们合并然后进行监听。
 
 
-let myFavoriteStocks : [Observable<StockPulse>]
-
-myFavoriteStocks.merge()
-    .subscribeNext { (stockPulse) -> Void in
-        print("\(stockPulse.symbol)/
-            updated to \(stockPulse.price)/")
-}
+//let myFavoriteStocks : [Observable<StockPulse>]
+//
+//myFavoriteStocks.merge()
+//    .subscribeNext { (stockPulse) -> Void in
+//        print("\(stockPulse.symbol)/
+//            updated to \(stockPulse.price)/")
+//}
 
 
