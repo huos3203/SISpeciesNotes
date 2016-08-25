@@ -3,9 +3,9 @@
 //[原文路径](https://realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/)
 //RxSwift 是一个全新的第三方库，让您的事件驱动 (event-driven) 应用更容易进行管理，增强代码的可读性，从而减少错误的发生，让您不再为此而烦恼
 //: Rx 权利法案 (4:09)
-//:  我们的开发者拥有像管理迭代集合 (iterable collections) 一样管理异步事件的权利。
+    //:  我们的开发者拥有像管理迭代集合 (iterable collections) 一样管理异步事件的权利。
+//:在 Rx 的世界里，让我们用观察者 (Observables) 的概念来代替数组。观察者是一个类型安全的事件对象，可以长期对不同种类的数据值进行写入和读出。
 import Foundation
-import SISFramework
 import RxSwift
 
 //: 在处理不同事件的时候，无论如何你都会持有一个包含这些事件的集合。
@@ -23,10 +23,10 @@ reducestr
 
 //: 创建观察者 -----------------
 //:  just是一个RxSwift 内建的函数:你可以将你所想要的变量放到其中，它就会返回一个包含相同类型的观察者变量。
-Observable.just(1)  //Observable<Int>
+Observable.just(1)  //返回Observable<Int>对象
 
 //: 从数组中一个接一个的推出元素并执行相关操作
-[1,2,3,4,5,6].toObservable()  //Observable<Int>
+[1,2,3,4,5,6].toObservable()  //返回Observable<Int>对象
 
 //: create是一个RxSwift 内建的函数: 返回一个闭包,这个闭包会给予一个观察者 参数，这意味着有某个东西正在对其进行观察。
 
