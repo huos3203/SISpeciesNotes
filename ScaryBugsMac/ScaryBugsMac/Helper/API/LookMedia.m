@@ -36,7 +36,7 @@
         }
         
         //通知主页面刷新
-        NSDictionary  *dic = [NSDictionary dictionaryWithObject:_receviveFileId forKey:@"pycFileID"];
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:[_receviveFileId integerValue]] forKey:@"pycFileID"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
         
         //bilibili

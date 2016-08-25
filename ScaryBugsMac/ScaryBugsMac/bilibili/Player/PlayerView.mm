@@ -206,6 +206,8 @@ inline void check_error(int status)
     
     if (limitTime.integerValue != 0) {
         CountDownLabel.countDownNumber = limitTime.integerValue;
+        //不启动并隐藏倒计时
+        CountDownLabel.countDownNumber = -1;
     }else{
         CountDownLabel.countDownNumber = -1;
     }

@@ -438,7 +438,7 @@ CA
                                                                 <action selector="readBtn:" target="3OW-Ec-nEc" id="6lq-uy-kCa"/>
                                                             </connections>
                                                         </button>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="ihb-K2-VpE">
+                                                        <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-K2-VpE">
                                                             <rect key="frame" x="20" y="82" width="504" height="37"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tJa-Vz-Ekf">

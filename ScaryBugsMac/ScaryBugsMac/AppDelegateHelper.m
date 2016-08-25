@@ -174,14 +174,14 @@ singleton_implementation(AppDelegateHelper);
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
-        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
+        [self setAlertView:@"条件到期，无权阅读!"];
         return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
         [custormActivityView removeFromSuperview];
-        [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
+        [self setAlertView:@"条件到期，无权阅读!"];
         return;
     }
     
@@ -370,8 +370,8 @@ singleton_implementation(AppDelegateHelper);
             look.limitTime = seePycFile.openTimeLong;
             look.bOpenInCome = 1;
             look.receviveFileId = [NSString stringWithFormat:@"%ld",(long)fileID];//seePycFile.fileID];
-            //水印
-            look.waterMark = [self waterMark:seePycFile];
+            //自由传播不需要水印
+            //look.waterMark = [self waterMark:seePycFile];
             look.openinfoid = seePycFile.openinfoid;
             look.fileSecretkeyR1 = seePycFile.fileSecretkeyR1;
             look.EncryptedLen = seePycFile.encryptedLen;
@@ -417,7 +417,7 @@ singleton_implementation(AppDelegateHelper);
             //                                                                      }
             //                                                                  }];
             //            [alert show];
-            
+            [self setAlertView:@"不能阅读！"];
             return;
         }
         
@@ -441,7 +441,7 @@ singleton_implementation(AppDelegateHelper);
         }
         if (returnValue & ERR_OUTLINE_TIME_CHANGED_ERR) {
             //本地时间被修改  本地时间被人为修改，需要联网获取授权！
-            
+             [self setAlertView:@"本地时间被人为修改，需要联网获取授权！"];
             //联网校验
 //            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
 //                                                                      message:@"本地时间被人为修改，需要联网获取授权！"
@@ -500,7 +500,7 @@ singleton_implementation(AppDelegateHelper);
                 [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
                 applyNum =0;
-                [self setAlertView:@"文件暂时无法浏览，请查看限制条件..."];
+                [self setAlertView:@"条件到期，无权阅读!"];
                 [custormActivityView removeFromSuperview];
                 return;
             }
@@ -525,6 +525,7 @@ singleton_implementation(AppDelegateHelper);
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
         [alertShow addButtonWithTitle:@"查看详情"];
+        [alertShow addButtonWithTitle:@"我知道了"];
     }
 
     //        [alert addButtonWithTitle:@"Cancel"];
@@ -546,10 +547,12 @@ singleton_implementation(AppDelegateHelper);
     NSString *waterMark = nil;
     NSMutableArray *replace = [[NSMutableArray alloc] initWithArray:@[@"Q Q:",@"邮箱:",@"\n",@"手机:"]];
     if (fileObject.definechecked || fileObject.selffieldnum) {
+        //QQ
         if (fileObject.definechecked&1
             && ![ToolString isBlankString:fileObject.QQ]) {
             waterMark = [NSString stringWithFormat:@"Q Q:%@",fileObject.QQ];
         }
+        //手机
         if (fileObject.definechecked&2
             && ![ToolString isBlankString:fileObject.phone]) {
             
@@ -560,6 +563,7 @@ singleton_implementation(AppDelegateHelper);
             }
             
         }
+        //邮箱
         if (fileObject.definechecked&4
             && ![ToolString isBlankString:fileObject.email]) {
             
@@ -570,7 +574,7 @@ singleton_implementation(AppDelegateHelper);
             }
         }
         
-        
+        //自定义1
         if (fileObject.selffieldnum==1
             && fileObject.field1needprotect!=1
             && ![ToolString isBlankString:fileObject.fild1name]
@@ -583,7 +587,7 @@ singleton_implementation(AppDelegateHelper);
                 waterMark = [NSString stringWithFormat:@"%@:%@",fileObject.fild1name,fileObject.field1];
             }
         }
-        
+        //自定义2
         if (fileObject.selffieldnum==2) {
             
             if (fileObject.field1needprotect!=1
@@ -612,7 +616,7 @@ singleton_implementation(AppDelegateHelper);
             }
         }
     } else {
-        // 默认选项
+        //默认选项
         NSString *qq = fileObject.QQ;
         NSString *email = fileObject.email;
         NSString *phone = fileObject.phone;
@@ -637,6 +641,8 @@ singleton_implementation(AppDelegateHelper);
             }
         }
     }
+    
+    //仅当视频时处理
     if([fileObject.fileExtentionWithOutDot fileIsTypeOfVideo])
     {
         waterMark = [waterMark stringReplaceDelWater:replace];

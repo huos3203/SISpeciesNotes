@@ -100,13 +100,17 @@ extension NSTextField
             NSTextField.seconds = Int(Countdown % 60)
             timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
             
-        }else{
+        }else if Countdown == 0{
             //水印
             if (stringValue as NSString).length == 0 {
                 return {}
             }
             //默认显示，24s之后隐藏
             timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hiddenShade as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
+        }else
+        {
+            self.hidden = true
+            return {}
         }
         
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)

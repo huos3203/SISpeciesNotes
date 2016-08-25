@@ -528,7 +528,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
                     //
                     let oldfile = "\(fileDir)/\(obj))"
                     if(SandboxFile.IsFileExists(oldfile)){
-                        try! NSFileManager.defaultManager().removeItemAtPath(oldfile)
+//                        try! NSFileManager.defaultManager().removeItemAtPath(oldfile)
                     }
                 })
             }
