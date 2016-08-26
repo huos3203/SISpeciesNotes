@@ -28,7 +28,7 @@ Observable.just(1)  //返回Observable<Int>对象
 //: 从数组中一个接一个的推出元素并执行相关操作
 [1,2,3,4,5,6].toObservable()  //返回Observable<Int>对象
 
-//: create是一个RxSwift 内建的函数: 返回一个闭包,这个闭包会给予一个观察者 参数，这意味着有某个东西正在对其进行观察。
+//: create是一个RxSwift 内建的函数: 返回一个闭包,这个闭包会需要一个观察者参数，这意味着有某个东西正在对其进行观察。
 
 /*
 create { (observer: AnyObserver<AuthResponse>) -> Disposable in
@@ -53,15 +53,15 @@ create { (observer: AnyObserver<AuthResponse>) -> Disposable in
 */
 
 //: 监听观察者-----------------
-
-//: subscribeNext监听函数: 在很多对象中调用一个名为 toObservable() 的扩展方法。
+//toObservable():在很多系统对象中新增的一个扩展方法
+//: subscribeNext监听函数:
 [1,2,3,4,5,6]
     .toObservable()
     .subscribeNext {
         print($0)
 }
 
-//: Subscribe 监听器事件基于失败请求、下一步事件以及 onCompleted 操作，给你提供了各种各样的信息。你可以有选择性的建立相应的监听
+//: Subscribe 监听器事件基于失败请求、下一步事件以及 onCompleted 操作，提供了各种各样的信息。你可以有选择性的建立相应的监听：
 [1,2,3,4,5,6]
     .toObservable()
     .subscribe(onNext: { (intValue) -> Void in

@@ -50,6 +50,10 @@ All of these various systems makes our code needlessly complex. Wouldn't it be b
  ### Observables and observers (aka subscribers)
  
  `Observable`s will not execute their subscription closure unless there is a subscriber. In the following example, the closure of the `Observable` will never be executed, because there are no subscribers:
+ 
+ 要理解本框架，第一步需要理解如何创建 Observable。有很多函数可以创建 Observable。
+ 
+ 创建 Observable 之后，如果没有订阅者订阅该 observable，那么什么事情也不会发生，所以我们将同时解释创建和订阅。
  */
 example("Observable with no subscribers") {
     _ = Observable<String>.create { observerOfString -> Disposable in
@@ -59,6 +63,7 @@ example("Observable with no subscribers") {
         return NopDisposable.instance
     }
 }
+
 /*:
  ----
  In the following example, the closure will be executed when `subscribe(_:)` is called:
@@ -68,6 +73,7 @@ example("Observable with subscriber") {
             print("Observable created")
             observerOfString.on(.Next("😉"))
             observerOfString.on(.Completed)
+
             return NopDisposable.instance
         }
         .subscribe { event in
@@ -80,4 +86,9 @@ example("Observable with subscriber") {
  > `subscribe(_:)` returns a `Disposable` instance that represents a disposable resource such as a subscription. It was ignored in the previous simple example, but it should normally be properly handled. This usually means adding it to a `DisposeBag` instance. All examples going forward will include proper handling, because, well, practice makes _permanent_ 🙂. You can learn more about this in the [Disposing section](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#disposing) of the [Getting Started guide](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md).
  */
 
+/*: NopDisposable
+ > NopDisposable:类似 C# 中的 `IDisposable` 接口，用来释放资源。
+ 由于 Swift 使用 ARC,所以 dispose 方法大部分时候只是取消对某个资源的引用，
+ 譬如 `resource ＝ nil`
+ */
 //: [Next](@next) - [Table of Contents](Table_of_Contents)

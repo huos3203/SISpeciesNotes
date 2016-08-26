@@ -14,6 +14,9 @@ Operators that transform Next event elements emitted by an `Observable` sequence
 ## `map`
  Applies a transforming closure to elements emitted by an `Observable` sequence, and returns a new `Observable` sequence of the transformed elements. [More info](http://reactivex.io/documentation/operators/map.html)
 ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/map.png)
+ 
+ 对序列的每一项都应用一个函数来变换 Observable 发射的数据序列
+ ![](map.png)
 */
 example("map") {
     let disposeBag = DisposeBag()
@@ -27,6 +30,9 @@ example("map") {
  ## `flatMap` and `flatMapLatest`
  Transforms the elements emitted by an `Observable` sequence into `Observable` sequences, and merges the emissions from both `Observable` sequences into a single `Observable` sequence. This is also useful when, for example, when you have an `Observable` sequence that itself emits `Observable` sequences, and you want to be able to react to new emissions from either `Observable` sequence. The difference between `flatMap` and `flatMapLatest` is, `flatMapLatest` will only emit elements from the most recent inner `Observable` sequence. [More info](http://reactivex.io/documentation/operators/flatmap.html)
  ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/flatmap.png)
+ 
+ 将每个 Obserable 发射的数据变换为 Observable 的集合，然后将其 “拍扁”（降维 flatten）成一个 Observable。
+ ![](flatMap.png)
  */
 example("flatMap and flatMapLatest") {
     let disposeBag = DisposeBag()
@@ -63,6 +69,9 @@ example("flatMap and flatMapLatest") {
  ## `scan`
  Begins with an initial seed value, and then applies an accumulator closure to each element emitted by an `Observable` sequence, and returns each intermediate result as a single-element `Observable` sequence. [More info](http://reactivex.io/documentation/operators/scan.html)
  ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/scan.png)
+ 
+ 对 Observable 发射的每一项数据应用一个函数，然后按顺序依次发射每一个值
+ ![](scan.png)
  */
 example("scan") {
     let disposeBag = DisposeBag()

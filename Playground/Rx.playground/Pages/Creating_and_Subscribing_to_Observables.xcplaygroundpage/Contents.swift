@@ -13,6 +13,8 @@ import RxSwift
  There are several ways to create and subscribe to `Observable` sequences.
  ## never
  Creates a sequence that never terminates and never emits any events. [More info](http://reactivex.io/documentation/operators/empty-never-throw.html)
+ 
+ never 创建一个序列，该序列永远不会发送消息， .Completed 消息也不会发送。
  */
 example("never") {
     let disposeBag = DisposeBag()
@@ -29,6 +31,8 @@ example("never") {
  ----
  ## empty
  Creates an empty `Observable` sequence that only emits a Completed event. [More info](http://reactivex.io/documentation/operators/empty-never-throw.html)
+ 
+ empty 创建一个空的序列。它仅发送 .Completed 消息。
  */
 example("empty") {
     let disposeBag = DisposeBag()
@@ -44,6 +48,8 @@ example("empty") {
  ----
  ## just
  Creates an `Observable` sequence with a single element. [More info](http://reactivex.io/documentation/operators/just.html)
+ 
+ just 代表只包含一个元素的序列。它将向订阅者发送两个消息，第一个消息是其中元素的值，另一个是 .Completed 。
  */
 example("just") {
     let disposeBag = DisposeBag()
@@ -58,6 +64,8 @@ example("just") {
  ----
  ## of
  Creates an `Observable` sequence with a fixed number of elements.
+ 
+ Of 通过固定数目的元素创建一个序列
  */
 example("of") {
     let disposeBag = DisposeBag()
@@ -81,6 +89,8 @@ example("of") {
  ----
  ## toObservable
  Creates an `Observable` sequence from a `SequenceType`, such as an `Array`, `Dictionary`, or `Set`.
+ 
+ toObservable 在一个数组的基础上创建一个序列
  */
 example("toObservable") {
     let disposeBag = DisposeBag()
@@ -94,6 +104,8 @@ example("toObservable") {
 ----
  ## create
  Creates a custom `Observable` sequence. [More info](http://reactivex.io/documentation/operators/create.html)
+ 
+ create 使用 Swift 闭包来创建一个序列。该例子中，创建了 just 操作符的自定义版本。
 */
 example("create") {
     let disposeBag = DisposeBag()
@@ -140,6 +152,8 @@ example("repeatElement") {
  ----
  ## generate
  Creates an `Observable` sequence that generates values for as long as the provided condition evaluates to `true`.
+ 
+ generate 创建的序列可以自己生成它的值，并且在之前值的基础上来判断什么时候结束。
  */
 example("generate") {
     let disposeBag = DisposeBag()
@@ -156,7 +170,12 @@ example("generate") {
  ----
  ## deferred
  Creates a new `Observable` sequence for each subscriber. [More info](http://reactivex.io/documentation/operators/defer.html)
+ 
+ 直到 observer 订阅之后才创建 Observable，并且为每一个 observer 创建一个全新的 Observable  
+ ![](defer.png)
+ 
  */
+
 example("deferred") {
     let disposeBag = DisposeBag()
     var count = 1
@@ -186,10 +205,13 @@ example("deferred") {
  ----
  ## error
  Creates an `Observable` sequence that emits no items and immediately terminates with an error.
+ 
+ 创建一个不发送任何 item 的 Observable，以 error 终止。
  */
 example("error") {
     let disposeBag = DisposeBag()
-        
+    //let error = NSError(domain: "Test", code: -1, userInfo: nil)
+    
     Observable<Int>.error(Error.Test)
         .subscribe { print($0) }
         .addDisposableTo(disposeBag)
@@ -198,6 +220,9 @@ example("error") {
  ----
  ## doOn
  Invokes a side-effect action for each emitted event and returns (passes through) the original event. [More info](http://reactivex.io/documentation/operators/do.html)
+ 
+ 注册一个操作来监听事件的生命周期（register an action to take upon a variety of Observable lifecycle events）
+ ![](doOn.png)
  */
 example("doOn") {
     let disposeBag = DisposeBag()
