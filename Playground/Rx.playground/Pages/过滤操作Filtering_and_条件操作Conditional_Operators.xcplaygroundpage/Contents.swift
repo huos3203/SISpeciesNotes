@@ -13,7 +13,9 @@ import RxSwift
 Operators that selectively emit elements from a source `Observable` sequence.
 ## `filter`
 Emits only those elements from an `Observable` sequence that meet the specified condition. [More info](http://reactivex.io/documentation/operators/filter.html)
-![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/filter.png)
+
+ 只发送 Observable 中通过特定测试的数据
+ ![](filter.png)
 */
 example("filter") {
     let disposeBag = DisposeBag()
@@ -32,7 +34,9 @@ example("filter") {
  ----
 ## `distinctUntilChanged`
  Suppresses sequential duplicate elements emitted by an `Observable` sequence. [More info](http://reactivex.io/documentation/operators/distinct.html)
-![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/distinct.png)
+ 
+ 过滤掉连续重复的数据
+ ![](distinctUntilChanged.png)
 */
 example("distinctUntilChanged") {
     let disposeBag = DisposeBag()
@@ -60,6 +64,7 @@ example("elementAt") {
  ----
  ## `single`
  Emits only the first element (or the first element that meets a condition) emitted by an `Observable` sequence. Will throw an error if the `Observable` sequence does not emit exactly one element.
+ 
  */
 example("single") {
     let disposeBag = DisposeBag()
@@ -83,6 +88,9 @@ example("single with conditions") {
  ## `take`
  Emits only the specified number of elements from the beginning of an `Observable` sequence. [More info](http://reactivex.io/documentation/operators/take.html)
  ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/take.png)
+ 
+ 仅发送 Observable 的前 n 个数据项
+ ![](take.png)
  */
 example("take") {
     let disposeBag = DisposeBag()
@@ -111,6 +119,9 @@ example("takeLast") {
  ## `takeWhile`
  Emits elements from the beginning of an `Observable` sequence as long as the specified condition evaluates to `true`. [More info](http://reactivex.io/documentation/operators/takewhile.html)
  ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/takewhile.png)
+ 
+ 发送原始 Observable 的数据，直到一个特定的条件为 false
+ ![](takeWhile.png)
  */
 example("takeWhile") {
     let disposeBag = DisposeBag()
@@ -125,6 +136,9 @@ example("takeWhile") {
  ## `takeUntil`
  Emits elements from a source `Observable` sequence until a reference `Observable` sequence emits an element. [More info](http://reactivex.io/documentation/operators/takeuntil.html)
  ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/takeuntil.png)
+ 
+ 当第二个 Observable 发送数据之后，丢弃第一个 Observable 在这之后的所有消息。
+ ![](takeUntil.png)
  */
 example("takeUntil") {
     let disposeBag = DisposeBag()
