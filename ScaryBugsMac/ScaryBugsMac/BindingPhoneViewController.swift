@@ -21,6 +21,7 @@ class BindingPhoneViewController: NSViewController {
     var timer:NSTimer!  // 计时器
     var phoneNumber:String!  // 手机号码
     var remainedTime:Int!   // 剩余时间
+    var fileID = 0
 //    var indicator:
     var codeModel:VerificationCodeModel!
     //个人信息页面，绑定手机号flag
@@ -156,10 +157,12 @@ class BindingPhoneViewController: NSViewController {
     }
     
     override func dismissController(sender: AnyObject?) {
-        timer.invalidate()   // 停止时间刷新计时器 
+        if timer != nil {
+            timer.invalidate()   // 停止时间刷新计时器
+        }
         super.dismissController(sender)
         if !(sender is Bool){
-            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileID])
         }
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }

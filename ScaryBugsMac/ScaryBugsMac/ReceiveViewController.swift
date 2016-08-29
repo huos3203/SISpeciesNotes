@@ -388,26 +388,31 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             }else{
                 readBtn.image = NSImage.init(named: "send_read_active")
             }
-        }else{
-
-            var str = ""
-            //自由传播刷新界面
-            if (receiveFile.open == 2) {
-            str = "send_icon_stop_Detail";
-            if (receiveFile.readnum > 0) {
-            str = "send_after_file_Detail";
-            }
-                readBtn.image = NSImage.init(named: "send_read_no")
-                readBtn.enabled = false
-            } else if (receiveFile.open == 1) {
-                readBtn.image = NSImage.init(named: "send_read")
-                readBtn.enabled = true
-                str = "send_icon_already_Detail";
             
-            } else if (receiveFile.open == 0) {
-                str = "send_icon_Detail";
-                readBtn.image = NSImage.init(named: "send_read")
+        }else{
+            //自由传播刷新界面
+            var str = ""
+            if (receiveFile.open == 2) {
+                
+                str = "send_icon_stop_Detail";
+                if (receiveFile.readnum > 0) {
+                    str = "send_after_file_Detail";
+                }
+                readBtn.enabled = false
+                readBtn.image = NSImage.init(named: "send_read_no")
+                
+            } else if (receiveFile.open == 1) {
+                
+                str = "send_icon_already_Detail";
                 readBtn.enabled = true
+                readBtn.image = NSImage.init(named: "send_read")
+                
+            } else if (receiveFile.open == 0) {
+                
+                str = "send_icon_Detail";
+                readBtn.enabled = true
+                readBtn.image = NSImage.init(named: "send_read")
+                
             }
             if (receiveFile.forbid == 1) {
             //forbid: 1开放
@@ -470,14 +475,22 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.textField?.stringValue = ReceiveColumn.filename
-            if !isCanOpen(ReceiveColumn) || !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
-            {
-                cellView.textField?.textColor = NSColor.grayColor()
-            }
-            
-            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
-                //原文件存在
+            if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
+               //原文件存在
+                cellView.textField?.textColor = NSColor.blackColor()
+                
+                if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
+                {
+                    cellView.textField?.textColor = NSColor.grayColor()
+                }
+                if !isCanOpen(ReceiveColumn)
+                {
+                    cellView.textField?.textColor = NSColor.grayColor()
+                }
+            }else{
+                //原文件不存在
                 cellView.textField?.textColor = NSColor.redColor()
+                
             }
             return cellView
         }
@@ -545,6 +558,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     
     //右击刷新功能
     @IBAction func refreshReceiveTableView(sender:AnyObject){
+        receiveArray = nil
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
         ReceiveTableView.reloadData()
     }

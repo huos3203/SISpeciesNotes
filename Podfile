@@ -105,12 +105,6 @@ target 'mpv-examples' do
 end
 
 
-#post_install do |installer|
-#    installer.pods_project.targets.each do |target|
-#        puts target.name
-#    end
-#end
-
 #xcode7.3.1和cocoapods1.0版本导致playground无法import相关动态库
 #解决办法：http://stackoverflow.com/questions/38216238/xcode-playground-with-cocoapods#
 post_install do |installer|
@@ -118,6 +112,12 @@ post_install do |installer|
         target.build_configurations.each do |config|
             config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
         end
+    end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        puts target.name
     end
 end
 

@@ -180,7 +180,7 @@ extension NSTextField
         //动画
         NSAnimationContext.runAnimationGroup({ (context) in
             //
-            context.duration = 1.0
+            context.duration = 0
             self.hidden = false
             self.animator().alphaValue = 1
             self.animator().setFrameOrigin(self.shadeOrigin)

@@ -494,6 +494,7 @@ singleton_implementation(AppDelegateHelper);
                 // 需要验证手机号
                 BindingPhoneViewController *bindingPhone = (BindingPhoneViewController *)[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
                 bindingPhone.filePath = seePycFile.filePycName;
+                bindingPhone.fileID = seePycFile.fileID;
 //                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
 //                superView.contentViewController = bindingPhone;
                 [self setKeyWindow];
@@ -525,19 +526,17 @@ singleton_implementation(AppDelegateHelper);
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
         [alertShow addButtonWithTitle:@"查看详情"];
-        [alertShow addButtonWithTitle:@"我知道了"];
+//        [alertShow addButtonWithTitle:@"我知道了"];
     }
 
     //        [alert addButtonWithTitle:@"Cancel"];
     [alertShow setMessageText:msg];
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
     [alertShow setAlertStyle:NSWarningAlertStyle];
-    if ([alertShow runModal] == NSAlertFirstButtonReturn) {
+    if ([alertShow runModal] == NSAlertFirstButtonReturn || [alertShow runModal] == NSAlertSecondButtonReturn) {
         // OK clicked, delete the record
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:nil];
-        //通知主页面刷新
         NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
     }
 }
 

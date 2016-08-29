@@ -98,7 +98,7 @@ class ActivationSuccessController: NSViewController {
     override func dismissController(sender: AnyObject?) {
         super.dismissController(sender)
         if !(sender is Bool){
-           NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileId])
         }
     }
 }

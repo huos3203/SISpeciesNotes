@@ -114,7 +114,9 @@ inline void check_error(int status)
 //关闭播放器
 -(void)CancleClosePlayerWindows:(NSNotification *)info {
     [self.view.window performClose:self];
-    [[[NSApplication sharedApplication]delegate] performSelector:@selector(applicationShouldHandleReopen:hasVisibleWindows:) withObject:[NSApplication sharedApplication] withObject:[NSNumber numberWithInt:0]];
+    //通知主页面刷新
+    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[info.userInfo valueForKey:@"pycFileID"] forKey:@"pycFileID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
 }
 - (void)viewDidAppear{
     window = (PlayerWindow *)self.view.window;

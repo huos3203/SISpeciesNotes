@@ -584,6 +584,10 @@ CFStringRef stringByKeyCode(CGKeyCode keyCode)
 
 - (void)close{
     [super close];
+    
+    //从Docker上重新打开主页
+    [[[NSApplication sharedApplication]delegate] performSelector:@selector(applicationShouldHandleReopen:hasVisibleWindows:) withObject:[NSApplication sharedApplication] withObject:[NSNumber numberWithInt:0]];
+    
 }
 
 - (void)dealloc{
