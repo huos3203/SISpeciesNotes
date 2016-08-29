@@ -8,7 +8,7 @@ target 'SISpeciesNotes' do
     inhibit_all_warnings!
     project 'SISpeciesNotes.xcodeproj'
     
-    pod 'RealmSwift', '= 1.0.1'
+    pod 'RealmSwift', '~> 1.0.1'
     pod 'ObjectMapper', '= 1.1.5'
     
     pod 'Alamofire', '~> 3.0'

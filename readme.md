@@ -609,6 +609,17 @@ curl: (56) SSLRead() return error -36
 3. 把下载的好的核心包，拷贝到core_bin目录
 4. 再次：pod update
 
+######问题：Swift. Could not build Objective-C module  <Realm/RealmArray.h>file not found
+http://stackoverflow.com/questions/24740659/swift-could-not-build-objective-c-module
+1. Go into Developer/Xcode/DerivedData and delete the folder for your framework. (Or just delete DerivedData itself)
+
+2. If you have a build of you app in a running simulator you'll need to delete the app there.
+
+3. Then Clean & Build
+总之：多clean & build几次，最终成功了
+
+
+
 use `@import PodName;` in Obj-C, or `import PodName` in swift.
 
 #####单元测试 Specta VS Quick  和 Expecta VS Nimble
