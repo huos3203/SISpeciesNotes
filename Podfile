@@ -123,11 +123,11 @@ end
 #解决:'GCDAsyncSocket.h' file not found   ===
 #clang: error: linker command failed with exit code 1 (use -v to see invocation)
 #导致的问题：playground中无法找到对应的库例如：import RxSwift 提示：no such module 'RxSwift'
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        puts target.name
-    end
-end
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        puts target.name
+#    end
+#end
 
 
 

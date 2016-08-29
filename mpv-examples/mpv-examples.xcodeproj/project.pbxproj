@@ -608,7 +608,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14562FF81D11498400DB35E2 /* Build configuration list for PBXNativeTarget "mpv-examples" */;
 			buildPhases = (
-				AC349525D9FDE2CDF1B3FF36 /* 📦 Check Pods Manifest.lock */,
+				BEE0328EF4A3A901232AFA02 /* 📦 Check Pods Manifest.lock */,
+				AC349525D9FDE2CDF1B3FF36 /* [CP] Check Pods Manifest.lock */,
 				96605ED4B4AFBE182AF2E6BA /* [CP] Check Pods Manifest.lock */,
 				B3C98ED6C76E7A72126602BB /* [CP] Check Pods Manifest.lock */,
 				14562FD51D11498400DB35E2 /* Sources */,
@@ -836,14 +837,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AC349525D9FDE2CDF1B3FF36 /* 📦 Check Pods Manifest.lock */ = {
+		AC349525D9FDE2CDF1B3FF36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +860,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BEE0328EF4A3A901232AFA02 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
