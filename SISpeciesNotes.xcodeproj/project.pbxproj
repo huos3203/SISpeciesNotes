@@ -141,6 +141,7 @@
 		D849C0A31AF078E4001C01AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A11AF078E4001C01AC /* Main.storyboard */; };
 		D849C0A81AF078E4001C01AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849C0A61AF078E4001C01AC /* LaunchScreen.xib */; };
 		D849C0B41AF078E4001C01AC /* SISpeciesNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849C0B31AF078E4001C01AC /* SISpeciesNotesTests.swift */; };
+		E00A3F5EEAC1EB9D0DDFBAFC /* Pods_SISpeciesNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B648EBFCE73ED3751CA8D /* Pods_SISpeciesNotes.framework */; };
 		FDE3B0F6795302677F8D5A9D /* Pods_SISpeciesNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D8CC3EBBBB7954A80208B8 /* Pods_SISpeciesNotesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -399,6 +400,7 @@
 			files = (
 				843D921C1CC7E0D900DEB22D /* SISFramework.framework in Frameworks */,
 				1418BCCF1D7437D300F171A9 /* Pods_SISpeciesNotes.framework in Frameworks */,
+				E00A3F5EEAC1EB9D0DDFBAFC /* Pods_SISpeciesNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
