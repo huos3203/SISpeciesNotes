@@ -108,7 +108,7 @@
 "IK0-5h-ZGP.title" = "每次能看：";
 
 /* Class = "NSWindow"; title = "PBB Reader 阅读器"; ObjectID = "IQv-IB-iLA"; */
-"IQv-IB-iLA.title" = "PBB Reader 阅读器";
+"IQv-IB-iLA.title" = "PBB Reader";
 
 /* Class = "NSButtonCell"; title = "关闭弹幕渲染"; ObjectID = "KnA-QU-KbQ"; */
 "KnA-QU-KbQ.title" = "关闭弹幕渲染";
@@ -279,7 +279,7 @@
 "rh7-JV-d1J.title" = "1238736";
 
 /* Class = "NSButtonCell"; title = "浏览..."; ObjectID = "tg3-dJ-IXJ"; */
-"tg3-dJ-IXJ.title" = "浏览...";
+"tg3-dJ-IXJ.title" = "浏览本地PBB文件...";
 
 /* Class = "NSTextFieldCell"; title = "邮箱："; ObjectID = "ti2-5E-YGn"; */
 "ti2-5E-YGn.title" = "邮箱：";

@@ -76,9 +76,9 @@ for person in favoritePeopleWithSpousesAndCars {
     }
     car.name
     car.brand
-    
+
 //: VI. Update objects
-    car.year
+
     try! realm.write {
         car.year += 1
     }

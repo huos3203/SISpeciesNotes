@@ -111,11 +111,26 @@ end
 post_install do |installer|
     
     installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+        if target.name == 'SISpeciesNotes'
+            target.build_configurations.each do |config|
+                config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+            end
+        end
+        
+        if target.name == 'PBBReader' || target.name == 'ScaryBugsMac'
+            puts 'PBBReaderwwwww'
         end
     end
 end
+
+#if target.name == 'Mixpanel'
+#    target.build_configurations.each do |config|
+#        puts "  Pods-Mixpanel #{config.name} before: #{config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'].inspect}"
+#        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+#        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'DISABLE_MIXPANEL_AB_DESIGNER=1'
+#        puts "  Pods-Mixpanel #{config.name} after:  #{config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'].inspect}"
+#    end
+#end
 
 
 #An example of a more complex Podfile linking an app and its test bundle

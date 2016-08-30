@@ -48,7 +48,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBOutlet weak var makerSayLabel: NSTextField!
     
     @IBOutlet weak var fileFlageImage: NSImageView!
-    
+    @IBOutlet weak var ibOpenInLocalFileButtion: NSButton!
     
     @IBOutlet weak var rootView: NSView!
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
@@ -58,12 +58,17 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBOutlet var cntxMnuTableView: NSMenu!
 
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         loginName = userDao.shareduserDao().getLogName()
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
+        //设置按钮字体颜色
+        let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: 12))
+        ibOpenInLocalFileButtion.attributedTitle = attributedString
+   
+        //初始化详情页面
         initThisView(false)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
