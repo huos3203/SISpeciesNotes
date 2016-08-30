@@ -10,6 +10,7 @@
 		07A3755EF821F13D18ABB99C /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D0BD2208F52548EEDFE8F4 /* Pods_ScaryBugsMac_ScaryBugsMacTests.framework */; };
 		14105B821D337FD1004CB1C2 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */; };
 		14105B8E1D339A7D004CB1C2 /* NSTextField+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */; };
+		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
 		14248E471D2CCEFC00D3704C /* for_the_birds.avi in Resources */ = {isa = PBXBuildFile; fileRef = 14248E461D2CCEFC00D3704C /* for_the_birds.avi */; };
 		142EC39E1D2CDE0A00B88F96 /* 1.mp4.pbb in Resources */ = {isa = PBXBuildFile; fileRef = 142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */; };
 		142EC3AB1D2D0B1A00B88F96 /* readMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 142EC3AA1D2D0B1A00B88F96 /* readMe.md */; };
@@ -435,6 +436,7 @@
 		14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Attribute.h"; sourceTree = "<group>"; };
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
+		1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWindowController.swift; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
@@ -1447,6 +1449,7 @@
 				14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */,
 				14EE618C1CF816E50051FD1A /* NSImage+Extras.h */,
 				14EE618D1CF816E50051FD1A /* NSImage+Extras.m */,
+				1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -2440,6 +2443,7 @@
 				14815B221D4AF55A00922A62 /* BarrageDispatcher.m in Sources */,
 				143E38061D3F1809004B0A4D /* ScaryBugDoc.swift in Sources */,
 				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
+				1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
 				143E38081D3F1809004B0A4D /* VerificationCodeModel.m in Sources */,
 				143E38091D3F1809004B0A4D /* DB.m in Sources */,

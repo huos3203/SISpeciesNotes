@@ -77,6 +77,7 @@ def myPods   #def名不能以大写字母开头
     pod 'CocoaAsyncSocket'
     #    pod 'RealmSwift'
     pod 'FMDB'
+#    pod 'SnapKit', '~> 0.20.0'  #swift
 end
 
 target 'ScaryBugsMac' do

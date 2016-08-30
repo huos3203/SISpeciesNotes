@@ -142,7 +142,7 @@ CA
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="PBB Reader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="PBB Reader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="454" y="262" width="800" height="550"/>
@@ -186,12 +186,12 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="515"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw">
-                                                <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" id="vHS-NP-Zqw">
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="22"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
-                                                        <rect key="frame" x="5" y="5" width="176" height="24"/>
+                                                    <button wantsLayer="YES" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
+                                                        <rect key="frame" x="5" y="-3" width="176" height="24"/>
                                                         <shadow key="shadow">
                                                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </shadow>
@@ -218,12 +218,12 @@ CA
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </customView>
-                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" id="RMf-Wn-zsi">
-                                                <rect key="frame" x="0.0" y="31" width="186" height="484"/>
+                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" id="RMf-Wn-zsi">
+                                                <rect key="frame" x="0.0" y="23" width="186" height="492"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="29" horizontalPageScroll="10" verticalLineScroll="29" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="484"/>
+                                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="29" horizontalPageScroll="10" verticalLineScroll="29" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                        <rect key="frame" x="0.0" y="8" width="186" height="484"/>
                                                         <clipView key="contentView" drawsBackground="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="484"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
