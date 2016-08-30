@@ -625,7 +625,8 @@ http://stackoverflow.com/questions/24740659/swift-could-not-build-objective-c-mo
 3. 配置podfile卸载realm库
 4. 在终端执行pod update 命令，只是可以加载到已下载到core-1.3.1.tar.xz
 
-
+#####问题：dependency were found, but they required a higher minimum deployment target.
+导致问题是版本号过低：解决办法：把10.9改为10.11 即：platform :osx, '10.11'
 
 use `@import PodName;` in Obj-C, or `import PodName` in swift.
 
