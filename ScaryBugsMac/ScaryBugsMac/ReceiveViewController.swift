@@ -480,6 +480,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.textField?.stringValue = ReceiveColumn.filename
+            
             if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
                //原文件存在
                 cellView.textField?.textColor = NSColor.blackColor()

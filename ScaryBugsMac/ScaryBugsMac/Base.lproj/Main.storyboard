@@ -186,8 +186,8 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="495"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw">
-                                                <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" id="vHS-NP-Zqw">
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="2"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
@@ -218,12 +218,12 @@ CA
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </customView>
-                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" id="RMf-Wn-zsi">
-                                                <rect key="frame" x="0.0" y="31" width="186" height="464"/>
+                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" id="RMf-Wn-zsi">
+                                                <rect key="frame" x="0.0" y="3" width="186" height="492"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="aboveHorizontalRuler" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="464"/>
+                                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" findBarPosition="aboveHorizontalRuler" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                        <rect key="frame" x="0.0" y="28" width="186" height="464"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="464"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
