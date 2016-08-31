@@ -131,6 +131,7 @@ post_install do |installer|
     end
 end
 
+#http://pastebin.com/bsnsC2Ab
 #if target.name == 'Mixpanel'
 #    target.build_configurations.each do |config|
 #        puts "  Pods-Mixpanel #{config.name} before: #{config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'].inspect}"

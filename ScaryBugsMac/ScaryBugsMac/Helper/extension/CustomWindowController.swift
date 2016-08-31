@@ -25,23 +25,31 @@ class CustomWindowController: NSWindowController {
             make.top.equalTo((self.window?.contentView)!).offset(0)
             make.left.equalTo((self.window?.contentView)!).offset(0)
             make.right.equalTo((self.window?.contentView)!).offset(0)
-            make.height.equalTo(20)
+            make.height.equalTo(40)
         }
         //自定义一个label
         let titleLabel = NSTextField()
         titleLabel.stringValue = "PBB Reader"
-        
+        titleLabel.alignment = .Center
+        titleLabel.font = NSFont.systemFontOfSize(25)
+        titleLabel.editable = false
+        titleLabel.bordered = false //设置无边框
         titleLabel.textColor = NSColor.whiteColor()
+        titleLabel.backgroundColor = NSColor.grayColor()
         topBannerView.addSubview(titleLabel)
+        titleLabel.sizeToFit()
         titleLabel.snp_makeConstraints { (make) in
             //居顶部5 ，水平居中topBanerView
             make.centerX.equalTo(topBannerView)
-            make.top.equalTo(5)
+            make.left.right.equalTo(0)
+            make.top.equalTo(-5)
+            
         }
-        titleLabel.sizeToFit()
+        
         
         // 使用图片生成颜色
-        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "send_recover1")!).CGColor
+//        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "send_recover1")!).CGColor
+        let bannerColor = NSColor.grayColor().CGColor
         topBannerView.layer!.backgroundColor = bannerColor
         
         
