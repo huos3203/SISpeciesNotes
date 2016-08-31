@@ -1,4 +1,5 @@
 #存在多个project的workspace中引入cocoapods管理 https://yq.aliyun.com/articles/8315
+#CocoaPods是用ruby实现的，因此Podfile文件的语法就是ruby的语法。接着从以下几个方面来介绍Podfile:
 workspace 'SISpeciesNotes.xcworkspace'
 #project 'SISpeciesNotes.xcodeproj'
 
@@ -92,7 +93,6 @@ target 'ScaryBugsMac' do
     pBBReader
     
     target 'PBBReader' do
-#        platform :osx, '10.11'
         inherit! :search_paths
         pBBReader
         snapKit
@@ -115,16 +115,17 @@ end
 
 #xcode7.3.1和cocoapods1.0版本导致playground无法import相关动态库
 #解决办法：http://stackoverflow.com/questions/38216238/xcode-playground-with-cocoapods#
+#在写入磁盘之前，修改一些工程的配置:
 post_install do |installer|
-    
     installer.pods_project.targets.each do |target|
-        if target.name == 'SISpeciesNotes'
+        if target.name != 'CocoaAsyncSocket'
+            #playground相关配置，会导致'GCDAsyncSocket.h' file not found
             target.build_configurations.each do |config|
                 config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
             end
-        end
-        
-        if target.name == 'PBBReader' || target.name == 'ScaryBugsMac'
+        else
+            #输出操作
+            puts "以下不能在playground中使用的库名："
             puts target.name
         end
     end
@@ -136,18 +137,6 @@ end
 #        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
 #        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'DISABLE_MIXPANEL_AB_DESIGNER=1'
 #        puts "  Pods-Mixpanel #{config.name} after:  #{config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'].inspect}"
-#    end
-#end
-
-
-#An example of a more complex Podfile linking an app and its test bundle
-#注意：必须放在最后
-#解决:'GCDAsyncSocket.h' file not found   ===
-#clang: error: linker command failed with exit code 1 (use -v to see invocation)
-#导致的问题：playground中无法找到对应的库例如：import RxSwift 提示：no such module 'RxSwift'
-#post_install do |installer|
-#    installer.pods_project.targets.each do |target|
-#        puts target.name
 #    end
 #end
 

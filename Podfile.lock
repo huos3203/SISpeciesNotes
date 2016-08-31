@@ -47,7 +47,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
-  - SnapKit (0.20.0)
+  - SnapKit (0.30.0.beta2)
   - SwiftFilePath (0.0.6)
 
 DEPENDENCIES:
@@ -70,7 +70,7 @@ DEPENDENCIES:
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0.0)
   - SDWebImage (~> 3.7)
-  - SnapKit (~> 0.20.0)
+  - SnapKit (~> 0.30.0.beta2)
   - SwiftFilePath
 
 SPEC CHECKSUMS:
@@ -93,9 +93,9 @@ SPEC CHECKSUMS:
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
-  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
+  SnapKit: c4bb32b1d3c5d18ff63bf95ffcbc599d2bab964c
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
 
-PODFILE CHECKSUM: 0f273ee9697ada9d6ee9a684c512b64f50d3946d
+PODFILE CHECKSUM: dbac1e19783ccae6e447c0c2be3e0dc6b6d4091a
 
 COCOAPODS: 1.0.0

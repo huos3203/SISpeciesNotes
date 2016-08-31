@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SnapKit
 
 class CustomWindowController: NSWindowController {
 
@@ -16,33 +17,41 @@ class CustomWindowController: NSWindowController {
         self.window!.contentView!.wantsLayer = true // 设置整个内容view都有layer
         
         // 自定义一个view
-        var topBannerView = NSView.init(frame: NSZeroRect)
+        let topBannerView = NSView.init(frame: NSZeroRect)
         topBannerView.wantsLayer = true
-        
-        var bannerColor = NSColor.init(patternImage: NSImage.init(named: "114")!).CGColor // 使用图片生成颜色
-        
-        topBannerView.layer!.backgroundColor = bannerColor
         self.window?.contentView?.addSubview(topBannerView)
+        topBannerView.snp_makeConstraints { (make) in
+            //
+            make.top.equalTo((self.window?.contentView)!).offset(0)
+            make.left.equalTo((self.window?.contentView)!).offset(0)
+            make.right.equalTo((self.window?.contentView)!).offset(0)
+            make.height.equalTo(20)
+        }
+        //自定义一个label
+        let titleLabel = NSTextField()
+        titleLabel.stringValue = "PBB Reader"
+        
+        titleLabel.textColor = NSColor.whiteColor()
+        topBannerView.addSubview(titleLabel)
+        titleLabel.snp_makeConstraints { (make) in
+            //居顶部5 ，水平居中topBanerView
+            make.centerX.equalTo(topBannerView)
+            make.top.equalTo(5)
+        }
+        titleLabel.sizeToFit()
+        
+        // 使用图片生成颜色
+        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "send_recover1")!).CGColor
+        topBannerView.layer!.backgroundColor = bannerColor
+        
         
         // 取出标题栏的view并且改变背景色
         var views = self.window!.contentView!.superview!.subviews
-        
-        var titlebarContainerView = views[1]
-        var titlebarView = titlebarContainerView.subviews[0]
+        let titlebarContainerView = views[1]
+        let titlebarView = titlebarContainerView.subviews[0]
         titlebarView.layer!.backgroundColor = bannerColor
         //        CGColorRelease(bannerColor)
-        //
-        //        [topBannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.top.mas_equalTo(_window.contentView);
-        //            make.left.mas_equalTo(_window.contentView);
-        //            make.right.mas_equalTo(_window.contentView);
-        //            make.height.mas_equalTo(100);
-        //            }];
-        //
-        //        [((NSView *)self.window.contentView).superview addSubview:titleView
-        //            positioned:NSWindowBelow
-        //            relativeTo:firstView];
-        self.window?.contentView?.superview?.addSubview(titlebarView,positioned: .Below,relativeTo: topBannerView)
+//        self.window?.contentView?.superview?.addSubview(titlebarView,positioned: .Below,relativeTo: topBannerView)
 
     }
     override func windowDidLoad() {
@@ -51,6 +60,6 @@ class CustomWindowController: NSWindowController {
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         // Insert code here to initialize your application
         
-            }
+        }
 
 }

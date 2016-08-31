@@ -2,6 +2,8 @@
 
 import Cocoa
 import XCPlayground
+import SnapKit
+
 var str = "Hello, playground"
 print(str)
 
