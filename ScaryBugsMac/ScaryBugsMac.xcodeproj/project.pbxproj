@@ -372,6 +372,7 @@
 		843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
 		843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
 		843CAE241D09367800CE84F4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
+		84548C8A1D772AF600715F4B /* SelectedRowHighlightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */; };
 		8C570B8046151B8425CCC32B /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
@@ -772,6 +773,8 @@
 		843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = secondary_first_sub_category.txt; sourceTree = "<group>"; };
 		843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = secondary_second_sub_category.txt; sourceTree = "<group>"; };
 		843CAE121D09367800CE84F4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRowHighlightCell.h; sourceTree = "<group>"; };
+		84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRowHighlightCell.m; sourceTree = "<group>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
@@ -1450,6 +1453,8 @@
 				14EE618C1CF816E50051FD1A /* NSImage+Extras.h */,
 				14EE618D1CF816E50051FD1A /* NSImage+Extras.m */,
 				1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */,
+				84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */,
+				84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -2465,6 +2470,7 @@
 				143E38121D3F1809004B0A4D /* SecretModel.m in Sources */,
 				143E38131D3F1809004B0A4D /* SMS4.cpp in Sources */,
 				143E38141D3F1809004B0A4D /* VerificationCodeDao.m in Sources */,
+				84548C8A1D772AF600715F4B /* SelectedRowHighlightCell.m in Sources */,
 				143E38151D3F1809004B0A4D /* OpenUDID.m in Sources */,
 				143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */,
 				143E38161D3F1809004B0A4D /* HttpDes.cpp in Sources */,

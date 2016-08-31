@@ -186,7 +186,7 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="495"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" id="vHS-NP-Zqw">
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" id="vHS-NP-Zqw" userLabel="浏览...">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="2"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -218,7 +218,7 @@ CA
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </customView>
-                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" id="RMf-Wn-zsi">
+                                            <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" id="RMf-Wn-zsi" userLabel="接收列表">
                                                 <rect key="frame" x="0.0" y="3" width="186" height="492"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -229,7 +229,7 @@ CA
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" autosaveColumns="NO" rowHeight="20" viewBased="YES" id="DGV-oq-2Kh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="464"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="0.0"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="25" height="15"/>
                                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -237,11 +237,11 @@ CA
                                                                     <tableColumns>
                                                                         <tableColumn identifier="ReceiveColumn" width="161" minWidth="40" maxWidth="1000" id="zPf-lN-Jnv">
                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                                                <font key="font" metaFont="system" size="9"/>
+                                                                                <font key="font" metaFont="miniSystem"/>
                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                             </tableHeaderCell>
-                                                                            <textFieldCell key="dataCell" lineBreakMode="charWrapping" selectable="YES" editable="YES" title="Text Cell" id="Pv3-KM-U4r">
+                                                                            <textFieldCell key="dataCell" lineBreakMode="charWrapping" selectable="YES" editable="YES" title="Text Cell" allowsEditingTextAttributes="YES" id="Pv3-KM-U4r">
                                                                                 <font key="font" metaFont="system" size="21"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -283,7 +283,7 @@ CA
                                                                     </connections>
                                                                 </tableView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.86274509799999999" green="0.87843137250000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="backgroundColor"/>
                                                         </clipView>
                                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Fuj-nc-TeU">
                                                             <rect key="frame" x="-100" y="-100" width="0.0" height="15"/>

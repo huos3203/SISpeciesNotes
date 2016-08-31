@@ -74,6 +74,9 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
+        //取消行与行之间蓝白交替显示的背景
+        ReceiveTableView.usesAlternatingRowBackgroundColors = false
+        
     }
     
     
@@ -468,6 +471,11 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         return receiveArray.count
     }
     
+    func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+        let cellw = cell as! SelectedRowHighlightCell
+        cellw.setSelectionBKColor(NSColor.lightGrayColor())
+    }
+    
     //初始化单元格状态信息
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //
@@ -477,9 +485,15 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
         if tableColumn?.identifier == "ReceiveColumn" {
-            //
+            
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.textField?.stringValue = ReceiveColumn.filename
+            
+            //设置选中颜色
+//            let highlightCell = SelectedRowHighlightCell()
+//            highlightCell.setSelectionBKColor(NSColor.lightGrayColor())
+//            highlightCell.stringValue = ReceiveColumn.filename
+//            tableColumn?.dataCell = highlightCell
             
             if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
                //原文件存在
