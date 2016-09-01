@@ -348,6 +348,7 @@
 		14B53F1F1D2CB15400283A4D /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14B53F201D2CB15400283A4D /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14B53F211D2CB15400283A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14DDC93B1D12AEDD00F77B1D /* BigBuck.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 14DDC9391D12AD1200F77B1D /* BigBuck.m4v */; };
 		14EE618E1CF816E50051FD1A /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
 		14EE618F1CF816E50051FD1A /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
@@ -372,7 +373,6 @@
 		843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
 		843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
 		843CAE241D09367800CE84F4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
-		84548C8A1D772AF600715F4B /* SelectedRowHighlightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */; };
 		8C570B8046151B8425CCC32B /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
@@ -743,6 +743,7 @@
 		14B260091CFD8AA3001BCE84 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		14DDC9391D12AD1200F77B1D /* BigBuck.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = BigBuck.m4v; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
@@ -1455,6 +1456,7 @@
 				1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */,
 				84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */,
 				84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */,
+				14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -2470,7 +2472,6 @@
 				143E38121D3F1809004B0A4D /* SecretModel.m in Sources */,
 				143E38131D3F1809004B0A4D /* SMS4.cpp in Sources */,
 				143E38141D3F1809004B0A4D /* VerificationCodeDao.m in Sources */,
-				84548C8A1D772AF600715F4B /* SelectedRowHighlightCell.m in Sources */,
 				143E38151D3F1809004B0A4D /* OpenUDID.m in Sources */,
 				143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */,
 				143E38161D3F1809004B0A4D /* HttpDes.cpp in Sources */,
@@ -2537,6 +2538,7 @@
 				143E38471D3F1809004B0A4D /* PlayerControlView.m in Sources */,
 				143E38481D3F1809004B0A4D /* PostComment.m in Sources */,
 				143E38491D3F1809004B0A4D /* SimpleVideoFormatParser.mm in Sources */,
+				14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */,
 				143E384A1D3F1809004B0A4D /* SubtitleProvider.m in Sources */,
 				143E384B1D3F1809004B0A4D /* SubtitleHelper.m in Sources */,
 				143E384C1D3F1809004B0A4D /* TimeSliderCell.m in Sources */,

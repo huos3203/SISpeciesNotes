@@ -75,8 +75,10 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         
         ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
         //取消行与行之间蓝白交替显示的背景
-        ReceiveTableView.usesAlternatingRowBackgroundColors = false
-        
+//        ReceiveTableView.usesAlternatingRowBackgroundColors = false
+        //选中高亮色模式
+        //显示背景色
+//        ReceiveTableView.selectionHighlightStyle = .SourceList//去除背景色 //.Regular 显示背景色
     }
     
     
@@ -468,12 +470,27 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     //MARK: tableDataSource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         //
-        return receiveArray.count
+        if receiveArray != nil
+        {
+            return receiveArray.count
+        }
+        return 0
+    }
+    
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        //
+        let column = tableView.tableColumns[0]
+        let dycell = tableView.preparedCellAtColumn(0, row: row)
+        var cellBounds = NSZeroRect
+        cellBounds.size.width = column.width
+        cellBounds.size.height = CGFloat.max
+        let cellSize = dycell!.cellSizeForBounds(cellBounds)
+        return cellSize.height
     }
     
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
-        let cellw = cell as! SelectedRowHighlightCell
-        cellw.setSelectionBKColor(NSColor.lightGrayColor())
+//        let cellw = cell as! SelectedRowHighlightCell
+//        cellw.setSelectionBKColor(NSColor.lightGrayColor())
     }
     
     //初始化单元格状态信息

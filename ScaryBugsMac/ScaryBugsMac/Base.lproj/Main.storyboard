@@ -222,13 +222,13 @@ CA
                                                 <rect key="frame" x="0.0" y="3" width="186" height="492"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" findBarPosition="aboveHorizontalRuler" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
                                                         <rect key="frame" x="0.0" y="28" width="186" height="464"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="464"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" autosaveColumns="NO" rowHeight="20" viewBased="YES" id="DGV-oq-2Kh">
+                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="20" viewBased="YES" id="DGV-oq-2Kh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="186" height="0.0"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="25" height="15"/>
@@ -241,7 +241,7 @@ CA
                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                             </tableHeaderCell>
-                                                                            <textFieldCell key="dataCell" lineBreakMode="charWrapping" selectable="YES" editable="YES" title="Text Cell" allowsEditingTextAttributes="YES" id="Pv3-KM-U4r">
+                                                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" title="Text Cell" allowsEditingTextAttributes="YES" id="Pv3-KM-U4r">
                                                                                 <font key="font" metaFont="system" size="21"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
