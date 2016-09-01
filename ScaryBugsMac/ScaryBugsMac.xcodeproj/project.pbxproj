@@ -374,6 +374,7 @@
 		843CAE221D09367800CE84F4 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
 		843CAE231D09367800CE84F4 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
 		843CAE241D09367800CE84F4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
+		846754701D784303006D8722 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8467546F1D784303006D8722 /* PBBReader-Info.plist */; };
 		8C570B8046151B8425CCC32B /* Pods_ScaryBugsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73663ED459FC65C022C80E6E /* Pods_ScaryBugsMac.framework */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
@@ -463,7 +464,6 @@
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
 		143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycReceiveModel.swift; sourceTree = "<group>"; };
 		143E38AD1D3F1809004B0A4D /* PBBReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		143E38AE1D3F1809004B0A4D /* PBBReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PBBReader-Info.plist"; path = "/Users/pengyucheng/git/SISpeciesNotes/ScaryBugsMac/PBBReader-Info.plist"; sourceTree = "<absolute>"; };
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
@@ -778,6 +778,7 @@
 		843CAE121D09367800CE84F4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRowHighlightCell.h; sourceTree = "<group>"; };
 		84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRowHighlightCell.m; sourceTree = "<group>"; };
+		8467546F1D784303006D8722 /* PBBReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PBBReader-Info.plist"; sourceTree = "<group>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
@@ -884,7 +885,7 @@
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				1437DD741CF2A75F001BD2D2 /* Info.plist */,
-				143E38AE1D3F1809004B0A4D /* PBBReader-Info.plist */,
+				8467546F1D784303006D8722 /* PBBReader-Info.plist */,
 				840AA6901CFCA2EA00819203 /* 114.png */,
 				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
 				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
@@ -1833,6 +1834,7 @@
 				143E38851D3F1809004B0A4D /* next-episode.pdf in Resources */,
 				143E38861D3F1809004B0A4D /* primary_category.txt in Resources */,
 				143E38871D3F1809004B0A4D /* titlebar-corner-right.png in Resources */,
+				846754701D784303006D8722 /* PBBReader-Info.plist in Resources */,
 				143E38881D3F1809004B0A4D /* primary_second_sub_category.txt in Resources */,
 				143E38891D3F1809004B0A4D /* toolbar_video.icns in Resources */,
 				143E388A1D3F1809004B0A4D /* exitfullscreen.pdf in Resources */,
@@ -2807,7 +2809,7 @@
 					"DEVELOPMENT=0",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv";
-				INFOPLIST_FILE = "PBBReader-Info.plist";
+				INFOPLIST_FILE = "ScaryBugsMac/PBBReader-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2836,7 +2838,7 @@
 					"DEVELOPMENT=0",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ScaryBugsMac/bilibili/libmpv";
-				INFOPLIST_FILE = "PBBReader-Info.plist";
+				INFOPLIST_FILE = "ScaryBugsMac/PBBReader-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
