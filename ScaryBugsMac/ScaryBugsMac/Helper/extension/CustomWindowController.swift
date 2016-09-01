@@ -35,7 +35,7 @@ class CustomWindowController: NSWindowController {
         titleLabel.editable = false
         titleLabel.bordered = false //设置无边框
         titleLabel.textColor = NSColor.whiteColor()
-        titleLabel.backgroundColor = NSColor.grayColor()
+        titleLabel.backgroundColor = NSColor.lightGrayColor()
         topBannerView.addSubview(titleLabel)
         titleLabel.sizeToFit()
         titleLabel.snp_makeConstraints { (make) in
@@ -49,7 +49,7 @@ class CustomWindowController: NSWindowController {
         
         // 使用图片生成颜色
 //        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "send_recover1")!).CGColor
-        let bannerColor = NSColor.grayColor().CGColor
+        let bannerColor = NSColor.lightGrayColor().CGColor
         topBannerView.layer!.backgroundColor = bannerColor
         
         

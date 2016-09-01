@@ -160,7 +160,7 @@ extension ReceiveViewController
         ibSeriesNameLabel.stringValue = seriesName
         makerLabel.stringValue = "作者对你说:"
         if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil) {
-            makerLabel.stringValue = "\(receiveFile.fileOwnerNick)对你说:"
+            makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说:"
         }
         
         ibMakeTime.stringValue = "制作时间: \(receiveFile.sendtime.dateString())"
