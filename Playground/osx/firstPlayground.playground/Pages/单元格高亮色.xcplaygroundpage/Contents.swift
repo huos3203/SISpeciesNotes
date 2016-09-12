@@ -12,7 +12,7 @@ class CustomTableView:NSTableView{
 
 class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
 {
-    tableviewtableColumn
+//    tableviewtableColumn
     //
     func tableView(tableView: NSTableView, dataCellForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSCell? {
         //
