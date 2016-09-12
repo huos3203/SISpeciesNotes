@@ -10,7 +10,7 @@ class rotateViewController: NSView {
     
     override init(frame frameRect: NSRect) {
         //
-        super.init(frame: NSMakeRect(0, 0, 200, 400))
+        super.init(frame: NSMakeRect(0, 0, 200, 200))
         drawButton()
     }
     

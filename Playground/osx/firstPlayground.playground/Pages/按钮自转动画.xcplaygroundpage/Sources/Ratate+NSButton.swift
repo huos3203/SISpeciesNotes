@@ -82,8 +82,8 @@ extension NSButton
         rotateAnimation.fromValue = self.angle
         
         //to设置
-        //let transform = CATransform3DRotate(CATransform3DIdentity, self.angle, 0, 0, 1)
-        let transform = CATransform3DMakeRotation(self.angle, 0, 0, -1)
+        let transform = CATransform3DRotate(CATransform3DMakeTranslation(1, 1, 1.0), self.angle, 0, 0, 1)
+//        let transform = CATransform3DMakeRotation(self.angle, 0, 0, -1)
         rotateAnimation.toValue = NSValue.init(CATransform3D: transform)
 
         return rotateAnimation
@@ -130,7 +130,9 @@ extension NSButton
         //设置自我为中心自转动画
         wantsLayer = true
         layer?.anchorPoint = NSMakePoint(0.5, 0.5)
+//        layer?.position = frame.origin
         
+        layer?.position = NSMakePoint(frame.origin.x + frame.width/2, frame.origin.y + frame.height/2)
         //"transform.rotation":自我为中心
 //        layer?.addAnimation(groupAnimation, forKey: "")
         
