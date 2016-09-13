@@ -101,7 +101,7 @@ extension NSButton
         return rotationXAnimation
     }
     
-    // scale+rotate+position
+    // scale+rotate+position http://blog.csdn.net/yongyinmg/article/details/37931537
     var scaleRotatePositionAnimation:CABasicAnimation{
         let anim = CABasicAnimation.init(keyPath: "transform")
         //旋转动画 /1.57表示所转角度的弧度 = 90Pi/180 = 90*3.14/180

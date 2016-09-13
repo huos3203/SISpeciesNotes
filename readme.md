@@ -658,38 +658,49 @@ ddd
 Building in workspace /Users/pengyucheng/.jenkins/jobs/GuildBrowser/workspace
 jenkins 1.540
 `
-#####问题：配置osc私有库jenkins库管理，出现的问题：
-Failed to connect to repository : Command "git -c core.askpass=true ls-remote -h https://git.oschina.net/huosan/recomend.git HEAD" returned status code 128:
-stdout: 
-stderr: fatal: Authentication failed for 'https://git.oschina.net/huosan/recomend.git/'
+#####配置osc私有库jenkins库管理，出现的问题：
+两种安装方式：
+方式一：war包
+配置启动war命令：
+```
+vi ~/.bash_profile
 
-3. 设置git
+alias jenkins="nohup java -jar ~/Downloads/IOSproject/gitTest/jenkins.war --httpPort=8081 --ajp13Port=8010 > /tmp/jenkins.log 2>&1 &"
+``
+方式二：安装包
+[下载pkg安装包](http://ftp.yz.yamagata-u.ac.jp/pub/misc/jenkins/osx/jenkins-2.22.pkg)
+
+配置：[Jenkins中git仓库:](git@git.oschina.net:huosan/PBBReader.git)
 1). “新建” —> 勾选“构建一个自由风格的软件项目”  -> “源码管理”中勾选“Git”
-2).  配置repo的URL以及SSH keys生成的private key填入下面的输入框中。生成SSH keys的过程具体请参考：https://help.github.com/articles/generating-ssh-keys/，对git比较熟悉的话，这个过程应该不会陌生。记得不要忘记把public key添加 repo的访问权限中，无论是github/gitlab/bitbucket都是类似的。执行下面两行命令，直接到输入框里粘贴即可。
+2).  配置repo的URL以及SSH keys生成的private key填入下面的输入框中。生成SSH keys的过程具体请参考：https://help.github.com/articles/generating-ssh-keys/，记得不要忘记把public key添加 repo的访问权限中，无论是github/gitlab/bitbucket都是类似的。
 
+执行下面两行命令，直接到输入框里粘贴即可:
 ```
 ssh-keygen -t rsa -N "" -f ~/Tools/jenkins.key # 生成key
 cat ~/Tools/jenkins.key | pbcopy # 把private key copy到粘贴板
 ```   
 `
-解决：
+#####问题：
+Failed to connect to repository : Command "git -c core.askpass=true ls-remote -h https://git.oschina.net/huosan/recomend.git HEAD" returned status code 128:
+stdout: 
+stderr: fatal: Authentication failed for 'https://git.oschina.net/huosan/recomend.git/'
+
+
+解决：配置[Git@OSC SSH公钥 ](http://git.oschina.net/keys)
 [ssh key相关问题](http://git.mydoc.io/?t=83157)
 [github](https://help.github.com/articles/generating-ssh-keys/)
-你可以按如下命令来生成sshkey
-
+1). 你可以按如下命令来生成sshkey
 ssh-keygen -t rsa -C "xxxxx@xxxxx.com"# Creates a new ssh key using the provided email
 # Generating public/private rsa key pair...
-查看你的public key，并把他添加到 Git @ OSC http://git.oschina.net/keys
 
+2). 查看你的public key，并把他添加到 [Git@OSC](http://git.oschina.net/keys)
+`
 cat ~/.ssh/id_rsa.pub
 # ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....
-添加后，在终端（Terminal）中输入
-
-ssh -T git@git.oschina.net
-若返回
-
-Welcome to Git@OSC, yourname! 
-则证明添加成功。
+`
+3). 添加后，在终端（Terminal）中输入
+`ssh -T git@git.oschina.net`
+若返回 Welcome to Git@OSC, yourname! 则证明添加成功。
 
 ######在jenkins中执行pod update 出错的解决办法：
 在jenkins系统配置中添加全局属性键值对列表：LANG : zh_CN_UTF-8
@@ -724,10 +735,12 @@ Build step 'Execute shell' marked build as failure
 Finished: FAILURE
 
 ####配置：
-
+```
 #cd ~
 #pwd
 su jenkins pyc123
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install chruby
 source /usr/local/share/chruby/chruby.sh
 pwd
 cd Recommend/
@@ -739,7 +752,7 @@ echo ruby-2.3.1 > .ruby-version
 chruby ruby-2.3.1
 fastlane -v
 fastlane example
-
+``````
 
 ######[OC和swift中区分多个targets](http://www.cocoachina.com/ios/20160331/15832.html)
 配置文件build setting预编译位置
