@@ -734,11 +734,16 @@ chruby: unknown Ruby: ruby-2.3.1
 Build step 'Execute shell' marked build as failure
 Finished: FAILURE
 
-####配置：
+####jenkins配置 execute shell脚本：
 ```
+last                         # 查看登陆过的用户信息 
+whoami                       # 查看当前用户信息 
+logname
+
 #cd ~
 #pwd
 su jenkins pyc123
+#安装brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install chruby
 source /usr/local/share/chruby/chruby.sh
@@ -753,6 +758,23 @@ chruby ruby-2.3.1
 fastlane -v
 fastlane example
 ``````
+######问题:设置jenkins执行ruby命令不用输入管理员密码
+[Best practices to avoid Jenkins error: sudo: no tty present and no askpass program specified](http://stackoverflow.com/questions/17414533/best-practices-to-avoid-jenkins-error-sudo-no-tty-present-and-no-askpass-progr)
+(http://unix.stackexchange.com/questions/49077/why-does-cron-silently-fail-to-run-sudo-stuff-in-my-script/49078#49078)
+Defaults requiretty             # sudo不允许后台运行,注释此行既允许 
+Defaults !visiblepw             # sudo不允许远程,去掉!既允许
+
+######使用visudo命令编辑sudo程序的配置文件，在第99行添加参数允许pentest用户
+强制修改/etc/sudoers：
+visudo -f /etc/sudoers 
+`
+## Allows people in group wheel to run all commands
+# %wheel        ALL=(ALL)       ALL  ##这行默认是注释掉的。如果取消注释，则群组为 wheel 的人就可以进行root 的身份工作！这个 wheel 是系统预设的 group！因此，如果想要让这部主机里头的一般身份使用者具有sudo 的使用权限，那么就必需将该 user 放入支持 wheel 这个群组里头！
+
+## Same thing without a password
+# %wheel        ALL=(ALL)       NOPASSWD: ALL  #默认是注释掉的，运行所有wheel组群的用户不实用密码
+%jenkins        ALL=(ALL)       NOPASSWD: ALL  ###设置Jenkins用户免密码执行ruby命令
+`
 
 ######[OC和swift中区分多个targets](http://www.cocoachina.com/ios/20160331/15832.html)
 配置文件build setting预编译位置
