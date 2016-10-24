@@ -17,11 +17,11 @@ class ImageCache {
     return _sharedCache
   }
   
-  func setImage(image: UIImage, forKey key: String) {
+  func setImage(_ image: UIImage, forKey key: String) {
     images[key] = image
   }
   
-  func imageForKey(key: String) -> UIImage? {
+  func imageForKey(_ key: String) -> UIImage? {
     return images[key]
   }
 }
@@ -37,8 +37,8 @@ extension UIImage {
     filter!.setValue(input, forKey: kCIInputImageKey)
     let outputImage = filter!.outputImage
     
-    let outImage = context.createCGImage(outputImage!, fromRect: outputImage!.extent)
-    let returnImage = UIImage(CGImage: outImage)
+    let outImage = context.createCGImage(outputImage!, from: outputImage!.extent)
+    let returnImage = UIImage(cgImage: outImage!)
     return returnImage
   }
 }

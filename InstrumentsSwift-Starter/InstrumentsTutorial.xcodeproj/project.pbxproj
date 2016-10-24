@@ -174,9 +174,11 @@
 				TargetAttributes = {
 					17D45BF61A9F52D400DC4881 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 					};
 					17D45C0B1A9F52D400DC4881 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 17D45BF61A9F52D400DC4881;
 					};
 				};
@@ -355,6 +357,7 @@
 				INFOPLIST_FILE = InstrumentsTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -365,6 +368,7 @@
 				INFOPLIST_FILE = InstrumentsTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -383,6 +387,7 @@
 				INFOPLIST_FILE = InstrumentsTutorialTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstrumentsTutorial.app/InstrumentsTutorial";
 			};
 			name = Debug;
@@ -398,6 +403,7 @@
 				INFOPLIST_FILE = InstrumentsTutorialTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstrumentsTutorial.app/InstrumentsTutorial";
 			};
 			name = Release;
