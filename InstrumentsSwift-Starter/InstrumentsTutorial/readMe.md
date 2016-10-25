@@ -1,5 +1,12 @@
 [原路径](https://www.raywenderlich.com/97886/instruments-tutorial-with-swift-getting-started)
-
+ This sample app uses the Flickr API to search for images. To use the API you’ll need an API key. For demo projects, you can generate a sample key on Flickr’s website. Just perform any search at: http://www.flickr.com/services/api/explore/?method=flickr.photos.search and copy the API key out of the URL at the bottom – it follows the “&api_key=” all the way to the next “&”.
+ For example, if the URL is:
+ ```
+ http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6593783 efea8e7f6dfc6b70bc03d2afb&format=rest&api_sig=f24f4e98063a9b8ecc8b522b238d5e2f
+ ```
+ `
+ Then the API key is: 6593783efea8e7f6dfc6b70bc03d2afb.
+ Paste it into the top of the FlickrSearcher.swift file, replacing the existing API key.
  
 Automate UI Testing in iOS
     This chapter describes how you use the Automation template in Instruments to execute scripts. 

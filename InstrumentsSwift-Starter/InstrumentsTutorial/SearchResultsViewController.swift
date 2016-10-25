@@ -8,11 +8,14 @@
 
 import UIKit
 
+//／图片缩略图页面
+//单个cell的实现：包括收藏按钮的状态检测，当cell自身被重用时，先置image为nil
 class SearchResultsCollectionViewCell : UICollectionViewCell {
   
   @IBOutlet weak var heartButton: UIButton!
   @IBOutlet weak var imageView: UIImageView!
   
+  //观察属性：当图片属性为被收藏状态，改变收藏按钮颜色
   var flickrPhoto: FlickrPhoto! {
     didSet {
       if flickrPhoto.isFavourite {
@@ -22,9 +25,9 @@ class SearchResultsCollectionViewCell : UICollectionViewCell {
       }
     }
   }
-  
+  //定义闭包型属性，reloadItems刷新cell
   var heartToggleHandler: ((_ isFavourite: Bool) -> Void)?
-
+  //
   override func prepareForReuse() {
     imageView.image = nil
   }
@@ -89,6 +92,8 @@ extension SearchResultsViewController : UICollectionViewDataSource {
   
 }
 
+//MARK: UICollectionViewDelegateFlowLayout
+//通过代码实现layout布局控制
 extension SearchResultsViewController : UICollectionViewDelegateFlowLayout
 {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -101,7 +106,7 @@ extension SearchResultsViewController : UICollectionViewDelegateFlowLayout
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
+        return 0
   }
 }
 

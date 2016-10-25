@@ -8,6 +8,8 @@
 
 import UIKit
 
+///首页面：搜索框，结果列表，
+
 class ViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
@@ -35,11 +37,14 @@ class ViewController: UIViewController {
     super.viewDidAppear(animated)
     
     if let selectedIndexPath = tableView.indexPathForSelectedRow {
-      tableView.deselectRow(at: selectedIndexPath, animated: true)
+        //deselectRow：取消cell被选择的状态
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
   }
 }
 
+// MARK: searchBarDelegate实现，
+//当searchButton clicked时，启动Flickr搜索，将返回的信息插入到列表中
 extension ViewController : UISearchBarDelegate {
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -67,6 +72,8 @@ extension ViewController : UISearchBarDelegate {
   }
 }
 
+//MARK: tableView相关方法
+///设置1个单元，cell个数，cellForRowAt初始化cell，canEditRowAt可编辑设置，editingStyle指定cell侧滑删除的样式。
 extension ViewController : UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {

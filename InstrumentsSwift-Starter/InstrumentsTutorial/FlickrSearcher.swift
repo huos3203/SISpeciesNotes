@@ -8,14 +8,16 @@
 
 import Foundation
 import UIKit
-
-let apiKey = "294e72a918044d22512d1188d7da408d"
+//apiKey一天有效期：获取方法参看readme.md介绍
+let apiKey = "8343a630cdd7b965cf0cf265fb93fe0b"
 
 struct FlickrSearchResults {
   let searchTerm : String
   let searchResults : [FlickrPhoto]
 }
 
+//定义下载器
+//初始化必要的下载属性组装下载路径，定义图片下载完成的处理方法属性，
 class FlickrPhoto : Equatable {
   let photoID : String
   let title: String
@@ -23,10 +25,10 @@ class FlickrPhoto : Equatable {
   fileprivate let server : String
   fileprivate let secret : String
   
-    //完成下载闭包
+  //定义在图片下载完成后处理的方法属性
   typealias ImageLoadCompletion = (_ image: UIImage?, _ error: NSError?) -> Void
   
-    //构造器
+  //初始化下载过程中需要的所有属性
   init (photoID:String, title:String, farm:Int, server:String, secret:String) {
     self.photoID = photoID
     self.title = title
@@ -41,8 +43,8 @@ class FlickrPhoto : Equatable {
   
     //下载预览图
   func loadThumbnail(_ completion: @escaping ImageLoadCompletion) {
-    loadImageFromURL(flickrImageURL("m")) { image, error in
-      completion(image, error)
+        loadImageFromURL(flickrImageURL("m")) { image, error in
+        completion(image, error)
     }
   }
 
@@ -53,6 +55,7 @@ class FlickrPhoto : Equatable {
   
   func loadImageFromURL(_ URL: Foundation.URL, completion: @escaping ImageLoadCompletion) {
     let loadRequest = URLRequest(url: URL)
+    //开启网络访问，下载图片
     NSURLConnection.sendAsynchronousRequest(loadRequest,
       queue: OperationQueue.main) {
         response, data, error in
@@ -90,10 +93,11 @@ func == (lhs: FlickrPhoto, rhs: FlickrPhoto) -> Bool {
   return lhs.photoID == rhs.photoID
 }
 
+//MARK: 通过搜索关键字，解析APIKey数据信息，显示搜索结果信息
 class Flickr {
   
   let processingQueue = OperationQueue()
-  
+    
   func searchFlickrForTerm(_ searchTerm: String, completion : @escaping (_ results: FlickrSearchResults?, _ error : NSError?) -> Void){
     
     let searchURL = flickrSearchURLForSearchTerm(searchTerm)
@@ -104,8 +108,8 @@ class Flickr {
         completion(nil,error as NSError?)
         return
       }
-      
-      let JSONError : NSError?
+      //json结构数据解析
+      var JSONError : NSError?
       let resultsDictionary = try! JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions(rawValue: 0)) as? NSDictionary
       if JSONError != nil {
         completion(nil, JSONError)
@@ -113,16 +117,16 @@ class Flickr {
       }
       
       switch (resultsDictionary!["stat"] as! String) {
-      case "ok":
-        print("Results processed OK")
-      case "fail":
-        let APIError = NSError(domain: "FlickrSearch", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:resultsDictionary!["message"]!])
-        completion(nil, APIError)
-        return
-      default:
-        let APIError = NSError(domain: "FlickrSearch", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:"Unknown API response"])
-        completion(nil, APIError)
-        return
+          case "ok":
+            print("Results processed OK")
+          case "fail":
+            let APIError = NSError(domain: "FlickrSearch", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:resultsDictionary!["message"]!])
+            completion(nil, APIError)
+            return
+          default:
+            let APIError = NSError(domain: "FlickrSearch", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:"Unknown API response"])
+            completion(nil, APIError)
+            return
       }
       
       let photosContainer = resultsDictionary!["photos"] as! NSDictionary
@@ -142,6 +146,7 @@ class Flickr {
         return flickrPhoto
       }
       
+      //主线程执行闭包更新UI
       DispatchQueue.main.async(execute: {
         completion(FlickrSearchResults(searchTerm: searchTerm, searchResults: flickrPhotos), nil)
       })
