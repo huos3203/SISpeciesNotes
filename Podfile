@@ -20,6 +20,21 @@ def testing_pods
     #        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
 end
 
+#https://fabric.io/kits/ios/crashlytics/install
+def addFabric
+    pod 'Fabric'
+    pod 'Crashlytics'
+end
+
+target 'InstrumentsTutorial' do
+    platform :ios, '8.0'
+    use_frameworks!
+    project 'InstrumentsSwift-Starter/InstrumentsTutorial.xcodeproj'
+    #添加
+    addFabric
+
+end
+
 target 'SISpeciesNotes' do
     platform :ios, '8.0'
     use_frameworks!
