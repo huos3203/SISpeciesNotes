@@ -89,8 +89,6 @@
 		14EC64201CD2116200735501 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479CBBE1C96600300D26433 /* AlbumView.swift */; };
 		14FD60811CC9CC9E00288CAB /* SnapKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD60801CC9CC9E00288CAB /* SnapKitTest.swift */; };
 		1F74BE34D6637B0990CDFD23 /* Pods_SISpeciesNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B648EBFCE73ED3751CA8D /* Pods_SISpeciesNotes.framework */; };
-		307843054462A740206AF553 /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F7A9936402F3AF2F46487E /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework */; };
-		80D922E5BBCE88E011F82C0F /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5816339F0D8EFD1FE54751C /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework */; };
 		8416B3FC1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FB1CBBF50500CDCA18 /* PercentageCalculatorViewController.swift */; };
 		8416B3FE1CBC006D00CDCA18 /* PercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416B3FD1CBC006D00CDCA18 /* PercentageCalculator.swift */; };
 		841816861CEA13BB00EF1DE4 /* JSPatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841816851CEA13BB00EF1DE4 /* JSPatchTest.swift */; };
@@ -374,7 +372,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D922E5BBCE88E011F82C0F /* Pods_SISpeciesNotes_SISpeciesNotesUITests.framework in Frameworks */,
 				FDE3B0F6795302677F8D5A9D /* Pods_SISpeciesNotesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +404,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				307843054462A740206AF553 /* Pods_SISpeciesNotes_SISpeciesNotesTests.framework in Frameworks */,
 				03076564A2CBF16397AF2015 /* Pods_SISpeciesNotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
