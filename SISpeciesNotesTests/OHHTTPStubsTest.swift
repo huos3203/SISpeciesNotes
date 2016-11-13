@@ -29,8 +29,8 @@ class OHHTTPStubsTest: XCTestCase {
 //        Alamofire.request(.GET,"")
         
         
-        OHHTTPStubs.onStubActivation { (request: NSURLRequest, stub: OHHTTPStubsDescriptor, response: OHHTTPStubsResponse) in
-            print("[OHHTTPStubs] Request to \(request.URL!) has been stubbed with \(stub.name)")
+        OHHTTPStubs.onStubActivation { (request: URLRequest, stub: OHHTTPStubsDescriptor, response: OHHTTPStubsResponse) in
+            print("[OHHTTPStubs] Request to \(request.url) has been stubbed with \(stub.name)")
         }
         //默认是开启的
         OHHTTPStubs.setEnabled(true)
@@ -47,12 +47,12 @@ class OHHTTPStubsTest: XCTestCase {
     {
         installImageStub(2, responseTime: 4)
         let urlString = "http://images.apple.com/support/assets/images/products/iphone/hero_iphone4-5_wide.png"
-        let req = NSURLRequest(URL: NSURL(string: urlString)!)
-        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) { (_, data, _) in
+        let req = URLRequest(url: URL(string: urlString)!)
+        NSURLConnection.sendAsynchronousRequest(req, queue: OperationQueue.main) { (_, data, _) in
             //
             if let receiveData = data
             {
-                print("图片数据长度:\(receiveData.length)")
+                print("图片数据长度:\(receiveData.count)")
             }
         }
     }
@@ -61,12 +61,13 @@ class OHHTTPStubsTest: XCTestCase {
 //    设置模拟图片延迟加载
     weak var imageStub:OHHTTPStubsDescriptor?
     
-    func installImageStub(requestdelay:NSTimeInterval,responseTime:NSTimeInterval)
+    func installImageStub(_ requestdelay:TimeInterval,responseTime:TimeInterval)
     {
-        imageStub = stub((isExtension("png")||isExtension("jpg")), response: { _ in
+        imageStub = stub(condition: (isExtension("png")||isExtension("jpg")), response: { _ in
             //
-            let imagePath = OHPathForFile("stub.jpg", self.dynamicType)
-            return fixture(imagePath!, headers: ["Content-Type":"image/jpeg"]).requestTime(requestdelay, responseTime: responseTime)
+            let imagePath = OHPathForFile("stub.jpg", type(of: self))
+            let header:[NSString:AnyObject]? = ["Content-Type":"image/jpeg" as AnyObject]
+            return fixture(filePath: imagePath!, headers: header).requestTime(requestdelay, responseTime: responseTime)
         })
         imageStub?.name = "Image stub"
     }
@@ -78,35 +79,39 @@ class OHHTTPStubsTest: XCTestCase {
         //模拟延迟加载：请求延迟1s , 响应延时:2s
         installTextStub(1, responseDelay: 2)
         //
-        let expetion = expectationWithDescription("超时....")
+        let expetion = expectation(description: "超时....")
         //在使用OHHTTPStubs拦截时，后缀名文件放在“/”后即可，不需要真实存在的路径
         let urlString = "http://www.opensource/com.txt"
-        let req = NSURLRequest(URL: NSURL(string: urlString)!)
-        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()){ (_, data, _) in
+        let req = URLRequest(url: URL(string: urlString)!)
+        NSURLConnection.sendAsynchronousRequest(req, queue: OperationQueue.main){ (_, data, _) in
             
             expetion.fulfill()
-            print("data长度：\(data?.length)")
+            print("data长度：\(data?.count)")
             //
-            if let receiveData = data, receiveText = NSString(data:receiveData,encoding:NSASCIIStringEncoding)
+            if let receiveData = data, let receiveText = NSString(data:receiveData,encoding:String.Encoding.ascii.rawValue)
             {
                 
                 print("文本内容：\(receiveText)")
             }
         }
-        waitForExpectationsWithTimeout(5, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
 //    
     weak var textStub:OHHTTPStubsDescriptor?
-    func installTextStub(requestDelay:NSTimeInterval,responseDelay:NSTimeInterval)
+    func installTextStub(_ requestDelay:TimeInterval,responseDelay:TimeInterval)
     {
         //
-        textStub = stub(isExtension("txt"), response: { _  in
+        textStub = stub(condition: isExtension("txt"), response: { _  in
             
             let txtStr = "stub.txt"
-            let txtPath = OHPathForFile(txtStr, self.dynamicType)
+            //In Swift 2, use self.dynamicType instead of the type(of: self) Swift 3 syntax
+            let txtPath = OHPathForFile(txtStr, type(of: self))
             print("文件路径:\(txtPath)")
-            return fixture(txtPath!, headers: ["Content-Type":"text/plain"]).requestTime(requestDelay, responseTime: responseDelay)
+           let header:[NSString:AnyObject]? = ["Content-Type":"image/jpeg" as AnyObject]
+            return fixture(filePath: txtPath!, headers: header)
+                .requestTime(requestDelay, responseTime: responseDelay)
+//            return fixture(filePath: , headers: ["Content-Type":"text/plain"] as [NSObject:AnyObject]?).requestTime(requestDelay, responseTime: responseDelay)
         })
         
     }

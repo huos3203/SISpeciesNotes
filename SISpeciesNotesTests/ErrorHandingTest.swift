@@ -24,10 +24,10 @@ class ErrorHandingTest: XCTestCase {
     func testStringLoadByURL()
     {
         //URL
-        let url = NSURL(string: "http://www.baidu.com")
+        let url = URL(string: "http://www.baidu.com")
         let str:String // = try? String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
         do{
-             str = try String(contentsOfURL: url! ,encoding: NSUTF8StringEncoding)
+             str = try String(contentsOf: url! ,encoding: String.Encoding.utf8)
         }catch{
             str = ""
         }

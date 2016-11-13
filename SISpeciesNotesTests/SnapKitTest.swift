@@ -56,7 +56,7 @@ class SnapKitTest: XCTestCase {
         v2.snp_makeConstraints { (make) in
             //
             make.top.equalTo(v1)
-            make.size.equalTo(CGSizeMake(200, 200))
+            make.size.equalTo(CGSize.init(width: 200, height: 200))
         }
         XCTAssertEqual(container.constraints.count, 5, "约束个数5个")
 //        XCTAssertEqual(container.constraints[0].firstItem, <#T##expression2: [T : U]##[T : U]#>, <#T##message: String##String#>)
@@ -227,7 +227,7 @@ class SnapKitTest: XCTestCase {
         self.container.addSubview(view)
         
         view.snp_makeConstraints { (make) -> Void in
-            make.size.equalTo(CGSizeMake(50, 50))
+            make.size.equalTo(CGSize.init(width: 50, height: 50))
             make.left.top.equalTo(self.container)
         }
         
@@ -238,8 +238,8 @@ class SnapKitTest: XCTestCase {
         
         let constraints = view.snp_constraints as! [NSLayoutConstraint]
         
-        XCTAssertEqual(constraints[0].firstAttribute, NSLayoutAttribute.Width, "Should be width")
-        XCTAssertEqual(constraints[1].firstAttribute, NSLayoutAttribute.Height, "Should be height")
+        XCTAssertEqual(constraints[0].firstAttribute, NSLayoutAttribute.width, "Should be width")
+        XCTAssertEqual(constraints[1].firstAttribute, NSLayoutAttribute.height, "Should be height")
         XCTAssertEqual(constraints[0].constant, 50, "Should be 50")
         XCTAssertEqual(constraints[1].constant, 50, "Should be 50")
     }

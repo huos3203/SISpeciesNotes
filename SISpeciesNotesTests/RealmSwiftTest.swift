@@ -44,16 +44,16 @@ class RealmSwiftTest: XCTestCase {
     func testupdateUserFromServer() {
         
         //在使用OHHTTPStubs拦截时，后缀名文件放在“/”后即可，不需要真实存在的路径
-        let url = NSURL(string: "https://www.baidu/t.json")
-        let expection = expectationWithDescription("访问网络超时")
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) { data, _, _ in
+        let url = URL(string: "https://www.baidu/t.json")
+        let expection = expectation(description: "访问网络超时")
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { data, _, _ in
 //                let realm = try! Realm()
             self.createOrUpdateUserInRealm(self.realm, withData: data!)
             expection.fulfill()
-        }
+        }) 
         
         task.resume()
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval + 30) { error in
+        waitForExpectations(timeout: task.originalRequest!.timeoutInterval + 30) { error in
             print("错误原因:\(error?.localizedDescription)")
             task.cancel()
         }
@@ -74,8 +74,7 @@ class RealmSwiftTest: XCTestCase {
                 */
                 var config = Realm.Configuration()
                 // 使用默认的目录，但是使用用户名来替换默认的文件名
-                config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?
-                    .URLByAppendingPathComponent("\(realmPath).realm")
+                config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(realmPath).realm")
                 // 将这个配置应用到默认的 Realm 数据库当中
                 Realm.Configuration.defaultConfiguration = config
             }
@@ -86,12 +85,12 @@ class RealmSwiftTest: XCTestCase {
         }
         
         //读取本地文件中的内容
-        let jsonPath = OHPathForFile("user.json", self.dynamicType)
-        let jsonData = NSData(contentsOfFile: jsonPath!)
+        let jsonPath = OHPathForFile("user.json", type(of: self))
+        let jsonData = try! Data.init(contentsOf: URL.init(string: jsonPath!)!)
         
         makeInjectRealm(injectPathOfRealm:"")   //isEmpty时，默认setup设置的默认内存数据库
         //注入injectRealm操作指定的数据库
-        createOrUpdateUserInRealm(injectRealm, withData: jsonData!)
+        createOrUpdateUserInRealm(injectRealm, withData: jsonData)
         //通过查询，比较name属性是否被更新
         XCTAssertEqual(injectRealm.objects(Users).first!.name,
                        "Brett2",
@@ -109,7 +108,7 @@ class RealmSwiftTest: XCTestCase {
         let config = Realm.Configuration(
             // Get the path to the bundled file
             // 获取需要打包文件的 URL 路径
-            fileURL: NSBundle.mainBundle().URLForResource("MyBundledData", withExtension: "realm"),
+            fileURL: Bundle.main.url(forResource: "MyBundledData", withExtension: "realm"),
 //            path: NSBundle.mainBundle().pathForResource("MyBundledData", ofType:"realm"),
             
             // Open the file in read-only mode as application bundles are not writeable
@@ -123,7 +122,7 @@ class RealmSwiftTest: XCTestCase {
                 if (oldSchemaVersion < 1) {
                     // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
                     // enumerate(_:_:) 方法遍历了存储在 Realm 文件中的每一个“Person”对象
-                    migration.enumerate(Users.className()) { oldObject, newObject in
+                    migration.enumerateObjects(ofType: Users.className()) { oldObject, newObject in
                         // 将名字进行合并，存放在 fullName 域中
                         let firstName = oldObject!["firstName"] as! String
                         let lastName = oldObject!["lastName"] as! String
@@ -148,13 +147,13 @@ class RealmSwiftTest: XCTestCase {
     
     //在应用中备份初始化的 Realm 数据库
     //为了能够使您的用户在应用第一次启动时就能够直接使用一些初始数据，一种通常的做法就是为应用配置初始化数据。
-    func backupsRealmFileToPath(path:String)
+    func backupsRealmFileToPath(_ path:String)
     {
         
         //定位 realm 的所在位置，使用与最终版本相同的数据模型来创建 Realm 数据库，
         //并将您想要打包的数据放置到您的应用当中
 //        try! Realm().writeCopyToPath(path ,encryptionKey:getKey()) //过时
-        try! Realm().writeCopyToURL(NSURL(fileURLWithPath:path), encryptionKey:getKey())
+        try! Realm().writeCopy(toFile: (URL(fileURLWithPath:path) as NSURL) as URL, encryptionKey:getKey())
         //将您最终的 Realm 文件的压缩拷贝拖懂到您最终应用的Xcode项目导航栏中,前往您应用的Xcode Build Phase 选项卡，添加 Realm 文件到”Copy Bundle Resources”当中,这样，就能够在应用中使用这个打包好的 Realm 数据库了。 您能通过使用NSBundle.mainBundle().pathForResource(_:ofType:)来得到数据库路径
         
         //如果打包的 Realm 文件包含有您不想修改的固定数据，您也能通过为Realm.Configuration 对象设置 readOnly = true 选项，这样就可以将其从包路径直接打开了。 如果您打算修改初始数据的话，您可以通过NSFileManager.defaultManager().copyItemAtPath(_:toPath:)，将这个打包的文件拷贝到应用的 Document 文件夹下。
@@ -163,14 +162,14 @@ class RealmSwiftTest: XCTestCase {
     }
     
     //新建或更新一个对象数据
-    func createOrUpdateUserInRealm(realm: Realm, withData data: NSData) {
+    func createOrUpdateUserInRealm(_ realm: Realm, withData data: Data) {
         
         //使用嵌套函数来解析网络数据转化为实例对象, 必须在调用该函数前声明该函数
         func parseData()->NSArray
         {
-            let str = String(data:data, encoding:NSUTF8StringEncoding)
+            let str = String(data:data, encoding:String.Encoding.utf8)
             print("数据字符串：\(str!)")
-            let usersDic = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary  //[String:[[String:String]]]
+            let usersDic = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary  //[String:[[String:String]]]
             return usersDic["users"]! as! NSArray
         }
         
@@ -178,7 +177,7 @@ class RealmSwiftTest: XCTestCase {
         //当写入大量数据的时候，在一个单独事务中通过批量执行多次写入操作是非常高效的。
         try! realm.write{
             //轮询数组，逐个添加到内存数据中
-            parseData().enumerateObjectsUsingBlock({ (userdata, index, nil) in
+            parseData().enumerateObjects({ (userdata, index, nil) in
                 let userDic = userdata as! NSDictionary
                 //realm中,Object对象支持直接通过字典初始化
                 let user = Users(value: userDic)
@@ -209,11 +208,12 @@ class RealmSwiftTest: XCTestCase {
     var jsonStub:OHHTTPStubsDescriptor?
     func installJSONStubs(){
         //使用self.dynamicType需要将资源文件user.json关联到本例target:SISpeciesNotesTests中
-        let jsonPath = OHPathForFile("user.json", self.dynamicType)
+        let jsonPath = OHPathForFile("user.json", type(of: self))
         print("JsonStub文件路径:\(jsonPath)")
-        jsonStub = stub(isExtension("json")){ _ in
+        jsonStub = stub(condition: isExtension("json")){ _ in
             //设置拦截时间和返回模拟数据
-            return fixture(jsonPath!, headers: ["Content-Type":"text/json"]).requestTime(2, responseTime: 2)
+            let header:[NSString:AnyObject]? = ["Content-Type":"text/json" as AnyObject]
+            return fixture(filePath: jsonPath!, headers: header).requestTime(2, responseTime: 2)
         }
         jsonStub?.name = "user.json"
     }
@@ -238,41 +238,41 @@ class Users: Object {
 }
 
 //数据库加密秘钥
-func getKey() -> NSData {
+func getKey() -> Data {
     // Identifier for our keychain entry - should be unique for your application
     let keychainIdentifier = "io.Realm.EncryptionExampleKey"
-    let keychainIdentifierData = keychainIdentifier.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+    let keychainIdentifierData = keychainIdentifier.data(using: String.Encoding.utf8, allowLossyConversion: false)!
     
     // First check in the keychain for an existing key
     var query: [NSString: AnyObject] = [
         kSecClass: kSecClassKey,
-        kSecAttrApplicationTag: keychainIdentifierData,
-        kSecAttrKeySizeInBits: 512,
-        kSecReturnData: true
+        kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
+        kSecAttrKeySizeInBits: 512 as AnyObject,
+        kSecReturnData: true as AnyObject
     ]
     
     // To avoid Swift optimization bug, should use withUnsafeMutablePointer() function to retrieve the keychain item
     // See also: http://stackoverflow.com/questions/24145838/querying-ios-keychain-using-swift/27721328#27721328
     var dataTypeRef: AnyObject?
-    var status = withUnsafeMutablePointer(&dataTypeRef) { SecItemCopyMatching(query, UnsafeMutablePointer($0)) }
+    var status = withUnsafeMutablePointer(to: &dataTypeRef) { SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0)) }
     if status == errSecSuccess {
-        return dataTypeRef as! NSData
+        return dataTypeRef as! Data
     }
     
-    // No pre-existing key from this application, so generate a new one
-    let keyData = NSMutableData(length: 64)!
-    let result = SecRandomCopyBytes(kSecRandomDefault, 64, UnsafeMutablePointer<UInt8>(keyData.mutableBytes))
-    assert(result == 0, "Failed to get random bytes")
-    
+    // 产生随机密钥
+    var keyData = Data(count: 64)
+    _ = keyData.withUnsafeMutableBytes { bytes in
+        SecRandomCopyBytes(kSecRandomDefault, 64, bytes)
+    }
     // Store the key in the keychain
     query = [
         kSecClass: kSecClassKey,
-        kSecAttrApplicationTag: keychainIdentifierData,
-        kSecAttrKeySizeInBits: 512,
-        kSecValueData: keyData
+        kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
+        kSecAttrKeySizeInBits: 512 as AnyObject,
+        kSecValueData: keyData as AnyObject
     ]
     
-    status = SecItemAdd(query, nil)
+    status = SecItemAdd(query as CFDictionary, nil)
     assert(status == errSecSuccess, "Failed to insert the new key in the keychain")
     
     return keyData

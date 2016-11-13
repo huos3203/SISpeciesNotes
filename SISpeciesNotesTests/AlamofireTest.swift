@@ -25,9 +25,9 @@ class AlamofireTest: XCTestCase {
     func alamofireImage() {
         //
         let img = UIImage(named: "alert_error_icon")
-        let URL = NSBundle.mainBundle().URLForResource("unicorn", withExtension: "png")!
-        let data = NSData(contentsOfURL: URL)!
-        let image = UIImage(data: data, scale: UIScreen.mainScreen().scale)!
+        let URL = Bundle.main.url(forResource: "unicorn", withExtension: "png")!
+        let data = try! Data(contentsOf: URL)
+        let image = UIImage(data: data, scale: UIScreen.main.scale)!
         
         image.af_inflate()
     }

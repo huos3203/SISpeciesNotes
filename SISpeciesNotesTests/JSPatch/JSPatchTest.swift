@@ -32,15 +32,15 @@ class JPJSClassTest:NSObject {
 
 class JSPatchTest: XCTestCase {
 
-    func loadPatch(patchName:String) {
+    func loadPatch(_ patchName:String) {
         //
-        let jsPath = NSBundle.init(forClass: JSPatchTest.self).pathForResource(patchName, ofType: "js")
-        JPEngine.evaluateScriptWithPath(jsPath!)
+        let jsPath = Bundle.init(for: JSPatchTest.self).path(forResource: patchName, ofType: "js")
+        JPEngine.evaluateScript(withPath: jsPath!)
     }
     
     override func setUp() {
         super.setUp()
-        JPEngine.startEngine()
+        JPEngine.start()
         JPEngine.addExtensions(["JPMemory", "JPStructPointer", "JPCoreGraphics", "JPUIKit"])
     }
     
@@ -61,7 +61,7 @@ class JSPatchTest: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
@@ -71,7 +71,7 @@ class JSPatchTest: XCTestCase {
         
         loadPatch("test")
         let objValue = JPEngine.context().evaluateScript("ocObj")
-        let obj = objValue.toObjectOfClass(JPTestObject.self) as! JPTestObject
+        let obj = objValue?.toObjectOf(JPTestObject.self) as! JPTestObject
         
         XCTAssert(obj.funcReturnVoidPassed,"funcReturnVoidPassed")
         XCTAssert(obj.funcReturnStringPassed, "funcReturnStringPassed")

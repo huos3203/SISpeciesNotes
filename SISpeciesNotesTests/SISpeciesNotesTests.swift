@@ -35,21 +35,21 @@ class SISpeciesNotesTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }
     
     //代码质量性能测试
     func testDateFormatterPerformance() {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .LongStyle
-        dateFormatter.timeStyle = .ShortStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
         
-        let date = NSDate()
+        let date = Date()
         
-        self.measureBlock() {
-            let string = dateFormatter.stringFromDate(date)
+        self.measure() {
+            let string = dateFormatter.string(from: date)
         } 
     }
     
@@ -58,20 +58,20 @@ class SISpeciesNotesTests: XCTestCase {
         let URL = "http://nshipster.com/"
 
         //首先使用 expectationWithDescription 建立一个期望值。
-        let expectation = expectationWithDescription("GET \(URL)")
+        let expectation = self.expectation(description: "GET \(URL)")
         
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithURL(NSURL(string: URL)!, completionHandler: {(data, response, error) in
+        let session = URLSession.shared
+        let task = session.dataTask(with: Foundation.URL(string: URL)!, completionHandler: {(data, response, error) in
             //在异步方法被测试的相关的回调中实现那个期望值
             expectation.fulfill()
             
             XCTAssertNotNil(data, "data should not be nil")
             XCTAssertNil(error, "error should be nil")
             
-            if let HTTPResponse = response as! NSHTTPURLResponse! {
-                XCTAssertEqual(HTTPResponse.URL!.absoluteString, URL, "HTTP response URL should be equal to original URL")
+            if let HTTPResponse = response as! HTTPURLResponse! {
+                XCTAssertEqual(HTTPResponse.url!.absoluteString, URL, "HTTP response URL should be equal to original URL")
                 XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
-                XCTAssertEqual(HTTPResponse.MIMEType! as String, "text/html", "HTTP response content type should be text/html")
+                XCTAssertEqual(HTTPResponse.mimeType! as String, "text/html", "HTTP response content type should be text/html")
             } else {
                 XCTFail("Response was not NSHTTPURLResponse")
             }
@@ -79,7 +79,7 @@ class SISpeciesNotesTests: XCTestCase {
         
         task.resume()
 //        在方法底部，增加 waitForExpectationsWithTimeout 方法，指定一个超时，如果测试条件不适合时间范围便会结束执行：
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { error in
+        waitForExpectations(timeout: task.originalRequest!.timeoutInterval, handler: { error in
             task.cancel() 
         }) 
     }

@@ -29,7 +29,7 @@ class AsyncTheOldWayTest: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
@@ -42,16 +42,16 @@ class AsyncTheOldWayTest: XCTestCase {
      */
     func testAsyncTheOldWay()
     {
-        let timeoutDate = NSDate.init(timeIntervalSinceNow: 5.0)
+        let timeoutDate = Date.init(timeIntervalSinceNow: 5.0)
         var responseHasArrived = false
-        Alamofire.request(.GET,"https://www.baidu.com").responseData{response in
-            print("获取到的数据长度：\(String(data: response.data!, encoding:NSUTF8StringEncoding)!)")
+        Alamofire.request("https://www.baidu.com").responseData{response in
+            print("获取到的数据长度：\(String(data: response.data!, encoding:String.Encoding.utf8)!)")
             responseHasArrived = true
-            XCTAssert(response.data?.length > 0)
+            XCTAssert((response.data?.count)! > 0)
         }
     
         while (responseHasArrived == false && (timeoutDate.timeIntervalSinceNow > 0)) {
-            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.01, false)
+            CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, false)
         }
     
         
@@ -77,16 +77,16 @@ class AsyncTheOldWayTest: XCTestCase {
      */
     func testWebPageDownload(){
         //设置期望
-        let expection = expectationWithDescription("失败时显示原因")
+        let expection = expectation(description: "失败时显示原因")
         
-        Alamofire.request(.GET,"https://www.baidu.com").responseData{response in
-            print("获取到的数据长度：\(String(data: response.data!, encoding:NSUTF8StringEncoding)!)")
-            XCTAssert(response.data?.length > 0)
+        Alamofire.request("https://www.baidu.com").responseData{response in
+            print("获取到的数据长度：\(String(data: response.data!, encoding:String.Encoding.utf8)!)")
+            XCTAssert((response.data?.count)! > 0)
             expection.fulfill()
         }
         
         //在方法底部指定一个超时，如果测试条件不适合时间范围便会结束执行：
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(timeout: 5) { error in
             //
             print("错误信息:\(error?.localizedDescription)")
         }
@@ -101,7 +101,7 @@ class AsyncTheOldWayTest: XCTestCase {
     func testAsynForNotification()
     {
         //监听测试通知
-        expectationForNotification("BLDownloadImageNotification", object: nil) { (notification) -> Bool in
+        expectation(forNotification: "BLDownloadImageNotification", object: nil) { (notification) -> Bool in
             //
             let userInfo = notification.userInfo as! [String:String]
             let name = userInfo["name"]
@@ -111,10 +111,10 @@ class AsyncTheOldWayTest: XCTestCase {
         }
         //发送通知
 //        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["name":"huosan","sex":"man"])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: self, userInfo: ["name":"huosan","sex":"man"])
         
         //设置延迟多少秒后，如果没有满足测试条件就报错
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
     
 
@@ -123,31 +123,31 @@ class AsyncTheOldWayTest: XCTestCase {
      同理，expectationForPredicate方法也可以使用expectationWithDescription实现。
      */
     func testAsynForNotificationWithExpectation() {
-        let expectation = expectationWithDescription("BLDownloadImageNotification")
-        let sub = NSNotificationCenter.defaultCenter().addObserverForName("BLDownloadImageNotification", object: nil, queue: nil) { (not) -> Void in
+        let expectation = self.expectation(description: "BLDownloadImageNotification")
+        let sub = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "BLDownloadImageNotification"), object: nil, queue: nil) { (not) -> Void in
             expectation.fulfill()
         }
         
-        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: nil)
         
-        waitForExpectationsWithTimeout(1, handler: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(sub)
+        waitForExpectations(timeout: 1, handler: nil)
+        NotificationCenter.default.removeObserver(sub)
     }
     
     /**
        通过userInfo参数 传递 expectation 
      */
     func testAsynForNotificationWithExpectation2() {
-        let expectation = expectationWithDescription("BLDownloadImageNotification")
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AsyncTheOldWayTest.downLoadImage(_:)), name: "BLDownloadImageNotification", object: nil)
+        let expectation = self.expectation(description: "BLDownloadImageNotification")
+        NotificationCenter.default.addObserver(self, selector: #selector(AsyncTheOldWayTest.downLoadImage(_:)), name: NSNotification.Name(rawValue: "BLDownloadImageNotification"), object: nil)
 
-        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["name":"huosan","sex":"man","expectation":expectation])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: self, userInfo: ["name":"huosan","sex":"man","expectation":expectation])
         
-        waitForExpectationsWithTimeout(1, handler: nil)
-                NSNotificationCenter.defaultCenter().removeObserver(self)
+        waitForExpectations(timeout: 1, handler: nil)
+                NotificationCenter.default.removeObserver(self)
     }
     
-    func downLoadImage(notification:NSNotification) {
+    func downLoadImage(_ notification:Notification) {
         //
         
         let userInfo = notification.userInfo as! [String:AnyObject]
@@ -174,15 +174,15 @@ class AsyncTheOldWayTest: XCTestCase {
 //        viewController.loadView()  //不执行viewDidload方法
         let _ = viewController.view
         let button = viewController.button
-        let img = button.backgroundImageForState(.Normal)
+        let img = button.backgroundImage(for: .normal)
         XCTAssertNil(img,"此时img不为nil,中止执行")  //当img不是nil时，执行断言
         let predicate = NSPredicate.init { (anyobject, bindings) -> Bool in
             //
             let button = anyobject as! UIButton
-            return button.backgroundImageForState(.Normal) != nil
+            return button.backgroundImage(for: UIControlState()) != nil
         }
-        expectationForPredicate(predicate, evaluatedWithObject: button, handler: nil)
-        waitForExpectationsWithTimeout(20, handler: nil)
+        expectation(for: predicate, evaluatedWith: button, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
     }
     
 }

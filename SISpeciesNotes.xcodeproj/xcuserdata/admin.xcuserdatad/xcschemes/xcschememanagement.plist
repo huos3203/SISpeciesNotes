@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>SISpeciesNotesTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>61</integer>
+		</dict>
 		<key>aggregateFrameWork.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

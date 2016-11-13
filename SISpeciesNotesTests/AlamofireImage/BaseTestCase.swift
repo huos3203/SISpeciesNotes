@@ -27,50 +27,49 @@ import XCTest
 
 class BaseTestCase : XCTestCase {
     let timeout = 5.0
-    var manager: Manager!
-
+    var sessionManager: SessionManager!
+    
     // MARK: - Setup and Teardown
-
     override func setUp() {
         super.setUp()
-
-        manager = {
-            let configuration: NSURLSessionConfiguration = {
-                let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-
-                let defaultHeaders = Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders
-                configuration.HTTPAdditionalHeaders = defaultHeaders
-
+        
+        sessionManager = {
+            let configuration: URLSessionConfiguration = {
+                let configuration = URLSessionConfiguration.ephemeral
+                
+                let defaultHeaders = SessionManager.default.session.configuration.httpAdditionalHeaders
+                configuration.httpAdditionalHeaders = defaultHeaders
+                
                 return configuration
             }()
-
-            return Manager(configuration: configuration)
+            
+            return SessionManager(configuration: configuration)
         }()
     }
-
+    
     override func tearDown() {
         super.tearDown()
-
-        manager.session.finishTasksAndInvalidate()
-        manager = nil
+        
+        sessionManager.session.finishTasksAndInvalidate()
+        sessionManager = nil
     }
-
+    
     // MARK: - Resources
-
-    func URLForResource(fileName: String, withExtension: String) -> NSURL {
-        let bundle = NSBundle(forClass: BaseTestCase.self)
-        return bundle.URLForResource(fileName, withExtension: withExtension)!
+    func url(forResource fileName: String, withExtension ext: String) -> URL {
+        let bundle = Bundle(for: BaseTestCase.self)
+        return bundle.url(forResource: fileName, withExtension: ext)!
     }
-
-    func imageForResource(fileName: String, withExtension ext: String) -> Image {
-        let URL = URLForResource(fileName, withExtension: ext)
-        let data = NSData(contentsOfURL: URL)!
+    
+    func image(forResource fileName: String, withExtension ext: String) -> Image {
+        let resourceURL = url(forResource: fileName, withExtension: ext)
+        let data = try! Data(contentsOf: resourceURL)
+        
         #if os(iOS) || os(tvOS)
-            let image = Image.af_threadSafeImageWithData(data, scale: UIScreen.mainScreen().scale)!
-        #elseif os(OSX)
+            let image = Image.af_threadSafeImage(with: data, scale: UIScreen.main.scale)!
+        #elseif os(macOS)
             let image = Image(data: data)!
         #endif
-
+        
         return image
     }
 }

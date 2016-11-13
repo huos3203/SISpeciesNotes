@@ -72,12 +72,12 @@ class SISpeciesNotesUITests: XCTestCase {
         let username = "hsg"
         let password = "123"
         //
-        XCUIDevice.sharedDevice().orientation = .Portrait
+        XCUIDevice.shared().orientation = .portrait
         
         let app = XCUIApplication()
         //获取userNameTextField
-        let userNameTextField = app.textFields.elementBoundByIndex(0)
-        let passWordSecureTextField = app.secureTextFields.elementBoundByIndex(0)
+        let userNameTextField = app.textFields.element(boundBy: 0)
+        let passWordSecureTextField = app.secureTextFields.element(boundBy: 0)
         userNameTextField.tap()
         userNameTextField.typeText(username)
         passWordSecureTextField.tap()
@@ -86,12 +86,12 @@ class SISpeciesNotesUITests: XCTestCase {
         app.buttons["Login======="].tap()
         sleep(5)
         
-        let query:XCUIElementQuery = XCUIApplication().descendantsMatchingType(.Button)
+        let query:XCUIElementQuery = XCUIApplication().descendants(matching: .button)
         
         let navTitle = app.navigationBars[username].staticTexts[username]
-        expectationForPredicate(NSPredicate(format: "exists == 1"), evaluatedWithObject: navTitle, handler: nil)
+        expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: navTitle, handler: nil)
         
-        let switchui = app.switches.elementBoundByIndex(0)
+        let switchui = app.switches.element(boundBy: 0)
         switchui.tap()
         
         /*/

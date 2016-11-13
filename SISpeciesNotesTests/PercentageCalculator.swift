@@ -24,7 +24,7 @@ class PercentageCalculator: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 //    var p = PercentageCalculatorViewController()
         
-        let storyboard = UIStoryboard(name:"Main",bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name:"Main",bundle: Bundle.main)
         vc = storyboard.instantiateInitialViewController() as! PercentageCalculatorViewController
     }
     
@@ -40,7 +40,7 @@ class PercentageCalculator: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
