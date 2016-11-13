@@ -1,42 +1,42 @@
 PODS:
-  - Alamofire (3.4.2)
-  - AlamofireImage (2.4.1):
+  - Alamofire (3.5.1)
+  - AlamofireImage (2.5.0):
+    - Alamofire (~> 3.5)
+  - AlamofireNetworkActivityIndicator (1.1.0):
     - Alamofire (~> 3.3)
-  - AlamofireNetworkActivityIndicator (1.0.1):
-    - Alamofire (~> 3.3)
-  - CocoaAsyncSocket (7.5.0):
-    - CocoaAsyncSocket/GCD (= 7.5.0)
-  - CocoaAsyncSocket/GCD (7.5.0)
-  - Crashlytics (3.8.0):
+  - CocoaAsyncSocket (7.5.1):
+    - CocoaAsyncSocket/GCD (= 7.5.1)
+  - CocoaAsyncSocket/GCD (7.5.1)
+  - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - EDStarRating (1.1)
-  - Fabric (1.6.8)
+  - Fabric (1.6.11)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - GRMustache.swift (1.0.1)
+  - GRMustache.swift (1.1.0)
   - JSPatch (1.1):
     - JSPatch/Core (= 1.1)
   - JSPatch/Core (1.1)
-  - Masonry (1.0.1)
-  - Nimble (4.1.0)
+  - Masonry (1.0.2)
+  - Nimble (5.1.1)
   - ObjectMapper (1.1.5)
-  - OHHTTPStubs (5.2.0):
-    - OHHTTPStubs/Default (= 5.2.0)
-  - OHHTTPStubs/Core (5.2.0)
-  - OHHTTPStubs/Default (5.2.0):
+  - OHHTTPStubs (5.2.2):
+    - OHHTTPStubs/Default (= 5.2.2)
+  - OHHTTPStubs/Core (5.2.2)
+  - OHHTTPStubs/Default (5.2.2):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.2.0):
+  - OHHTTPStubs/JSON (5.2.2):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.2.0):
+  - OHHTTPStubs/NSURLSession (5.2.2):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.2.0)
-  - OHHTTPStubs/Swift (5.2.0):
+  - OHHTTPStubs/OHPathHelpers (5.2.2)
+  - OHHTTPStubs/Swift (5.2.2):
     - OHHTTPStubs/Core
-  - Quick (0.9.3)
+  - Quick (0.10.0)
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
@@ -47,9 +47,9 @@ PODS:
   - RxCocoa (2.1.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.0.0)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SnapKit (0.30.0.beta2)
   - SwiftFilePath (0.0.6)
 
@@ -79,30 +79,30 @@ DEPENDENCIES:
   - SwiftFilePath
 
 SPEC CHECKSUMS:
-  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
-  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
-  AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
-  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
-  Crashlytics: 8601d9c74a4c4d28f3e7f408bf4c0e490c70e8b4
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  AlamofireNetworkActivityIndicator: 36340ebf8d70241b2ebadc3dea38e8fbb95f5127
+  CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
-  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  GRMustache.swift: 36a9a277311f6492b7b2c50b0458812df06899a4
+  GRMustache.swift: 6bc0a640ddc833e38a05d02fe9ed8b6c98491989
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  OHHTTPStubs: 29ae105797c3410112d10b217c8b7a55aab616b2
-  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
+  OHHTTPStubs: 34d9d0994e64fcf8552dbfade5ce82ada913ee31
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   RxBlocking: fa297def258d85c5beae9ed507f94645260b3747
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: c4bb32b1d3c5d18ff63bf95ffcbc599d2bab964c
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
 
-PODFILE CHECKSUM: 95bedce4f79942cc9bbb2d6a29d8fa37248e8baf
+PODFILE CHECKSUM: 777abb3d0de2109a896a54da931cb74972c442eb
 
 COCOAPODS: 1.0.0
