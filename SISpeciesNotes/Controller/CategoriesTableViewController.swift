@@ -15,10 +15,9 @@ class CategoriesTableViewController: UITableViewController{
 //    let presentTransitionDelegate = SDEModalTransitionDelegate()
     // MARK: - 属性
     
-    var categories = []
+    var categories = [] as NSArray
     
     //
-    
     var selectedCategories: CategoryModel?
     var realm: Realm!
     var results : Results<CategoryModel>?
@@ -37,28 +36,28 @@ class CategoriesTableViewController: UITableViewController{
     
     // MARK: - Table View Data Source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(results!.count)
 //        return Int(categories.count)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
-        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) 
         cell.textLabel?.text = results![indexPath.row].name
         return cell
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedCategories = self.results![indexPath.row]
         return indexPath
     }
     
-    private func populateDefaultCategories() {
+    fileprivate func populateDefaultCategories() {
         realm = try! Realm()
         self.results =  realm.objects(CategoryModel)
         if results!.count == 0 { // 2

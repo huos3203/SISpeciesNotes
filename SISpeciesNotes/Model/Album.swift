@@ -48,7 +48,7 @@ class Album: NSObject
 extension Album{
 
     //扩展一个提供支持展示专辑的方法
-    func ae_TableRepresentation()->(titles:[String],values:[String!]) {
+    func ae_TableRepresentation()->(titles:[String],values:[String?]) {
         //
         let titles = ["Artist","title","gener","year"]
         let values = [artist,title,gener,year]

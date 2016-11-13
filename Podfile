@@ -71,7 +71,7 @@ target 'SISpeciesNotes' do
     
     
     #工具
-    pod  'SwiftFilePath'
+#    pod  'SwiftFilePath'
     
     #mustache模板引擎
     pod 'GRMustache.swift', '~> 2.0.0'

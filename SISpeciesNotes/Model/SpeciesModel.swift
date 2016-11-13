@@ -30,7 +30,7 @@ class SpeciesModel: Object {
     ///经度
     dynamic var longitude: Double = 0
     ///创建的时间
-    dynamic var created = NSDate()
+    dynamic var created = Date()
     
     /// 设置了 “ 物种 ” 和 “ 类别 ” 之间的 “ 一对多 ” 关系.每个物种都只能够拥有一个类别，但是一个类别可以从属于多个物种。
     

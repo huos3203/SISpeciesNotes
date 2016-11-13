@@ -11,8 +11,8 @@ import UIKit
 class AlbumView: UIView {
     
 //    封面，加载进度条
-    private var coverImage:UIImageView!
-    private var indicator:UIActivityIndicatorView!
+    fileprivate var coverImage:UIImageView!
+    fileprivate var indicator:UIActivityIndicatorView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,22 +21,22 @@ class AlbumView: UIView {
     init(frame: CGRect,ablumCover:String) {
         
         super.init(frame: frame)
-        backgroundColor = UIColor.blackColor()
-        coverImage = UIImageView.init(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
+        backgroundColor = UIColor.black
+        coverImage = UIImageView.init(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         //添加观察者
         coverImage.addObserver(self, forKeyPath: "image", options: [], context: nil)
         addSubview(coverImage)
         indicator = UIActivityIndicatorView()
         indicator.center = center
-        indicator.activityIndicatorViewStyle = .Gray
+        indicator.activityIndicatorViewStyle = .gray
         indicator.startAnimating()
         addSubview(indicator)
         
-        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: self, userInfo: ["coverImage":coverImage,"imageUrl":ablumCover])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: self, userInfo: ["coverImage":coverImage,"imageUrl":ablumCover])
     }
     
     //当coverImage变化时触发
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "image" {
             indicator.stopAnimating()
         }
@@ -46,14 +46,14 @@ class AlbumView: UIView {
         coverImage.removeObserver(self, forKeyPath: "image")
     }
 //    
-    func highlightAlbum(didHighlightView didHighlightView:Bool)
+    func highlightAlbum(didHighlightView:Bool)
     {
         if(didHighlightView)
         {
-            backgroundColor = UIColor.whiteColor()
+            backgroundColor = UIColor.white
         }else
         {
-            backgroundColor = UIColor.blackColor()
+            backgroundColor = UIColor.black
         }
     }
 

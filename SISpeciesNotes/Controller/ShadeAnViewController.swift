@@ -22,7 +22,7 @@ protocol shadeAnimation
 class ShadeAnViewController: UIViewController {
 
     @IBOutlet weak var ibShadeLabel: UILabel!
-    private var invildedTimer:()->()! = {return nil}
+    fileprivate var invildedTimer:()->()! = {return nil}
     
     override func viewDidLoad() {
         super.viewDidLoad()

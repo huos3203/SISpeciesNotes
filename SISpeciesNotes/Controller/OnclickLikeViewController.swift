@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-public class OnclickLikeViewController: UIViewController
+open class OnclickLikeViewController: UIViewController
 {
     //签到按钮switch
     let qdSwitch = UISwitch()
@@ -19,7 +19,7 @@ public class OnclickLikeViewController: UIViewController
     //测试按钮：expectationForPredicate
     let button = UIButton()
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         //加载UI
         addViewInSuperView()
     }
@@ -33,7 +33,7 @@ public class OnclickLikeViewController: UIViewController
         qdLabel.text = "签到:"
         view.addSubview(qdLabel)
         
-        qdSwitch.on = false
+        qdSwitch.isOn = false
         view.addSubview(qdSwitch)
         
         //签到次数
@@ -45,19 +45,20 @@ public class OnclickLikeViewController: UIViewController
         view.addSubview(count)
         
         //按钮
-        button.setBackgroundImage(UIImage(named: "IconFlora"), forState: .Normal)
+        button.setBackgroundImage(UIImage(named: "IconFlora"), for: UIControlState())
         button.sizeToFit()
         view.addSubview(button)
         button.snp_makeConstraints { (make) in
             //距顶50，水平居中
-            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(50)
+            make.top.equalTo(self.topLayoutGuide.snp.bottom).offset(50)
             make.centerX.equalTo(view)
         }
         //
         qdLabel.snp_makeConstraints { (make) in
             //距顶部50，水平居中
-            make.top.equalTo(self.snp_topLayoutGuideBottom).offset(100)
-            make.center.equalTo(view).offset(CGPointMake(-20, 0))
+            make.top.equalTo(self.topLayoutGuide.snp
+                .top).offset(100)
+            make.center.equalTo(view).offset(CGPoint(x: -20, y: 0) as! ConstraintOffsetTarget)
         }
         
         qdSwitch.snp_makeConstraints { (make) in

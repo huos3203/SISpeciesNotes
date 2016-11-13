@@ -27,7 +27,7 @@ extension MKMapView {
     }
     
     /// 以缩放级别来设置当前地图中心点
-    func setCenterCoordinate(currentCenter: CLLocationCoordinate2D, zoomLevel level: UInt, animated: Bool) {
+    func setCenterCoordinate(_ currentCenter: CLLocationCoordinate2D, zoomLevel level: UInt, animated: Bool) {
         
         // 获取当前地图中心点坐标（使用坐标系）
         let currentCenterPoint = MKMapPointForCoordinate(currentCenter)
@@ -73,7 +73,7 @@ extension MKMapView {
         let mapSubviews = self.subviews
         for view in mapSubviews {
             // 移除指南针
-            if view.isKindOfClass(NSClassFromString("MKCompassView")!) {
+            if view.isKind(of: NSClassFromString("MKCompassView")!) {
                 view.removeFromSuperview()
                 return true
             }
@@ -86,7 +86,7 @@ extension MKMapView {
         let mapSubviews = self.subviews
         for view in mapSubviews {
             // 移除标签
-            if view.isKindOfClass(NSClassFromString("MKAttributionLabel")!) {
+            if view.isKind(of: NSClassFromString("MKAttributionLabel")!) {
                 view.removeFromSuperview()
                 return true
             }
@@ -99,7 +99,7 @@ extension MKMapView {
         let mapSubviews = self.subviews
         for view in mapSubviews {
             // 移除标签
-            if view.isKindOfClass(UIImageView) {
+            if view.isKind(of: UIImageView.self) {
                 view.removeFromSuperview()
                 return true
             }

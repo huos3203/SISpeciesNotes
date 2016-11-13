@@ -33,10 +33,10 @@ class LibraryAPI: NSObject
 //用 HTTPClient 来处理网络请求，项目中的其他类不应该知道这个逻辑。
 //用户只需要知道 LibraryAPI 这个“外观”就可以了
     //创建实例
-    private let persistency:PersistencyManager
-    private let httpClient:HttpClientManager
-    private let localFile:LocalFileManager
-    private let isOnline: Bool    //标识当前是否为联网状态的，如果是联网状态就会去网络获取数据。
+    fileprivate let persistency:PersistencyManager
+    fileprivate let httpClient:HttpClientManager
+    fileprivate let localFile:LocalFileManager
+    fileprivate let isOnline: Bool    //标识当前是否为联网状态的，如果是联网状态就会去网络获取数据。
     
     //构造器
     override init(){
@@ -53,7 +53,7 @@ class LibraryAPI: NSObject
          问题：由于albums = LibraryAPI().getAlbums()
          解决：必须使用单例模式：albums = LibraryAPI.shareInstance.getAlbums()
          */
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "DowdloadImage:", name: "BLDownloadImageNotification", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LibraryAPI.DowdloadImage(_:)), name: NSNotification.Name(rawValue: "BLDownloadImageNotification"), object: nil)
     }
     
     //MARK: - 外观方法
@@ -68,7 +68,7 @@ class LibraryAPI: NSObject
 //看一下 addAlbum(_:index:) 这个方法，先更新本地缓存，然后如果是联网状态还需要向服务器发送网络请求。
 //这便是外观模式的强大之处：如果外部文件想要添加一个新的专辑，它不会也不用去了解内部的实现逻辑是怎么样的。
     //添加专辑
-    func addAlbum(album:Album, index:Int) {
+    func addAlbum(_ album:Album, index:Int) {
         //
         persistency.addAlbum(album, index: index)
         if isOnline
@@ -78,11 +78,11 @@ class LibraryAPI: NSObject
     }
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     //MARK: - 通知方法 
     //下载图片
-    func DowdloadImage(notification:NSNotification){
+    func DowdloadImage(_ notification:Notification){
         
         let ueserInfo = notification.userInfo as! [String:AnyObject]
         let imagePath = ueserInfo["imageUrl"] as! String
@@ -90,15 +90,15 @@ class LibraryAPI: NSObject
         
         coverImageView.image = UIImage(named: "barcelona-thumb")
         //缓存文件
-        if !localFile.fileExistsAtPath(imagePath){
+        if !localFile.fileExists(atPath: imagePath){
             //网络下载数据
-            httpClient.downloadCoverImage(imagePath){location in
+            httpClient.downloadCoverImage(imagePath as NSString){location in
                 //以图片格式保存到本地
                 let imageDocPath = self.localFile.saveImageToDocument(location, imageURL: imagePath)
                 coverImageView.image = UIImage.init(contentsOfFile: imageDocPath)
             }
         }else{
-            let localImagePath = localFile.createDocumentPathFrom(imagePath)
+            let localImagePath = localFile.createDocumentPathFrom(imagePath as NSString)
             coverImageView.image = UIImage.init(contentsOfFile: localImagePath)
         }
         

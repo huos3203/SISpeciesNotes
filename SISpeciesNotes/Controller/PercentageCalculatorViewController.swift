@@ -33,7 +33,7 @@ class PercentageCalculatorViewController: UIViewController {
 
 //    拖动事件
     
-    @IBAction func ibaNumberSliderChangeValueAction(sender: UISlider) {
+    @IBAction func ibaNumberSliderChangeValueAction(_ sender: UISlider) {
         
 //        更新numberLabel 和 ResultLabel
 //        resultLabel = number * percentage * 0.01
@@ -49,7 +49,7 @@ class PercentageCalculatorViewController: UIViewController {
         
     }
     
-    @IBAction func ibaPercentageSliderAction(sender: UISlider) {
+    @IBAction func ibaPercentageSliderAction(_ sender: UISlider) {
         
 //        更新 percentageLabel 和 resultLabel
         
@@ -62,7 +62,7 @@ class PercentageCalculatorViewController: UIViewController {
     }
     
 //    通过inout形参
-    func updateResult(inout sender:Int,num:Int)->Int
+    func updateResult(_ sender:inout Int,num:Int)->Int
     {
         let result = sender * num / 100
         sender += 1
@@ -71,7 +71,7 @@ class PercentageCalculatorViewController: UIViewController {
     
     
     
-    func updateResult(num:(Int,Int)) -> (Int,Int)
+    func updateResult(_ num:(Int,Int)) -> (Int,Int)
     {
         let result = num.0 * num.1 / 100
         return (num.0,Int(result))
@@ -79,7 +79,7 @@ class PercentageCalculatorViewController: UIViewController {
     
     
 //    问题代码
-    func updateLabels(nV: Float?, _ pV: Float?, _ rV: Float) {
+    func updateLabels(_ nV: Float?, _ pV: Float?, _ rV: Float) {
         if let v = nV {
             self.ibNumberLabel.text = "\(v)"
         }

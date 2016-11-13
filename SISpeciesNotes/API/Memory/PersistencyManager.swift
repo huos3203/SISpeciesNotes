@@ -10,7 +10,7 @@
 class PersistencyManager {
     
     //定义了一个私有属性，用来存储专辑数据
-    private var albums = [Album]()
+    fileprivate var albums = [Album]()
     //初始化数据
     init() {
         //
@@ -54,19 +54,19 @@ class PersistencyManager {
     }
     
     //添加专辑
-    func addAlbum(album:Album,index:Int){
+    func addAlbum(_ album:Album,index:Int){
         if albums.count >= index {
             //
-            albums.insert(album, atIndex: index)
+            albums.insert(album, at: index)
         }else{
             albums.append(album)
         }
     }
     
     //删除操作
-    func deleteAlbum(index:Int) {
+    func deleteAlbum(_ index:Int) {
         //
-        albums.removeAtIndex(index)
+        albums.remove(at: index)
     }
     
     

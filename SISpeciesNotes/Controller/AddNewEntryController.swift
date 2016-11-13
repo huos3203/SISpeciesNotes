@@ -46,9 +46,9 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     // MARK: - UITextFieldDelegate
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        弹出到分类页面
-        self.performSegueWithIdentifier("Categories", sender: self)
+        self.performSegue(withIdentifier: "Categories", sender: self)
     }
     
  
@@ -60,13 +60,13 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     - parameter segue: nil
     */
-    @IBAction func unwindFromCategories(segue: UIStoryboardSegue) {
-        let categoriesController = segue.sourceViewController as! CategoriesTableViewController
+    @IBAction func unwindFromCategories(_ segue: UIStoryboardSegue) {
+        let categoriesController = segue.source as! CategoriesTableViewController
         selectedCategory = categoriesController.selectedCategories
         categoryTextField.text = selectedCategory.name
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         //保存数据，并返回上一页面
         if(identifier == "UnwindToMap")
         {
@@ -75,19 +75,19 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
                 addNewSpecies()
             }
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
         return false
     }
     
 //    转场动画切入点
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "Categories")
         {
             //列别输入框点击事件
-            let toVC = segue.destinationViewController as! CategoriesTableViewController
+            let toVC = segue.destination as! CategoriesTableViewController
             toVC.transitioningDelegate = presentTransitionDelegate
-            toVC.modalPresentationStyle = .Custom
+            toVC.modalPresentationStyle = .custom
         }
         
     }
@@ -109,7 +109,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
         let longitude = selectedAnnotation.coordinate.longitude
         species.latitude = latitude
         species.longitude = longitude
-        species.created = NSDate()
+        species.created = Date()
         species.category = selectedCategory
         
         let realm = try! Realm()
@@ -150,16 +150,16 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     
     // MARK: - 文本栏输入验证
-    private func validateFields() -> Bool
+    fileprivate func validateFields() -> Bool
     {
         if nameTextField.text!.isEmpty || descriptionTextView.text.isEmpty || categoryTextField.text!.isEmpty {
-            let alertController = UIAlertController(title: "验证错误", message: "所有的文本栏都不能为空", preferredStyle: .Alert)
-            let alertAction = UIAlertAction(title: "确认", style: .Destructive, handler: {
+            let alertController = UIAlertController(title: "验证错误", message: "所有的文本栏都不能为空", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "确认", style: .destructive, handler: {
                 (alert: UIAlertAction) -> Void in
-                alertController.dismissViewControllerAnimated(true, completion: nil)
+                alertController.dismiss(animated: true, completion: nil)
             })
             alertController.addAction(alertAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
             return false
         }else {

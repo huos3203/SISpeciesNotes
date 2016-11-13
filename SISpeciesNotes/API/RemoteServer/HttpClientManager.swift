@@ -16,28 +16,28 @@ class HttpClientManager {
 
     
     //添加专辑
-    func addAlbum(album:Album,index:Int){
-        Alamofire.request(NSURLRequest(URL: NSURL(string: "/api/addAlbum")!))
+    func addAlbum(_ album:Album,index:Int){
+        Alamofire.request(URLRequest(url: URL(string: "/api/addAlbum")!))
     }
     
     //删除专辑
-    func deleteAlbum(index:Int){
-        Alamofire.request(NSURLRequest(URL: NSURL(string: "/api/delAlbum")!))
+    func deleteAlbum(_ index:Int){
+        Alamofire.request(URLRequest(url: URL(string: "/api/delAlbum")!))
     }
     
     
     
     
     //下载专辑封面,并返回文件本地路径
-    func downloadCoverImage(filePath:NSString ,complection:(NSURL)->()){
+    func downloadCoverImage(_ filePath:NSString ,complection:@escaping (URL)->()){
         
-        let fileUrl = NSURL(string: filePath as String)
-        let coverSession = NSURLSession.sharedSession().downloadTaskWithURL(fileUrl!) { (location, response, error) in
+        let fileUrl = URL(string: filePath as String)
+        let coverSession = URLSession.shared.downloadTask(with: fileUrl!, completionHandler: { (location, response, error) in
             //完成
             if (location != nil){
                 complection((location)!)
             }
-        }
+        }) 
         coverSession.resume()
     }
     

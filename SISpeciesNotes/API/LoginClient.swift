@@ -16,36 +16,36 @@ struct LoginClient
    //class/static修饰的成员(类成员)不能访问没有class/static修饰的成员(实例成员)
    static let userInfo = ["how":"123"]
 //    错误类型
-    enum LOGINError:ErrorType {
-        case EmptyUserName,EmptyPassword,UserNotFound,WrongPassword
+    enum LOGINError:Error {
+        case emptyUserName,emptyPassword,userNotFound,wrongPassword
     }
     
-    static func loginClient(userName:String,passWord:String,completionHandler:(Bool,LOGINError?)->())
+    static func loginClient(_ userName:String,passWord:String,completionHandler:@escaping (Bool,LOGINError?)->())
     {
         print("用户名:\(userName) 密码:\(passWord)")
         //模拟延迟访问登录
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(3.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             //延迟后，开始执行
             if userName.isEmpty{
-                completionHandler(false,.EmptyUserName)
+                completionHandler(false,.emptyUserName)
                 return
             }
             
             if passWord.isEmpty
             {
-                completionHandler(false,.EmptyPassword)
+                completionHandler(false,.emptyPassword)
                 return
             }
             
             if !userInfo.keys.contains(userName)
             {
-                completionHandler(false,.UserNotFound)
+                completionHandler(false,.userNotFound)
                 return
             }
             
             if userInfo["how"] != passWord
             {
-                completionHandler(false,.WrongPassword)
+                completionHandler(false,.wrongPassword)
                 return
             }
             

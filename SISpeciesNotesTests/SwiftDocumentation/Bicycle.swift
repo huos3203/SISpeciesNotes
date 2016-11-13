@@ -21,7 +21,7 @@ class Bicycle {
      - Hybrid: 用于通用运输.
      */
     enum Style {
-        case Road, Touring, Cruiser, Hybrid
+        case road, touring, cruiser, hybrid
     }
     
     /**
@@ -31,8 +31,8 @@ class Bicycle {
      - Freewheel: 一个可变速，脱开的齿轮。
      */
     enum Gearing {
-        case Fixed
-        case Freewheel(speeds: Int)
+        case fixed
+        case freewheel(speeds: Int)
     }
     
     /**
@@ -44,7 +44,7 @@ class Bicycle {
      - Bullhorn: 一个超帅车把.
      */
     enum Handlebar {
-        case Riser, Café, Drop, Bullhorn
+        case riser, café, drop, bullhorn
     }
     
     /// 自行车的风格
@@ -60,10 +60,10 @@ class Bicycle {
     let frameSize: Int
     
     /// 自行车行驶的旅程数
-    private(set) var numberOfTrips: Int
+    fileprivate(set) var numberOfTrips: Int
     
     /// 自行车总共行驶的距离，米为单位
-    private(set) var distanceTravelled: Double
+    fileprivate(set) var distanceTravelled: Double
     
     /**
      使用提供的部件及规格初始化一个新自行车。
@@ -93,7 +93,7 @@ class Bicycle {
     func travel(distance meters: Double) {
         if meters > 0 {
             distanceTravelled += meters
-            ++numberOfTrips
+            numberOfTrips += 1
         }
     }
     

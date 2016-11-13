@@ -7,30 +7,30 @@
 //
 
 
-class LocalFileManager: NSFileManager {
+class LocalFileManager: FileManager {
 
     override init() {
         super.init()
     }
     //文件本地路径Document目录
-    func createDocumentPathFrom(filePath:NSString) -> String {
-        let docPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        return docPath.stringByAppendingString(filePath.lastPathComponent)
+    func createDocumentPathFrom(_ filePath:NSString) -> String {
+        let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        return docPath + filePath.lastPathComponent
     }
     
     //检查文件是否已存在
-   override func fileExistsAtPath(path: String) -> Bool {
+   override func fileExists(atPath path: String) -> Bool {
         //
-        let filePath = createDocumentPathFrom(path)
-        return super.fileExistsAtPath(filePath)
+        let filePath = createDocumentPathFrom(path as NSString)
+        return super.fileExists(atPath: filePath)
     }
     
     //保存到本地
-    func saveImageToDocument(tmpUrl:NSURL,imageURL:String)->String  {
+    func saveImageToDocument(_ tmpUrl:URL,imageURL:String)->String  {
         //
-        let docpath = createDocumentPathFrom(imageURL)
-        let imageData = NSData(contentsOfURL: tmpUrl)
-        imageData?.writeToFile(docpath, atomically: true)
+        let docpath = createDocumentPathFrom(imageURL as NSString)
+        let imageData = try? Data(contentsOf: tmpUrl)
+        try? imageData?.write(to: URL(fileURLWithPath: docpath), options: [.atomic])
         return docpath
     }
 }

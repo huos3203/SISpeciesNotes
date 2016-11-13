@@ -13,16 +13,16 @@ class OverlayAnimationController: NSObject,UIViewControllerAnimatedTransitioning
 {
     
 //    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 //        核心动画
 //        获取fromView ,ToView
-        guard let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else
         {
             return
         }
         
 //        containerView
-        guard let containerView = transitionContext.containerView()
+        guard let containerView:UIView? = transitionContext.containerView
             else
         {
             return
@@ -30,34 +30,34 @@ class OverlayAnimationController: NSObject,UIViewControllerAnimatedTransitioning
         
         let fromView = fromVC.view
         let toView = toVC.view
-        let duration = self.transitionDuration(transitionContext)
+        let duration = self.transitionDuration(using: transitionContext)
         
-        if toVC.isBeingPresented()
+        if toVC.isBeingPresented
         {
-            containerView.addSubview(toView)
+            containerView?.addSubview(toView!)
 //            toView 宽高
-            let toViewWidth = containerView.frame.width * 2/3,toViewHeight = containerView.frame.height * 2/3
-            toView.bounds = CGRect(x: 0, y: 0, width: 1, height: toViewHeight)
+            let toViewWidth = (containerView?.frame.width)! * 2/3,toViewHeight = (containerView?.frame.height)! * 2/3
+            toView?.bounds = CGRect(x: 0, y: 0, width: 1, height: toViewHeight)
             
             if #available(iOS 8, *){
                 
-                UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
-                    toView.bounds = CGRect(x: 0, y: 0, width: toViewWidth, height: toViewHeight)
+                UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(), animations: {
+                    toView?.bounds = CGRect(x: 0, y: 0, width: toViewWidth, height: toViewHeight)
                     }, completion: { _ in
-                        let isCancelled = transitionContext.transitionWasCancelled()
+                        let isCancelled = transitionContext.transitionWasCancelled
                         transitionContext.completeTransition(!isCancelled)
                 })
                 
             }
         }
         
-        if fromVC.isBeingDismissed()
+        if fromVC.isBeingDismissed
         {
-            let fromViewHeight = fromView.frame.height
-            UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
-                fromView.bounds = CGRect(x: 0, y: 0, width: 1, height: fromViewHeight)
+            let fromViewHeight = fromView?.frame.height
+            UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(), animations: {
+                fromView?.bounds = CGRect(x: 0, y: 0, width: 1, height: fromViewHeight!)
                 }, completion: {_ in
-                    let isCancelled = transitionContext.transitionWasCancelled()
+                    let isCancelled = transitionContext.transitionWasCancelled
                     transitionContext.completeTransition(!isCancelled)
             })
             
@@ -65,7 +65,7 @@ class OverlayAnimationController: NSObject,UIViewControllerAnimatedTransitioning
         
         
 }
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
     {
         return 0.5
     }

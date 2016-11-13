@@ -52,7 +52,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     // MARK: - SearchBar Delegate
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         let searchString = searchController.searchBar.text
         
         //过滤species
@@ -63,56 +63,56 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     // MARK: - Table View Data Source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.active {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive {
             return Int(searchResults.count)
         }else {
             return Int(species!.count)
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell") as! LogCell
         cell.titleLabel?.text = (species![indexPath.row]).name
         cell.subtitleLabel?.text = (species![indexPath.row].category?.name)
         cell.distanceLabel?.text = "\(species![indexPath.row].latitude)"
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             
             //TODO: 删除动物记录
             delSpecieByName(species![indexPath.row] as SpeciesModel)
             //添加删除动画
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
     
     // MARK: - Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
         if segue.identifier == "Edit"  //前往编辑界面
         {
             
-            let controller = segue.destinationViewController as! AddNewEntryController
+            let controller = segue.destination as! AddNewEntryController
             
             let indexPath = tableView.indexPathForSelectedRow
             // 获取分类对象
             let model:SpeciesModel? = species![indexPath!.row]
             controller.specieName = model!.name
             
-            if let searchResultsController = searchController.searchResultsController as? UITableViewController where searchController.active {
+            if let searchResultsController = searchController.searchResultsController as? UITableViewController, searchController.isActive {
                 let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow
             }
         }
@@ -120,7 +120,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     
     // MARK: - Actions
     
-    @IBAction func scopeChanged(sender: AnyObject)
+    @IBAction func scopeChanged(_ sender: AnyObject)
     {
         
     }
@@ -128,16 +128,16 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     // MARK: - Setter & Getter
     
     func initSearchController() {
-        let searchResultsController = UITableViewController(style: .Plain)
+        let searchResultsController = UITableViewController(style: .plain)
         searchResultsController.tableView.delegate = self
         searchResultsController.tableView.dataSource = self
         searchResultsController.tableView.rowHeight = 63
-        searchResultsController.tableView.registerClass(LogCell.self, forCellReuseIdentifier: "LogCell")
+        searchResultsController.tableView.register(LogCell.self, forCellReuseIdentifier: "LogCell")
         
         searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.delegate = self
         searchController.searchBar.barTintColor = UIColor(red: 0, green: 104.0/255.0, blue: 55.0/255.0, alpha: 1.0)
         tableView.tableHeaderView?.addSubview(searchController.searchBar)
@@ -153,14 +153,14 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     }
     
     //MARK: 筛选realm中已存在的物种
-    func filterSpecies(searchText:String)
+    func filterSpecies(_ searchText:String)
     {
         let predicate = NSPredicate(format: "name BEGINSWITH %@",  searchText)
         searchResults = try! Realm().objects(SpeciesModel).filter(predicate)
     }
    
     //侧滑删除动物信息
-    func delSpecieByName(specie:SpeciesModel)
+    func delSpecieByName(_ specie:SpeciesModel)
     {
         let realm = try! Realm()
         realm.beginWrite()
@@ -170,20 +170,20 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
     }
     
    //MARK: 切换便签项改变排列顺序
-    @IBAction func ibaSegmentdControlAction(sender: UISegmentedControl)
+    @IBAction func ibaSegmentdControlAction(_ sender: UISegmentedControl)
     {
         switch sender.selectedSegmentIndex
         {
             case 0:
-                self.species = self.species!.sorted("name", ascending: true)
+                self.species = self.species!.sorted(byProperty: "name", ascending: true)
                 self.tableView.reloadData()
             break
             case 1:
-                self.species = self.species!.sorted("created", ascending: true)
+                self.species = self.species!.sorted(byProperty: "created", ascending: true)
                 self.tableView.reloadData()
             break
         case 2:
-            self.species = self.species!.sorted("longitude", ascending: true)
+            self.species = self.species!.sorted(byProperty: "longitude", ascending: true)
             self.tableView.reloadData()
             break
         default:

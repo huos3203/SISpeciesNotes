@@ -16,7 +16,7 @@ import SnapKit
 @objc public protocol HorizontalScrollerDelegate{
     
     //actionDelegate
-    func onclickPageImageView(imageView:UIView)
+    func onclickPageImageView(_ imageView:UIView)
 }
 
 @objc public protocol HorizontalScrollerDataSource {
@@ -27,43 +27,43 @@ import SnapKit
     var currentImageIndex:Int{get set}
     
     
-    func horizontalScroller(scroller:UIScrollView ,imageViewIndex:Int)->UIView
+    func horizontalScroller(_ scroller:UIScrollView ,imageViewIndex:Int)->UIView
 }
 
 
 //适配器：通过委托方式来实现适配器模式
-public class HorizontalScroller: UIView {
+open class HorizontalScroller: UIView {
     
-    private var imgWidth:CGFloat = 200
-    private var imgPadding:CGFloat = 0
+    fileprivate var imgWidth:CGFloat = 200
+    fileprivate var imgPadding:CGFloat = 0
     //weak 定义委托
-    public weak var scrollerDelegate:HorizontalScrollerDelegate?
-    public weak var scrollerDataSource:HorizontalScrollerDataSource?
+    open weak var scrollerDelegate:HorizontalScrollerDelegate?
+    open weak var scrollerDataSource:HorizontalScrollerDataSource?
     //scrollview对象
     let scrollView = UIScrollView()
     
-    public func initScrollView(imgWidth:CGFloat,imgPadding:CGFloat) {
+    open func initScrollView(_ imgWidth:CGFloat,imgPadding:CGFloat) {
 
         self.imgWidth = imgWidth
         self.imgPadding = imgPadding
         
         addSubview(scrollView)
         scrollView.delegate = self
-        scrollView.backgroundColor = UIColor.blueColor()
-        backgroundColor = UIColor.blackColor()
+        scrollView.backgroundColor = UIColor.blue
+        backgroundColor = UIColor.black
         scrollView.snp_makeConstraints { (make) in
             make.left.top.right.bottom.equalTo(self).inset(8)
         }
         //
         scrollView.alwaysBounceHorizontal = true
         //拖动时锁定方向
-        scrollView.directionalLockEnabled = true
+        scrollView.isDirectionalLockEnabled = true
         addSubPageView()
         centerCurrentImageView(true)
     }
     
     //添加五张图片
-    private func addSubPageView() {
+    fileprivate func addSubPageView() {
         //向scrollview中添加操作
         var preView:UIView!
         guard let pageNum = scrollerDataSource?.pageNumOfScroller else
@@ -77,10 +77,10 @@ public class HorizontalScroller: UIView {
             let imageview = scrollerDataSource?.horizontalScroller(scrollView,imageViewIndex: index)
             scrollView.addSubview(imageview!)
             let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(HorizontalScroller.tapImageAction(_:)))
-            imageview?.userInteractionEnabled = true
+            imageview?.isUserInteractionEnabled = true
             imageview?.addGestureRecognizer(tapGesture)
             if (preView != nil) {
-                imageview!.snp_makeConstraints(closure: { (make) in
+                imageview!.snp_makeConstraints({ (make) in
                     //
                     make.centerY.equalTo(preView)
                     make.left.equalTo(preView.snp_right).offset(imgPadding)
@@ -88,14 +88,14 @@ public class HorizontalScroller: UIView {
                 })
             }else{
                 //第一个ImageView的约束
-                imageview!.snp_makeConstraints(closure: { (make) in
+                imageview!.snp_makeConstraints({ (make) in
                     /**
                      *  当有导航控制器时，由于scrollview默认偏移量是导航条的高度，此时make.centerY.equalTo(scrollView)会导致轮初始化轮播图默认位置偏下方，可以添加.offset(-65)
                         更好的解决办法是：轮播图与scrollView父视图垂直居中对齐： make.centerY.equalTo(self)
                      */
                     make.centerY.equalTo(self)
                     make.left.equalTo(scrollView).offset(imgPadding)
-                    make.size.equalTo(CGSizeMake(imgWidth, imgWidth))
+                    make.size.equalTo(CGSize(width: imgWidth, height: imgWidth))
                 })
             }
             preView = imageview
@@ -108,20 +108,20 @@ public class HorizontalScroller: UIView {
     }
     
     //点击后，自动居中显示
-    func tapImageAction(tapGesture:UITapGestureRecognizer) {
+    func tapImageAction(_ tapGesture:UITapGestureRecognizer) {
         //获取当前Image
         print("点击图片....")
         let imageView = tapGesture.view!
         scrollerDelegate?.onclickPageImageView(imageView)
         let offset = imageView.frame.origin.x + (imageView.frame.size.width/2 - self.frame.size.width/2)
-        scrollView.setContentOffset(CGPointMake(offset,0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: offset,y: 0), animated: true)
     }
 }
 
 extension HorizontalScroller:UIScrollViewDelegate{
     
     //实现侧滑停止后，居中显示当前屏幕上的图片
-    func centerCurrentImageView(initScroller:Bool){
+    func centerCurrentImageView(_ initScroller:Bool){
         
         //先通过偏移量算出屏幕中心点的 x 坐标
         let current_x = scrollView.contentOffset.x + scrollView.frame.size.width/2
@@ -143,16 +143,16 @@ extension HorizontalScroller:UIScrollViewDelegate{
         let offset = scrollView.contentOffset.x + space_x
         
         print("当前坐标:\(current_x),图片索引：\(imageIndex)和中心坐标：\(replace_x)\n偏移量：\(space_x)")
-        scrollView.setContentOffset(CGPointMake(CGFloat(offset), 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: CGFloat(offset), y: 0), animated: true)
     }
     
     //侧滑结束
-    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //
         centerCurrentImageView(false)
     }
     
-    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //
         if !decelerate {
             centerCurrentImageView(false)

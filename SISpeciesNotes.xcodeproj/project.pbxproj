@@ -1073,6 +1073,7 @@
 					843D92061CC7E0D900DEB22D = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 2C4H9T5RF5;
+						LastSwiftMigration = 0810;
 					};
 					843D920F1CC7E0D900DEB22D = {
 						CreatedOnToolsVersion = 7.3;
@@ -1084,6 +1085,7 @@
 					D849C0971AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 2C4H9T5RF5;
+						LastSwiftMigration = 0810;
 					};
 					D849C0AC1AF078E4001C01AC = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1857,7 +1859,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1885,7 +1887,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				"SWIFT_OBJC_INTERFACE_HEADER_NAME[arch=*]" = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2081,7 +2083,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2147,7 +2149,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SISpeciesNotes/SISpeciesNotes-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

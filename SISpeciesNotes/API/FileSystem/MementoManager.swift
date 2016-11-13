@@ -17,11 +17,11 @@ class MementoManager{
      
      - parameter currentAlbumIndex: <#currentAlbumIndex description#>
      */
-    func saveCurrentState(currentAlbumIndex:Int) {
+    func saveCurrentState(_ currentAlbumIndex:Int) {
         // When the user leaves the app and then comes back again, he wants it to be in the exact same state
         // he left it. In order to do this we need to save the currently displayed album.
         // Since it's only one piece of information we can use NSUserDefaults.
-        NSUserDefaults.standardUserDefaults().setInteger(currentAlbumIndex, forKey: "currentAlbumIndex")
+        UserDefaults.standard.set(currentAlbumIndex, forKey: "currentAlbumIndex")
     }
     
     /**
@@ -31,6 +31,6 @@ class MementoManager{
      - returns: <#return value description#>
      */
     func loadPreviousState()->Int {
-        return NSUserDefaults.standardUserDefaults().integerForKey("currentAlbumIndex")
+        return UserDefaults.standard.integer(forKey: "currentAlbumIndex")
     }
 }

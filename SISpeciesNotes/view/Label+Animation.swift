@@ -16,7 +16,7 @@ extension UILabel
     
     var shadeOrigin:CGPoint{
         
-        let mvFrame = UIScreen.mainScreen().bounds
+        let mvFrame = UIScreen.main.bounds
         //x 区间大小（0...x_max）
         let x_max = mvFrame.width - self.frame.size.width
         //y 区间大小（0...y_max）
@@ -29,7 +29,7 @@ extension UILabel
         //            let x = x_random + UInt32(self.frame.size.width)
         //            let y = y_random + UInt32(self.frame.size.height)
         print("水印坐标：x = \(x_random),Y = \(y_random)")
-        return CGPointMake(CGFloat(x_random), CGFloat(y_random))
+        return CGPoint(x: CGFloat(x_random), y: CGFloat(y_random))
         
     }
     
@@ -37,8 +37,8 @@ extension UILabel
     public func fireTimer()->()->()
     {
         //默认显示，24s之后隐藏
-        let timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(UILabel.hidden), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        let timer = Timer(timeInterval: 24.0, target: self, selector: #selector(UILabel.hidden), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
         return {
             timer.invalidate()
         }
@@ -47,39 +47,39 @@ extension UILabel
     func hidden()
     {
         //
-        UIView.animateWithDuration(2.0, animations: {
+        UIView.animate(withDuration: 2.0, animations: {
             self.alpha = 0
-            self.hidden = true
-            }){ completion in
+            self.isHidden = true
+            }, completion: { completion in
                 
                 if completion
                 {
-                    print("\(NSDate())水印隐藏....")
+                    print("\(Date())水印隐藏....")
                     //隐藏20秒之后，再显示出来
-                    NSTimer.scheduledTimerWithTimeInterval(20.0, target: self, selector: #selector(UILabel.show), userInfo: nil, repeats: false)
+                    Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(UILabel.show), userInfo: nil, repeats: false)
                 }
-        }
+        })
         
     }
     
     func show()
     {
         //动画
-        UIView.animateWithDuration(1.0, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             //
-            self.hidden = false
+            self.isHidden = false
             self.alpha = 1
             self.frame.origin = self.shadeOrigin
             
-            }){completion in
-                print("\(NSDate())水印显示....")
-        }
+            }, completion: {completion in
+                print("\(Date())水印显示....")
+        })
     }
 }
 
 //NSTimer.eve(5.secends){}
 //http://radex.io/swift/nstimer/
-extension NSTimer
+extension Timer
 {
     //定义一个嵌套类型，实现闭包的在NSTimer中接收和执行
     class NSTimerActor
@@ -87,7 +87,7 @@ extension NSTimer
         //存储变量是闭包类型
         var block:()->()
         //构造器
-        init(_ block:()->())
+        init(_ block:@escaping ()->())
         {
             self.block = block
         }
@@ -108,32 +108,32 @@ extension NSTimer
      */
     
     //扩展构造器
-    class func new(after interval:NSTimeInterval,_ block:()->())->NSTimer
+    class func new(after interval:TimeInterval,_ block:@escaping ()->())->Timer
     {
          //闭包接收器
         let timerActor = NSTimerActor(block)
         return self.init(timeInterval: interval, target: timerActor, selector: #selector(timerActor.fire), userInfo: nil, repeats: false)
     }
     
-    class func new(every interval:NSTimeInterval,_ block:()->())->NSTimer
+    class func new(every interval:TimeInterval,_ block:@escaping ()->())->Timer
     {
         let timerActor = NSTimerActor(block)
         return self.init(timeInterval: interval, target: timerActor, selector: #selector(NSTimerActor.fire), userInfo: nil, repeats: true)
     }
     
     //time分钟后执行一次
-    public class func after(time:NSTimeInterval,_ block:()->())->NSTimer
+    public class func after(_ time:TimeInterval,_ block:@escaping ()->())->Timer
     {
-        let timer = NSTimer.new(after:time,block)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        let timer = Timer.new(after:time,block)
+        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
         return timer
     }
 
     //每隔time执行一次
-    public class func every(time:NSTimeInterval,_ block:()->())->NSTimer
+    public class func every(_ time:TimeInterval,_ block:@escaping ()->())->Timer
     {
-        let timer = NSTimer.new(every: time, block)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        let timer = Timer.new(every: time, block)
+        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
         return timer
     }
     
