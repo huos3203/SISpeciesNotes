@@ -1,5 +1,7 @@
 #存在多个project的workspace中引入cocoapods管理 https://yq.aliyun.com/articles/8315
 #CocoaPods是用ruby实现的，因此Podfile文件的语法就是ruby的语法。接着从以下几个方面来介绍Podfile:
+# `gem install cocoapods --pre`
+# `pod search AlamofireImage`
 source 'https://github.com/CocoaPods/Specs.git'
 workspace 'SISpeciesNotes.xcworkspace'
 #project 'SISpeciesNotes.xcodeproj'
@@ -17,7 +19,7 @@ end
 def testing_pods
     pod 'Quick',  '~> 0.10.0'       #Specta “可视化”测试
     pod 'Nimble', '~> 5.0.0'        # Expecta 匹配器框架
-    pod 'RxBlocking', '~> 2.0'
+    pod 'RxBlocking', '~> 3.0'
     #        pod 'RxTests',    '~> 2.0'  #失败，无法集成https://github.com/ReactiveX/RxSwift/issues/472
 end
 
@@ -36,27 +38,27 @@ target 'InstrumentsTutorial' do
 
 end
 
-def swift3
-
-end
+# def swift3
+# 
+# end
 
 target 'SISpeciesNotes' do
-    platform :ios, '8.0'
+    platform :ios, '10.0'
     use_frameworks!
     inhibit_all_warnings!
     project 'SISpeciesNotes.xcodeproj'
     
-    pod 'RealmSwift', '~> 1.0.1'
-    pod 'ObjectMapper', '= 1.1.5'
-    
+    pod 'RealmSwift', '~> 2.0.3'
+    pod 'ObjectMapper', '~> 2.2'
+   
     pod 'Alamofire', '~> 4.0'   #swift3.0
     #alamofire组件
-    pod 'AlamofireImage', '~> 3.1' #swift3.0
+    pod 'AlamofireImage', '~> 3.1.0' #swift3.0
     pod 'AlamofireNetworkActivityIndicator', '~> 2.0' #swift3.0
     
     #
     pod 'SDWebImage', '~>3.7'
-    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
+    pod 'OHHTTPStubs', '~> 5.2.2' # Default subspecs, including support for NSURLSession & JSON etc
     pod 'OHHTTPStubs/Swift' # Adds the Swiftier API wrapper too
     #autolayout框架
     pod 'Masonry'  #OC
@@ -72,14 +74,14 @@ target 'SISpeciesNotes' do
     pod  'SwiftFilePath'
     
     #mustache模板引擎
-    pod 'GRMustache.swift', '~> 1.0'
+    pod 'GRMustache.swift', '~> 2.0.0'
     
     #热修复/热更新库
     pod 'JSPatch'
     
     #响应式开发依赖库 https://realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/
-    pod 'RxSwift', '~> 2.0.0'
-    pod 'RxCocoa', '~> 2.0'
+    pod 'RxSwift', '~> 3.0'
+    pod 'RxCocoa', '~> 3.0'
 
     # Has its own copy of Quick,Nimble,RxBlocking
     # and has access to JSPatch via the SISpeciesNotes app
@@ -166,8 +168,16 @@ end
 #    end
 #end
 
+#升级cocopods
+# sudo gem update --system
+# gem source -l
+# pod setup
+# pod repo update --verbose
+# sudo gem install cocoapods --pre
+# sudo gem cleanup
 
-
-
+# target 'MyApp' do
+#   swift_version = '2.3'
+# end
 
 

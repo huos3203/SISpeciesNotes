@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (3.5.1)
-  - AlamofireImage (2.5.0):
-    - Alamofire (~> 3.5)
-  - AlamofireNetworkActivityIndicator (1.1.0):
-    - Alamofire (~> 3.3)
+  - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
+  - AlamofireNetworkActivityIndicator (2.0.1):
+    - Alamofire (~> 4.0)
   - CocoaAsyncSocket (7.5.1):
     - CocoaAsyncSocket/GCD (= 7.5.1)
   - CocoaAsyncSocket/GCD (7.5.1)
@@ -14,13 +14,13 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - GRMustache.swift (1.1.0)
+  - GRMustache.swift (2.0.0)
   - JSPatch (1.1):
     - JSPatch/Core (= 1.1)
   - JSPatch/Core (1.1)
   - Masonry (1.0.2)
-  - Nimble (5.1.1)
-  - ObjectMapper (1.1.5)
+  - Nimble (5.0.0)
+  - ObjectMapper (2.2.1)
   - OHHTTPStubs (5.2.2):
     - OHHTTPStubs/Default (= 5.2.2)
   - OHHTTPStubs/Core (5.2.2)
@@ -50,48 +50,48 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SnapKit (0.30.0.beta2)
+  - SnapKit (3.0.2)
   - SwiftFilePath (0.0.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
-  - AlamofireImage (~> 2.0)
-  - AlamofireNetworkActivityIndicator (~> 1.0)
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.1.0)
+  - AlamofireNetworkActivityIndicator (~> 2.0)
   - CocoaAsyncSocket
   - Crashlytics
   - EDStarRating
   - Fabric
   - FMDB
-  - GRMustache.swift (~> 1.0)
+  - GRMustache.swift (~> 2.0.0)
   - JSPatch
   - Masonry
-  - Nimble
-  - ObjectMapper (= 1.1.5)
-  - OHHTTPStubs
+  - Nimble (~> 5.0.0)
+  - ObjectMapper (~> 2.2)
+  - OHHTTPStubs (~> 5.2.2)
   - OHHTTPStubs/Swift
-  - Quick
+  - Quick (~> 0.10.0)
   - RealmSwift (~> 1.0.1)
   - RxBlocking (~> 2.0)
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0.0)
   - SDWebImage (~> 3.7)
-  - SnapKit (~> 0.30.0.beta2)
+  - SnapKit (~> 3.0.2)
   - SwiftFilePath
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
-  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
-  AlamofireNetworkActivityIndicator: 36340ebf8d70241b2ebadc3dea38e8fbb95f5127
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  AlamofireNetworkActivityIndicator: 3e55069ada3e1ff7703665156429eedcdfea0bc1
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  GRMustache.swift: 6bc0a640ddc833e38a05d02fe9ed8b6c98491989
+  GRMustache.swift: 8a547c12bea16052071b2b540af83d770075f0eb
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   OHHTTPStubs: 34d9d0994e64fcf8552dbfade5ce82ada913ee31
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
@@ -100,9 +100,9 @@ SPEC CHECKSUMS:
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SnapKit: c4bb32b1d3c5d18ff63bf95ffcbc599d2bab964c
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftFilePath: 52c1db61018e0a3941191eb71002cb5cbdaa39e7
 
-PODFILE CHECKSUM: 777abb3d0de2109a896a54da931cb74972c442eb
+PODFILE CHECKSUM: bff69fe2c7b53bf5526e9390c7b779bcd74b4096
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.0.beta.1
