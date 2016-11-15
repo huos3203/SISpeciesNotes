@@ -101,6 +101,9 @@
       location = "container:"
       name = "osXdemo">
       <FileRef
+         location = "group:emmett/emmett.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
       </FileRef>
       <FileRef
