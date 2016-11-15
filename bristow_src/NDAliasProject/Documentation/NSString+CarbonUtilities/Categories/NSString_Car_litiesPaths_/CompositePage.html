@@ -1,0 +1,143 @@
+<html><head><title>NSString(CarbonUtilitiesPaths)</title></head><body bgcolor="#ffffff"><font face="Geneva,Arial,Helvtica"><h1>NSString(CarbonUtilitiesPaths)</h1></font><hr><br>
+<h2>Abstract</h2>
+Provides method for interacting with Carbon APIs.
+<h2>Discussion</h2>
+Methods for dealing with <TT>FSRef</TT>&rsquo;s and methods for dealing with pascal string as well as making some other core foundation methods accessable in Objective-C syntax.
+ <hr><br><h2>Methods</h2>
+<a name="//apple_ref/occ/instm/NSString/fileSystemPathHFSStyle"></a>
+<h3><a name="fileSystemPathHFSStyle">fileSystemPathHFSStyle</a></h3>
+<b>Abstract:</b> Returns a HFS style path.
+
+<blockquote><pre><tt>- (NSString *)<B>fileSystemPathHFSStyle;</B> </tt><br>
+</pre></blockquote>
+<p>Returns a <TT>NSString</TT> containg a HFS style path (e.g. <TT>Macitosh HD:Users:</TT>) useful for display purposes.
+</p>
+<b>Result:</b> A new <TT>NSString</TT> containing a HFS style path for the same file or directory as the receiver.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NSString/getFSRef:"></a>
+<h3><a name="getFSRef:">getFSRef:</a></h3>
+<b>Abstract:</b> Get a <TT>FSRef</TT> for a path <TT>NSString</TT>.
+
+<blockquote><pre><tt>- (BOOL)<B>getFSRef:</B>(FSRef *)<I>aFSRef;</I> </tt><br>
+</pre></blockquote>
+<p>Initializes an <TT>FSRef</TT> for a POSIX style path <TT>NSString</TT>.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aFSRef</tt></td><td>a pointer to a <TT>FSRef</TT>.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Return <TT>YES</TT> if the method was successful, if the function returns <TT>NO</TT> then the <TT>FSRef</TT> pointed to by <TT>aFSRef</TT> is garbage.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NSString/getFSSpec:"></a>
+<h3><a name="getFSSpec:">getFSSpec:</a></h3>
+<b>Abstract:</b> Get a <TT>FSSpec</TT>.
+
+<blockquote><pre><tt>- (BOOL)<B>getFSSpec:</B>(FSSpec *)<I>aFSSpec;</I> </tt><br>
+</pre></blockquote>
+<p>Obtain a <TT>FSSpec</TT> for a POSIX path.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aFSSpec</tt></td><td>A pointer to a <TT>FSSpec</TT> struct, to be filled by the method.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if successful, if the method returns <TT>NO</TT> then <TT>aFSSpec</TT> contains garbage.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NSString/pascalString:length:"></a>
+<h3><a name="pascalString:length:">pascalString:length:</a></h3>
+<b>Abstract:</b> Obtain a pascal string equivelent to the receveiver.
+
+<blockquote><pre><tt>- (BOOL)<B>pascalString:</B>(StringPtr)<I>aBuffer</I> <B>length:</B>(short)<I>aLength;</I> </tt><br>
+</pre></blockquote>
+<p>Fill the <TT>StringPtr</TT> with a pascal string equivelent to the receveiver.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aBuffer</tt></td><td>A <TT>StringPtr</TT> that contains the pascal string on completion.</td><tr>
+<tr><td align = "center"><tt>aLength</tt></td><td>The maximum length the string can be. Pascal string can be no longer than <TT>255</TT> bytes long, <TT>256</TT> if you include the first length byte, so a value of 256 is the desired length.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if the method was successful, if <TT>NO</TT> is returns then <TT>aBuffer</TT> contains garbage.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NSString/pathFromFileSystemPathHFSStyle"></a>
+<h3><a name="pathFromFileSystemPathHFSStyle">pathFromFileSystemPathHFSStyle</a></h3>
+<b>Abstract:</b> Get a path from a HFS style path.
+
+<blockquote><pre><tt>- (NSString *)<B>pathFromFileSystemPathHFSStyle;</B> </tt><br>
+</pre></blockquote>
+<p><tt>pathFromFileSystemPathHFSStyle</tt> returns a POSIX style path from a HFS style path.
+</p>
+<b>Result:</b> A <tt>NSString</tt> containing a POSIX style path.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NSString/resolveAliasFile"></a>
+<h3><a name="resolveAliasFile">resolveAliasFile</a></h3>
+<b>Abstract:</b> Resolve an alias file.
+
+<blockquote><pre><tt>- (NSString *)<B>resolveAliasFile;</B> </tt><br>
+</pre></blockquote>
+<p>Returns an POSIX path <TT>NSString</TT> refered to by the receveive if the receveive refers to an alias file. If it does not refer to an alias file the a string identical to the receveive is returned.
+</p>
+<b>Result:</b> An POSIX path <TT>NSString</TT>.
+  
+<hr>
+<a name="//apple_ref/occ/clm/NSString/stringWithFSRef:"></a>
+<h3><a name="stringWithFSRef:">stringWithFSRef:</a></h3>
+<b>Abstract:</b> Alloc and initialize an <TT>NSString</TT>.
+
+<blockquote><pre><tt>+ (NSString *)<B>stringWithFSRef:</B>(const FSRef *)<I>aFSRef;</I> </tt><br>
+</pre></blockquote>
+<p>Creats a <TT>NSString</TT> containing a POSIX style path from a <TT>FSRef</TT>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aFSRef</tt></td><td>a pointer to a <TT>FSRef</TT>.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NSString</TT> containing a POSIX path.
+  
+<hr>
+<a name="//apple_ref/occ/clm/NSString/stringWithPascalString:"></a>
+<h3><a name="stringWithPascalString:">stringWithPascalString:</a></h3>
+<b>Abstract:</b> Alloc and initialize an <TT>NSString</TT>.
+
+<blockquote><pre><tt>+ (NSString *)<B>stringWithPascalString:</B>(ConstStr255Param)<I>aPStr;</I> </tt><br>
+</pre></blockquote>
+<p>Reurns a new <TT>NSString</TT> equivelent to the passed in pascal string.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPStr</tt></td><td>A pascal string of type <TT>ConstStr255Param</TT>.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NSString</TT>.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NSString/trimWhitespace"></a>
+<h3><a name="trimWhitespace">trimWhitespace</a></h3>
+<b>Abstract:</b> Trims white space from a <TT>NSString</TT>.
+
+<blockquote><pre><tt>- (NSString *)<B>trimWhitespace;</B> </tt><br>
+</pre></blockquote>
+<p>Returns a new <TT>NSString</TT> equivelent to the receveiver but without any white space (return, new line, space, tab) at the begining or end of the string.
+</p>
+<b>Result:</b> A new <TT>NSString</TT>.
+ 
+<hr>
+<p><p>&#169; 2003 Nathan Day &#151; (Last Updated 11/30/2003)
+</p></body></html>

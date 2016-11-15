@@ -100,9 +100,65 @@
    <Group
       location = "container:"
       name = "osXdemo">
-      <FileRef
-         location = "group:emmett/emmett.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "Packages">
+         <FileRef
+            location = "group:bristow_src/bristow.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:emmett/emmett.xcodeproj">
+         </FileRef>
+         <Group
+            location = "group:bristow_src/Q&amp;A-05_InstallOrUpgrade"
+            name = "Q&amp;A-05_InstallOrUpgrade">
+            <Group
+               location = "group:build"
+               name = "build">
+               <Group
+                  location = "group:http"
+                  name = "http">
+                  <FileRef
+                     location = "group:PBBReaderForOSX1.0.2.19.pkg">
+                  </FileRef>
+                  <FileRef
+                     location = "group:untitled package.pkg">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:InstallOrUpgrade.mpkg">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:InstallOrUpgrade.pkgproj">
+            </FileRef>
+            <FileRef
+               location = "group:ReadMe.txt">
+            </FileRef>
+            <Group
+               location = "group:Resources"
+               name = "Resources">
+               <FileRef
+                  location = "group:post-installation.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:postinstall.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:postupgrade.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:pre-installation.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:preinstall.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:preupgrade.sh">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
       <FileRef
          location = "group:ScaryBugsMac/ScaryBugsMac.xcodeproj">
       </FileRef>

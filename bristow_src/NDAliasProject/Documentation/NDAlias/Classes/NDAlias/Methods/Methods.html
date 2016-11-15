@@ -1,0 +1,423 @@
+<html><head><title>Methods</title></head><body bgcolor="#ffffff"><font face="Geneva,Arial,Helvtica"><h1>Methods</h1></font><hr><br>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithContentsOfFile:"></a>
+<h3><a name="aliasWithContentsOfFile:">aliasWithContentsOfFile:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithContentsOfFile:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithContentsOfFile:</TT> allocates and initalises an <TT>NDAlias</TT> with the alias record data within the Finder alias file pointed to by the <TT>NSString</TT> path <TT>aPath</TT>.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path to an alias file.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+ 
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithContentsOfURL:"></a>
+<h3><a name="aliasWithContentsOfURL:">aliasWithContentsOfURL:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithContentsOfURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithContentsOfURL:</TT> allocates and initalises an <TT>NDAlias</TT> with the alias record data within the Finder <TT>NSURL</TT> alias file pointed to pay the file url <TT>aURL</TT>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url to the alias file.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+	 
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithData:"></a>
+<h3><a name="aliasWithData:">aliasWithData:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithData:</B>(NSData *)<I>aData;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithData:</TT> creates a <TT>NDAlias</TT> that describes the specified target. <TT>aliasWithData:</TT> creates the <TT>NDAlias</TT> from the data that was returned from the method <TT>data</TT>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aData</tt></td><td>The <TT>NSData</TT> instaqnces that contains the data returned previously from the method <TT>data</TT>.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A NDAlias instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+  
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithPath:"></a>
+<h3><a name="aliasWithPath:">aliasWithPath:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithPath:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithPath:</TT> creates an <TT>NDAlias</TT> that contains only the minimum information necessary to describe the target: the target name, the parent directory ID, the volume name and creation date, and the volume mounting information. The <TT>aliasWithPath:</TT> method uses the standard alias record data structure, but it fills in only parts of the record.
+<P>The methods <TT>url</TT> and <TT>path</TT> never update a minimal alias record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path for the target of the alias.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+ 
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithPath:fromPath:"></a>
+<h3><a name="aliasWithPath:fromPath:">aliasWithPath:fromPath:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithPath:</B>(NSString *)<I>aPath</I> <B>fromPath:</B>(NSString *)<I>aFromPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithPath:fromPath:</TT> creates a <TT>NDAlias</TT> that describes the specified target. <TT>aliasWithPath:fromPath:</TT> always records the name and file or directory ID of the target, its creation date, the parent directory name and ID, and the volume name and creation date. It also records the full pathname of the target and a collection of other information relevant to locating the target, verifying the target, and mounting the target's volume, if necessary. <TT>aliasWithPath:fromPath:</TT> also stores relative path information as well by supplying a starting point for a relative path.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+<tr><td align = "center"><tt>aFromPath</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory url's, <TT>aFromPath</TT> and <TT>aURL</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A NDAlias instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+ 
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithURL:"></a>
+<h3><a name="aliasWithURL:">aliasWithURL:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithURL:</TT> creates an <TT>NDAlias</TT> that contains only the minimum information necessary to describe the target: the target name, the parent directory ID, the volume name and creation date, and the volume mounting information. The <TT>aliasWithURL:</TT> method uses the standard alias record data structure, but it fills in only parts of the record.
+<P>The methods <TT>url</TT> and <TT>path</TT> never update a minimal alias record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+  
+<hr>
+<a name="//apple_ref/occ/clm/NDAlias/aliasWithURL:fromURL:"></a>
+<h3><a name="aliasWithURL:fromURL:">aliasWithURL:fromURL:</a></h3>
+<b>Abstract:</b> Creates and initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>+ (id)<B>aliasWithURL:</B>(NSURL *)<I>aURL</I> <B>fromURL:</B>(NSURL *)<I>aFromURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>aliasWithURL:fromURL:</TT> creates a <TT>NDAlias</TT> that describes the specified target. <TT>aliasWithURL:fromURL:</TT> always records the name and file or directory ID of the target, its creation date, the parent directory name and ID, and the volume name and creation date. It also records the full pathname of the target and a collection of other information relevant to locating the target, verifying the target, and mounting the target's volume, if necessary. <TT>aliasWithURL:fromURL:</TT> also stores relative path information as well by supplying a starting point for a relative path.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+<tr><td align = "center"><tt>aFromURL</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory url's, <TT>aFromURL</TT> and <TT>aURL</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/changed"></a>
+<h3><a name="changed">changed</a></h3>
+<b>Abstract:</b> Reports whether the receiver was updated.
+
+<blockquote><pre><tt>- (BOOL)<B>changed;</B> </tt><br>
+</pre></blockquote>
+<p>The method <TT>changed</TT> indicates whether the receiver was updated because it contained some outdated information about the target. If it the receiver is updated, <TT>YES</TT> is returned. Otherwise, it return <TT>NO</TT>. (<TT>url</TT> and <TT>path</TT> never update a <TT>NDAlias</TT> that was created with no relative path.) 
+</p>
+<b>Result:</b> <TT>YES</TT> if the receiver was updated, <TT>NO</TT> if it was not updated.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/data"></a>
+<h3><a name="data">data</a></h3>
+<b>Abstract:</b> Returns a <TT>NSData</TT> instance for the reciever.
+
+<blockquote><pre><tt>- (NSData *)<B>data;</B> </tt><br>
+</pre></blockquote>
+<p>The method <TT>data</TT> returns the contents of the recievers as an <TT>NSData</TT>, this can be used for archiving perposes though <TT>NDAlias</TT> does implement the <TT>NSCoding</TT> protocol.
+</p>
+<b>Result:</b> Returns an <TT>NSData</TT> instance.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithContentsOfFile:"></a>
+<h3><a name="initWithContentsOfFile:">initWithContentsOfFile:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithContentsOfFile:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithContentsOfFile:</TT> initalises the receiver with the alias record data within the Finder alias file pointed to by the <TT>NSString</TT> path <TT>aPath</TT>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path to the alias file.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithContentsOfURL:"></a>
+<h3><a name="initWithContentsOfURL:">initWithContentsOfURL:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithContentsOfURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithContentsOfURL:</TT> initalises the reciever with the alias record data within the Finder <TT>NSURL</TT> alias file pointed to pay the file url <TT>aURL</TT>.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url to the alias file.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithData:"></a>
+<h3><a name="initWithData:">initWithData:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithData:</B>(NSData *)<I>aData;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithData:</TT> initalises a <TT>NDAlias</TT> that describes the specified target. <TT>initWithData:</TT> creates the <TT>NDAlias</TT> from the data that was returned from the method <TT>data</TT>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aData</tt></td><td>The <TT>NSData</TT> instaqnces that contains the data returned previously from the method <TT>data</TT>.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+	 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithPath:"></a>
+<h3><a name="initWithPath:">initWithPath:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithPath:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithPath:</TT> initalises an <TT>NDAlias</TT> that contains only the minimum information necessary to describe the target: the target name, the parent directory ID, the volume name and creation date, and the volume mounting information. The <TT>initWithPath:</TT> method uses the standard alias record data structure, but it fills in only parts of the record.
+<P>The methods <TT>url</TT> and <TT>path</TT> never update a minimal alias record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path for the target of the alias.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithPath:fromPath:"></a>
+<h3><a name="initWithPath:fromPath:">initWithPath:fromPath:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithPath:</B>(NSString *)<I>aPath</I> <B>fromPath:</B>(NSString *)<I>aFromPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithPath:fromPath:</TT> initalises a <TT>NDAlias</TT> that describes the specified target. <TT>initWithPath:fromPath:</TT> always records the name and file or directory ID of the target, its creation date, the parent directory name and ID, and the volume name and creation date. It also records the full pathname of the target and a collection of other information relevant to locating the target, verifying the target, and mounting the target's volume, if necessary. <TT>initWithPath:fromPath:</TT> also stores relative path information as well by supplying a starting point for a relative path.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the file url for the target of the alias.</td><tr>
+<tr><td align = "center"><tt>aFromPath</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory url's, <TT>aFromPath</TT> and <TT>aPath</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithPath:fromURL:"></a>
+<h3><a name="initWithPath:fromURL:">initWithPath:fromURL:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithURL:</B>(NSURL *)<I>aURL</I> <B>fromURL:</B>(NSURL *)<I>aFromURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithPath:fromURL:</TT> initalises a <TT>NDAlias</TT> that describes the specified target. <TT>initWithPath:fromURL:</TT> always records the name and file or directory ID of the target, its creation date, the parent directory name and ID, and the volume name and creation date. It also records the full pathname of the target and a collection of other information relevant to locating the target, verifying the target, and mounting the target's volume, if necessary. <TT>initWithPath:fromURL:</TT> also stores relative path information as well by supplying a starting point for a relative path.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+<tr><td align = "center"><tt>aFromURL</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory url's, <TT>aFromURL</TT> and <TT>aURL</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> An initalises <TT>NDAlias</TT>, returns <TT>nil</TT> if initalises fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/initWithURL:"></a>
+<h3><a name="initWithURL:">initWithURL:</a></h3>
+<b>Abstract:</b> Initalises a <TT>NDAlias</TT>.
+
+<blockquote><pre><tt>- (id)<B>initWithURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>initWithURL:</TT> initalises an <TT>NDAlias</TT> that contains only the minimum information necessary to describe the target: the target name, the parent directory ID, the volume name and creation date, and the volume mounting information. The <TT>initWithURL:</TT> method uses the standard alias record data structure, but it fills in only parts of the record.
+<P>The methods <TT>url</TT> and <TT>path</TT> never update a minimal alias record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> A <TT>NDAlias</TT> instance, returns <TT>nil</TT> if <TT>NDAlias</TT> creation fails.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/path"></a>
+<h3><a name="path">path</a></h3>
+<b>Abstract:</b> Returns the single most likely target for the receiver.
+
+<blockquote><pre><tt>- (NSString *)<B>path;</B> </tt><br>
+</pre></blockquote>
+<p>The method <TT>path</TT> performs a fast search for the target of the receiver. If the resolution is successful, <TT>path</TT> returns a path <TT>NSString</TT> for the target file system object, updates the receiver if necessary, and reports (through the method <TT>changed</TT>) whether the receiver was updated. If the target is on an unmounted AppleShare volume, <TT>path</TT> automatically mounts the volume. If the target is on an unmounted ejectable volume, <TT>path</TT> asks the user to insert the volume.
+<P>After it identifies a target, <TT>path</TT> compares some key information about the target with the information in the receiver. If the information differs, <TT>path</TT> updates the receiver to match the target.</P>
+<P>The <TT>path</TT> method displays the standard dialog boxes when it needs input from the user, such as a name and password for mounting a remote volume. The user can cancel the resolution through these dialog boxes.</P>
+</p>
+<b>Result:</b> A path <TT>NSString</TT> to the target of the receiver. <TT>nil</TT> is returned if no target could be found.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/setPath:"></a>
+<h3><a name="setPath:">setPath:</a></h3>
+<b>Abstract:</b> Updates an the reciever with a new target.
+
+<blockquote><pre><tt>- (BOOL)<B>setPath:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>setPath:</TT> rebuilds the entire recievers alias record .
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path for the target of the reciever.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if setting the target succeeded, otherwise returns <TT>NO</TT>.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/setURL:"></a>
+<h3><a name="setURL:">setURL:</a></h3>
+<b>Abstract:</b> Updates an the reciever with a new target.
+
+<blockquote><pre><tt>- (BOOL)<B>setURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>setURL:</TT> rebuilds the entire recievers alias record .
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the alias.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if setting the target succeeded, otherwise returns <TT>NO</TT>.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/setURL:fromURL:"></a>
+<h3><a name="setURL:fromURL:">setURL:fromURL:</a></h3>
+<b>Abstract:</b> Updates an the reciever with a new target.
+
+<blockquote><pre><tt>- (BOOL)<B>setPath:</B>(NSString *)<I>aPath</I> <B>fromPath:</B>(NSString *)<I>aFromPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>setURL:fromURL:</TT> rebuilds the entire recievers alias record .
+<P>The <TT>setURL:fromURL:</TT> function always creates a complete alias record. When you use <TT>setURL:fromURL:</TT> to update a minimal alias record, you convert the minimal record to a complete record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path for the target of the reciever.</td><tr>
+<tr><td align = "center"><tt>aFromPath</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory paths, <TT>aFromPath</TT> and <TT>aPath</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if setting the target succeeded, otherwise returns <TT>NO</TT>.
+ 
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/setURL:fromURL:"></a>
+<h3><a name="setURL:fromURL:">setURL:fromURL:</a></h3>
+<b>Abstract:</b> Updates an the reciever with a new target.
+
+<blockquote><pre><tt>- (BOOL)<B>setURL:</B>(NSURL *)<I>aURL</I> <B>fromURL:</B>(NSURL *)<I>aFromURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>setURL:fromURL:</TT> rebuilds the entire recievers alias record .
+<P>The <TT>setURL:fromURL:</TT> function always creates a complete alias record. When you use <TT>setURL:fromURL:</TT> to update a minimal alias record, you convert the minimal record to a complete record.</P>
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the target of the reciever.</td><tr>
+<tr><td align = "center"><tt>aFromURL</tt></td><td>The starting point for a relative path, to be used later in a relative search. The two file or directory url's, <TT>aFromURL</TT> and <TT>aURL</TT>, must reside on the same volume.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> Returns <TT>YES</TT> if setting the target succeeded, otherwise returns <TT>NO</TT>.
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/url"></a>
+<h3><a name="url">url</a></h3>
+<b>Abstract:</b> Returns the single most likely target for the receiver.
+
+<blockquote><pre><tt>- (NSURL *)<B>url;</B> </tt><br>
+</pre></blockquote>
+<p>The <TT>url</TT> method performs a fast search for the target of the receiver. If the resolution is successful, <TT>url</TT> returns a file <TT>NSURL</TT> for the target file system object, updates the receiver if necessary, and reports (through the method <TT>changed</TT>) whether the receiver was updated. If the target is on an unmounted AppleShare volume, <TT>url</TT> automatically mounts the volume. If the target is on an unmounted ejectable volume, <TT>url</TT> asks the user to insert the volume.
+<P>After it identifies a target, <TT>url</TT> compares some key information about the target with the information in the receiver. If the information differs, <TT>url</TT> updates the receiver to match the target.</P>
+<P>The <TT>url</TT> method displays the standard dialog boxes when it needs input from the user, such as a name and password for mounting a remote volume. The user can cancel the resolution through these dialog boxes.</P>
+</p>
+<b>Result:</b> A file <TT>NSURL</TT> to the target of the receiver. <TT>nil</TT> is returned if no target could be found. 
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/writeToFile:"></a>
+<h3><a name="writeToFile:">writeToFile:</a></h3>
+<b>Abstract:</b> Writes an <TT>NDAlias</TT> to a Finder alias file.
+
+<blockquote><pre><tt>- (BOOL)<B>writeToFile:</B>(NSString *)<I>aPath;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>writeToFile:</TT> writes the alias record data contained within the reciever to a Finder alias file at the path <TT>aPath</TT>. <TT>writeToFile:</TT> can be used to create alias files that the user can see in Finder and use.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aPath</tt></td><td>the path for the alias file. Not the path the alias record represents.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> «result»
+  
+<hr>
+<a name="//apple_ref/occ/instm/NDAlias/writeToURL:"></a>
+<h3><a name="writeToURL:">writeToURL:</a></h3>
+<b>Abstract:</b> Writes an <TT>NDAlias</TT> to a Finder alias file.
+
+<blockquote><pre><tt>- (BOOL)<B>writeToURL:</B>(NSURL *)<I>aURL;</I> </tt><br>
+</pre></blockquote>
+<p>The method <TT>writeToURL:</TT> writes the alias record data contained within the reciever to a Finder alias file at the file url <TT>aURL</TT>. <TT>writeToFile:</TT> can be used to create alias files that the user can see in Finder and use.
+</p>
+<h4>Parameters</h4>
+<blockquote>
+<table border = "1"  width = "90%">
+<thead><tr><th>Name</th><th>Description</th></tr></thead>
+<tr><td align = "center"><tt>aURL</tt></td><td>the file url for the alias file. Not the file url the alias record represents.</td><tr>
+</table>
+</blockquote>
+<b>Result:</b> «result»
+ 
+<hr>
+<p><p>&#169; 2003 Nathan Day &#151; (Last Updated 11/30/2003)
+</p></body></html>
