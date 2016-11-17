@@ -74,6 +74,9 @@
       location = "group:TextKitNotepad/TextKitNotepad.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PresentationsDemo/PresentationsDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:JSPatch-master/Demo/iOSDemo/JSPatchDemo.xcodeproj">
    </FileRef>
    <FileRef
