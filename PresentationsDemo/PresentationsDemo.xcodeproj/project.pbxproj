@@ -176,9 +176,11 @@
 				TargetAttributes = {
 					5FCA458A1AD2AAE3009BAB9B = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0810;
 					};
 					5FCA459F1AD2AAE4009BAB9B = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0810;
 						TestTargetID = 5FCA458A1AD2AAE3009BAB9B;
 					};
 				};
@@ -361,6 +363,7 @@
 				INFOPLIST_FILE = PresentationsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -371,6 +374,7 @@
 				INFOPLIST_FILE = PresentationsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -389,6 +393,7 @@
 				INFOPLIST_FILE = PresentationsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PresentationsDemo.app/PresentationsDemo";
 			};
 			name = Debug;
@@ -404,6 +409,7 @@
 				INFOPLIST_FILE = PresentationsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PresentationsDemo.app/PresentationsDemo";
 			};
 			name = Release;

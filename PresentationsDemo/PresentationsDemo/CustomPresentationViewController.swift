@@ -16,6 +16,6 @@ class CustomPresentationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func infoButtonWasTapped(sender: UIButton) {
+    @IBAction func infoButtonWasTapped(_ sender: UIButton) {
     }
 }

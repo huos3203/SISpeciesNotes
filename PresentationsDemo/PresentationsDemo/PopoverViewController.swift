@@ -16,6 +16,6 @@ class PopoverViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func actionWasTapped(sender: UIBarButtonItem) {
+    @IBAction func actionWasTapped(_ sender: UIBarButtonItem) {
     }
 }

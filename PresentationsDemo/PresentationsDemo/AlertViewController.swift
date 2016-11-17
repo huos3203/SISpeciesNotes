@@ -16,6 +16,6 @@ class AlertViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func showAlertWasTapped(sender: UIButton) {
+    @IBAction func showAlertWasTapped(_ sender: UIButton) {
     }
 }
