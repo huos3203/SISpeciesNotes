@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14FAD6371DDD8DB800591904 /* ExamplePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */; };
+		14FAD6391DDD960800591904 /* ExampleAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */; };
+		14FAD63B1DDD9A8100591904 /* ExampleTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */; };
 		5F4E89FB1AD2D371000FBEE8 /* bike_traveler.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F4E89FA1AD2D371000FBEE8 /* bike_traveler.png */; };
 		5F4E89FD1AD2D51A000FBEE8 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F4E89FC1AD2D51A000FBEE8 /* information.png */; };
 		5F4E8A011AD2D80B000FBEE8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E8A001AD2D80B000FBEE8 /* AlertViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePresentationViewController.swift; sourceTree = "<group>"; };
+		14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTransitioningDelegate.swift; sourceTree = "<group>"; };
 		5F4E89FA1AD2D371000FBEE8 /* bike_traveler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bike_traveler.png; sourceTree = "<group>"; };
 		5F4E89FC1AD2D51A000FBEE8 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		5F4E8A001AD2D80B000FBEE8 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 				5F4E8A021AD2D826000FBEE8 /* PopoverViewController.swift */,
 				5F4E8A061AD2D867000FBEE8 /* CustomPresentationViewController.swift */,
 				5FD1AA371AEF7E8700EDCF03 /* ExampleViewController.swift */,
+				14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */,
+				14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */,
+				14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */,
 			);
 			path = PresentationsDemo;
 			sourceTree = "<group>";
@@ -232,9 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F4E8A071AD2D867000FBEE8 /* CustomPresentationViewController.swift in Sources */,
+				14FAD63B1DDD9A8100591904 /* ExampleTransitioningDelegate.swift in Sources */,
 				5FD1AA381AEF7E8700EDCF03 /* ExampleViewController.swift in Sources */,
+				14FAD6391DDD960800591904 /* ExampleAnimatedTransitioning.swift in Sources */,
 				5FCA45911AD2AAE3009BAB9B /* AppDelegate.swift in Sources */,
 				5F4E8A031AD2D827000FBEE8 /* PopoverViewController.swift in Sources */,
+				14FAD6371DDD8DB800591904 /* ExamplePresentationViewController.swift in Sources */,
 				5F4E8A011AD2D80B000FBEE8 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
