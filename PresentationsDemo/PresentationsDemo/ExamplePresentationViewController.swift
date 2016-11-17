@@ -7,6 +7,15 @@
 //
 
 import UIKit
+//UIAdaptivePresentationControllerDelegate转场协调器，可在转场 动画发生的同时执行其他动画。主要在model转场和交互转场取消时使用。在此处并未用到
+
+//UIPresentationController类主要给 Modal 转场带来了以下几点变化：
+//定制 presentedView 的外观：设定 presentedView 的尺寸以及在 containerView 中添加自定义视图并为这些视图添加动画；
+//可以选择是否移除 presentingView；
+//可以在不需要动画控制器的情况下单独工作；
+//iOS 8 中的适应性布局。
+
+
 //UIAdaptivePresentationControllerDelegate protocol will allows us to specify the adaptive presentation style to use when presenting this controller.
 class ExamplePresentationViewController: UIPresentationController,UIAdaptivePresentationControllerDelegate {
 
@@ -61,6 +70,7 @@ class ExamplePresentationViewController: UIPresentationController,UIAdaptivePres
         //The transition coordinator is responsible for animating the presentation and dismissal of the content.
         let coordinator = presentedViewController.transitionCoordinator
         if (coordinator != nil) {
+            //与动画控制器中的转场动画同步，执行其他动画
             //animateAlongsideTransition() to specify additional animations to be used alongside the presentation animation.
             coordinator!.animate(alongsideTransition: {
                 (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
@@ -73,10 +83,12 @@ class ExamplePresentationViewController: UIPresentationController,UIAdaptivePres
         }
     }
     
+    
     //we do the opposite of what we did in presentationTransitionWillBegin()
     override func dismissalTransitionWillBegin() {
         let coordinator = presentedViewController.transitionCoordinator
         if (coordinator != nil) {
+            //与动画控制器中的转场动画同步，执行其他动画
             coordinator!.animate(alongsideTransition: {
                 (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
                 //animate the alpha of the chrome back to 0.
@@ -103,4 +115,10 @@ class ExamplePresentationViewController: UIPresentationController,UIAdaptivePres
     {
         return UIModalPresentationStyle.fullScreen
     }
+    
+    //提供给动画控制器使用的视图，默认返回 presentedVC.view，通过重写该方法返回其他视图，但一定要是 presentedVC.view 的上层视图。
+//    override var presentedView:UIView
+//    {
+//        return nil
+//    }
 }

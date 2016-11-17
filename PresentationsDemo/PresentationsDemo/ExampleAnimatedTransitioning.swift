@@ -8,6 +8,7 @@
 
 import UIKit
 
+//动画控制器负责添加视图以及执行动画，遵守UIViewControllerAnimatedTransitioning协议
 //UIViewControllerAnimatedTransitioning protocol performs the custom animations for transitioning between view controllers.
 class ExampleAnimatedTransitioning: NSObject,UIViewControllerAnimatedTransitioning
 {
@@ -17,6 +18,7 @@ class ExampleAnimatedTransitioning: NSObject,UIViewControllerAnimatedTransitioni
     //returns the duration in seconds of the transition animation.
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
     {
+        //返回动画时间
         return 0.5
     }
 
@@ -48,8 +50,9 @@ class ExampleAnimatedTransitioning: NSObject,UIViewControllerAnimatedTransitioni
         let finalFrame = isPresentation ? finalFrameForVC : initialFrameForVC
         
         animatingView?.frame = initialFrame
-        
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay:0, usingSpringWithDamping:300.0, initialSpringVelocity:5.0, options:UIViewAnimationOptions.allowUserInteraction, animations:{
+        //根据协议中的方法获取动画的时间。
+        let duration = transitionDuration(using: transitionContext)
+        UIView.animate(withDuration: duration, delay:0, usingSpringWithDamping:300.0, initialSpringVelocity:5.0, options:UIViewAnimationOptions.allowUserInteraction, animations:{
             
             //we move the view to the final position.
             animatingView?.frame = finalFrame
@@ -64,4 +67,13 @@ class ExampleAnimatedTransitioning: NSObject,UIViewControllerAnimatedTransitioni
             transitionContext.completeTransition(true)
         })
     }
+//    UIView.transitionFromView(fromView, toView: toView, duration: durantion, options: .TransitionCurlDown, completion: { _ in
+//    let isCancelled = transitionContext.transitionWasCancelled()
+//    transitionContext.completeTransition(!isCancelled)
+//    })
+    //如果实现了，会在转场动画结束后调用，可以执行一些收尾工作。
+    func animationEnded(_ transitionCompleted: Bool) {
+        //
+    }
+    
 }

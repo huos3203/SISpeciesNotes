@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//UIViewControllerTransitioningDelegate转场代理：UIViewController的transitioningDelegate属性遵守该协议
 class ExampleTransitioningDelegate: NSObject,UIViewControllerTransitioningDelegate
 {
     //returns a presentation controller that manages the presentation of a view controller.
