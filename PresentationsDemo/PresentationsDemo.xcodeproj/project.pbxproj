@@ -37,6 +37,7 @@
 		14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePresentationViewController.swift; sourceTree = "<group>"; };
 		14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTransitioningDelegate.swift; sourceTree = "<group>"; };
+		14FAD63E1DDEA21100591904 /* Simulator Screen Shot 18 Nov 2016, 10.41.18 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 18 Nov 2016, 10.41.18 AM.png"; sourceTree = "<group>"; };
 		5F4E89FA1AD2D371000FBEE8 /* bike_traveler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bike_traveler.png; sourceTree = "<group>"; };
 		5F4E89FC1AD2D51A000FBEE8 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		5F4E8A001AD2D80B000FBEE8 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14FAD63C1DDEA0DB00591904 /* Custom Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */,
+				14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */,
+				14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */,
+				14FAD63E1DDEA21100591904 /* Simulator Screen Shot 18 Nov 2016, 10.41.18 AM.png */,
+			);
+			name = "Custom Presentations";
+			sourceTree = "<group>";
+		};
 		5FCA45821AD2AAE2009BAB9B = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +114,7 @@
 				5F4E8A021AD2D826000FBEE8 /* PopoverViewController.swift */,
 				5F4E8A061AD2D867000FBEE8 /* CustomPresentationViewController.swift */,
 				5FD1AA371AEF7E8700EDCF03 /* ExampleViewController.swift */,
-				14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */,
-				14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */,
-				14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */,
+				14FAD63C1DDEA0DB00591904 /* Custom Presentations */,
 			);
 			path = PresentationsDemo;
 			sourceTree = "<group>";
