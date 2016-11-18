@@ -25,7 +25,9 @@ class CustomPresentationViewController: UIViewController {
         transitioningDelegate = exampleTransitionDelegate
         //create an instance of ExampleViewController which will provide the content to display.
         let vc = ExampleViewController()
+        vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = exampleTransitionDelegate
+        
         //present this view controller.
         present(vc, animated: true, completion: nil)
     }

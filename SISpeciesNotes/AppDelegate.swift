@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRealmConfiguration()
         
         //从代码中启动UI界面
-        launchAPPWithoutStoryBoard()
+//        launchAPPWithoutStoryBoard()
         
             return true
     }
