@@ -25,6 +25,7 @@ class PopoverViewController: UIViewController {
             let popover:UIPopoverPresentationController = vc.popoverPresentationController!
             //barButtonItem决定这个popover页面依附在哪一个按钮下
             popover.barButtonItem = sender
+            //为解决在iPhone下你没有办法去关闭当前这个弹出来的窗口
             popover.delegate = self
         }
 
