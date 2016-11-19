@@ -7,22 +7,24 @@ import UIKit
 public class TimeIndicatorView: UIView {
     
     //Label
-    private var timeLabel:UILabel!
+    private var timeLabel = UILabel()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     public init(time:NSDate){
     
-        super.init(frame:CGRect.init(x: 0, y: 0, width: 100, height: 100))
+//        super.init()
+        super.init(frame: CGRect.zero)
         backgroundColor = UIColor.yellow
         clipsToBounds = false
         
-        timeLabel = UILabel()
-        timeLabel.textAlignment = NSTextAlignment.center
-        timeLabel.numberOfLines = 0
-//        timeLabel.textColor = UIColor.blackColor()
+        timeLabel.textAlignment = .center
+        
+        timeLabel.textColor = UIColor.white
+        // format and style the date
         timeLabel.text = time.timeFormatBy(format: "dd\rMMMM\ryyyy")
+        timeLabel.numberOfLines = 0
         timeLabel.sizeToFit()
         
         addSubview(timeLabel)
@@ -31,30 +33,35 @@ public class TimeIndicatorView: UIView {
     public func updateSize() {
         //
         // size the label based on the font
-        timeLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
-        timeLabel.frame = CGRect.init(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
+        timeLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        timeLabel.frame = CGRect.init(x: 0,
+                                      y: 0,
+                                  width: CGFloat.greatestFiniteMagnitude,
+                                 height: CGFloat.greatestFiniteMagnitude)
         //Make(0, 0, CGFloat.max, CGFloat.greatestFiniteMagnitude)
         timeLabel.sizeToFit()
         
         // set the frame to be large enough to accomodate circle that surrounds the text
         let radius = radiusToSurroundFrame(frame: timeLabel.frame)
-        self.frame = CGRect.init(x: 0, y: 0, width: radius*2, height: radius*2)
+        frame = CGRect.init(x: 0,
+                            y: 0,
+                        width: radius * 2,
+                       height: radius * 2)
         
         // center the label within this circle
-        timeLabel.center = self.center
-        
-        // offset the center of this view to ... erm ... can I just draw you a picture?
-        // You know the story - the designer provides a mock-up with some static data, leaving
-        // you to work out the complex calculatins required to accomodate the variability of real-world
-        // data. C'est la vie!
-        let padding = CGFloat(5)
-        self.center = CGPoint.init(x: self.center.x + timeLabel.frame.origin.x - padding, y: self.center.y - timeLabel.frame.origin.y + padding)
+        timeLabel.center = center
+
+        //右上角半遮掩5.0效果
+        //目前view坐标系统统已经包含状态栏的高度，所以 center.y + 80
+         let padding : CGFloat = 5.0
+        center = CGPoint.init(x: center.x + timeLabel.frame.origin.x - padding,
+                              y: (center.y + 80) - timeLabel.frame.origin.y + padding)
     }
     
     // calculates the radius of the circle that surrounds the label
     func radiusToSurroundFrame(frame:CGRect) -> CGFloat {
         //半径
-        return max(frame.size.width, frame.size.height) * 0.5 + 20.0
+        return max(frame.size.width, frame.size.height) * 0.5 + 25.0
     }
     
     func curvePathWithOrigin(origin:CGPoint)->UIBezierPath{
@@ -62,8 +69,8 @@ public class TimeIndicatorView: UIView {
         //画弧形
         let path = UIBezierPath.init(arcCenter: origin,
                                      radius: radiusToSurroundFrame(frame: timeLabel.frame),
-                                     startAngle: 0,
-                                     endAngle: CGFloat(M_PI * 2),
+                                     startAngle: -180,                 //-180.0
+                                     endAngle: 180.0,//CGFloat(M_PI * 2),   //180.0
                                      clockwise: true)
 //        UIColor.blueColor().set()
 //        path.fill()
@@ -81,7 +88,7 @@ public class TimeIndicatorView: UIView {
         ctx!.setShouldAntialias(true)
         let path = curvePathWithOrigin(origin: timeLabel.center)
         //填充色
-        UIColor.blue.setFill()
+        UIColor.init(red: 0.329, green: 0.584, blue: 0.88, alpha: 1.0).setFill()
         path.fill()
         
         //画笔色
@@ -97,6 +104,7 @@ extension NSDate{
         //
         let timeFormat = DateFormatter()
         timeFormat.dateFormat = format
-        return timeFormat.string(from: self as Date)
+        let formattedDate = timeFormat.string(from: self as Date)
+        return formattedDate.uppercased()
     }
 }

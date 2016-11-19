@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		145968E51CD9FF9600732D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145968E41CD9FF9600732D9A /* AppDelegate.swift */; };
-		145968E71CD9FF9600732D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145968E61CD9FF9600732D9A /* ViewController.swift */; };
+		145968E71CD9FF9600732D9A /* NoteEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145968E61CD9FF9600732D9A /* NoteEditorViewController.swift */; };
 		145968EA1CD9FF9600732D9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145968E81CD9FF9600732D9A /* Main.storyboard */; };
 		145968EC1CD9FF9600732D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145968EB1CD9FF9600732D9A /* Assets.xcassets */; };
 		145968EF1CD9FF9600732D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145968ED1CD9FF9600732D9A /* LaunchScreen.storyboard */; };
 		145968FA1CD9FF9700732D9A /* TextKitNotepadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145968F91CD9FF9700732D9A /* TextKitNotepadTests.swift */; };
 		145969081CDA012A00732D9A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145969071CDA012A00732D9A /* NoteModel.swift */; };
+		843894D51DE00FDC00212B65 /* TimeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843894D41DE00FDC00212B65 /* TimeIndicatorView.swift */; };
+		843894D91DE01D7100212B65 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843894D81DE01D7100212B65 /* NotesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +31,7 @@
 /* Begin PBXFileReference section */
 		145968E11CD9FF9500732D9A /* TextKitNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKitNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145968E41CD9FF9600732D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		145968E61CD9FF9600732D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		145968E61CD9FF9600732D9A /* NoteEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorViewController.swift; sourceTree = "<group>"; };
 		145968E91CD9FF9600732D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		145968EB1CD9FF9600732D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145968EE1CD9FF9600732D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		145968F91CD9FF9700732D9A /* TextKitNotepadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextKitNotepadTests.swift; sourceTree = "<group>"; };
 		145968FB1CD9FF9700732D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		145969071CDA012A00732D9A /* NoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteModel.swift; path = Model/NoteModel.swift; sourceTree = "<group>"; };
+		843894D41DE00FDC00212B65 /* TimeIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIndicatorView.swift; sourceTree = "<group>"; };
+		843894D81DE01D7100212B65 /* NotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,8 @@
 				145969051CDA00AB00732D9A /* API */,
 				145969041CDA009B00732D9A /* Model */,
 				145968E41CD9FF9600732D9A /* AppDelegate.swift */,
-				145968E61CD9FF9600732D9A /* ViewController.swift */,
+				843894D81DE01D7100212B65 /* NotesListViewController.swift */,
+				145968E61CD9FF9600732D9A /* NoteEditorViewController.swift */,
 				145968E81CD9FF9600732D9A /* Main.storyboard */,
 				145968EB1CD9FF9600732D9A /* Assets.xcassets */,
 				145968ED1CD9FF9600732D9A /* LaunchScreen.storyboard */,
@@ -103,6 +108,7 @@
 		145969041CDA009B00732D9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				843894D41DE00FDC00212B65 /* TimeIndicatorView.swift */,
 				145969071CDA012A00732D9A /* NoteModel.swift */,
 			);
 			name = Model;
@@ -224,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145968E71CD9FF9600732D9A /* ViewController.swift in Sources */,
+				145968E71CD9FF9600732D9A /* NoteEditorViewController.swift in Sources */,
+				843894D51DE00FDC00212B65 /* TimeIndicatorView.swift in Sources */,
+				843894D91DE01D7100212B65 /* NotesListViewController.swift in Sources */,
 				145969081CDA012A00732D9A /* NoteModel.swift in Sources */,
 				145968E51CD9FF9600732D9A /* AppDelegate.swift in Sources */,
 			);
@@ -361,6 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.TextKitNotepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -372,6 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.TextKitNotepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
@@ -418,6 +428,7 @@
 				145969001CD9FF9700732D9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		145969011CD9FF9700732D9A /* Build configuration list for PBXNativeTarget "TextKitNotepadTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +437,7 @@
 				145969031CD9FF9700732D9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

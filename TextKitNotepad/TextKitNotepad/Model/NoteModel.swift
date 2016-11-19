@@ -13,13 +13,15 @@ class NoteModel{
     var contents:String
     var timetamp:NSDate
     
-    init(newText:String){
+    init(_ newText:String)
+    {
         contents = newText
         timetamp = NSDate()
     }
-    
-    var title:String{
-        let lines = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    //在get时，返回第一行内容
+    var title:String
+    {
+        let lines = contents.components(separatedBy: NSCharacterSet.newlines)
         return lines[0]
     }
 }

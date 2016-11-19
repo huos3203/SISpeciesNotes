@@ -1,18 +1,3 @@
-//: [Previous](@previous)
-
-import Foundation
-
-import XCPlayground
-
-
-//文本排除区域：通过
-//XCPlaygroundPage.currentPage.liveView = ExclusionPath()
-
-//日期戳
-let view = TimeIndicatorView.init(time: NSDate())
-view.updateSize()
-XCPlaygroundPage.currentPage.liveView = view
-
 //
 //  ViewController.swift
 //  TextKitNotepad
@@ -40,31 +25,36 @@ import UIKit
 
 class NoteEditorViewController: UIViewController,UITextViewDelegate {
     //
-    let timeIndicatorView = TimeIndicatorView.init(time: NSDate())
+    var timeIndicatorView:TimeIndicatorView!
     var textStorage:SyntaxHighlightTextStorage! = nil
     var textView:UITextView! = nil
     
     var keyboardSize:CGSize!
     
+    var note:NoteModel!
+    
     override func viewDidLoad() {
         //
-        createTextView()
-        
-        //收到用于指定本类接收字体设定变化的通知后，调用preferredContentSizeChanged:方法
+        //字体变化通知:调用preferredContentSizeChanged:方法
         NotificationCenter.default.addObserver(self, selector: #selector(NoteEditorViewController.preferredContentSizeChanged(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
         
         //编辑长文本的时候键盘挡住了下半部分文本的问题
-        textView.isScrollEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(NoteEditorViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NoteEditorViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        
+        createTextView()
+        //时间戳
+        timeIndicatorView = TimeIndicatorView.init(time: note.timetamp)
+        view.addSubview(timeIndicatorView)
     }
     
     //创建文本区域
-    func createTextView() {
+    func createTextView()
+    {
         //
         // 1. Create the text storage that backs the editor
         let attrs = [NSFontAttributeName:UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
-        let attrString = NSAttributedString(string: "",attributes: attrs)
+        let attrString = NSAttributedString(string: note.contents,attributes: attrs)
         textStorage = SyntaxHighlightTextStorage()
         textStorage.append(attrString)
         
@@ -75,8 +65,11 @@ class NoteEditorViewController: UIViewController,UITextViewDelegate {
         
         // 3. Create a text container
         //文本容器的宽度会自动匹配视图的宽度，但是它的高度是无限高的——或者说无限接近于CGFloat.max，它的值可以是无限大。
-        let containerSize = CGSize.init(width: newTextViewRect.size.width, height: CGFloat.greatestFiniteMagnitude)
+        let containerSize = CGSize.init(width: newTextViewRect.size.width,
+                                        height: CGFloat.greatestFiniteMagnitude)
+        
         let container = NSTextContainer.init(size: containerSize)
+        //A Boolean that controls whether the receiver adjusts the width of its bounding rectangle when its text view is resized.
         container.widthTracksTextView = true
         //
         layoutManager.addTextContainer(container)
@@ -84,11 +77,14 @@ class NoteEditorViewController: UIViewController,UITextViewDelegate {
         
         // 4. Create a UITextView
         textView = UITextView.init(frame: newTextViewRect, textContainer: container)
+        textView.isScrollEnabled = true
         textView.delegate = self
         view.addSubview(textView)
     }
     
-    func preferredContentSizeChanged(_ notification:NSNotification) {
+    //字体变化通知时调用
+    func preferredContentSizeChanged(_ notification:NSNotification)
+    {
         //收到用于指定本类接收字体设定变化的通知后
         textStorage.update()
         timeIndicatorView.updateSize()
@@ -103,15 +99,21 @@ class NoteEditorViewController: UIViewController,UITextViewDelegate {
     func updateTimeIndicatorFrame() {
         //第一调用updateSize来设定_timeView的尺寸。
         timeIndicatorView.updateSize()
-        //将_timeView放在右上角。
-        timeIndicatorView.frame = timeIndicatorView.frame.offsetBy(dx: view.frame.size.width - timeIndicatorView.frame.size.width, dy: 0.0)
+        //通过偏移frame参数，将timeIndicatorView放在右上角。
+        timeIndicatorView.frame = timeIndicatorView.frame.offsetBy(dx:textView.frame.width - timeIndicatorView.frame.width, dy: 0.0)
+        
+        let exclusionPath = timeIndicatorView.curvePathWithOrigin(origin: timeIndicatorView.center)
+        textView.textContainer.exclusionPaths = [exclusionPath]
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note.contents = textView.text
     }
 }
 
 //键盘遮挡问题
-extension NoteEditorViewController{
-    
-    //键盘问题
+extension NoteEditorViewController
+{
     func keyboardDidShow(_ notification:NSNotification) {
         //
         let userInfo = notification.userInfo
@@ -136,12 +138,23 @@ extension NoteEditorViewController{
     }
 }
 
-class SyntaxHighlightTextStorage: NSTextStorage {
+class SyntaxHighlightTextStorage: NSTextStorage
+{
     //文本存储器子类必须提供它自己的“数据持久化层”。
     var backingStore = NSMutableAttributedString()
     var replacements = [String:[String:AnyObject]]()
     
-    override var string: String{
+    override init() {
+        super.init()
+        createHighlightPatterns()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var string: String
+    {
         return backingStore.string
     }
 }
@@ -150,81 +163,107 @@ class SyntaxHighlightTextStorage: NSTextStorage {
 //这样做是为了在编辑发生后让文本存储器的类通知相关的布局管理器。
 extension SyntaxHighlightTextStorage{
     
-    /**
-     可能注意到了你需要很多代码来创建文本存储器的类的子类。既然NSTextStorage是一个类族的公共接口，那就不能只是通过创建子类及重载几个方法来扩张它的功能。有些特定需求你是要自己实现的，比方attributedString数据的后台存储。
-     类族就是抽象工厂模式的实现，无需指定具体的类就可以为创建一族相关或从属的对象提供一个公共接口。一些我们很熟悉的类比方NSArray和NSNumber事实上是一族类的公共接口。
-     */
-    
-    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
+    //Sends out -textStorage:willProcessEditing, fixes the attributes, sends out -textStorage:didProcessEditing, and notifies the layout managers of change with the -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method.  Invoked from -edited:range:changeInLength: or -endEditing.
+    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any]
+    {
         //
-        return backingStore.attributes(at: location, effectiveRange: range)
+        if range == nil {
+            return [:]
+        }
+//        print("backingStore:location\(location),effectiveRange:\(range!)")
+         return backingStore.attributes(at: location, effectiveRange: range!)
     }
     
-    override func replaceCharacters(in range: NSRange, with str: String) {
+    override func replaceCharacters(in range: NSRange, with str: String)
+    {
         //
         print("replaceCharactersInRange:\(NSStringFromRange(range)) withString:\(str)")
         beginEditing()
         backingStore.replaceCharacters(in: range, with: str)
-        //注意的是通过characters属性返回的字符数量并不总是与包含相同字符的NSString的length属性相同。NSString的length属性是利用 UTF-16 表示的十六位代码单元数字，而不是 Unicode 可扩展的字符群集。作为佐证，当一个NSString的length属性被一个Swift的String值访问时，实际上是调用了utf16.Count
-        edited([.editedAttributes,.editedCharacters], range: range, changeInLength: str.utf16.count - range.length)
+        edited([.editedAttributes,.editedCharacters],
+                        range: range,
+               changeInLength: str.utf16.count - range.length)
+        
         endEditing()
     }
     
-    override func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
+    override func setAttributes(_ attrs: [String : Any]?, range: NSRange)
+    {
         //Sets the attributes for the characters in the specified range to the specified attributes.
-        print("setAttributes:\(attrs) range:\(NSStringFromRange(range))")
+        print("setAttributes:\(attrs!) range:\(NSStringFromRange(range))")
         beginEditing()
-        backingStore.setAttributes(attrs, range: range)
-        edited(.editedAttributes, range: range, changeInLength: 0)
+        backingStore.setAttributes(attrs!, range: range)
+        edited(.editedAttributes,
+                        range: range,
+               changeInLength: 0)
+        
         endEditing()
     }
+    
 }
 
 //动态格式（Dynamic formatting）:
-//将对你的自定义文本存储器进行修改以将＊星号符之间的文本＊变为黑体：
+//更新文本存储器的存储的文本样式，并通知布局管理器更新视图中的文本显示
 extension SyntaxHighlightTextStorage{
     
-    //将文本的变化通知给布局管理器。它也为文本编辑之后的处理提供便利。
+    //将文本的变化通知给布局管理器。
     override func processEditing() {
-        //
-        performReplacementsForRange(changedRange: editedRange)
+        //更新文本存储器的存储的文本样式，editedRange：The range for pending changes
+        performReplacementsForRange(editedRange)
+        print("processEditing 通知布局管理器\(editedRange)")
+        //通知布局管理器 notifies the layout managers of change
         super.processEditing()
     }
     
-    //
-    func performReplacementsForRange(changedRange:NSRange){
-        //backingStore.string必须转为NSString类型，这样才能使用lineRangeForRange方法
-        var extendedRange = NSUnionRange(changedRange, (backingStore.string as NSString).lineRange(for: NSMakeRange(changedRange.location, 0)))
-        
-        extendedRange = NSUnionRange(changedRange, (backingStore.string as NSString).lineRange(for: NSMakeRange(NSMaxRange(changedRange), 0)))
+    //在指定的区域中进行替换
+    func performReplacementsForRange(_ changedRange:NSRange){
+        let locationRange = NSMakeRange(changedRange.location, 0)
+        let range1 = (backingStore.string as NSString).lineRange(for: locationRange)
+        //扩展范围
+        var extendedRange = NSUnionRange(changedRange, range1)
+        let maxRange = NSMakeRange(NSMaxRange(changedRange), 0)
+        let range2 = (backingStore.string as NSString).lineRange(for: maxRange)
+        extendedRange = NSUnionRange(changedRange, range2)
+        print("在指定的区域中进行替换:\(extendedRange)")
         applyStylesToRange(searchRange: extendedRange)
     }
     
     func applyStylesToRange(searchRange:NSRange) {
         
         // 1. create some fonts
-        let normalAttrs = [NSFontAttributeName:UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        let font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        let normalAttrs = [NSFontAttributeName:font]
         // iterate over each replacement
-        for regexStr in replacements.keys {
-            //
+        for regexStr in replacements.keys
+        {
             // 2. match items surrounded by asterisks
-            //创建一个正则表达式来定位星号符包围的文本。
-            //例如，在字符串“iOS 7 is *awesome*”中，存储在regExStr中的正则表达式将会匹配并返回文本“*awesome*”。
-            //let regexStr = "(w+(sw+))s"
-            let regex = try! NSRegularExpression(pattern: regexStr, options: .caseInsensitive)
+            let regex:NSRegularExpression!
+            do {
+//                print("正则：\(regexStr)")
+                regex = try NSRegularExpression(pattern: regexStr, options: .caseInsensitive)
+            }
+            catch
+            {
+                print("----")
+                continue
+            }
             
+            //获取对应正则的字体样式
             let textAttributes = replacements[regexStr]
-            
             // 3. iterate over each match, making the text bold
-            //对正则表达式匹配到并返回的文本进行枚举并添加粗体属性。
-            regex.enumerateMatches(in: backingStore.string, options: .anchored, range: searchRange) { (match, flags, stop) in
+            //使匹配到的所有字体样式生效
+            regex!.enumerateMatches(in: backingStore.string, options: .init(rawValue: 0), range: searchRange)
+            { (match, flags, stop) in
                 // apply the style
                 let matchRange = match?.rangeAt(1)
+                let replaceText = (backingStore.string as NSString).substring(with: matchRange!)
+                print("更新样式的内容：\(replaceText)")
+                //重载的方法
                 self.addAttributes(textAttributes!, range: matchRange!)
-                
                 // 4. reset the style to the original
-                //将后一个星号符之后的文本都重置为“常规”样式。以保证添加在后一个星号符之后的文本不被粗体风格所影响。
-                if (NSMaxRange(matchRange!)+1 < self.length){
+                //将未匹配到的文本重置为“常规”样式。
+                if (NSMaxRange(matchRange!)+1 < self.length)
+                {
                     self.addAttributes(normalAttrs, range: NSMakeRange(NSMaxRange(matchRange!)+1, 1))
                 }
             }
@@ -233,60 +272,55 @@ extension SyntaxHighlightTextStorage{
     }
 }
 
-//进一步添加样式
 //为限定文本添加风格的基本原则很简单：
 //使用正则表达式来寻找和替换限定字符，然后用applyStylesToRange来设置想要的文本样式即可。
 extension SyntaxHighlightTextStorage{
     
     func createHighlightPatterns()  {
         
-        //使用Zapfino字体来创建了“script”风格
-        //Font descriptors会决定当前正文的首选字体，以保证script不会影响到用户的字体大小设置。字体描述器（Font descriptors）是一种描述性语言，它使你可以通过设置属性来修改字体，或者无需初始化UIFont实例便可获取字体规格的细节。
-        //字体描述器能使你无需对字体手动编码来设置字体和样式。
+        //使用Zapfino字体来创建了“script”风格，字体描述器（Font descriptors）是一种描述性语言
         let scriptFontDescriptor = UIFontDescriptor.init(fontAttributes: [UIFontDescriptorFamilyAttribute:"Zapfino"])
-        
-        
         // 1. base our script font on the preferred body font size
-        //为每种匹配的字体样式构造各个属性
+        //保证script不会影响到用户的字体大小设置
         let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFontTextStyle.body)
-        
         let bodyFontSize = bodyFontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute]
-        
-        let scriptFont = UIFont.init(descriptor: scriptFontDescriptor, size: CGFloat(((bodyFontSize as AnyObject).floatValue)!))
+        //“script”风格的Zapfino字体
+        let scriptFont = UIFont.init(descriptor: scriptFontDescriptor,
+                                     size: CGFloat(((bodyFontSize as AnyObject).floatValue)!))
         
         // 2. create the attributes
-        let boldAttributes = createAttributesForFontStyle(style: UIFontTextStyle.body.rawValue, trait: .traitBold)
-        
-        let italicAttributes = createAttributesForFontStyle(style: UIFontTextStyle.body.rawValue, trait: .traitItalic)
-        let strikeThroughAttributes = [NSStrikethroughStyleAttributeName:NSNumber.init(value: 1)]
+        //----为每种匹配的字体样式构造各个属性====
         let scriptAttributes = [NSFontAttributeName:scriptFont]
-        let redTextAttributes = [NSForegroundColorAttributeName:UIColor.red]
         
+        let boldAttributes = createAttributesForFontStyle(style: UIFontTextStyle.body.rawValue,
+                                                          trait: .traitBold)
+        
+        let italicAttributes = createAttributesForFontStyle(style: UIFontTextStyle.body.rawValue,
+                                                            trait: .traitItalic)
+        
+        let strikeThroughAttributes = [NSStrikethroughStyleAttributeName:NSNumber.init(value: 1)]
+        let redTextAttributes = [NSForegroundColorAttributeName:UIColor.red]
+        //---- ------------
         // construct a dictionary of replacements based on regexes
         //创建一个NSDictionary并将正则表达式映射到上面声明的属性上
-        //1. 把波浪线(~)之间的文本变为艺术字体
-        //2. 把下划线(_)之间的文本变为斜体
-        //3. 为破折号(-)之间的文本添加删除线
-        //4. 把字母全部大写的单词变为红色
         replacements = [
-            "(*w+(sw+)**)s" : boldAttributes,
-            "(w+(sw+)*_)s" : italicAttributes,
-            "([0-9]+.)s" : boldAttributes,
-            "(-w+(sw+)*–)s" : strikeThroughAttributes,
-            "(~w+(sw+)*~)s" : scriptAttributes,
-            "s([A-Z]{2,})s" : redTextAttributes]
+            "(\\*\\w+(\\s\\w+)*\\*)\\s" : boldAttributes,
+            "(_\\w+(\\s\\w+)*_)\\s" : italicAttributes,          //下划线(_)之间的文本变为斜体
+            "([0-9]+.)\\s" : boldAttributes,
+            "(-\\w+(\\s\\w+)*-)\\s" : strikeThroughAttributes,  //破折号(-)之间的文本添加删除线
+            "(~\\w+(sw+)*~)\\s" : scriptAttributes,         //波浪线(~)之间的文本变为艺术字体
+            "\\s([A-Z]{2,})\\s" : redTextAttributes]        //字母全部大写的单词变为红色
     }
     
     //将提供的字体样式作用到正文字体上:
-    //它给fontWithDescriptor:size: 提供的size值为0，这样做会迫使UIFont返回用户设置的字体大小。
-    func createAttributesForFontStyle(style:String,trait:UIFontDescriptorSymbolicTraits) -> [String:AnyObject] {
-        //
+    func createAttributesForFontStyle(style:String,trait:UIFontDescriptorSymbolicTraits) -> [String:AnyObject]
+    {
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFontTextStyle.body)
         let descriptorWithTraint = fontDescriptor.withSymbolicTraits(trait)
+        //size值为0，会迫使UIFont返回用户设置的字体大小。
         let font = UIFont.init(descriptor: descriptorWithTraint!, size: 0.0)
         return [NSFontAttributeName:font]
     }
-    
 }
 
 //重做动态样式
@@ -306,5 +340,3 @@ extension SyntaxHighlightTextStorage{
     }
 }
 
-
-//: [Next](@next)

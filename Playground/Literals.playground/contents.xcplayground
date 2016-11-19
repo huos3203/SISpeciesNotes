@@ -12,6 +12,7 @@
         <page name='结构体'/>
         <page name='NSPredicate练习'/>
         <page name='属性与方法统一'/>
+        <page name='NSRegularExpression'/>
         <page name='函数声明与调用'/>
         <page name='使用函数类型作为返回类型'/>
     </pages>

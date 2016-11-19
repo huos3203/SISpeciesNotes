@@ -1,0 +1,97 @@
+[
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 245,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 266,
+  "remove": 11,
+  "text": "a",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 284,
+  "text": "(",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 288,
+  "text": ")",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 383,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 478,
+  "remove": 5,
+  "text": "r",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 495,
+  "remove": 1,
+  "text": "t",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 695,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 719,
+  "text": "@escaping (",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 723,
+  "text": ")",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 739,
+  "remove": 1,
+  "text": "D",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 747,
+  "remove": 2,
+  "text": "Queue.main.asyncA",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 764,
+  "remove": 1,
+  "text": "eadline: Di",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 771,
+  "remove": 2,
+  "text": "T",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 776,
+  "remove": 46,
+  "text": ".now() + Double(I",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 856,
+  "remove": 9,
+  "text": ") / Double(NSEC_PER_SEC",
+ },
+ {
+  "file": "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/Playground/Rx.playground/Sources/SupportCode.swift",
+  "offset": 876,
+  "remove": 35,
+  "text": "execute: ",
+ }
+]

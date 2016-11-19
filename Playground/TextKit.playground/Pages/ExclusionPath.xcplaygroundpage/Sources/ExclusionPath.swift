@@ -22,16 +22,16 @@ public class ExclusionPath:UIViewController{
         view.addSubview(textView)
         view.addSubview(imageView)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        let constaintsV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[textView]-|", options: [], metrics: nil, views: ["textView":textView])
-        let constaintsH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[textView]-|", options: [], metrics: nil, views: ["textView":textView])
+        let constaintsV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[textView]-|", options: [], metrics: nil, views: ["textView":textView])
+        let constaintsH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[textView]-|", options: [], metrics: nil, views: ["textView":textView])
         view.addConstraints(constaintsV)
         view.addConstraints(constaintsH)
         //添加拖动图片事件
         let pan = UIPanGestureRecognizer.init(target: self, action:#selector(ExclusionPath.imagePanned(_:)))
         //设置图片可交互性
-        imageView.userInteractionEnabled = true
+        imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(pan)
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
         textView.text = text
         textView.textContainer.exclusionPaths = [createExclusionPaths()]
@@ -40,38 +40,38 @@ public class ExclusionPath:UIViewController{
 
     func createExclusionPaths() -> UIBezierPath {
         //将rect由rect所在视图转换到目标视图view中，返回在目标视图view中的rect
-//        let butterflyImageRect = textView.convertRect(imageView.frame, toView: view)
+        //let butterflyImageRect = textView.convertRect(imageView.frame, toView: view)
         //// 将rect从view中转换到当前视图中，返回在当前视图中的rect
-        let butterflyImageRect = textView.convertRect(imageView.frame, fromView: view)
+        let butterflyImageRect = textView.convert(imageView.frame, from: view)
         let bezierPath = UIBezierPath.init(rect: butterflyImageRect)
         return bezierPath
     }
 
-    func imagePanned(localSender:UIPanGestureRecognizer)  {
+    func imagePanned(_ localSender:UIPanGestureRecognizer)  {
         //
         switch localSender.state {
-        case .Began:
+        case .began:
             //translationInView在指定的坐标系中移动,该方法返回在横坐标上、纵坐标上拖动了多少像素
-            gestureStartingPoint = localSender.translationInView(textView)
+            gestureStartingPoint = localSender.translation(in: textView)
             gestureStartingCenter = imageView.center
-        case .Changed:
+        case .changed:
             
-            let currentPoint = localSender.translationInView(textView)
+            let currentPoint = localSender.translation(in: textView)
             //求出偏移量
             let distanceX = currentPoint.x - gestureStartingPoint.x
             let distanceY = currentPoint.y - gestureStartingPoint.y
             
             var newCenter = gestureStartingCenter
-            newCenter.x += distanceX
-            newCenter.y += distanceY
+            newCenter?.x += distanceX
+            newCenter?.y += distanceY
             
-            imageView.center = newCenter
+            imageView.center = newCenter!
             textView.textContainer.exclusionPaths = [createExclusionPaths()]
             
-        case .Ended:
+        case .ended:
             
-            gestureStartingCenter = CGPointZero
-            gestureStartingPoint = CGPointZero
+            gestureStartingCenter = CGPoint.zero
+            gestureStartingPoint = CGPoint.zero
         default:
             print("拖动.....")
         }
