@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="7F7-Wm-2Wu">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="q0A-JK-zL6">
+            <objects>
+                <windowController id="7F7-Wm-2Wu" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="fP1-6e-iwh">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="GuI-vq-lbZ" kind="relationship" relationship="window.shadowedContentViewController" id="RJI-Ci-eq9"/>
+                    </connections>
+                </windowController>
+                <customObject id="AbT-oN-1ec" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="177"/>
+        </scene>
+        <!--Note Editor View ControllerOSX-->
+        <scene sceneID="Ofc-zU-oPv">
+            <objects>
+                <viewController id="GuI-vq-lbZ" customClass="NoteEditorViewControllerOSX" customModule="TextKitNotepadForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wYv-Hf-L4V">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView hidden="YES" wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TZ-8r-VqK">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <clipView key="contentView" autoresizesSubviews="NO" canDrawConcurrently="YES" id="dz7-9g-4xD">
+                                    <rect key="frame" x="1" y="1" width="433" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="VvQ-Az-Yzr">
+                                            <rect key="frame" x="0.0" y="-1" width="433" height="298"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="433" height="298"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="4Rx-PB-2Uj">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sSe-B9-rmy">
+                                    <rect key="frame" x="434" y="1" width="15" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5TZ-8r-VqK" secondAttribute="trailing" id="4uH-oe-e9k"/>
+                            <constraint firstItem="5TZ-8r-VqK" firstAttribute="leading" secondItem="wYv-Hf-L4V" secondAttribute="leading" id="IRG-hg-ekl"/>
+                            <constraint firstItem="5TZ-8r-VqK" firstAttribute="top" secondItem="wYv-Hf-L4V" secondAttribute="top" id="er3-3u-2It"/>
+                            <constraint firstAttribute="bottom" secondItem="5TZ-8r-VqK" secondAttribute="bottom" id="lcG-RI-UBR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ibTextView" destination="VvQ-Az-Yzr" id="V4k-zn-3Dl"/>
+                    </connections>
+                </viewController>
+                <customObject id="cQ0-wT-7Gp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="162"/>
+        </scene>
+    </scenes>
+</document>

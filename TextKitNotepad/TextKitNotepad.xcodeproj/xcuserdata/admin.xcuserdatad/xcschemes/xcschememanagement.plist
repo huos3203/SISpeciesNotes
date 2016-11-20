@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TextKitNotepad copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>65</integer>
+		</dict>
 		<key>TextKitNotepad.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>145968F41CD9FF9700732D9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84BAA88D1DE13CF500FE1A6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

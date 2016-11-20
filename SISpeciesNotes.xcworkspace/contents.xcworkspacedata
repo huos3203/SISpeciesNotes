@@ -77,10 +77,10 @@
       location = "group:PresentationsDemo/PresentationsDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:JSPatch-master/Demo/iOSDemo/JSPatchDemo.xcodeproj">
+      location = "group:InstrumentsSwift-Starter/InstrumentsTutorial.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:InstrumentsSwift-Starter/InstrumentsTutorial.xcodeproj">
+      location = "group:JSPatch-master/Demo/iOSDemo/JSPatchDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:iPhoneCoreDataRecipes/Recipes.xcodeproj">
