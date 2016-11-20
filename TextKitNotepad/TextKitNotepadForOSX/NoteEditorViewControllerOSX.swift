@@ -26,7 +26,6 @@ class NoteEditorViewControllerOSX: NSViewController,NSTextViewDelegate {
         // textStorage.addLayoutManager(ibTextView.layoutManager!)
         
         /* ----- 根据以上原因：只能代码声明textView来实现   -------
-         
             2. Create the layout manager
             3. Create a text container
             4. Create a UITextView

@@ -199,12 +199,12 @@ extension SyntaxHighlightTextStorage{
                                          size: 0.0)
             let scriptAttributes = [NSFontAttributeName:scriptFont!]
             //粗体
-            let descriptorWithTraintBold = scriptFontDescriptor.withSymbolicTraits(NSFontSymbolicTraits(NSFontTraitMask.boldFontMask.rawValue))
+            let descriptorWithTraintBold = scriptFontDescriptor.withSymbolicTraits(NSFontSymbolicTraits(NSFontBoldTrait))
             let fontBold = NSFont.init(descriptor: descriptorWithTraintBold, size: 0.0)
             let boldAttributes = [NSFontAttributeName:fontBold!]
             
             //斜体
-            let descriptorWithTraintItalic = scriptFontDescriptor.withSymbolicTraits(NSFontSymbolicTraits(NSFontTraitMask.italicFontMask.rawValue))
+            let descriptorWithTraintItalic = scriptFontDescriptor.withSymbolicTraits(NSFontSymbolicTraits(NSFontItalicTrait))
             let fontItalic = NSFont(descriptor: descriptorWithTraintItalic, size: 0.0)
             let italicAttributes = [NSFontAttributeName:fontItalic!]
             
