@@ -12,14 +12,14 @@ class ExampleTransitioningDelegate: NSObject,UIViewControllerTransitioningDelega
 {
     //returns a presentation controller that manages the presentation of a view controller.
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        //presentation控制器
+        //presentation动画控制器
         let presentationController = ExamplePresentationViewController(presentedViewController:presented, presenting:presenting)
         
         return presentationController
     }
     //returns an animator object that will be used when a view controller is being presented
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //动画控制器
+        //自定义的动画控制器
         let animationController = ExampleAnimatedTransitioning()
         animationController.isPresentation = true
         return animationController

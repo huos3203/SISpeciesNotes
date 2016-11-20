@@ -76,9 +76,9 @@
 		14FAD63C1DDEA0DB00591904 /* Custom Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */,
 				14FAD6361DDD8DB800591904 /* ExamplePresentationViewController.swift */,
 				14FAD6381DDD960800591904 /* ExampleAnimatedTransitioning.swift */,
-				14FAD63A1DDD9A8100591904 /* ExampleTransitioningDelegate.swift */,
 				14FAD63E1DDEA21100591904 /* Simulator Screen Shot 18 Nov 2016, 10.41.18 AM.png */,
 			);
 			name = "Custom Presentations";
