@@ -16,6 +16,7 @@
 		145969081CDA012A00732D9A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145969071CDA012A00732D9A /* NoteModel.swift */; };
 		843894D51DE00FDC00212B65 /* TimeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843894D41DE00FDC00212B65 /* TimeIndicatorView.swift */; };
 		843894D91DE01D7100212B65 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843894D81DE01D7100212B65 /* NotesListViewController.swift */; };
+		847B62261DE197090097E2E6 /* DownloadFontViewControllert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B62251DE197090097E2E6 /* DownloadFontViewControllert.swift */; };
 		84BAA8921DE13CF600FE1A6F /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145969071CDA012A00732D9A /* NoteModel.swift */; };
 		84BAA8971DE13CF600FE1A6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145968EB1CD9FF9600732D9A /* Assets.xcassets */; };
 		84BAA8A01DE13E8F00FE1A6F /* SyntaxHighlightTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAA89F1DE13E8F00FE1A6F /* SyntaxHighlightTextStorage.swift */; };
@@ -50,6 +51,7 @@
 		145969071CDA012A00732D9A /* NoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteModel.swift; path = Model/NoteModel.swift; sourceTree = "<group>"; };
 		843894D41DE00FDC00212B65 /* TimeIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIndicatorView.swift; sourceTree = "<group>"; };
 		843894D81DE01D7100212B65 /* NotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
+		847B62251DE197090097E2E6 /* DownloadFontViewControllert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFontViewControllert.swift; sourceTree = "<group>"; };
 		84BAA89C1DE13CF600FE1A6F /* TextKitNotepadForOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKitNotepadForOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BAA89D1DE13CF800FE1A6F /* TextKitNotepadForOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TextKitNotepadForOSX-Info.plist"; path = "/Users/admin/Downloads/GitRepos/Octopress/SISpeciesNotes/TextKitNotepad/TextKitNotepadForOSX-Info.plist"; sourceTree = "<absolute>"; };
 		84BAA89F1DE13E8F00FE1A6F /* SyntaxHighlightTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyntaxHighlightTextStorage.swift; path = custom/SyntaxHighlightTextStorage.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		145968E31CD9FF9600732D9A /* TextKitNotepad */ = {
 			isa = PBXGroup;
 			children = (
+				84BAA89E1DE13DB300FE1A6F /* extension */,
 				145969051CDA00AB00732D9A /* API */,
 				145969041CDA009B00732D9A /* Model */,
 				145968E41CD9FF9600732D9A /* AppDelegate.swift */,
@@ -142,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				145969061CDA00BD00732D9A /* Memory */,
+				847B62251DE197090097E2E6 /* DownloadFontViewControllert.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -159,13 +163,11 @@
 				84BAA89F1DE13E8F00FE1A6F /* SyntaxHighlightTextStorage.swift */,
 			);
 			name = extension;
-			path = TextKitNotepad;
 			sourceTree = "<group>";
 		};
 		84BAA8A21DE13F2900FE1A6F /* TextKitNotepadForOSX */ = {
 			isa = PBXGroup;
 			children = (
-				84BAA89E1DE13DB300FE1A6F /* extension */,
 				84BAA8A51DE1675500FE1A6F /* AppDelegate.swift */,
 				84BAA8A71DE1689A00FE1A6F /* NoteEditorViewControllerOSX.swift */,
 				84BAA8A31DE13FB300FE1A6F /* MainForOSX.storyboard */,
@@ -303,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847B62261DE197090097E2E6 /* DownloadFontViewControllert.swift in Sources */,
 				84BAA8A01DE13E8F00FE1A6F /* SyntaxHighlightTextStorage.swift in Sources */,
 				145968E71CD9FF9600732D9A /* NoteEditorViewController.swift in Sources */,
 				843894D51DE00FDC00212B65 /* TimeIndicatorView.swift in Sources */,
