@@ -13,10 +13,9 @@ public class TimeIndicatorView: UIView {
         super.init(coder: aDecoder)
     }
     public init(time:NSDate){
-    
-//        super.init()
+
         super.init(frame: CGRect.zero)
-        backgroundColor = UIColor.yellow
+        backgroundColor = UIColor.clear
         clipsToBounds = false
         
         timeLabel.textAlignment = .center

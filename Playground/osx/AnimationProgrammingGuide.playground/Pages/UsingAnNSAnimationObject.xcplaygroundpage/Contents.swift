@@ -2,7 +2,8 @@
 
 import Foundation
 import AppKit
-import XCPlayground
+//import XCPlayground  //过时
+import PlaygroundSupport
 //CustomAnimation().viewDidLoad()
 //由NSAnimation对象创建动画
 //let textView = NSView.init(frame: CGRect.init(x: 10, y: 10, width: 190, height: 109))
@@ -17,10 +18,10 @@ class viewController:NSViewController
         let textField = NSTextField.init(string: "ddgsjfhgskdhfgkjhsfsdf")
         view.addSubview(textField)
     }
-    
-}
 
-XCPlaygroundPage.currentPage.liveView = viewController()
+}
+//替换最新之后，只能显示控件，仍然无法显示ViewController
+PlaygroundPage.current.liveView = NSViewController()//NSTextField.init(string: "ddgsjfhgskdhfgkjhsfsdf")////.playgroundLiveViewRepresentation()
 
 
 

@@ -25,13 +25,13 @@ class TextKitNotepadTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let noteModel = NoteModel.init(newText: "Use XCTAssert and related functions to verify your\n tests produce the correct results")
+        let noteModel = NoteModel.init("Use XCTAssert and related functions to verify your\n tests produce the correct results")
         print(noteModel.title)
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
