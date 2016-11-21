@@ -7,11 +7,17 @@
    <Group
       location = "group:Playground"
       name = "Playground">
+      <FileRef
+         location = "group:Starter.playgroundbook">
+      </FileRef>
       <Group
          location = "container:"
          name = "osx">
          <FileRef
             location = "group:Playground/osx/firstPlayground.playground">
+         </FileRef>
+         <FileRef
+            location = "group:Playground/osx/AnimationProgrammingGuide.playground">
          </FileRef>
       </Group>
       <FileRef
