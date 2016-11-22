@@ -16,7 +16,7 @@ class pathView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         //
 //        drawRectPath(rect)
 //        drawCiclePath(rect)
@@ -29,13 +29,14 @@ class pathView: UIView {
 
 }
 
-let view = pathView(frame: CGRectMake(20, 20, 300, 300))
+let view = pathView(frame: CGRect.init(x: 20, y: 20, width: 300, height: 300))
 
 
 //绘画笑脸
-let faceView = FaceDraw(frame:CGRectMake(0, 0, 400, 400))
+let faceView = FaceDraw(frame:CGRect.init(x: 0, y: 0, width: 400, height: 400))
 //
-//XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
+XCPlaygroundPage.currentPage.liveView = faceView
+    //DownLoadViewController()
 
 
 
