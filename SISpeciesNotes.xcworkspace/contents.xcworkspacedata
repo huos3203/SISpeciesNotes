@@ -21,10 +21,10 @@
          </FileRef>
       </Group>
       <FileRef
-         location = "group:/Users/pengyucheng/git/SISpeciesNotes/Playground/Learn the Essentials of Swift2.0.playground">
+         location = "group:Learn the Essentials of Swift2.0.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/pengyucheng/git/SISpeciesNotes/Playground/GuidedTour swift3.0.playground">
+         location = "group:GuidedTour swift3.0.playground">
       </FileRef>
       <FileRef
          location = "group:Literals.playground">

@@ -44,12 +44,13 @@ public class CircleProgressView: UIView {
         
         progressLayer = CAShapeLayer()
         self.layer.addSublayer(progressLayer)
+        //务必设置frame ＝ bounds，progressLayer错位，以及画弧线时，使用center坐标会错位
+        progressLayer.frame = bounds
         //务必设置填充为nil
         progressLayer.fillColor = nil
         //进度条会以 圆头样式 注满trackPath
         progressLayer.lineCap = kCALineCapRound
-        //务必设置frame ＝ bounds，progressLayer错位，以及画弧线时，使用center坐标会错位
-        progressLayer.frame = bounds
+       
     }
     
     required public init?(coder aDecoder: NSCoder)
@@ -68,8 +69,11 @@ public class CircleProgressView: UIView {
     func drawTrackPath()
     {
         //画弧线
-        let radius = (bounds.width - trackPathWidth)/2
         let centerXY = CGPoint.init(x:frame.width/2,y:frame.height/2)
+        let radius = (bounds.width - trackPathWidth)/2
+        /*
+         UIBezierPath以centerXY圆心以radius为半径，从0弧度角顺时针绘画到360弧度角，形成一个圆形状
+         */
         trackPath = UIBezierPath.init(arcCenter: centerXY,
                                       radius: radius,
                                       startAngle: 0.degreesToRadians,
@@ -87,6 +91,10 @@ public class CircleProgressView: UIView {
         let centerXY = CGPoint(x:frame.width/2,y:frame.height/2)
         let radius = (bounds.width - trackPathWidth)/2
         let startAngle = CGFloat(-M_PI_2)
+        /*
+         progress是变量，来自滑动条的值（0~360）
+         赛尔曲线以centerXY圆心以radius为半径，从-90弧度角顺时针绘画到progress - 90弧度角，形成一个弧形圆
+         */
         progressPath = UIBezierPath.init(arcCenter: centerXY,
                                          radius: radius,
             //                                         startAngle:startAngle,
