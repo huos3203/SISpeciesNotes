@@ -14,19 +14,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANH-ae-Kk2">
-                                <rect key="frame" x="59" y="223" width="67" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="开始" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1OA-du-o4l">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ibaStartAnim:" target="tKj-o9-vgo" id="0bn-hn-LhH"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bux-WK-0He">
-                                <rect key="frame" x="273" y="223" width="67" height="32"/>
+                                <rect key="frame" x="283" y="252" width="67" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="结束" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vB2-Qt-3NB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -36,52 +25,67 @@
                                     <action selector="ibaStopAnim:" target="tKj-o9-vgo" id="IhD-Xu-slk"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-Dn-Nso">
-                                <rect key="frame" x="111" y="156" width="67" height="32"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eQB-zf-2vj">
+                                <rect key="frame" x="20" y="59" width="163" height="96"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60n-vx-Xri">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="2pT-pI-Avg"/>
+                                            <constraint firstAttribute="height" constant="96" id="KJ8-cM-86a"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="1" id="ZMj-n1-dc0"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="60n-vx-Xri" firstAttribute="top" secondItem="eQB-zf-2vj" secondAttribute="top" id="0w8-32-UuO"/>
+                                    <constraint firstItem="60n-vx-Xri" firstAttribute="leading" secondItem="eQB-zf-2vj" secondAttribute="leading" id="Zwq-6s-lBM"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="OCt-Ec-KPE">
+                                <rect key="frame" x="255" y="59" width="163" height="96"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k4x-rs-WDz">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="kSr-QN-mGG"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="2" id="R3L-r4-fd8"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="k4x-rs-WDz" secondAttribute="trailing" id="Er3-LA-mRk"/>
+                                    <constraint firstItem="k4x-rs-WDz" firstAttribute="leading" secondItem="OCt-Ec-KPE" secondAttribute="leading" id="ZtV-7B-NZT"/>
+                                    <constraint firstItem="k4x-rs-WDz" firstAttribute="top" secondItem="OCt-Ec-KPE" secondAttribute="top" id="xBF-DX-z0i"/>
+                                </constraints>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANH-ae-Kk2">
+                                <rect key="frame" x="55" y="252" width="67" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="结束" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OI4-fk-Sl4">
+                                <buttonCell key="cell" type="push" title="开始" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1OA-du-o4l">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="ibaStopAnim:" target="tKj-o9-vgo" id="sUa-F7-Jf1"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xS7-0U-WdZ">
-                                <rect key="frame" x="255" y="117" width="67" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="结束" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7U-If-JYS">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ibaStopAnim:" target="tKj-o9-vgo" id="eNB-0q-HkS"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="43h-MI-T06">
-                                <rect key="frame" x="70" y="53" width="67" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="结束" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z2p-Xg-GLV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ibaStopAnim:" target="tKj-o9-vgo" id="L47-8M-PH2"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-rB-gO8">
-                                <rect key="frame" x="255" y="34" width="67" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="结束" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qgB-rA-kb7">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ibaStopAnim:" target="tKj-o9-vgo" id="QuK-Mc-E3X"/>
+                                    <action selector="ibaStartAnim:" target="tKj-o9-vgo" id="0bn-hn-LhH"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="eQB-zf-2vj" firstAttribute="top" secondItem="e5I-Sc-zPJ" secondAttribute="top" constant="145" id="1So-Pe-a2q"/>
+                            <constraint firstAttribute="trailing" secondItem="eQB-zf-2vj" secondAttribute="trailing" constant="267" id="7Uy-Gf-Cew"/>
+                            <constraint firstItem="eQB-zf-2vj" firstAttribute="bottom" secondItem="OCt-Ec-KPE" secondAttribute="bottom" id="A0e-c3-921"/>
+                            <constraint firstAttribute="bottom" secondItem="eQB-zf-2vj" secondAttribute="bottom" constant="59" id="EVL-eg-Izs"/>
+                            <constraint firstItem="eQB-zf-2vj" firstAttribute="leading" secondItem="e5I-Sc-zPJ" secondAttribute="leading" constant="20" symbolic="YES" id="G5S-jy-2WL"/>
+                            <constraint firstItem="OCt-Ec-KPE" firstAttribute="leading" secondItem="eQB-zf-2vj" secondAttribute="trailing" constant="72" id="TrD-uV-faT"/>
+                            <constraint firstAttribute="trailing" secondItem="OCt-Ec-KPE" secondAttribute="trailing" constant="32" id="lqz-2g-iZu"/>
+                            <constraint firstItem="eQB-zf-2vj" firstAttribute="top" secondItem="OCt-Ec-KPE" secondAttribute="top" id="qJP-C0-kVj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstView" destination="eQB-zf-2vj" id="ljl-aP-AMi"/>
+                        <outlet property="secondView" destination="OCt-Ec-KPE" id="1eK-nd-Iht"/>
+                    </connections>
                 </viewController>
                 <customObject id="uCY-Tf-d2T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,4 +160,8 @@
             <point key="canvasLocation" x="512" y="162"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="640" height="960"/>
+        <image name="2" width="640" height="960"/>
+    </resources>
 </document>
