@@ -7,32 +7,34 @@ import UIKit
 
 public class CircleProgressView: UIView {
     
-    //layer
+    //loading管层
     private var trackLayer:CAShapeLayer!
-    private var progressLayer:CAShapeLayer!
-    //Path
     private var trackPath:UIBezierPath!
+    public var trackPathWidth:CGFloat = 10
+    //loading液柱层
+    private var progressLayer:CAShapeLayer!
     private var progressPath:UIBezierPath!
+    public var progressColor:UIColor = UIColor.yellow
     
-    
+    //在loading观察属性中绘制液柱loading液柱层
     public var progress:Double = 0{
-        
-        didSet(oldValue){
+        didSet(oldValue)
+        {
             print("-----------进度:\(progress)")
             drawProgressPath()
         }
     }
-    
-    public var trackPathWidth:CGFloat = 10
-    public var progressColor:UIColor = UIColor.yellow
-    
-    
-    override public init(frame: CGRect) {
-        
+
+    //构造loadingView视图样式
+    override public init(frame: CGRect)
+    {
         super.init(frame: frame)
         //
         backgroundColor = UIColor.blue
-        
+        /*
+             CAShapeLayer：在它的坐标空间中绘制3D塞尔曲线，绘制形状介于layer的内容和第一个子layer之间。
+                    这个形状会被绘制成反锯齿，尽可能在被栅格化之前映射在屏幕上，以排除分辨率的原因。
+            */
         trackLayer = CAShapeLayer()
         self.layer.addSublayer(trackLayer)
         //务必设置frame ＝ bounds，progressLayer错位，以及画弧线时，使用center坐标会错位
@@ -48,22 +50,23 @@ public class CircleProgressView: UIView {
         progressLayer.lineCap = kCALineCapRound
         //务必设置frame ＝ bounds，progressLayer错位，以及画弧线时，使用center坐标会错位
         progressLayer.frame = bounds
-        
-        
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect)
+    {
         //绘制通道和进度条
         drawTrackPath()
         drawProgressPath()
     }
    
     //Path通道
-    func drawTrackPath() {
+    func drawTrackPath()
+    {
         //画弧线
         let radius = (bounds.width - trackPathWidth)/2
         let centerXY = CGPoint.init(x:frame.width/2,y:frame.height/2)
@@ -79,50 +82,20 @@ public class CircleProgressView: UIView {
         trackLayer.strokeColor = UIColor.green.cgColor
     }
     
-    func drawProgressPath() {
-
+    func drawProgressPath()
+    {
         let centerXY = CGPoint(x:frame.width/2,y:frame.height/2)
         let radius = (bounds.width - trackPathWidth)/2
         let startAngle = CGFloat(-M_PI_2)
         progressPath = UIBezierPath.init(arcCenter: centerXY,
                                          radius: radius,
-//                                         startAngle:startAngle,
-//                                         endAngle: CGFloat((M_PI * 2) * progress - M_PI_2),  //适用于：0~1 (90度为起点)
+            //                                         startAngle:startAngle,
+            //                                         endAngle: CGFloat((M_PI * 2) * progress - M_PI_2),  //适用于：0~1 (90度为起点)
                                          startAngle:-90.degreesToRadians,
                                          endAngle:(progress - 90).degreesToRadians,  //适用于：0～360(90度为起点)
                                          clockwise: true)
-        
         progressLayer.path = progressPath.cgPath
         progressLayer.lineWidth = trackPathWidth
         progressLayer.strokeColor = progressColor.cgColor
     }
-}
-
-
-public class DownLoadViewController:UIViewController{
-
-    private var progress:UISlider!
-    private var progressView:CircleProgressView!
-    public override func viewDidLoad() {
-        //
-        progress = UISlider.init(frame: CGRect.init(x: 20, y: 100, width: 300, height: 5))
-        progress.maximumValue = 360
-        progress.minimumValue = 0
-        progress.addTarget(self, action: #selector(DownLoadViewController.slider), for: .valueChanged)
-        view.addSubview(progress)
-        
-        progressView = CircleProgressView.init(frame: CGRect.init(x: 20, y: 150, width: 200, height: 200))
-        view.addSubview(progressView)
-        progressView.progressColor = UIColor.red
-        progressView.trackPathWidth = 30
-        
-        view.backgroundColor = UIColor.white
-        
-    }
-
-    func slider() {
-        //
-        progressView.progress = Double(progress.value)
-    }
-    
 }
