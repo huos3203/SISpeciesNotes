@@ -33,7 +33,7 @@ let view = pathView(frame: CGRect.init(x: 20, y: 20, width: 300, height: 300))
 
 //绘画笑脸
 let faceView = FaceDraw(frame:CGRect.init(x: 0, y: 0, width: 400, height: 400))
-
+XCPlaygroundPage.currentPage.liveView = faceView
 /*
     MARK: 绘制进度条
     拖动滑动条，演示loading动画
@@ -69,7 +69,7 @@ public class DownLoadViewController:UIViewController
     }
 }
 
-XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
+//XCPlaygroundPage.currentPage.liveView = DownLoadViewController()
 
 
 //: [Next](@next)

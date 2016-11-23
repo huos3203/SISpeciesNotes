@@ -92,8 +92,9 @@ public class CircleProgressView: UIView {
         let radius = (bounds.width - trackPathWidth)/2
         let startAngle = CGFloat(-M_PI_2)
         /*
-         progress是变量，来自滑动条的值（0~360）
-         赛尔曲线以centerXY圆心以radius为半径，从-90弧度角顺时针绘画到progress - 90弧度角，形成一个弧形圆
+            This method creates an open subpath
+            赛尔曲线以centerXY圆心以radius为半径，从-90弧度角顺时针绘画到progress - 90弧度角，形成一个弧形圆
+            progress是变量，来自滑动条的值（0~360）
          */
         progressPath = UIBezierPath.init(arcCenter: centerXY,
                                          radius: radius,
