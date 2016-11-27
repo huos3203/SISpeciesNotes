@@ -36,7 +36,8 @@ class AsyncTheOldWayTest: XCTestCase {
     
     /**
      http://www.cocoachina.com/ios/20141027/10052.html
-     //在Xcode 6之前的版本里面并没有内置XCTest，想使用Xcode测试的只能是在主线程的RunLoop里面使用一个while循环,然后一直等待响应或者直到timeout.
+     //在Xcode 6之前的版本里面并没有内置XCTest，
+     想使用Xcode测试的只能是在主线程的RunLoop里面使用一个while循环,然后一直等待响应或者直到timeout.
      
      这个while循环在主线程里面每隔10毫秒会跑一次，直到有响应或者5秒之后超出响应时间限制才会跳出.
      */
@@ -101,7 +102,8 @@ class AsyncTheOldWayTest: XCTestCase {
     func testAsynForNotification()
     {
         //监听测试通知
-        expectation(forNotification: "BLDownloadImageNotification", object: nil) { (notification) -> Bool in
+        expectation(forNotification: "BLDownloadImageNotification", object: nil) {
+            (notification) -> Bool in
             //
             let userInfo = notification.userInfo as! [String:String]
             let name = userInfo["name"]
@@ -111,7 +113,10 @@ class AsyncTheOldWayTest: XCTestCase {
         }
         //发送通知
 //        NSNotificationCenter.defaultCenter().postNotificationName("BLDownloadImageNotification", object: nil)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: self, userInfo: ["name":"huosan","sex":"man"])
+        let notif =  Notification.Name(rawValue: "BLDownloadImageNotification")
+        NotificationCenter.default.post(name: notif,
+                                      object: self,
+                                    userInfo: ["name":"huosan","sex":"man"])
         
         //设置延迟多少秒后，如果没有满足测试条件就报错
         waitForExpectations(timeout: 3, handler: nil)
@@ -123,12 +128,17 @@ class AsyncTheOldWayTest: XCTestCase {
      同理，expectationForPredicate方法也可以使用expectationWithDescription实现。
      */
     func testAsynForNotificationWithExpectation() {
+        
         let expectation = self.expectation(description: "BLDownloadImageNotification")
-        let sub = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "BLDownloadImageNotification"), object: nil, queue: nil) { (not) -> Void in
+        let notif = NSNotification.Name(rawValue: "BLDownloadImageNotification")
+        let sub = NotificationCenter.default.addObserver(forName: notif,
+                                                          object: nil,
+                                                           queue: nil) {
+                                                            (not) -> Void in
             expectation.fulfill()
         }
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: nil)
+        NotificationCenter.default.post(name: notif, object: nil)
         
         waitForExpectations(timeout: 1, handler: nil)
         NotificationCenter.default.removeObserver(sub)
@@ -138,13 +148,22 @@ class AsyncTheOldWayTest: XCTestCase {
        通过userInfo参数 传递 expectation 
      */
     func testAsynForNotificationWithExpectation2() {
+        
         let expectation = self.expectation(description: "BLDownloadImageNotification")
-        NotificationCenter.default.addObserver(self, selector: #selector(AsyncTheOldWayTest.downLoadImage(_:)), name: NSNotification.Name(rawValue: "BLDownloadImageNotification"), object: nil)
+       
+        let notif = Notification.Name(rawValue: "BLDownloadImageNotification")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AsyncTheOldWayTest.downLoadImage(_:)),
+                                               name: notif,
+                                               object: nil)
 
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "BLDownloadImageNotification"), object: self, userInfo: ["name":"huosan","sex":"man","expectation":expectation])
+        let userInf = ["name":"huosan","sex":"man","expectation":expectation]
+        NotificationCenter.default.post(name: notif,
+                                        object: self,
+                                        userInfo: userInf)
         
         waitForExpectations(timeout: 1, handler: nil)
-                NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func downLoadImage(_ notification:Notification) {

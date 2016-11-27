@@ -47,7 +47,9 @@ class URLSessionTest: XCTestCase {
         print("请求路径地址：\(request.url?.absoluteString)")
         let expecttaion = expectation(description: "timeout....")
         //一个URL ,一个request
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { (response, data, error) in
+        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+            (response, data, error) in
+            
             expecttaion.fulfill()
             print("响应的服务器地址：\(response?.url?.absoluteString)")
             XCTAssertNotNil(data,"数据返回为nil")
@@ -63,6 +65,7 @@ class URLSessionTest: XCTestCase {
             }
             print("百度网页源码:\(dataFormatString)")
         }
+        
         waitForExpectations(timeout: 10){ error in
             //
             print("错误信息:\(error?.localizedDescription)")
